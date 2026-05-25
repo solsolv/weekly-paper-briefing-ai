@@ -1,6 +1,6 @@
 {
   "week_id": "2026-05-25",
-  "generated_at": "2026-05-25T08:51:24.210710+00:00",
+  "generated_at": "2026-05-25T12:28:28.340325+00:00",
   "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
   "provider": "openai_compat",
   "impact_lookback_days": 365,
@@ -8,34 +8,23 @@
   "tracks": {
     "ai": [
       {
-        "arxiv_id": "2605.23904",
-        "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+        "arxiv_id": "2605.23903",
+        "title": "Geo-Align: Video Generation Alignment via Metric Geometry Reward",
         "authors": [
-          "Yifan Yang",
-          "Ziyang Gong",
-          "Weiquan Huang",
-          "Qihao Yang",
-          "Ziwei Zhou",
-          "Zisu Huang",
-          "Yan Li",
-          "Xuemei Gao",
-          "Qi Dai",
-          "Bei Liu",
-          "Kai Qiu",
-          "Yuqing Yang",
-          "Dongdong Chen",
-          "Xue Yang",
-          "Chong Luo"
+          "Zizun Li",
+          "Haoyu Guo",
+          "Runzhe Teng",
+          "Chunhua Shen",
+          "Tong He"
         ],
-        "summary": "Agent skills today are hand-crafted, generated one-shot, or evolved through loosely controlled self-revision, none of which behaves like a deep-learning optimizer for the skill, and none of which reliably improves over its starting point under feedback. We argue the skill should instead be trained as the external state of a frozen agent, with the same discipline that makes weight-space optimization reproducible. SkillOpt is, to our knowledge, the first systematic controllable text-space optimizer for agent skills: a separate optimizer model turns scored rollouts into bounded add/delete/replace edits on a single skill document, and an edit is accepted only when it strictly improves a held-out validation score. A textual learning-rate budget, rejected-edit buffer, and epoch-wise slow/meta update make skill training stable while adding zero inference-time model calls at deployment. Across six benchmarks, seven target models, and three execution harnesses (direct chat, Codex, Claude Code), SkillOpt is best or tied on all 52 evaluated (model, benchmark, harness) cells and beats every per-cell competitor among human, one-shot LLM, Trace2Skill, TextGrad, GEPA, and EvoSkill skills. On GPT-5.5 it lifts the average no-skill accuracy by +23.5 points in direct chat, by +24.8 inside the Codex agentic loop, and by +19.1 inside Claude Code. Transfer experiments further show that optimized skill artifacts retain value when moved across model scales, between Codex and Claude Code execution environments, and to a nearby math benchmark without further optimization.",
+        "summary": "Camera-controlled video generation has achieved remarkable progress in recent years. However, existing video-to-video re-rendering methods primarily rely on Supervised Fine-Tuning using synthetic datasets. At present, there is an extreme scarcity of synchronized, multi-view real-world video data. Consequently, the prevailing paradigm often exhibits limited generalization when processing out-of-distribution real-world videos, with models struggling to accurately adhere to physical scales and camera trajectories. To bridge this gap, we propose Geo-Align, the first Reinforcement Learning framework specifically designed for camera-controlled video re-rendering. Built upon a pretrained model, we optimize the model through a scale-aware perceptual reward mechanism. Specifically, we introduce a metric 3D estimator to extract precise camera trajectories from generated videos, explicitly penalizing deviations in rotation and translation. Furthermore, we meticulously designed a data pipeline strategy based on real-world conditioning videos and target camera trajectories derived from synthetic data, eliminating the reliance on paired data. Extensive experiments demonstrate that Geo-Align consistently outperforms existing supervised learning baselines in both precise camera controllability and visual fidelity, indicating the effectiveness of our method.",
         "categories": [
-          "cs.AI",
-          "cs.CL"
+          "cs.CV"
         ],
-        "published": "2026-05-22T17:59:50+00:00",
-        "updated": "2026-05-22T17:59:50+00:00",
-        "pdf_url": "https://arxiv.org/pdf/2605.23904v1",
-        "abs_url": "https://arxiv.org/abs/2605.23904",
+        "published": "2026-05-22T17:59:43+00:00",
+        "updated": "2026-05-22T17:59:43+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2605.23903v1",
+        "abs_url": "https://arxiv.org/abs/2605.23903",
         "track": "ai",
         "slot": "impact",
         "citation_count": 0,
@@ -46,36 +35,41 @@
         "affiliations": [],
         "source": "arxiv",
         "hf_upvotes": null,
-        "title_ko": "SkillOpt: 스스로 진화하는 에이전트 기술을 위한 실행 전략",
-        "summary_ko": "- 기존 에이전트 기술은 수작업, 일회성 생성, 또는 느슨한 자가 수정으로 개발되어 신뢰성 있는 개선이 어려웠습니다.\n- SkillOpt는 에이전트 기술을 고정된 에이전트의 외부 상태로 훈련하는 체계적인 텍스트 공간 최적화 방법입니다.\n- 별도의 최적화 모델이 점수화된 실행 결과를 바탕으로 기술 문서에 추가/삭제/교체 편집을 제안하고, 유효성 검사 점수가 향상될 때만 적용합니다.\n- SkillOpt는 6개 벤치마크, 7개 모델, 3개 실행 환경에서 모든 52개 평가 항목에서 최고 성능을 달성했으며, GPT-5.5에서 평균 정확도를 19.1~24.8점 향상시켰습니다.\n- 이 방법은 배포 시 추가 추론 호출 없이 안정적인 기술 훈련을 가능하게 하며, 최적화된 기술의 전이성도 입증했습니다.",
+        "title_ko": "Geo-Align: 계량 기하학 보상을 통한 비디오 생성 정렬",
+        "summary_ko": "- 카메라 제어 비디오 생성은 발전했지만, 기존 방식은 합성 데이터 의존으로 실세계 영상에 대한 일반화가 부족합니다.\n- 본 논문은 카메라 제어 비디오 재렌더링을 위한 최초의 강화 학습(Reinforcement Learning) 프레임워크인 Geo-Align을 제안합니다.\n- Geo-Align은 사전 학습된 모델을 기반으로, 스케일 인지 지각 보상 메커니즘과 3D 추정기를 통해 카메라 궤적 편차를 제어합니다.\n- 합성 데이터에서 추출한 목표 궤적과 실세계 영상을 활용하여, 짝지어진 데이터(paired data) 없이 학습하는 데이터 파이프라인을 설계했습니다.\n- Geo-Align은 기존 지도 학습(supervised learning) 방식보다 정확한 카메라 제어와 시각적 충실도에서 뛰어난 성능을 보였습니다.",
         "tags": [
-          "에이전트 기술",
-          "텍스트 최적화",
-          "LLM",
-          "자가 학습"
+          "비디오 생성",
+          "강화 학습",
+          "카메라 제어",
+          "3D 추정"
         ]
       },
       {
-        "arxiv_id": "2605.22355",
-        "title": "TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation",
+        "arxiv_id": "2605.22109",
+        "title": "Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?",
         "authors": [
-          "Hanyu Guo",
-          "Jiedong Yang",
-          "Chao Chen",
-          "Longfei Xu",
-          "Kaikui Liu",
-          "Xiangxiang Chu"
+          "Caixin Kang",
+          "Tianyu Yan",
+          "Sitong Gong",
+          "Mingfang Zhang",
+          "Liangyang Ouyang",
+          "Ruicong Liu",
+          "Bo Zheng",
+          "Huchuan Lu",
+          "Kaipeng Zhang",
+          "Yoichi Sato",
+          "Yifei Huang"
         ],
-        "summary": "Public transit route planning traditionally depends on structured map infrastructure and complex routing engines, and no existing dataset supports training models to bypass this dependency. We present TransitLM, a large-scale dataset of over 13 million transit route planning records from four Chinese cities covering 120,845 stations and 13,666 lines, released as a continual pre-training corpus and benchmark data for three evaluation tasks with complementary metrics. Experiments show that an LLM trained on TransitLM produces structurally valid routes at high accuracy and implicitly grounds arbitrary GPS coordinates to appropriate stations without any explicit mapping. These results demonstrate that transit route planning can be learned entirely from data, enabling end-to-end, map-free route generation directly from origin-destination information. The dataset and benchmark are available at https://huggingface.co/datasets/GD-ML/TransitLM, with evaluation code at https://github.com/HotTricker/TransitLM.",
+        "summary": "Multimodal Large Language Models (MLLMs) are increasingly deployed in human-facing roles where personality perception is critical, yet existing benchmarks evaluate this capability solely on numerical Big Five score prediction, leaving open whether models truly perceive personality through behavioral understanding or merely prejudge through superficial pattern matching. We address this gap with three contributions. (i) A new task: we formalize Grounded Personality Reasoning (GPR), which requires MLLMs to anchor each Big Five rating in observable evidence through a chain of rating, reasoning, and grounding. (ii) A new dataset: we release MM-OCEAN (1,104 videos, 5,320 MCQs), produced by a multi-agent pipeline with human verification, with timestamped behavioral observations, evidence-grounded trait analyses, and seven categories of cue-grounding MCQs. (iii) Benchmark and analysis: we design a three-tier evaluation (rating, reasoning, grounding) plus four sample-level failure-mode metrics: Prejudice Rate (PR), Confabulation Rate (CR), Integration-failure Rate (IR), and Holistic-grounding Rate (HR), and benchmark 27 MLLMs (13 closed, 14 open). The analysis uncovers a striking Prejudice Gap: across the field, 51% of correct ratings are not grounded in retrieved cues, and the Holistic-Grounding Rate spans only 0-33.5%. These findings expose a disconnect between getting the right score and reasoning for the right reason, charting a roadmap for grounded social cognition in MLLMs.",
         "categories": [
-          "cs.CL",
           "cs.AI",
-          "cs.LG"
+          "cs.CV",
+          "cs.CY"
         ],
-        "published": "2026-05-21T11:42:33+00:00",
-        "updated": "2026-05-21T11:42:33+00:00",
-        "pdf_url": "https://arxiv.org/pdf/2605.22355v1",
-        "abs_url": "https://arxiv.org/abs/2605.22355",
+        "published": "2026-05-21T07:42:47+00:00",
+        "updated": "2026-05-21T07:42:47+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2605.22109v1",
+        "abs_url": "https://arxiv.org/abs/2605.22109",
         "track": "ai",
         "slot": "latest",
         "citation_count": 0,
@@ -85,43 +79,44 @@
         "matched_keywords": [],
         "affiliations": [],
         "source": "huggingface",
-        "hf_upvotes": 169,
-        "title_ko": "TransitLM: 지도 없이 대중교통 경로를 생성하기 위한 대규모 데이터셋 및 벤치마크",
-        "summary_ko": "- 기존 대중교통 경로 계획은 지도 인프라와 복잡한 라우팅 엔진에 의존하며, 이를 우회하는 모델 학습용 데이터셋은 없었습니다.\n- 본 연구는 4개 중국 도시의 1,300만 개 이상 대중교통 경로 기록을 담은 대규모 데이터셋 TransitLM을 제안합니다.\n- TransitLM은 12만 845개 역과 1만 3,666개 노선을 포함하며, 연속 사전 학습 코퍼스 및 벤치마크로 활용됩니다.\n- 실험 결과, TransitLM으로 학습된 LLM은 높은 정확도로 유효한 경로를 생성하고 GPS 좌표를 역에 암묵적으로 연결합니다.\n- 이는 대중교통 경로 계획이 데이터만으로 학습 가능하며, 출발지-목적지 정보로부터 종단간(end-to-end) 지도 없는 경로 생성을 가능하게 함을 보여줍니다.",
+        "hf_upvotes": 163,
+        "title_ko": "인식인가 편견인가: MLLM은 성격에 대한 첫인상을 넘어설 수 있는가?",
+        "summary_ko": "- MLLM이 사람의 성격을 평가할 때, 행동 이해 대신 피상적 패턴 매칭에 의존하는 한계가 있습니다.\n- 본 연구는 MLLM이 성격 특성(Big Five)을 관찰 가능한 증거에 기반하여 추론하는 GPR(Grounded Personality Reasoning) 과제를 제안합니다.\n- 이를 위해 행동 관찰, 특성 분석, 단서 기반 질문을 포함한 MM-OCEAN 데이터셋(1,104개 영상, 5,320개 MCQ)을 구축했습니다.\n- 27개 MLLM을 평가한 결과, 정확한 성격 평가 중 51%가 실제 단서에 기반하지 않는 '편견 격차(Prejudice Gap)'가 발견되었습니다.\n- 이 연구는 MLLM의 사회적 인지 능력 향상을 위한 새로운 평가 방법과 방향을 제시합니다.",
         "tags": [
-          "대중교통 경로",
-          "대규모 언어 모델(LLM)",
-          "데이터셋",
-          "기계 학습"
+          "MLLM",
+          "성격 인식",
+          "편견 격차",
+          "사회적 인지"
         ]
       }
     ],
     "mech": [
       {
-        "arxiv_id": "2510.14830",
-        "title": "RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning",
+        "arxiv_id": "2507.05198",
+        "title": "EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling",
         "authors": [
-          "Kun Lei",
-          "Huanyu Li",
-          "Dongjie Yu",
-          "Zhenyu Wei",
-          "Lingxiao Guo",
-          "Zhennan Jiang",
-          "Ziyu Wang",
-          "Shiyu Liang",
-          "Huazhe Xu"
+          "Boyuan Wang",
+          "Xinpan Meng",
+          "Xiaofeng Wang",
+          "Zheng Zhu",
+          "Angen Ye",
+          "Yang Wang",
+          "Zhiqin Yang",
+          "Chaojun Ni",
+          "Guan Huang",
+          "Xingang Wang"
         ],
-        "summary": "Real-world robotic manipulation in homes and factories demands reliability, efficiency, and robustness that approach or surpass those of skilled human operators. We present RL-100, a real-world reinforcement learning framework built on diffusion visuomotor policies. RL-100 unifies imitation and reinforcement learning under a single clipped PPO surrogate objective applied within the denoising process, yielding conservative and stable improvements across offline and online stages. To meet deployment latency requirements, a lightweight consistency distillation method compresses multi-step diffusion into a one-step controller for high-frequency control. The framework is task-, embodiment-, and representation-agnostic, and supports both single-action and action-chunking control. We evaluate RL-100 on eight diverse real-robot tasks, from dynamic pushing and agile bowling to pouring, cloth folding, unscrewing, multi-stage juicing, and long-horizon box folding. RL-100 attains 100 percent success across evaluated trials, for a total of 1000 out of 1000 episodes, including up to 250 out of 250 consecutive trials on one task. It matches or surpasses expert teleoperators in time to completion. Without retraining, a single policy attains approximately 90 percent zero-shot success under environmental and dynamics shifts, adapts in a few-shot regime to significant task variations (86.7 percent), and remains robust to aggressive human perturbations (about 96 percent). Notably, our juicing robot served random customers continuously for about seven hours without failure when deployed zero-shot in a shopping mall. These results suggest a practical path to deployment-ready robot learning by starting from human priors, aligning training objectives with human-grounded metrics, and reliably extending performance beyond human demonstrations.",
+        "summary": "The rapid advancement of Embodied AI has led to an increasing demand for large-scale, high-quality real-world data. However, collecting such embodied data remains costly and inefficient. As a result, simulation environments have become a crucial surrogate for training robot policies. Yet, the significant Real2Sim2Real gap remains a critical bottleneck, particularly in terms of physical dynamics and visual appearance. To address this challenge, we propose EmbodieDreamer, a novel framework that reduces the Real2Sim2Real gap from both the physics and appearance perspectives. Specifically, we propose PhysAligner, a differentiable physics module designed to reduce the Real2Sim physical gap. It jointly optimizes robot-specific parameters such as control gains and friction coefficients to better align simulated dynamics with real-world observations. In addition, we introduce VisAligner, which incorporates a conditional video diffusion model to bridge the Sim2Real appearance gap by translating low-fidelity simulated renderings into photorealistic videos conditioned on simulation states, enabling high-fidelity visual transfer. Extensive experiments validate the effectiveness of EmbodieDreamer. The proposed PhysAligner reduces physical parameter estimation error by 3.74% compared to simulated annealing methods while improving optimization speed by 89.91\\%. Moreover, training robot policies in the generated photorealistic environment leads to a 29.17% improvement in the average task success rate across real-world tasks after reinforcement learning. Code, model and data will be publicly available.",
         "categories": [],
-        "published": "2025-10-16T00:00:00+00:00",
-        "updated": "2025-10-16T00:00:00+00:00",
+        "published": "2025-07-07T00:00:00+00:00",
+        "updated": "2025-07-07T00:00:00+00:00",
         "pdf_url": "",
-        "abs_url": "https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb",
+        "abs_url": "https://www.semanticscholar.org/paper/7e89bb838e2a662b18672a15f7c2245638198a7d",
         "track": "mech",
         "slot": "impact",
-        "citation_count": 30,
-        "influential_citation_count": 3,
-        "s2_url": "https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb",
+        "citation_count": 26,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/7e89bb838e2a662b18672a15f7c2245638198a7d",
         "tldr": null,
         "matched_keywords": [
           "reinforcement learning",
@@ -130,81 +125,72 @@
         "affiliations": [],
         "source": "s2_search",
         "hf_upvotes": null,
-        "title_ko": "RL-100: 실제 환경 강화 학습을 통한 고성능 로봇 조작",
-        "summary_ko": "- 가정 및 공장 환경에서 로봇 조작은 인간 작업자 수준의 신뢰성과 효율성이 요구됩니다.\n- RL-100은 모방 학습과 강화 학습을 통합한 확산 시각운동 정책 기반 프레임워크입니다.\n- 이 프레임워크는 PPO(Proximal Policy Optimization) 목표를 활용하여 안정적인 성능 개선을 이룹니다.\n- RL-100은 8가지 실제 로봇 작업에서 100% 성공률을 달성했으며, 총 1000회 중 1000회 성공했습니다.\n- 사람의 사전 지식을 활용하여 실제 배포 가능한 로봇 학습의 실용적인 길을 제시합니다.",
+        "title_ko": "EmbodieDreamer: 구현된 세계 모델링을 통한 정책 훈련을 위한 Real2Sim2Real 전이 발전",
+        "summary_ko": "- 로봇 정책 훈련에 시뮬레이션 환경이 중요하지만, 현실과 시뮬레이션 간의 큰 격차가 문제입니다.\n- 이 논문은 물리(physics)와 외형(appearance) 두 가지 측면에서 격차를 줄이는 EmbodieDreamer 프레임워크를 제안합니다.\n- PhysAligner는 미분 가능한 물리 모듈로 시뮬레이션 역학을 현실에 맞추고, VisAligner는 조건부 비디오 확산 모델로 시뮬레이션 렌더링을 사실적인 영상으로 변환합니다.\n- PhysAligner는 물리 매개변수 추정 오류를 3.74% 줄이고 최적화 속도를 89.91% 향상했습니다.\n- 생성된 사실적인 환경에서 로봇 정책을 훈련하면 실제 작업 성공률이 평균 29.17% 개선됩니다.",
         "tags": [
-          "로봇 조작",
+          "로봇 공학",
+          "시뮬레이션-현실 전이",
           "강화 학습",
-          "확산 모델",
-          "실세계 적용"
+          "컴퓨터 비전"
         ]
       },
       {
-        "arxiv_id": "doi:10.1109/TPEL.2026.3653861",
-        "title": "Parameter Estimation of Power Electronic Converter by Affine Physics-Informed Gaussian Processes",
+        "arxiv_id": "doi:10.1109/TSMC.2026.3658893",
+        "title": "Zhang Neural Network Model for Time-Variant Convex Optimization Involving Nonlinear Inequality Constraints With Robotic Application",
         "authors": [
-          "Marcel Zimmer",
-          "M. Milton",
-          "D. Cucak",
-          "T. Pesch",
-          "Herbert L. Ginn",
-          "Andrea Benigni"
+          "Jielong Chen",
+          "Yan Pan",
+          "Yunong Zhang"
         ],
-        "summary": "Noninvasive extraction of converter parameters under specific operational conditions, often referred to as digital twinning, enables detailed insights into power electronics devices under real conditions. In this work, power electronics parameter estimation is addressed by proposing the construction of affine operators applied to physics-informed Gaussian processes. In particular, we show that the proposed parameter estimation technique has the following four key features: first, any converter parameter of interest can be estimated. second, noisy measurements are explicitly addressed. third, the converter parameters are characterized subject to the specific operational regime. four, The estimation accuracy is within the error margin of experimental characterization. Regarding model-building aspects, we define a dedicated noise-handling scheme that allows outperforming alternative algorithms when applied to hardware tests. We analyze the numerical stability of the presented approach and define a self-consistent normalization scheme allowing a reliable and numerically stable application. The proposed approach is theoretically discussed, analyzed within a simulation environment, and verified experimentally. For the latter, we investigate a hardware test addressing the two most prominent converter topologies, i.e., buck and boost topologies. Converter parameters are accurately estimated with an accuracy matched by experimental characterization error margins.",
+        "summary": "Time-variant convex optimization involving nonlinear inequality constraints (TVCOINICs) is a challenging problem due to the nonlinearity and time-variant nature of its objective function and multitype constraints. Differing from traditional slack variables and projection operator methods, this article proposes a novel differentiable transform function that is continuous and differentiable everywhere, while eschewing the need for additional tunable hyperparameters. On the basis of the Lagrange multiplier technique and Karush–Kuhn–Tucker (KKT) conditions, the initial time-variant optimization problem is converted into a time-variant nonlinear system comprising both equalities and inequalities. By employing the proposed differentiable transform function, this system is then further refined into an equivalent time-variant nonlinear system of equalities. Subsequently, the comprehensive design process of the differentiable transform function-based Zhang neural network (DTFZNN) model is delineated, which, through the comprehensive utilization of the time derivatives and error feedback information, is capable of adeptly addressing the TVCOINICs problem. Moreover, sliding mode control (SMC) is integrated into the proposed model to endow it with verified noise-suppression capability. The relevant theorems prove its convergence and robustness, and corresponding numerical experiments verify its effectiveness. Ultimately, to evaluate the practical efficacy of the proposed model, the proposed model is implemented to address the path tracking and repetitive motion problem associated with a robotic arm, thereby illustrating its superiority in solving practical problems.",
         "categories": [],
-        "published": "2026-07-01T00:00:00+00:00",
-        "updated": "2026-07-01T00:00:00+00:00",
+        "published": "2026-06-01T00:00:00+00:00",
+        "updated": "2026-06-01T00:00:00+00:00",
         "pdf_url": "",
-        "abs_url": "https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579",
+        "abs_url": "https://www.semanticscholar.org/paper/82af4e1adac6f9fbd4c00b97a8592e7eb1a5e38d",
         "track": "mech",
         "slot": "latest",
         "citation_count": 0,
         "influential_citation_count": 0,
-        "s2_url": "https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579",
+        "s2_url": "https://www.semanticscholar.org/paper/82af4e1adac6f9fbd4c00b97a8592e7eb1a5e38d",
         "tldr": null,
         "matched_keywords": [
-          "physics-informed",
-          "digital twin"
+          "neural network",
+          "robot"
         ],
         "affiliations": [],
         "source": "s2_search",
         "hf_upvotes": null,
-        "title_ko": "",
-        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-        "tags": []
+        "title_ko": "로봇 응용을 위한 비선형 부등식 제약 조건을 포함하는 시간 가변 볼록 최적화 문제 해결을 위한 Zhang 신경망 모델",
+        "summary_ko": "- 비선형 및 시간 가변 특성 때문에 시간 가변 볼록 최적화(TVCOINICs)는 어려운 문제입니다.\n- 이 논문은 추가 하이퍼파라미터 없이 연속적이고 미분 가능한 변환 함수를 제안합니다.\n- 제안된 함수는 라그랑주 승수 기법과 KKT 조건을 활용하여 최적화 문제를 동등한 비선형 등식 시스템으로 변환합니다.\n- 시간 미분과 오류 피드백을 활용하는 DTFZNN 모델은 TVCOINICs를 해결하며, 슬라이딩 모드 제어(SMC)로 잡음 억제 기능을 강화합니다.\n- 제안 모델은 수치 실험과 로봇 팔 경로 추적 및 반복 동작 문제 해결을 통해 효과와 실용적 우수성을 입증합니다.",
+        "tags": [
+          "시간 가변 최적화",
+          "Zhang 신경망",
+          "로봇 공학",
+          "비선형 제약"
+        ]
       }
     ]
   },
   "papers": [
     {
-      "arxiv_id": "2605.23904",
-      "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+      "arxiv_id": "2605.23903",
+      "title": "Geo-Align: Video Generation Alignment via Metric Geometry Reward",
       "authors": [
-        "Yifan Yang",
-        "Ziyang Gong",
-        "Weiquan Huang",
-        "Qihao Yang",
-        "Ziwei Zhou",
-        "Zisu Huang",
-        "Yan Li",
-        "Xuemei Gao",
-        "Qi Dai",
-        "Bei Liu",
-        "Kai Qiu",
-        "Yuqing Yang",
-        "Dongdong Chen",
-        "Xue Yang",
-        "Chong Luo"
+        "Zizun Li",
+        "Haoyu Guo",
+        "Runzhe Teng",
+        "Chunhua Shen",
+        "Tong He"
       ],
-      "summary": "Agent skills today are hand-crafted, generated one-shot, or evolved through loosely controlled self-revision, none of which behaves like a deep-learning optimizer for the skill, and none of which reliably improves over its starting point under feedback. We argue the skill should instead be trained as the external state of a frozen agent, with the same discipline that makes weight-space optimization reproducible. SkillOpt is, to our knowledge, the first systematic controllable text-space optimizer for agent skills: a separate optimizer model turns scored rollouts into bounded add/delete/replace edits on a single skill document, and an edit is accepted only when it strictly improves a held-out validation score. A textual learning-rate budget, rejected-edit buffer, and epoch-wise slow/meta update make skill training stable while adding zero inference-time model calls at deployment. Across six benchmarks, seven target models, and three execution harnesses (direct chat, Codex, Claude Code), SkillOpt is best or tied on all 52 evaluated (model, benchmark, harness) cells and beats every per-cell competitor among human, one-shot LLM, Trace2Skill, TextGrad, GEPA, and EvoSkill skills. On GPT-5.5 it lifts the average no-skill accuracy by +23.5 points in direct chat, by +24.8 inside the Codex agentic loop, and by +19.1 inside Claude Code. Transfer experiments further show that optimized skill artifacts retain value when moved across model scales, between Codex and Claude Code execution environments, and to a nearby math benchmark without further optimization.",
+      "summary": "Camera-controlled video generation has achieved remarkable progress in recent years. However, existing video-to-video re-rendering methods primarily rely on Supervised Fine-Tuning using synthetic datasets. At present, there is an extreme scarcity of synchronized, multi-view real-world video data. Consequently, the prevailing paradigm often exhibits limited generalization when processing out-of-distribution real-world videos, with models struggling to accurately adhere to physical scales and camera trajectories. To bridge this gap, we propose Geo-Align, the first Reinforcement Learning framework specifically designed for camera-controlled video re-rendering. Built upon a pretrained model, we optimize the model through a scale-aware perceptual reward mechanism. Specifically, we introduce a metric 3D estimator to extract precise camera trajectories from generated videos, explicitly penalizing deviations in rotation and translation. Furthermore, we meticulously designed a data pipeline strategy based on real-world conditioning videos and target camera trajectories derived from synthetic data, eliminating the reliance on paired data. Extensive experiments demonstrate that Geo-Align consistently outperforms existing supervised learning baselines in both precise camera controllability and visual fidelity, indicating the effectiveness of our method.",
       "categories": [
-        "cs.AI",
-        "cs.CL"
+        "cs.CV"
       ],
-      "published": "2026-05-22T17:59:50+00:00",
-      "updated": "2026-05-22T17:59:50+00:00",
-      "pdf_url": "https://arxiv.org/pdf/2605.23904v1",
-      "abs_url": "https://arxiv.org/abs/2605.23904",
+      "published": "2026-05-22T17:59:43+00:00",
+      "updated": "2026-05-22T17:59:43+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2605.23903v1",
+      "abs_url": "https://arxiv.org/abs/2605.23903",
       "track": "ai",
       "slot": "impact",
       "citation_count": 0,
@@ -215,36 +201,41 @@
       "affiliations": [],
       "source": "arxiv",
       "hf_upvotes": null,
-      "title_ko": "SkillOpt: 스스로 진화하는 에이전트 기술을 위한 실행 전략",
-      "summary_ko": "- 기존 에이전트 기술은 수작업, 일회성 생성, 또는 느슨한 자가 수정으로 개발되어 신뢰성 있는 개선이 어려웠습니다.\n- SkillOpt는 에이전트 기술을 고정된 에이전트의 외부 상태로 훈련하는 체계적인 텍스트 공간 최적화 방법입니다.\n- 별도의 최적화 모델이 점수화된 실행 결과를 바탕으로 기술 문서에 추가/삭제/교체 편집을 제안하고, 유효성 검사 점수가 향상될 때만 적용합니다.\n- SkillOpt는 6개 벤치마크, 7개 모델, 3개 실행 환경에서 모든 52개 평가 항목에서 최고 성능을 달성했으며, GPT-5.5에서 평균 정확도를 19.1~24.8점 향상시켰습니다.\n- 이 방법은 배포 시 추가 추론 호출 없이 안정적인 기술 훈련을 가능하게 하며, 최적화된 기술의 전이성도 입증했습니다.",
+      "title_ko": "Geo-Align: 계량 기하학 보상을 통한 비디오 생성 정렬",
+      "summary_ko": "- 카메라 제어 비디오 생성은 발전했지만, 기존 방식은 합성 데이터 의존으로 실세계 영상에 대한 일반화가 부족합니다.\n- 본 논문은 카메라 제어 비디오 재렌더링을 위한 최초의 강화 학습(Reinforcement Learning) 프레임워크인 Geo-Align을 제안합니다.\n- Geo-Align은 사전 학습된 모델을 기반으로, 스케일 인지 지각 보상 메커니즘과 3D 추정기를 통해 카메라 궤적 편차를 제어합니다.\n- 합성 데이터에서 추출한 목표 궤적과 실세계 영상을 활용하여, 짝지어진 데이터(paired data) 없이 학습하는 데이터 파이프라인을 설계했습니다.\n- Geo-Align은 기존 지도 학습(supervised learning) 방식보다 정확한 카메라 제어와 시각적 충실도에서 뛰어난 성능을 보였습니다.",
       "tags": [
-        "에이전트 기술",
-        "텍스트 최적화",
-        "LLM",
-        "자가 학습"
+        "비디오 생성",
+        "강화 학습",
+        "카메라 제어",
+        "3D 추정"
       ]
     },
     {
-      "arxiv_id": "2605.22355",
-      "title": "TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation",
+      "arxiv_id": "2605.22109",
+      "title": "Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?",
       "authors": [
-        "Hanyu Guo",
-        "Jiedong Yang",
-        "Chao Chen",
-        "Longfei Xu",
-        "Kaikui Liu",
-        "Xiangxiang Chu"
+        "Caixin Kang",
+        "Tianyu Yan",
+        "Sitong Gong",
+        "Mingfang Zhang",
+        "Liangyang Ouyang",
+        "Ruicong Liu",
+        "Bo Zheng",
+        "Huchuan Lu",
+        "Kaipeng Zhang",
+        "Yoichi Sato",
+        "Yifei Huang"
       ],
-      "summary": "Public transit route planning traditionally depends on structured map infrastructure and complex routing engines, and no existing dataset supports training models to bypass this dependency. We present TransitLM, a large-scale dataset of over 13 million transit route planning records from four Chinese cities covering 120,845 stations and 13,666 lines, released as a continual pre-training corpus and benchmark data for three evaluation tasks with complementary metrics. Experiments show that an LLM trained on TransitLM produces structurally valid routes at high accuracy and implicitly grounds arbitrary GPS coordinates to appropriate stations without any explicit mapping. These results demonstrate that transit route planning can be learned entirely from data, enabling end-to-end, map-free route generation directly from origin-destination information. The dataset and benchmark are available at https://huggingface.co/datasets/GD-ML/TransitLM, with evaluation code at https://github.com/HotTricker/TransitLM.",
+      "summary": "Multimodal Large Language Models (MLLMs) are increasingly deployed in human-facing roles where personality perception is critical, yet existing benchmarks evaluate this capability solely on numerical Big Five score prediction, leaving open whether models truly perceive personality through behavioral understanding or merely prejudge through superficial pattern matching. We address this gap with three contributions. (i) A new task: we formalize Grounded Personality Reasoning (GPR), which requires MLLMs to anchor each Big Five rating in observable evidence through a chain of rating, reasoning, and grounding. (ii) A new dataset: we release MM-OCEAN (1,104 videos, 5,320 MCQs), produced by a multi-agent pipeline with human verification, with timestamped behavioral observations, evidence-grounded trait analyses, and seven categories of cue-grounding MCQs. (iii) Benchmark and analysis: we design a three-tier evaluation (rating, reasoning, grounding) plus four sample-level failure-mode metrics: Prejudice Rate (PR), Confabulation Rate (CR), Integration-failure Rate (IR), and Holistic-grounding Rate (HR), and benchmark 27 MLLMs (13 closed, 14 open). The analysis uncovers a striking Prejudice Gap: across the field, 51% of correct ratings are not grounded in retrieved cues, and the Holistic-Grounding Rate spans only 0-33.5%. These findings expose a disconnect between getting the right score and reasoning for the right reason, charting a roadmap for grounded social cognition in MLLMs.",
       "categories": [
-        "cs.CL",
         "cs.AI",
-        "cs.LG"
+        "cs.CV",
+        "cs.CY"
       ],
-      "published": "2026-05-21T11:42:33+00:00",
-      "updated": "2026-05-21T11:42:33+00:00",
-      "pdf_url": "https://arxiv.org/pdf/2605.22355v1",
-      "abs_url": "https://arxiv.org/abs/2605.22355",
+      "published": "2026-05-21T07:42:47+00:00",
+      "updated": "2026-05-21T07:42:47+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2605.22109v1",
+      "abs_url": "https://arxiv.org/abs/2605.22109",
       "track": "ai",
       "slot": "latest",
       "citation_count": 0,
@@ -254,41 +245,42 @@
       "matched_keywords": [],
       "affiliations": [],
       "source": "huggingface",
-      "hf_upvotes": 169,
-      "title_ko": "TransitLM: 지도 없이 대중교통 경로를 생성하기 위한 대규모 데이터셋 및 벤치마크",
-      "summary_ko": "- 기존 대중교통 경로 계획은 지도 인프라와 복잡한 라우팅 엔진에 의존하며, 이를 우회하는 모델 학습용 데이터셋은 없었습니다.\n- 본 연구는 4개 중국 도시의 1,300만 개 이상 대중교통 경로 기록을 담은 대규모 데이터셋 TransitLM을 제안합니다.\n- TransitLM은 12만 845개 역과 1만 3,666개 노선을 포함하며, 연속 사전 학습 코퍼스 및 벤치마크로 활용됩니다.\n- 실험 결과, TransitLM으로 학습된 LLM은 높은 정확도로 유효한 경로를 생성하고 GPS 좌표를 역에 암묵적으로 연결합니다.\n- 이는 대중교통 경로 계획이 데이터만으로 학습 가능하며, 출발지-목적지 정보로부터 종단간(end-to-end) 지도 없는 경로 생성을 가능하게 함을 보여줍니다.",
+      "hf_upvotes": 163,
+      "title_ko": "인식인가 편견인가: MLLM은 성격에 대한 첫인상을 넘어설 수 있는가?",
+      "summary_ko": "- MLLM이 사람의 성격을 평가할 때, 행동 이해 대신 피상적 패턴 매칭에 의존하는 한계가 있습니다.\n- 본 연구는 MLLM이 성격 특성(Big Five)을 관찰 가능한 증거에 기반하여 추론하는 GPR(Grounded Personality Reasoning) 과제를 제안합니다.\n- 이를 위해 행동 관찰, 특성 분석, 단서 기반 질문을 포함한 MM-OCEAN 데이터셋(1,104개 영상, 5,320개 MCQ)을 구축했습니다.\n- 27개 MLLM을 평가한 결과, 정확한 성격 평가 중 51%가 실제 단서에 기반하지 않는 '편견 격차(Prejudice Gap)'가 발견되었습니다.\n- 이 연구는 MLLM의 사회적 인지 능력 향상을 위한 새로운 평가 방법과 방향을 제시합니다.",
       "tags": [
-        "대중교통 경로",
-        "대규모 언어 모델(LLM)",
-        "데이터셋",
-        "기계 학습"
+        "MLLM",
+        "성격 인식",
+        "편견 격차",
+        "사회적 인지"
       ]
     },
     {
-      "arxiv_id": "2510.14830",
-      "title": "RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning",
+      "arxiv_id": "2507.05198",
+      "title": "EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling",
       "authors": [
-        "Kun Lei",
-        "Huanyu Li",
-        "Dongjie Yu",
-        "Zhenyu Wei",
-        "Lingxiao Guo",
-        "Zhennan Jiang",
-        "Ziyu Wang",
-        "Shiyu Liang",
-        "Huazhe Xu"
+        "Boyuan Wang",
+        "Xinpan Meng",
+        "Xiaofeng Wang",
+        "Zheng Zhu",
+        "Angen Ye",
+        "Yang Wang",
+        "Zhiqin Yang",
+        "Chaojun Ni",
+        "Guan Huang",
+        "Xingang Wang"
       ],
-      "summary": "Real-world robotic manipulation in homes and factories demands reliability, efficiency, and robustness that approach or surpass those of skilled human operators. We present RL-100, a real-world reinforcement learning framework built on diffusion visuomotor policies. RL-100 unifies imitation and reinforcement learning under a single clipped PPO surrogate objective applied within the denoising process, yielding conservative and stable improvements across offline and online stages. To meet deployment latency requirements, a lightweight consistency distillation method compresses multi-step diffusion into a one-step controller for high-frequency control. The framework is task-, embodiment-, and representation-agnostic, and supports both single-action and action-chunking control. We evaluate RL-100 on eight diverse real-robot tasks, from dynamic pushing and agile bowling to pouring, cloth folding, unscrewing, multi-stage juicing, and long-horizon box folding. RL-100 attains 100 percent success across evaluated trials, for a total of 1000 out of 1000 episodes, including up to 250 out of 250 consecutive trials on one task. It matches or surpasses expert teleoperators in time to completion. Without retraining, a single policy attains approximately 90 percent zero-shot success under environmental and dynamics shifts, adapts in a few-shot regime to significant task variations (86.7 percent), and remains robust to aggressive human perturbations (about 96 percent). Notably, our juicing robot served random customers continuously for about seven hours without failure when deployed zero-shot in a shopping mall. These results suggest a practical path to deployment-ready robot learning by starting from human priors, aligning training objectives with human-grounded metrics, and reliably extending performance beyond human demonstrations.",
+      "summary": "The rapid advancement of Embodied AI has led to an increasing demand for large-scale, high-quality real-world data. However, collecting such embodied data remains costly and inefficient. As a result, simulation environments have become a crucial surrogate for training robot policies. Yet, the significant Real2Sim2Real gap remains a critical bottleneck, particularly in terms of physical dynamics and visual appearance. To address this challenge, we propose EmbodieDreamer, a novel framework that reduces the Real2Sim2Real gap from both the physics and appearance perspectives. Specifically, we propose PhysAligner, a differentiable physics module designed to reduce the Real2Sim physical gap. It jointly optimizes robot-specific parameters such as control gains and friction coefficients to better align simulated dynamics with real-world observations. In addition, we introduce VisAligner, which incorporates a conditional video diffusion model to bridge the Sim2Real appearance gap by translating low-fidelity simulated renderings into photorealistic videos conditioned on simulation states, enabling high-fidelity visual transfer. Extensive experiments validate the effectiveness of EmbodieDreamer. The proposed PhysAligner reduces physical parameter estimation error by 3.74% compared to simulated annealing methods while improving optimization speed by 89.91\\%. Moreover, training robot policies in the generated photorealistic environment leads to a 29.17% improvement in the average task success rate across real-world tasks after reinforcement learning. Code, model and data will be publicly available.",
       "categories": [],
-      "published": "2025-10-16T00:00:00+00:00",
-      "updated": "2025-10-16T00:00:00+00:00",
+      "published": "2025-07-07T00:00:00+00:00",
+      "updated": "2025-07-07T00:00:00+00:00",
       "pdf_url": "",
-      "abs_url": "https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb",
+      "abs_url": "https://www.semanticscholar.org/paper/7e89bb838e2a662b18672a15f7c2245638198a7d",
       "track": "mech",
       "slot": "impact",
-      "citation_count": 30,
-      "influential_citation_count": 3,
-      "s2_url": "https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb",
+      "citation_count": 26,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/7e89bb838e2a662b18672a15f7c2245638198a7d",
       "tldr": null,
       "matched_keywords": [
         "reinforcement learning",
@@ -297,48 +289,50 @@
       "affiliations": [],
       "source": "s2_search",
       "hf_upvotes": null,
-      "title_ko": "RL-100: 실제 환경 강화 학습을 통한 고성능 로봇 조작",
-      "summary_ko": "- 가정 및 공장 환경에서 로봇 조작은 인간 작업자 수준의 신뢰성과 효율성이 요구됩니다.\n- RL-100은 모방 학습과 강화 학습을 통합한 확산 시각운동 정책 기반 프레임워크입니다.\n- 이 프레임워크는 PPO(Proximal Policy Optimization) 목표를 활용하여 안정적인 성능 개선을 이룹니다.\n- RL-100은 8가지 실제 로봇 작업에서 100% 성공률을 달성했으며, 총 1000회 중 1000회 성공했습니다.\n- 사람의 사전 지식을 활용하여 실제 배포 가능한 로봇 학습의 실용적인 길을 제시합니다.",
+      "title_ko": "EmbodieDreamer: 구현된 세계 모델링을 통한 정책 훈련을 위한 Real2Sim2Real 전이 발전",
+      "summary_ko": "- 로봇 정책 훈련에 시뮬레이션 환경이 중요하지만, 현실과 시뮬레이션 간의 큰 격차가 문제입니다.\n- 이 논문은 물리(physics)와 외형(appearance) 두 가지 측면에서 격차를 줄이는 EmbodieDreamer 프레임워크를 제안합니다.\n- PhysAligner는 미분 가능한 물리 모듈로 시뮬레이션 역학을 현실에 맞추고, VisAligner는 조건부 비디오 확산 모델로 시뮬레이션 렌더링을 사실적인 영상으로 변환합니다.\n- PhysAligner는 물리 매개변수 추정 오류를 3.74% 줄이고 최적화 속도를 89.91% 향상했습니다.\n- 생성된 사실적인 환경에서 로봇 정책을 훈련하면 실제 작업 성공률이 평균 29.17% 개선됩니다.",
       "tags": [
-        "로봇 조작",
+        "로봇 공학",
+        "시뮬레이션-현실 전이",
         "강화 학습",
-        "확산 모델",
-        "실세계 적용"
+        "컴퓨터 비전"
       ]
     },
     {
-      "arxiv_id": "doi:10.1109/TPEL.2026.3653861",
-      "title": "Parameter Estimation of Power Electronic Converter by Affine Physics-Informed Gaussian Processes",
+      "arxiv_id": "doi:10.1109/TSMC.2026.3658893",
+      "title": "Zhang Neural Network Model for Time-Variant Convex Optimization Involving Nonlinear Inequality Constraints With Robotic Application",
       "authors": [
-        "Marcel Zimmer",
-        "M. Milton",
-        "D. Cucak",
-        "T. Pesch",
-        "Herbert L. Ginn",
-        "Andrea Benigni"
+        "Jielong Chen",
+        "Yan Pan",
+        "Yunong Zhang"
       ],
-      "summary": "Noninvasive extraction of converter parameters under specific operational conditions, often referred to as digital twinning, enables detailed insights into power electronics devices under real conditions. In this work, power electronics parameter estimation is addressed by proposing the construction of affine operators applied to physics-informed Gaussian processes. In particular, we show that the proposed parameter estimation technique has the following four key features: first, any converter parameter of interest can be estimated. second, noisy measurements are explicitly addressed. third, the converter parameters are characterized subject to the specific operational regime. four, The estimation accuracy is within the error margin of experimental characterization. Regarding model-building aspects, we define a dedicated noise-handling scheme that allows outperforming alternative algorithms when applied to hardware tests. We analyze the numerical stability of the presented approach and define a self-consistent normalization scheme allowing a reliable and numerically stable application. The proposed approach is theoretically discussed, analyzed within a simulation environment, and verified experimentally. For the latter, we investigate a hardware test addressing the two most prominent converter topologies, i.e., buck and boost topologies. Converter parameters are accurately estimated with an accuracy matched by experimental characterization error margins.",
+      "summary": "Time-variant convex optimization involving nonlinear inequality constraints (TVCOINICs) is a challenging problem due to the nonlinearity and time-variant nature of its objective function and multitype constraints. Differing from traditional slack variables and projection operator methods, this article proposes a novel differentiable transform function that is continuous and differentiable everywhere, while eschewing the need for additional tunable hyperparameters. On the basis of the Lagrange multiplier technique and Karush–Kuhn–Tucker (KKT) conditions, the initial time-variant optimization problem is converted into a time-variant nonlinear system comprising both equalities and inequalities. By employing the proposed differentiable transform function, this system is then further refined into an equivalent time-variant nonlinear system of equalities. Subsequently, the comprehensive design process of the differentiable transform function-based Zhang neural network (DTFZNN) model is delineated, which, through the comprehensive utilization of the time derivatives and error feedback information, is capable of adeptly addressing the TVCOINICs problem. Moreover, sliding mode control (SMC) is integrated into the proposed model to endow it with verified noise-suppression capability. The relevant theorems prove its convergence and robustness, and corresponding numerical experiments verify its effectiveness. Ultimately, to evaluate the practical efficacy of the proposed model, the proposed model is implemented to address the path tracking and repetitive motion problem associated with a robotic arm, thereby illustrating its superiority in solving practical problems.",
       "categories": [],
-      "published": "2026-07-01T00:00:00+00:00",
-      "updated": "2026-07-01T00:00:00+00:00",
+      "published": "2026-06-01T00:00:00+00:00",
+      "updated": "2026-06-01T00:00:00+00:00",
       "pdf_url": "",
-      "abs_url": "https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579",
+      "abs_url": "https://www.semanticscholar.org/paper/82af4e1adac6f9fbd4c00b97a8592e7eb1a5e38d",
       "track": "mech",
       "slot": "latest",
       "citation_count": 0,
       "influential_citation_count": 0,
-      "s2_url": "https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579",
+      "s2_url": "https://www.semanticscholar.org/paper/82af4e1adac6f9fbd4c00b97a8592e7eb1a5e38d",
       "tldr": null,
       "matched_keywords": [
-        "physics-informed",
-        "digital twin"
+        "neural network",
+        "robot"
       ],
       "affiliations": [],
       "source": "s2_search",
       "hf_upvotes": null,
-      "title_ko": "",
-      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-      "tags": []
+      "title_ko": "로봇 응용을 위한 비선형 부등식 제약 조건을 포함하는 시간 가변 볼록 최적화 문제 해결을 위한 Zhang 신경망 모델",
+      "summary_ko": "- 비선형 및 시간 가변 특성 때문에 시간 가변 볼록 최적화(TVCOINICs)는 어려운 문제입니다.\n- 이 논문은 추가 하이퍼파라미터 없이 연속적이고 미분 가능한 변환 함수를 제안합니다.\n- 제안된 함수는 라그랑주 승수 기법과 KKT 조건을 활용하여 최적화 문제를 동등한 비선형 등식 시스템으로 변환합니다.\n- 시간 미분과 오류 피드백을 활용하는 DTFZNN 모델은 TVCOINICs를 해결하며, 슬라이딩 모드 제어(SMC)로 잡음 억제 기능을 강화합니다.\n- 제안 모델은 수치 실험과 로봇 팔 경로 추적 및 반복 동작 문제 해결을 통해 효과와 실용적 우수성을 입증합니다.",
+      "tags": [
+        "시간 가변 최적화",
+        "Zhang 신경망",
+        "로봇 공학",
+        "비선형 제약"
+      ]
     }
   ]
 }
