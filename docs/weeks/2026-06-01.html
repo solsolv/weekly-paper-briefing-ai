@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-05-25 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
+<title>2026-06-01 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
 <meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -432,28 +432,28 @@
 <div class="wrap">
   <header class="site">
   <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-05-25</span>
+  <span class="eyebrow">2026-06-01</span>
   <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
   <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
   </header>
   <div class="toc reveal">
     <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
-        <a href="#p-2605.23903">
+        <a href="#p-2605.31340">
           <span class="badge ai">AI</span>
-          <span>Geo-Align: 계량 기하학 보상을 통한 비디오 생성 정렬</span>
+          <span>AI 공감의 적절성: 신호-비용 관점</span>
         </a>
-        <a href="#p-2605.22109">
+        <a href="#p-2605.30280">
           <span class="badge ai">AI</span>
-          <span>인식인가 편견인가: MLLM은 성격에 대한 첫인상을 넘어설 수 있는가?</span>
+          <span>Qwen-VLA: 작업, 환경, 로봇 구현체를 아우르는 시각-언어-행동 모델 통합</span>
         </a>
-        <a href="#p-2507.05198">
+        <a href="#p-2510.14830">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>EmbodieDreamer: 구현된 세계 모델링을 통한 정책 훈련을 위한 Real2Sim2Real 전이 발전</span>
+          <span>RL-100: 실제 환경 강화 학습을 통한 고성능 로봇 조작</span>
         </a>
-        <a href="#p-doi:10.1109/TSMC.2026.3658893">
+        <a href="#p-doi:10.1109/TPEL.2026.3653861">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>로봇 응용을 위한 비선형 부등식 제약 조건을 포함하는 시간 가변 볼록 최적화 문제 해결을 위한 Zhang 신경망 모델</span>
+          <span>어파인 물리 정보 가우시안 프로세스를 이용한 전력 전자 컨버터의 파라미터 추정</span>
         </a>
     </div>
   </div>
@@ -469,37 +469,37 @@
           AI
           <span class="badge ai">2편</span>
         </h2>
-          <article class="paper ai reveal" id="p-2605.23903" style="transition-delay: 0ms;">
+          <article class="paper ai reveal" id="p-2605.31340" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CV · 발표 2026-05-22<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2605.23903" target="_blank" rel="noopener">Geo-Align: Video Generation Alignment via Metric Geometry Reward</a></h3>
-<p class="title-ko">Geo-Align: 계량 기하학 보상을 통한 비디오 생성 정렬</p>            <div class="authors">Zizun Li, Haoyu Guo, Runzhe Teng, Chunhua Shen, Tong He</div>
+              cs.HC, cs.AI · 발표 2026-05-29<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2605.31340" target="_blank" rel="noopener">Appropriateness of Empathy in AI: A Signal-Cost Perspective</a></h3>
+<p class="title-ko">AI 공감의 적절성: 신호-비용 관점</p>            <div class="authors">Chi-Ching Juan, Tao Wang, Harold Lee</div>
             <div class="stats">
-            </div>
+<span class="chip">인용 1</span>            </div>
             <div class="summary">
               <ul>
-<li>카메라 제어 비디오 생성은 발전했지만, 기존 방식은 합성 데이터 의존으로 실세계 영상에 대한 일반화가 부족합니다.</li><li>본 논문은 카메라 제어 비디오 재렌더링을 위한 최초의 강화 학습(Reinforcement Learning) 프레임워크인 Geo-Align을 제안합니다.</li><li>Geo-Align은 사전 학습된 모델을 기반으로, 스케일 인지 지각 보상 메커니즘과 3D 추정기를 통해 카메라 궤적 편차를 제어합니다.</li><li>합성 데이터에서 추출한 목표 궤적과 실세계 영상을 활용하여, 짝지어진 데이터(paired data) 없이 학습하는 데이터 파이프라인을 설계했습니다.</li><li>Geo-Align은 기존 지도 학습(supervised learning) 방식보다 정확한 카메라 제어와 시각적 충실도에서 뛰어난 성능을 보였습니다.</li>              </ul>
+<li>AI 공감은 과하면 조작적으로, 부족하면 무시하는 것처럼 보여 적절성 문제가 중요합니다.</li><li>기존 연구는 AI 공감 정량화에 집중했으나, 상황 적절성에 대한 연구는 부족했습니다.</li><li>이 논문은 신호 이론(signaling theory)을 적용하여 AI 공감의 경제적 관점을 제시합니다.</li><li>감성적 풍부함, 관점 취하기, 상황 맞춤화를 신호 비용 대리 변수(Signal Cost Proxies)로 제안합니다.</li><li>이 다차원 프레임워크는 AI 공감의 존재뿐 아니라 사용자 요구에 대한 적절성을 평가합니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#비디오 생성</span><span class="tag">#강화 학습</span><span class="tag">#카메라 제어</span><span class="tag">#3D 추정</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2605.23903" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2605.23903v1" target="_blank" rel="noopener">PDF</a>
-            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> An economic perspective by applying signaling theory to human-AI conversation is introduced by applying signaling theory to human-AI conversation and proposes Signal Cost Proxies mapped to affective, cognitive, and associative empathy.</div><div class="tags"><span class="tag">#AI 공감</span><span class="tag">#신호 이론</span><span class="tag">#인간-AI 상호작용</span><span class="tag">#적절성 평가</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2605.31340" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2605.31340v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/d9d5c95d46ca79cddaa92b2cb711378dc9248b17" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
-          <article class="paper ai reveal" id="p-2605.22109" style="transition-delay: 60ms;">
+          <article class="paper ai reveal" id="p-2605.30280" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.AI, cs.CV, cs.CY · 발표 2026-05-21<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2605.22109" target="_blank" rel="noopener">Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?</a></h3>
-<p class="title-ko">인식인가 편견인가: MLLM은 성격에 대한 첫인상을 넘어설 수 있는가?</p>            <div class="authors">Caixin Kang, Tianyu Yan, Sitong Gong, Mingfang Zhang, Liangyang Ouyang, Ruicong Liu, Bo Zheng, Huchuan Lu 외 3명</div>
-            <div class="stats">
-<span class="chip">HF upvotes 163</span>            </div>
+              cs.RO, cs.AI, cs.CL · 발표 2026-05-28<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2605.30280" target="_blank" rel="noopener">Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments</a></h3>
+<p class="title-ko">Qwen-VLA: 작업, 환경, 로봇 구현체를 아우르는 시각-언어-행동 모델 통합</p>            <div class="authors">Qiuyue Wang, Mingsheng Li, Jian Guan, Jinhui Ye, Sicheng Xie, Yitao Liu, Junhao Chen, Zhixuan Liang 외 32명</div>
+<div class="affiliations">Northeastern University</div>            <div class="stats">
+<span class="chip">HF upvotes 121</span>            </div>
             <div class="summary">
               <ul>
-<li>MLLM이 사람의 성격을 평가할 때, 행동 이해 대신 피상적 패턴 매칭에 의존하는 한계가 있습니다.</li><li>본 연구는 MLLM이 성격 특성(Big Five)을 관찰 가능한 증거에 기반하여 추론하는 GPR(Grounded Personality Reasoning) 과제를 제안합니다.</li><li>이를 위해 행동 관찰, 특성 분석, 단서 기반 질문을 포함한 MM-OCEAN 데이터셋(1,104개 영상, 5,320개 MCQ)을 구축했습니다.</li><li>27개 MLLM을 평가한 결과, 정확한 성격 평가 중 51%가 실제 단서에 기반하지 않는 &#39;편견 격차(Prejudice Gap)&#39;가 발견되었습니다.</li><li>이 연구는 MLLM의 사회적 인지 능력 향상을 위한 새로운 평가 방법과 방향을 제시합니다.</li>              </ul>
+<li>기존 로봇 지능 모델은 특정 작업에 특화되어 일반화 및 확장성이 제한적입니다.</li><li>Qwen-VLA는 Qwen의 시각-언어 모델을 확장하여 연속적인 행동 및 궤적 생성까지 통합합니다.</li><li>다양한 로봇 조작, 인간 시점 시연, 시뮬레이션 데이터 등으로 모델을 사전 학습했습니다.</li><li>Qwen-VLA는 LIBERO 97.9%, R2R 69.0% 등 여러 벤치마크에서 높은 성능을 보였습니다.</li><li>이 모델은 다양한 로봇 형태와 환경에서 시각적 접지 및 공간 추론을 가능하게 합니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#MLLM</span><span class="tag">#성격 인식</span><span class="tag">#편견 격차</span><span class="tag">#사회적 인지</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2605.22109" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2605.22109v1" target="_blank" rel="noopener">PDF</a>
-            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> Qwen-VLA is presented, a unified embodied foundation model that extends Qwen&#39;s vision-language modeling stack from perception, understanding, and reasoning to continuous action and trajectory generation through a DiT-based action decoder, enabling transferable visual grounding, spatial reasoning, and continuous action generation across robot morphologies, task families, and environments.</div><div class="tags"><span class="tag">#로봇공학</span><span class="tag">#시각-언어 모델</span><span class="tag">#행동 생성</span><span class="tag">#통합 모델</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2605.30280" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2605.30280v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/1636ab3d193c8effeca613fde281e49ac453c8f8" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
       <section class="track-section" data-track-block="mech">
@@ -507,37 +507,37 @@
           AI 활용 기계공학
           <span class="badge mech">2편</span>
         </h2>
-          <article class="paper mech reveal" id="p-2507.05198" style="transition-delay: 0ms;">
+          <article class="paper mech reveal" id="p-2510.14830" style="transition-delay: 0ms;">
             <div class="meta">
-               · 발표 2025-07-07<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://www.semanticscholar.org/paper/7e89bb838e2a662b18672a15f7c2245638198a7d" target="_blank" rel="noopener">EmbodieDreamer: Advancing Real2Sim2Real Transfer for Policy Training via Embodied World Modeling</a></h3>
-<p class="title-ko">EmbodieDreamer: 구현된 세계 모델링을 통한 정책 훈련을 위한 Real2Sim2Real 전이 발전</p>            <div class="authors">Boyuan Wang, Xinpan Meng, Xiaofeng Wang, Zheng Zhu, Angen Ye, Yang Wang, Zhiqin Yang, Chaojun Ni 외 2명</div>
+               · 발표 2025-10-16<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb" target="_blank" rel="noopener">RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning</a></h3>
+<p class="title-ko">RL-100: 실제 환경 강화 학습을 통한 고성능 로봇 조작</p>            <div class="authors">Kun Lei, Huanyu Li, Dongjie Yu, Zhenyu Wei, Lingxiao Guo, Zhennan Jiang, Ziyu Wang, Shiyu Liang 외 1명</div>
             <div class="stats">
-<span class="chip">인용 26</span><span class="chip">매칭: reinforcement learning, robot</span>            </div>
+<span class="chip">인용 34</span><span class="chip">영향력 인용 3</span><span class="chip">매칭: reinforcement learning, robot</span>            </div>
             <div class="summary">
               <ul>
-<li>로봇 정책 훈련에 시뮬레이션 환경이 중요하지만, 현실과 시뮬레이션 간의 큰 격차가 문제입니다.</li><li>이 논문은 물리(physics)와 외형(appearance) 두 가지 측면에서 격차를 줄이는 EmbodieDreamer 프레임워크를 제안합니다.</li><li>PhysAligner는 미분 가능한 물리 모듈로 시뮬레이션 역학을 현실에 맞추고, VisAligner는 조건부 비디오 확산 모델로 시뮬레이션 렌더링을 사실적인 영상으로 변환합니다.</li><li>PhysAligner는 물리 매개변수 추정 오류를 3.74% 줄이고 최적화 속도를 89.91% 향상했습니다.</li><li>생성된 사실적인 환경에서 로봇 정책을 훈련하면 실제 작업 성공률이 평균 29.17% 개선됩니다.</li>              </ul>
+<li>가정 및 공장에서 로봇 조작은 인간 작업자 수준의 신뢰성과 효율성이 요구됩니다.</li><li>RL-100은 모방 학습과 강화 학습을 단일 PPO 목표로 통합한 실제 로봇 학습 프레임워크입니다.</li><li>확산 시각-운동 정책(diffusion visuomotor policies) 기반으로, 경량 일관성 증류(consistency distillation)를 통해 고주파 제어를 가능하게 합니다.</li><li>8가지 실제 로봇 작업에서 총 1000회 중 1000회 성공률을 달성하며, 인간 전문가와 유사한 성능을 보였습니다.</li><li>이 프레임워크는 실제 배포 가능한 로봇 학습을 위한 실용적인 경로를 제시합니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#로봇 공학</span><span class="tag">#시뮬레이션-현실 전이</span><span class="tag">#강화 학습</span><span class="tag">#컴퓨터 비전</span></div>            <div class="links">
-              <a href="https://www.semanticscholar.org/paper/7e89bb838e2a662b18672a15f7c2245638198a7d" target="_blank" rel="noopener">arXiv</a>
+<div class="tags"><span class="tag">#로봇 조작</span><span class="tag">#강화 학습</span><span class="tag">#확산 모델</span><span class="tag">#실제 환경 학습</span></div>            <div class="links">
+              <a href="https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb" target="_blank" rel="noopener">arXiv</a>
               <a href="" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/7e89bb838e2a662b18672a15f7c2245638198a7d" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
-          <article class="paper mech reveal" id="p-doi:10.1109/TSMC.2026.3658893" style="transition-delay: 60ms;">
+          <article class="paper mech reveal" id="p-doi:10.1109/TPEL.2026.3653861" style="transition-delay: 60ms;">
             <div class="meta">
-               · 발표 2026-06-01<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://www.semanticscholar.org/paper/82af4e1adac6f9fbd4c00b97a8592e7eb1a5e38d" target="_blank" rel="noopener">Zhang Neural Network Model for Time-Variant Convex Optimization Involving Nonlinear Inequality Constraints With Robotic Application</a></h3>
-<p class="title-ko">로봇 응용을 위한 비선형 부등식 제약 조건을 포함하는 시간 가변 볼록 최적화 문제 해결을 위한 Zhang 신경망 모델</p>            <div class="authors">Jielong Chen, Yan Pan, Yunong Zhang</div>
+               · 발표 2026-07-01<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579" target="_blank" rel="noopener">Parameter Estimation of Power Electronic Converter by Affine Physics-Informed Gaussian Processes</a></h3>
+<p class="title-ko">어파인 물리 정보 가우시안 프로세스를 이용한 전력 전자 컨버터의 파라미터 추정</p>            <div class="authors">Marcel Zimmer, M. Milton, D. Cucak, T. Pesch, Herbert L. Ginn, Andrea Benigni</div>
             <div class="stats">
-<span class="chip">매칭: neural network, robot</span>            </div>
+<span class="chip">매칭: physics-informed, digital twin</span>            </div>
             <div class="summary">
               <ul>
-<li>비선형 및 시간 가변 특성 때문에 시간 가변 볼록 최적화(TVCOINICs)는 어려운 문제입니다.</li><li>이 논문은 추가 하이퍼파라미터 없이 연속적이고 미분 가능한 변환 함수를 제안합니다.</li><li>제안된 함수는 라그랑주 승수 기법과 KKT 조건을 활용하여 최적화 문제를 동등한 비선형 등식 시스템으로 변환합니다.</li><li>시간 미분과 오류 피드백을 활용하는 DTFZNN 모델은 TVCOINICs를 해결하며, 슬라이딩 모드 제어(SMC)로 잡음 억제 기능을 강화합니다.</li><li>제안 모델은 수치 실험과 로봇 팔 경로 추적 및 반복 동작 문제 해결을 통해 효과와 실용적 우수성을 입증합니다.</li>              </ul>
+<li>전력 전자 장치의 실시간 분석을 위한 컨버터 파라미터 추정은 디지털 트위닝의 핵심입니다.</li><li>이 연구는 어파인(affine) 연산자를 물리 정보 가우시안 프로세스(physics-informed Gaussian processes)에 적용하여 컨버터 파라미터를 추정하는 방법을 제안합니다.</li><li>제안된 방법은 노이즈가 있는 측정값을 처리하고, 특정 작동 조건에서 컨버터 파라미터를 정확하게 특성화합니다.</li><li>벅(buck) 및 부스트(boost) 컨버터 하드웨어 테스트를 통해 실험적 특성화 오차 범위 내의 정확도를 확인했습니다.</li><li>이 접근법은 수치적 안정성을 높이고 다양한 컨버터 파라미터를 비침습적으로 추정하는 데 기여합니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#시간 가변 최적화</span><span class="tag">#Zhang 신경망</span><span class="tag">#로봇 공학</span><span class="tag">#비선형 제약</span></div>            <div class="links">
-              <a href="https://www.semanticscholar.org/paper/82af4e1adac6f9fbd4c00b97a8592e7eb1a5e38d" target="_blank" rel="noopener">arXiv</a>
+<div class="tags"><span class="tag">#전력 전자</span><span class="tag">#파라미터 추정</span><span class="tag">#가우시안 프로세스</span><span class="tag">#디지털 트위닝</span></div>            <div class="links">
+              <a href="https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579" target="_blank" rel="noopener">arXiv</a>
               <a href="" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/82af4e1adac6f9fbd4c00b97a8592e7eb1a5e38d" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 

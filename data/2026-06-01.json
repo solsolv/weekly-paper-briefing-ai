@@ -1,0 +1,402 @@
+{
+  "week_id": "2026-06-01",
+  "generated_at": "2026-06-01T19:34:36.179850+00:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2605.31340",
+        "title": "Appropriateness of Empathy in AI: A Signal-Cost Perspective",
+        "authors": [
+          "Chi-Ching Juan",
+          "Tao Wang",
+          "Harold Lee"
+        ],
+        "summary": "The appropriateness of empathy in AI has emerged as a critical concern, as excessive empathy risks seeming manipulative while insufficient empathy appears dismissive. While prior research has explored how to quantify empathy in AI, few studies examine whether such empathy is contextually appropriate. This paper introduces an economic perspective by applying signaling theory to human-AI conversations. We propose Signal Cost Proxies (emotional richness, perspective-taking, and contextual tailoring) mapped to affective, cognitive, and associative empathy. This multidimensional framework enables systematic evaluation of empathy not just by presence, but by its appropriateness relative to user demand.",
+        "categories": [
+          "cs.HC",
+          "cs.AI"
+        ],
+        "published": "2026-05-29T14:19:01+00:00",
+        "updated": "2026-05-29T14:19:01+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2605.31340v1",
+        "abs_url": "https://arxiv.org/abs/2605.31340",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/d9d5c95d46ca79cddaa92b2cb711378dc9248b17",
+        "tldr": "An economic perspective by applying signaling theory to human-AI conversation is introduced by applying signaling theory to human-AI conversation and proposes Signal Cost Proxies mapped to affective, cognitive, and associative empathy.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "AI 공감의 적절성: 신호-비용 관점",
+        "summary_ko": "- AI 공감은 과하면 조작적으로, 부족하면 무시하는 것처럼 보여 적절성 문제가 중요합니다.\n- 기존 연구는 AI 공감 정량화에 집중했으나, 상황 적절성에 대한 연구는 부족했습니다.\n- 이 논문은 신호 이론(signaling theory)을 적용하여 AI 공감의 경제적 관점을 제시합니다.\n- 감성적 풍부함, 관점 취하기, 상황 맞춤화를 신호 비용 대리 변수(Signal Cost Proxies)로 제안합니다.\n- 이 다차원 프레임워크는 AI 공감의 존재뿐 아니라 사용자 요구에 대한 적절성을 평가합니다.",
+        "tags": [
+          "AI 공감",
+          "신호 이론",
+          "인간-AI 상호작용",
+          "적절성 평가"
+        ]
+      },
+      {
+        "arxiv_id": "2605.30280",
+        "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+        "authors": [
+          "Qiuyue Wang",
+          "Mingsheng Li",
+          "Jian Guan",
+          "Jinhui Ye",
+          "Sicheng Xie",
+          "Yitao Liu",
+          "Junhao Chen",
+          "Zhixuan Liang",
+          "Jie Zhang",
+          "Xintong Hu",
+          "Xuhong Huang",
+          "Pei Lin",
+          "Junyang Lin",
+          "Dayiheng Liu",
+          "Shuai Bai",
+          "Jingren Zhou",
+          "Jiazhao Zhang",
+          "Haoqi Yuan",
+          "Gengze Zhou",
+          "Hang Yin",
+          "Ye Wang",
+          "Yiyang Huang",
+          "Zixing Lei",
+          "Wujian Peng",
+          "Delin Chen",
+          "Yingming Zheng",
+          "Jingyang Fan",
+          "Xianwei Zhuang",
+          "Xin Zhou",
+          "Haoyang Li",
+          "Anzhe Chen",
+          "Tong Zhang",
+          "Xuejing Liu",
+          "Yuchong Sun",
+          "Ruizhe Chen",
+          "Zhaohai Li",
+          "Chenxu Lü",
+          "Zhibo Yang",
+          "Tao Yu",
+          "Xionghui Chen"
+        ],
+        "summary": "Embodied intelligence is often studied through specialized models for individual tasks such as manipulation or navigation, resulting in fragmented capabilities and limited generalization across tasks, environments, and robot embodiments. In this work, we study whether heterogeneous embodied decision-making problems can be unified within a single vision-language-action model. We present Qwen-VLA, a unified embodied foundation model that extends Qwen's vision-language modeling stack from perception, understanding, and reasoning to continuous action and trajectory generation through a DiT-based action decoder. Qwen-VLA is trained with a large-scale joint pretraining recipe over diverse data sources, including robotics manipulation trajectories, human egocentric demonstrations, synthetic simulation data, vision-and-language navigation data, trajectory-centric supervision, and auxiliary vision-language data. To support multiple robot platforms, we introduce embodiment-aware prompt conditioning, where robot-specific textual descriptions specify the current embodiment and control convention. We further cast manipulation, navigation, and trajectory prediction into a unified action-and-trajectory prediction framework, enabling transferable visual grounding, spatial reasoning, and continuous action generation across robot morphologies, task families, and environments. Experiments on manipulation, navigation, and trajectory-centric benchmarks show consistent multi-task performance and out-of-distribution generalization under variations in scene layout, background, lighting, object configuration, and robot embodiment. Qwen-VLA-Instruct achieves 97.9% on LIBERO, 73.7% on Simpler-WidowX, 86.1%/87.2% on RoboTwin-Easy/Hard, 69.0% OSR on R2R, 59.6% SR on RxR, 76.9% average OOD success in real-world ALOHA experiments, and 26.6% zero-shot success on DOMINO dynamic manipulation.",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.CL"
+        ],
+        "published": "2026-05-28T17:36:31+00:00",
+        "updated": "2026-05-28T17:36:31+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2605.30280v1",
+        "abs_url": "https://arxiv.org/abs/2605.30280",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/1636ab3d193c8effeca613fde281e49ac453c8f8",
+        "tldr": "Qwen-VLA is presented, a unified embodied foundation model that extends Qwen's vision-language modeling stack from perception, understanding, and reasoning to continuous action and trajectory generation through a DiT-based action decoder, enabling transferable visual grounding, spatial reasoning, and continuous action generation across robot morphologies, task families, and environments.",
+        "matched_keywords": [],
+        "affiliations": [
+          "Northeastern University"
+        ],
+        "source": "huggingface",
+        "hf_upvotes": 121,
+        "title_ko": "Qwen-VLA: 작업, 환경, 로봇 구현체를 아우르는 시각-언어-행동 모델 통합",
+        "summary_ko": "- 기존 로봇 지능 모델은 특정 작업에 특화되어 일반화 및 확장성이 제한적입니다.\n- Qwen-VLA는 Qwen의 시각-언어 모델을 확장하여 연속적인 행동 및 궤적 생성까지 통합합니다.\n- 다양한 로봇 조작, 인간 시점 시연, 시뮬레이션 데이터 등으로 모델을 사전 학습했습니다.\n- Qwen-VLA는 LIBERO 97.9%, R2R 69.0% 등 여러 벤치마크에서 높은 성능을 보였습니다.\n- 이 모델은 다양한 로봇 형태와 환경에서 시각적 접지 및 공간 추론을 가능하게 합니다.",
+        "tags": [
+          "로봇공학",
+          "시각-언어 모델",
+          "행동 생성",
+          "통합 모델"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2510.14830",
+        "title": "RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning",
+        "authors": [
+          "Kun Lei",
+          "Huanyu Li",
+          "Dongjie Yu",
+          "Zhenyu Wei",
+          "Lingxiao Guo",
+          "Zhennan Jiang",
+          "Ziyu Wang",
+          "Shiyu Liang",
+          "Huazhe Xu"
+        ],
+        "summary": "Real-world robotic manipulation in homes and factories demands reliability, efficiency, and robustness that approach or surpass those of skilled human operators. We present RL-100, a real-world reinforcement learning framework built on diffusion visuomotor policies. RL-100 unifies imitation and reinforcement learning under a single clipped PPO surrogate objective applied within the denoising process, yielding conservative and stable improvements across offline and online stages. To meet deployment latency requirements, a lightweight consistency distillation method compresses multi-step diffusion into a one-step controller for high-frequency control. The framework is task-, embodiment-, and representation-agnostic, and supports both single-action and action-chunking control. We evaluate RL-100 on eight diverse real-robot tasks, from dynamic pushing and agile bowling to pouring, cloth folding, unscrewing, multi-stage juicing, and long-horizon box folding. RL-100 attains 100 percent success across evaluated trials, for a total of 1000 out of 1000 episodes, including up to 250 out of 250 consecutive trials on one task. It matches or surpasses expert teleoperators in time to completion. Without retraining, a single policy attains approximately 90 percent zero-shot success under environmental and dynamics shifts, adapts in a few-shot regime to significant task variations (86.7 percent), and remains robust to aggressive human perturbations (about 96 percent). Notably, our juicing robot served random customers continuously for about seven hours without failure when deployed zero-shot in a shopping mall. These results suggest a practical path to deployment-ready robot learning by starting from human priors, aligning training objectives with human-grounded metrics, and reliably extending performance beyond human demonstrations.",
+        "categories": [],
+        "published": "2025-10-16T00:00:00+00:00",
+        "updated": "2025-10-16T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 34,
+        "influential_citation_count": 3,
+        "s2_url": "https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb",
+        "tldr": null,
+        "matched_keywords": [
+          "reinforcement learning",
+          "robot"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "RL-100: 실제 환경 강화 학습을 통한 고성능 로봇 조작",
+        "summary_ko": "- 가정 및 공장에서 로봇 조작은 인간 작업자 수준의 신뢰성과 효율성이 요구됩니다.\n- RL-100은 모방 학습과 강화 학습을 단일 PPO 목표로 통합한 실제 로봇 학습 프레임워크입니다.\n- 확산 시각-운동 정책(diffusion visuomotor policies) 기반으로, 경량 일관성 증류(consistency distillation)를 통해 고주파 제어를 가능하게 합니다.\n- 8가지 실제 로봇 작업에서 총 1000회 중 1000회 성공률을 달성하며, 인간 전문가와 유사한 성능을 보였습니다.\n- 이 프레임워크는 실제 배포 가능한 로봇 학습을 위한 실용적인 경로를 제시합니다.",
+        "tags": [
+          "로봇 조작",
+          "강화 학습",
+          "확산 모델",
+          "실제 환경 학습"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.1109/TPEL.2026.3653861",
+        "title": "Parameter Estimation of Power Electronic Converter by Affine Physics-Informed Gaussian Processes",
+        "authors": [
+          "Marcel Zimmer",
+          "M. Milton",
+          "D. Cucak",
+          "T. Pesch",
+          "Herbert L. Ginn",
+          "Andrea Benigni"
+        ],
+        "summary": "Noninvasive extraction of converter parameters under specific operational conditions, often referred to as digital twinning, enables detailed insights into power electronics devices under real conditions. In this work, power electronics parameter estimation is addressed by proposing the construction of affine operators applied to physics-informed Gaussian processes. In particular, we show that the proposed parameter estimation technique has the following four key features: first, any converter parameter of interest can be estimated. second, noisy measurements are explicitly addressed. third, the converter parameters are characterized subject to the specific operational regime. four, The estimation accuracy is within the error margin of experimental characterization. Regarding model-building aspects, we define a dedicated noise-handling scheme that allows outperforming alternative algorithms when applied to hardware tests. We analyze the numerical stability of the presented approach and define a self-consistent normalization scheme allowing a reliable and numerically stable application. The proposed approach is theoretically discussed, analyzed within a simulation environment, and verified experimentally. For the latter, we investigate a hardware test addressing the two most prominent converter topologies, i.e., buck and boost topologies. Converter parameters are accurately estimated with an accuracy matched by experimental characterization error margins.",
+        "categories": [],
+        "published": "2026-07-01T00:00:00+00:00",
+        "updated": "2026-07-01T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579",
+        "tldr": null,
+        "matched_keywords": [
+          "physics-informed",
+          "digital twin"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "어파인 물리 정보 가우시안 프로세스를 이용한 전력 전자 컨버터의 파라미터 추정",
+        "summary_ko": "- 전력 전자 장치의 실시간 분석을 위한 컨버터 파라미터 추정은 디지털 트위닝의 핵심입니다.\n- 이 연구는 어파인(affine) 연산자를 물리 정보 가우시안 프로세스(physics-informed Gaussian processes)에 적용하여 컨버터 파라미터를 추정하는 방법을 제안합니다.\n- 제안된 방법은 노이즈가 있는 측정값을 처리하고, 특정 작동 조건에서 컨버터 파라미터를 정확하게 특성화합니다.\n- 벅(buck) 및 부스트(boost) 컨버터 하드웨어 테스트를 통해 실험적 특성화 오차 범위 내의 정확도를 확인했습니다.\n- 이 접근법은 수치적 안정성을 높이고 다양한 컨버터 파라미터를 비침습적으로 추정하는 데 기여합니다.",
+        "tags": [
+          "전력 전자",
+          "파라미터 추정",
+          "가우시안 프로세스",
+          "디지털 트위닝"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2605.31340",
+      "title": "Appropriateness of Empathy in AI: A Signal-Cost Perspective",
+      "authors": [
+        "Chi-Ching Juan",
+        "Tao Wang",
+        "Harold Lee"
+      ],
+      "summary": "The appropriateness of empathy in AI has emerged as a critical concern, as excessive empathy risks seeming manipulative while insufficient empathy appears dismissive. While prior research has explored how to quantify empathy in AI, few studies examine whether such empathy is contextually appropriate. This paper introduces an economic perspective by applying signaling theory to human-AI conversations. We propose Signal Cost Proxies (emotional richness, perspective-taking, and contextual tailoring) mapped to affective, cognitive, and associative empathy. This multidimensional framework enables systematic evaluation of empathy not just by presence, but by its appropriateness relative to user demand.",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "published": "2026-05-29T14:19:01+00:00",
+      "updated": "2026-05-29T14:19:01+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2605.31340v1",
+      "abs_url": "https://arxiv.org/abs/2605.31340",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/d9d5c95d46ca79cddaa92b2cb711378dc9248b17",
+      "tldr": "An economic perspective by applying signaling theory to human-AI conversation is introduced by applying signaling theory to human-AI conversation and proposes Signal Cost Proxies mapped to affective, cognitive, and associative empathy.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "AI 공감의 적절성: 신호-비용 관점",
+      "summary_ko": "- AI 공감은 과하면 조작적으로, 부족하면 무시하는 것처럼 보여 적절성 문제가 중요합니다.\n- 기존 연구는 AI 공감 정량화에 집중했으나, 상황 적절성에 대한 연구는 부족했습니다.\n- 이 논문은 신호 이론(signaling theory)을 적용하여 AI 공감의 경제적 관점을 제시합니다.\n- 감성적 풍부함, 관점 취하기, 상황 맞춤화를 신호 비용 대리 변수(Signal Cost Proxies)로 제안합니다.\n- 이 다차원 프레임워크는 AI 공감의 존재뿐 아니라 사용자 요구에 대한 적절성을 평가합니다.",
+      "tags": [
+        "AI 공감",
+        "신호 이론",
+        "인간-AI 상호작용",
+        "적절성 평가"
+      ]
+    },
+    {
+      "arxiv_id": "2605.30280",
+      "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+      "authors": [
+        "Qiuyue Wang",
+        "Mingsheng Li",
+        "Jian Guan",
+        "Jinhui Ye",
+        "Sicheng Xie",
+        "Yitao Liu",
+        "Junhao Chen",
+        "Zhixuan Liang",
+        "Jie Zhang",
+        "Xintong Hu",
+        "Xuhong Huang",
+        "Pei Lin",
+        "Junyang Lin",
+        "Dayiheng Liu",
+        "Shuai Bai",
+        "Jingren Zhou",
+        "Jiazhao Zhang",
+        "Haoqi Yuan",
+        "Gengze Zhou",
+        "Hang Yin",
+        "Ye Wang",
+        "Yiyang Huang",
+        "Zixing Lei",
+        "Wujian Peng",
+        "Delin Chen",
+        "Yingming Zheng",
+        "Jingyang Fan",
+        "Xianwei Zhuang",
+        "Xin Zhou",
+        "Haoyang Li",
+        "Anzhe Chen",
+        "Tong Zhang",
+        "Xuejing Liu",
+        "Yuchong Sun",
+        "Ruizhe Chen",
+        "Zhaohai Li",
+        "Chenxu Lü",
+        "Zhibo Yang",
+        "Tao Yu",
+        "Xionghui Chen"
+      ],
+      "summary": "Embodied intelligence is often studied through specialized models for individual tasks such as manipulation or navigation, resulting in fragmented capabilities and limited generalization across tasks, environments, and robot embodiments. In this work, we study whether heterogeneous embodied decision-making problems can be unified within a single vision-language-action model. We present Qwen-VLA, a unified embodied foundation model that extends Qwen's vision-language modeling stack from perception, understanding, and reasoning to continuous action and trajectory generation through a DiT-based action decoder. Qwen-VLA is trained with a large-scale joint pretraining recipe over diverse data sources, including robotics manipulation trajectories, human egocentric demonstrations, synthetic simulation data, vision-and-language navigation data, trajectory-centric supervision, and auxiliary vision-language data. To support multiple robot platforms, we introduce embodiment-aware prompt conditioning, where robot-specific textual descriptions specify the current embodiment and control convention. We further cast manipulation, navigation, and trajectory prediction into a unified action-and-trajectory prediction framework, enabling transferable visual grounding, spatial reasoning, and continuous action generation across robot morphologies, task families, and environments. Experiments on manipulation, navigation, and trajectory-centric benchmarks show consistent multi-task performance and out-of-distribution generalization under variations in scene layout, background, lighting, object configuration, and robot embodiment. Qwen-VLA-Instruct achieves 97.9% on LIBERO, 73.7% on Simpler-WidowX, 86.1%/87.2% on RoboTwin-Easy/Hard, 69.0% OSR on R2R, 59.6% SR on RxR, 76.9% average OOD success in real-world ALOHA experiments, and 26.6% zero-shot success on DOMINO dynamic manipulation.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-05-28T17:36:31+00:00",
+      "updated": "2026-05-28T17:36:31+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2605.30280v1",
+      "abs_url": "https://arxiv.org/abs/2605.30280",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/1636ab3d193c8effeca613fde281e49ac453c8f8",
+      "tldr": "Qwen-VLA is presented, a unified embodied foundation model that extends Qwen's vision-language modeling stack from perception, understanding, and reasoning to continuous action and trajectory generation through a DiT-based action decoder, enabling transferable visual grounding, spatial reasoning, and continuous action generation across robot morphologies, task families, and environments.",
+      "matched_keywords": [],
+      "affiliations": [
+        "Northeastern University"
+      ],
+      "source": "huggingface",
+      "hf_upvotes": 121,
+      "title_ko": "Qwen-VLA: 작업, 환경, 로봇 구현체를 아우르는 시각-언어-행동 모델 통합",
+      "summary_ko": "- 기존 로봇 지능 모델은 특정 작업에 특화되어 일반화 및 확장성이 제한적입니다.\n- Qwen-VLA는 Qwen의 시각-언어 모델을 확장하여 연속적인 행동 및 궤적 생성까지 통합합니다.\n- 다양한 로봇 조작, 인간 시점 시연, 시뮬레이션 데이터 등으로 모델을 사전 학습했습니다.\n- Qwen-VLA는 LIBERO 97.9%, R2R 69.0% 등 여러 벤치마크에서 높은 성능을 보였습니다.\n- 이 모델은 다양한 로봇 형태와 환경에서 시각적 접지 및 공간 추론을 가능하게 합니다.",
+      "tags": [
+        "로봇공학",
+        "시각-언어 모델",
+        "행동 생성",
+        "통합 모델"
+      ]
+    },
+    {
+      "arxiv_id": "2510.14830",
+      "title": "RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning",
+      "authors": [
+        "Kun Lei",
+        "Huanyu Li",
+        "Dongjie Yu",
+        "Zhenyu Wei",
+        "Lingxiao Guo",
+        "Zhennan Jiang",
+        "Ziyu Wang",
+        "Shiyu Liang",
+        "Huazhe Xu"
+      ],
+      "summary": "Real-world robotic manipulation in homes and factories demands reliability, efficiency, and robustness that approach or surpass those of skilled human operators. We present RL-100, a real-world reinforcement learning framework built on diffusion visuomotor policies. RL-100 unifies imitation and reinforcement learning under a single clipped PPO surrogate objective applied within the denoising process, yielding conservative and stable improvements across offline and online stages. To meet deployment latency requirements, a lightweight consistency distillation method compresses multi-step diffusion into a one-step controller for high-frequency control. The framework is task-, embodiment-, and representation-agnostic, and supports both single-action and action-chunking control. We evaluate RL-100 on eight diverse real-robot tasks, from dynamic pushing and agile bowling to pouring, cloth folding, unscrewing, multi-stage juicing, and long-horizon box folding. RL-100 attains 100 percent success across evaluated trials, for a total of 1000 out of 1000 episodes, including up to 250 out of 250 consecutive trials on one task. It matches or surpasses expert teleoperators in time to completion. Without retraining, a single policy attains approximately 90 percent zero-shot success under environmental and dynamics shifts, adapts in a few-shot regime to significant task variations (86.7 percent), and remains robust to aggressive human perturbations (about 96 percent). Notably, our juicing robot served random customers continuously for about seven hours without failure when deployed zero-shot in a shopping mall. These results suggest a practical path to deployment-ready robot learning by starting from human priors, aligning training objectives with human-grounded metrics, and reliably extending performance beyond human demonstrations.",
+      "categories": [],
+      "published": "2025-10-16T00:00:00+00:00",
+      "updated": "2025-10-16T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 34,
+      "influential_citation_count": 3,
+      "s2_url": "https://www.semanticscholar.org/paper/151123950e72f459a9c584580c7696c987f25bbb",
+      "tldr": null,
+      "matched_keywords": [
+        "reinforcement learning",
+        "robot"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "RL-100: 실제 환경 강화 학습을 통한 고성능 로봇 조작",
+      "summary_ko": "- 가정 및 공장에서 로봇 조작은 인간 작업자 수준의 신뢰성과 효율성이 요구됩니다.\n- RL-100은 모방 학습과 강화 학습을 단일 PPO 목표로 통합한 실제 로봇 학습 프레임워크입니다.\n- 확산 시각-운동 정책(diffusion visuomotor policies) 기반으로, 경량 일관성 증류(consistency distillation)를 통해 고주파 제어를 가능하게 합니다.\n- 8가지 실제 로봇 작업에서 총 1000회 중 1000회 성공률을 달성하며, 인간 전문가와 유사한 성능을 보였습니다.\n- 이 프레임워크는 실제 배포 가능한 로봇 학습을 위한 실용적인 경로를 제시합니다.",
+      "tags": [
+        "로봇 조작",
+        "강화 학습",
+        "확산 모델",
+        "실제 환경 학습"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1109/TPEL.2026.3653861",
+      "title": "Parameter Estimation of Power Electronic Converter by Affine Physics-Informed Gaussian Processes",
+      "authors": [
+        "Marcel Zimmer",
+        "M. Milton",
+        "D. Cucak",
+        "T. Pesch",
+        "Herbert L. Ginn",
+        "Andrea Benigni"
+      ],
+      "summary": "Noninvasive extraction of converter parameters under specific operational conditions, often referred to as digital twinning, enables detailed insights into power electronics devices under real conditions. In this work, power electronics parameter estimation is addressed by proposing the construction of affine operators applied to physics-informed Gaussian processes. In particular, we show that the proposed parameter estimation technique has the following four key features: first, any converter parameter of interest can be estimated. second, noisy measurements are explicitly addressed. third, the converter parameters are characterized subject to the specific operational regime. four, The estimation accuracy is within the error margin of experimental characterization. Regarding model-building aspects, we define a dedicated noise-handling scheme that allows outperforming alternative algorithms when applied to hardware tests. We analyze the numerical stability of the presented approach and define a self-consistent normalization scheme allowing a reliable and numerically stable application. The proposed approach is theoretically discussed, analyzed within a simulation environment, and verified experimentally. For the latter, we investigate a hardware test addressing the two most prominent converter topologies, i.e., buck and boost topologies. Converter parameters are accurately estimated with an accuracy matched by experimental characterization error margins.",
+      "categories": [],
+      "published": "2026-07-01T00:00:00+00:00",
+      "updated": "2026-07-01T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/130b22c60d0c761019c4b6d959b72c25de7a5579",
+      "tldr": null,
+      "matched_keywords": [
+        "physics-informed",
+        "digital twin"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "어파인 물리 정보 가우시안 프로세스를 이용한 전력 전자 컨버터의 파라미터 추정",
+      "summary_ko": "- 전력 전자 장치의 실시간 분석을 위한 컨버터 파라미터 추정은 디지털 트위닝의 핵심입니다.\n- 이 연구는 어파인(affine) 연산자를 물리 정보 가우시안 프로세스(physics-informed Gaussian processes)에 적용하여 컨버터 파라미터를 추정하는 방법을 제안합니다.\n- 제안된 방법은 노이즈가 있는 측정값을 처리하고, 특정 작동 조건에서 컨버터 파라미터를 정확하게 특성화합니다.\n- 벅(buck) 및 부스트(boost) 컨버터 하드웨어 테스트를 통해 실험적 특성화 오차 범위 내의 정확도를 확인했습니다.\n- 이 접근법은 수치적 안정성을 높이고 다양한 컨버터 파라미터를 비침습적으로 추정하는 데 기여합니다.",
+      "tags": [
+        "전력 전자",
+        "파라미터 추정",
+        "가우시안 프로세스",
+        "디지털 트위닝"
+      ]
+    }
+  ]
+}
