@@ -66,6 +66,40 @@ class Paper:
             "hf_upvotes": self.hf_upvotes,
         }
 
+    @classmethod
+    def from_dict(cls, d: dict) -> "Paper":
+        """to_dict()로 직렬화한 dict에서 Paper 복원 (슬롯 staging 복구용).
+
+        published/updated는 isoformat 문자열을 datetime으로 되돌린다.
+        요약 단계에서 부가된 title_ko/summary_ko/tags 등 Paper에 없는 키는 무시한다.
+        """
+        def _dt(v):
+            if isinstance(v, datetime):
+                return v
+            return datetime.fromisoformat(v) if v else datetime.now(timezone.utc)
+
+        return cls(
+            arxiv_id=d.get("arxiv_id", ""),
+            title=d.get("title", ""),
+            authors=list(d.get("authors", []) or []),
+            summary=d.get("summary", ""),
+            categories=list(d.get("categories", []) or []),
+            published=_dt(d.get("published")),
+            updated=_dt(d.get("updated")),
+            pdf_url=d.get("pdf_url", ""),
+            abs_url=d.get("abs_url", ""),
+            track=d.get("track", ""),
+            slot=d.get("slot", ""),
+            citation_count=d.get("citation_count"),
+            influential_citation_count=d.get("influential_citation_count"),
+            s2_url=d.get("s2_url"),
+            tldr=d.get("tldr"),
+            matched_keywords=list(d.get("matched_keywords", []) or []),
+            affiliations=list(d.get("affiliations", []) or []),
+            source=d.get("source", "arxiv"),
+            hf_upvotes=d.get("hf_upvotes"),
+        )
+
 
 def _parse_arxiv_datetime(value: str) -> datetime:
     # arXiv: "2024-01-15T12:34:56Z"

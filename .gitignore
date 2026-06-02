@@ -9,3 +9,6 @@ venv/
 .DS_Store
 *.stackdump
 .claude/
+email_draft*.txt
+# 슬롯 분리 실행의 중간 산출물 — 한 워크플로우 run 내에서만 사용, 커밋하지 않음
+data/_staging/

@@ -2,10 +2,20 @@ name: Weekly Paper Briefing
 
 on:
   schedule:
-    # 매주 월요일 08:00 KST = 일요일 23:00 UTC
-    - cron: "0 23 * * 0"
+    # 빌드는 토요일에 미리 끝낸다(공개는 페이지가 월요일 08:00 KST에 자동 노출 — workflow와 무관).
+    # 토 00:23 UTC = 토 09:23 KST. GitHub 스케줄이 수시간~하루 밀려도 일요일 안에 실행되어
+    # 월요일 공개 전 산출물이 준비된다. 정각(:00)은 혼잡해 더 밀리므로 :23로 비켜둠.
+    - cron: "23 0 * * 6"
   workflow_dispatch:        # 수동 실행 허용
     inputs:
+      slots:
+        description: "실행할 슬롯 (all 또는 콤마목록: ai-impact,ai-latest,mech-impact,mech-latest). 특정 슬롯만 재진행할 때 사용."
+        type: string
+        default: "all"
+      week_id:
+        description: "주차 ID(YYYY-MM-DD) 강제 지정 — 비우면 현재 주차 자동 계산. 과거 주차 슬롯 보충 시 지정."
+        type: string
+        default: ""
       dry_run:
         description: "LLM 호출 없이 파이프라인만 점검"
         type: boolean
@@ -21,6 +31,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # 기본 provider: Gemini API (config.yaml에서 openai_compat → Gemini 호환 엔드포인트)
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # 선택: provider 전환 시 활성
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # 선택: 인용수 조회 rate limit 완화용 (없어도 동작)
+      SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,22 +53,48 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build briefing
-        env:
-          # 기본 provider: Gemini API (config.yaml에서 openai_compat → Gemini 호환 엔드포인트)
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          # 선택: provider 전환 시 활성
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # 선택: 인용수 조회 rate limit 완화용 (없어도 동작)
-          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+      # 주차 ID와 dry-run 플래그를 한 번 계산해 모든 슬롯/조립 step이 공유 → 슬롯 간 week_id 불일치 방지
+      - name: Compute build params
+        id: params
         run: |
+          WID="${{ github.event.inputs.week_id }}"
+          if [ -z "$WID" ]; then WID=$(python -m src.main --print-week-id); fi
+          echo "week_id=$WID" >> "$GITHUB_OUTPUT"
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            python -m src.main --dry-run
+            echo "dry=--dry-run" >> "$GITHUB_OUTPUT"
           else
-            python -m src.main
+            echo "dry=" >> "$GITHUB_OUTPUT"
           fi
+          echo "주차=$WID, dry_run=${{ github.event.inputs.dry_run }}"
+
+      # --- 슬롯별 분리 실행 ---------------------------------------------------
+      # 각 step은 !cancelled()로 앞 슬롯 실패와 무관하게 시도 → 한 슬롯이 arXiv 오류로 죽어도
+      # 나머지 슬롯은 계속 진행되고 조립·커밋된다(작업 손실 방지). 실패 슬롯은 나중에
+      # workflow_dispatch에서 slots=<슬롯ID>로 골라 보충하면 직전 커밋에 병합된다.
+      # latest 슬롯은 같은 트랙 impact 선정작을 중복 제외(impact step이 앞서 실행됨).
+      - name: Build briefing AI Impact
+        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'ai-impact')) }}
+        run: python -m src.main --slot ai-impact --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
+
+      - name: Build briefing AI Latest
+        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'ai-latest')) }}
+        run: python -m src.main --slot ai-latest --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
+
+      - name: Build briefing Mech Impact
+        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'mech-impact')) }}
+        run: python -m src.main --slot mech-impact --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
+
+      - name: Build briefing Mech Latest
+        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'mech-latest')) }}
+        run: python -m src.main --slot mech-latest --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
+
+      # --- 조립: staging된 슬롯만 재요약, 나머지는 직전 커밋 결과 유지 ---------
+      - name: Assemble & render
+        if: ${{ !cancelled() && steps.params.outcome == 'success' }}
+        run: python -m src.main --assemble --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
 
       - name: Commit & push results
+        if: ${{ !cancelled() && steps.params.outcome == 'success' }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -59,6 +102,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "변경 사항 없음 — 커밋 생략"
           else
-            git commit -m "chore: weekly briefing $(date -u +%Y-%m-%d)"
+            git commit -m "chore: weekly briefing ${{ steps.params.outputs.week_id }}"
             git push
           fi

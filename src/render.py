@@ -59,6 +59,7 @@ def render_site(cfg: Config) -> None:
         "title": cfg.get("site.title", "주간 논문 브리핑"),
         "description": cfg.get("site.description", ""),
         "base_url": (cfg.get("site.base_url", "") or "").rstrip("/"),
+        "publish_hour": int(cfg.get("site.publish_hour", 8)),
         "interests": {
             "ai": cfg.get("interests.ai", []) or [],
             "mech": cfg.get("interests.mech", []) or [],

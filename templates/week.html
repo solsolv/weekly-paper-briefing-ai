@@ -9,6 +9,13 @@
   <p class="lede">{{ site.description }}</p>
 {% endblock %}
 {% block content %}
+  {% if week.publish_at %}
+  <div id="publish-notice" data-publish-at="{{ week.publish_at }}" style="display:none; text-align:center; padding:48px 0;">
+    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>{{ week.week_id }} {{ site.publish_hour or 8 }}:00 (KST)</strong>에 공개됩니다.</p>
+    <div class="back-pill-wrap"><a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a></div>
+  </div>
+  {% endif %}
+  <div data-gate-content>
   <div class="toc reveal">
     <div class="toc-title">이번 주 {{ week.papers | length }}편</div>
     <div class="toc-list">
@@ -79,4 +86,19 @@
   <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.85rem; text-align: center;">
     선정 기준: 임팩트(최근 {{ week.impact_lookback_days or 365 }}일, 영향력 인용 가중) + 최신(최근 {{ week.latest_lookback_days or 14 }}일) · 요약 엔진: {{ week.provider }}
   </p>
+  </div>{# /data-gate-content #}
+  {% if week.publish_at %}
+  <script>
+    // 직접 URL 접근 방어: 공개 시각 전이면 본문을 가리고 안내만 노출 (브라우저 시계 기준).
+    (function() {
+      var n = document.getElementById('publish-notice');
+      if (!n) return;
+      var t = Date.parse(n.dataset.publishAt);
+      if (isNaN(t) || Date.now() >= t) return;   // 형식 이상 또는 공개 시각 지남 → 정상 노출
+      var c = document.querySelector('[data-gate-content]');
+      if (c) c.style.display = 'none';
+      n.style.display = '';
+    })();
+  </script>
+  {% endif %}
 {% endblock %}

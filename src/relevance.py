@@ -22,6 +22,41 @@ SYSTEM_PROMPT = (
 )
 
 _JSON_RE = re.compile(r"\{[\s\S]*\}")
+# 표준 파싱 실패 시 fallback: "idx": N, "score": X 쌍을 직접 복구 (잘림·따옴표 깨짐 내성)
+_ENTRY_RE = re.compile(r'"idx"\s*:\s*(\d+)\s*,\s*"score"\s*:\s*([-+]?\d*\.?\d+)')
+# 말미 콤마(trailing comma) 보정용
+_TRAILING_COMMA_RE = re.compile(r",(\s*[}\]])")
+
+
+def _extract_scores(raw: str) -> tuple[list[dict], str]:
+    """LLM 응답에서 점수 항목을 최대한 복구.
+
+    반환: (entries, mode). mode ∈ {"strict","repaired","regex","none"}
+    - strict : 표준 JSON 파싱 성공
+    - repaired: 말미 콤마 제거 후 파싱 성공
+    - regex  : JSON 파싱 실패 → idx/score 쌍만 정규식으로 복구 (출력 잘림 등에 내성)
+    - none   : 아무것도 복구 못 함
+    """
+    match = _JSON_RE.search(raw)
+    blob = match.group(0) if match else raw
+
+    for candidate in (blob, _TRAILING_COMMA_RE.sub(r"\1", blob)):
+        try:
+            data = json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+        scores = data.get("scores") if isinstance(data, dict) else None
+        if isinstance(scores, list):
+            return scores, ("strict" if candidate == blob else "repaired")
+
+    # fallback은 brace-trim된 blob이 아니라 원본 전체를 스캔한다.
+    # 출력이 잘리면 마지막 완성된 '}'가 앞쪽에 있어, 그 뒤의 정상 idx/score 쌍이
+    # blob에서 누락되기 때문. raw 전체를 보면 잘린 꼬리의 점수까지 복구된다.
+    entries = [
+        {"idx": int(m.group(1)), "score": float(m.group(2))}
+        for m in _ENTRY_RE.finditer(raw)
+    ]
+    return entries, ("regex" if entries else "none")
 
 
 def _abstract_snippet(p: Paper, max_chars: int = 380) -> str:
@@ -52,11 +87,11 @@ def _build_prompt(description: str, candidates: list[Paper]) -> str:
 [필수 검증]
 - abstract에 구체적 물리 응용 도메인(어떤 유체·구조·기계 시스템)이 명시되었는지 먼저 확인.
 - 명시되지 않았다면 표면적 키워드(surrogate, neural operator 등)와 무관하게 0.2 이하.
-- reason 필드에는 abstract에서 언급된 응용 도메인을 짧게 인용하거나,
-  명시되지 않았다면 "응용 도메인 미명시"로 표기.
+- reason 필드는 **12자 이내**로 abstract의 응용 도메인을 짧게 적거나(예: "베어링 진단"),
+  명시되지 않았다면 "도메인 미명시"로 표기. 따옴표(")는 쓰지 마세요.
 
 다음 JSON 스키마로만 응답하세요. 머리말·맺음말·코드펜스·주석 금지.
-{{"scores": [{{"idx": 0, "score": 0.85, "reason": "한국어 한 문장"}}, ...]}}
+{{"scores": [{{"idx": 0, "score": 0.85, "reason": "12자 이내"}}, ...]}}
 
 [후보 논문]
 {listing}
@@ -64,30 +99,44 @@ def _build_prompt(description: str, candidates: list[Paper]) -> str:
 
 
 def score_candidates(
-    provider: LLMProvider, description: str, candidates: list[Paper]
+    provider: LLMProvider,
+    description: str,
+    candidates: list[Paper],
+    max_tokens: int | None = None,
 ) -> dict[int, tuple[float, str]]:
-    """후보별 (idx → (score, reason)) 매핑. 호출/파싱 실패 시 빈 dict."""
+    """후보별 (idx → (score, reason)) 매핑. 호출/파싱 실패 시 빈 dict.
+
+    max_tokens가 주어지면 게이트 호출에 한해 provider의 출력 상한을 일시 상향한다
+    (요약용 상한은 건드리지 않음). 후보 수만큼의 점수 항목이 잘리지 않도록 보장.
+    """
     if not candidates:
         return {}
     prompt = _build_prompt(description, candidates)
+    prev_max = getattr(provider, "max_tokens", None)
     try:
+        if max_tokens is not None and prev_max is not None:
+            provider.max_tokens = max_tokens
         raw = provider.generate(SYSTEM_PROMPT, prompt)
     except Exception as exc:  # noqa: BLE001
         print(f"    [warn] relevance gate 호출 실패: {exc}")
         return {}
+    finally:
+        if max_tokens is not None and prev_max is not None:
+            provider.max_tokens = prev_max
     if not raw:
         return {}
-    match = _JSON_RE.search(raw)
-    if not match:
-        print(f"    [warn] relevance gate 응답에서 JSON 미발견 — head 80자: {raw[:80]!r}")
+
+    entries, mode = _extract_scores(raw)
+    if mode == "repaired":
+        print("    [info] relevance gate JSON 말미 콤마 보정 후 파싱")
+    elif mode == "regex":
+        print(f"    [warn] relevance gate JSON 파싱 실패 — 정규식으로 {len(entries)}개 항목 복구")
+    elif mode == "none":
+        print(f"    [warn] relevance gate 점수 추출 실패 — head 120자: {raw[:120]!r}")
         return {}
-    try:
-        data = json.loads(match.group(0))
-    except json.JSONDecodeError as exc:
-        print(f"    [warn] relevance gate JSON 파싱 실패: {exc}")
-        return {}
+
     out: dict[int, tuple[float, str]] = {}
-    for entry in data.get("scores", []) or []:
+    for entry in entries:
         try:
             idx = int(entry["idx"])
             score = float(entry["score"])
@@ -122,6 +171,7 @@ def filter_by_relevance(
 
     k = int(cfg.get("relevance_gate.top_k", 10))
     threshold = float(cfg.get("relevance_gate.threshold", 0.5))
+    gate_max_tokens = int(cfg.get("relevance_gate.max_output_tokens", 3000))
     description = cfg.get("relevance_gate.description", "") or ""
     behavior = cfg.get("relevance_gate.empty_pool_behavior", "fallback_top1")
     required_cats = cfg.get("relevance_gate.required_categories", []) or []
@@ -149,7 +199,7 @@ def filter_by_relevance(
 
     head = candidates_sorted[:k]
     print(f"  LLM 적합도 게이트 평가 ({len(head)}편, threshold={threshold})...")
-    scores = score_candidates(provider, description, head)
+    scores = score_candidates(provider, description, head, max_tokens=gate_max_tokens)
     if not scores:
         print("    [warn] 점수 없음 — 게이트 우회, 원본 풀 유지")
         return candidates_sorted
