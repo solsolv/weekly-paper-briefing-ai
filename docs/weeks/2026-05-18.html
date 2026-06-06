@@ -421,6 +421,9 @@
 
   /* ----- Hidden by filter ----- */
   .filter-hidden { display: none !important; }
+
+  /* ----- 예약 공개 전 숨김 (publish_at 미래) ----- */
+  .pending-hidden { display: none !important; }
 </style>
 </head>
 <body>
@@ -436,6 +439,7 @@
   <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
   <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
   </header>
+  <div data-gate-content>
   <div class="toc reveal">
     <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
@@ -548,11 +552,32 @@
   <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.85rem; text-align: center;">
     선정 기준: 임팩트(최근 365일, 영향력 인용 가중) + 최신(최근 14일) · 요약 엔진: openai_compat
   </p>
-  <footer class="site">
-    <p>자동 생성 · 2026-06-01 19:34 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+  </div>  <footer class="site">
+    <p>자동 생성 · 2026-06-06 10:38 UTC · arXiv + Semantic Scholar + LLM 요약</p>
   </footer>
 </div>
 <script>
+  // 예약 공개: data-publish(=월요일 08:00 등) 시각이 미래인 항목은 그 시각까지 숨김.
+  // 브라우저 시계 기준이라 GitHub Actions 스케줄 지연과 무관하게 정시에 노출된다.
+  (function() {
+    var nodes = document.querySelectorAll('[data-publish]');
+    if (!nodes.length) return;
+    var now = Date.now();
+    nodes.forEach(function(el) {
+      var t = Date.parse(el.dataset.publish);
+      if (isNaN(t)) return;                 // 파싱 실패 → 그냥 노출
+      if (now >= t) { el.classList.remove('pending-hidden'); return; }
+      el.classList.add('pending-hidden');   // 아직 공개 전 → 숨김
+      var delay = t - now;
+      if (delay < 2147483647) {             // setTimeout 32-bit 한계 내에서만 예약 노출
+        setTimeout(function() {
+          el.classList.remove('pending-hidden');
+          el.classList.add('visible');      // 스크롤 reveal 트랜지션 즉시 표시
+        }, delay);
+      }
+    });
+  })();
+
   // 스크롤 reveal
   (function() {
     var els = document.querySelectorAll('.reveal');

@@ -1,0 +1,295 @@
+{
+  "week_id": "2026-06-08",
+  "generated_at": "2026-06-06T10:38:31.876093+00:00",
+  "publish_at": "2026-06-08T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2606.06494",
+        "title": "TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning",
+        "authors": [
+          "Marius Dragoi",
+          "Ioana Pintilie",
+          "Alexandra Dragomir",
+          "Antonio Barbalau",
+          "Florin Brad"
+        ],
+        "summary": "Parameter-efficient finetuning methods based on spectral decomposition have enabled progress in Continual Learning. In this paper we introduce TailLoR, which utilizes the singular bases U and V of the pre-trained weights as a fixed reference frame to learn a low-rank update applied to the singular value matrix. A soft spectral penalty discourages updates aligned with dominant singular directions, reducing interference while routing fine-grained adaptation into the highly flexible, long-tail spectral coordinates.",
+        "categories": [
+          "cs.LG"
+        ],
+        "published": "2026-06-04T17:59:55+00:00",
+        "updated": "2026-06-04T17:59:55+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.06494v1",
+        "abs_url": "https://arxiv.org/abs/2606.06494",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 0,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "",
+        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
+        "tags": []
+      },
+      {
+        "arxiv_id": "2606.06493",
+        "title": "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers",
+        "authors": [
+          "Lizhi Yang",
+          "Junheng Li",
+          "Nehar Poddar",
+          "Yiling Hou",
+          "Gio Huh",
+          "Robert Griffin",
+          "Georgia Gkioxari",
+          "Aaron Ames"
+        ],
+        "summary": "For a humanoid robot to be deployed in the real world, the choice of command space (i.e., the interface between task planning and whole-body control) is crucial. Existing whole-body controllers typically demand dense kinematic or spatial references that planners struggle to synthesize from task semantics. We instead propose a compact, explicit interface that is intuitive, general, modular, and expressive enough for diverse manipulation skills. To this end, we introduce HANDOFF, a single humanoid whole-body controller that follows this interface and is distilled via multi-teacher KL distillation under a context-conditioned gating scheme into a mixture-of-experts student from three complementary specialists: whole-body motion tracking with safety-filtered data, locomotion, and fall-recovery. On the Unitree G1, HANDOFF matches state-of-the-art velocity tracking and offers one of the largest robust manipulation workspaces. We further demonstrate hardware feasibility through multiple natural-language-driven task roll-outs, powered by a VLM-driven agentic planner with no task-specific data or controller fine-tuning.",
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "published": "2026-06-04T17:59:50+00:00",
+        "updated": "2026-06-04T17:59:50+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.06493v1",
+        "abs_url": "https://arxiv.org/abs/2606.06493",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "",
+        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
+        "tags": []
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "doi:10.1115/1.4071182",
+        "title": "A Hybrid Physical Damage Neural Network for Wear Prediction of Self-Lubricating Bearings",
+        "authors": [
+          "Shuo Wang",
+          "Shichang Du",
+          "Liang Yan",
+          "Shanshan Li",
+          "Xianmin Chen"
+        ],
+        "summary": "Self-lubricating bearings are widely used in aerospace, marine, and other fields due to their excellent performance. Accurate wear prediction for self-lubricating bearings is crucial for ensuring the reliability and safety. However, achieving both physical interpretability and high accuracy in predictive models remains a challenge, as these bearings typically operate under varying load conditions and in high-noise environments. In this paper, a hybrid physical damage neural network is proposed for wear prediction. First, a “physics neuron operator” based on the Archard wear model is designed and embedded into the network to directly compute wear depth. Second, a cumulative damage law is introduced into this operator to quantify the degradation path of the bearing during operation. Finally, the evolution law of wear stages is encoded as a physical constraint in the loss function to compel the network's learning process to follow the true degradation mechanism. To validate the model, a dedicated test platform was built, and a full life-cycle degradation dataset for self-lubricating bearings was collected. Experimental results show that the proposed model significantly outperforms existing methods in prediction accuracy. Furthermore, this paper provides an in-depth analysis of the model's physical interpretability, revealing its internal working mechanism and significantly enhancing its credibility and generalization ability.",
+        "categories": [],
+        "published": "2026-02-19T00:00:00+00:00",
+        "updated": "2026-02-19T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 26,
+        "influential_citation_count": 1,
+        "s2_url": "https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324",
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "aerospace"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "",
+        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
+        "tags": []
+      },
+      {
+        "arxiv_id": "2606.06405",
+        "title": "Bridging CAD and Data-Driven Design: Attributed Feature Graphs for Engineering Design",
+        "authors": [
+          "Abhishek Indupally",
+          "Ibraheem Alawadhi",
+          "Satchit Ramnath",
+          "Jami J. Shah"
+        ],
+        "summary": "Engineering design is an iterative, simulation-driven process where traditional workflows rely heavily on computationally expensive analyses such as finite element and computational fluid dynamics. Although data-driven methods have accelerated design evaluation and optimization, most existing geometric representations discard parametric and feature-level semantics, limiting their integration with CAD-driven design workflows and reducing model interpretability. To address this gap, this work introduces Attributed Feature Graphs (AFGs), a feature-based representation that encodes design features, such as extrusions, ribs, and pockets, as nodes and their geometric or dependency relations as directed edges. AFGs preserve design intent and parametric structure while remaining compatible with standard graph-based learning methods, enabling end-to-end learning directly on CAD-derived feature graphs. The paper demonstrates the proposed representation through a surrogate-modeling case study on the CarHoods10K automotive hood frame dataset, where a Graph Neural Network (GNN) is trained as an evaluation engine to predict performance metrics from AFG inputs. The learned model achieves competitive surrogate performance compared with traditional data-driven approaches, but with the added benefit that engineers can map predictions back to specific CAD features and interpret how individual design elements influence system behavior. Furthermore, because AFGs are built from native CAD features, engineers can directly edit the underlying geometry in the CAD environment and reevaluate the design through the same learned model.",
+        "categories": [
+          "cs.CE",
+          "cs.CG"
+        ],
+        "published": "2026-06-04T17:11:41+00:00",
+        "updated": "2026-06-04T17:11:41+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.06405v1",
+        "abs_url": "https://arxiv.org/abs/2606.06405",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "data-driven",
+          "finite element",
+          "automotive"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "",
+        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
+        "tags": []
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2606.06494",
+      "title": "TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning",
+      "authors": [
+        "Marius Dragoi",
+        "Ioana Pintilie",
+        "Alexandra Dragomir",
+        "Antonio Barbalau",
+        "Florin Brad"
+      ],
+      "summary": "Parameter-efficient finetuning methods based on spectral decomposition have enabled progress in Continual Learning. In this paper we introduce TailLoR, which utilizes the singular bases U and V of the pre-trained weights as a fixed reference frame to learn a low-rank update applied to the singular value matrix. A soft spectral penalty discourages updates aligned with dominant singular directions, reducing interference while routing fine-grained adaptation into the highly flexible, long-tail spectral coordinates.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-06-04T17:59:55+00:00",
+      "updated": "2026-06-04T17:59:55+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.06494v1",
+      "abs_url": "https://arxiv.org/abs/2606.06494",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "",
+      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
+      "tags": []
+    },
+    {
+      "arxiv_id": "2606.06493",
+      "title": "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers",
+      "authors": [
+        "Lizhi Yang",
+        "Junheng Li",
+        "Nehar Poddar",
+        "Yiling Hou",
+        "Gio Huh",
+        "Robert Griffin",
+        "Georgia Gkioxari",
+        "Aaron Ames"
+      ],
+      "summary": "For a humanoid robot to be deployed in the real world, the choice of command space (i.e., the interface between task planning and whole-body control) is crucial. Existing whole-body controllers typically demand dense kinematic or spatial references that planners struggle to synthesize from task semantics. We instead propose a compact, explicit interface that is intuitive, general, modular, and expressive enough for diverse manipulation skills. To this end, we introduce HANDOFF, a single humanoid whole-body controller that follows this interface and is distilled via multi-teacher KL distillation under a context-conditioned gating scheme into a mixture-of-experts student from three complementary specialists: whole-body motion tracking with safety-filtered data, locomotion, and fall-recovery. On the Unitree G1, HANDOFF matches state-of-the-art velocity tracking and offers one of the largest robust manipulation workspaces. We further demonstrate hardware feasibility through multiple natural-language-driven task roll-outs, powered by a VLM-driven agentic planner with no task-specific data or controller fine-tuning.",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-04T17:59:50+00:00",
+      "updated": "2026-06-04T17:59:50+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.06493v1",
+      "abs_url": "https://arxiv.org/abs/2606.06493",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "",
+      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
+      "tags": []
+    },
+    {
+      "arxiv_id": "doi:10.1115/1.4071182",
+      "title": "A Hybrid Physical Damage Neural Network for Wear Prediction of Self-Lubricating Bearings",
+      "authors": [
+        "Shuo Wang",
+        "Shichang Du",
+        "Liang Yan",
+        "Shanshan Li",
+        "Xianmin Chen"
+      ],
+      "summary": "Self-lubricating bearings are widely used in aerospace, marine, and other fields due to their excellent performance. Accurate wear prediction for self-lubricating bearings is crucial for ensuring the reliability and safety. However, achieving both physical interpretability and high accuracy in predictive models remains a challenge, as these bearings typically operate under varying load conditions and in high-noise environments. In this paper, a hybrid physical damage neural network is proposed for wear prediction. First, a “physics neuron operator” based on the Archard wear model is designed and embedded into the network to directly compute wear depth. Second, a cumulative damage law is introduced into this operator to quantify the degradation path of the bearing during operation. Finally, the evolution law of wear stages is encoded as a physical constraint in the loss function to compel the network's learning process to follow the true degradation mechanism. To validate the model, a dedicated test platform was built, and a full life-cycle degradation dataset for self-lubricating bearings was collected. Experimental results show that the proposed model significantly outperforms existing methods in prediction accuracy. Furthermore, this paper provides an in-depth analysis of the model's physical interpretability, revealing its internal working mechanism and significantly enhancing its credibility and generalization ability.",
+      "categories": [],
+      "published": "2026-02-19T00:00:00+00:00",
+      "updated": "2026-02-19T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 26,
+      "influential_citation_count": 1,
+      "s2_url": "https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324",
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "aerospace"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "",
+      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
+      "tags": []
+    },
+    {
+      "arxiv_id": "2606.06405",
+      "title": "Bridging CAD and Data-Driven Design: Attributed Feature Graphs for Engineering Design",
+      "authors": [
+        "Abhishek Indupally",
+        "Ibraheem Alawadhi",
+        "Satchit Ramnath",
+        "Jami J. Shah"
+      ],
+      "summary": "Engineering design is an iterative, simulation-driven process where traditional workflows rely heavily on computationally expensive analyses such as finite element and computational fluid dynamics. Although data-driven methods have accelerated design evaluation and optimization, most existing geometric representations discard parametric and feature-level semantics, limiting their integration with CAD-driven design workflows and reducing model interpretability. To address this gap, this work introduces Attributed Feature Graphs (AFGs), a feature-based representation that encodes design features, such as extrusions, ribs, and pockets, as nodes and their geometric or dependency relations as directed edges. AFGs preserve design intent and parametric structure while remaining compatible with standard graph-based learning methods, enabling end-to-end learning directly on CAD-derived feature graphs. The paper demonstrates the proposed representation through a surrogate-modeling case study on the CarHoods10K automotive hood frame dataset, where a Graph Neural Network (GNN) is trained as an evaluation engine to predict performance metrics from AFG inputs. The learned model achieves competitive surrogate performance compared with traditional data-driven approaches, but with the added benefit that engineers can map predictions back to specific CAD features and interpret how individual design elements influence system behavior. Furthermore, because AFGs are built from native CAD features, engineers can directly edit the underlying geometry in the CAD environment and reevaluate the design through the same learned model.",
+      "categories": [
+        "cs.CE",
+        "cs.CG"
+      ],
+      "published": "2026-06-04T17:11:41+00:00",
+      "updated": "2026-06-04T17:11:41+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.06405v1",
+      "abs_url": "https://arxiv.org/abs/2606.06405",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "data-driven",
+        "finite element",
+        "automotive"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "",
+      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
+      "tags": []
+    }
+  ]
+}

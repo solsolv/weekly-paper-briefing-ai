@@ -421,6 +421,9 @@
 
   /* ----- Hidden by filter ----- */
   .filter-hidden { display: none !important; }
+
+  /* ----- 예약 공개 전 숨김 (publish_at 미래) ----- */
+  .pending-hidden { display: none !important; }
 </style>
 </head>
 <body>
@@ -449,7 +452,20 @@
     </div>
   </section>
 
-    <a class="week-card reveal" href="weeks/2026-06-01.html" style="transition-delay: 0ms;">
+    <a class="week-card reveal" href="weeks/2026-06-08.html" data-publish="2026-06-08T08:00:00+09:00" style="transition-delay: 0ms;">
+      <h2>
+        <span class="week-date">2026-06-08</span>
+        <span class="badge ai">AI 2</span>
+        <span class="badge mech">기계공학 2</span>
+      </h2>
+      <ul>
+          <li>TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning</li>
+          <li>HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers</li>
+          <li>A Hybrid Physical Damage Neural Network for Wear Prediction of Self-Lubricating Bearings <span style="color: var(--text-muted)">· 26 cites</span></li>
+          <li>Bridging CAD and Data-Driven Design: Attributed Feature Graphs for Engineering Design</li>
+      </ul>
+    </a>
+    <a class="week-card reveal" href="weeks/2026-06-01.html" style="transition-delay: 60ms;">
       <h2>
         <span class="week-date">2026-06-01</span>
         <span class="badge ai">AI 2</span>
@@ -462,7 +478,7 @@
           <li>어파인 물리 정보 가우시안 프로세스를 이용한 전력 전자 컨버터의 파라미터 추정</li>
       </ul>
     </a>
-    <a class="week-card reveal" href="weeks/2026-05-25.html" style="transition-delay: 60ms;">
+    <a class="week-card reveal" href="weeks/2026-05-25.html" style="transition-delay: 120ms;">
       <h2>
         <span class="week-date">2026-05-25</span>
         <span class="badge ai">AI 2</span>
@@ -475,7 +491,7 @@
           <li>로봇 응용을 위한 비선형 부등식 제약 조건을 포함하는 시간 가변 볼록 최적화 문제 해결을 위한 Zhang 신경망 모델</li>
       </ul>
     </a>
-    <a class="week-card reveal" href="weeks/2026-05-18.html" style="transition-delay: 120ms;">
+    <a class="week-card reveal" href="weeks/2026-05-18.html" style="transition-delay: 180ms;">
       <h2>
         <span class="week-date">2026-05-18</span>
         <span class="badge ai">AI 2</span>
@@ -489,10 +505,31 @@
       </ul>
     </a>
   <footer class="site">
-    <p>자동 생성 · 2026-06-01 19:34 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+    <p>자동 생성 · 2026-06-06 10:38 UTC · arXiv + Semantic Scholar + LLM 요약</p>
   </footer>
 </div>
 <script>
+  // 예약 공개: data-publish(=월요일 08:00 등) 시각이 미래인 항목은 그 시각까지 숨김.
+  // 브라우저 시계 기준이라 GitHub Actions 스케줄 지연과 무관하게 정시에 노출된다.
+  (function() {
+    var nodes = document.querySelectorAll('[data-publish]');
+    if (!nodes.length) return;
+    var now = Date.now();
+    nodes.forEach(function(el) {
+      var t = Date.parse(el.dataset.publish);
+      if (isNaN(t)) return;                 // 파싱 실패 → 그냥 노출
+      if (now >= t) { el.classList.remove('pending-hidden'); return; }
+      el.classList.add('pending-hidden');   // 아직 공개 전 → 숨김
+      var delay = t - now;
+      if (delay < 2147483647) {             // setTimeout 32-bit 한계 내에서만 예약 노출
+        setTimeout(function() {
+          el.classList.remove('pending-hidden');
+          el.classList.add('visible');      // 스크롤 reveal 트랜지션 즉시 표시
+        }, delay);
+      }
+    });
+  })();
+
   // 스크롤 reveal
   (function() {
     var els = document.querySelectorAll('.reveal');
