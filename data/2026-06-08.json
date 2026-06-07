@@ -1,6 +1,6 @@
 {
   "week_id": "2026-06-08",
-  "generated_at": "2026-06-06T10:38:31.876093+00:00",
+  "generated_at": "2026-06-07T01:55:40.545495+00:00",
   "publish_at": "2026-06-08T08:00:00+09:00",
   "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
   "provider": "openai_compat",
@@ -113,41 +113,46 @@
         "tags": []
       },
       {
-        "arxiv_id": "2606.06405",
-        "title": "Bridging CAD and Data-Driven Design: Attributed Feature Graphs for Engineering Design",
+        "arxiv_id": "2606.03933",
+        "title": "Physics-Informed Single Atom Matching Pursuit: Guided-Waves Wavenumbers and Propagation Distance Estimation for Damage Localization in Structural Health Monitoring",
         "authors": [
-          "Abhishek Indupally",
-          "Ibraheem Alawadhi",
-          "Satchit Ramnath",
-          "Jami J. Shah"
+          "Sebastian Rodriguez",
+          "Borja Ferrandiz",
+          "Francisco Chinesta",
+          "Nazih Mechbal",
+          "Marc Rébillat"
         ],
-        "summary": "Engineering design is an iterative, simulation-driven process where traditional workflows rely heavily on computationally expensive analyses such as finite element and computational fluid dynamics. Although data-driven methods have accelerated design evaluation and optimization, most existing geometric representations discard parametric and feature-level semantics, limiting their integration with CAD-driven design workflows and reducing model interpretability. To address this gap, this work introduces Attributed Feature Graphs (AFGs), a feature-based representation that encodes design features, such as extrusions, ribs, and pockets, as nodes and their geometric or dependency relations as directed edges. AFGs preserve design intent and parametric structure while remaining compatible with standard graph-based learning methods, enabling end-to-end learning directly on CAD-derived feature graphs. The paper demonstrates the proposed representation through a surrogate-modeling case study on the CarHoods10K automotive hood frame dataset, where a Graph Neural Network (GNN) is trained as an evaluation engine to predict performance metrics from AFG inputs. The learned model achieves competitive surrogate performance compared with traditional data-driven approaches, but with the added benefit that engineers can map predictions back to specific CAD features and interpret how individual design elements influence system behavior. Furthermore, because AFGs are built from native CAD features, engineers can directly edit the underlying geometry in the CAD environment and reevaluate the design through the same learned model.",
+        "summary": "Structural Health Monitoring (SHM) aims at the real-time monitoring of the integrity of engineering structures, with Guided-waves (GWs) providing high sensitivity to damage presence and to ageing effects for thin-walled components. In conventional GW-based SHM, a bonded piezoelectric transducer (PZT) emits a short tone burst that produces an Initial Wave Packet (IWP) propagating through the structure. As this packet interacts with boundaries and potential damages, additional scattered wave packets are produced. A major limitation of such approaches lies in the simultaneous excitation of multiple dispersive GW modes by a single PZT, which significantly complicates signal interpretation and damage monitoring. In this context, this work proposes the Physics-Informed Single Atom Matching Pursuit (PISAMP) method, a signal decomposition method grounded in the physical principles governing wave propagation. In contrast with purely data-driven or numerically intensive techniques, the proposed approach embeds strong physical constraints into a low-dimensional and computationally efficient signal representation. This formulation enables the direct identification of key physically meaningful features, including modal wavenumber functions and propagation distances between actuator, damage and sensors. These extracted features, especially source-damage-sensor distances, allows to subsequently perform damage location using well established Elliptical Localization techniques. The principal novelty of this study lies in integrating wave propagation physics into a compact signal decomposition framework and developing an interpretable damage localization methodology for GW-SHM applications.",
         "categories": [
-          "cs.CE",
-          "cs.CG"
+          "cs.CE"
         ],
-        "published": "2026-06-04T17:11:41+00:00",
-        "updated": "2026-06-04T17:11:41+00:00",
-        "pdf_url": "https://arxiv.org/pdf/2606.06405v1",
-        "abs_url": "https://arxiv.org/abs/2606.06405",
+        "published": "2026-06-02T17:25:34+00:00",
+        "updated": "2026-06-02T17:25:34+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.03933v1",
+        "abs_url": "https://arxiv.org/abs/2606.03933",
         "track": "mech",
         "slot": "latest",
         "citation_count": 0,
-        "influential_citation_count": null,
-        "s2_url": null,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/cf4d29141cffb279d9560c6a8891f45d4618b462",
         "tldr": null,
         "matched_keywords": [
-          "neural network",
+          "physics-informed",
           "data-driven",
-          "finite element",
-          "automotive"
+          "structural",
+          "relevance:0.85"
         ],
         "affiliations": [],
         "source": "arxiv",
         "hf_upvotes": null,
-        "title_ko": "",
-        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-        "tags": []
+        "title_ko": "구조 건전성 모니터링에서 손상 위치 파악을 위한 물리 기반 단일 원자 매칭 추적: 유도파 파수 및 전파 거리 추정",
+        "summary_ko": "- 유도파(Guided-waves, GWs) 기반 구조 건전성 모니터링(SHM)은 다중 모드 여기로 신호 해석이 어렵습니다.\n- 이 연구는 파동 전파의 물리 원리를 반영한 PISAMP(Physics-Informed Single Atom Matching Pursuit) 방법을 제안합니다.\n- PISAMP는 물리적 제약을 포함하여 계산 효율적인 저차원 신호 표현을 가능하게 합니다.\n- 이 방법은 모드 파수 함수와 액추에이터-손상-센서 간 전파 거리를 직접 식별합니다.\n- 추출된 거리를 활용하여 타원형 위치 파악 기법으로 손상을 정확히 찾아내는 해석 가능한 방법을 제공합니다.",
+        "tags": [
+          "구조 건전성 모니터링",
+          "유도파",
+          "신호 처리",
+          "손상 위치 파악"
+        ]
       }
     ]
   },
@@ -255,41 +260,46 @@
       "tags": []
     },
     {
-      "arxiv_id": "2606.06405",
-      "title": "Bridging CAD and Data-Driven Design: Attributed Feature Graphs for Engineering Design",
+      "arxiv_id": "2606.03933",
+      "title": "Physics-Informed Single Atom Matching Pursuit: Guided-Waves Wavenumbers and Propagation Distance Estimation for Damage Localization in Structural Health Monitoring",
       "authors": [
-        "Abhishek Indupally",
-        "Ibraheem Alawadhi",
-        "Satchit Ramnath",
-        "Jami J. Shah"
+        "Sebastian Rodriguez",
+        "Borja Ferrandiz",
+        "Francisco Chinesta",
+        "Nazih Mechbal",
+        "Marc Rébillat"
       ],
-      "summary": "Engineering design is an iterative, simulation-driven process where traditional workflows rely heavily on computationally expensive analyses such as finite element and computational fluid dynamics. Although data-driven methods have accelerated design evaluation and optimization, most existing geometric representations discard parametric and feature-level semantics, limiting their integration with CAD-driven design workflows and reducing model interpretability. To address this gap, this work introduces Attributed Feature Graphs (AFGs), a feature-based representation that encodes design features, such as extrusions, ribs, and pockets, as nodes and their geometric or dependency relations as directed edges. AFGs preserve design intent and parametric structure while remaining compatible with standard graph-based learning methods, enabling end-to-end learning directly on CAD-derived feature graphs. The paper demonstrates the proposed representation through a surrogate-modeling case study on the CarHoods10K automotive hood frame dataset, where a Graph Neural Network (GNN) is trained as an evaluation engine to predict performance metrics from AFG inputs. The learned model achieves competitive surrogate performance compared with traditional data-driven approaches, but with the added benefit that engineers can map predictions back to specific CAD features and interpret how individual design elements influence system behavior. Furthermore, because AFGs are built from native CAD features, engineers can directly edit the underlying geometry in the CAD environment and reevaluate the design through the same learned model.",
+      "summary": "Structural Health Monitoring (SHM) aims at the real-time monitoring of the integrity of engineering structures, with Guided-waves (GWs) providing high sensitivity to damage presence and to ageing effects for thin-walled components. In conventional GW-based SHM, a bonded piezoelectric transducer (PZT) emits a short tone burst that produces an Initial Wave Packet (IWP) propagating through the structure. As this packet interacts with boundaries and potential damages, additional scattered wave packets are produced. A major limitation of such approaches lies in the simultaneous excitation of multiple dispersive GW modes by a single PZT, which significantly complicates signal interpretation and damage monitoring. In this context, this work proposes the Physics-Informed Single Atom Matching Pursuit (PISAMP) method, a signal decomposition method grounded in the physical principles governing wave propagation. In contrast with purely data-driven or numerically intensive techniques, the proposed approach embeds strong physical constraints into a low-dimensional and computationally efficient signal representation. This formulation enables the direct identification of key physically meaningful features, including modal wavenumber functions and propagation distances between actuator, damage and sensors. These extracted features, especially source-damage-sensor distances, allows to subsequently perform damage location using well established Elliptical Localization techniques. The principal novelty of this study lies in integrating wave propagation physics into a compact signal decomposition framework and developing an interpretable damage localization methodology for GW-SHM applications.",
       "categories": [
-        "cs.CE",
-        "cs.CG"
+        "cs.CE"
       ],
-      "published": "2026-06-04T17:11:41+00:00",
-      "updated": "2026-06-04T17:11:41+00:00",
-      "pdf_url": "https://arxiv.org/pdf/2606.06405v1",
-      "abs_url": "https://arxiv.org/abs/2606.06405",
+      "published": "2026-06-02T17:25:34+00:00",
+      "updated": "2026-06-02T17:25:34+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.03933v1",
+      "abs_url": "https://arxiv.org/abs/2606.03933",
       "track": "mech",
       "slot": "latest",
       "citation_count": 0,
-      "influential_citation_count": null,
-      "s2_url": null,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/cf4d29141cffb279d9560c6a8891f45d4618b462",
       "tldr": null,
       "matched_keywords": [
-        "neural network",
+        "physics-informed",
         "data-driven",
-        "finite element",
-        "automotive"
+        "structural",
+        "relevance:0.85"
       ],
       "affiliations": [],
       "source": "arxiv",
       "hf_upvotes": null,
-      "title_ko": "",
-      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-      "tags": []
+      "title_ko": "구조 건전성 모니터링에서 손상 위치 파악을 위한 물리 기반 단일 원자 매칭 추적: 유도파 파수 및 전파 거리 추정",
+      "summary_ko": "- 유도파(Guided-waves, GWs) 기반 구조 건전성 모니터링(SHM)은 다중 모드 여기로 신호 해석이 어렵습니다.\n- 이 연구는 파동 전파의 물리 원리를 반영한 PISAMP(Physics-Informed Single Atom Matching Pursuit) 방법을 제안합니다.\n- PISAMP는 물리적 제약을 포함하여 계산 효율적인 저차원 신호 표현을 가능하게 합니다.\n- 이 방법은 모드 파수 함수와 액추에이터-손상-센서 간 전파 거리를 직접 식별합니다.\n- 추출된 거리를 활용하여 타원형 위치 파악 기법으로 손상을 정확히 찾아내는 해석 가능한 방법을 제공합니다.",
+      "tags": [
+        "구조 건전성 모니터링",
+        "유도파",
+        "신호 처리",
+        "손상 위치 파악"
+      ]
     }
   ]
 }
