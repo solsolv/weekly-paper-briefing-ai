@@ -1,6 +1,6 @@
 {
   "week_id": "2026-06-08",
-  "generated_at": "2026-06-07T01:55:40.545495+00:00",
+  "generated_at": "2026-06-08T00:07:30.740388+00:00",
   "publish_at": "2026-06-08T08:00:00+09:00",
   "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
   "provider": "openai_compat",
@@ -9,296 +9,330 @@
   "tracks": {
     "ai": [
       {
-        "arxiv_id": "2606.06494",
-        "title": "TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning",
+        "arxiv_id": "2606.06186",
+        "title": "Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models",
         "authors": [
-          "Marius Dragoi",
-          "Ioana Pintilie",
-          "Alexandra Dragomir",
-          "Antonio Barbalau",
-          "Florin Brad"
+          "Liangsheng Liu",
+          "Si Chen",
+          "Jiamin Wu",
+          "Weiwei Feng",
+          "Zhixin Cheng",
+          "Xiaotian Yin",
+          "Wenfei Yang",
+          "Tianzhu Zhang"
         ],
-        "summary": "Parameter-efficient finetuning methods based on spectral decomposition have enabled progress in Continual Learning. In this paper we introduce TailLoR, which utilizes the singular bases U and V of the pre-trained weights as a fixed reference frame to learn a low-rank update applied to the singular value matrix. A soft spectral penalty discourages updates aligned with dominant singular directions, reducing interference while routing fine-grained adaptation into the highly flexible, long-tail spectral coordinates.",
+        "summary": "Vision-Language Models (VLMs), such as CLIP, have shown strong zero-shot generalization but remain highly vulnerable to adversarial perturbations, posing serious risks in real-world applications. Test-time defenses for VLMs have recently emerged as a promising and efficient approach to defend against adversarial attacks without requiring costly large-scale retraining. In this work, we uncover a surprising phenomenon: under diverse input transformations, adversarial images in CLIP's feature space consistently shift along a dominant direction, in contrast to the dispersed patterns of clean images. We hypothesize that this dominant shift, termed the Defense Direction, opposes the adversarial shift, pointing features back toward their correct class centers. Building on this insight, we propose Directional Bias-guided Defense (DBD), a test-time framework that estimates the Defense Direction and employs a DB-score-based two-stream reconstruction strategy to recover robust representations. Experiments on 15 datasets demonstrate that DBD not only achieves SOTA adversarial robustness while preserving clean accuracy, but also reveals the counterintuitive result that adversarial accuracy can even surpass clean accuracy. This demonstrates that adversarial perturbations inherently encode directional priors about the true decision boundary.",
         "categories": [
-          "cs.LG"
+          "cs.CV"
         ],
-        "published": "2026-06-04T17:59:55+00:00",
-        "updated": "2026-06-04T17:59:55+00:00",
-        "pdf_url": "https://arxiv.org/pdf/2606.06494v1",
-        "abs_url": "https://arxiv.org/abs/2606.06494",
+        "published": "2026-06-04T13:57:07+00:00",
+        "updated": "2026-06-04T13:57:07+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.06186v1",
+        "abs_url": "https://arxiv.org/abs/2606.06186",
         "track": "ai",
         "slot": "impact",
-        "citation_count": 0,
-        "influential_citation_count": null,
-        "s2_url": null,
-        "tldr": null,
+        "citation_count": 3,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/26fc2023765cc7d219957974e602a84a62239a97",
+        "tldr": "Directional Bias-guided Defense (DBD), a test-time framework that estimates the Defense Direction and employs a DB-score-based two-stream reconstruction strategy to recover robust representations, is proposed, demonstrating that adversarial perturbations inherently encode directional priors about the true decision boundary.",
         "matched_keywords": [],
         "affiliations": [],
         "source": "arxiv",
         "hf_upvotes": null,
-        "title_ko": "",
-        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-        "tags": []
+        "title_ko": "적대적 공격은 이미 답을 알려준다: 시각-언어 모델을 위한 방향성 편향 기반 테스트-시점 방어",
+        "summary_ko": "- CLIP과 같은 시각-언어 모델(VLM)은 적대적 공격에 취약하여 실제 적용에 위험합니다.\n- 연구팀은 적대적 이미지가 VLM의 특징 공간에서 일관된 방향으로 이동하는 현상을 발견했습니다.\n- 이 현상을 바탕으로 방향성 편향 기반 방어(DBD)라는 테스트-시점 방어 프레임워크를 제안합니다.\n- DBD는 방어 방향(Defense Direction)을 추정하고 DB-점수 기반 재구성 전략으로 강건한 표현을 복구합니다.\n- 15개 데이터셋 실험에서 DBD는 최첨단 강건성을 달성하며, 적대적 정확도가 일반 정확도를 능가하기도 합니다.",
+        "tags": [
+          "시각-언어 모델",
+          "적대적 공격",
+          "테스트-시점 방어",
+          "강건성"
+        ]
       },
       {
-        "arxiv_id": "2606.06493",
-        "title": "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers",
+        "arxiv_id": "2606.06492",
+        "title": "Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution",
         "authors": [
-          "Lizhi Yang",
-          "Junheng Li",
-          "Nehar Poddar",
-          "Yiling Hou",
-          "Gio Huh",
-          "Robert Griffin",
-          "Georgia Gkioxari",
-          "Aaron Ames"
+          "Liliana Hotsko",
+          "Yinxi Li",
+          "Yuntian Deng",
+          "Pengyu Nie"
         ],
-        "summary": "For a humanoid robot to be deployed in the real world, the choice of command space (i.e., the interface between task planning and whole-body control) is crucial. Existing whole-body controllers typically demand dense kinematic or spatial references that planners struggle to synthesize from task semantics. We instead propose a compact, explicit interface that is intuitive, general, modular, and expressive enough for diverse manipulation skills. To this end, we introduce HANDOFF, a single humanoid whole-body controller that follows this interface and is distilled via multi-teacher KL distillation under a context-conditioned gating scheme into a mixture-of-experts student from three complementary specialists: whole-body motion tracking with safety-filtered data, locomotion, and fall-recovery. On the Unitree G1, HANDOFF matches state-of-the-art velocity tracking and offers one of the largest robust manipulation workspaces. We further demonstrate hardware feasibility through multiple natural-language-driven task roll-outs, powered by a VLM-driven agentic planner with no task-specific data or controller fine-tuning.",
+        "summary": "Code language models need repository-level context to resolve imports, APIs, and project conventions. Existing methods inject this knowledge as long inputs (retrieved through RAG or dependency analysis) or through per-repository fine-tuning and LoRA -- costly at repository scale and brittle to evolving codebases. We introduce Code2LoRA, a hypernetwork framework that generates repository-specific LoRA adapters, effectively injecting repository knowledge with zero inference-time token overhead. Code2LoRA supports two usage scenarios: Code2LoRA-Static converts a single repository snapshot into an adapter, suitable for comprehension of stable codebases; while Code2LoRA-Evo maintains an adapter backed by a GRU hidden state updated per code diff, suitable for active development of evolving codebases. To evaluate Code2LoRA against parameter-efficient fine-tuning baselines, we build RepoPeftBench, a benchmark of 604 Python repositories with two tracks: a static track with 40K training and 12K test assertion-completion tasks, and an evolution track with 215K commit-derived training and 87K commit-derived test tasks. On the static track, Code2LoRA-Static achieves 63.8% cross-repo and 66.2% in-repo exact match, matching the per-repository LoRA upper bound; on the evolution track, Code2LoRA-Evo achieves 60.3% cross-repo exact match (+5.2 pp over a single shared LoRA). Code2LoRA's code can be found at https://anonymous.4open.science/r/code2lora-6857; the model checkpoints and RepoPeftBench datasets can be found at https://huggingface.co/code2lora.",
         "categories": [
-          "cs.RO",
+          "cs.SE",
           "cs.AI",
-          "cs.LG"
+          "cs.CL"
         ],
-        "published": "2026-06-04T17:59:50+00:00",
-        "updated": "2026-06-04T17:59:50+00:00",
-        "pdf_url": "https://arxiv.org/pdf/2606.06493v1",
-        "abs_url": "https://arxiv.org/abs/2606.06493",
+        "published": "2026-06-04T17:59:46+00:00",
+        "updated": "2026-06-04T17:59:46+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.06492v1",
+        "abs_url": "https://arxiv.org/abs/2606.06492",
         "track": "ai",
         "slot": "latest",
         "citation_count": 0,
-        "influential_citation_count": null,
-        "s2_url": null,
-        "tldr": null,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/7f3ef0d1f4199aadc8c54771ab0405b7704f288a",
+        "tldr": "This work introduces Code2LoRA, a hypernetwork framework that generates repository-specific LoRA adapters, effectively injecting repository knowledge with zero inference-time token overhead, and evaluates Code2LoRA against parameter-efficient fine-tuning baselines.",
         "matched_keywords": [],
         "affiliations": [],
-        "source": "arxiv",
-        "hf_upvotes": null,
-        "title_ko": "",
-        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-        "tags": []
+        "source": "huggingface",
+        "hf_upvotes": 72,
+        "title_ko": "Code2LoRA: 소프트웨어 진화 환경에서 코드 언어 모델을 위한 하이퍼네트워크 생성 어댑터",
+        "summary_ko": "- 코드 언어 모델은 저장소(repository) 수준의 문맥이 필요하지만, 기존 방법은 비용이 많이 들고 코드베이스 변화에 취약합니다.\n- Code2LoRA는 하이퍼네트워크(hypernetwork)를 사용하여 저장소별 LoRA 어댑터를 생성, 추론 시 토큰 오버헤드 없이 저장소 지식을 주입합니다.\n- Code2LoRA는 정적 코드베이스용 Code2LoRA-Static과 코드 변경에 따라 업데이트되는 Code2LoRA-Evo 두 가지 시나리오를 지원합니다.\n- RepoPeftBench 벤치마크에서 Code2LoRA-Static은 정적 트랙에서 63.8%의 정확도를, Code2LoRA-Evo는 진화 트랙에서 60.3%의 정확도를 달성했습니다.\n- 이 프레임워크는 변화하는 코드 환경에 효과적으로 적응하는 코드 언어 모델을 위한 효율적인 지식 주입 방법을 제시합니다.",
+        "tags": [
+          "코드 언어 모델",
+          "하이퍼네트워크",
+          "LoRA",
+          "소프트웨어 진화"
+        ]
       }
     ],
     "mech": [
       {
-        "arxiv_id": "doi:10.1115/1.4071182",
-        "title": "A Hybrid Physical Damage Neural Network for Wear Prediction of Self-Lubricating Bearings",
+        "arxiv_id": "2606.06405",
+        "title": "Bridging CAD and Data-Driven Design: Attributed Feature Graphs for Engineering Design",
         "authors": [
-          "Shuo Wang",
-          "Shichang Du",
-          "Liang Yan",
-          "Shanshan Li",
-          "Xianmin Chen"
+          "Abhishek Indupally",
+          "Ibraheem Alawadhi",
+          "Satchit Ramnath",
+          "Jami J. Shah"
         ],
-        "summary": "Self-lubricating bearings are widely used in aerospace, marine, and other fields due to their excellent performance. Accurate wear prediction for self-lubricating bearings is crucial for ensuring the reliability and safety. However, achieving both physical interpretability and high accuracy in predictive models remains a challenge, as these bearings typically operate under varying load conditions and in high-noise environments. In this paper, a hybrid physical damage neural network is proposed for wear prediction. First, a “physics neuron operator” based on the Archard wear model is designed and embedded into the network to directly compute wear depth. Second, a cumulative damage law is introduced into this operator to quantify the degradation path of the bearing during operation. Finally, the evolution law of wear stages is encoded as a physical constraint in the loss function to compel the network's learning process to follow the true degradation mechanism. To validate the model, a dedicated test platform was built, and a full life-cycle degradation dataset for self-lubricating bearings was collected. Experimental results show that the proposed model significantly outperforms existing methods in prediction accuracy. Furthermore, this paper provides an in-depth analysis of the model's physical interpretability, revealing its internal working mechanism and significantly enhancing its credibility and generalization ability.",
-        "categories": [],
-        "published": "2026-02-19T00:00:00+00:00",
-        "updated": "2026-02-19T00:00:00+00:00",
-        "pdf_url": "",
-        "abs_url": "https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324",
+        "summary": "Engineering design is an iterative, simulation-driven process where traditional workflows rely heavily on computationally expensive analyses such as finite element and computational fluid dynamics. Although data-driven methods have accelerated design evaluation and optimization, most existing geometric representations discard parametric and feature-level semantics, limiting their integration with CAD-driven design workflows and reducing model interpretability. To address this gap, this work introduces Attributed Feature Graphs (AFGs), a feature-based representation that encodes design features, such as extrusions, ribs, and pockets, as nodes and their geometric or dependency relations as directed edges. AFGs preserve design intent and parametric structure while remaining compatible with standard graph-based learning methods, enabling end-to-end learning directly on CAD-derived feature graphs. The paper demonstrates the proposed representation through a surrogate-modeling case study on the CarHoods10K automotive hood frame dataset, where a Graph Neural Network (GNN) is trained as an evaluation engine to predict performance metrics from AFG inputs. The learned model achieves competitive surrogate performance compared with traditional data-driven approaches, but with the added benefit that engineers can map predictions back to specific CAD features and interpret how individual design elements influence system behavior. Furthermore, because AFGs are built from native CAD features, engineers can directly edit the underlying geometry in the CAD environment and reevaluate the design through the same learned model.",
+        "categories": [
+          "cs.CE",
+          "cs.CG"
+        ],
+        "published": "2026-06-04T17:11:41+00:00",
+        "updated": "2026-06-04T17:11:41+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.06405v1",
+        "abs_url": "https://arxiv.org/abs/2606.06405",
         "track": "mech",
         "slot": "impact",
-        "citation_count": 26,
-        "influential_citation_count": 1,
-        "s2_url": "https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324",
-        "tldr": null,
-        "matched_keywords": [
-          "neural network",
-          "aerospace"
-        ],
-        "affiliations": [],
-        "source": "s2_search",
-        "hf_upvotes": null,
-        "title_ko": "",
-        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-        "tags": []
-      },
-      {
-        "arxiv_id": "2606.03933",
-        "title": "Physics-Informed Single Atom Matching Pursuit: Guided-Waves Wavenumbers and Propagation Distance Estimation for Damage Localization in Structural Health Monitoring",
-        "authors": [
-          "Sebastian Rodriguez",
-          "Borja Ferrandiz",
-          "Francisco Chinesta",
-          "Nazih Mechbal",
-          "Marc Rébillat"
-        ],
-        "summary": "Structural Health Monitoring (SHM) aims at the real-time monitoring of the integrity of engineering structures, with Guided-waves (GWs) providing high sensitivity to damage presence and to ageing effects for thin-walled components. In conventional GW-based SHM, a bonded piezoelectric transducer (PZT) emits a short tone burst that produces an Initial Wave Packet (IWP) propagating through the structure. As this packet interacts with boundaries and potential damages, additional scattered wave packets are produced. A major limitation of such approaches lies in the simultaneous excitation of multiple dispersive GW modes by a single PZT, which significantly complicates signal interpretation and damage monitoring. In this context, this work proposes the Physics-Informed Single Atom Matching Pursuit (PISAMP) method, a signal decomposition method grounded in the physical principles governing wave propagation. In contrast with purely data-driven or numerically intensive techniques, the proposed approach embeds strong physical constraints into a low-dimensional and computationally efficient signal representation. This formulation enables the direct identification of key physically meaningful features, including modal wavenumber functions and propagation distances between actuator, damage and sensors. These extracted features, especially source-damage-sensor distances, allows to subsequently perform damage location using well established Elliptical Localization techniques. The principal novelty of this study lies in integrating wave propagation physics into a compact signal decomposition framework and developing an interpretable damage localization methodology for GW-SHM applications.",
-        "categories": [
-          "cs.CE"
-        ],
-        "published": "2026-06-02T17:25:34+00:00",
-        "updated": "2026-06-02T17:25:34+00:00",
-        "pdf_url": "https://arxiv.org/pdf/2606.03933v1",
-        "abs_url": "https://arxiv.org/abs/2606.03933",
-        "track": "mech",
-        "slot": "latest",
         "citation_count": 0,
         "influential_citation_count": 0,
-        "s2_url": "https://www.semanticscholar.org/paper/cf4d29141cffb279d9560c6a8891f45d4618b462",
-        "tldr": null,
+        "s2_url": "https://www.semanticscholar.org/paper/fed4cf4cacd65a4f8ffaebe607e9820e45b34f1d",
+        "tldr": "Attributed Feature Graphs is introduced, a feature-based representation that encodes design features, such as extrusions, ribs, and pockets, as nodes and their geometric or dependency relations as directed edges as directed edges, enabling end-to-end learning directly on CAD-derived feature graphs.",
         "matched_keywords": [
-          "physics-informed",
+          "neural network",
           "data-driven",
-          "structural",
+          "finite element",
+          "automotive",
           "relevance:0.85"
         ],
         "affiliations": [],
         "source": "arxiv",
         "hf_upvotes": null,
-        "title_ko": "구조 건전성 모니터링에서 손상 위치 파악을 위한 물리 기반 단일 원자 매칭 추적: 유도파 파수 및 전파 거리 추정",
-        "summary_ko": "- 유도파(Guided-waves, GWs) 기반 구조 건전성 모니터링(SHM)은 다중 모드 여기로 신호 해석이 어렵습니다.\n- 이 연구는 파동 전파의 물리 원리를 반영한 PISAMP(Physics-Informed Single Atom Matching Pursuit) 방법을 제안합니다.\n- PISAMP는 물리적 제약을 포함하여 계산 효율적인 저차원 신호 표현을 가능하게 합니다.\n- 이 방법은 모드 파수 함수와 액추에이터-손상-센서 간 전파 거리를 직접 식별합니다.\n- 추출된 거리를 활용하여 타원형 위치 파악 기법으로 손상을 정확히 찾아내는 해석 가능한 방법을 제공합니다.",
+        "title_ko": "CAD와 데이터 기반 설계 연결: 엔지니어링 설계를 위한 속성 특징 그래프",
+        "summary_ko": "- 기존 엔지니어링 설계는 값비싼 시뮬레이션에 의존하며, 데이터 기반 방법은 기하학적 의미를 소실합니다.\n- 본 연구는 설계 특징을 노드로, 관계를 엣지로 인코딩하는 속성 특징 그래프(AFG)를 제안합니다.\n- AFG는 CAD에서 파생된 특징 그래프에 직접 종단간 학습을 가능하게 합니다.\n- CarHoods10K 데이터셋에 GNN을 훈련하여 경쟁력 있는 성능을 달성했습니다.\n- AFG는 설계 의도를 보존하며 엔지니어가 CAD에서 직접 수정하고 해석할 수 있게 합니다.",
         "tags": [
-          "구조 건전성 모니터링",
-          "유도파",
-          "신호 처리",
-          "손상 위치 파악"
+          "엔지니어링 설계",
+          "CAD",
+          "그래프 신경망",
+          "특징 그래프"
+        ]
+      },
+      {
+        "arxiv_id": "2606.03816",
+        "title": "Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials",
+        "authors": [
+          "Simon Wiesheier",
+          "Paul Steinmann",
+          "Miguel Angel Moreno-Mateos"
+        ],
+        "summary": "This work revisits the recently proposed data-adaptive viscoelasticity (DAVIS) framework, a spline-based formulation of finite viscoelasticity within the generalized standard materials setting. DAVIS enables a data-driven representation of equilibrium and non-equilibrium constitutive functions while retaining thermodynamic consistency and supporting parameter identification via finite element model updating. The present contribution focuses on improving the robustness and identifiability of non-equilibrium branches in generalized Maxwell-type models. To this end, two extensions of the original formulation are introduced. First, the spline representation is reformulated in terms of curvature-based variables, which is especially convenient to enforce monotonicity and convexity constraints by construction through a smooth parameter mapping. Second, the adaptation of interpolation domains is decoupled from the inner parameter identification by means of a staggered, block-alternating strategy: spline coefficients are optimized for fixed domain endpoints, while the endpoints are updated in an outer loop based on smooth statistics of sampled invariants. This separation alleviates an inherent scaling ambiguity between interpolation domains and spline coefficients that can impair conditioning in viscoelastic inverse problems. The underlying constitutive model remains the finite strain viscoelasticity framework of Reese and Govindjee. The proposed identification strategy is assessed for homogeneous uniaxial loading-unloading tests, which facilitates the study of identifiability and robustness of non-equilibrium branches.",
+        "categories": [
+          "cs.CE"
+        ],
+        "published": "2026-06-02T15:58:04+00:00",
+        "updated": "2026-06-02T15:58:04+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.03816v1",
+        "abs_url": "https://arxiv.org/abs/2606.03816",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/3956d55908d69cd62b62440cfb6f45fff0f6cf84",
+        "tldr": "This work revisits the recently proposed data-adaptive viscoelasticity (DAVIS) framework, a spline-based formulation of finite viscoelasticity within the generalized standard materials setting and improves the robustness and identifiability of non-equilibrium branches in generalized Maxwell-type models.",
+        "matched_keywords": [
+          "data-driven",
+          "finite element",
+          "elastic",
+          "relevance:0.80"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "DAVIS를 이용한 유한 점탄성 학습: 일반화된 표준 재료를 위한 지도 학습 프레임워크",
+        "summary_ko": "- 이 연구는 일반화된 표준 재료(generalized standard materials) 설정 내에서 유한 점탄성(finite viscoelasticity)을 위한 DAVIS 프레임워크를 개선합니다.\n- 기존 DAVIS의 비평형(non-equilibrium) 가지의 견고성과 식별 가능성을 높이기 위해 두 가지 확장을 제안합니다.\n- 첫째, 스플라인(spline) 표현을 곡률 기반 변수로 재구성하여 단조성 및 볼록성 제약을 적용합니다.\n- 둘째, 보간(interpolation) 도메인 적응을 내부 매개변수 식별과 분리하는 전략을 사용합니다.\n- 이 방법은 균일한 단축 하중-제거 테스트를 통해 비평형 가지의 식별 가능성과 견고성을 평가합니다.",
+        "tags": [
+          "점탄성",
+          "DAVIS 프레임워크",
+          "재료 모델링",
+          "기계공학"
         ]
       }
     ]
   },
   "papers": [
     {
-      "arxiv_id": "2606.06494",
-      "title": "TailLoR: Protecting Principal Components in Parameter-Efficient Continual Learning",
+      "arxiv_id": "2606.06186",
+      "title": "Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models",
       "authors": [
-        "Marius Dragoi",
-        "Ioana Pintilie",
-        "Alexandra Dragomir",
-        "Antonio Barbalau",
-        "Florin Brad"
+        "Liangsheng Liu",
+        "Si Chen",
+        "Jiamin Wu",
+        "Weiwei Feng",
+        "Zhixin Cheng",
+        "Xiaotian Yin",
+        "Wenfei Yang",
+        "Tianzhu Zhang"
       ],
-      "summary": "Parameter-efficient finetuning methods based on spectral decomposition have enabled progress in Continual Learning. In this paper we introduce TailLoR, which utilizes the singular bases U and V of the pre-trained weights as a fixed reference frame to learn a low-rank update applied to the singular value matrix. A soft spectral penalty discourages updates aligned with dominant singular directions, reducing interference while routing fine-grained adaptation into the highly flexible, long-tail spectral coordinates.",
+      "summary": "Vision-Language Models (VLMs), such as CLIP, have shown strong zero-shot generalization but remain highly vulnerable to adversarial perturbations, posing serious risks in real-world applications. Test-time defenses for VLMs have recently emerged as a promising and efficient approach to defend against adversarial attacks without requiring costly large-scale retraining. In this work, we uncover a surprising phenomenon: under diverse input transformations, adversarial images in CLIP's feature space consistently shift along a dominant direction, in contrast to the dispersed patterns of clean images. We hypothesize that this dominant shift, termed the Defense Direction, opposes the adversarial shift, pointing features back toward their correct class centers. Building on this insight, we propose Directional Bias-guided Defense (DBD), a test-time framework that estimates the Defense Direction and employs a DB-score-based two-stream reconstruction strategy to recover robust representations. Experiments on 15 datasets demonstrate that DBD not only achieves SOTA adversarial robustness while preserving clean accuracy, but also reveals the counterintuitive result that adversarial accuracy can even surpass clean accuracy. This demonstrates that adversarial perturbations inherently encode directional priors about the true decision boundary.",
       "categories": [
-        "cs.LG"
+        "cs.CV"
       ],
-      "published": "2026-06-04T17:59:55+00:00",
-      "updated": "2026-06-04T17:59:55+00:00",
-      "pdf_url": "https://arxiv.org/pdf/2606.06494v1",
-      "abs_url": "https://arxiv.org/abs/2606.06494",
+      "published": "2026-06-04T13:57:07+00:00",
+      "updated": "2026-06-04T13:57:07+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.06186v1",
+      "abs_url": "https://arxiv.org/abs/2606.06186",
       "track": "ai",
       "slot": "impact",
-      "citation_count": 0,
-      "influential_citation_count": null,
-      "s2_url": null,
-      "tldr": null,
+      "citation_count": 3,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/26fc2023765cc7d219957974e602a84a62239a97",
+      "tldr": "Directional Bias-guided Defense (DBD), a test-time framework that estimates the Defense Direction and employs a DB-score-based two-stream reconstruction strategy to recover robust representations, is proposed, demonstrating that adversarial perturbations inherently encode directional priors about the true decision boundary.",
       "matched_keywords": [],
       "affiliations": [],
       "source": "arxiv",
       "hf_upvotes": null,
-      "title_ko": "",
-      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-      "tags": []
+      "title_ko": "적대적 공격은 이미 답을 알려준다: 시각-언어 모델을 위한 방향성 편향 기반 테스트-시점 방어",
+      "summary_ko": "- CLIP과 같은 시각-언어 모델(VLM)은 적대적 공격에 취약하여 실제 적용에 위험합니다.\n- 연구팀은 적대적 이미지가 VLM의 특징 공간에서 일관된 방향으로 이동하는 현상을 발견했습니다.\n- 이 현상을 바탕으로 방향성 편향 기반 방어(DBD)라는 테스트-시점 방어 프레임워크를 제안합니다.\n- DBD는 방어 방향(Defense Direction)을 추정하고 DB-점수 기반 재구성 전략으로 강건한 표현을 복구합니다.\n- 15개 데이터셋 실험에서 DBD는 최첨단 강건성을 달성하며, 적대적 정확도가 일반 정확도를 능가하기도 합니다.",
+      "tags": [
+        "시각-언어 모델",
+        "적대적 공격",
+        "테스트-시점 방어",
+        "강건성"
+      ]
     },
     {
-      "arxiv_id": "2606.06493",
-      "title": "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers",
+      "arxiv_id": "2606.06492",
+      "title": "Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution",
       "authors": [
-        "Lizhi Yang",
-        "Junheng Li",
-        "Nehar Poddar",
-        "Yiling Hou",
-        "Gio Huh",
-        "Robert Griffin",
-        "Georgia Gkioxari",
-        "Aaron Ames"
+        "Liliana Hotsko",
+        "Yinxi Li",
+        "Yuntian Deng",
+        "Pengyu Nie"
       ],
-      "summary": "For a humanoid robot to be deployed in the real world, the choice of command space (i.e., the interface between task planning and whole-body control) is crucial. Existing whole-body controllers typically demand dense kinematic or spatial references that planners struggle to synthesize from task semantics. We instead propose a compact, explicit interface that is intuitive, general, modular, and expressive enough for diverse manipulation skills. To this end, we introduce HANDOFF, a single humanoid whole-body controller that follows this interface and is distilled via multi-teacher KL distillation under a context-conditioned gating scheme into a mixture-of-experts student from three complementary specialists: whole-body motion tracking with safety-filtered data, locomotion, and fall-recovery. On the Unitree G1, HANDOFF matches state-of-the-art velocity tracking and offers one of the largest robust manipulation workspaces. We further demonstrate hardware feasibility through multiple natural-language-driven task roll-outs, powered by a VLM-driven agentic planner with no task-specific data or controller fine-tuning.",
+      "summary": "Code language models need repository-level context to resolve imports, APIs, and project conventions. Existing methods inject this knowledge as long inputs (retrieved through RAG or dependency analysis) or through per-repository fine-tuning and LoRA -- costly at repository scale and brittle to evolving codebases. We introduce Code2LoRA, a hypernetwork framework that generates repository-specific LoRA adapters, effectively injecting repository knowledge with zero inference-time token overhead. Code2LoRA supports two usage scenarios: Code2LoRA-Static converts a single repository snapshot into an adapter, suitable for comprehension of stable codebases; while Code2LoRA-Evo maintains an adapter backed by a GRU hidden state updated per code diff, suitable for active development of evolving codebases. To evaluate Code2LoRA against parameter-efficient fine-tuning baselines, we build RepoPeftBench, a benchmark of 604 Python repositories with two tracks: a static track with 40K training and 12K test assertion-completion tasks, and an evolution track with 215K commit-derived training and 87K commit-derived test tasks. On the static track, Code2LoRA-Static achieves 63.8% cross-repo and 66.2% in-repo exact match, matching the per-repository LoRA upper bound; on the evolution track, Code2LoRA-Evo achieves 60.3% cross-repo exact match (+5.2 pp over a single shared LoRA). Code2LoRA's code can be found at https://anonymous.4open.science/r/code2lora-6857; the model checkpoints and RepoPeftBench datasets can be found at https://huggingface.co/code2lora.",
       "categories": [
-        "cs.RO",
+        "cs.SE",
         "cs.AI",
-        "cs.LG"
+        "cs.CL"
       ],
-      "published": "2026-06-04T17:59:50+00:00",
-      "updated": "2026-06-04T17:59:50+00:00",
-      "pdf_url": "https://arxiv.org/pdf/2606.06493v1",
-      "abs_url": "https://arxiv.org/abs/2606.06493",
+      "published": "2026-06-04T17:59:46+00:00",
+      "updated": "2026-06-04T17:59:46+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.06492v1",
+      "abs_url": "https://arxiv.org/abs/2606.06492",
       "track": "ai",
-      "slot": "latest",
-      "citation_count": 0,
-      "influential_citation_count": null,
-      "s2_url": null,
-      "tldr": null,
-      "matched_keywords": [],
-      "affiliations": [],
-      "source": "arxiv",
-      "hf_upvotes": null,
-      "title_ko": "",
-      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-      "tags": []
-    },
-    {
-      "arxiv_id": "doi:10.1115/1.4071182",
-      "title": "A Hybrid Physical Damage Neural Network for Wear Prediction of Self-Lubricating Bearings",
-      "authors": [
-        "Shuo Wang",
-        "Shichang Du",
-        "Liang Yan",
-        "Shanshan Li",
-        "Xianmin Chen"
-      ],
-      "summary": "Self-lubricating bearings are widely used in aerospace, marine, and other fields due to their excellent performance. Accurate wear prediction for self-lubricating bearings is crucial for ensuring the reliability and safety. However, achieving both physical interpretability and high accuracy in predictive models remains a challenge, as these bearings typically operate under varying load conditions and in high-noise environments. In this paper, a hybrid physical damage neural network is proposed for wear prediction. First, a “physics neuron operator” based on the Archard wear model is designed and embedded into the network to directly compute wear depth. Second, a cumulative damage law is introduced into this operator to quantify the degradation path of the bearing during operation. Finally, the evolution law of wear stages is encoded as a physical constraint in the loss function to compel the network's learning process to follow the true degradation mechanism. To validate the model, a dedicated test platform was built, and a full life-cycle degradation dataset for self-lubricating bearings was collected. Experimental results show that the proposed model significantly outperforms existing methods in prediction accuracy. Furthermore, this paper provides an in-depth analysis of the model's physical interpretability, revealing its internal working mechanism and significantly enhancing its credibility and generalization ability.",
-      "categories": [],
-      "published": "2026-02-19T00:00:00+00:00",
-      "updated": "2026-02-19T00:00:00+00:00",
-      "pdf_url": "",
-      "abs_url": "https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324",
-      "track": "mech",
-      "slot": "impact",
-      "citation_count": 26,
-      "influential_citation_count": 1,
-      "s2_url": "https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324",
-      "tldr": null,
-      "matched_keywords": [
-        "neural network",
-        "aerospace"
-      ],
-      "affiliations": [],
-      "source": "s2_search",
-      "hf_upvotes": null,
-      "title_ko": "",
-      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-      "tags": []
-    },
-    {
-      "arxiv_id": "2606.03933",
-      "title": "Physics-Informed Single Atom Matching Pursuit: Guided-Waves Wavenumbers and Propagation Distance Estimation for Damage Localization in Structural Health Monitoring",
-      "authors": [
-        "Sebastian Rodriguez",
-        "Borja Ferrandiz",
-        "Francisco Chinesta",
-        "Nazih Mechbal",
-        "Marc Rébillat"
-      ],
-      "summary": "Structural Health Monitoring (SHM) aims at the real-time monitoring of the integrity of engineering structures, with Guided-waves (GWs) providing high sensitivity to damage presence and to ageing effects for thin-walled components. In conventional GW-based SHM, a bonded piezoelectric transducer (PZT) emits a short tone burst that produces an Initial Wave Packet (IWP) propagating through the structure. As this packet interacts with boundaries and potential damages, additional scattered wave packets are produced. A major limitation of such approaches lies in the simultaneous excitation of multiple dispersive GW modes by a single PZT, which significantly complicates signal interpretation and damage monitoring. In this context, this work proposes the Physics-Informed Single Atom Matching Pursuit (PISAMP) method, a signal decomposition method grounded in the physical principles governing wave propagation. In contrast with purely data-driven or numerically intensive techniques, the proposed approach embeds strong physical constraints into a low-dimensional and computationally efficient signal representation. This formulation enables the direct identification of key physically meaningful features, including modal wavenumber functions and propagation distances between actuator, damage and sensors. These extracted features, especially source-damage-sensor distances, allows to subsequently perform damage location using well established Elliptical Localization techniques. The principal novelty of this study lies in integrating wave propagation physics into a compact signal decomposition framework and developing an interpretable damage localization methodology for GW-SHM applications.",
-      "categories": [
-        "cs.CE"
-      ],
-      "published": "2026-06-02T17:25:34+00:00",
-      "updated": "2026-06-02T17:25:34+00:00",
-      "pdf_url": "https://arxiv.org/pdf/2606.03933v1",
-      "abs_url": "https://arxiv.org/abs/2606.03933",
-      "track": "mech",
       "slot": "latest",
       "citation_count": 0,
       "influential_citation_count": 0,
-      "s2_url": "https://www.semanticscholar.org/paper/cf4d29141cffb279d9560c6a8891f45d4618b462",
-      "tldr": null,
+      "s2_url": "https://www.semanticscholar.org/paper/7f3ef0d1f4199aadc8c54771ab0405b7704f288a",
+      "tldr": "This work introduces Code2LoRA, a hypernetwork framework that generates repository-specific LoRA adapters, effectively injecting repository knowledge with zero inference-time token overhead, and evaluates Code2LoRA against parameter-efficient fine-tuning baselines.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 72,
+      "title_ko": "Code2LoRA: 소프트웨어 진화 환경에서 코드 언어 모델을 위한 하이퍼네트워크 생성 어댑터",
+      "summary_ko": "- 코드 언어 모델은 저장소(repository) 수준의 문맥이 필요하지만, 기존 방법은 비용이 많이 들고 코드베이스 변화에 취약합니다.\n- Code2LoRA는 하이퍼네트워크(hypernetwork)를 사용하여 저장소별 LoRA 어댑터를 생성, 추론 시 토큰 오버헤드 없이 저장소 지식을 주입합니다.\n- Code2LoRA는 정적 코드베이스용 Code2LoRA-Static과 코드 변경에 따라 업데이트되는 Code2LoRA-Evo 두 가지 시나리오를 지원합니다.\n- RepoPeftBench 벤치마크에서 Code2LoRA-Static은 정적 트랙에서 63.8%의 정확도를, Code2LoRA-Evo는 진화 트랙에서 60.3%의 정확도를 달성했습니다.\n- 이 프레임워크는 변화하는 코드 환경에 효과적으로 적응하는 코드 언어 모델을 위한 효율적인 지식 주입 방법을 제시합니다.",
+      "tags": [
+        "코드 언어 모델",
+        "하이퍼네트워크",
+        "LoRA",
+        "소프트웨어 진화"
+      ]
+    },
+    {
+      "arxiv_id": "2606.06405",
+      "title": "Bridging CAD and Data-Driven Design: Attributed Feature Graphs for Engineering Design",
+      "authors": [
+        "Abhishek Indupally",
+        "Ibraheem Alawadhi",
+        "Satchit Ramnath",
+        "Jami J. Shah"
+      ],
+      "summary": "Engineering design is an iterative, simulation-driven process where traditional workflows rely heavily on computationally expensive analyses such as finite element and computational fluid dynamics. Although data-driven methods have accelerated design evaluation and optimization, most existing geometric representations discard parametric and feature-level semantics, limiting their integration with CAD-driven design workflows and reducing model interpretability. To address this gap, this work introduces Attributed Feature Graphs (AFGs), a feature-based representation that encodes design features, such as extrusions, ribs, and pockets, as nodes and their geometric or dependency relations as directed edges. AFGs preserve design intent and parametric structure while remaining compatible with standard graph-based learning methods, enabling end-to-end learning directly on CAD-derived feature graphs. The paper demonstrates the proposed representation through a surrogate-modeling case study on the CarHoods10K automotive hood frame dataset, where a Graph Neural Network (GNN) is trained as an evaluation engine to predict performance metrics from AFG inputs. The learned model achieves competitive surrogate performance compared with traditional data-driven approaches, but with the added benefit that engineers can map predictions back to specific CAD features and interpret how individual design elements influence system behavior. Furthermore, because AFGs are built from native CAD features, engineers can directly edit the underlying geometry in the CAD environment and reevaluate the design through the same learned model.",
+      "categories": [
+        "cs.CE",
+        "cs.CG"
+      ],
+      "published": "2026-06-04T17:11:41+00:00",
+      "updated": "2026-06-04T17:11:41+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.06405v1",
+      "abs_url": "https://arxiv.org/abs/2606.06405",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/fed4cf4cacd65a4f8ffaebe607e9820e45b34f1d",
+      "tldr": "Attributed Feature Graphs is introduced, a feature-based representation that encodes design features, such as extrusions, ribs, and pockets, as nodes and their geometric or dependency relations as directed edges as directed edges, enabling end-to-end learning directly on CAD-derived feature graphs.",
       "matched_keywords": [
-        "physics-informed",
+        "neural network",
         "data-driven",
-        "structural",
+        "finite element",
+        "automotive",
         "relevance:0.85"
       ],
       "affiliations": [],
       "source": "arxiv",
       "hf_upvotes": null,
-      "title_ko": "구조 건전성 모니터링에서 손상 위치 파악을 위한 물리 기반 단일 원자 매칭 추적: 유도파 파수 및 전파 거리 추정",
-      "summary_ko": "- 유도파(Guided-waves, GWs) 기반 구조 건전성 모니터링(SHM)은 다중 모드 여기로 신호 해석이 어렵습니다.\n- 이 연구는 파동 전파의 물리 원리를 반영한 PISAMP(Physics-Informed Single Atom Matching Pursuit) 방법을 제안합니다.\n- PISAMP는 물리적 제약을 포함하여 계산 효율적인 저차원 신호 표현을 가능하게 합니다.\n- 이 방법은 모드 파수 함수와 액추에이터-손상-센서 간 전파 거리를 직접 식별합니다.\n- 추출된 거리를 활용하여 타원형 위치 파악 기법으로 손상을 정확히 찾아내는 해석 가능한 방법을 제공합니다.",
+      "title_ko": "CAD와 데이터 기반 설계 연결: 엔지니어링 설계를 위한 속성 특징 그래프",
+      "summary_ko": "- 기존 엔지니어링 설계는 값비싼 시뮬레이션에 의존하며, 데이터 기반 방법은 기하학적 의미를 소실합니다.\n- 본 연구는 설계 특징을 노드로, 관계를 엣지로 인코딩하는 속성 특징 그래프(AFG)를 제안합니다.\n- AFG는 CAD에서 파생된 특징 그래프에 직접 종단간 학습을 가능하게 합니다.\n- CarHoods10K 데이터셋에 GNN을 훈련하여 경쟁력 있는 성능을 달성했습니다.\n- AFG는 설계 의도를 보존하며 엔지니어가 CAD에서 직접 수정하고 해석할 수 있게 합니다.",
       "tags": [
-        "구조 건전성 모니터링",
-        "유도파",
-        "신호 처리",
-        "손상 위치 파악"
+        "엔지니어링 설계",
+        "CAD",
+        "그래프 신경망",
+        "특징 그래프"
+      ]
+    },
+    {
+      "arxiv_id": "2606.03816",
+      "title": "Learning finite viscoelasticity with DAVIS: A supervised framework for generalized standard materials",
+      "authors": [
+        "Simon Wiesheier",
+        "Paul Steinmann",
+        "Miguel Angel Moreno-Mateos"
+      ],
+      "summary": "This work revisits the recently proposed data-adaptive viscoelasticity (DAVIS) framework, a spline-based formulation of finite viscoelasticity within the generalized standard materials setting. DAVIS enables a data-driven representation of equilibrium and non-equilibrium constitutive functions while retaining thermodynamic consistency and supporting parameter identification via finite element model updating. The present contribution focuses on improving the robustness and identifiability of non-equilibrium branches in generalized Maxwell-type models. To this end, two extensions of the original formulation are introduced. First, the spline representation is reformulated in terms of curvature-based variables, which is especially convenient to enforce monotonicity and convexity constraints by construction through a smooth parameter mapping. Second, the adaptation of interpolation domains is decoupled from the inner parameter identification by means of a staggered, block-alternating strategy: spline coefficients are optimized for fixed domain endpoints, while the endpoints are updated in an outer loop based on smooth statistics of sampled invariants. This separation alleviates an inherent scaling ambiguity between interpolation domains and spline coefficients that can impair conditioning in viscoelastic inverse problems. The underlying constitutive model remains the finite strain viscoelasticity framework of Reese and Govindjee. The proposed identification strategy is assessed for homogeneous uniaxial loading-unloading tests, which facilitates the study of identifiability and robustness of non-equilibrium branches.",
+      "categories": [
+        "cs.CE"
+      ],
+      "published": "2026-06-02T15:58:04+00:00",
+      "updated": "2026-06-02T15:58:04+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.03816v1",
+      "abs_url": "https://arxiv.org/abs/2606.03816",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/3956d55908d69cd62b62440cfb6f45fff0f6cf84",
+      "tldr": "This work revisits the recently proposed data-adaptive viscoelasticity (DAVIS) framework, a spline-based formulation of finite viscoelasticity within the generalized standard materials setting and improves the robustness and identifiability of non-equilibrium branches in generalized Maxwell-type models.",
+      "matched_keywords": [
+        "data-driven",
+        "finite element",
+        "elastic",
+        "relevance:0.80"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "DAVIS를 이용한 유한 점탄성 학습: 일반화된 표준 재료를 위한 지도 학습 프레임워크",
+      "summary_ko": "- 이 연구는 일반화된 표준 재료(generalized standard materials) 설정 내에서 유한 점탄성(finite viscoelasticity)을 위한 DAVIS 프레임워크를 개선합니다.\n- 기존 DAVIS의 비평형(non-equilibrium) 가지의 견고성과 식별 가능성을 높이기 위해 두 가지 확장을 제안합니다.\n- 첫째, 스플라인(spline) 표현을 곡률 기반 변수로 재구성하여 단조성 및 볼록성 제약을 적용합니다.\n- 둘째, 보간(interpolation) 도메인 적응을 내부 매개변수 식별과 분리하는 전략을 사용합니다.\n- 이 방법은 균일한 단축 하중-제거 테스트를 통해 비평형 가지의 식별 가능성과 견고성을 평가합니다.",
+      "tags": [
+        "점탄성",
+        "DAVIS 프레임워크",
+        "재료 모델링",
+        "기계공학"
       ]
     }
   ]
