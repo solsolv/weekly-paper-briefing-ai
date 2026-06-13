@@ -1,0 +1,343 @@
+{
+  "week_id": "2026-06-15",
+  "generated_at": "2026-06-13T10:25:56.852319+00:00",
+  "publish_at": "2026-06-15T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2606.13649",
+        "title": "Operadic consistency: a label-free signal for compositional reasoning failures in LLMs",
+        "authors": [
+          "Nathaniel Bottman",
+          "Yinhong Liu",
+          "Kyle Richardson"
+        ],
+        "summary": "Detecting LLM reasoning failures at inference time without ground-truth labels has motivated a wide range of confidence baselines, including self-consistency, semantic entropy, and P(True), built on within-question sampling and self-evaluation. Operad theory, the formalism for systems built by iterated substitution, suggests a complementary diagnostic: a model's direct answer to a compositional query should agree with the answer it produces by composing a stated decomposition of the same query. We instantiate this idea as operadic consistency (OC), a per-question signal. Across twelve instruction-tuned LLMs (4B to 671B parameters, open-weights and closed-source) on four multi-hop QA datasets, OC is strongly correlated with accuracy on every dataset (Pearson $r \\in [0.86, 0.94]$, all $p \\leq 0.0004$), and is the only signal we evaluate with $r \\geq 0.85$ uniformly across all four datasets. Chain-of-thought self-consistency (CoT-SC; Wang et al., 2023) matches OC on HotpotQA and DROP ($r = 0.93, 0.87$) but drops to $r \\approx 0.45$ on MuSiQue and StrategyQA. At the per-question level, OC contributes information beyond CoT-SC and semantic entropy on every dataset (cluster-robust $p \\leq 10^{-16}$ for the OC coefficient), and the conclusion is robust to additionally controlling for constructed decomposition-aware baselines ($p \\leq 10^{-13}$). The same signal yields selective-prediction improvements (accuracy at fixed coverage) over a tuned CoT-SC baseline at the equal-cost $K = 3$ budget (AUARC lifts of +0.086 to +0.096 and AUROC lifts of +0.092 to +0.164; 95% CIs exclude zero on every cell). On five frontier thinking models, where the decomposition is extracted from the model's own chain of thought, the same equal-cost comparison gives positive selective-prediction point-estimate lift on all 16 (dataset, budget, metric) cells tested, with 95% CIs excluding zero on 12 of the 16.",
+        "categories": [
+          "cs.CL",
+          "cs.LG"
+        ],
+        "published": "2026-06-11T17:50:40+00:00",
+        "updated": "2026-06-11T17:50:40+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.13649v1",
+        "abs_url": "https://arxiv.org/abs/2606.13649",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 1,
+        "s2_url": "https://www.semanticscholar.org/paper/474563138b3a72a2ed42cfea53ac9766b6d3048a",
+        "tldr": "At the per-question level, OC contributes information beyond CoT-SC and semantic entropy on every dataset (cluster-robust $p \\leq 10^{-16}$ for the OC coefficient), and the conclusion is robust to additionally controlling for constructed decomposition-aware baselines.",
+        "matched_keywords": [],
+        "affiliations": [
+          "Allen Institute for Artificial Intelligence"
+        ],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "연산자 일관성: LLM의 조합적 추론 실패를 위한 레이블 없는 신호",
+        "summary_ko": "- LLM의 추론 실패를 감지하는 기존 방법들은 질문 내 샘플링과 자체 평가에 기반합니다.\n- 이 연구는 연산자 이론(operad theory)을 활용하여, LLM의 직접 답변과 분해된 질문의 조합 답변이 일치해야 한다는 '연산자 일관성(OC)'을 제안합니다.\n- 4개의 다단계 질의응답(QA) 데이터셋에서 12개 LLM(4B~671B)을 대상으로 OC를 평가했습니다.\n- OC는 모든 데이터셋에서 정확도와 강한 상관관계(Pearson $r \\in [0.86, 0.94]$)를 보였으며, CoT-SC보다 더 일관적입니다.\n- OC는 CoT-SC와 의미론적 엔트로피를 넘어 추가적인 정보를 제공하며, 선택적 예측 성능을 향상시킵니다.",
+        "tags": [
+          "LLM",
+          "추론 실패 감지",
+          "연산자 이론",
+          "조합적 추론"
+        ]
+      },
+      {
+        "arxiv_id": "2606.13681",
+        "title": "EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments",
+        "authors": [
+          "Jundong Xu",
+          "Qingchuan Li",
+          "Jiaying Wu",
+          "Yihuai Lan",
+          "Shuyue Stella Li",
+          "Huichi Zhou",
+          "Bowen Jiang",
+          "Lei Wang",
+          "Jun Wang",
+          "Anh Tuan Luu",
+          "Caiming Xiong",
+          "Hae Won Park",
+          "Bryan Hooi",
+          "Zhiyuan Hu"
+        ],
+        "summary": "Large language model (LLM) agents have achieved strong performance on a wide range of benchmarks, yet most evaluations assume static environments. In contrast, real-world deployment is inherently dynamic, requiring agents to continually align their knowledge, skills, and behavior with changing environments and updated task conditions. To address this gap, we introduce EvoArena, a benchmark suite that models environment changes as sequences of progressive updates across terminal, software, and social domains. We further propose EvoMem, a patch-based memory paradigm that records memory evolution as structured update histories, enabling agents to reason about environmental evolution through changes in their memory. Experiments show that current agents struggle on EvoArena, achieving an average accuracy of 39.6% across evolving terminal, software, and social-preference domains. EvoMem consistently improves performance, yielding an average gain of 1.5% on EvoArena and also improving standard benchmarks such as GAIA and LoCoMo by 6.1% and 4.8%. Beyond individual tasks, EvoMem further improves chain-level accuracy by 3.7% on EvoArena, where success requires completing a consecutive sequence of related evolutionary subtasks. Mechanistic analysis shows that EvoMem improves evidence capture in the memory, indicating better preservation of complete evolving environment states. Our results highlight the importance of modeling evolution in both evaluation and memory for reliable agent deployment.",
+        "categories": [
+          "cs.CL"
+        ],
+        "published": "2026-06-11T17:59:59+00:00",
+        "updated": "2026-06-11T17:59:59+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.13681v1",
+        "abs_url": "https://arxiv.org/abs/2606.13681",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/4cca55a226abe2ab340c33e9f83da99792530516",
+        "tldr": "EvoArena is introduced, a benchmark suite that models environment changes as sequences of progressive updates across terminal, software, and social domains, and EvoMem is proposed, a patch-based memory paradigm that records memory evolution as structured update histories, enabling agents to reason about environmental evolution through changes in their memory.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 113,
+        "title_ko": "EvoArena: 동적 환경에서 견고한 LLM 에이전트를 위한 메모리 진화 추적",
+        "summary_ko": "- 기존 LLM 에이전트 평가는 정적 환경을 가정하지만, 실제 환경은 동적 변화에 적응해야 합니다.\n- 이 간극을 해결하기 위해, 동적 환경 변화를 모델링하는 벤치마크 스위트 EvoArena를 제안합니다.\n- 또한, 메모리 진화를 구조화된 업데이트 이력으로 기록하는 패치 기반 메모리 패러다임 EvoMem을 제안합니다.\n- EvoArena에서 현재 에이전트의 평균 정확도는 39.6%로 저조하며, EvoMem은 성능을 평균 1.5% 향상시킵니다.\n- EvoMem은 메모리 내 증거 포착을 개선하여 신뢰할 수 있는 에이전트 배포에 기여합니다.",
+        "tags": [
+          "LLM 에이전트",
+          "동적 환경",
+          "메모리 진화",
+          "벤치마크"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2606.13245",
+        "title": "REMAL: Residual Equilibrium Manifold Active Learning for Surrogate-Based Multidisciplinary Design Analysis",
+        "authors": [
+          "Kail Yuan",
+          "Ashwin Renganathan"
+        ],
+        "summary": "Multidisciplinary design analysis of coupled engineering systems requires the computation of equilibrium states in which all disciplinary coupling variables are mutually consistent. Conventional fixed-point iteration resolves this consistency problem separately at each design point, which can become expensive when disciplinary evaluations are costly and many analyses are required in outer-loop tasks such as multidisciplinary design optimization, uncertainty quantification, or digital twin updating. This paper introduces REMAL, a residual manifold surrogate modeling framework for coupled systems. Instead of approximating each discipline independently or directly learning converged coupling variables, the proposed method learns a surrogate model of the joint residual manifold via multitask Gaussian process models. An entropy-based active learning strategy selects additional residual evaluations near uncertain zero-contour regions, and equilibrium states for new design inputs are recovered by solving a nonlinear least squares optimization problem using only the trained surrogate. The method is evaluated on four engineering coupled system benchmarks: a satellite model, an aerostructural model, a finite-element gas-turbine heat-transfer and economics model, and a modified turbine model with added feedback coupling. Across these cases, REMAL consistently demonstrates the cost effectiveness when repeated evaluations of the fixed point across the design space are necessary. Theoretically, we show that, under mild assumptions, REMAL's predictive fixed point error is bounded.",
+        "categories": [
+          "physics.comp-ph",
+          "stat.ML"
+        ],
+        "published": "2026-06-11T11:59:02+00:00",
+        "updated": "2026-06-11T11:59:02+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.13245v1",
+        "abs_url": "https://arxiv.org/abs/2606.13245",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/54511fb076397f5581ce772f2a291d70b2390402",
+        "tldr": "REMAL is introduced, a residual manifold surrogate modeling framework for coupled systems that learns a surrogate model of the joint residual manifold via multitask Gaussian process models and shows the cost effectiveness when repeated evaluations of the fixed point across the design space are necessary.",
+        "matched_keywords": [
+          "surrogate model",
+          "structural",
+          "design optimization",
+          "digital twin",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "REMAL: 잔여 평형 매니폴드 능동 학습을 이용한 대리 모델 기반 다분야 설계 해석",
+        "summary_ko": "- 결합된 공학 시스템의 다분야 설계 해석은 각 분야의 변수가 일치하는 평형 상태 계산이 필요합니다.\n- REMAL은 결합 시스템을 위한 잔여 매니폴드 대리 모델링 프레임워크를 제안합니다.\n- 이 방법은 다중 작업 가우시안 프로세스 모델을 통해 잔여 매니폴드의 대리 모델을 학습합니다.\n- 위성, 공기역학 구조, 가스 터빈 모델 등 4가지 공학 시스템 벤치마크에서 평가되었습니다.\n- REMAL은 설계 공간 전반에 걸쳐 반복적인 고정점 평가가 필요할 때 비용 효율성을 보였습니다.",
+        "tags": [
+          "다분야 설계 해석",
+          "대리 모델링",
+          "능동 학습",
+          "가우시안 프로세스"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.1109/JIOT.2026.3680990",
+        "title": "Federated Digital Twin With Spatiotemporal Learning and Postquantum Security for Robust IIoT Anomaly Detection",
+        "authors": [
+          "Muhammad Usama Tanveer",
+          "S. Hassan",
+          "S. Belhaouari"
+        ],
+        "summary": "The industrial Internet of Things (IIoT) is increasingly vulnerable to sophisticated cyber-attacks, including zero-day and device-specific threats, which pose severe operational and security risks. We present a federated digital twin (DT) for a spatiotemporal anomaly detection approach that is tailored to offer a real-time, scalable, and privacy-preserving security for IIoT settings. The framework integrates DT modeling to represent the physical network, spatiotemporal deep learning (DL) for capturing complex dependencies across devices and time, federated learning (FL) to enable collaborative model training without exposing sensitive data, and postquantum cryptographic (PQC) security to ensure robust protection against emerging quantum-era threats. We evaluate the framework on the RT-IoT2022 dataset, demonstrating an overall detection accuracy of 99.89%, precision of 99.91%, recall of 99.87%, and an area under the ROC curve (AUC) of 0.998. The proposed method surpasses contemporary intrusion detection systems (IDSs), accurately detects zero-day attacks, and reduces the overhead of communication by 65% in comparison with centralized training. Ablation studies demonstrate the importance of multiview graph learning, cross-graph attention, and federated aggregation for obtaining good performance. In addition, the framework offers transparent descriptions of the anomalies, so that operators can name and take action against malicious operations. Its federated architecture ensures sensitive IIoT data remains on local devices, enhancing privacy and compliance with data protection regulations. The integration of PQC mechanisms future-proofs the system against quantum-era attacks, making it resilient to next-generation threats. Overall, the proposed framework offers a holistic, robust, and scalable solution for securing industrial networks and supports deployment across diverse IIoT infrastructures with minimal operational overhead.",
+        "categories": [],
+        "published": "2026-06-15T00:00:00+00:00",
+        "updated": "2026-06-15T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/661773638e28821f92440285a6f3a49e4b6fe1b1",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/661773638e28821f92440285a6f3a49e4b6fe1b1",
+        "tldr": null,
+        "matched_keywords": [
+          "deep learning",
+          "anomaly detection",
+          "digital twin",
+          "relevance:0.75"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "견고한 IIoT 이상 탐지를 위한 시공간 학습 및 양자 내성 보안을 갖춘 연합 디지털 트윈",
+        "summary_ko": "- 산업용 사물 인터넷(IIoT)은 정교한 사이버 공격에 취약하며, 실시간 보안이 필요합니다.\n- 본 연구는 IIoT 환경을 위한 연합 디지털 트윈(federated digital twin) 기반의 시공간 이상 탐지 방법을 제안합니다.\n- 이 프레임워크는 디지털 트윈 모델링, 시공간 딥러닝(DL), 연합 학습(FL), 양자 내성 암호(PQC) 보안을 통합합니다.\n- RT-IoT2022 데이터셋에서 99.89%의 탐지 정확도와 65%의 통신 오버헤드 감소를 달성했습니다.\n- 제안된 방법은 높은 탐지 성능과 데이터 프라이버시를 제공하며, 미래 양자 공격에도 대비합니다.",
+        "tags": [
+          "IIoT",
+          "이상 탐지",
+          "연합 학습",
+          "양자 내성 암호"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2606.13649",
+      "title": "Operadic consistency: a label-free signal for compositional reasoning failures in LLMs",
+      "authors": [
+        "Nathaniel Bottman",
+        "Yinhong Liu",
+        "Kyle Richardson"
+      ],
+      "summary": "Detecting LLM reasoning failures at inference time without ground-truth labels has motivated a wide range of confidence baselines, including self-consistency, semantic entropy, and P(True), built on within-question sampling and self-evaluation. Operad theory, the formalism for systems built by iterated substitution, suggests a complementary diagnostic: a model's direct answer to a compositional query should agree with the answer it produces by composing a stated decomposition of the same query. We instantiate this idea as operadic consistency (OC), a per-question signal. Across twelve instruction-tuned LLMs (4B to 671B parameters, open-weights and closed-source) on four multi-hop QA datasets, OC is strongly correlated with accuracy on every dataset (Pearson $r \\in [0.86, 0.94]$, all $p \\leq 0.0004$), and is the only signal we evaluate with $r \\geq 0.85$ uniformly across all four datasets. Chain-of-thought self-consistency (CoT-SC; Wang et al., 2023) matches OC on HotpotQA and DROP ($r = 0.93, 0.87$) but drops to $r \\approx 0.45$ on MuSiQue and StrategyQA. At the per-question level, OC contributes information beyond CoT-SC and semantic entropy on every dataset (cluster-robust $p \\leq 10^{-16}$ for the OC coefficient), and the conclusion is robust to additionally controlling for constructed decomposition-aware baselines ($p \\leq 10^{-13}$). The same signal yields selective-prediction improvements (accuracy at fixed coverage) over a tuned CoT-SC baseline at the equal-cost $K = 3$ budget (AUARC lifts of +0.086 to +0.096 and AUROC lifts of +0.092 to +0.164; 95% CIs exclude zero on every cell). On five frontier thinking models, where the decomposition is extracted from the model's own chain of thought, the same equal-cost comparison gives positive selective-prediction point-estimate lift on all 16 (dataset, budget, metric) cells tested, with 95% CIs excluding zero on 12 of the 16.",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-06-11T17:50:40+00:00",
+      "updated": "2026-06-11T17:50:40+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.13649v1",
+      "abs_url": "https://arxiv.org/abs/2606.13649",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 1,
+      "s2_url": "https://www.semanticscholar.org/paper/474563138b3a72a2ed42cfea53ac9766b6d3048a",
+      "tldr": "At the per-question level, OC contributes information beyond CoT-SC and semantic entropy on every dataset (cluster-robust $p \\leq 10^{-16}$ for the OC coefficient), and the conclusion is robust to additionally controlling for constructed decomposition-aware baselines.",
+      "matched_keywords": [],
+      "affiliations": [
+        "Allen Institute for Artificial Intelligence"
+      ],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "연산자 일관성: LLM의 조합적 추론 실패를 위한 레이블 없는 신호",
+      "summary_ko": "- LLM의 추론 실패를 감지하는 기존 방법들은 질문 내 샘플링과 자체 평가에 기반합니다.\n- 이 연구는 연산자 이론(operad theory)을 활용하여, LLM의 직접 답변과 분해된 질문의 조합 답변이 일치해야 한다는 '연산자 일관성(OC)'을 제안합니다.\n- 4개의 다단계 질의응답(QA) 데이터셋에서 12개 LLM(4B~671B)을 대상으로 OC를 평가했습니다.\n- OC는 모든 데이터셋에서 정확도와 강한 상관관계(Pearson $r \\in [0.86, 0.94]$)를 보였으며, CoT-SC보다 더 일관적입니다.\n- OC는 CoT-SC와 의미론적 엔트로피를 넘어 추가적인 정보를 제공하며, 선택적 예측 성능을 향상시킵니다.",
+      "tags": [
+        "LLM",
+        "추론 실패 감지",
+        "연산자 이론",
+        "조합적 추론"
+      ]
+    },
+    {
+      "arxiv_id": "2606.13681",
+      "title": "EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments",
+      "authors": [
+        "Jundong Xu",
+        "Qingchuan Li",
+        "Jiaying Wu",
+        "Yihuai Lan",
+        "Shuyue Stella Li",
+        "Huichi Zhou",
+        "Bowen Jiang",
+        "Lei Wang",
+        "Jun Wang",
+        "Anh Tuan Luu",
+        "Caiming Xiong",
+        "Hae Won Park",
+        "Bryan Hooi",
+        "Zhiyuan Hu"
+      ],
+      "summary": "Large language model (LLM) agents have achieved strong performance on a wide range of benchmarks, yet most evaluations assume static environments. In contrast, real-world deployment is inherently dynamic, requiring agents to continually align their knowledge, skills, and behavior with changing environments and updated task conditions. To address this gap, we introduce EvoArena, a benchmark suite that models environment changes as sequences of progressive updates across terminal, software, and social domains. We further propose EvoMem, a patch-based memory paradigm that records memory evolution as structured update histories, enabling agents to reason about environmental evolution through changes in their memory. Experiments show that current agents struggle on EvoArena, achieving an average accuracy of 39.6% across evolving terminal, software, and social-preference domains. EvoMem consistently improves performance, yielding an average gain of 1.5% on EvoArena and also improving standard benchmarks such as GAIA and LoCoMo by 6.1% and 4.8%. Beyond individual tasks, EvoMem further improves chain-level accuracy by 3.7% on EvoArena, where success requires completing a consecutive sequence of related evolutionary subtasks. Mechanistic analysis shows that EvoMem improves evidence capture in the memory, indicating better preservation of complete evolving environment states. Our results highlight the importance of modeling evolution in both evaluation and memory for reliable agent deployment.",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-06-11T17:59:59+00:00",
+      "updated": "2026-06-11T17:59:59+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.13681v1",
+      "abs_url": "https://arxiv.org/abs/2606.13681",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/4cca55a226abe2ab340c33e9f83da99792530516",
+      "tldr": "EvoArena is introduced, a benchmark suite that models environment changes as sequences of progressive updates across terminal, software, and social domains, and EvoMem is proposed, a patch-based memory paradigm that records memory evolution as structured update histories, enabling agents to reason about environmental evolution through changes in their memory.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 113,
+      "title_ko": "EvoArena: 동적 환경에서 견고한 LLM 에이전트를 위한 메모리 진화 추적",
+      "summary_ko": "- 기존 LLM 에이전트 평가는 정적 환경을 가정하지만, 실제 환경은 동적 변화에 적응해야 합니다.\n- 이 간극을 해결하기 위해, 동적 환경 변화를 모델링하는 벤치마크 스위트 EvoArena를 제안합니다.\n- 또한, 메모리 진화를 구조화된 업데이트 이력으로 기록하는 패치 기반 메모리 패러다임 EvoMem을 제안합니다.\n- EvoArena에서 현재 에이전트의 평균 정확도는 39.6%로 저조하며, EvoMem은 성능을 평균 1.5% 향상시킵니다.\n- EvoMem은 메모리 내 증거 포착을 개선하여 신뢰할 수 있는 에이전트 배포에 기여합니다.",
+      "tags": [
+        "LLM 에이전트",
+        "동적 환경",
+        "메모리 진화",
+        "벤치마크"
+      ]
+    },
+    {
+      "arxiv_id": "2606.13245",
+      "title": "REMAL: Residual Equilibrium Manifold Active Learning for Surrogate-Based Multidisciplinary Design Analysis",
+      "authors": [
+        "Kail Yuan",
+        "Ashwin Renganathan"
+      ],
+      "summary": "Multidisciplinary design analysis of coupled engineering systems requires the computation of equilibrium states in which all disciplinary coupling variables are mutually consistent. Conventional fixed-point iteration resolves this consistency problem separately at each design point, which can become expensive when disciplinary evaluations are costly and many analyses are required in outer-loop tasks such as multidisciplinary design optimization, uncertainty quantification, or digital twin updating. This paper introduces REMAL, a residual manifold surrogate modeling framework for coupled systems. Instead of approximating each discipline independently or directly learning converged coupling variables, the proposed method learns a surrogate model of the joint residual manifold via multitask Gaussian process models. An entropy-based active learning strategy selects additional residual evaluations near uncertain zero-contour regions, and equilibrium states for new design inputs are recovered by solving a nonlinear least squares optimization problem using only the trained surrogate. The method is evaluated on four engineering coupled system benchmarks: a satellite model, an aerostructural model, a finite-element gas-turbine heat-transfer and economics model, and a modified turbine model with added feedback coupling. Across these cases, REMAL consistently demonstrates the cost effectiveness when repeated evaluations of the fixed point across the design space are necessary. Theoretically, we show that, under mild assumptions, REMAL's predictive fixed point error is bounded.",
+      "categories": [
+        "physics.comp-ph",
+        "stat.ML"
+      ],
+      "published": "2026-06-11T11:59:02+00:00",
+      "updated": "2026-06-11T11:59:02+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.13245v1",
+      "abs_url": "https://arxiv.org/abs/2606.13245",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/54511fb076397f5581ce772f2a291d70b2390402",
+      "tldr": "REMAL is introduced, a residual manifold surrogate modeling framework for coupled systems that learns a surrogate model of the joint residual manifold via multitask Gaussian process models and shows the cost effectiveness when repeated evaluations of the fixed point across the design space are necessary.",
+      "matched_keywords": [
+        "surrogate model",
+        "structural",
+        "design optimization",
+        "digital twin",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "REMAL: 잔여 평형 매니폴드 능동 학습을 이용한 대리 모델 기반 다분야 설계 해석",
+      "summary_ko": "- 결합된 공학 시스템의 다분야 설계 해석은 각 분야의 변수가 일치하는 평형 상태 계산이 필요합니다.\n- REMAL은 결합 시스템을 위한 잔여 매니폴드 대리 모델링 프레임워크를 제안합니다.\n- 이 방법은 다중 작업 가우시안 프로세스 모델을 통해 잔여 매니폴드의 대리 모델을 학습합니다.\n- 위성, 공기역학 구조, 가스 터빈 모델 등 4가지 공학 시스템 벤치마크에서 평가되었습니다.\n- REMAL은 설계 공간 전반에 걸쳐 반복적인 고정점 평가가 필요할 때 비용 효율성을 보였습니다.",
+      "tags": [
+        "다분야 설계 해석",
+        "대리 모델링",
+        "능동 학습",
+        "가우시안 프로세스"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1109/JIOT.2026.3680990",
+      "title": "Federated Digital Twin With Spatiotemporal Learning and Postquantum Security for Robust IIoT Anomaly Detection",
+      "authors": [
+        "Muhammad Usama Tanveer",
+        "S. Hassan",
+        "S. Belhaouari"
+      ],
+      "summary": "The industrial Internet of Things (IIoT) is increasingly vulnerable to sophisticated cyber-attacks, including zero-day and device-specific threats, which pose severe operational and security risks. We present a federated digital twin (DT) for a spatiotemporal anomaly detection approach that is tailored to offer a real-time, scalable, and privacy-preserving security for IIoT settings. The framework integrates DT modeling to represent the physical network, spatiotemporal deep learning (DL) for capturing complex dependencies across devices and time, federated learning (FL) to enable collaborative model training without exposing sensitive data, and postquantum cryptographic (PQC) security to ensure robust protection against emerging quantum-era threats. We evaluate the framework on the RT-IoT2022 dataset, demonstrating an overall detection accuracy of 99.89%, precision of 99.91%, recall of 99.87%, and an area under the ROC curve (AUC) of 0.998. The proposed method surpasses contemporary intrusion detection systems (IDSs), accurately detects zero-day attacks, and reduces the overhead of communication by 65% in comparison with centralized training. Ablation studies demonstrate the importance of multiview graph learning, cross-graph attention, and federated aggregation for obtaining good performance. In addition, the framework offers transparent descriptions of the anomalies, so that operators can name and take action against malicious operations. Its federated architecture ensures sensitive IIoT data remains on local devices, enhancing privacy and compliance with data protection regulations. The integration of PQC mechanisms future-proofs the system against quantum-era attacks, making it resilient to next-generation threats. Overall, the proposed framework offers a holistic, robust, and scalable solution for securing industrial networks and supports deployment across diverse IIoT infrastructures with minimal operational overhead.",
+      "categories": [],
+      "published": "2026-06-15T00:00:00+00:00",
+      "updated": "2026-06-15T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/661773638e28821f92440285a6f3a49e4b6fe1b1",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/661773638e28821f92440285a6f3a49e4b6fe1b1",
+      "tldr": null,
+      "matched_keywords": [
+        "deep learning",
+        "anomaly detection",
+        "digital twin",
+        "relevance:0.75"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "견고한 IIoT 이상 탐지를 위한 시공간 학습 및 양자 내성 보안을 갖춘 연합 디지털 트윈",
+      "summary_ko": "- 산업용 사물 인터넷(IIoT)은 정교한 사이버 공격에 취약하며, 실시간 보안이 필요합니다.\n- 본 연구는 IIoT 환경을 위한 연합 디지털 트윈(federated digital twin) 기반의 시공간 이상 탐지 방법을 제안합니다.\n- 이 프레임워크는 디지털 트윈 모델링, 시공간 딥러닝(DL), 연합 학습(FL), 양자 내성 암호(PQC) 보안을 통합합니다.\n- RT-IoT2022 데이터셋에서 99.89%의 탐지 정확도와 65%의 통신 오버헤드 감소를 달성했습니다.\n- 제안된 방법은 높은 탐지 성능과 데이터 프라이버시를 제공하며, 미래 양자 공격에도 대비합니다.",
+      "tags": [
+        "IIoT",
+        "이상 탐지",
+        "연합 학습",
+        "양자 내성 암호"
+      ]
+    }
+  ]
+}

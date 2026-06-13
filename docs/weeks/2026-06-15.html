@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-05-18 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
+<title>2026-06-15 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
 <meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -435,29 +435,33 @@
 <div class="wrap">
   <header class="site">
   <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-05-18</span>
+  <span class="eyebrow">2026-06-15</span>
   <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
   <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
   </header>
+  <div id="publish-notice" data-publish-at="2026-06-15T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
+    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-06-15 8:00 (KST)</strong>에 공개됩니다.</p>
+    <div class="back-pill-wrap"><a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a></div>
+  </div>
   <div data-gate-content>
   <div class="toc reveal">
     <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
-        <a href="#p-2605.15110">
+        <a href="#p-2606.13649">
           <span class="badge ai">AI</span>
-          <span>문자열 유사도 계산 및 분류를 위한 통계적 특징 제안 및 연구</span>
+          <span>연산자 일관성: LLM의 조합적 추론 실패를 위한 레이블 없는 신호</span>
         </a>
-        <a href="#p-2605.13779">
+        <a href="#p-2606.13681">
           <span class="badge ai">AI</span>
-          <span>MinT: 수백만 개의 LLM 훈련 및 서비스를 위한 관리형 인프라</span>
+          <span>EvoArena: 동적 환경에서 견고한 LLM 에이전트를 위한 메모리 진화 추적</span>
         </a>
-        <a href="#p-2604.03522">
+        <a href="#p-2606.13245">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>실시간 고정밀 위상 최적화를 위한 물리학 기반 트랜스포머</span>
+          <span>REMAL: 잔여 평형 매니폴드 능동 학습을 이용한 대리 모델 기반 다분야 설계 해석</span>
         </a>
-        <a href="#p-2605.11784">
+        <a href="#p-doi:10.1109/JIOT.2026.3680990">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>메시 기반 그래프 신경망과 물리 인식 어텐션을 이용한 충돌 평가</span>
+          <span>견고한 IIoT 이상 탐지를 위한 시공간 학습 및 양자 내성 보안을 갖춘 연합 디지털 트윈</span>
         </a>
     </div>
   </div>
@@ -473,37 +477,37 @@
           AI
           <span class="badge ai">2편</span>
         </h2>
-          <article class="paper ai reveal" id="p-2605.15110" style="transition-delay: 0ms;">
+          <article class="paper ai reveal" id="p-2606.13649" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.LG, cs.CL, cs.IT · 발표 2026-05-14<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2605.15110" target="_blank" rel="noopener">Proposal and study of statistical features for string similarity computation and classification</a></h3>
-<p class="title-ko">문자열 유사도 계산 및 분류를 위한 통계적 특징 제안 및 연구</p>            <div class="authors">E. O. Rodrigues, D. Casanova, M. Teixeira, V. Pegorini, F. Favarim, E. Clua, A. Conci, Panos Liatsis</div>
-            <div class="stats">
-<span class="chip">인용 2</span>            </div>
+              cs.CL, cs.LG · 발표 2026-06-11<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2606.13649" target="_blank" rel="noopener">Operadic consistency: a label-free signal for compositional reasoning failures in LLMs</a></h3>
+<p class="title-ko">연산자 일관성: LLM의 조합적 추론 실패를 위한 레이블 없는 신호</p>            <div class="authors">Nathaniel Bottman, Yinhong Liu, Kyle Richardson</div>
+<div class="affiliations">Allen Institute for Artificial Intelligence</div>            <div class="stats">
+<span class="chip">인용 1</span><span class="chip">영향력 인용 1</span>            </div>
             <div class="summary">
               <ul>
-<li>이 연구는 문자열 유사도 계산의 정확도를 높이는 새로운 방법을 모색합니다.</li><li>시각 컴퓨팅 분야의 동시발생 행렬(COM)과 런-길이 행렬(RLM)을 문자열에 적용합니다.</li><li>제안된 특징들은 언어 정보에 민감하지 않아 다양한 언어와 문맥에 활용 가능합니다.</li><li>합성 데이터 실험에서 COM과 RLM이 기존 통계적 특징보다 우수했으며, 실제 표절 데이터에서는 RLM이 가장 좋은 결과를 보였습니다.</li><li>이 방법은 문자열 유사도 측정의 정확도를 높여 다양한 텍스트 분석 분야에 기여할 수 있습니다.</li>              </ul>
+<li>LLM의 추론 실패를 감지하는 기존 방법들은 질문 내 샘플링과 자체 평가에 기반합니다.</li><li>이 연구는 연산자 이론(operad theory)을 활용하여, LLM의 직접 답변과 분해된 질문의 조합 답변이 일치해야 한다는 &#39;연산자 일관성(OC)&#39;을 제안합니다.</li><li>4개의 다단계 질의응답(QA) 데이터셋에서 12개 LLM(4B~671B)을 대상으로 OC를 평가했습니다.</li><li>OC는 모든 데이터셋에서 정확도와 강한 상관관계(Pearson $r \in [0.86, 0.94]$)를 보였으며, CoT-SC보다 더 일관적입니다.</li><li>OC는 CoT-SC와 의미론적 엔트로피를 넘어 추가적인 정보를 제공하며, 선택적 예측 성능을 향상시킵니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> Adaptations of features commonly applied in the field of visual computing, co-occurrence matrix (COM) and run-length matrix (RLM), are proposed for the similarity computation of strings in general, and when it comes to a real text plagiarism dataset, the RLM features obtained the best results.</div><div class="tags"><span class="tag">#문자열 유사도</span><span class="tag">#통계적 특징</span><span class="tag">#동시발생 행렬</span><span class="tag">#런-길이 행렬</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2605.15110" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2605.15110v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/970e946af01fb2eaed6aeb4cde78a5e1230b86b8" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> At the per-question level, OC contributes information beyond CoT-SC and semantic entropy on every dataset (cluster-robust $p \leq 10^{-16}$ for the OC coefficient), and the conclusion is robust to additionally controlling for constructed decomposition-aware baselines.</div><div class="tags"><span class="tag">#LLM</span><span class="tag">#추론 실패 감지</span><span class="tag">#연산자 이론</span><span class="tag">#조합적 추론</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2606.13649" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2606.13649v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/474563138b3a72a2ed42cfea53ac9766b6d3048a" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
-          <article class="paper ai reveal" id="p-2605.13779" style="transition-delay: 60ms;">
+          <article class="paper ai reveal" id="p-2606.13681" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.LG, cs.AI, cs.DC · 발표 2026-05-13<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2605.13779" target="_blank" rel="noopener">MinT: Managed Infrastructure for Training and Serving Millions of LLMs</a></h3>
-<p class="title-ko">MinT: 수백만 개의 LLM 훈련 및 서비스를 위한 관리형 인프라</p>            <div class="authors">Mind Lab, :, Song Cao, Vic Cao, Andrew Chen, Kaijie Chen, Cleon Cheng, Steven Chiang 외 55명</div>
+              cs.CL · 발표 2026-06-11<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2606.13681" target="_blank" rel="noopener">EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments</a></h3>
+<p class="title-ko">EvoArena: 동적 환경에서 견고한 LLM 에이전트를 위한 메모리 진화 추적</p>            <div class="authors">Jundong Xu, Qingchuan Li, Jiaying Wu, Yihuai Lan, Shuyue Stella Li, Huichi Zhou, Bowen Jiang, Lei Wang 외 6명</div>
             <div class="stats">
-<span class="chip">HF upvotes 209</span>            </div>
+<span class="chip">HF upvotes 113</span>            </div>
             <div class="summary">
               <ul>
-<li>이 논문은 LoRA(Low-Rank Adaptation) 후처리 훈련 및 온라인 서비스를 위한 관리형 인프라 시스템인 MinT를 소개합니다.</li><li>MinT는 값비싼 소수의 기본 모델 배포에서 많은 훈련된 정책을 생성하는 환경을 목표로 합니다.</li><li>각 정책을 완전한 체크포인트로 만드는 대신, MinT는 기본 모델을 유지하고 LoRA 어댑터 개정판을 이동시킵니다.</li><li>MinT는 어댑터 전용 핸드오프를 통해 4B 모델에서 18.3배, 30B MoE에서 2.85배의 속도 향상을 달성했습니다.</li><li>MinT는 공유 1조 개 매개변수급 기본 모델에서 수백만 개의 LoRA 정책 카탈로그를 관리하며 훈련 및 서비스를 제공합니다.</li>              </ul>
+<li>기존 LLM 에이전트 평가는 정적 환경을 가정하지만, 실제 환경은 동적 변화에 적응해야 합니다.</li><li>이 간극을 해결하기 위해, 동적 환경 변화를 모델링하는 벤치마크 스위트 EvoArena를 제안합니다.</li><li>또한, 메모리 진화를 구조화된 업데이트 이력으로 기록하는 패치 기반 메모리 패러다임 EvoMem을 제안합니다.</li><li>EvoArena에서 현재 에이전트의 평균 정확도는 39.6%로 저조하며, EvoMem은 성능을 평균 1.5% 향상시킵니다.</li><li>EvoMem은 메모리 내 증거 포착을 개선하여 신뢰할 수 있는 에이전트 배포에 기여합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> MindLab Toolkit is presented, a managed infrastructure system for Low-Rank Adaptation (LoRA) post-training and online serving that manages million-scale LoRA policy catalogs while training and serving selected adapter revisions over shared 1T-class base models.</div><div class="tags"><span class="tag">#LLM</span><span class="tag">#LoRA</span><span class="tag">#인프라 관리</span><span class="tag">#분산 시스템</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2605.13779" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2605.13779v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/f753bfd272c7dccffe5eda0beb9e1e05fb88c5f0" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> EvoArena is introduced, a benchmark suite that models environment changes as sequences of progressive updates across terminal, software, and social domains, and EvoMem is proposed, a patch-based memory paradigm that records memory evolution as structured update histories, enabling agents to reason about environmental evolution through changes in their memory.</div><div class="tags"><span class="tag">#LLM 에이전트</span><span class="tag">#동적 환경</span><span class="tag">#메모리 진화</span><span class="tag">#벤치마크</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2606.13681" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2606.13681v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/4cca55a226abe2ab340c33e9f83da99792530516" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
       <section class="track-section" data-track-block="mech">
@@ -511,37 +515,37 @@
           AI 활용 기계공학
           <span class="badge mech">2편</span>
         </h2>
-          <article class="paper mech reveal" id="p-2604.03522" style="transition-delay: 0ms;">
+          <article class="paper mech reveal" id="p-2606.13245" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CE · 발표 2026-04-04<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2604.03522" target="_blank" rel="noopener">Physics-Informed Transformer for Real-Time High-Fidelity Topology Optimization</a></h3>
-<p class="title-ko">실시간 고정밀 위상 최적화를 위한 물리학 기반 트랜스포머</p>            <div class="authors">Aaron Lutheran, Srijan Das, Alireza Tabarraei</div>
+              physics.comp-ph, stat.ML · 발표 2026-06-11<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2606.13245" target="_blank" rel="noopener">REMAL: Residual Equilibrium Manifold Active Learning for Surrogate-Based Multidisciplinary Design Analysis</a></h3>
+<p class="title-ko">REMAL: 잔여 평형 매니폴드 능동 학습을 이용한 대리 모델 기반 다분야 설계 해석</p>            <div class="authors">Kail Yuan, Ashwin Renganathan</div>
             <div class="stats">
-<span class="chip">인용 1</span><span class="chip">매칭: physics-informed, structural, finite element, stress, topology optimization, mechanical, relevance:0.90</span>            </div>
+<span class="chip">매칭: surrogate model, structural, design optimization, digital twin, relevance:0.85</span>            </div>
             <div class="summary">
               <ul>
-<li>위상 최적화는 반복적인 유한요소 해석으로 인해 실시간 적용 및 대규모 설계 탐색에 한계가 있습니다.</li><li>이 연구는 경계 조건, 하중 구성 및 물리 필드로부터 최적화된 구조 위상을 직접 학습하는 물리학 기반 트랜스포머를 제안합니다.</li><li>제안 모델은 전역 자기 주의(global self-attention)를 활용하여 장거리 기계적 상호작용을 포착하고, 보조 손실 함수로 물리적 제약을 적용합니다.</li><li>동적 하중 시나리오에도 주파수 영역 인코딩과 전이 학습(transfer learning)을 통해 효율적으로 일반화됩니다.</li><li>이 모델은 단일 순방향 전달(single forward pass)만으로 확산 모델(diffusion models)을 능가하는 충실도를 달성하여 실시간 구조 설계를 가능하게 합니다.</li>              </ul>
+<li>결합된 공학 시스템의 다분야 설계 해석은 각 분야의 변수가 일치하는 평형 상태 계산이 필요합니다.</li><li>REMAL은 결합 시스템을 위한 잔여 매니폴드 대리 모델링 프레임워크를 제안합니다.</li><li>이 방법은 다중 작업 가우시안 프로세스 모델을 통해 잔여 매니폴드의 대리 모델을 학습합니다.</li><li>위성, 공기역학 구조, 가스 터빈 모델 등 4가지 공학 시스템 벤치마크에서 평가되었습니다.</li><li>REMAL은 설계 공간 전반에 걸쳐 반복적인 고정점 평가가 필요할 때 비용 효율성을 보였습니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This work introduces a physics-informed transformer architecture that directly learns a non-iterative mapping from boundary conditions, loading configurations, and derived physical fields to optimized structural topologies, enabling high-fidelity structural design with significant reductions in computational cost.</div><div class="tags"><span class="tag">#위상 최적화</span><span class="tag">#트랜스포머</span><span class="tag">#물리학 정보</span><span class="tag">#실시간 설계</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2604.03522" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2604.03522v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/35422e47a49ce102861f4418a434822aa8e24bfb" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> REMAL is introduced, a residual manifold surrogate modeling framework for coupled systems that learns a surrogate model of the joint residual manifold via multitask Gaussian process models and shows the cost effectiveness when repeated evaluations of the fixed point across the design space are necessary.</div><div class="tags"><span class="tag">#다분야 설계 해석</span><span class="tag">#대리 모델링</span><span class="tag">#능동 학습</span><span class="tag">#가우시안 프로세스</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2606.13245" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2606.13245v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/54511fb076397f5581ce772f2a291d70b2390402" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
-          <article class="paper mech reveal" id="p-2605.11784" style="transition-delay: 60ms;">
+          <article class="paper mech reveal" id="p-doi:10.1109/JIOT.2026.3680990" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.CE, cs.AI, cs.LG · 발표 2026-05-12<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2605.11784" target="_blank" rel="noopener">Crash Assessment via Mesh-Based Graph Neural Networks and Physics-Aware Attention</a></h3>
-<p class="title-ko">메시 기반 그래프 신경망과 물리 인식 어텐션을 이용한 충돌 평가</p>            <div class="authors">Gabriel Curtosi, Carlos Manuel Ruiz Ruiz, Fabiola Cavaliere, Xabier Larráyoz Izcara</div>
+               · 발표 2026-06-15<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://www.semanticscholar.org/paper/661773638e28821f92440285a6f3a49e4b6fe1b1" target="_blank" rel="noopener">Federated Digital Twin With Spatiotemporal Learning and Postquantum Security for Robust IIoT Anomaly Detection</a></h3>
+<p class="title-ko">견고한 IIoT 이상 탐지를 위한 시공간 학습 및 양자 내성 보안을 갖춘 연합 디지털 트윈</p>            <div class="authors">Muhammad Usama Tanveer, S. Hassan, S. Belhaouari</div>
             <div class="stats">
-<span class="chip">매칭: neural network, surrogate model, structural, deform, relevance:0.90</span>            </div>
+<span class="chip">매칭: deep learning, anomaly detection, digital twin, relevance:0.75</span>            </div>
             <div class="summary">
               <ul>
-<li>차량 충돌 시뮬레이션은 계산 비용이 높아 설계 반복에 한계가 있습니다.</li><li>이 연구는 시간별 구조 변형 예측을 위한 하이브리드 대리 모델을 제안합니다.</li><li>제안 모델은 메시 전달, 기하학적 어텐션, 접촉 인식 보정을 결합합니다.</li><li>최적의 하이브리드 모델은 3.20mm의 시간 평균 제곱근 오차를 달성했습니다.</li><li>이 방법론은 산업 충돌 분석에 필요한 구조 정보를 보존하며 빠른 예측을 가능하게 합니다.</li>              </ul>
+<li>산업용 사물 인터넷(IIoT)은 정교한 사이버 공격에 취약하며, 실시간 보안이 필요합니다.</li><li>본 연구는 IIoT 환경을 위한 연합 디지털 트윈(federated digital twin) 기반의 시공간 이상 탐지 방법을 제안합니다.</li><li>이 프레임워크는 디지털 트윈 모델링, 시공간 딥러닝(DL), 연합 학습(FL), 양자 내성 암호(PQC) 보안을 통합합니다.</li><li>RT-IoT2022 데이터셋에서 99.89%의 탐지 정확도와 65%의 통신 오버헤드 감소를 달성했습니다.</li><li>제안된 방법은 높은 탐지 성능과 데이터 프라이버시를 제공하며, 미래 양자 공격에도 대비합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This work investigates learned hybrid surrogate models (MeshTransolver, MeshGeoTransolver, and MeshGeoFLARE) for predicting time-resolved structural deformation fields in an industrial lateral pole-impact benchmark and suggests that crash surrogate assessment should combine global error metrics with downstream safety-relevant quantities and qualitative field inspection.</div><div class="tags"><span class="tag">#충돌 시뮬레이션</span><span class="tag">#그래프 신경망</span><span class="tag">#기계 학습</span><span class="tag">#구조 변형 예측</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2605.11784" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2605.11784v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/5b6a3076d4dc2596abc6d17f5692dbdc7c19a488" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="tags"><span class="tag">#IIoT</span><span class="tag">#이상 탐지</span><span class="tag">#연합 학습</span><span class="tag">#양자 내성 암호</span></div>            <div class="links">
+              <a href="https://www.semanticscholar.org/paper/661773638e28821f92440285a6f3a49e4b6fe1b1" target="_blank" rel="noopener">arXiv</a>
+              <a href="" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/661773638e28821f92440285a6f3a49e4b6fe1b1" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 
@@ -552,7 +556,19 @@
   <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.85rem; text-align: center;">
     선정 기준: 임팩트(최근 365일, 영향력 인용 가중) + 최신(최근 14일) · 요약 엔진: openai_compat
   </p>
-  </div>  <footer class="site">
+  </div>  <script>
+    // 직접 URL 접근 방어: 공개 시각 전이면 본문을 가리고 안내만 노출 (브라우저 시계 기준).
+    (function() {
+      var n = document.getElementById('publish-notice');
+      if (!n) return;
+      var t = Date.parse(n.dataset.publishAt);
+      if (isNaN(t) || Date.now() >= t) return;   // 형식 이상 또는 공개 시각 지남 → 정상 노출
+      var c = document.querySelector('[data-gate-content]');
+      if (c) c.style.display = 'none';
+      n.style.display = '';
+    })();
+  </script>
+  <footer class="site">
     <p>자동 생성 · 2026-06-13 10:25 UTC · arXiv + Semantic Scholar + LLM 요약</p>
   </footer>
 </div>
