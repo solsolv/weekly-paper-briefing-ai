@@ -1,0 +1,329 @@
+{
+  "week_id": "2026-06-22",
+  "generated_at": "2026-06-20T05:20:04.872144+00:00",
+  "publish_at": "2026-06-22T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2606.20563",
+        "title": "JanusMesh: Fast and Zero-Shot 3D Visual Illusion Generation via Cross-Space Denoising",
+        "authors": [
+          "Siang-Ling Zhang",
+          "Huai-Hsun Cheng",
+          "Tsung-Ju Yang",
+          "Yu-Lun Liu"
+        ],
+        "summary": "Creating 3D visual illusions, a single 3D mesh that reveals entirely different semantics from various viewing angles, is a fascinating but tough challenge. Existing optimization-based methods are slow and can produce oversaturated colors. In contrast, naive stitching approaches fail to produce geometrically coherent objects. This results in visible unnatural seams and semantic leaks. In this paper, we present a fast and training-free framework for generating text-driven 3D visual illusions. Our approach decouples the generation into two stages. First, we propose a cross-space dual-branch denoising process. This process dynamically decodes 3D latents into voxel space for CLIP-guided orientation alignment and Signed Distance Field (SDF) blending, which ensures seamless geometric fusion. Second, we introduce a view-conditioned texture synthesis module that projects and aggregates view-specific 2D diffusion priors onto the fused geometry. Extensive experiments demonstrate that our method generates highly realistic, dual-semantic 3D illusions in just 3-5 minutes. It significantly outperforms existing methods in geometric integrity, semantic recognizability, and efficiency. Project page: https://siang1105.github.io/JanusMesh.github.io/",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-06-18T17:59:55+00:00",
+        "updated": "2026-06-18T17:59:55+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.20563v1",
+        "abs_url": "https://arxiv.org/abs/2606.20563",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 0,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "JanusMesh: 교차 공간 노이즈 제거를 통한 빠르고 제로샷 3D 시각적 착시 생성",
+        "summary_ko": "- 다양한 각도에서 다른 의미를 보여주는 3D 시각적 착시 생성은 어렵고 기존 방법은 느리거나 부자연스러운 이음새를 만듭니다.\n- 본 논문은 텍스트 기반 3D 시각적 착시를 빠르고 학습 없이 생성하는 프레임워크를 제안합니다.\n- 제안 방법은 3D 잠재 공간(latent space)을 복셀 공간(voxel space)으로 디코딩하여 기하학적 융합을 보장합니다.\n- 이후 융합된 기하학적 구조에 뷰 조건부 텍스처를 합성하여 사실적인 착시를 만듭니다.\n- 이 방법은 3-5분 만에 사실적인 이중 의미 3D 착시를 생성하며, 기존 방법보다 효율성과 인식률이 뛰어납니다.",
+        "tags": [
+          "3D 시각적 착시",
+          "노이즈 제거",
+          "텍스처 합성",
+          "제로샷 학습"
+        ]
+      },
+      {
+        "arxiv_id": "2606.19195",
+        "title": "Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance",
+        "authors": [
+          "Kangsheng Duan",
+          "Ziyang Xu",
+          "Wenyu Liu",
+          "Xiaohu Ruan",
+          "Xiaoxin Chen",
+          "Xinggang Wang"
+        ],
+        "summary": "While 10B-level industrial foundation models have pushed the boundaries of image inpainting, their prohibitive computational costs severely hinder practical deployment. Constructing a highly optimized task-specific specialist offers a promising solution; however, extreme structural compression inevitably triggers a severe representation bottleneck. To conquer this, we propose Moebius, a highly efficient lightweight inpainting framework. We systematically reconstruct the diffusion backbone by introducing the Local-$λ$ Mix Interaction ($LλMI$) block. Comprising Local-$λ$ and Interactive-$λ$ modules, it elegantly summarizes spatial contexts and global semantic priors into fixed-size linear matrices, preserving complex latent interactions while drastically shedding parameters. Furthermore, to unlock the full representational capacity of this highly compact architecture, we synergistically pair it with an adaptive multi-granularity distillation strategy. Operating strictly within the latent space to avoid expensive pixel-space decoding, this strategy dynamically balances multiple gradient-based losses to achieve high-fidelity alignment. Extensive experiments across natural and portrait benchmarks demonstrate that this optimal synergy enables Moebius to rival or even surpass the generation quality of the 10B-level industrial generalist FLUX.1-Fill-Dev. Remarkably, Moebius achieves this using less than 2\\% of the parameters (0.22B vs. 11.9B) while delivering a $>15\\times$ acceleration in total inference time, setting a new efficiency standard for high-fidelity inpainting. Project page at https://hustvl.github.io/Moebius.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-06-17T15:35:38+00:00",
+        "updated": "2026-06-17T15:35:38+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.19195v1",
+        "abs_url": "https://arxiv.org/abs/2606.19195",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 101,
+        "title_ko": "뫼비우스: 100억 매개변수 수준 성능을 내는 0.2억 매개변수 경량 이미지 인페인팅 프레임워크",
+        "summary_ko": "- 100억 매개변수(10B-level) 산업용 모델은 이미지 인페인팅 성능이 높지만, 계산 비용이 너무 커 실용화가 어렵습니다.\n- 이 문제를 해결하기 위해, Moebius는 Local-$λ$ Mix Interaction (LλMI) 블록으로 확산 백본을 재구성하여 효율성을 높였습니다.\n- LλMI 블록은 공간적 맥락과 전역 의미론적 사전 정보를 고정 크기 선형 행렬로 요약하여 매개변수를 크게 줄입니다.\n- Moebius는 100억 매개변수 수준의 FLUX.1-Fill-Dev와 유사하거나 더 나은 생성 품질을 보였습니다.\n- Moebius는 매개변수가 2% 미만(0.22B vs. 11.9B)이면서 추론 시간은 15배 이상 빨라 효율성 표준을 제시합니다.",
+        "tags": [
+          "이미지 인페인팅",
+          "경량 모델",
+          "확산 모델",
+          "효율성"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2605.20416",
+        "title": "Miller-Index-Based Latent Crystallographic Fracture Plane Reasoning and generation with Vision-Language Models",
+        "authors": [
+          "Qinwu Xu",
+          "Xiaofu Ma",
+          "Yifan Jiang"
+        ],
+        "summary": "We study whether multimodal large language models (MLLMs) can leverage crystallographic plane indices (Miller indices) as a structured latent representation for reasoning about fracture geometry. We formulate Miller indices $z = (h,k,l)$ as a latent variable governing idealized planar fracture and evaluate two complementary capabilities: (i) latent inference, where the model maps visual observations to plane hypotheses under physically valid conditions, and (ii) latent applicability assessment, where the model determines whether such a representation is meaningful for a given fracture image. Through extensive experiments spanning synthetic data, controlled 2D--3D geometric pairs, and real-world fracture images across multiple material classes -- including ceramics, glass, metals, and concrete -- we show that MLLMs can reliably perform latent inference in idealized settings and, critically, can reject the latent representation when the underlying physics does not support it. As an exploratory extension, we further examine AI-generated fracture sequences and observe qualitatively plausible brittle-fracture progression behaviors, suggesting that multimodal generative models may encode partial implicit physical priors related to material failure dynamics. These results suggest that MLLMs can act as physics-aware reasoning systems conditioned on structured latent priors, provided that the domain of validity is explicitly modeled.",
+        "categories": [
+          "cs.LG",
+          "physics.comp-ph"
+        ],
+        "published": "2026-05-19T19:11:38+00:00",
+        "updated": "2026-05-24T16:52:15+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2605.20416v2",
+        "abs_url": "https://arxiv.org/abs/2605.20416",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/8ba589746a210e2e2a00fe7df195540735197435",
+        "tldr": "It is suggested that MLLMs can act as physics-aware reasoning systems conditioned on structured latent priors, provided that the domain of validity is explicitly modeled.",
+        "matched_keywords": [
+          "generative model",
+          "fracture",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "Miller 지수 기반 잠재 결정학적 파괴면 추론 및 시각-언어 모델을 활용한 생성",
+        "summary_ko": "- 이 연구는 다중 모드 대규모 언어 모델(MLLM)이 결정학적 평면 지수(Miller 지수)를 파괴 형상 추론에 활용하는지 탐구합니다.\n- Miller 지수 (h,k,l)를 이상적인 평면 파괴를 제어하는 잠재 변수로 공식화했습니다.\n- 모델은 시각적 관찰을 물리적으로 유효한 평면 가설로 매핑하고, 해당 표현의 유효성을 평가합니다.\n- 합성 데이터, 2D-3D 기하학적 쌍, 실제 파괴 이미지로 실험하여 MLLM의 성능을 검증했습니다.\n- MLLM이 물리적 제약을 인식하는 추론 시스템으로 작동할 수 있음을 보여줍니다.",
+        "tags": [
+          "다중 모드 대규모 언어 모델",
+          "결정학적 파괴",
+          "Miller 지수",
+          "물리 인식 AI"
+        ]
+      },
+      {
+        "arxiv_id": "2606.16308",
+        "title": "Physics-Informed Sensitivity Analysis for Enhanced Structural Health Assessment: Test-Case for a Mixed Steel-Concrete Bridge",
+        "authors": [
+          "Jacopo Bonari",
+          "Francesca Marsili",
+          "Max von Danwitz",
+          "Alexander Popp"
+        ],
+        "summary": "Bridges are vital components of transportation systems, that serve as essential links ensuring the safe and efficient movement of people, goods, and emergency responders, especially during crises. With aging infrastructures, increasing traffic volumes and loads, and the intensifying impacts of extreme weather events due to climate change, the development of effective physics-informed structural health monitoring (SHM) frameworks has become critically important, more so when combined with sensitivity analysis (SA), which identifies the most influential structural parameters in the bridge's response. To support this, a high-fidelity, physics-based numerical model of a full-scale, two-span, mixed steel-concrete test bridge has been developed. This model serves as a virtual replica of a real structure located at the University of the Bundeswehr Munich. The numerical model is used as a complementary tool to improve prognostic capabilities and quantify uncertainty. A SA study is conducted to evaluate the structure's response under various mechanical conditions. Assessing these operational variations' effects on structural behavior forms part of an integrated, systematic evaluation framework aimed at combining SHM and SA.",
+        "categories": [
+          "cs.CE"
+        ],
+        "published": "2026-06-15T07:13:50+00:00",
+        "updated": "2026-06-15T07:13:50+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.16308v1",
+        "abs_url": "https://arxiv.org/abs/2606.16308",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": null,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "physics-informed",
+          "structural",
+          "prognostic",
+          "mechanical",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "향상된 구조 건전성 평가를 위한 물리 기반 민감도 분석: 강철-콘크리트 복합 교량 사례 연구",
+        "summary_ko": "- 노후화 및 기후 변화 등으로 교량의 효과적인 구조 건전성 모니터링(SHM)이 중요해지고 있습니다.\n- 이 연구는 SHM과 민감도 분석(SA)을 결합하여 교량 반응에 가장 큰 영향을 미치는 구조 매개변수를 식별합니다.\n- 독일 연방군 대학교의 실제 교량을 모사한 고정밀 물리 기반 수치 모델을 개발했습니다.\n- 이 모델을 활용하여 다양한 기계적 조건에서 교량 구조 반응에 대한 SA 연구를 수행했습니다.\n- 이는 SHM과 SA를 통합한 체계적인 평가 프레임워크를 제시하여 예측 능력과 불확실성 정량화를 개선합니다.",
+        "tags": [
+          "구조 건전성 모니터링",
+          "민감도 분석",
+          "물리 기반 모델",
+          "교량 공학"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2606.20563",
+      "title": "JanusMesh: Fast and Zero-Shot 3D Visual Illusion Generation via Cross-Space Denoising",
+      "authors": [
+        "Siang-Ling Zhang",
+        "Huai-Hsun Cheng",
+        "Tsung-Ju Yang",
+        "Yu-Lun Liu"
+      ],
+      "summary": "Creating 3D visual illusions, a single 3D mesh that reveals entirely different semantics from various viewing angles, is a fascinating but tough challenge. Existing optimization-based methods are slow and can produce oversaturated colors. In contrast, naive stitching approaches fail to produce geometrically coherent objects. This results in visible unnatural seams and semantic leaks. In this paper, we present a fast and training-free framework for generating text-driven 3D visual illusions. Our approach decouples the generation into two stages. First, we propose a cross-space dual-branch denoising process. This process dynamically decodes 3D latents into voxel space for CLIP-guided orientation alignment and Signed Distance Field (SDF) blending, which ensures seamless geometric fusion. Second, we introduce a view-conditioned texture synthesis module that projects and aggregates view-specific 2D diffusion priors onto the fused geometry. Extensive experiments demonstrate that our method generates highly realistic, dual-semantic 3D illusions in just 3-5 minutes. It significantly outperforms existing methods in geometric integrity, semantic recognizability, and efficiency. Project page: https://siang1105.github.io/JanusMesh.github.io/",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-18T17:59:55+00:00",
+      "updated": "2026-06-18T17:59:55+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.20563v1",
+      "abs_url": "https://arxiv.org/abs/2606.20563",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "JanusMesh: 교차 공간 노이즈 제거를 통한 빠르고 제로샷 3D 시각적 착시 생성",
+      "summary_ko": "- 다양한 각도에서 다른 의미를 보여주는 3D 시각적 착시 생성은 어렵고 기존 방법은 느리거나 부자연스러운 이음새를 만듭니다.\n- 본 논문은 텍스트 기반 3D 시각적 착시를 빠르고 학습 없이 생성하는 프레임워크를 제안합니다.\n- 제안 방법은 3D 잠재 공간(latent space)을 복셀 공간(voxel space)으로 디코딩하여 기하학적 융합을 보장합니다.\n- 이후 융합된 기하학적 구조에 뷰 조건부 텍스처를 합성하여 사실적인 착시를 만듭니다.\n- 이 방법은 3-5분 만에 사실적인 이중 의미 3D 착시를 생성하며, 기존 방법보다 효율성과 인식률이 뛰어납니다.",
+      "tags": [
+        "3D 시각적 착시",
+        "노이즈 제거",
+        "텍스처 합성",
+        "제로샷 학습"
+      ]
+    },
+    {
+      "arxiv_id": "2606.19195",
+      "title": "Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance",
+      "authors": [
+        "Kangsheng Duan",
+        "Ziyang Xu",
+        "Wenyu Liu",
+        "Xiaohu Ruan",
+        "Xiaoxin Chen",
+        "Xinggang Wang"
+      ],
+      "summary": "While 10B-level industrial foundation models have pushed the boundaries of image inpainting, their prohibitive computational costs severely hinder practical deployment. Constructing a highly optimized task-specific specialist offers a promising solution; however, extreme structural compression inevitably triggers a severe representation bottleneck. To conquer this, we propose Moebius, a highly efficient lightweight inpainting framework. We systematically reconstruct the diffusion backbone by introducing the Local-$λ$ Mix Interaction ($LλMI$) block. Comprising Local-$λ$ and Interactive-$λ$ modules, it elegantly summarizes spatial contexts and global semantic priors into fixed-size linear matrices, preserving complex latent interactions while drastically shedding parameters. Furthermore, to unlock the full representational capacity of this highly compact architecture, we synergistically pair it with an adaptive multi-granularity distillation strategy. Operating strictly within the latent space to avoid expensive pixel-space decoding, this strategy dynamically balances multiple gradient-based losses to achieve high-fidelity alignment. Extensive experiments across natural and portrait benchmarks demonstrate that this optimal synergy enables Moebius to rival or even surpass the generation quality of the 10B-level industrial generalist FLUX.1-Fill-Dev. Remarkably, Moebius achieves this using less than 2\\% of the parameters (0.22B vs. 11.9B) while delivering a $>15\\times$ acceleration in total inference time, setting a new efficiency standard for high-fidelity inpainting. Project page at https://hustvl.github.io/Moebius.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-06-17T15:35:38+00:00",
+      "updated": "2026-06-17T15:35:38+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.19195v1",
+      "abs_url": "https://arxiv.org/abs/2606.19195",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 101,
+      "title_ko": "뫼비우스: 100억 매개변수 수준 성능을 내는 0.2억 매개변수 경량 이미지 인페인팅 프레임워크",
+      "summary_ko": "- 100억 매개변수(10B-level) 산업용 모델은 이미지 인페인팅 성능이 높지만, 계산 비용이 너무 커 실용화가 어렵습니다.\n- 이 문제를 해결하기 위해, Moebius는 Local-$λ$ Mix Interaction (LλMI) 블록으로 확산 백본을 재구성하여 효율성을 높였습니다.\n- LλMI 블록은 공간적 맥락과 전역 의미론적 사전 정보를 고정 크기 선형 행렬로 요약하여 매개변수를 크게 줄입니다.\n- Moebius는 100억 매개변수 수준의 FLUX.1-Fill-Dev와 유사하거나 더 나은 생성 품질을 보였습니다.\n- Moebius는 매개변수가 2% 미만(0.22B vs. 11.9B)이면서 추론 시간은 15배 이상 빨라 효율성 표준을 제시합니다.",
+      "tags": [
+        "이미지 인페인팅",
+        "경량 모델",
+        "확산 모델",
+        "효율성"
+      ]
+    },
+    {
+      "arxiv_id": "2605.20416",
+      "title": "Miller-Index-Based Latent Crystallographic Fracture Plane Reasoning and generation with Vision-Language Models",
+      "authors": [
+        "Qinwu Xu",
+        "Xiaofu Ma",
+        "Yifan Jiang"
+      ],
+      "summary": "We study whether multimodal large language models (MLLMs) can leverage crystallographic plane indices (Miller indices) as a structured latent representation for reasoning about fracture geometry. We formulate Miller indices $z = (h,k,l)$ as a latent variable governing idealized planar fracture and evaluate two complementary capabilities: (i) latent inference, where the model maps visual observations to plane hypotheses under physically valid conditions, and (ii) latent applicability assessment, where the model determines whether such a representation is meaningful for a given fracture image. Through extensive experiments spanning synthetic data, controlled 2D--3D geometric pairs, and real-world fracture images across multiple material classes -- including ceramics, glass, metals, and concrete -- we show that MLLMs can reliably perform latent inference in idealized settings and, critically, can reject the latent representation when the underlying physics does not support it. As an exploratory extension, we further examine AI-generated fracture sequences and observe qualitatively plausible brittle-fracture progression behaviors, suggesting that multimodal generative models may encode partial implicit physical priors related to material failure dynamics. These results suggest that MLLMs can act as physics-aware reasoning systems conditioned on structured latent priors, provided that the domain of validity is explicitly modeled.",
+      "categories": [
+        "cs.LG",
+        "physics.comp-ph"
+      ],
+      "published": "2026-05-19T19:11:38+00:00",
+      "updated": "2026-05-24T16:52:15+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2605.20416v2",
+      "abs_url": "https://arxiv.org/abs/2605.20416",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/8ba589746a210e2e2a00fe7df195540735197435",
+      "tldr": "It is suggested that MLLMs can act as physics-aware reasoning systems conditioned on structured latent priors, provided that the domain of validity is explicitly modeled.",
+      "matched_keywords": [
+        "generative model",
+        "fracture",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "Miller 지수 기반 잠재 결정학적 파괴면 추론 및 시각-언어 모델을 활용한 생성",
+      "summary_ko": "- 이 연구는 다중 모드 대규모 언어 모델(MLLM)이 결정학적 평면 지수(Miller 지수)를 파괴 형상 추론에 활용하는지 탐구합니다.\n- Miller 지수 (h,k,l)를 이상적인 평면 파괴를 제어하는 잠재 변수로 공식화했습니다.\n- 모델은 시각적 관찰을 물리적으로 유효한 평면 가설로 매핑하고, 해당 표현의 유효성을 평가합니다.\n- 합성 데이터, 2D-3D 기하학적 쌍, 실제 파괴 이미지로 실험하여 MLLM의 성능을 검증했습니다.\n- MLLM이 물리적 제약을 인식하는 추론 시스템으로 작동할 수 있음을 보여줍니다.",
+      "tags": [
+        "다중 모드 대규모 언어 모델",
+        "결정학적 파괴",
+        "Miller 지수",
+        "물리 인식 AI"
+      ]
+    },
+    {
+      "arxiv_id": "2606.16308",
+      "title": "Physics-Informed Sensitivity Analysis for Enhanced Structural Health Assessment: Test-Case for a Mixed Steel-Concrete Bridge",
+      "authors": [
+        "Jacopo Bonari",
+        "Francesca Marsili",
+        "Max von Danwitz",
+        "Alexander Popp"
+      ],
+      "summary": "Bridges are vital components of transportation systems, that serve as essential links ensuring the safe and efficient movement of people, goods, and emergency responders, especially during crises. With aging infrastructures, increasing traffic volumes and loads, and the intensifying impacts of extreme weather events due to climate change, the development of effective physics-informed structural health monitoring (SHM) frameworks has become critically important, more so when combined with sensitivity analysis (SA), which identifies the most influential structural parameters in the bridge's response. To support this, a high-fidelity, physics-based numerical model of a full-scale, two-span, mixed steel-concrete test bridge has been developed. This model serves as a virtual replica of a real structure located at the University of the Bundeswehr Munich. The numerical model is used as a complementary tool to improve prognostic capabilities and quantify uncertainty. A SA study is conducted to evaluate the structure's response under various mechanical conditions. Assessing these operational variations' effects on structural behavior forms part of an integrated, systematic evaluation framework aimed at combining SHM and SA.",
+      "categories": [
+        "cs.CE"
+      ],
+      "published": "2026-06-15T07:13:50+00:00",
+      "updated": "2026-06-15T07:13:50+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.16308v1",
+      "abs_url": "https://arxiv.org/abs/2606.16308",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": null,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "physics-informed",
+        "structural",
+        "prognostic",
+        "mechanical",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "향상된 구조 건전성 평가를 위한 물리 기반 민감도 분석: 강철-콘크리트 복합 교량 사례 연구",
+      "summary_ko": "- 노후화 및 기후 변화 등으로 교량의 효과적인 구조 건전성 모니터링(SHM)이 중요해지고 있습니다.\n- 이 연구는 SHM과 민감도 분석(SA)을 결합하여 교량 반응에 가장 큰 영향을 미치는 구조 매개변수를 식별합니다.\n- 독일 연방군 대학교의 실제 교량을 모사한 고정밀 물리 기반 수치 모델을 개발했습니다.\n- 이 모델을 활용하여 다양한 기계적 조건에서 교량 구조 반응에 대한 SA 연구를 수행했습니다.\n- 이는 SHM과 SA를 통합한 체계적인 평가 프레임워크를 제시하여 예측 능력과 불확실성 정량화를 개선합니다.",
+      "tags": [
+        "구조 건전성 모니터링",
+        "민감도 분석",
+        "물리 기반 모델",
+        "교량 공학"
+      ]
+    }
+  ]
+}
