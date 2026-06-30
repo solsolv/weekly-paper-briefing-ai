@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-06-22 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
+<title>2026-07-06 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
 <meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -435,33 +435,21 @@
 <div class="wrap">
   <header class="site">
   <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-06-22</span>
+  <span class="eyebrow">2026-07-06</span>
   <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
   <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
   </header>
-  <div id="publish-notice" data-publish-at="2026-06-22T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
-    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-06-22 8:00 (KST)</strong>에 공개됩니다.</p>
+  <div id="publish-notice" data-publish-at="2026-07-06T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
+    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-07-06 8:00 (KST)</strong>에 공개됩니다.</p>
     <div class="back-pill-wrap"><a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a></div>
   </div>
   <div data-gate-content>
   <div class="toc reveal">
-    <div class="toc-title">이번 주 4편</div>
+    <div class="toc-title">이번 주 1편</div>
     <div class="toc-list">
-        <a href="#p-2606.20563">
-          <span class="badge ai">AI</span>
-          <span>JanusMesh: 교차 공간 노이즈 제거를 통한 빠르고 제로샷 3D 시각적 착시 생성</span>
-        </a>
-        <a href="#p-2606.19195">
-          <span class="badge ai">AI</span>
-          <span>뫼비우스: 100억 매개변수 수준 성능을 내는 0.2억 매개변수 경량 이미지 인페인팅 프레임워크</span>
-        </a>
-        <a href="#p-2605.20416">
+        <a href="#p-doi:10.3390/en19133013">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>Miller 지수 기반 잠재 결정학적 파괴면 추론 및 시각-언어 모델을 활용한 생성</span>
-        </a>
-        <a href="#p-2606.16308">
-          <span class="badge mech">AI 활용 기계공학</span>
-          <span>향상된 구조 건전성 평가를 위한 물리 기반 민감도 분석: 강철-콘크리트 복합 교량 사례 연구</span>
+          <span>TEAM 문제 36의 비선형 자기-열 분석을 위한 딥러닝 대체 모델</span>
         </a>
     </div>
   </div>
@@ -472,80 +460,26 @@
     <button class="filter-btn" data-track="mech" type="button">AI 활용 기계공학</button>
   </div>
 
-      <section class="track-section" data-track-block="ai">
-        <h2 class="reveal">
-          AI
-          <span class="badge ai">2편</span>
-        </h2>
-          <article class="paper ai reveal" id="p-2606.20563" style="transition-delay: 0ms;">
-            <div class="meta">
-              cs.CV · 발표 2026-06-18<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2606.20563" target="_blank" rel="noopener">JanusMesh: Fast and Zero-Shot 3D Visual Illusion Generation via Cross-Space Denoising</a></h3>
-<p class="title-ko">JanusMesh: 교차 공간 노이즈 제거를 통한 빠르고 제로샷 3D 시각적 착시 생성</p>            <div class="authors">Siang-Ling Zhang, Huai-Hsun Cheng, Tsung-Ju Yang, Yu-Lun Liu</div>
-            <div class="stats">
-            </div>
-            <div class="summary">
-              <ul>
-<li>다양한 각도에서 다른 의미를 보여주는 3D 시각적 착시 생성은 어렵고 기존 방법은 느리거나 부자연스러운 이음새를 만듭니다.</li><li>본 논문은 텍스트 기반 3D 시각적 착시를 빠르고 학습 없이 생성하는 프레임워크를 제안합니다.</li><li>제안 방법은 3D 잠재 공간(latent space)을 복셀 공간(voxel space)으로 디코딩하여 기하학적 융합을 보장합니다.</li><li>이후 융합된 기하학적 구조에 뷰 조건부 텍스처를 합성하여 사실적인 착시를 만듭니다.</li><li>이 방법은 3-5분 만에 사실적인 이중 의미 3D 착시를 생성하며, 기존 방법보다 효율성과 인식률이 뛰어납니다.</li>              </ul>
-            </div>
-<div class="tags"><span class="tag">#3D 시각적 착시</span><span class="tag">#노이즈 제거</span><span class="tag">#텍스처 합성</span><span class="tag">#제로샷 학습</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2606.20563" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2606.20563v1" target="_blank" rel="noopener">PDF</a>
-            </div>
-          </article>
-          <article class="paper ai reveal" id="p-2606.19195" style="transition-delay: 60ms;">
-            <div class="meta">
-              cs.CV · 발표 2026-06-17<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2606.19195" target="_blank" rel="noopener">Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance</a></h3>
-<p class="title-ko">뫼비우스: 100억 매개변수 수준 성능을 내는 0.2억 매개변수 경량 이미지 인페인팅 프레임워크</p>            <div class="authors">Kangsheng Duan, Ziyang Xu, Wenyu Liu, Xiaohu Ruan, Xiaoxin Chen, Xinggang Wang</div>
-            <div class="stats">
-<span class="chip">HF upvotes 101</span>            </div>
-            <div class="summary">
-              <ul>
-<li>100억 매개변수(10B-level) 산업용 모델은 이미지 인페인팅 성능이 높지만, 계산 비용이 너무 커 실용화가 어렵습니다.</li><li>이 문제를 해결하기 위해, Moebius는 Local-$λ$ Mix Interaction (LλMI) 블록으로 확산 백본을 재구성하여 효율성을 높였습니다.</li><li>LλMI 블록은 공간적 맥락과 전역 의미론적 사전 정보를 고정 크기 선형 행렬로 요약하여 매개변수를 크게 줄입니다.</li><li>Moebius는 100억 매개변수 수준의 FLUX.1-Fill-Dev와 유사하거나 더 나은 생성 품질을 보였습니다.</li><li>Moebius는 매개변수가 2% 미만(0.22B vs. 11.9B)이면서 추론 시간은 15배 이상 빨라 효율성 표준을 제시합니다.</li>              </ul>
-            </div>
-<div class="tags"><span class="tag">#이미지 인페인팅</span><span class="tag">#경량 모델</span><span class="tag">#확산 모델</span><span class="tag">#효율성</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2606.19195" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2606.19195v1" target="_blank" rel="noopener">PDF</a>
-            </div>
-          </article>
-      </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
           AI 활용 기계공학
-          <span class="badge mech">2편</span>
+          <span class="badge mech">1편</span>
         </h2>
-          <article class="paper mech reveal" id="p-2605.20416" style="transition-delay: 0ms;">
+          <article class="paper mech reveal" id="p-doi:10.3390/en19133013" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.LG, physics.comp-ph · 발표 2026-05-19 · 갱신 2026-05-24<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2605.20416" target="_blank" rel="noopener">Miller-Index-Based Latent Crystallographic Fracture Plane Reasoning and generation with Vision-Language Models</a></h3>
-<p class="title-ko">Miller 지수 기반 잠재 결정학적 파괴면 추론 및 시각-언어 모델을 활용한 생성</p>            <div class="authors">Qinwu Xu, Xiaofu Ma, Yifan Jiang</div>
+               · 발표 2026-06-26<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://www.semanticscholar.org/paper/c69973986469d6e6e0ac73977761feacce2e25d9" target="_blank" rel="noopener">Deep Learning Surrogate Models for Nonlinear Magneto-Thermal Analysis of TEAM Problem 36</a></h3>
+<p class="title-ko">TEAM 문제 36의 비선형 자기-열 분석을 위한 딥러닝 대체 모델</p>            <div class="authors">P. Di Barba, F. Dughiero, M. Forzan, ME Mognaschi</div>
             <div class="stats">
-<span class="chip">인용 1</span><span class="chip">매칭: generative model, fracture, relevance:0.85</span>            </div>
+<span class="chip">매칭: deep learning, neural network, surrogate model, finite element, digital twin, relevance:0.85</span>            </div>
             <div class="summary">
               <ul>
-<li>이 연구는 다중 모드 대규모 언어 모델(MLLM)이 결정학적 평면 지수(Miller 지수)를 파괴 형상 추론에 활용하는지 탐구합니다.</li><li>Miller 지수 (h,k,l)를 이상적인 평면 파괴를 제어하는 잠재 변수로 공식화했습니다.</li><li>모델은 시각적 관찰을 물리적으로 유효한 평면 가설로 매핑하고, 해당 표현의 유효성을 평가합니다.</li><li>합성 데이터, 2D-3D 기하학적 쌍, 실제 파괴 이미지로 실험하여 MLLM의 성능을 검증했습니다.</li><li>MLLM이 물리적 제약을 인식하는 추론 시스템으로 작동할 수 있음을 보여줍니다.</li>              </ul>
+<li>유도 가열 시뮬레이션은 비선형 재료 특성 때문에 계산 비용이 높습니다.</li><li>이 연구는 컨볼루션 신경망 기반의 딥러닝 대체 모델을 제안합니다.</li><li>4만 개 이상의 유한요소(FE) 솔루션 데이터베이스를 구축하여 학습시켰습니다.</li><li>모델은 온도 분포를 6~10%의 평균 절대 백분율 오차로 예측합니다.</li><li>유도 가열 시스템의 최적화 및 제어에 활용 가능한 빠른 예측을 제공합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> It is suggested that MLLMs can act as physics-aware reasoning systems conditioned on structured latent priors, provided that the domain of validity is explicitly modeled.</div><div class="tags"><span class="tag">#다중 모드 대규모 언어 모델</span><span class="tag">#결정학적 파괴</span><span class="tag">#Miller 지수</span><span class="tag">#물리 인식 AI</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2605.20416" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2605.20416v2" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/8ba589746a210e2e2a00fe7df195540735197435" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
-          </article>
-          <article class="paper mech reveal" id="p-2606.16308" style="transition-delay: 60ms;">
-            <div class="meta">
-              cs.CE · 발표 2026-06-15<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2606.16308" target="_blank" rel="noopener">Physics-Informed Sensitivity Analysis for Enhanced Structural Health Assessment: Test-Case for a Mixed Steel-Concrete Bridge</a></h3>
-<p class="title-ko">향상된 구조 건전성 평가를 위한 물리 기반 민감도 분석: 강철-콘크리트 복합 교량 사례 연구</p>            <div class="authors">Jacopo Bonari, Francesca Marsili, Max von Danwitz, Alexander Popp</div>
-            <div class="stats">
-<span class="chip">매칭: physics-informed, structural, prognostic, mechanical, relevance:0.85</span>            </div>
-            <div class="summary">
-              <ul>
-<li>노후화 및 기후 변화 등으로 교량의 효과적인 구조 건전성 모니터링(SHM)이 중요해지고 있습니다.</li><li>이 연구는 SHM과 민감도 분석(SA)을 결합하여 교량 반응에 가장 큰 영향을 미치는 구조 매개변수를 식별합니다.</li><li>독일 연방군 대학교의 실제 교량을 모사한 고정밀 물리 기반 수치 모델을 개발했습니다.</li><li>이 모델을 활용하여 다양한 기계적 조건에서 교량 구조 반응에 대한 SA 연구를 수행했습니다.</li><li>이는 SHM과 SA를 통합한 체계적인 평가 프레임워크를 제시하여 예측 능력과 불확실성 정량화를 개선합니다.</li>              </ul>
-            </div>
-<div class="tags"><span class="tag">#구조 건전성 모니터링</span><span class="tag">#민감도 분석</span><span class="tag">#물리 기반 모델</span><span class="tag">#교량 공학</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2606.16308" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2606.16308v1" target="_blank" rel="noopener">PDF</a>
-            </div>
+<div class="tags"><span class="tag">#딥러닝</span><span class="tag">#유도 가열</span><span class="tag">#대체 모델</span><span class="tag">#자기-열 분석</span></div>            <div class="links">
+              <a href="https://www.semanticscholar.org/paper/c69973986469d6e6e0ac73977761feacce2e25d9" target="_blank" rel="noopener">arXiv</a>
+              <a href="" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/c69973986469d6e6e0ac73977761feacce2e25d9" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 
