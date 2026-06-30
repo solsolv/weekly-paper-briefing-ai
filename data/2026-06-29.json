@@ -1,6 +1,6 @@
 {
   "week_id": "2026-06-29",
-  "generated_at": "2026-06-27T05:06:05.423634+00:00",
+  "generated_at": "2026-06-30T07:20:24.721771+00:00",
   "publish_at": "2026-06-29T08:00:00+09:00",
   "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
   "provider": "openai_compat",
@@ -158,43 +158,44 @@
         ]
       },
       {
-        "arxiv_id": "2606.27177",
-        "title": "A hybrid IFENN solver for generalizable modeling of phase-field fracture initiation and propagation",
+        "arxiv_id": "doi:10.1088/2053-1591/ae7d9b",
+        "title": "Multi-parameter optimization of cylinder upsetting using FE and ANN",
         "authors": [
-          "Panos Pantidis",
-          "Fouad Amin",
-          "Diab Abueidda",
-          "Mostafa E. Mobasher"
+          "M. A. Omari",
+          "Ahmad Magableh",
+          "M. Rababah"
         ],
-        "summary": "In this paper we demonstrate how the Integrated Finite Element Neural Network (IFENN) framework can effectively model the entire evolution of phase-field fracture, including the initiation and propagation stage, across generalizable geometries. IFENN is a hybrid scheme for coupled computational mechanics problems, tightly coupling a standard FEM solver (mechanical equilibrium) with a pre-trained neural network (coupled field). In this work, the phase-field diffusion equation is approximated with: i) a DeepONet architecture with Kolmogorov-Arnold networks in the trunk and branch (DeepOKAN) for the initiation stage, and ii) a Convolution Neural Network (CNN) for the propagation stage. Both networks are trained only once, on a benchmark geometry, using a purely physics-informed approach based on the maximum strain energy and the phase-field variable. The training process utilizes an extremely small number of training increments and only a limited number of Gauss points that are strategically sampled from the fracture process zone. These features enable a substantial decrease of the offline training cost. To address the extrapolation of the DeepOKAN predictions in regions away from the crack tip during the inference stage, we implement a set of artificial boundary conditions to enforce the near-zero values in the far-field predictions. We showcase the flexibility and numerical accuracy of the proposed methodology across both the training and unseen geometries.",
-        "categories": [
-          "cs.CE"
-        ],
-        "published": "2026-06-25T15:43:19+00:00",
-        "updated": "2026-06-25T15:43:19+00:00",
-        "pdf_url": "https://arxiv.org/pdf/2606.27177v1",
-        "abs_url": "https://arxiv.org/abs/2606.27177",
+        "summary": "Cold cylinder upsetting of 16-MnCr5 low-alloy steel is a critical bulk metal forming operation in which energy efficiency and workpiece mechanical integrity are strongly governed by process parameter selection. This study presents a systematic finite element (FE) simulation-based investigation of the combined effects of friction coefficient (μ = 0.05–0.20), upper die velocity (v = 15–30 mm s−1), and workpiece initial temperature (T0 = 25 °C–100°C) _ all within the cold forging regime (T/Tm = 0.172–0.215) _ on four key process outputs: total energy consumption, yield stress, final workpiece temperature, and effective maximum plastic strain rate. A full-factorial design of experiments comprising 64 SIMUFACT Forming FE simulations was employed to generate a comprehensive process response dataset. A feedforward artificial neural network (ANN) surrogate model, implemented in MATLAB and trained on 80% of the dataset (R2 ≈ 0.99), was developed to capture the complex nonlinear relationships between process parameters and outputs, offering a computationally efficient alternative to repeated FE evaluation. Results demonstrate that friction coefficient is the dominant parameter governing energy consumption and yield stress, while initial temperature exerts the greatest influence on final workpiece temperature. The optimal process conditions _μ = 0.05, v = 15 mm s−1, T0 = 100 °C_ are identified as achieving minimum energy consumption within the investigated design space. The proposed FE-ANN framework provides a practical and accurate predictive tool for cold forging process design and optimization.",
+        "categories": [],
+        "published": "2026-06-26T00:00:00+00:00",
+        "updated": "2026-06-26T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/2fdb38a1849c45d74a3ad58a6cebc883366b57cb",
         "track": "mech",
         "slot": "latest",
-        "citation_count": null,
-        "influential_citation_count": null,
-        "s2_url": null,
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/2fdb38a1849c45d74a3ad58a6cebc883366b57cb",
         "tldr": null,
         "matched_keywords": [
           "neural network",
-          "physics-informed",
+          "surrogate model",
           "finite element",
-          "fracture",
-          "crack",
+          "stress",
           "mechanical",
-          "relevance:0.90"
+          "relevance:0.85"
         ],
         "affiliations": [],
-        "source": "arxiv",
+        "source": "s2_search",
         "hf_upvotes": null,
-        "title_ko": "",
-        "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-        "tags": []
+        "title_ko": "FE 및 ANN을 활용한 실린더 업세팅의 다중 매개변수 최적화",
+        "summary_ko": "- 16-MnCr5 저합금강의 냉간 실린더 업세팅은 공정 매개변수 선택이 중요합니다.\n- 이 연구는 FE 시뮬레이션으로 마찰 계수, 상부 다이 속도, 초기 온도의 영향을 분석합니다.\n- 64개의 SIMUFACT Forming FE 시뮬레이션으로 데이터를 생성하고 ANN 모델을 훈련했습니다.\n- 마찰 계수가 에너지 소비와 항복 응력에, 초기 온도가 최종 온도에 가장 큰 영향을 줍니다.\n- 이 FE-ANN 프레임워크는 냉간 단조 공정 설계 및 최적화를 위한 예측 도구를 제공합니다.",
+        "tags": [
+          "냉간 단조",
+          "유한 요소 시뮬레이션",
+          "인공 신경망",
+          "공정 최적화"
+        ]
       }
     ]
   },
@@ -347,43 +348,44 @@
       ]
     },
     {
-      "arxiv_id": "2606.27177",
-      "title": "A hybrid IFENN solver for generalizable modeling of phase-field fracture initiation and propagation",
+      "arxiv_id": "doi:10.1088/2053-1591/ae7d9b",
+      "title": "Multi-parameter optimization of cylinder upsetting using FE and ANN",
       "authors": [
-        "Panos Pantidis",
-        "Fouad Amin",
-        "Diab Abueidda",
-        "Mostafa E. Mobasher"
+        "M. A. Omari",
+        "Ahmad Magableh",
+        "M. Rababah"
       ],
-      "summary": "In this paper we demonstrate how the Integrated Finite Element Neural Network (IFENN) framework can effectively model the entire evolution of phase-field fracture, including the initiation and propagation stage, across generalizable geometries. IFENN is a hybrid scheme for coupled computational mechanics problems, tightly coupling a standard FEM solver (mechanical equilibrium) with a pre-trained neural network (coupled field). In this work, the phase-field diffusion equation is approximated with: i) a DeepONet architecture with Kolmogorov-Arnold networks in the trunk and branch (DeepOKAN) for the initiation stage, and ii) a Convolution Neural Network (CNN) for the propagation stage. Both networks are trained only once, on a benchmark geometry, using a purely physics-informed approach based on the maximum strain energy and the phase-field variable. The training process utilizes an extremely small number of training increments and only a limited number of Gauss points that are strategically sampled from the fracture process zone. These features enable a substantial decrease of the offline training cost. To address the extrapolation of the DeepOKAN predictions in regions away from the crack tip during the inference stage, we implement a set of artificial boundary conditions to enforce the near-zero values in the far-field predictions. We showcase the flexibility and numerical accuracy of the proposed methodology across both the training and unseen geometries.",
-      "categories": [
-        "cs.CE"
-      ],
-      "published": "2026-06-25T15:43:19+00:00",
-      "updated": "2026-06-25T15:43:19+00:00",
-      "pdf_url": "https://arxiv.org/pdf/2606.27177v1",
-      "abs_url": "https://arxiv.org/abs/2606.27177",
+      "summary": "Cold cylinder upsetting of 16-MnCr5 low-alloy steel is a critical bulk metal forming operation in which energy efficiency and workpiece mechanical integrity are strongly governed by process parameter selection. This study presents a systematic finite element (FE) simulation-based investigation of the combined effects of friction coefficient (μ = 0.05–0.20), upper die velocity (v = 15–30 mm s−1), and workpiece initial temperature (T0 = 25 °C–100°C) _ all within the cold forging regime (T/Tm = 0.172–0.215) _ on four key process outputs: total energy consumption, yield stress, final workpiece temperature, and effective maximum plastic strain rate. A full-factorial design of experiments comprising 64 SIMUFACT Forming FE simulations was employed to generate a comprehensive process response dataset. A feedforward artificial neural network (ANN) surrogate model, implemented in MATLAB and trained on 80% of the dataset (R2 ≈ 0.99), was developed to capture the complex nonlinear relationships between process parameters and outputs, offering a computationally efficient alternative to repeated FE evaluation. Results demonstrate that friction coefficient is the dominant parameter governing energy consumption and yield stress, while initial temperature exerts the greatest influence on final workpiece temperature. The optimal process conditions _μ = 0.05, v = 15 mm s−1, T0 = 100 °C_ are identified as achieving minimum energy consumption within the investigated design space. The proposed FE-ANN framework provides a practical and accurate predictive tool for cold forging process design and optimization.",
+      "categories": [],
+      "published": "2026-06-26T00:00:00+00:00",
+      "updated": "2026-06-26T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/2fdb38a1849c45d74a3ad58a6cebc883366b57cb",
       "track": "mech",
       "slot": "latest",
-      "citation_count": null,
-      "influential_citation_count": null,
-      "s2_url": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/2fdb38a1849c45d74a3ad58a6cebc883366b57cb",
       "tldr": null,
       "matched_keywords": [
         "neural network",
-        "physics-informed",
+        "surrogate model",
         "finite element",
-        "fracture",
-        "crack",
+        "stress",
         "mechanical",
-        "relevance:0.90"
+        "relevance:0.85"
       ],
       "affiliations": [],
-      "source": "arxiv",
+      "source": "s2_search",
       "hf_upvotes": null,
-      "title_ko": "",
-      "summary_ko": "(요약 생성에 실패했습니다. 원문을 참고하세요.)",
-      "tags": []
+      "title_ko": "FE 및 ANN을 활용한 실린더 업세팅의 다중 매개변수 최적화",
+      "summary_ko": "- 16-MnCr5 저합금강의 냉간 실린더 업세팅은 공정 매개변수 선택이 중요합니다.\n- 이 연구는 FE 시뮬레이션으로 마찰 계수, 상부 다이 속도, 초기 온도의 영향을 분석합니다.\n- 64개의 SIMUFACT Forming FE 시뮬레이션으로 데이터를 생성하고 ANN 모델을 훈련했습니다.\n- 마찰 계수가 에너지 소비와 항복 응력에, 초기 온도가 최종 온도에 가장 큰 영향을 줍니다.\n- 이 FE-ANN 프레임워크는 냉간 단조 공정 설계 및 최적화를 위한 예측 도구를 제공합니다.",
+      "tags": [
+        "냉간 단조",
+        "유한 요소 시뮬레이션",
+        "인공 신경망",
+        "공정 최적화"
+      ]
     }
   ]
 }
