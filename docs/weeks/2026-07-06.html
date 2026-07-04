@@ -445,11 +445,23 @@
   </div>
   <div data-gate-content>
   <div class="toc reveal">
-    <div class="toc-title">이번 주 1편</div>
+    <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
-        <a href="#p-doi:10.3390/en19133013">
+        <a href="#p-2607.02197">
+          <span class="badge ai">AI</span>
+          <span>AI 법규 및 그 이상을 고려한 지능형 시스템의 위험 평가 및 관리 개요</span>
+        </a>
+        <a href="#p-2607.02512">
+          <span class="badge ai">AI</span>
+          <span>Program-as-Weights: 퍼지 함수를 위한 프로그래밍 패러다임</span>
+        </a>
+        <a href="#p-doi:10.1115/1.4071182">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>TEAM 문제 36의 비선형 자기-열 분석을 위한 딥러닝 대체 모델</span>
+          <span>자가 윤활 베어링 마모 예측을 위한 하이브리드 물리 손상 신경망</span>
+        </a>
+        <a href="#p-2607.01055">
+          <span class="badge mech">AI 활용 기계공학</span>
+          <span>등방성 함수의 다중 볼록 포락선 압축을 위한 단조 입력 볼록 신경망</span>
         </a>
     </div>
   </div>
@@ -460,26 +472,80 @@
     <button class="filter-btn" data-track="mech" type="button">AI 활용 기계공학</button>
   </div>
 
+      <section class="track-section" data-track-block="ai">
+        <h2 class="reveal">
+          AI
+          <span class="badge ai">2편</span>
+        </h2>
+          <article class="paper ai reveal" id="p-2607.02197" style="transition-delay: 0ms;">
+            <div class="meta">
+              cs.CY, cs.AI, cs.CR · 발표 2026-07-02<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.02197" target="_blank" rel="noopener">Overview of Risk Assessment and Management for Intelligent Systems under the AI Act and Beyond</a></h3>
+<p class="title-ko">AI 법규 및 그 이상을 고려한 지능형 시스템의 위험 평가 및 관리 개요</p>            <div class="authors">Javier Irigoyen, Roberto Daza, Aythami Morales, Julian Fierrez, Ruben Tolosana, Ruben Vera-Rodriguez, Francisco Jurado, Alvaro Ortigosa</div>
+            <div class="stats">
+<span class="chip">인용 2</span>            </div>
+            <div class="summary">
+              <ul>
+<li>AI 시스템의 안전과 신뢰성을 위해 엄격한 위험 평가의 필요성이 강조됩니다.</li><li>본 논문은 AI 위험 평가(식별 및 분석) 및 관리 방법론을 개괄적으로 다룹니다.</li><li>전 세계 AI 규제 환경을 검토하고 AI 관련 위험의 스펙트럼을 분석합니다.</li><li>기술적 오류부터 윤리적, 사회적 영향까지 다양한 AI 위험을 식별합니다.</li><li>AI 위험 평가의 모범 사례와 방법론적 격차를 제시하며 추가 연구 분야를 조명합니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> An overview of AI risk assessment (identification and analysis) and management methodologies and describes the spectrum of AI-related risks identified in the literature, from technical failures to ethical and social impacts.</div><div class="tags"><span class="tag">#AI 위험 평가</span><span class="tag">#규제 프레임워크</span><span class="tag">#위험 관리</span><span class="tag">#지능형 시스템</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.02197" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.02197v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/5beeb8714cbc2455faa1ff668ddb9e66f94b4f9f" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper ai reveal" id="p-2607.02512" style="transition-delay: 60ms;">
+            <div class="meta">
+              cs.LG, cs.AI, cs.CL · 발표 2026-07-02<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.02512" target="_blank" rel="noopener">Program-as-Weights: A Programming Paradigm for Fuzzy Functions</a></h3>
+<p class="title-ko">Program-as-Weights: 퍼지 함수를 위한 프로그래밍 패러다임</p>            <div class="authors">Wentao Zhang, Liliana Hotsko, Woojeong Kim, Pengyu Nie, Stuart Shieber, Yuntian Deng</div>
+            <div class="stats">
+<span class="chip">HF upvotes 59</span>            </div>
+            <div class="summary">
+              <ul>
+<li>일상적인 프로그래밍 작업 중 모호한 규칙 기반 구현은 LLM API에 의존하며 비용, 재현성 등의 문제가 있습니다.</li><li>이 논문은 자연어 사양으로부터 함수를 컴파일하여 작고 로컬에서 실행 가능한 신경망 아티팩트를 만드는 퍼지 함수 프로그래밍을 제안합니다.</li><li>Program-as-Weights (PAW)는 4B 컴파일러가 FuzzyBench 데이터셋으로 학습되어 경량 인터프리터용 어댑터를 생성합니다.</li><li>0.6B Qwen3 인터프리터는 Qwen3-32B 직접 프롬프팅과 유사한 성능을 보이며, 메모리는 1/50, M3 MacBook에서 30 토큰/초로 실행됩니다.</li><li>PAW는 파운데이션 모델을 문제 해결사에서 도구 빌더로 전환하여, 저렴하고 오프라인으로 재사용 가능한 아티팩트를 생성합니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> Program-as-Weights (PAW) reframes the foundation model from a per-input problem solver into a tool builder: invoked once per function definition, it produces a small reusable artifact whose subsequent calls per function application are cheap and offline.</div><div class="tags"><span class="tag">#퍼지 함수</span><span class="tag">#프로그래밍 패러다임</span><span class="tag">#대규모 언어 모델</span><span class="tag">#경량 인터프리터</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.02512" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.02512v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/7bb0016915af825fcd3896df89dc295cbb28d5b8" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+      </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
           AI 활용 기계공학
-          <span class="badge mech">1편</span>
+          <span class="badge mech">2편</span>
         </h2>
-          <article class="paper mech reveal" id="p-doi:10.3390/en19133013" style="transition-delay: 0ms;">
+          <article class="paper mech reveal" id="p-doi:10.1115/1.4071182" style="transition-delay: 0ms;">
             <div class="meta">
-               · 발표 2026-06-26<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://www.semanticscholar.org/paper/c69973986469d6e6e0ac73977761feacce2e25d9" target="_blank" rel="noopener">Deep Learning Surrogate Models for Nonlinear Magneto-Thermal Analysis of TEAM Problem 36</a></h3>
-<p class="title-ko">TEAM 문제 36의 비선형 자기-열 분석을 위한 딥러닝 대체 모델</p>            <div class="authors">P. Di Barba, F. Dughiero, M. Forzan, ME Mognaschi</div>
+               · 발표 2026-02-19<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324" target="_blank" rel="noopener">A Hybrid Physical Damage Neural Network for Wear Prediction of Self-Lubricating Bearings</a></h3>
+<p class="title-ko">자가 윤활 베어링 마모 예측을 위한 하이브리드 물리 손상 신경망</p>            <div class="authors">Shuo Wang, Shichang Du, Liang Yan, Shanshan Li, Xianmin Chen</div>
             <div class="stats">
-<span class="chip">매칭: deep learning, neural network, surrogate model, finite element, digital twin, relevance:0.85</span>            </div>
+<span class="chip">인용 38</span><span class="chip">영향력 인용 1</span><span class="chip">매칭: neural network, aerospace, relevance:0.80</span>            </div>
             <div class="summary">
               <ul>
-<li>유도 가열 시뮬레이션은 비선형 재료 특성 때문에 계산 비용이 높습니다.</li><li>이 연구는 컨볼루션 신경망 기반의 딥러닝 대체 모델을 제안합니다.</li><li>4만 개 이상의 유한요소(FE) 솔루션 데이터베이스를 구축하여 학습시켰습니다.</li><li>모델은 온도 분포를 6~10%의 평균 절대 백분율 오차로 예측합니다.</li><li>유도 가열 시스템의 최적화 및 제어에 활용 가능한 빠른 예측을 제공합니다.</li>              </ul>
+<li>자가 윤활 베어링의 마모 예측은 신뢰성과 안전성 확보에 중요하나, 물리적 설명력과 정확도 동시 달성이 어렵습니다.</li><li>본 논문은 Archard 마모 모델 기반의 &#39;물리 뉴런 연산자&#39;를 신경망에 통합하여 마모 깊이를 직접 계산합니다.</li><li>이 연산자에 누적 손상 법칙을 도입하고, 마모 단계 진화 법칙을 손실 함수의 물리적 제약으로 활용합니다.</li><li>전용 테스트 플랫폼에서 수집한 전체 수명 주기 데이터를 통해 모델의 성능을 검증했습니다.</li><li>제안된 모델은 기존 방법보다 예측 정확도가 뛰어나며, 물리적 설명력과 일반화 능력을 향상시켰습니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#딥러닝</span><span class="tag">#유도 가열</span><span class="tag">#대체 모델</span><span class="tag">#자기-열 분석</span></div>            <div class="links">
-              <a href="https://www.semanticscholar.org/paper/c69973986469d6e6e0ac73977761feacce2e25d9" target="_blank" rel="noopener">arXiv</a>
+<div class="tags"><span class="tag">#마모 예측</span><span class="tag">#자가 윤활 베어링</span><span class="tag">#신경망</span><span class="tag">#물리 기반 모델</span></div>            <div class="links">
+              <a href="https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324" target="_blank" rel="noopener">arXiv</a>
               <a href="" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/c69973986469d6e6e0ac73977761feacce2e25d9" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://www.semanticscholar.org/paper/3b439ccb266f9933bc5a5488b733a61dd6237324" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper mech reveal" id="p-2607.01055" style="transition-delay: 60ms;">
+            <div class="meta">
+              math.NA, cs.CE · 발표 2026-07-01<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.01055" target="_blank" rel="noopener">Compression of Polyconvex Envelopes of Isotropic Functions via Monotonic Input Convex Neural Networks</a></h3>
+<p class="title-ko">등방성 함수의 다중 볼록 포락선 압축을 위한 단조 입력 볼록 신경망</p>            <div class="authors">Timo Neumeier, Julian Salmon</div>
+            <div class="stats">
+<span class="chip">매칭: neural network, elastic, relevance:0.85</span>            </div>
+            <div class="summary">
+              <ul>
+<li>이 연구는 등방성 함수의 다중 볼록 포락선(polyconvex envelopes)을 압축하는 새로운 신경망 접근법을 제시합니다.</li><li>제안된 방법은 다중 볼록성(polyconvexity)에 대한 고전적인 충분 조건을 활용하여 계산 비용을 줄입니다.</li><li>입력 볼록 신경망(ICNN)과 비음수 가중치 제약을 사용하여 볼록성 및 단조성을 구현합니다.</li><li>손실 함수를 통해 대칭 및 부등식 조건을 약하게 통합하여 학습을 진행합니다.</li><li>기존 방법보다 계산 효율적이며, Saint Venant-Kirchhoff 에너지에 대해 정확한 근사를 제공합니다.</li>              </ul>
+            </div>
+<div class="tags"><span class="tag">#다중 볼록성</span><span class="tag">#신경망 압축</span><span class="tag">#비선형 탄성</span><span class="tag">#입력 볼록 신경망</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.01055" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.01055v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/53676e5684cadc72eecf4d5c5b0d17fe2890739c" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 
@@ -503,7 +569,7 @@
     })();
   </script>
   <footer class="site">
-    <p>자동 생성 · 2026-06-30 07:20 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+    <p>자동 생성 · 2026-07-04 04:36 UTC · arXiv + Semantic Scholar + LLM 요약</p>
   </footer>
 </div>
 <script>
