@@ -1,0 +1,377 @@
+{
+  "week_id": "2026-07-13",
+  "generated_at": "2026-07-11T04:01:36.698198+00:00",
+  "publish_at": "2026-07-13T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2607.08620",
+        "title": "A New Human-Likeness and Comfort Index for Robot Movements Along Prescribed Paths",
+        "authors": [
+          "Rosanna Coccaro",
+          "Enrico Ferrentino",
+          "Antonio Parziale",
+          "Angelo Marcelli",
+          "Pasquale Chiacchio"
+        ],
+        "summary": "As human-robot interaction rapidly spreads in numerous fields, the subject of robot acceptance gains increasing importance. Visual similarity to the human body, as occurs for humanoids, is generally not enough to ensure acceptance in physical interaction, as acceptance directly links to comfort and ergonomics, which are measured in terms of the quality of the robot movement perceived by the human. This paper discusses the connection between comfort and similarity of the robot movement to the human one. By considering the kinematic characterization of human movement, this paper focuses on the time laws of such movements, wherein the end-effector path is prescribed. Based on the lognormality principle for modeling human movements, a human-likeness index is defined and used to provide an a priori characterization of trajectories. Such an index can be used to evaluate the performance of trajectory generation algorithms in producing human-like movements before they are actually executed. For validation purposes, 68 subjects are required to judge their comfort. The results of three experimental campaigns involving a physical interaction with a robot demonstrate a globally consistent trend between the preference in terms of perceived comfort and the distribution of the suggested human-likeness index.",
+        "categories": [
+          "cs.RO"
+        ],
+        "published": "2026-07-09T15:53:51+00:00",
+        "updated": "2026-07-09T15:53:51+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.08620v1",
+        "abs_url": "https://arxiv.org/abs/2607.08620",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/e4fbfda6ed5f8c2d20bd17fc4e91cf64de823182",
+        "tldr": "The results of three experimental campaigns involving a physical interaction with a robot demonstrate a globally consistent trend between the preference in terms of perceived comfort and the distribution of the suggested human-likeness index.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "로봇의 경로 이동을 위한 새로운 인간 유사성 및 편안함 지수",
+        "summary_ko": "- 로봇 수용도는 인간이 인지하는 로봇 움직임의 질과 편안함에 직접 연결됩니다.\n- 이 연구는 인간 움직임의 운동학적 특성을 고려하여 로봇 움직임의 인간 유사성을 정의합니다.\n- 인간 움직임 모델링의 로그정규성 원리를 기반으로 인간 유사성 지수를 제안합니다.\n- 68명의 피험자가 로봇과의 물리적 상호작용 후 편안함을 평가하는 실험을 진행했습니다.\n- 제안된 지수는 로봇 움직임의 인간 유사성과 인지된 편안함 사이에 일관된 경향을 보였습니다.",
+        "tags": [
+          "로봇 공학",
+          "인간-로봇 상호작용",
+          "움직임 계획",
+          "사용자 경험"
+        ]
+      },
+      {
+        "arxiv_id": "2607.07708",
+        "title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+        "authors": [
+          "Chen Tang",
+          "Yizhou Wang",
+          "Jianyu Wu",
+          "Lintao Wang",
+          "Shixiang Tang",
+          "Pengze Li",
+          "Encheng Su",
+          "Jun Yao",
+          "Jiabei Xiao",
+          "Yuqi Shi",
+          "Jielan Li",
+          "Hongxia Hao",
+          "Zhangyang Gao",
+          "Fang Wu",
+          "Ben Fei",
+          "Xiangyu Yue",
+          "Pan Tan",
+          "Bozitao Zhong",
+          "Jinouwen Zhang",
+          "Aoran Wang",
+          "Yan Lu",
+          "Jiaheng Liu",
+          "Xinzhu Ma",
+          "Liang Hong",
+          "Mingyue Zheng",
+          "Phil Torr",
+          "Bowen Zhou",
+          "Wanli Ouyang",
+          "Lei Bai"
+        ],
+        "summary": "Structure-property relationships are foundational to biology, chemistry and materials science, where function, reactivity and physical response emerge from spatial, chemical and periodic organization. Mechanistically explaining these relationships requires interpreting structural evidence through scientific principles and physical constraints, from stereochemistry and bonding to symmetry, energetics and periodic order. However, applying artificial intelligence to this process presents a joint challenge of representation and reasoning: models must preserve domain-native structural information while showing how specific evidence supports predictions under these constraints. Here we introduce SciReasoner, a multimodal scientific foundation model for native structural reasoning across proteins, small molecules and inorganic crystals. SciReasoner discretizes coordinates, topologies and periodic connectivities into a unified structure-aware vocabulary, treating structural tokens as addressable evidence units during reasoning. In homology-controlled Gene Ontology prediction, SciReasoner improves Cellular Component annotation for low-homology and orphan-like proteins, increasing $F_{\\max}$ from 0.42 to 0.55. In chemistry, it raises single-step retrosynthesis accuracy from 0.63 to 0.72 while generating fragment-level disconnection and precursor-verification traces. In materials science, its representations separate elemental and compound phases and resolve high- and low-band-gap regimes. Across 86 benchmarks, SciReasoner achieves state-of-the-art performance on 67 tasks. Double-blind expert evaluation rates its reasoning traces as preferred or at least comparable to those of a frontier large language model in 98% of cases. By making structure an inspectable substrate for reasoning under scientific constraints, SciReasoner connects accurate prediction with interpretable scientific inference.",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.CE",
+          "cs.LG"
+        ],
+        "published": "2026-07-08T17:59:59+00:00",
+        "updated": "2026-07-08T17:59:59+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.07708v1",
+        "abs_url": "https://arxiv.org/abs/2607.07708",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/2b28ee97ac83db989e14d5d81b6e2ca042f24855",
+        "tldr": "SciReasoner is introduced, a multimodal scientific foundation model for native structural reasoning across proteins, small molecules and inorganic crystals that connects accurate prediction with interpretable scientific inference.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 78,
+        "title_ko": "심층적인 고유 구조 추론을 통한 정확하고 학제적인 투명한 구조-속성 이해",
+        "summary_ko": "- 생물학, 화학, 재료 과학에서 구조-속성 관계를 설명하는 AI 모델은 표현과 추론에 어려움이 있습니다.\n- SciReasoner는 단백질, 소분자, 무기 결정 전반의 고유 구조 추론을 위한 다중 모드 과학 기반 모델입니다.\n- 이 모델은 좌표, 위상, 주기적 연결성을 통합된 구조 인식 어휘로 이산화하여 추론 시 증거로 활용합니다.\n- SciReasoner는 유전자 온톨로지(Gene Ontology) 예측에서 $F_{\\max}$를 0.42에서 0.55로, 역합성 정확도를 0.63에서 0.72로 향상했습니다.\n- 이는 과학적 제약 하에 구조를 검사 가능한 추론 기반으로 만들어 정확한 예측과 해석 가능한 과학적 추론을 연결합니다.",
+        "tags": [
+          "구조-속성 관계",
+          "과학 기반 모델",
+          "다중 모드 AI",
+          "해석 가능한 AI"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2507.15073",
+        "title": "Reinforcement Learning for Flow-Matching Policies",
+        "authors": [
+          "Samuel Pfrommer",
+          "Yixiao Huang",
+          "Somayeh Sojoudi"
+        ],
+        "summary": "Flow-matching policies have emerged as a powerful paradigm for generalist robotics. These models are trained to imitate an action chunk, conditioned on sensor observations and textual instructions. Often, training demonstrations are generated by a suboptimal policy, such as a human operator. This work explores training flow-matching policies via reinforcement learning to surpass the original demonstration policy performance. We particularly note minimum-time control as a key application and present a simple scheme for variable-horizon flow-matching planning. We then introduce two families of approaches: a simple Reward-Weighted Flow Matching (RWFM) scheme and a Group Relative Policy Optimization (GRPO) approach with a learned reward surrogate. Our policies are trained on an illustrative suite of simulated unicycle dynamics tasks, and we show that both approaches dramatically improve upon the suboptimal demonstrator performance, with the GRPO approach in particular generally incurring between $50\\%$ and $85\\%$ less cost than a naive Imitation Learning Flow Matching (ILFM) approach.",
+        "categories": [],
+        "published": "2025-07-20T00:00:00+00:00",
+        "updated": "2025-07-20T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 14,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166",
+        "tldr": null,
+        "matched_keywords": [
+          "reinforcement learning",
+          "robot",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "흐름 일치 정책을 위한 강화 학습",
+        "summary_ko": "- 일반 로봇 공학에서 강력한 패러다임인 흐름 일치 정책(flow-matching policies)은 종종 인간 작업자 같은 차선책 시연으로 훈련됩니다.\n- 이 연구는 강화 학습(RL)을 통해 흐름 일치 정책을 훈련하여 시연 정책의 성능을 능가하는 방법을 탐구합니다.\n- 최소 시간 제어를 핵심 응용 분야로 보고, Reward-Weighted Flow Matching(RWFM)과 Group Relative Policy Optimization(GRPO) 두 가지 접근 방식을 제시합니다.\n- 시뮬레이션된 외발자전거 동역학(unicycle dynamics) 작업에서 두 접근 방식 모두 차선책 시연자 성능을 크게 개선했습니다.\n- 특히 GRPO는 단순 모방 학습 흐름 일치(ILFM)보다 50~85% 적은 비용을 발생시켜 효율성을 입증했습니다.",
+        "tags": [
+          "강화 학습",
+          "흐름 일치 정책",
+          "로봇 공학",
+          "최소 시간 제어"
+        ]
+      },
+      {
+        "arxiv_id": "2607.07233",
+        "title": "HPG-Diff: Hierarchical physics-guided diffusion with differentiable connectivity constraints for topology optimization",
+        "authors": [
+          "Jinbo Yang",
+          "Mingyue Yuan",
+          "Boyuan Zhang",
+          "Yoshifumi Kitamura",
+          "Shikai Jing"
+        ],
+        "summary": "Deep generative models offer a promising paradigm for topology optimization, enabling rapid design exploration. However, these approaches lack intrinsic physics guidance, often leading to poor generalizability across unseen boundary conditions and the formation of floating material artifacts. To address these limitations, we propose Hierarchical Physics-Guided Diffusion (HPG-Diff), a novel diffusion framework that enforces physics consistency through two synergistic mechanisms. First, we introduce a hierarchical physics-guided strategy that aligns different precomputed physics features with the denoising process, guiding material distribution toward optimal load paths to enhance generalizability. Second, we propose a floating material suppression loss as a differentiable connectivity constraint inspired by thermal conduction to improve topological connectivity. By simulating a virtual heat propagation process from load positions, this mechanism explicitly penalizes floating material during training. Quantitative evaluations demonstrate that HPG-Diff achieves average compliance errors of 0.87% (in-distribution) and 5.29% (out-of-distribution), while reducing floating material ratios to 2.90% and 2.44%, respectively. Furthermore, case studies on a 3:1 rectangular domain, including cantilever and bridge benchmarks, provide preliminary evidence that lightweight LoRA fine-tuning with a small dataset can support the adaptation of HPG-Diff to rectangular non-square domains.",
+        "categories": [
+          "cs.LG",
+          "cs.CE"
+        ],
+        "published": "2026-07-08T10:15:20+00:00",
+        "updated": "2026-07-08T10:15:20+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.07233v1",
+        "abs_url": "https://arxiv.org/abs/2607.07233",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/efe0f1df4406cc911c8f89992ca89af6a14f0590",
+        "tldr": "HPG-Diff is proposed, a novel diffusion framework that enforces physics consistency through two synergistic mechanisms that aligns different precomputed physics features with the denoising process, guiding material distribution toward optimal load paths to enhance generalizability.",
+        "matched_keywords": [
+          "generative model",
+          "topology optimization",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "HPG-Diff: 위계적 물리 기반 확산 모델과 미분 가능한 연결성 제약을 활용한 위상 최적화",
+        "summary_ko": "- 딥 생성 모델은 위상 최적화(topology optimization)에 유망하지만, 물리적 지침 부족으로 일반화와 부유 물질 문제가 있습니다.\n- 이 논문은 물리 일관성을 강화하는 HPG-Diff라는 새로운 확산 프레임워크를 제안합니다.\n- HPG-Diff는 계층적 물리 기반 전략과 미분 가능한 연결성 제약을 통해 부유 물질을 억제합니다.\n- HPG-Diff는 평균 0.87%의 컴플라이언스 오차와 2.90%의 부유 물질 비율을 달성했습니다.\n- 이 방법은 일반화 성능을 높이고 부유 물질을 줄여 위상 최적화 설계의 신뢰성을 향상시킵니다.",
+        "tags": [
+          "위상 최적화",
+          "확산 모델",
+          "물리 기반 AI",
+          "기계 학습"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2607.08620",
+      "title": "A New Human-Likeness and Comfort Index for Robot Movements Along Prescribed Paths",
+      "authors": [
+        "Rosanna Coccaro",
+        "Enrico Ferrentino",
+        "Antonio Parziale",
+        "Angelo Marcelli",
+        "Pasquale Chiacchio"
+      ],
+      "summary": "As human-robot interaction rapidly spreads in numerous fields, the subject of robot acceptance gains increasing importance. Visual similarity to the human body, as occurs for humanoids, is generally not enough to ensure acceptance in physical interaction, as acceptance directly links to comfort and ergonomics, which are measured in terms of the quality of the robot movement perceived by the human. This paper discusses the connection between comfort and similarity of the robot movement to the human one. By considering the kinematic characterization of human movement, this paper focuses on the time laws of such movements, wherein the end-effector path is prescribed. Based on the lognormality principle for modeling human movements, a human-likeness index is defined and used to provide an a priori characterization of trajectories. Such an index can be used to evaluate the performance of trajectory generation algorithms in producing human-like movements before they are actually executed. For validation purposes, 68 subjects are required to judge their comfort. The results of three experimental campaigns involving a physical interaction with a robot demonstrate a globally consistent trend between the preference in terms of perceived comfort and the distribution of the suggested human-likeness index.",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-09T15:53:51+00:00",
+      "updated": "2026-07-09T15:53:51+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.08620v1",
+      "abs_url": "https://arxiv.org/abs/2607.08620",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/e4fbfda6ed5f8c2d20bd17fc4e91cf64de823182",
+      "tldr": "The results of three experimental campaigns involving a physical interaction with a robot demonstrate a globally consistent trend between the preference in terms of perceived comfort and the distribution of the suggested human-likeness index.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "로봇의 경로 이동을 위한 새로운 인간 유사성 및 편안함 지수",
+      "summary_ko": "- 로봇 수용도는 인간이 인지하는 로봇 움직임의 질과 편안함에 직접 연결됩니다.\n- 이 연구는 인간 움직임의 운동학적 특성을 고려하여 로봇 움직임의 인간 유사성을 정의합니다.\n- 인간 움직임 모델링의 로그정규성 원리를 기반으로 인간 유사성 지수를 제안합니다.\n- 68명의 피험자가 로봇과의 물리적 상호작용 후 편안함을 평가하는 실험을 진행했습니다.\n- 제안된 지수는 로봇 움직임의 인간 유사성과 인지된 편안함 사이에 일관된 경향을 보였습니다.",
+      "tags": [
+        "로봇 공학",
+        "인간-로봇 상호작용",
+        "움직임 계획",
+        "사용자 경험"
+      ]
+    },
+    {
+      "arxiv_id": "2607.07708",
+      "title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+      "authors": [
+        "Chen Tang",
+        "Yizhou Wang",
+        "Jianyu Wu",
+        "Lintao Wang",
+        "Shixiang Tang",
+        "Pengze Li",
+        "Encheng Su",
+        "Jun Yao",
+        "Jiabei Xiao",
+        "Yuqi Shi",
+        "Jielan Li",
+        "Hongxia Hao",
+        "Zhangyang Gao",
+        "Fang Wu",
+        "Ben Fei",
+        "Xiangyu Yue",
+        "Pan Tan",
+        "Bozitao Zhong",
+        "Jinouwen Zhang",
+        "Aoran Wang",
+        "Yan Lu",
+        "Jiaheng Liu",
+        "Xinzhu Ma",
+        "Liang Hong",
+        "Mingyue Zheng",
+        "Phil Torr",
+        "Bowen Zhou",
+        "Wanli Ouyang",
+        "Lei Bai"
+      ],
+      "summary": "Structure-property relationships are foundational to biology, chemistry and materials science, where function, reactivity and physical response emerge from spatial, chemical and periodic organization. Mechanistically explaining these relationships requires interpreting structural evidence through scientific principles and physical constraints, from stereochemistry and bonding to symmetry, energetics and periodic order. However, applying artificial intelligence to this process presents a joint challenge of representation and reasoning: models must preserve domain-native structural information while showing how specific evidence supports predictions under these constraints. Here we introduce SciReasoner, a multimodal scientific foundation model for native structural reasoning across proteins, small molecules and inorganic crystals. SciReasoner discretizes coordinates, topologies and periodic connectivities into a unified structure-aware vocabulary, treating structural tokens as addressable evidence units during reasoning. In homology-controlled Gene Ontology prediction, SciReasoner improves Cellular Component annotation for low-homology and orphan-like proteins, increasing $F_{\\max}$ from 0.42 to 0.55. In chemistry, it raises single-step retrosynthesis accuracy from 0.63 to 0.72 while generating fragment-level disconnection and precursor-verification traces. In materials science, its representations separate elemental and compound phases and resolve high- and low-band-gap regimes. Across 86 benchmarks, SciReasoner achieves state-of-the-art performance on 67 tasks. Double-blind expert evaluation rates its reasoning traces as preferred or at least comparable to those of a frontier large language model in 98% of cases. By making structure an inspectable substrate for reasoning under scientific constraints, SciReasoner connects accurate prediction with interpretable scientific inference.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CE",
+        "cs.LG"
+      ],
+      "published": "2026-07-08T17:59:59+00:00",
+      "updated": "2026-07-08T17:59:59+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.07708v1",
+      "abs_url": "https://arxiv.org/abs/2607.07708",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/2b28ee97ac83db989e14d5d81b6e2ca042f24855",
+      "tldr": "SciReasoner is introduced, a multimodal scientific foundation model for native structural reasoning across proteins, small molecules and inorganic crystals that connects accurate prediction with interpretable scientific inference.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 78,
+      "title_ko": "심층적인 고유 구조 추론을 통한 정확하고 학제적인 투명한 구조-속성 이해",
+      "summary_ko": "- 생물학, 화학, 재료 과학에서 구조-속성 관계를 설명하는 AI 모델은 표현과 추론에 어려움이 있습니다.\n- SciReasoner는 단백질, 소분자, 무기 결정 전반의 고유 구조 추론을 위한 다중 모드 과학 기반 모델입니다.\n- 이 모델은 좌표, 위상, 주기적 연결성을 통합된 구조 인식 어휘로 이산화하여 추론 시 증거로 활용합니다.\n- SciReasoner는 유전자 온톨로지(Gene Ontology) 예측에서 $F_{\\max}$를 0.42에서 0.55로, 역합성 정확도를 0.63에서 0.72로 향상했습니다.\n- 이는 과학적 제약 하에 구조를 검사 가능한 추론 기반으로 만들어 정확한 예측과 해석 가능한 과학적 추론을 연결합니다.",
+      "tags": [
+        "구조-속성 관계",
+        "과학 기반 모델",
+        "다중 모드 AI",
+        "해석 가능한 AI"
+      ]
+    },
+    {
+      "arxiv_id": "2507.15073",
+      "title": "Reinforcement Learning for Flow-Matching Policies",
+      "authors": [
+        "Samuel Pfrommer",
+        "Yixiao Huang",
+        "Somayeh Sojoudi"
+      ],
+      "summary": "Flow-matching policies have emerged as a powerful paradigm for generalist robotics. These models are trained to imitate an action chunk, conditioned on sensor observations and textual instructions. Often, training demonstrations are generated by a suboptimal policy, such as a human operator. This work explores training flow-matching policies via reinforcement learning to surpass the original demonstration policy performance. We particularly note minimum-time control as a key application and present a simple scheme for variable-horizon flow-matching planning. We then introduce two families of approaches: a simple Reward-Weighted Flow Matching (RWFM) scheme and a Group Relative Policy Optimization (GRPO) approach with a learned reward surrogate. Our policies are trained on an illustrative suite of simulated unicycle dynamics tasks, and we show that both approaches dramatically improve upon the suboptimal demonstrator performance, with the GRPO approach in particular generally incurring between $50\\%$ and $85\\%$ less cost than a naive Imitation Learning Flow Matching (ILFM) approach.",
+      "categories": [],
+      "published": "2025-07-20T00:00:00+00:00",
+      "updated": "2025-07-20T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 14,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166",
+      "tldr": null,
+      "matched_keywords": [
+        "reinforcement learning",
+        "robot",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "흐름 일치 정책을 위한 강화 학습",
+      "summary_ko": "- 일반 로봇 공학에서 강력한 패러다임인 흐름 일치 정책(flow-matching policies)은 종종 인간 작업자 같은 차선책 시연으로 훈련됩니다.\n- 이 연구는 강화 학습(RL)을 통해 흐름 일치 정책을 훈련하여 시연 정책의 성능을 능가하는 방법을 탐구합니다.\n- 최소 시간 제어를 핵심 응용 분야로 보고, Reward-Weighted Flow Matching(RWFM)과 Group Relative Policy Optimization(GRPO) 두 가지 접근 방식을 제시합니다.\n- 시뮬레이션된 외발자전거 동역학(unicycle dynamics) 작업에서 두 접근 방식 모두 차선책 시연자 성능을 크게 개선했습니다.\n- 특히 GRPO는 단순 모방 학습 흐름 일치(ILFM)보다 50~85% 적은 비용을 발생시켜 효율성을 입증했습니다.",
+      "tags": [
+        "강화 학습",
+        "흐름 일치 정책",
+        "로봇 공학",
+        "최소 시간 제어"
+      ]
+    },
+    {
+      "arxiv_id": "2607.07233",
+      "title": "HPG-Diff: Hierarchical physics-guided diffusion with differentiable connectivity constraints for topology optimization",
+      "authors": [
+        "Jinbo Yang",
+        "Mingyue Yuan",
+        "Boyuan Zhang",
+        "Yoshifumi Kitamura",
+        "Shikai Jing"
+      ],
+      "summary": "Deep generative models offer a promising paradigm for topology optimization, enabling rapid design exploration. However, these approaches lack intrinsic physics guidance, often leading to poor generalizability across unseen boundary conditions and the formation of floating material artifacts. To address these limitations, we propose Hierarchical Physics-Guided Diffusion (HPG-Diff), a novel diffusion framework that enforces physics consistency through two synergistic mechanisms. First, we introduce a hierarchical physics-guided strategy that aligns different precomputed physics features with the denoising process, guiding material distribution toward optimal load paths to enhance generalizability. Second, we propose a floating material suppression loss as a differentiable connectivity constraint inspired by thermal conduction to improve topological connectivity. By simulating a virtual heat propagation process from load positions, this mechanism explicitly penalizes floating material during training. Quantitative evaluations demonstrate that HPG-Diff achieves average compliance errors of 0.87% (in-distribution) and 5.29% (out-of-distribution), while reducing floating material ratios to 2.90% and 2.44%, respectively. Furthermore, case studies on a 3:1 rectangular domain, including cantilever and bridge benchmarks, provide preliminary evidence that lightweight LoRA fine-tuning with a small dataset can support the adaptation of HPG-Diff to rectangular non-square domains.",
+      "categories": [
+        "cs.LG",
+        "cs.CE"
+      ],
+      "published": "2026-07-08T10:15:20+00:00",
+      "updated": "2026-07-08T10:15:20+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.07233v1",
+      "abs_url": "https://arxiv.org/abs/2607.07233",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/efe0f1df4406cc911c8f89992ca89af6a14f0590",
+      "tldr": "HPG-Diff is proposed, a novel diffusion framework that enforces physics consistency through two synergistic mechanisms that aligns different precomputed physics features with the denoising process, guiding material distribution toward optimal load paths to enhance generalizability.",
+      "matched_keywords": [
+        "generative model",
+        "topology optimization",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "HPG-Diff: 위계적 물리 기반 확산 모델과 미분 가능한 연결성 제약을 활용한 위상 최적화",
+      "summary_ko": "- 딥 생성 모델은 위상 최적화(topology optimization)에 유망하지만, 물리적 지침 부족으로 일반화와 부유 물질 문제가 있습니다.\n- 이 논문은 물리 일관성을 강화하는 HPG-Diff라는 새로운 확산 프레임워크를 제안합니다.\n- HPG-Diff는 계층적 물리 기반 전략과 미분 가능한 연결성 제약을 통해 부유 물질을 억제합니다.\n- HPG-Diff는 평균 0.87%의 컴플라이언스 오차와 2.90%의 부유 물질 비율을 달성했습니다.\n- 이 방법은 일반화 성능을 높이고 부유 물질을 줄여 위상 최적화 설계의 신뢰성을 향상시킵니다.",
+      "tags": [
+        "위상 최적화",
+        "확산 모델",
+        "물리 기반 AI",
+        "기계 학습"
+      ]
+    }
+  ]
+}

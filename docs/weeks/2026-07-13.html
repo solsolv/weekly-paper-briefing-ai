@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-06-29 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
+<title>2026-07-13 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
 <meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -435,33 +435,33 @@
 <div class="wrap">
   <header class="site">
   <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-06-29</span>
+  <span class="eyebrow">2026-07-13</span>
   <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
   <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
   </header>
-  <div id="publish-notice" data-publish-at="2026-06-29T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
-    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-06-29 8:00 (KST)</strong>에 공개됩니다.</p>
+  <div id="publish-notice" data-publish-at="2026-07-13T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
+    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-07-13 8:00 (KST)</strong>에 공개됩니다.</p>
     <div class="back-pill-wrap"><a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a></div>
   </div>
   <div data-gate-content>
   <div class="toc reveal">
     <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
-        <a href="#p-2606.27377">
+        <a href="#p-2607.08620">
           <span class="badge ai">AI</span>
-          <span>DanceOPD: 온-정책 생성 필드 증류</span>
+          <span>로봇의 경로 이동을 위한 새로운 인간 유사성 및 편안함 지수</span>
         </a>
-        <a href="#p-2606.25041">
+        <a href="#p-2607.07708">
           <span class="badge ai">AI</span>
-          <span>Wan-Streamer v0.1: 실시간 상호작용을 위한 종단간(End-to-end) 파운데이션 모델</span>
+          <span>심층적인 고유 구조 추론을 통한 정확하고 학제적인 투명한 구조-속성 이해</span>
         </a>
-        <a href="#p-2605.31392">
+        <a href="#p-2507.15073">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>다중볼록성(Polyconvexity)의 한계에 대한 연구</span>
+          <span>흐름 일치 정책을 위한 강화 학습</span>
         </a>
-        <a href="#p-doi:10.1088/2053-1591/ae7d9b">
+        <a href="#p-2607.07233">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>FE 및 ANN을 활용한 실린더 업세팅의 다중 매개변수 최적화</span>
+          <span>HPG-Diff: 위계적 물리 기반 확산 모델과 미분 가능한 연결성 제약을 활용한 위상 최적화</span>
         </a>
     </div>
   </div>
@@ -477,37 +477,37 @@
           AI
           <span class="badge ai">2편</span>
         </h2>
-          <article class="paper ai reveal" id="p-2606.27377" style="transition-delay: 0ms;">
+          <article class="paper ai reveal" id="p-2607.08620" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CV, cs.CL, cs.LG · 발표 2026-06-25<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2606.27377" target="_blank" rel="noopener">DanceOPD: On-Policy Generative Field Distillation</a></h3>
-<p class="title-ko">DanceOPD: 온-정책 생성 필드 증류</p>            <div class="authors">Wei Zhou, Xiongwei Zhu, Zelin Xu, Bo Dong, Lixue Gong, Yongyuan Liang, Meng Chu, Leigang Qu 외 3명</div>
+              cs.RO · 발표 2026-07-09<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.08620" target="_blank" rel="noopener">A New Human-Likeness and Comfort Index for Robot Movements Along Prescribed Paths</a></h3>
+<p class="title-ko">로봇의 경로 이동을 위한 새로운 인간 유사성 및 편안함 지수</p>            <div class="authors">Rosanna Coccaro, Enrico Ferrentino, Antonio Parziale, Angelo Marcelli, Pasquale Chiacchio</div>
             <div class="stats">
-            </div>
+<span class="chip">인용 1</span>            </div>
             <div class="summary">
               <ul>
-<li>최신 이미지 생성 모델은 텍스트-이미지(T2I), 로컬 편집, 글로벌 편집 등 다양한 기능을 통합해야 합니다.</li><li>하지만 이러한 기능들은 서로 충돌하여 T2I 성능 저하 및 편집 간섭 문제를 야기합니다.</li><li>DanceOPD는 플로우 매칭 모델을 위한 온-정책 생성 필드 증류 프레임워크를 제안합니다.</li><li>이 프레임워크는 각 샘플을 특정 기능 필드로 라우팅하고, 학생 모델의 롤아웃 상태에서 전문가 필드를 학습합니다.</li><li>DanceOPD는 다중 기능 구성을 개선하고, 목표 기능을 강화하며, 기존 생성 품질을 유지합니다.</li>              </ul>
+<li>로봇 수용도는 인간이 인지하는 로봇 움직임의 질과 편안함에 직접 연결됩니다.</li><li>이 연구는 인간 움직임의 운동학적 특성을 고려하여 로봇 움직임의 인간 유사성을 정의합니다.</li><li>인간 움직임 모델링의 로그정규성 원리를 기반으로 인간 유사성 지수를 제안합니다.</li><li>68명의 피험자가 로봇과의 물리적 상호작용 후 편안함을 평가하는 실험을 진행했습니다.</li><li>제안된 지수는 로봇 움직임의 인간 유사성과 인지된 편안함 사이에 일관된 경향을 보였습니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#이미지 생성</span><span class="tag">#플로우 매칭</span><span class="tag">#생성 모델</span><span class="tag">#증류</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2606.27377" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2606.27377v1" target="_blank" rel="noopener">PDF</a>
-            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> The results of three experimental campaigns involving a physical interaction with a robot demonstrate a globally consistent trend between the preference in terms of perceived comfort and the distribution of the suggested human-likeness index.</div><div class="tags"><span class="tag">#로봇 공학</span><span class="tag">#인간-로봇 상호작용</span><span class="tag">#움직임 계획</span><span class="tag">#사용자 경험</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.08620" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.08620v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/e4fbfda6ed5f8c2d20bd17fc4e91cf64de823182" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
-          <article class="paper ai reveal" id="p-2606.25041" style="transition-delay: 60ms;">
+          <article class="paper ai reveal" id="p-2607.07708" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.CV, cs.AI, cs.GR, cs.SD · 발표 2026-06-23 · 갱신 2026-06-25<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2606.25041" target="_blank" rel="noopener">Wan-Streamer v0.1: End-to-end Real-time Interactive Foundation Models</a></h3>
-<p class="title-ko">Wan-Streamer v0.1: 실시간 상호작용을 위한 종단간(End-to-end) 파운데이션 모델</p>            <div class="authors">Lianghua Huang, Zhi-Fan Wu, Wei Wang, Yupeng Shi, Mengyang Feng, Junjie He, Chen-Wei Xie, Yu Liu 외 16명</div>
+              cs.CL, cs.AI, cs.CE, cs.LG · 발표 2026-07-08<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.07708" target="_blank" rel="noopener">Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning</a></h3>
+<p class="title-ko">심층적인 고유 구조 추론을 통한 정확하고 학제적인 투명한 구조-속성 이해</p>            <div class="authors">Chen Tang, Yizhou Wang, Jianyu Wu, Lintao Wang, Shixiang Tang, Pengze Li, Encheng Su, Jun Yao 외 21명</div>
             <div class="stats">
-<span class="chip">HF upvotes 83</span>            </div>
+<span class="chip">HF upvotes 78</span>            </div>
             <div class="summary">
               <ul>
-<li>기존의 다단계 시스템과 달리, Wan-Streamer는 실시간 양방향 오디오-시각 상호작용을 위한 통합 모델입니다.</li><li>이 모델은 언어, 오디오, 비디오를 단일 트랜스포머(Transformer) 내에서 입력과 출력으로 동시에 처리합니다.</li><li>인과적 인코더/디코더와 블록-인과적 어텐션(attention)을 활용하여 낮은 지연 시간의 스트리밍을 지원합니다.</li><li>Wan-Streamer는 약 200ms의 모델 응답 지연 시간과 총 550ms의 상호작용 지연 시간을 달성합니다.</li><li>이는 지각, 추론, 생성, 응답 타이밍 등을 통합 학습하여 파이프라인 지연과 오류를 줄인 혁신적인 접근입니다.</li>              </ul>
+<li>생물학, 화학, 재료 과학에서 구조-속성 관계를 설명하는 AI 모델은 표현과 추론에 어려움이 있습니다.</li><li>SciReasoner는 단백질, 소분자, 무기 결정 전반의 고유 구조 추론을 위한 다중 모드 과학 기반 모델입니다.</li><li>이 모델은 좌표, 위상, 주기적 연결성을 통합된 구조 인식 어휘로 이산화하여 추론 시 증거로 활용합니다.</li><li>SciReasoner는 유전자 온톨로지(Gene Ontology) 예측에서 $F_{\max}$를 0.42에서 0.55로, 역합성 정확도를 0.63에서 0.72로 향상했습니다.</li><li>이는 과학적 제약 하에 구조를 검사 가능한 추론 기반으로 만들어 정확한 예측과 해석 가능한 과학적 추론을 연결합니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#실시간 상호작용</span><span class="tag">#파운데이션 모델</span><span class="tag">#멀티모달</span><span class="tag">#낮은 지연 시간</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2606.25041" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2606.25041v2" target="_blank" rel="noopener">PDF</a>
-            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> SciReasoner is introduced, a multimodal scientific foundation model for native structural reasoning across proteins, small molecules and inorganic crystals that connects accurate prediction with interpretable scientific inference.</div><div class="tags"><span class="tag">#구조-속성 관계</span><span class="tag">#과학 기반 모델</span><span class="tag">#다중 모드 AI</span><span class="tag">#해석 가능한 AI</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.07708" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.07708v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/2b28ee97ac83db989e14d5d81b6e2ca042f24855" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
       <section class="track-section" data-track-block="mech">
@@ -515,37 +515,37 @@
           AI 활용 기계공학
           <span class="badge mech">2편</span>
         </h2>
-          <article class="paper mech reveal" id="p-2605.31392" style="transition-delay: 0ms;">
+          <article class="paper mech reveal" id="p-2507.15073" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CE · 발표 2026-05-29<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2605.31392" target="_blank" rel="noopener">On limitations of polyconvexity</a></h3>
-<p class="title-ko">다중볼록성(Polyconvexity)의 한계에 대한 연구</p>            <div class="authors">Dominik K. Klein, Rogelio Ortigosa, Heinrich T. Roth, Karl A. Kalina, Jesús Martínez-Frutos, Markus Kästner, Oliver Weeger</div>
+               · 발표 2025-07-20<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166" target="_blank" rel="noopener">Reinforcement Learning for Flow-Matching Policies</a></h3>
+<p class="title-ko">흐름 일치 정책을 위한 강화 학습</p>            <div class="authors">Samuel Pfrommer, Yixiao Huang, Somayeh Sojoudi</div>
             <div class="stats">
-<span class="chip">인용 1</span><span class="chip">매칭: neural network, structural, finite element</span>            </div>
+<span class="chip">인용 14</span><span class="chip">매칭: reinforcement learning, robot, relevance:0.85</span>            </div>
             <div class="summary">
               <ul>
-<li>다중볼록성 구성 모델은 수치 시뮬레이션 안정성을 보장하지만, 특정 재료 반응 재현에 한계가 있습니다.</li><li>본 연구는 다중볼록성 구성 모델링의 이론적, 실용적 한계를 분석합니다.</li><li>비다중볼록 Mooney-Rivlin 유형 포텐셜에 대한 분석적 타원성 보장을 제공합니다.</li><li>구조 텐서 기반 불변량 및 부호 있는 특이값을 사용하는 모델의 성능을 평가합니다.</li><li>다중볼록성 구성 모델링의 장점, 한계 및 완화 전략을 포괄적으로 제시합니다.</li>              </ul>
+<li>일반 로봇 공학에서 강력한 패러다임인 흐름 일치 정책(flow-matching policies)은 종종 인간 작업자 같은 차선책 시연으로 훈련됩니다.</li><li>이 연구는 강화 학습(RL)을 통해 흐름 일치 정책을 훈련하여 시연 정책의 성능을 능가하는 방법을 탐구합니다.</li><li>최소 시간 제어를 핵심 응용 분야로 보고, Reward-Weighted Flow Matching(RWFM)과 Group Relative Policy Optimization(GRPO) 두 가지 접근 방식을 제시합니다.</li><li>시뮬레이션된 외발자전거 동역학(unicycle dynamics) 작업에서 두 접근 방식 모두 차선책 시연자 성능을 크게 개선했습니다.</li><li>특히 GRPO는 단순 모방 학습 흐름 일치(ILFM)보다 50~85% 적은 비용을 발생시켜 효율성을 입증했습니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#다중볼록성</span><span class="tag">#구성 모델링</span><span class="tag">#재료 모델</span><span class="tag">#유한요소해석</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2605.31392" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2605.31392v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/1262a9db0392c62c2e5791187f198c52def30d74" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
-          </article>
-          <article class="paper mech reveal" id="p-doi:10.1088/2053-1591/ae7d9b" style="transition-delay: 60ms;">
-            <div class="meta">
-               · 발표 2026-06-26<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://www.semanticscholar.org/paper/2fdb38a1849c45d74a3ad58a6cebc883366b57cb" target="_blank" rel="noopener">Multi-parameter optimization of cylinder upsetting using FE and ANN</a></h3>
-<p class="title-ko">FE 및 ANN을 활용한 실린더 업세팅의 다중 매개변수 최적화</p>            <div class="authors">M. A. Omari, Ahmad Magableh, M. Rababah</div>
-            <div class="stats">
-<span class="chip">매칭: neural network, surrogate model, finite element, stress, mechanical, relevance:0.85</span>            </div>
-            <div class="summary">
-              <ul>
-<li>16-MnCr5 저합금강의 냉간 실린더 업세팅은 공정 매개변수 선택이 중요합니다.</li><li>이 연구는 FE 시뮬레이션으로 마찰 계수, 상부 다이 속도, 초기 온도의 영향을 분석합니다.</li><li>64개의 SIMUFACT Forming FE 시뮬레이션으로 데이터를 생성하고 ANN 모델을 훈련했습니다.</li><li>마찰 계수가 에너지 소비와 항복 응력에, 초기 온도가 최종 온도에 가장 큰 영향을 줍니다.</li><li>이 FE-ANN 프레임워크는 냉간 단조 공정 설계 및 최적화를 위한 예측 도구를 제공합니다.</li>              </ul>
-            </div>
-<div class="tags"><span class="tag">#냉간 단조</span><span class="tag">#유한 요소 시뮬레이션</span><span class="tag">#인공 신경망</span><span class="tag">#공정 최적화</span></div>            <div class="links">
-              <a href="https://www.semanticscholar.org/paper/2fdb38a1849c45d74a3ad58a6cebc883366b57cb" target="_blank" rel="noopener">arXiv</a>
+<div class="tags"><span class="tag">#강화 학습</span><span class="tag">#흐름 일치 정책</span><span class="tag">#로봇 공학</span><span class="tag">#최소 시간 제어</span></div>            <div class="links">
+              <a href="https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166" target="_blank" rel="noopener">arXiv</a>
               <a href="" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/2fdb38a1849c45d74a3ad58a6cebc883366b57cb" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper mech reveal" id="p-2607.07233" style="transition-delay: 60ms;">
+            <div class="meta">
+              cs.LG, cs.CE · 발표 2026-07-08<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.07233" target="_blank" rel="noopener">HPG-Diff: Hierarchical physics-guided diffusion with differentiable connectivity constraints for topology optimization</a></h3>
+<p class="title-ko">HPG-Diff: 위계적 물리 기반 확산 모델과 미분 가능한 연결성 제약을 활용한 위상 최적화</p>            <div class="authors">Jinbo Yang, Mingyue Yuan, Boyuan Zhang, Yoshifumi Kitamura, Shikai Jing</div>
+            <div class="stats">
+<span class="chip">매칭: generative model, topology optimization, relevance:0.90</span>            </div>
+            <div class="summary">
+              <ul>
+<li>딥 생성 모델은 위상 최적화(topology optimization)에 유망하지만, 물리적 지침 부족으로 일반화와 부유 물질 문제가 있습니다.</li><li>이 논문은 물리 일관성을 강화하는 HPG-Diff라는 새로운 확산 프레임워크를 제안합니다.</li><li>HPG-Diff는 계층적 물리 기반 전략과 미분 가능한 연결성 제약을 통해 부유 물질을 억제합니다.</li><li>HPG-Diff는 평균 0.87%의 컴플라이언스 오차와 2.90%의 부유 물질 비율을 달성했습니다.</li><li>이 방법은 일반화 성능을 높이고 부유 물질을 줄여 위상 최적화 설계의 신뢰성을 향상시킵니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> HPG-Diff is proposed, a novel diffusion framework that enforces physics consistency through two synergistic mechanisms that aligns different precomputed physics features with the denoising process, guiding material distribution toward optimal load paths to enhance generalizability.</div><div class="tags"><span class="tag">#위상 최적화</span><span class="tag">#확산 모델</span><span class="tag">#물리 기반 AI</span><span class="tag">#기계 학습</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.07233" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.07233v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/efe0f1df4406cc911c8f89992ca89af6a14f0590" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 
