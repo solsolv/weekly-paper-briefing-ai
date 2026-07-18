@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-07-13 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
+<title>2026-07-20 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
 <meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -435,33 +435,33 @@
 <div class="wrap">
   <header class="site">
   <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-07-13</span>
+  <span class="eyebrow">2026-07-20</span>
   <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
   <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
   </header>
-  <div id="publish-notice" data-publish-at="2026-07-13T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
-    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-07-13 8:00 (KST)</strong>에 공개됩니다.</p>
+  <div id="publish-notice" data-publish-at="2026-07-20T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
+    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-07-20 8:00 (KST)</strong>에 공개됩니다.</p>
     <div class="back-pill-wrap"><a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a></div>
   </div>
   <div data-gate-content>
   <div class="toc reveal">
     <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
-        <a href="#p-2607.08620">
+        <a href="#p-2607.15211">
           <span class="badge ai">AI</span>
-          <span>로봇의 경로 이동을 위한 새로운 인간 유사성 및 편안함 지수</span>
+          <span>MAGiSt3R: 단일 RGB 비디오로부터 다중 에이전트 피드포워드 3D 재구성</span>
         </a>
-        <a href="#p-2607.07708">
+        <a href="#p-2607.14952">
           <span class="badge ai">AI</span>
-          <span>심층적인 고유 구조 추론을 통한 정확하고 학제적인 투명한 구조-속성 이해</span>
+          <span>LongStraw: 고정된 GPU 예산으로 2백만 토큰을 넘어서는 장문 맥락 RL</span>
         </a>
-        <a href="#p-2507.15073">
+        <a href="#p-2606.08796">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>흐름 일치 정책을 위한 강화 학습</span>
+          <span>불규칙 영역의 고체 역학을 위한 비중첩 Schwarz 하이브리드 유한 요소-신경망 연산자 프레임워크</span>
         </a>
-        <a href="#p-2607.07233">
+        <a href="#p-2607.15049">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>HPG-Diff: 위계적 물리 기반 확산 모델과 미분 가능한 연결성 제약을 활용한 위상 최적화</span>
+          <span>신경망 연산자가 구성 모델 발견을 위한 역문제를 해결하다</span>
         </a>
     </div>
   </div>
@@ -477,37 +477,37 @@
           AI
           <span class="badge ai">2편</span>
         </h2>
-          <article class="paper ai reveal" id="p-2607.08620" style="transition-delay: 0ms;">
+          <article class="paper ai reveal" id="p-2607.15211" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.RO · 발표 2026-07-09<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2607.08620" target="_blank" rel="noopener">A New Human-Likeness and Comfort Index for Robot Movements Along Prescribed Paths</a></h3>
-<p class="title-ko">로봇의 경로 이동을 위한 새로운 인간 유사성 및 편안함 지수</p>            <div class="authors">Rosanna Coccaro, Enrico Ferrentino, Antonio Parziale, Angelo Marcelli, Pasquale Chiacchio</div>
-            <div class="stats">
+              cs.CV · 발표 2026-07-16<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.15211" target="_blank" rel="noopener">MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction from Monocular RGB Videos</a></h3>
+<p class="title-ko">MAGiSt3R: 단일 RGB 비디오로부터 다중 에이전트 피드포워드 3D 재구성</p>            <div class="authors">Ziren Gong, Xiaohan Li, Fabio Tosi, Ninghui Xu, Stefano Mattoccia, Jianfei Cai, Matteo Poggi</div>
+<div class="affiliations">University of Bologna</div>            <div class="stats">
 <span class="chip">인용 1</span>            </div>
             <div class="summary">
               <ul>
-<li>로봇 수용도는 인간이 인지하는 로봇 움직임의 질과 편안함에 직접 연결됩니다.</li><li>이 연구는 인간 움직임의 운동학적 특성을 고려하여 로봇 움직임의 인간 유사성을 정의합니다.</li><li>인간 움직임 모델링의 로그정규성 원리를 기반으로 인간 유사성 지수를 제안합니다.</li><li>68명의 피험자가 로봇과의 물리적 상호작용 후 편안함을 평가하는 실험을 진행했습니다.</li><li>제안된 지수는 로봇 움직임의 인간 유사성과 인지된 편안함 사이에 일관된 경향을 보였습니다.</li>              </ul>
+<li>단일 RGB 비디오에서 3D 재구성과 카메라 추적을 수행하는 기존 방식의 한계를 개선합니다.</li><li>MAGiSt3R은 다중 에이전트(multi-agent) 프레임워크로, 피드포워드 모델과 병합 모델을 활용합니다.</li><li>3R 계열 모델이 RGB 비디오를 처리하여 로컬 포인트 맵을 생성하고, MAGMA가 이를 병합합니다.</li><li>누적되는 카메라 드리프트(drift)를 줄이기 위해 포즈 그래프 최적화(pose graph optimization)를 수행합니다.</li><li>합성 및 실제 데이터셋에서 기존 최신 방법보다 뛰어난 정확도를 보이며, 약 10 FPS로 작동합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> The results of three experimental campaigns involving a physical interaction with a robot demonstrate a globally consistent trend between the preference in terms of perceived comfort and the distribution of the suggested human-likeness index.</div><div class="tags"><span class="tag">#로봇 공학</span><span class="tag">#인간-로봇 상호작용</span><span class="tag">#움직임 계획</span><span class="tag">#사용자 경험</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2607.08620" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2607.08620v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/e4fbfda6ed5f8c2d20bd17fc4e91cf64de823182" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> MAGiSt3R is presented, a multi-agent 3D reconstruction framework performing reconstruction and camera tracking for monocular RGB videos at almost 10 FPS, demonstrating its superior reconstruction and camera tracking accuracy compared to state-of-the-art approaches.</div><div class="tags"><span class="tag">#3D 재구성</span><span class="tag">#단일 시점 비디오</span><span class="tag">#다중 에이전트</span><span class="tag">#카메라 추적</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.15211" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.15211v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/8aab721e4700e863c1ad37d5b52f5ba9268a8242" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
-          <article class="paper ai reveal" id="p-2607.07708" style="transition-delay: 60ms;">
+          <article class="paper ai reveal" id="p-2607.14952" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.CL, cs.AI, cs.CE, cs.LG · 발표 2026-07-08<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2607.07708" target="_blank" rel="noopener">Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning</a></h3>
-<p class="title-ko">심층적인 고유 구조 추론을 통한 정확하고 학제적인 투명한 구조-속성 이해</p>            <div class="authors">Chen Tang, Yizhou Wang, Jianyu Wu, Lintao Wang, Shixiang Tang, Pengze Li, Encheng Su, Jun Yao 외 21명</div>
+              cs.LG, cs.DC · 발표 2026-07-16<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.14952" target="_blank" rel="noopener">LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget</a></h3>
+<p class="title-ko">LongStraw: 고정된 GPU 예산으로 2백만 토큰을 넘어서는 장문 맥락 RL</p>            <div class="authors">Changhai Zhou, Kieran Liu, Yuhua Zhou, Qian Qiao, Jun Gao, Harry Zhang, Irvine Lu, Nolan Ho 외 12명</div>
             <div class="stats">
-<span class="chip">HF upvotes 78</span>            </div>
+<span class="chip">HF upvotes 76</span>            </div>
             <div class="summary">
               <ul>
-<li>생물학, 화학, 재료 과학에서 구조-속성 관계를 설명하는 AI 모델은 표현과 추론에 어려움이 있습니다.</li><li>SciReasoner는 단백질, 소분자, 무기 결정 전반의 고유 구조 추론을 위한 다중 모드 과학 기반 모델입니다.</li><li>이 모델은 좌표, 위상, 주기적 연결성을 통합된 구조 인식 어휘로 이산화하여 추론 시 증거로 활용합니다.</li><li>SciReasoner는 유전자 온톨로지(Gene Ontology) 예측에서 $F_{\max}$를 0.42에서 0.55로, 역합성 정확도를 0.63에서 0.72로 향상했습니다.</li><li>이는 과학적 제약 하에 구조를 검사 가능한 추론 기반으로 만들어 정확한 예측과 해석 가능한 과학적 추론을 연결합니다.</li>              </ul>
+<li>추론 시스템은 백만 토큰에 근접하지만, RL 후처리(post-training)는 256K 토큰 이하에 머무는 격차가 있습니다.</li><li>LongStraw는 고정된 GPU 예산 내에서 백만 토큰 RL 후처리를 위한 아키텍처 인지 실행 스택입니다.</li><li>자동 미분 없이 공유 프롬프트를 평가하고, 모델별 상태만 유지하며, 짧은 응답 분기를 개별적으로 재생합니다.</li><li>8개의 H20 GPU에서 2.1M 위치에서 Qwen 스코어링 및 응답 역전파를 완료했습니다.</li><li>이는 기존 RL 후처리 한계를 극복하며, AI 에이전트의 장문 궤적 처리에 기여합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> SciReasoner is introduced, a multimodal scientific foundation model for native structural reasoning across proteins, small molecules and inorganic crystals that connects accurate prediction with interpretable scientific inference.</div><div class="tags"><span class="tag">#구조-속성 관계</span><span class="tag">#과학 기반 모델</span><span class="tag">#다중 모드 AI</span><span class="tag">#해석 가능한 AI</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2607.07708" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2607.07708v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/2b28ee97ac83db989e14d5d81b6e2ca042f24855" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> LongStraw is an architecture-aware execution stack for million-token RL post-training under a fixed GPU budget, instantiated with Group Relative Policy Optimization (GRPO).</div><div class="tags"><span class="tag">#강화 학습</span><span class="tag">#장문 맥락</span><span class="tag">#GPU 최적화</span><span class="tag">#AI 에이전트</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.14952" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.14952v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/959127446156868c042766cb8469f61229079473" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
       <section class="track-section" data-track-block="mech">
@@ -515,37 +515,37 @@
           AI 활용 기계공학
           <span class="badge mech">2편</span>
         </h2>
-          <article class="paper mech reveal" id="p-2507.15073" style="transition-delay: 0ms;">
+          <article class="paper mech reveal" id="p-2606.08796" style="transition-delay: 0ms;">
             <div class="meta">
-               · 발표 2025-07-20<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166" target="_blank" rel="noopener">Reinforcement Learning for Flow-Matching Policies</a></h3>
-<p class="title-ko">흐름 일치 정책을 위한 강화 학습</p>            <div class="authors">Samuel Pfrommer, Yixiao Huang, Somayeh Sojoudi</div>
+              cs.CE · 발표 2026-06-07<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2606.08796" target="_blank" rel="noopener">A Non-Overlapping Schwarz Hybrid Finite Element-Neural Operator Framework for Solid Mechanics on Irregular Domains</a></h3>
+<p class="title-ko">불규칙 영역의 고체 역학을 위한 비중첩 Schwarz 하이브리드 유한 요소-신경망 연산자 프레임워크</p>            <div class="authors">Wei Wang, Abhinav Gupta, Haihui Ruan, Somdatta Goswami</div>
             <div class="stats">
-<span class="chip">인용 14</span><span class="chip">매칭: reinforcement learning, robot, relevance:0.85</span>            </div>
+<span class="chip">인용 2</span><span class="chip">매칭: physics-informed, neural operator, finite element, elastic, stress, mechanical, relevance:0.90</span>            </div>
             <div class="summary">
               <ul>
-<li>일반 로봇 공학에서 강력한 패러다임인 흐름 일치 정책(flow-matching policies)은 종종 인간 작업자 같은 차선책 시연으로 훈련됩니다.</li><li>이 연구는 강화 학습(RL)을 통해 흐름 일치 정책을 훈련하여 시연 정책의 성능을 능가하는 방법을 탐구합니다.</li><li>최소 시간 제어를 핵심 응용 분야로 보고, Reward-Weighted Flow Matching(RWFM)과 Group Relative Policy Optimization(GRPO) 두 가지 접근 방식을 제시합니다.</li><li>시뮬레이션된 외발자전거 동역학(unicycle dynamics) 작업에서 두 접근 방식 모두 차선책 시연자 성능을 크게 개선했습니다.</li><li>특히 GRPO는 단순 모방 학습 흐름 일치(ILFM)보다 50~85% 적은 비용을 발생시켜 효율성을 입증했습니다.</li>              </ul>
+<li>유한 요소(FE)법은 고체 역학 시뮬레이션의 표준이지만, 복잡한 문제에서 계산 비용이 높습니다.</li><li>이 연구는 기존 FE-신경망 연산자(NO) 프레임워크의 중첩 계산과 불규칙 형상 처리 한계를 개선합니다.</li><li>비중첩 Schwarz 교대 방법과 Point-DeepONet을 사용하여 불규칙 형상에서도 작동하도록 개선했습니다.</li><li>변위 연산자로부터 변형률 및 응력 연산자를 유도하여 매개변수를 줄이고 일관성을 확보했습니다.</li><li>이 프레임워크는 대규모 동적 고체 역학 문제 해결에 기여하는 유연하고 효율적인 하이브리드 솔버입니다.</li>              </ul>
             </div>
-<div class="tags"><span class="tag">#강화 학습</span><span class="tag">#흐름 일치 정책</span><span class="tag">#로봇 공학</span><span class="tag">#최소 시간 제어</span></div>            <div class="links">
-              <a href="https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166" target="_blank" rel="noopener">arXiv</a>
-              <a href="" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/2705cf150e726d669f8a70ea65962649a9cb5166" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> These results establish a non-overlapping FE-NO coupling paradigm that is geometry-flexible, parameter-efficient, and convergence-stable, providing a pathway for hybrid physics-based and operator-learning solvers in large-scale dynamic solid mechanics.</div><div class="tags"><span class="tag">#고체 역학</span><span class="tag">#유한 요소법</span><span class="tag">#신경망 연산자</span><span class="tag">#하이브리드 모델</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2606.08796" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2606.08796v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/a5fe31fbae33254983994ab272c07edfb40db606" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
-          <article class="paper mech reveal" id="p-2607.07233" style="transition-delay: 60ms;">
+          <article class="paper mech reveal" id="p-2607.15049" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.LG, cs.CE · 발표 2026-07-08<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2607.07233" target="_blank" rel="noopener">HPG-Diff: Hierarchical physics-guided diffusion with differentiable connectivity constraints for topology optimization</a></h3>
-<p class="title-ko">HPG-Diff: 위계적 물리 기반 확산 모델과 미분 가능한 연결성 제약을 활용한 위상 최적화</p>            <div class="authors">Jinbo Yang, Mingyue Yuan, Boyuan Zhang, Yoshifumi Kitamura, Shikai Jing</div>
+              cs.CE, cond-mat.mtrl-sci · 발표 2026-07-16<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2607.15049" target="_blank" rel="noopener">Neural operators solve inverse problems for constitutive model discovery</a></h3>
+<p class="title-ko">신경망 연산자가 구성 모델 발견을 위한 역문제를 해결하다</p>            <div class="authors">Moritz Flaschel, Burigede Liu, Ellen Kuhl</div>
             <div class="stats">
-<span class="chip">매칭: generative model, topology optimization, relevance:0.90</span>            </div>
+<span class="chip">매칭: neural operator, elastic, mechanical, relevance:0.85</span>            </div>
             <div class="summary">
               <ul>
-<li>딥 생성 모델은 위상 최적화(topology optimization)에 유망하지만, 물리적 지침 부족으로 일반화와 부유 물질 문제가 있습니다.</li><li>이 논문은 물리 일관성을 강화하는 HPG-Diff라는 새로운 확산 프레임워크를 제안합니다.</li><li>HPG-Diff는 계층적 물리 기반 전략과 미분 가능한 연결성 제약을 통해 부유 물질을 억제합니다.</li><li>HPG-Diff는 평균 0.87%의 컴플라이언스 오차와 2.90%의 부유 물질 비율을 달성했습니다.</li><li>이 방법은 일반화 성능을 높이고 부유 물질을 줄여 위상 최적화 설계의 신뢰성을 향상시킵니다.</li>              </ul>
+<li>재료의 기계적 반응 특성 분석은 계산 비용이 많이 드는 최적화 문제 해결을 필요로 합니다.</li><li>이 연구는 실험 데이터를 재료의 구성 함수로 직접 매핑하는 PANO와 CANO라는 두 신경망 연산자(neural operator)를 제안합니다.</li><li>제안된 신경망 연산자는 변위장과 반력을 초탄성 변형 에너지 밀도 함수로 매핑하도록 훈련됩니다.</li><li>라플라시안 고유 함수로 변위장을 인코딩하여 이산화 독립적이고 노이즈에 강한 예측을 가능하게 합니다.</li><li>이 프레임워크는 물리적으로 타당한 재료 모델을 출력하며, 거의 즉각적인 재료 특성 분석을 가능하게 합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> HPG-Diff is proposed, a novel diffusion framework that enforces physics consistency through two synergistic mechanisms that aligns different precomputed physics features with the denoising process, guiding material distribution toward optimal load paths to enhance generalizability.</div><div class="tags"><span class="tag">#위상 최적화</span><span class="tag">#확산 모델</span><span class="tag">#물리 기반 AI</span><span class="tag">#기계 학습</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2607.07233" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2607.07233v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/efe0f1df4406cc911c8f89992ca89af6a14f0590" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This work proposes two neural operator architectures that directly map experimentally measured data to the constitutive functions governing the mechanical response of the material: Physics-Augmented Neural Operators (PANO) and Constitutive Artificial Neural Operators (CANO).</div><div class="tags"><span class="tag">#신경망 연산자</span><span class="tag">#역문제</span><span class="tag">#재료 모델링</span><span class="tag">#구성 모델</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2607.15049" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2607.15049v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/bf02d9ea92ea9da08f787e338b90d9507e9508d9" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 

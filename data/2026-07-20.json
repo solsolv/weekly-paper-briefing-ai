@@ -1,0 +1,375 @@
+{
+  "week_id": "2026-07-20",
+  "generated_at": "2026-07-18T03:54:26.513712+00:00",
+  "publish_at": "2026-07-20T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2607.15211",
+        "title": "MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction from Monocular RGB Videos",
+        "authors": [
+          "Ziren Gong",
+          "Xiaohan Li",
+          "Fabio Tosi",
+          "Ninghui Xu",
+          "Stefano Mattoccia",
+          "Jianfei Cai",
+          "Matteo Poggi"
+        ],
+        "summary": "This paper presents MAGiSt3R, a multi-agent 3D reconstruction framework performing reconstruction and camera tracking for monocular RGB videos at almost 10 FPS. MAGiSt3R relies on a feed-forward model from the 3R family to process RGB videos and regress local point maps, and on a merging model, MAGMA, that combines local maps at both intra-agent and inter-agent levels to obtain the final global point map. Furthermore, MAGiSt3R performs pose graph optimization to mitigate cumulative camera drift occurring along the feed-forward pipeline. We evaluate MAGiSt3R on both synthetic and real-world datasets, demonstrating its superior reconstruction and camera tracking accuracy compared to state-of-the-art approaches.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-07-16T17:12:58+00:00",
+        "updated": "2026-07-16T17:12:58+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.15211v1",
+        "abs_url": "https://arxiv.org/abs/2607.15211",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/8aab721e4700e863c1ad37d5b52f5ba9268a8242",
+        "tldr": "MAGiSt3R is presented, a multi-agent 3D reconstruction framework performing reconstruction and camera tracking for monocular RGB videos at almost 10 FPS, demonstrating its superior reconstruction and camera tracking accuracy compared to state-of-the-art approaches.",
+        "matched_keywords": [],
+        "affiliations": [
+          "University of Bologna"
+        ],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "MAGiSt3R: 단일 RGB 비디오로부터 다중 에이전트 피드포워드 3D 재구성",
+        "summary_ko": "- 단일 RGB 비디오에서 3D 재구성과 카메라 추적을 수행하는 기존 방식의 한계를 개선합니다.\n- MAGiSt3R은 다중 에이전트(multi-agent) 프레임워크로, 피드포워드 모델과 병합 모델을 활용합니다.\n- 3R 계열 모델이 RGB 비디오를 처리하여 로컬 포인트 맵을 생성하고, MAGMA가 이를 병합합니다.\n- 누적되는 카메라 드리프트(drift)를 줄이기 위해 포즈 그래프 최적화(pose graph optimization)를 수행합니다.\n- 합성 및 실제 데이터셋에서 기존 최신 방법보다 뛰어난 정확도를 보이며, 약 10 FPS로 작동합니다.",
+        "tags": [
+          "3D 재구성",
+          "단일 시점 비디오",
+          "다중 에이전트",
+          "카메라 추적"
+        ]
+      },
+      {
+        "arxiv_id": "2607.14952",
+        "title": "LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget",
+        "authors": [
+          "Changhai Zhou",
+          "Kieran Liu",
+          "Yuhua Zhou",
+          "Qian Qiao",
+          "Jun Gao",
+          "Harry Zhang",
+          "Irvine Lu",
+          "Nolan Ho",
+          "Lucian Li",
+          "Andrew Lei",
+          "Cleon Cheng",
+          "Steven Chiang",
+          "Yihang Zeng",
+          "Di Zhang",
+          "Rio Yang",
+          "Kaijie Chen",
+          "Andrew Chen",
+          "Pony Ma",
+          "Weizhong Zhang",
+          "Cheng Jin"
+        ],
+        "summary": "A growing gap separates inference context lengths from RL post-training: inference systems are approaching million-token contexts, while post-training workloads often remain at 256K tokens or below and rely on length generalization at deployment. The gap is especially important for AI agents, whose observations, tool outputs, documents, and prior decisions accumulate over long trajectories. LongStraw is an architecture-aware execution stack for million-token RL post-training under a fixed GPU budget, instantiated with Group Relative Policy Optimization (GRPO). It evaluates the shared prompt without autograd, retains only model-specific state needed by later tokens, and replays short response branches one at a time, reducing the live training graph at the cost of additional replay time. We implement it for the hybrid recurrent and full-attention Qwen3.6-27B and the compressed-attention mixture-of-experts GLM-5.2. On eight H20 GPUs, LongStraw completes grouped Qwen scoring and response backward at 2.1M positions for groups of 2 and 8; increasing the group size adds only 0.21 GB of peak allocated memory, while a separate stress test reaches 4.46M positions. On 32 H20 GPUs, we validate the end-to-end LongStraw execution path for a 2.1M-token prompt across all 78 layers of GLM-5.2. These experiments establish execution capacity rather than complete training correctness because the captured prompt state is detached and some distributed forward and gradient composition paths remain incomplete.",
+        "categories": [
+          "cs.LG",
+          "cs.DC"
+        ],
+        "published": "2026-07-16T13:00:32+00:00",
+        "updated": "2026-07-16T13:00:32+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.14952v1",
+        "abs_url": "https://arxiv.org/abs/2607.14952",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/959127446156868c042766cb8469f61229079473",
+        "tldr": "LongStraw is an architecture-aware execution stack for million-token RL post-training under a fixed GPU budget, instantiated with Group Relative Policy Optimization (GRPO).",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 76,
+        "title_ko": "LongStraw: 고정된 GPU 예산으로 2백만 토큰을 넘어서는 장문 맥락 RL",
+        "summary_ko": "- 추론 시스템은 백만 토큰에 근접하지만, RL 후처리(post-training)는 256K 토큰 이하에 머무는 격차가 있습니다.\n- LongStraw는 고정된 GPU 예산 내에서 백만 토큰 RL 후처리를 위한 아키텍처 인지 실행 스택입니다.\n- 자동 미분 없이 공유 프롬프트를 평가하고, 모델별 상태만 유지하며, 짧은 응답 분기를 개별적으로 재생합니다.\n- 8개의 H20 GPU에서 2.1M 위치에서 Qwen 스코어링 및 응답 역전파를 완료했습니다.\n- 이는 기존 RL 후처리 한계를 극복하며, AI 에이전트의 장문 궤적 처리에 기여합니다.",
+        "tags": [
+          "강화 학습",
+          "장문 맥락",
+          "GPU 최적화",
+          "AI 에이전트"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2606.08796",
+        "title": "A Non-Overlapping Schwarz Hybrid Finite Element-Neural Operator Framework for Solid Mechanics on Irregular Domains",
+        "authors": [
+          "Wei Wang",
+          "Abhinav Gupta",
+          "Haihui Ruan",
+          "Somdatta Goswami"
+        ],
+        "summary": "Finite element (FE) methods are the benchmark for solid mechanics simulations, yet their computational cost becomes prohibitive for problems with localised nonlinearities, fine-scale features, or long-time dynamic evolution. In our earlier FE-neural operator (FE-NO) hybrid framework [1], physics-informed deep operator networks were coupled with FE solvers through overlapping domain decomposition with Dirichlet-Dirichlet interface exchange, accelerating intensive subdomains while preserving FE fidelity elsewhere. Two limitations remained: the overlapping formulation required redundant interface computations that increased inner Schwarz iteration counts, and the convolutional feature extractor restricted the NO subdomain to structured grids, precluding irregular geometries. A non-overlapping Schwarz alternating method with Neumann-Dirichlet interface exchange replaces it, transmitting traction from the NO to FE rather than displacement. This eliminates the overlap layer and reduces inner Schwarz iterations while maintaining bounded error accumulation across all tested time horizons. For arbitrarily shaped subdomains, a Point-DeepONet operates on unstructured FE point clouds without interpolation, extending it to non-convex and irregular geometries. Strain and stress operators are derived analytically from the displacement operators via kinematic equations, rather than as independent networks, reducing trainable parameter sets while enforcing mechanical consistency by construction. The framework is validated on three benchmarks: static linear elasticity, quasi-static hyperelasticity, and elastodynamics with regular and irregular geometries. These results establish a non-overlapping FE-NO coupling paradigm that is geometry-flexible, parameter-efficient, and convergence-stable, providing a pathway for hybrid physics-based and operator-learning solvers in large-scale dynamic solid mechanics.",
+        "categories": [
+          "cs.CE"
+        ],
+        "published": "2026-06-07T19:26:53+00:00",
+        "updated": "2026-06-07T19:26:53+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.08796v1",
+        "abs_url": "https://arxiv.org/abs/2606.08796",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 2,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/a5fe31fbae33254983994ab272c07edfb40db606",
+        "tldr": "These results establish a non-overlapping FE-NO coupling paradigm that is geometry-flexible, parameter-efficient, and convergence-stable, providing a pathway for hybrid physics-based and operator-learning solvers in large-scale dynamic solid mechanics.",
+        "matched_keywords": [
+          "physics-informed",
+          "neural operator",
+          "finite element",
+          "elastic",
+          "stress",
+          "mechanical",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "불규칙 영역의 고체 역학을 위한 비중첩 Schwarz 하이브리드 유한 요소-신경망 연산자 프레임워크",
+        "summary_ko": "- 유한 요소(FE)법은 고체 역학 시뮬레이션의 표준이지만, 복잡한 문제에서 계산 비용이 높습니다.\n- 이 연구는 기존 FE-신경망 연산자(NO) 프레임워크의 중첩 계산과 불규칙 형상 처리 한계를 개선합니다.\n- 비중첩 Schwarz 교대 방법과 Point-DeepONet을 사용하여 불규칙 형상에서도 작동하도록 개선했습니다.\n- 변위 연산자로부터 변형률 및 응력 연산자를 유도하여 매개변수를 줄이고 일관성을 확보했습니다.\n- 이 프레임워크는 대규모 동적 고체 역학 문제 해결에 기여하는 유연하고 효율적인 하이브리드 솔버입니다.",
+        "tags": [
+          "고체 역학",
+          "유한 요소법",
+          "신경망 연산자",
+          "하이브리드 모델"
+        ]
+      },
+      {
+        "arxiv_id": "2607.15049",
+        "title": "Neural operators solve inverse problems for constitutive model discovery",
+        "authors": [
+          "Moritz Flaschel",
+          "Burigede Liu",
+          "Ellen Kuhl"
+        ],
+        "summary": "Characterizing the mechanical response of materials traditionally requires solving optimization problems in which model parameters are calibrated or trained to minimize the discrepancy between model predictions and experimental data. This process can be computationally expensive and time-consuming. To overcome this limitation, we propose two neural operator architectures that directly map experimentally measured data to the constitutive functions governing the mechanical response of the material: Physics-Augmented Neural Operators (PANO) and Constitutive Artificial Neural Operators (CANO). The proposed neural operators approximate the mapping between the infinite-dimensional input space of full-field displacement measurements and net reaction forces, and the infinite-dimensional output space of hyperelastic strain-energy density functions. The displacement fields are encoded through Laplacian eigenfunctions to obtain discretization-independent and noise-robust predictions. Our framework constrains the output space to physically admissible material models that satisfy fundamental physical requirements by design. The neural operators are trained on simulated data tuples of displacement fields and reaction forces for a range of material models. Once trained, the neural operators enable near-instantaneous material characterization and require only a single forward pass to infer the strain-energy density function from a given experimental dataset. We test the predictive power of the neural operators for unseen data, noisy data, data with missing information, data from different spatial discretizations, and data from geometries of different sizes.",
+        "categories": [
+          "cs.CE",
+          "cond-mat.mtrl-sci"
+        ],
+        "published": "2026-07-16T14:29:38+00:00",
+        "updated": "2026-07-16T14:29:38+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.15049v1",
+        "abs_url": "https://arxiv.org/abs/2607.15049",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/bf02d9ea92ea9da08f787e338b90d9507e9508d9",
+        "tldr": "This work proposes two neural operator architectures that directly map experimentally measured data to the constitutive functions governing the mechanical response of the material: Physics-Augmented Neural Operators (PANO) and Constitutive Artificial Neural Operators (CANO).",
+        "matched_keywords": [
+          "neural operator",
+          "elastic",
+          "mechanical",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "신경망 연산자가 구성 모델 발견을 위한 역문제를 해결하다",
+        "summary_ko": "- 재료의 기계적 반응 특성 분석은 계산 비용이 많이 드는 최적화 문제 해결을 필요로 합니다.\n- 이 연구는 실험 데이터를 재료의 구성 함수로 직접 매핑하는 PANO와 CANO라는 두 신경망 연산자(neural operator)를 제안합니다.\n- 제안된 신경망 연산자는 변위장과 반력을 초탄성 변형 에너지 밀도 함수로 매핑하도록 훈련됩니다.\n- 라플라시안 고유 함수로 변위장을 인코딩하여 이산화 독립적이고 노이즈에 강한 예측을 가능하게 합니다.\n- 이 프레임워크는 물리적으로 타당한 재료 모델을 출력하며, 거의 즉각적인 재료 특성 분석을 가능하게 합니다.",
+        "tags": [
+          "신경망 연산자",
+          "역문제",
+          "재료 모델링",
+          "구성 모델"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2607.15211",
+      "title": "MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction from Monocular RGB Videos",
+      "authors": [
+        "Ziren Gong",
+        "Xiaohan Li",
+        "Fabio Tosi",
+        "Ninghui Xu",
+        "Stefano Mattoccia",
+        "Jianfei Cai",
+        "Matteo Poggi"
+      ],
+      "summary": "This paper presents MAGiSt3R, a multi-agent 3D reconstruction framework performing reconstruction and camera tracking for monocular RGB videos at almost 10 FPS. MAGiSt3R relies on a feed-forward model from the 3R family to process RGB videos and regress local point maps, and on a merging model, MAGMA, that combines local maps at both intra-agent and inter-agent levels to obtain the final global point map. Furthermore, MAGiSt3R performs pose graph optimization to mitigate cumulative camera drift occurring along the feed-forward pipeline. We evaluate MAGiSt3R on both synthetic and real-world datasets, demonstrating its superior reconstruction and camera tracking accuracy compared to state-of-the-art approaches.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-16T17:12:58+00:00",
+      "updated": "2026-07-16T17:12:58+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.15211v1",
+      "abs_url": "https://arxiv.org/abs/2607.15211",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/8aab721e4700e863c1ad37d5b52f5ba9268a8242",
+      "tldr": "MAGiSt3R is presented, a multi-agent 3D reconstruction framework performing reconstruction and camera tracking for monocular RGB videos at almost 10 FPS, demonstrating its superior reconstruction and camera tracking accuracy compared to state-of-the-art approaches.",
+      "matched_keywords": [],
+      "affiliations": [
+        "University of Bologna"
+      ],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "MAGiSt3R: 단일 RGB 비디오로부터 다중 에이전트 피드포워드 3D 재구성",
+      "summary_ko": "- 단일 RGB 비디오에서 3D 재구성과 카메라 추적을 수행하는 기존 방식의 한계를 개선합니다.\n- MAGiSt3R은 다중 에이전트(multi-agent) 프레임워크로, 피드포워드 모델과 병합 모델을 활용합니다.\n- 3R 계열 모델이 RGB 비디오를 처리하여 로컬 포인트 맵을 생성하고, MAGMA가 이를 병합합니다.\n- 누적되는 카메라 드리프트(drift)를 줄이기 위해 포즈 그래프 최적화(pose graph optimization)를 수행합니다.\n- 합성 및 실제 데이터셋에서 기존 최신 방법보다 뛰어난 정확도를 보이며, 약 10 FPS로 작동합니다.",
+      "tags": [
+        "3D 재구성",
+        "단일 시점 비디오",
+        "다중 에이전트",
+        "카메라 추적"
+      ]
+    },
+    {
+      "arxiv_id": "2607.14952",
+      "title": "LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget",
+      "authors": [
+        "Changhai Zhou",
+        "Kieran Liu",
+        "Yuhua Zhou",
+        "Qian Qiao",
+        "Jun Gao",
+        "Harry Zhang",
+        "Irvine Lu",
+        "Nolan Ho",
+        "Lucian Li",
+        "Andrew Lei",
+        "Cleon Cheng",
+        "Steven Chiang",
+        "Yihang Zeng",
+        "Di Zhang",
+        "Rio Yang",
+        "Kaijie Chen",
+        "Andrew Chen",
+        "Pony Ma",
+        "Weizhong Zhang",
+        "Cheng Jin"
+      ],
+      "summary": "A growing gap separates inference context lengths from RL post-training: inference systems are approaching million-token contexts, while post-training workloads often remain at 256K tokens or below and rely on length generalization at deployment. The gap is especially important for AI agents, whose observations, tool outputs, documents, and prior decisions accumulate over long trajectories. LongStraw is an architecture-aware execution stack for million-token RL post-training under a fixed GPU budget, instantiated with Group Relative Policy Optimization (GRPO). It evaluates the shared prompt without autograd, retains only model-specific state needed by later tokens, and replays short response branches one at a time, reducing the live training graph at the cost of additional replay time. We implement it for the hybrid recurrent and full-attention Qwen3.6-27B and the compressed-attention mixture-of-experts GLM-5.2. On eight H20 GPUs, LongStraw completes grouped Qwen scoring and response backward at 2.1M positions for groups of 2 and 8; increasing the group size adds only 0.21 GB of peak allocated memory, while a separate stress test reaches 4.46M positions. On 32 H20 GPUs, we validate the end-to-end LongStraw execution path for a 2.1M-token prompt across all 78 layers of GLM-5.2. These experiments establish execution capacity rather than complete training correctness because the captured prompt state is detached and some distributed forward and gradient composition paths remain incomplete.",
+      "categories": [
+        "cs.LG",
+        "cs.DC"
+      ],
+      "published": "2026-07-16T13:00:32+00:00",
+      "updated": "2026-07-16T13:00:32+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.14952v1",
+      "abs_url": "https://arxiv.org/abs/2607.14952",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/959127446156868c042766cb8469f61229079473",
+      "tldr": "LongStraw is an architecture-aware execution stack for million-token RL post-training under a fixed GPU budget, instantiated with Group Relative Policy Optimization (GRPO).",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 76,
+      "title_ko": "LongStraw: 고정된 GPU 예산으로 2백만 토큰을 넘어서는 장문 맥락 RL",
+      "summary_ko": "- 추론 시스템은 백만 토큰에 근접하지만, RL 후처리(post-training)는 256K 토큰 이하에 머무는 격차가 있습니다.\n- LongStraw는 고정된 GPU 예산 내에서 백만 토큰 RL 후처리를 위한 아키텍처 인지 실행 스택입니다.\n- 자동 미분 없이 공유 프롬프트를 평가하고, 모델별 상태만 유지하며, 짧은 응답 분기를 개별적으로 재생합니다.\n- 8개의 H20 GPU에서 2.1M 위치에서 Qwen 스코어링 및 응답 역전파를 완료했습니다.\n- 이는 기존 RL 후처리 한계를 극복하며, AI 에이전트의 장문 궤적 처리에 기여합니다.",
+      "tags": [
+        "강화 학습",
+        "장문 맥락",
+        "GPU 최적화",
+        "AI 에이전트"
+      ]
+    },
+    {
+      "arxiv_id": "2606.08796",
+      "title": "A Non-Overlapping Schwarz Hybrid Finite Element-Neural Operator Framework for Solid Mechanics on Irregular Domains",
+      "authors": [
+        "Wei Wang",
+        "Abhinav Gupta",
+        "Haihui Ruan",
+        "Somdatta Goswami"
+      ],
+      "summary": "Finite element (FE) methods are the benchmark for solid mechanics simulations, yet their computational cost becomes prohibitive for problems with localised nonlinearities, fine-scale features, or long-time dynamic evolution. In our earlier FE-neural operator (FE-NO) hybrid framework [1], physics-informed deep operator networks were coupled with FE solvers through overlapping domain decomposition with Dirichlet-Dirichlet interface exchange, accelerating intensive subdomains while preserving FE fidelity elsewhere. Two limitations remained: the overlapping formulation required redundant interface computations that increased inner Schwarz iteration counts, and the convolutional feature extractor restricted the NO subdomain to structured grids, precluding irregular geometries. A non-overlapping Schwarz alternating method with Neumann-Dirichlet interface exchange replaces it, transmitting traction from the NO to FE rather than displacement. This eliminates the overlap layer and reduces inner Schwarz iterations while maintaining bounded error accumulation across all tested time horizons. For arbitrarily shaped subdomains, a Point-DeepONet operates on unstructured FE point clouds without interpolation, extending it to non-convex and irregular geometries. Strain and stress operators are derived analytically from the displacement operators via kinematic equations, rather than as independent networks, reducing trainable parameter sets while enforcing mechanical consistency by construction. The framework is validated on three benchmarks: static linear elasticity, quasi-static hyperelasticity, and elastodynamics with regular and irregular geometries. These results establish a non-overlapping FE-NO coupling paradigm that is geometry-flexible, parameter-efficient, and convergence-stable, providing a pathway for hybrid physics-based and operator-learning solvers in large-scale dynamic solid mechanics.",
+      "categories": [
+        "cs.CE"
+      ],
+      "published": "2026-06-07T19:26:53+00:00",
+      "updated": "2026-06-07T19:26:53+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.08796v1",
+      "abs_url": "https://arxiv.org/abs/2606.08796",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 2,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/a5fe31fbae33254983994ab272c07edfb40db606",
+      "tldr": "These results establish a non-overlapping FE-NO coupling paradigm that is geometry-flexible, parameter-efficient, and convergence-stable, providing a pathway for hybrid physics-based and operator-learning solvers in large-scale dynamic solid mechanics.",
+      "matched_keywords": [
+        "physics-informed",
+        "neural operator",
+        "finite element",
+        "elastic",
+        "stress",
+        "mechanical",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "불규칙 영역의 고체 역학을 위한 비중첩 Schwarz 하이브리드 유한 요소-신경망 연산자 프레임워크",
+      "summary_ko": "- 유한 요소(FE)법은 고체 역학 시뮬레이션의 표준이지만, 복잡한 문제에서 계산 비용이 높습니다.\n- 이 연구는 기존 FE-신경망 연산자(NO) 프레임워크의 중첩 계산과 불규칙 형상 처리 한계를 개선합니다.\n- 비중첩 Schwarz 교대 방법과 Point-DeepONet을 사용하여 불규칙 형상에서도 작동하도록 개선했습니다.\n- 변위 연산자로부터 변형률 및 응력 연산자를 유도하여 매개변수를 줄이고 일관성을 확보했습니다.\n- 이 프레임워크는 대규모 동적 고체 역학 문제 해결에 기여하는 유연하고 효율적인 하이브리드 솔버입니다.",
+      "tags": [
+        "고체 역학",
+        "유한 요소법",
+        "신경망 연산자",
+        "하이브리드 모델"
+      ]
+    },
+    {
+      "arxiv_id": "2607.15049",
+      "title": "Neural operators solve inverse problems for constitutive model discovery",
+      "authors": [
+        "Moritz Flaschel",
+        "Burigede Liu",
+        "Ellen Kuhl"
+      ],
+      "summary": "Characterizing the mechanical response of materials traditionally requires solving optimization problems in which model parameters are calibrated or trained to minimize the discrepancy between model predictions and experimental data. This process can be computationally expensive and time-consuming. To overcome this limitation, we propose two neural operator architectures that directly map experimentally measured data to the constitutive functions governing the mechanical response of the material: Physics-Augmented Neural Operators (PANO) and Constitutive Artificial Neural Operators (CANO). The proposed neural operators approximate the mapping between the infinite-dimensional input space of full-field displacement measurements and net reaction forces, and the infinite-dimensional output space of hyperelastic strain-energy density functions. The displacement fields are encoded through Laplacian eigenfunctions to obtain discretization-independent and noise-robust predictions. Our framework constrains the output space to physically admissible material models that satisfy fundamental physical requirements by design. The neural operators are trained on simulated data tuples of displacement fields and reaction forces for a range of material models. Once trained, the neural operators enable near-instantaneous material characterization and require only a single forward pass to infer the strain-energy density function from a given experimental dataset. We test the predictive power of the neural operators for unseen data, noisy data, data with missing information, data from different spatial discretizations, and data from geometries of different sizes.",
+      "categories": [
+        "cs.CE",
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-07-16T14:29:38+00:00",
+      "updated": "2026-07-16T14:29:38+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.15049v1",
+      "abs_url": "https://arxiv.org/abs/2607.15049",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/bf02d9ea92ea9da08f787e338b90d9507e9508d9",
+      "tldr": "This work proposes two neural operator architectures that directly map experimentally measured data to the constitutive functions governing the mechanical response of the material: Physics-Augmented Neural Operators (PANO) and Constitutive Artificial Neural Operators (CANO).",
+      "matched_keywords": [
+        "neural operator",
+        "elastic",
+        "mechanical",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "신경망 연산자가 구성 모델 발견을 위한 역문제를 해결하다",
+      "summary_ko": "- 재료의 기계적 반응 특성 분석은 계산 비용이 많이 드는 최적화 문제 해결을 필요로 합니다.\n- 이 연구는 실험 데이터를 재료의 구성 함수로 직접 매핑하는 PANO와 CANO라는 두 신경망 연산자(neural operator)를 제안합니다.\n- 제안된 신경망 연산자는 변위장과 반력을 초탄성 변형 에너지 밀도 함수로 매핑하도록 훈련됩니다.\n- 라플라시안 고유 함수로 변위장을 인코딩하여 이산화 독립적이고 노이즈에 강한 예측을 가능하게 합니다.\n- 이 프레임워크는 물리적으로 타당한 재료 모델을 출력하며, 거의 즉각적인 재료 특성 분석을 가능하게 합니다.",
+      "tags": [
+        "신경망 연산자",
+        "역문제",
+        "재료 모델링",
+        "구성 모델"
+      ]
+    }
+  ]
+}
