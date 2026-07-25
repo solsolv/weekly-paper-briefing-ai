@@ -1,0 +1,383 @@
+{
+  "week_id": "2026-07-27",
+  "generated_at": "2026-07-25T03:56:44.459528+00:00",
+  "publish_at": "2026-07-27T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2607.21192",
+        "title": "Animation, Verification and Visualisation of Prolog Transition Systems with ProB",
+        "authors": [
+          "Jan Gruteser",
+          "Michael Leuschel",
+          "Katharina Engels",
+          "Fabian Vu"
+        ],
+        "summary": "ProB is a Prolog-based model checker, animator and constraint solver for high-level formal specifications. One can also use ProB to animate transition systems defined by Prolog predicates, allowing the application of its various validation techniques. In this work, we present the existing features of ProB's Prolog animation mode and its recent extensions. The extended capabilities include simulation for statistical checks, more reliable trace replay, transitions with user input and improved state visualisation. We apply the new features to case studies, particularly for evaluating different strategies in game play, such as Connect Four. The features are useful for many other applications, especially for ProB's new sequent prover for Event-B proof obligations, as well as for demonstration models for teaching in combination with interactive visualisation.",
+        "categories": [
+          "cs.LO",
+          "cs.AI",
+          "cs.GT"
+        ],
+        "published": "2026-07-23T11:16:49+00:00",
+        "updated": "2026-07-23T11:16:49+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.21192v1",
+        "abs_url": "https://arxiv.org/abs/2607.21192",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/d4045ee4e162ffce1b5b129462442ac7eaddee73",
+        "tldr": "The existing features of ProB's Prolog animation mode and its recent extensions are presented and the extended capabilities include simulation for statistical checks, more reliable trace replay, transitions with user input and improved state visualisation are applied.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "ProB를 활용한 프롤로그 전이 시스템의 애니메이션, 검증 및 시각화",
+        "summary_ko": "- ProB는 고수준 형식 명세를 위한 프롤로그(Prolog) 기반 모델 검사기, 애니메이터 및 제약 조건 해결기입니다.\n- 본 연구는 ProB의 기존 프롤로그 애니메이션 모드 기능과 최근 확장된 기능을 소개합니다.\n- 확장된 기능에는 통계 검사를 위한 시뮬레이션, 안정적인 추적 재생, 사용자 입력 전환, 개선된 상태 시각화가 포함됩니다.\n- 새로운 기능은 Connect Four와 같은 게임 플레이 전략 평가 사례 연구에 적용되어 유용성을 입증했습니다.\n- 이 기능들은 Event-B 증명 의무를 위한 ProB의 새로운 시퀀트 증명기와 교육용 시연 모델에 활용될 수 있습니다.",
+        "tags": [
+          "모델 검증",
+          "프롤로그",
+          "전이 시스템",
+          "시각화"
+        ]
+      },
+      {
+        "arxiv_id": "2607.21461",
+        "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+        "authors": [
+          "Shuqi Lu",
+          "Chaofan Li",
+          "Kun Luo",
+          "Zhang Zhang",
+          "Hui Wang",
+          "Hongwang Xiao",
+          "Zheng Liu",
+          "Lei Xiong",
+          "Jiahao Wang",
+          "Sen Wang",
+          "Xiyan Jiang",
+          "Wanli Li",
+          "Yuyang Hu",
+          "Hongjin Qian",
+          "Bingyu Yan",
+          "Ziyi Xia",
+          "Yingxia Shao",
+          "Kang Liu",
+          "Zhicheng Dou",
+          "Di He",
+          "Chaozhuo Li",
+          "Qiwei Ye",
+          "Zhongyuan Wang",
+          "Zheng Liu"
+        ],
+        "summary": "Deep research requires agents to find answers that jointly satisfy multiple constraints. Discovering such answers is costly, whereas verifying a candidate can often be decomposed into tractable constraint-wise checks. This discovery--verification asymmetry suggests that a research agent should do more than simply search longer: it should recursively improve its current answer by verifying intermediate results and using the partially verified state to guide subsequent refinement. We introduce AREX, a family of Recursively Self-Improving (RSI) deep research agents. AREX alternates between an inner research loop that gathers evidence and constructs a provisional answer, and an outer self-improvement loop that audits the answer constraint-wise, identifies unresolved claims, and launches targeted follow-up research. To sustain RSI over long horizons, AREX learns an autonomous context-update tool that compresses growing interaction history into a compact improvement state preserving verified evidence and unresolved constraints, without relying on an external model. We train AREX on verified synthetic tasks and high-quality trajectories through agentic mid-training and long-horizon reinforcement learning. To mitigate sparse final rewards during long horizon learning, we emphasize key steps where decisive evidence is acquired or erroneous research directions are corrected. We instantiate a dense 4B model and a 122B-A10B Mixture-of-Experts model. Across BrowseComp, WideSearch, DeepSearchQA, Humanity's Last Exam (HLE), and other reasoning and tool-use benchmarks, AREX substantially outperforms comparable-scale baselines and remains competitive with models using substantially more activated parameters.",
+        "categories": [
+          "cs.AI"
+        ],
+        "published": "2026-07-23T16:05:46+00:00",
+        "updated": "2026-07-23T16:05:46+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.21461v1",
+        "abs_url": "https://arxiv.org/abs/2607.21461",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/ed7d0c33fa3da3e4a0dea4c164d3bd02a54fd4d4",
+        "tldr": "This work introduces AREX, a family of Recursively Self-Improving (RSI) deep research agents that substantially outperforms comparable-scale baselines and remains competitive with models using substantially more activated parameters.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 118,
+        "title_ko": "AREX: 심층 연구를 위한 재귀적으로 자체 개선하는 에이전트를 향하여",
+        "summary_ko": "- 심층 연구는 여러 제약 조건을 만족하는 답을 찾는 데 많은 비용이 듭니다.\n- AREX는 재귀적으로 자체 개선(RSI)하는 에이전트로, 중간 결과를 검증하며 답을 개선합니다.\n- AREX는 증거 수집과 임시 답 구성, 그리고 제약 조건별 검토를 반복하며 작동합니다.\n- AREX는 다양한 벤치마크에서 동급 모델보다 우수하며, 더 큰 모델과도 경쟁합니다.\n- 이 에이전트는 자율적인 컨텍스트 업데이트 도구로 장기적인 RSI를 유지합니다.",
+        "tags": [
+          "AI 에이전트",
+          "심층 연구",
+          "자체 개선",
+          "강화 학습"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "doi:10.3390/buildings15213900",
+        "title": "A Multi-Stage Framework Combining Experimental Testing, Numerical Calibration, and AI Surrogates for Composite Panel Characterization",
+        "authors": [
+          "Marcello Fulgione",
+          "S. Palladino",
+          "L. Esposito",
+          "Sina Sarfarazi",
+          "Mariano Modano"
+        ],
+        "summary": "Composite modular panels are increasingly used in modern buildings, yet their layered behavior makes mechanical characterization and modeling difficult. This study presents a novel hybrid framework that integrates analytical, numerical, and AI-driven approaches for the mechanical characterization of composite panels. The system combines a layered concrete configuration with embedded steel reinforcement, and its performance was evaluated through experimental testing, analytical formulation, finite element simulations, and artificial intelligence techniques. Full-scale bending and shear tests were conducted and results in terms of displacements were compared with in silico simulations. The equivalent elastic modulus and thickness were suggested via a closed-form analytical procedure and validated numerically, showing less than 3% deviation from experiments. These equivalent parameters were used to simulate the dynamic response of a two-storey prototype building under harmonic excitation, with simulated modal periods differing by less than 10% from experimental data. To generalize the method, a parametric dataset of 218 panel configurations was generated by varying material and geometric properties. Machine learning models including Artificial Neural Network, Random Forest, Gradient Boosting, and Extra Trees were trained on this dataset, achieving R2 > 0.98 for both targets. A graphical user interface was developed to integrate the trained models into an engineering tool for fast prediction of equivalent properties. The proposed methodology provides a unified and computationally efficient approach that combines physical accuracy with practical usability, enabling rapid design and optimization of composite panel structures.",
+        "categories": [],
+        "published": "2025-10-28T00:00:00+00:00",
+        "updated": "2025-10-28T00:00:00+00:00",
+        "pdf_url": "https://www.mdpi.com/2075-5309/15/21/3900/pdf?version=1761661307",
+        "abs_url": "https://www.semanticscholar.org/paper/0b82b7fef051b87db0af75d46f06ef51bd33c187",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 15,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/0b82b7fef051b87db0af75d46f06ef51bd33c187",
+        "tldr": null,
+        "matched_keywords": [
+          "machine learning",
+          "neural network",
+          "finite element",
+          "elastic",
+          "mechanical",
+          "relevance:0.80"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "복합 패널 특성화를 위한 실험, 수치 보정 및 AI 대체 모델 결합 다단계 프레임워크",
+        "summary_ko": "- 복합 패널은 기계적 특성 파악과 모델링이 어려워 새로운 접근법이 필요합니다.\n- 이 연구는 실험, 수치 시뮬레이션, AI를 통합한 하이브리드 프레임워크를 제안합니다.\n- 실제 굽힘 및 전단 시험으로 변위를 측정하고 유한요소 시뮬레이션과 비교했습니다.\n- 등가 탄성 계수는 실험값과 3% 미만, 건물 동적 응답은 10% 미만 차이를 보였습니다.\n- 이 프레임워크는 복합 패널 설계를 빠르고 효율적으로 최적화하는 데 기여합니다.",
+        "tags": [
+          "복합 패널",
+          "기계적 특성화",
+          "AI 대체 모델",
+          "하이브리드 프레임워크"
+        ]
+      },
+      {
+        "arxiv_id": "2607.20339",
+        "title": "Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling",
+        "authors": [
+          "Somesh Pratap Singh",
+          "Govinda Anantha Padmanabha",
+          "Jingye Tan",
+          "Steven Yang",
+          "Reese E. Jones",
+          "D. Thomas Seidl",
+          "Nikolaos Bouklas"
+        ],
+        "summary": "Constitutive modeling under uncertainty remains a central challenge for reliable mechanics simulations, particularly when the available stress-deformation data are sparse, noisy, or heterogeneous. We propose interval and fuzzy physics-augmented neural networks (iPANNs and fPANNs) for uncertainty-aware hyperelastic constitutive modeling. iPANNs learn sparse lower, mean, and upper free energy density branches whose stresses, obtained by automatic differentiation, ultimately enclose noisy stress observations. In contrast to this deterministic interval description, fPANNs embed the learned iPANN branches into a fuzzy-set representation through alpha-cut interpolation, yielding a nested family of admissible responses. iPANNs and fPANNs encode mechanistic constraints - preserving objectivity, consistency and promoting polyconvexity - and smoothed L0 regularization promotes interpretable energy representations. The bound models are trained through a two-stage transfer-learning procedure in which a sparse mean constitutive response is learned first and then fine-tuned into lower and upper energy branches. We evaluate the framework on synthetic isotropic hyperelastic data with heteroscedastic noise, varying random realizations, shifted noise means, and varying noise magnitudes. The results show that the learned bounds enclose noisy stress observations while generalizing to the test set. Further, we examine the propagation of uncertainty through the mean, upper and lower bound predictions of the learned iPANN models in a finite element setting. The proposed framework provides a compact, physics-consistent route for distribution-free aleatoric uncertainty quantification in hyperelastic constitutive modeling, and propagation in downstream finite element simulations.",
+        "categories": [
+          "cs.LG",
+          "physics.comp-ph"
+        ],
+        "published": "2026-07-22T16:26:59+00:00",
+        "updated": "2026-07-22T16:26:59+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.20339v1",
+        "abs_url": "https://arxiv.org/abs/2607.20339",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/6afc996a6bd21b712c44e9a16bc6cd031a93356f",
+        "tldr": "The proposed framework provides a compact, physics-consistent route for distribution-free aleatoric uncertainty quantification in hyperelastic constitutive modeling, and propagation in downstream finite element simulations.",
+        "matched_keywords": [
+          "neural network",
+          "finite element",
+          "elastic",
+          "deform",
+          "stress",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "구성 모델링에서 불확실성 정량화 및 전파를 위한 구간 및 퍼지 물리학 증강 신경망 (iPANN 및 fPANN)",
+        "summary_ko": "- 신뢰할 수 있는 역학 시뮬레이션에서 불확실성 하의 구성 모델링은 여전히 주요 과제입니다.\n- 이 연구는 불확실성을 고려한 초탄성 구성 모델링을 위해 iPANN과 fPANN을 제안합니다.\n- iPANN은 하한, 평균, 상한 자유 에너지 밀도 가지를 학습하여 노이즈가 있는 응력 관측값을 포괄합니다.\n- 제안된 프레임워크는 합성 초탄성 데이터에서 노이즈가 있는 응력 관측값을 포괄하며 테스트 세트에도 일반화됩니다.\n- 이 방법은 초탄성 구성 모델링에서 분포에 구애받지 않는 불확실성 정량화 및 전파를 제공합니다.",
+        "tags": [
+          "불확실성 정량화",
+          "신경망",
+          "구성 모델링",
+          "초탄성"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2607.21192",
+      "title": "Animation, Verification and Visualisation of Prolog Transition Systems with ProB",
+      "authors": [
+        "Jan Gruteser",
+        "Michael Leuschel",
+        "Katharina Engels",
+        "Fabian Vu"
+      ],
+      "summary": "ProB is a Prolog-based model checker, animator and constraint solver for high-level formal specifications. One can also use ProB to animate transition systems defined by Prolog predicates, allowing the application of its various validation techniques. In this work, we present the existing features of ProB's Prolog animation mode and its recent extensions. The extended capabilities include simulation for statistical checks, more reliable trace replay, transitions with user input and improved state visualisation. We apply the new features to case studies, particularly for evaluating different strategies in game play, such as Connect Four. The features are useful for many other applications, especially for ProB's new sequent prover for Event-B proof obligations, as well as for demonstration models for teaching in combination with interactive visualisation.",
+      "categories": [
+        "cs.LO",
+        "cs.AI",
+        "cs.GT"
+      ],
+      "published": "2026-07-23T11:16:49+00:00",
+      "updated": "2026-07-23T11:16:49+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.21192v1",
+      "abs_url": "https://arxiv.org/abs/2607.21192",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/d4045ee4e162ffce1b5b129462442ac7eaddee73",
+      "tldr": "The existing features of ProB's Prolog animation mode and its recent extensions are presented and the extended capabilities include simulation for statistical checks, more reliable trace replay, transitions with user input and improved state visualisation are applied.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "ProB를 활용한 프롤로그 전이 시스템의 애니메이션, 검증 및 시각화",
+      "summary_ko": "- ProB는 고수준 형식 명세를 위한 프롤로그(Prolog) 기반 모델 검사기, 애니메이터 및 제약 조건 해결기입니다.\n- 본 연구는 ProB의 기존 프롤로그 애니메이션 모드 기능과 최근 확장된 기능을 소개합니다.\n- 확장된 기능에는 통계 검사를 위한 시뮬레이션, 안정적인 추적 재생, 사용자 입력 전환, 개선된 상태 시각화가 포함됩니다.\n- 새로운 기능은 Connect Four와 같은 게임 플레이 전략 평가 사례 연구에 적용되어 유용성을 입증했습니다.\n- 이 기능들은 Event-B 증명 의무를 위한 ProB의 새로운 시퀀트 증명기와 교육용 시연 모델에 활용될 수 있습니다.",
+      "tags": [
+        "모델 검증",
+        "프롤로그",
+        "전이 시스템",
+        "시각화"
+      ]
+    },
+    {
+      "arxiv_id": "2607.21461",
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "authors": [
+        "Shuqi Lu",
+        "Chaofan Li",
+        "Kun Luo",
+        "Zhang Zhang",
+        "Hui Wang",
+        "Hongwang Xiao",
+        "Zheng Liu",
+        "Lei Xiong",
+        "Jiahao Wang",
+        "Sen Wang",
+        "Xiyan Jiang",
+        "Wanli Li",
+        "Yuyang Hu",
+        "Hongjin Qian",
+        "Bingyu Yan",
+        "Ziyi Xia",
+        "Yingxia Shao",
+        "Kang Liu",
+        "Zhicheng Dou",
+        "Di He",
+        "Chaozhuo Li",
+        "Qiwei Ye",
+        "Zhongyuan Wang",
+        "Zheng Liu"
+      ],
+      "summary": "Deep research requires agents to find answers that jointly satisfy multiple constraints. Discovering such answers is costly, whereas verifying a candidate can often be decomposed into tractable constraint-wise checks. This discovery--verification asymmetry suggests that a research agent should do more than simply search longer: it should recursively improve its current answer by verifying intermediate results and using the partially verified state to guide subsequent refinement. We introduce AREX, a family of Recursively Self-Improving (RSI) deep research agents. AREX alternates between an inner research loop that gathers evidence and constructs a provisional answer, and an outer self-improvement loop that audits the answer constraint-wise, identifies unresolved claims, and launches targeted follow-up research. To sustain RSI over long horizons, AREX learns an autonomous context-update tool that compresses growing interaction history into a compact improvement state preserving verified evidence and unresolved constraints, without relying on an external model. We train AREX on verified synthetic tasks and high-quality trajectories through agentic mid-training and long-horizon reinforcement learning. To mitigate sparse final rewards during long horizon learning, we emphasize key steps where decisive evidence is acquired or erroneous research directions are corrected. We instantiate a dense 4B model and a 122B-A10B Mixture-of-Experts model. Across BrowseComp, WideSearch, DeepSearchQA, Humanity's Last Exam (HLE), and other reasoning and tool-use benchmarks, AREX substantially outperforms comparable-scale baselines and remains competitive with models using substantially more activated parameters.",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-23T16:05:46+00:00",
+      "updated": "2026-07-23T16:05:46+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.21461v1",
+      "abs_url": "https://arxiv.org/abs/2607.21461",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/ed7d0c33fa3da3e4a0dea4c164d3bd02a54fd4d4",
+      "tldr": "This work introduces AREX, a family of Recursively Self-Improving (RSI) deep research agents that substantially outperforms comparable-scale baselines and remains competitive with models using substantially more activated parameters.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 118,
+      "title_ko": "AREX: 심층 연구를 위한 재귀적으로 자체 개선하는 에이전트를 향하여",
+      "summary_ko": "- 심층 연구는 여러 제약 조건을 만족하는 답을 찾는 데 많은 비용이 듭니다.\n- AREX는 재귀적으로 자체 개선(RSI)하는 에이전트로, 중간 결과를 검증하며 답을 개선합니다.\n- AREX는 증거 수집과 임시 답 구성, 그리고 제약 조건별 검토를 반복하며 작동합니다.\n- AREX는 다양한 벤치마크에서 동급 모델보다 우수하며, 더 큰 모델과도 경쟁합니다.\n- 이 에이전트는 자율적인 컨텍스트 업데이트 도구로 장기적인 RSI를 유지합니다.",
+      "tags": [
+        "AI 에이전트",
+        "심층 연구",
+        "자체 개선",
+        "강화 학습"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.3390/buildings15213900",
+      "title": "A Multi-Stage Framework Combining Experimental Testing, Numerical Calibration, and AI Surrogates for Composite Panel Characterization",
+      "authors": [
+        "Marcello Fulgione",
+        "S. Palladino",
+        "L. Esposito",
+        "Sina Sarfarazi",
+        "Mariano Modano"
+      ],
+      "summary": "Composite modular panels are increasingly used in modern buildings, yet their layered behavior makes mechanical characterization and modeling difficult. This study presents a novel hybrid framework that integrates analytical, numerical, and AI-driven approaches for the mechanical characterization of composite panels. The system combines a layered concrete configuration with embedded steel reinforcement, and its performance was evaluated through experimental testing, analytical formulation, finite element simulations, and artificial intelligence techniques. Full-scale bending and shear tests were conducted and results in terms of displacements were compared with in silico simulations. The equivalent elastic modulus and thickness were suggested via a closed-form analytical procedure and validated numerically, showing less than 3% deviation from experiments. These equivalent parameters were used to simulate the dynamic response of a two-storey prototype building under harmonic excitation, with simulated modal periods differing by less than 10% from experimental data. To generalize the method, a parametric dataset of 218 panel configurations was generated by varying material and geometric properties. Machine learning models including Artificial Neural Network, Random Forest, Gradient Boosting, and Extra Trees were trained on this dataset, achieving R2 > 0.98 for both targets. A graphical user interface was developed to integrate the trained models into an engineering tool for fast prediction of equivalent properties. The proposed methodology provides a unified and computationally efficient approach that combines physical accuracy with practical usability, enabling rapid design and optimization of composite panel structures.",
+      "categories": [],
+      "published": "2025-10-28T00:00:00+00:00",
+      "updated": "2025-10-28T00:00:00+00:00",
+      "pdf_url": "https://www.mdpi.com/2075-5309/15/21/3900/pdf?version=1761661307",
+      "abs_url": "https://www.semanticscholar.org/paper/0b82b7fef051b87db0af75d46f06ef51bd33c187",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 15,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/0b82b7fef051b87db0af75d46f06ef51bd33c187",
+      "tldr": null,
+      "matched_keywords": [
+        "machine learning",
+        "neural network",
+        "finite element",
+        "elastic",
+        "mechanical",
+        "relevance:0.80"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "복합 패널 특성화를 위한 실험, 수치 보정 및 AI 대체 모델 결합 다단계 프레임워크",
+      "summary_ko": "- 복합 패널은 기계적 특성 파악과 모델링이 어려워 새로운 접근법이 필요합니다.\n- 이 연구는 실험, 수치 시뮬레이션, AI를 통합한 하이브리드 프레임워크를 제안합니다.\n- 실제 굽힘 및 전단 시험으로 변위를 측정하고 유한요소 시뮬레이션과 비교했습니다.\n- 등가 탄성 계수는 실험값과 3% 미만, 건물 동적 응답은 10% 미만 차이를 보였습니다.\n- 이 프레임워크는 복합 패널 설계를 빠르고 효율적으로 최적화하는 데 기여합니다.",
+      "tags": [
+        "복합 패널",
+        "기계적 특성화",
+        "AI 대체 모델",
+        "하이브리드 프레임워크"
+      ]
+    },
+    {
+      "arxiv_id": "2607.20339",
+      "title": "Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling",
+      "authors": [
+        "Somesh Pratap Singh",
+        "Govinda Anantha Padmanabha",
+        "Jingye Tan",
+        "Steven Yang",
+        "Reese E. Jones",
+        "D. Thomas Seidl",
+        "Nikolaos Bouklas"
+      ],
+      "summary": "Constitutive modeling under uncertainty remains a central challenge for reliable mechanics simulations, particularly when the available stress-deformation data are sparse, noisy, or heterogeneous. We propose interval and fuzzy physics-augmented neural networks (iPANNs and fPANNs) for uncertainty-aware hyperelastic constitutive modeling. iPANNs learn sparse lower, mean, and upper free energy density branches whose stresses, obtained by automatic differentiation, ultimately enclose noisy stress observations. In contrast to this deterministic interval description, fPANNs embed the learned iPANN branches into a fuzzy-set representation through alpha-cut interpolation, yielding a nested family of admissible responses. iPANNs and fPANNs encode mechanistic constraints - preserving objectivity, consistency and promoting polyconvexity - and smoothed L0 regularization promotes interpretable energy representations. The bound models are trained through a two-stage transfer-learning procedure in which a sparse mean constitutive response is learned first and then fine-tuned into lower and upper energy branches. We evaluate the framework on synthetic isotropic hyperelastic data with heteroscedastic noise, varying random realizations, shifted noise means, and varying noise magnitudes. The results show that the learned bounds enclose noisy stress observations while generalizing to the test set. Further, we examine the propagation of uncertainty through the mean, upper and lower bound predictions of the learned iPANN models in a finite element setting. The proposed framework provides a compact, physics-consistent route for distribution-free aleatoric uncertainty quantification in hyperelastic constitutive modeling, and propagation in downstream finite element simulations.",
+      "categories": [
+        "cs.LG",
+        "physics.comp-ph"
+      ],
+      "published": "2026-07-22T16:26:59+00:00",
+      "updated": "2026-07-22T16:26:59+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.20339v1",
+      "abs_url": "https://arxiv.org/abs/2607.20339",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/6afc996a6bd21b712c44e9a16bc6cd031a93356f",
+      "tldr": "The proposed framework provides a compact, physics-consistent route for distribution-free aleatoric uncertainty quantification in hyperelastic constitutive modeling, and propagation in downstream finite element simulations.",
+      "matched_keywords": [
+        "neural network",
+        "finite element",
+        "elastic",
+        "deform",
+        "stress",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "구성 모델링에서 불확실성 정량화 및 전파를 위한 구간 및 퍼지 물리학 증강 신경망 (iPANN 및 fPANN)",
+      "summary_ko": "- 신뢰할 수 있는 역학 시뮬레이션에서 불확실성 하의 구성 모델링은 여전히 주요 과제입니다.\n- 이 연구는 불확실성을 고려한 초탄성 구성 모델링을 위해 iPANN과 fPANN을 제안합니다.\n- iPANN은 하한, 평균, 상한 자유 에너지 밀도 가지를 학습하여 노이즈가 있는 응력 관측값을 포괄합니다.\n- 제안된 프레임워크는 합성 초탄성 데이터에서 노이즈가 있는 응력 관측값을 포괄하며 테스트 세트에도 일반화됩니다.\n- 이 방법은 초탄성 구성 모델링에서 분포에 구애받지 않는 불확실성 정량화 및 전파를 제공합니다.",
+      "tags": [
+        "불확실성 정량화",
+        "신경망",
+        "구성 모델링",
+        "초탄성"
+      ]
+    }
+  ]
+}
