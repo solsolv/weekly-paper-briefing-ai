@@ -1,0 +1,331 @@
+{
+  "week_id": "2026-08-03",
+  "generated_at": "2026-08-01T04:17:08.699490+00:00",
+  "publish_at": "2026-08-03T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2607.28575",
+        "title": "Algorithms for Structured Elections under Thiele Voting Rules",
+        "authors": [
+          "Alexandra Lassota",
+          "Krzysztof Sornat"
+        ],
+        "summary": "We study the computational complexity of winner determination problems in approval-based committee elections under Thiele voting rules. These form a class of rules parameterized by a fixed weight vector that specifies how a voter's satisfaction depends on the number of approved candidates elected. We first analyze the structure of optimal solutions based on the sets of voters who approve each candidate---that is, how voters' approval ballots induce dependencies between candidates---revealing constraints on a winning committee under any fixed Thiele voting rule. Using this, we design FPT algorithms for Proportional Approval Voting (PAV) and other Thiele rules on a natural restricted domain known as the Voter Interval (VI) domain---that is, after a suitable ordering of voters, each candidate is approved by a consecutive interval of voters. In particular, we show that every Thiele rule on VI is FPT with respect to a parameter for which the problem is NP-hard on general instances, even when the parameter takes constant values. Our results advance the understanding of the computational complexity of PAV on Voter Interval instances, which remains one of the central open questions in this area. We further resolve two open questions from the literature on PAV (and other Thiele voting rules) by providing a polynomial-time algorithm for instances where each candidate is approved by at most two voters, and an FPT algorithm parameterized by the total score of a winning committee.",
+        "categories": [
+          "cs.GT",
+          "cs.AI",
+          "cs.DS",
+          "cs.MA"
+        ],
+        "published": "2026-07-30T17:37:14+00:00",
+        "updated": "2026-07-30T17:37:14+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.28575v1",
+        "abs_url": "https://arxiv.org/abs/2607.28575",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 2,
+        "influential_citation_count": 1,
+        "s2_url": "https://www.semanticscholar.org/paper/c68be5b714831dd26e8f989a70b5404a1f2646c1",
+        "tldr": "This work designs FPT algorithms for Proportional Approval Voting (PAV) and other Thiele rules on a natural restricted domain known as the Voter Interval domain and shows that every Thiele rule on Voter Interval is FPT with respect to a parameter for which the problem is NP-hard on general instances, even when the parameter takes constant values.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "틸레 투표 규칙 하의 구조화된 선거를 위한 알고리즘",
+        "summary_ko": "- 이 연구는 승인 기반 위원회 선거에서 틸레 투표 규칙(Thiele voting rules)의 당선자 결정 문제 복잡성을 다룹니다.\n- 후보자 승인 유권자 집합을 기반으로 최적 해의 구조를 분석하여 당선 위원회 제약을 밝힙니다.\n- 이를 활용해 유권자 간격(Voter Interval, VI) 도메인에서 PAV 및 다른 틸레 규칙에 대한 FPT 알고리즘을 설계합니다.\n- VI 도메인에서 모든 틸레 규칙은 특정 매개변수에 대해 FPT이며, 이는 일반적인 경우 NP-난해합니다.\n- 이 결과는 PAV의 계산 복잡도 이해를 높이고, 두 가지 미해결 질문에 대한 해답을 제시합니다.",
+        "tags": [
+          "틸레 투표 규칙",
+          "승인 투표",
+          "계산 복잡도",
+          "FPT 알고리즘"
+        ]
+      },
+      {
+        "arxiv_id": "2607.28624",
+        "title": "PhiZero: A World Model Built Around Physical Language",
+        "authors": [
+          "Shuyao Shang",
+          "Yuqi Wang",
+          "Ruopeng Gao",
+          "Xu Chen",
+          "Tieniu Tan",
+          "Lue Fan",
+          "Zhaoxiang Zhang"
+        ],
+        "summary": "We introduce PhiZero, a physical world model built around physical language, a compact discrete representation of world-state transitions. Existing physical world models typically predict future videos directly in pixel space, leaving the underlying world dynamics implicit within high-dimensional visual predictors. Motivated by humans' ability to abstract predictive structure from visual experience and organize it in natural language for explicit reasoning, we learn physical language from in-the-wild videos through self-supervision and use it to explicitly reason about how the physical world evolves. Accordingly, PhiZero adopts a reason-then-render paradigm: it first infers future world evolution as a physical-language sequence and then renders the inferred transitions into videos. Extensive experiments across generation and understanding benchmarks validate the ability of PhiZero to model physically coherent world evolution. We further show its potential for realistic and interactive world modeling, fine-grained action-conditioned simulation, and zero-shot motion transfer.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-07-30T17:59:46+00:00",
+        "updated": "2026-07-30T17:59:46+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2607.28624v1",
+        "abs_url": "https://arxiv.org/abs/2607.28624",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/dc0cbab345d1b7ab1d3db1e2f69c96f121109f11",
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 150,
+        "title_ko": "PhiZero: 물리 언어를 중심으로 구축된 세계 모델",
+        "summary_ko": "- 기존 물리 세계 모델은 픽셀 공간에서 미래 영상을 예측하여, 세계 역학이 시각 예측기 내에 암묵적으로 존재했습니다.\n- 본 연구는 물리 언어(physical language)라는 세계 상태 전환의 이산적 표현을 통해 물리 세계 모델 PhiZero를 제안합니다.\n- PhiZero는 실제 영상에서 자기 지도 학습으로 물리 언어를 학습하고, 이를 통해 세계 진화를 추론합니다.\n- PhiZero는 먼저 미래 세계 진화를 물리 언어 시퀀스로 추론한 다음, 이를 영상으로 렌더링합니다.\n- PhiZero는 물리적으로 일관된 세계 진화를 모델링하며, 현실적 상호작용 및 미세 제어 시뮬레이션 가능성을 보여줍니다.",
+        "tags": [
+          "세계 모델",
+          "물리 언어",
+          "자기 지도 학습",
+          "영상 생성"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2606.02179",
+        "title": "On the Generalization in Topology Optimization via Sensitivity-Conditioned Bernoulli Flow Matching",
+        "authors": [
+          "Mohammad Rashed",
+          "Duarte F. Valoroso Madeira",
+          "Babak Gholami",
+          "Caglar Guerbuez",
+          "Yunjia Yang",
+          "Nils Thuerey"
+        ],
+        "summary": "Surrogate models for topology optimization (TO) exhibit highly variable out-of-distribution (OOD) generalization under distribution shifts such as changing loads or boundary conditions, yet the source of this variability remains unclear. We hypothesize that OOD performance is governed by how much information the conditioning signal preserves about the adjoint sensitivity (reduced gradient) that drives classical TO. Modeling the TO pipeline as a causal Markov chain, the Data Processing Inequality establishes that, under this abstraction, the sensitivity field is an information-theoretically optimal conditioning signal for topology prediction. However, computing exact adjoint sensitivities can be expensive or unavailable in practice; we observe that certain physical fields can approximate sensitivities through monotone transformations. To formalize this, we introduce \\textbf{pseudo-sensitivities} to characterize which fields enable generalization versus those that are information-poor. We then show that a sensitivity-conditioned Bernoulli flow-matching generator empirically confirms these predictions: conditioning on sensitivities yields state-of-the-art OOD performance, while increasingly distant physical fields degrade toward raw parameter conditioning. Results hold across structural TO benchmarks under load shifts and our new CFD-TO dataset under boundary-condition shifts such as multi-outlet configurations. Code and datasets are available at https://tum-pbs.github.io/topotransformer/ .",
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "cs.CE"
+        ],
+        "published": "2026-06-01T12:36:41+00:00",
+        "updated": "2026-06-01T12:36:41+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2606.02179v1",
+        "abs_url": "https://arxiv.org/abs/2606.02179",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/ed8f009848f758a45693db6cc9511a4b8a835abf",
+        "tldr": "Conference on sensitivities yields state-of-the-art OOD performance, while increasingly distant physical fields degrade toward raw parameter conditioning, and results hold across structural TO benchmarks under load shifts and the new CFD-TO dataset under boundary-condition shifts such as multi-outlet configurations.",
+        "matched_keywords": [
+          "surrogate model",
+          "structural",
+          "topology optimization",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "민감도 조건부 베르누이 흐름 매칭을 통한 위상 최적화의 일반화 연구",
+        "summary_ko": "- 위상 최적화(TO) 대리 모델은 분포 변화 시 OOD 일반화 성능이 가변적입니다.\n- 민감도(adjoint sensitivity)가 OOD 성능을 결정한다는 가설을 세웠습니다.\n- 정보 이론적으로 최적인 민감도를 근사하는 '유사 민감도(pseudo-sensitivities)'를 도입했습니다.\n- 민감도 조건부 베르누이 흐름 매칭 생성기로 가설을 실증적으로 검증했습니다.\n- 민감도 조건화가 구조 및 CFD-TO 벤치마크에서 최첨단 OOD 성능을 달성했습니다.",
+        "tags": [
+          "위상 최적화",
+          "OOD 일반화",
+          "민감도 분석",
+          "흐름 매칭"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.1061/jsendh.steng-16401",
+        "title": "CLT Layer Fall-Off under Fire: Numerical Models and Probabilistic Analysis",
+        "authors": [
+          "Tongchen Han",
+          "S. Tesfamariam"
+        ],
+        "summary": "This paper proposes an integrated framework for numerical modeling and probabilistic assessment of cross-laminated timber (CLT) layer fall-off under fire. First, a heat transfer modeling approach is developed to explicitly account for layer fall-off under standard fire exposure, where layer fall-off initiation is governed by a critical bond line temperature (CBLT) criterion. The developed numerical models are calibrated with published experimental data for CLT panels with varying configurations. Then, probabilistic models are established based on CBLT with an assumed probability distribution. The probabilistic layer fall-off time, temperature evolutions, and charring profiles of models are quantified. The variations of the section’s mechanical properties against exposure time are calculated, and a sequential thermal-mechanical analysis is performed. Subsequently, a surrogate model is trained to capture the relationship between the layer fall-off time and CBLT, and is coupled with Monte Carlo simulation (MCS) to evaluate the reliability of the post-protection factor, k 3 . Finally, the performance of the numerical model is tested on natural fire scenarios in terms of charring profiles and temperature histories.",
+        "categories": [],
+        "published": "2026-10-01T00:00:00+00:00",
+        "updated": "2026-10-01T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/518aad59a696d292cb65496d1aeb6df18d2b716b",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/518aad59a696d292cb65496d1aeb6df18d2b716b",
+        "tldr": null,
+        "matched_keywords": [
+          "surrogate model",
+          "mechanical",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "화재 시 CLT 층 낙하 현상: 수치 모델 및 확률론적 분석",
+        "summary_ko": "- 이 연구는 화재 시 CLT(Cross-Laminated Timber) 층 낙하 현상을 예측하는 통합 프레임워크를 제안합니다.\n- 표준 화재 노출 조건에서 층 낙하 시작은 임계 접착선 온도(CBLT) 기준으로 모델링됩니다.\n- 개발된 수치 모델은 기존 실험 데이터로 검증되었고, 확률 모델도 함께 구축되었습니다.\n- 층 낙하 시간, 온도 변화, 탄화 프로파일 및 기계적 특성 변화를 정량적으로 분석했습니다.\n- CBLT와 층 낙하 시간 관계를 포착하는 대리 모델로 보호 계수 k3의 신뢰성을 평가했습니다.",
+        "tags": [
+          "CLT",
+          "화재 안전",
+          "수치 모델링",
+          "확률론적 분석"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2607.28575",
+      "title": "Algorithms for Structured Elections under Thiele Voting Rules",
+      "authors": [
+        "Alexandra Lassota",
+        "Krzysztof Sornat"
+      ],
+      "summary": "We study the computational complexity of winner determination problems in approval-based committee elections under Thiele voting rules. These form a class of rules parameterized by a fixed weight vector that specifies how a voter's satisfaction depends on the number of approved candidates elected. We first analyze the structure of optimal solutions based on the sets of voters who approve each candidate---that is, how voters' approval ballots induce dependencies between candidates---revealing constraints on a winning committee under any fixed Thiele voting rule. Using this, we design FPT algorithms for Proportional Approval Voting (PAV) and other Thiele rules on a natural restricted domain known as the Voter Interval (VI) domain---that is, after a suitable ordering of voters, each candidate is approved by a consecutive interval of voters. In particular, we show that every Thiele rule on VI is FPT with respect to a parameter for which the problem is NP-hard on general instances, even when the parameter takes constant values. Our results advance the understanding of the computational complexity of PAV on Voter Interval instances, which remains one of the central open questions in this area. We further resolve two open questions from the literature on PAV (and other Thiele voting rules) by providing a polynomial-time algorithm for instances where each candidate is approved by at most two voters, and an FPT algorithm parameterized by the total score of a winning committee.",
+      "categories": [
+        "cs.GT",
+        "cs.AI",
+        "cs.DS",
+        "cs.MA"
+      ],
+      "published": "2026-07-30T17:37:14+00:00",
+      "updated": "2026-07-30T17:37:14+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.28575v1",
+      "abs_url": "https://arxiv.org/abs/2607.28575",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 2,
+      "influential_citation_count": 1,
+      "s2_url": "https://www.semanticscholar.org/paper/c68be5b714831dd26e8f989a70b5404a1f2646c1",
+      "tldr": "This work designs FPT algorithms for Proportional Approval Voting (PAV) and other Thiele rules on a natural restricted domain known as the Voter Interval domain and shows that every Thiele rule on Voter Interval is FPT with respect to a parameter for which the problem is NP-hard on general instances, even when the parameter takes constant values.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "틸레 투표 규칙 하의 구조화된 선거를 위한 알고리즘",
+      "summary_ko": "- 이 연구는 승인 기반 위원회 선거에서 틸레 투표 규칙(Thiele voting rules)의 당선자 결정 문제 복잡성을 다룹니다.\n- 후보자 승인 유권자 집합을 기반으로 최적 해의 구조를 분석하여 당선 위원회 제약을 밝힙니다.\n- 이를 활용해 유권자 간격(Voter Interval, VI) 도메인에서 PAV 및 다른 틸레 규칙에 대한 FPT 알고리즘을 설계합니다.\n- VI 도메인에서 모든 틸레 규칙은 특정 매개변수에 대해 FPT이며, 이는 일반적인 경우 NP-난해합니다.\n- 이 결과는 PAV의 계산 복잡도 이해를 높이고, 두 가지 미해결 질문에 대한 해답을 제시합니다.",
+      "tags": [
+        "틸레 투표 규칙",
+        "승인 투표",
+        "계산 복잡도",
+        "FPT 알고리즘"
+      ]
+    },
+    {
+      "arxiv_id": "2607.28624",
+      "title": "PhiZero: A World Model Built Around Physical Language",
+      "authors": [
+        "Shuyao Shang",
+        "Yuqi Wang",
+        "Ruopeng Gao",
+        "Xu Chen",
+        "Tieniu Tan",
+        "Lue Fan",
+        "Zhaoxiang Zhang"
+      ],
+      "summary": "We introduce PhiZero, a physical world model built around physical language, a compact discrete representation of world-state transitions. Existing physical world models typically predict future videos directly in pixel space, leaving the underlying world dynamics implicit within high-dimensional visual predictors. Motivated by humans' ability to abstract predictive structure from visual experience and organize it in natural language for explicit reasoning, we learn physical language from in-the-wild videos through self-supervision and use it to explicitly reason about how the physical world evolves. Accordingly, PhiZero adopts a reason-then-render paradigm: it first infers future world evolution as a physical-language sequence and then renders the inferred transitions into videos. Extensive experiments across generation and understanding benchmarks validate the ability of PhiZero to model physically coherent world evolution. We further show its potential for realistic and interactive world modeling, fine-grained action-conditioned simulation, and zero-shot motion transfer.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-30T17:59:46+00:00",
+      "updated": "2026-07-30T17:59:46+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2607.28624v1",
+      "abs_url": "https://arxiv.org/abs/2607.28624",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/dc0cbab345d1b7ab1d3db1e2f69c96f121109f11",
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 150,
+      "title_ko": "PhiZero: 물리 언어를 중심으로 구축된 세계 모델",
+      "summary_ko": "- 기존 물리 세계 모델은 픽셀 공간에서 미래 영상을 예측하여, 세계 역학이 시각 예측기 내에 암묵적으로 존재했습니다.\n- 본 연구는 물리 언어(physical language)라는 세계 상태 전환의 이산적 표현을 통해 물리 세계 모델 PhiZero를 제안합니다.\n- PhiZero는 실제 영상에서 자기 지도 학습으로 물리 언어를 학습하고, 이를 통해 세계 진화를 추론합니다.\n- PhiZero는 먼저 미래 세계 진화를 물리 언어 시퀀스로 추론한 다음, 이를 영상으로 렌더링합니다.\n- PhiZero는 물리적으로 일관된 세계 진화를 모델링하며, 현실적 상호작용 및 미세 제어 시뮬레이션 가능성을 보여줍니다.",
+      "tags": [
+        "세계 모델",
+        "물리 언어",
+        "자기 지도 학습",
+        "영상 생성"
+      ]
+    },
+    {
+      "arxiv_id": "2606.02179",
+      "title": "On the Generalization in Topology Optimization via Sensitivity-Conditioned Bernoulli Flow Matching",
+      "authors": [
+        "Mohammad Rashed",
+        "Duarte F. Valoroso Madeira",
+        "Babak Gholami",
+        "Caglar Guerbuez",
+        "Yunjia Yang",
+        "Nils Thuerey"
+      ],
+      "summary": "Surrogate models for topology optimization (TO) exhibit highly variable out-of-distribution (OOD) generalization under distribution shifts such as changing loads or boundary conditions, yet the source of this variability remains unclear. We hypothesize that OOD performance is governed by how much information the conditioning signal preserves about the adjoint sensitivity (reduced gradient) that drives classical TO. Modeling the TO pipeline as a causal Markov chain, the Data Processing Inequality establishes that, under this abstraction, the sensitivity field is an information-theoretically optimal conditioning signal for topology prediction. However, computing exact adjoint sensitivities can be expensive or unavailable in practice; we observe that certain physical fields can approximate sensitivities through monotone transformations. To formalize this, we introduce \\textbf{pseudo-sensitivities} to characterize which fields enable generalization versus those that are information-poor. We then show that a sensitivity-conditioned Bernoulli flow-matching generator empirically confirms these predictions: conditioning on sensitivities yields state-of-the-art OOD performance, while increasingly distant physical fields degrade toward raw parameter conditioning. Results hold across structural TO benchmarks under load shifts and our new CFD-TO dataset under boundary-condition shifts such as multi-outlet configurations. Code and datasets are available at https://tum-pbs.github.io/topotransformer/ .",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CE"
+      ],
+      "published": "2026-06-01T12:36:41+00:00",
+      "updated": "2026-06-01T12:36:41+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2606.02179v1",
+      "abs_url": "https://arxiv.org/abs/2606.02179",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/ed8f009848f758a45693db6cc9511a4b8a835abf",
+      "tldr": "Conference on sensitivities yields state-of-the-art OOD performance, while increasingly distant physical fields degrade toward raw parameter conditioning, and results hold across structural TO benchmarks under load shifts and the new CFD-TO dataset under boundary-condition shifts such as multi-outlet configurations.",
+      "matched_keywords": [
+        "surrogate model",
+        "structural",
+        "topology optimization",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "민감도 조건부 베르누이 흐름 매칭을 통한 위상 최적화의 일반화 연구",
+      "summary_ko": "- 위상 최적화(TO) 대리 모델은 분포 변화 시 OOD 일반화 성능이 가변적입니다.\n- 민감도(adjoint sensitivity)가 OOD 성능을 결정한다는 가설을 세웠습니다.\n- 정보 이론적으로 최적인 민감도를 근사하는 '유사 민감도(pseudo-sensitivities)'를 도입했습니다.\n- 민감도 조건부 베르누이 흐름 매칭 생성기로 가설을 실증적으로 검증했습니다.\n- 민감도 조건화가 구조 및 CFD-TO 벤치마크에서 최첨단 OOD 성능을 달성했습니다.",
+      "tags": [
+        "위상 최적화",
+        "OOD 일반화",
+        "민감도 분석",
+        "흐름 매칭"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1061/jsendh.steng-16401",
+      "title": "CLT Layer Fall-Off under Fire: Numerical Models and Probabilistic Analysis",
+      "authors": [
+        "Tongchen Han",
+        "S. Tesfamariam"
+      ],
+      "summary": "This paper proposes an integrated framework for numerical modeling and probabilistic assessment of cross-laminated timber (CLT) layer fall-off under fire. First, a heat transfer modeling approach is developed to explicitly account for layer fall-off under standard fire exposure, where layer fall-off initiation is governed by a critical bond line temperature (CBLT) criterion. The developed numerical models are calibrated with published experimental data for CLT panels with varying configurations. Then, probabilistic models are established based on CBLT with an assumed probability distribution. The probabilistic layer fall-off time, temperature evolutions, and charring profiles of models are quantified. The variations of the section’s mechanical properties against exposure time are calculated, and a sequential thermal-mechanical analysis is performed. Subsequently, a surrogate model is trained to capture the relationship between the layer fall-off time and CBLT, and is coupled with Monte Carlo simulation (MCS) to evaluate the reliability of the post-protection factor, k 3 . Finally, the performance of the numerical model is tested on natural fire scenarios in terms of charring profiles and temperature histories.",
+      "categories": [],
+      "published": "2026-10-01T00:00:00+00:00",
+      "updated": "2026-10-01T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/518aad59a696d292cb65496d1aeb6df18d2b716b",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/518aad59a696d292cb65496d1aeb6df18d2b716b",
+      "tldr": null,
+      "matched_keywords": [
+        "surrogate model",
+        "mechanical",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "화재 시 CLT 층 낙하 현상: 수치 모델 및 확률론적 분석",
+      "summary_ko": "- 이 연구는 화재 시 CLT(Cross-Laminated Timber) 층 낙하 현상을 예측하는 통합 프레임워크를 제안합니다.\n- 표준 화재 노출 조건에서 층 낙하 시작은 임계 접착선 온도(CBLT) 기준으로 모델링됩니다.\n- 개발된 수치 모델은 기존 실험 데이터로 검증되었고, 확률 모델도 함께 구축되었습니다.\n- 층 낙하 시간, 온도 변화, 탄화 프로파일 및 기계적 특성 변화를 정량적으로 분석했습니다.\n- CBLT와 층 낙하 시간 관계를 포착하는 대리 모델로 보호 계수 k3의 신뢰성을 평가했습니다.",
+      "tags": [
+        "CLT",
+        "화재 안전",
+        "수치 모델링",
+        "확률론적 분석"
+      ]
+    }
+  ]
+}
