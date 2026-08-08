@@ -1,0 +1,172 @@
+{
+  "week_id": "2026-08-10",
+  "generated_at": "2026-08-08T02:38:42.557974+00:00",
+  "publish_at": "2026-08-10T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [],
+    "mech": [
+      {
+        "arxiv_id": "doi:10.3390/en18205523",
+        "title": "Physics-Informed Machine Learning for Intelligent Gas Turbine Digital Twins: A Review",
+        "authors": [
+          "Hiyam Farhat",
+          "Amani Altarawneh"
+        ],
+        "summary": "This review surveys recent progress in hybrid artificial intelligence (AI) approaches for gas turbine intelligent digital twins, with an emphasis on models that integrate physics-based simulations and machine learning. The main contribution is the introduction of a structured classification of hybrid AI methods tailored to gas turbine applications, the development of a novel comparative maturity framework, and the proposal of a layered roadmap for integration. The classification organizes hybrid AI approaches into four categories: (1) artificial neural network (ANN)-augmented thermodynamic models, (2) physics-integrated operational architectures, (3) physics-constrained neural networks (PcNNs) with computational fluid dynamics (CFD) surrogates, and (4) generative and model discovery approaches. The maturity framework evaluates these categories across five criteria: data dependency, interpretability, deployment complexity, workflow integration, and real-time capability. Industrial case studies—including General Electric (GE) Vernova’s SmartSignal, Siemens’ Autonomous Turbine Operation and Maintenance (ATOM), and the Electric Power Research Institute (EPRI) turbine digital twin—illustrate applications in real-time diagnostics, predictive maintenance, and performance optimization. Together, the classification and maturity framework provide the means for systematic assessment of hybrid AI methods in gas turbine intelligent digital twins. The review concludes by identifying key challenges and outlining a roadmap for the future development of scalable, interpretable, and operationally robust intelligent digital twins for gas turbines.",
+        "categories": [],
+        "published": "2025-10-20T00:00:00+00:00",
+        "updated": "2025-10-20T00:00:00+00:00",
+        "pdf_url": "https://www.mdpi.com/1996-1073/18/20/5523/pdf?version=1760966369",
+        "abs_url": "https://www.semanticscholar.org/paper/6403c76330cfcee6a952bc7e0498fd80846b64bc",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 14,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/6403c76330cfcee6a952bc7e0498fd80846b64bc",
+        "tldr": null,
+        "matched_keywords": [
+          "machine learning",
+          "neural network",
+          "physics-informed",
+          "diagnostic",
+          "predictive maintenance",
+          "digital twin",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "지능형 가스터빈 디지털 트윈을 위한 물리 정보 머신러닝: 리뷰",
+        "summary_ko": "- 이 논문은 가스터빈 지능형 디지털 트윈을 위한 하이브리드 AI 접근법의 최근 발전을 검토합니다.\n- 물리 기반 시뮬레이션과 머신러닝을 통합한 모델에 중점을 둔 분류 체계를 제시합니다.\n- 하이브리드 AI를 4가지 범주로 나누고, 5가지 기준으로 성숙도를 평가하는 프레임워크를 개발했습니다.\n- GE Vernova SmartSignal 등 산업 사례를 통해 실시간 진단 및 예측 유지보수 적용을 보여줍니다.\n- 이 리뷰는 가스터빈 디지털 트윈의 미래 개발을 위한 과제와 로드맵을 제시합니다.",
+        "tags": [
+          "가스터빈",
+          "디지털 트윈",
+          "물리 정보 머신러닝",
+          "하이브리드 AI"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.1061/jenmdt.emeng-8960",
+        "title": "A Comprehensive Framework for Design and Optimization of Graded Metamaterials Subjected to Concentrated Bandwidth Excitations",
+        "authors": [
+          "J. Pereira",
+          "R. O. Ruiz"
+        ],
+        "summary": "This paper presents a comprehensive framework for the efficient design and optimization of graded mechanical metamaterials subjected to finite-bandwidth stochastic excitations. This task presents two significant challenges: the high computational cost of high-fidelity finite-element (FE) analyses and the high dimensionality of the design space for finite structures. The proposed framework overcomes these challenges by integrating three key components. First, a surrogate reduced-order model—based on a multiregion, Craig-Bampton component mode synthesis and a principal component analysis (PCA)/kriging predictor—is employed to rapidly and accurately predict the substructural reduced-order matrices. Second, a state-space stochastic excitation model is used, enabling the system’s performance (response variance) to be solved efficiently via the Lyapunov equation. Third, graded metamaterial parameterizations are used to reduce the high-dimensional geometry problem to a low-dimensional design vector. Bayesian optimization (BO) is then used to find the optimal grading parameters that minimize the vibration amplification. The framework is demonstrated on a two-dimensional (2D) metamaterial, where the surrogate model accuracy in predicting the stochastic performance is validated. The results reveal a critical trade-off between performance and computational cost. The optimal design parameterization is shown to be highly dependent on the excitation bandwidth. The framework is proven to be an effective tool for selecting the best design and optimization strategy under realistic stochastic conditions.",
+        "categories": [],
+        "published": "2026-10-01T00:00:00+00:00",
+        "updated": "2026-10-01T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/dacee751a5d112266eeed06b9baf9d75b6258bde",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/dacee751a5d112266eeed06b9baf9d75b6258bde",
+        "tldr": null,
+        "matched_keywords": [
+          "surrogate model",
+          "structural",
+          "vibrat",
+          "mechanical",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "집중된 대역폭 가진 여기(Excitation)에 노출된 등급형 메타물질 설계 및 최적화를 위한 포괄적 프레임워크",
+        "summary_ko": "- 이 연구는 유한 대역폭의 확률적 여기를 받는 등급형 기계 메타물질의 효율적인 설계 및 최적화 문제를 다룹니다.\n- 제안하는 프레임워크는 고비용의 유한요소(FE) 해석과 고차원 설계 공간 문제를 해결하기 위해 세 가지 핵심 요소를 통합합니다.\n- 다중 영역 Craig-Bampton 성분 모드 합성 및 PCA/크리깅 예측기를 기반으로 한 대리 축소 모델을 활용하여 성능을 예측합니다.\n- 베이즈 최적화(BO)를 사용하여 진동 증폭을 최소화하는 최적의 등급화 매개변수를 찾습니다.\n- 이 프레임워크는 현실적인 확률적 조건에서 최적의 설계 및 최적화 전략을 선택하는 효과적인 도구임을 입증합니다.",
+        "tags": [
+          "등급형 메타물질",
+          "베이즈 최적화",
+          "축소 모델",
+          "확률적 여기"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "doi:10.3390/en18205523",
+      "title": "Physics-Informed Machine Learning for Intelligent Gas Turbine Digital Twins: A Review",
+      "authors": [
+        "Hiyam Farhat",
+        "Amani Altarawneh"
+      ],
+      "summary": "This review surveys recent progress in hybrid artificial intelligence (AI) approaches for gas turbine intelligent digital twins, with an emphasis on models that integrate physics-based simulations and machine learning. The main contribution is the introduction of a structured classification of hybrid AI methods tailored to gas turbine applications, the development of a novel comparative maturity framework, and the proposal of a layered roadmap for integration. The classification organizes hybrid AI approaches into four categories: (1) artificial neural network (ANN)-augmented thermodynamic models, (2) physics-integrated operational architectures, (3) physics-constrained neural networks (PcNNs) with computational fluid dynamics (CFD) surrogates, and (4) generative and model discovery approaches. The maturity framework evaluates these categories across five criteria: data dependency, interpretability, deployment complexity, workflow integration, and real-time capability. Industrial case studies—including General Electric (GE) Vernova’s SmartSignal, Siemens’ Autonomous Turbine Operation and Maintenance (ATOM), and the Electric Power Research Institute (EPRI) turbine digital twin—illustrate applications in real-time diagnostics, predictive maintenance, and performance optimization. Together, the classification and maturity framework provide the means for systematic assessment of hybrid AI methods in gas turbine intelligent digital twins. The review concludes by identifying key challenges and outlining a roadmap for the future development of scalable, interpretable, and operationally robust intelligent digital twins for gas turbines.",
+      "categories": [],
+      "published": "2025-10-20T00:00:00+00:00",
+      "updated": "2025-10-20T00:00:00+00:00",
+      "pdf_url": "https://www.mdpi.com/1996-1073/18/20/5523/pdf?version=1760966369",
+      "abs_url": "https://www.semanticscholar.org/paper/6403c76330cfcee6a952bc7e0498fd80846b64bc",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 14,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/6403c76330cfcee6a952bc7e0498fd80846b64bc",
+      "tldr": null,
+      "matched_keywords": [
+        "machine learning",
+        "neural network",
+        "physics-informed",
+        "diagnostic",
+        "predictive maintenance",
+        "digital twin",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "지능형 가스터빈 디지털 트윈을 위한 물리 정보 머신러닝: 리뷰",
+      "summary_ko": "- 이 논문은 가스터빈 지능형 디지털 트윈을 위한 하이브리드 AI 접근법의 최근 발전을 검토합니다.\n- 물리 기반 시뮬레이션과 머신러닝을 통합한 모델에 중점을 둔 분류 체계를 제시합니다.\n- 하이브리드 AI를 4가지 범주로 나누고, 5가지 기준으로 성숙도를 평가하는 프레임워크를 개발했습니다.\n- GE Vernova SmartSignal 등 산업 사례를 통해 실시간 진단 및 예측 유지보수 적용을 보여줍니다.\n- 이 리뷰는 가스터빈 디지털 트윈의 미래 개발을 위한 과제와 로드맵을 제시합니다.",
+      "tags": [
+        "가스터빈",
+        "디지털 트윈",
+        "물리 정보 머신러닝",
+        "하이브리드 AI"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1061/jenmdt.emeng-8960",
+      "title": "A Comprehensive Framework for Design and Optimization of Graded Metamaterials Subjected to Concentrated Bandwidth Excitations",
+      "authors": [
+        "J. Pereira",
+        "R. O. Ruiz"
+      ],
+      "summary": "This paper presents a comprehensive framework for the efficient design and optimization of graded mechanical metamaterials subjected to finite-bandwidth stochastic excitations. This task presents two significant challenges: the high computational cost of high-fidelity finite-element (FE) analyses and the high dimensionality of the design space for finite structures. The proposed framework overcomes these challenges by integrating three key components. First, a surrogate reduced-order model—based on a multiregion, Craig-Bampton component mode synthesis and a principal component analysis (PCA)/kriging predictor—is employed to rapidly and accurately predict the substructural reduced-order matrices. Second, a state-space stochastic excitation model is used, enabling the system’s performance (response variance) to be solved efficiently via the Lyapunov equation. Third, graded metamaterial parameterizations are used to reduce the high-dimensional geometry problem to a low-dimensional design vector. Bayesian optimization (BO) is then used to find the optimal grading parameters that minimize the vibration amplification. The framework is demonstrated on a two-dimensional (2D) metamaterial, where the surrogate model accuracy in predicting the stochastic performance is validated. The results reveal a critical trade-off between performance and computational cost. The optimal design parameterization is shown to be highly dependent on the excitation bandwidth. The framework is proven to be an effective tool for selecting the best design and optimization strategy under realistic stochastic conditions.",
+      "categories": [],
+      "published": "2026-10-01T00:00:00+00:00",
+      "updated": "2026-10-01T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/dacee751a5d112266eeed06b9baf9d75b6258bde",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/dacee751a5d112266eeed06b9baf9d75b6258bde",
+      "tldr": null,
+      "matched_keywords": [
+        "surrogate model",
+        "structural",
+        "vibrat",
+        "mechanical",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "집중된 대역폭 가진 여기(Excitation)에 노출된 등급형 메타물질 설계 및 최적화를 위한 포괄적 프레임워크",
+      "summary_ko": "- 이 연구는 유한 대역폭의 확률적 여기를 받는 등급형 기계 메타물질의 효율적인 설계 및 최적화 문제를 다룹니다.\n- 제안하는 프레임워크는 고비용의 유한요소(FE) 해석과 고차원 설계 공간 문제를 해결하기 위해 세 가지 핵심 요소를 통합합니다.\n- 다중 영역 Craig-Bampton 성분 모드 합성 및 PCA/크리깅 예측기를 기반으로 한 대리 축소 모델을 활용하여 성능을 예측합니다.\n- 베이즈 최적화(BO)를 사용하여 진동 증폭을 최소화하는 최적의 등급화 매개변수를 찾습니다.\n- 이 프레임워크는 현실적인 확률적 조건에서 최적의 설계 및 최적화 전략을 선택하는 효과적인 도구임을 입증합니다.",
+      "tags": [
+        "등급형 메타물질",
+        "베이즈 최적화",
+        "축소 모델",
+        "확률적 여기"
+      ]
+    }
+  ]
+}
