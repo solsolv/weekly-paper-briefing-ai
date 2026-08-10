@@ -445,8 +445,16 @@
   </div>
   <div data-gate-content>
   <div class="toc reveal">
-    <div class="toc-title">이번 주 2편</div>
+    <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
+        <a href="#p-2608.06151">
+          <span class="badge ai">AI</span>
+          <span>대규모 언어 모델을 활용하여 전개 중인 음모론에 대한 믿음 줄이기</span>
+        </a>
+        <a href="#p-2608.05987">
+          <span class="badge ai">AI</span>
+          <span>AgentOPSD: 에이전트 강화 학습을 위한 재귀적 자기 증류</span>
+        </a>
         <a href="#p-doi:10.3390/en18205523">
           <span class="badge mech">AI 활용 기계공학</span>
           <span>지능형 가스터빈 디지털 트윈을 위한 물리 정보 머신러닝: 리뷰</span>
@@ -464,6 +472,44 @@
     <button class="filter-btn" data-track="mech" type="button">AI 활용 기계공학</button>
   </div>
 
+      <section class="track-section" data-track-block="ai">
+        <h2 class="reveal">
+          AI
+          <span class="badge ai">2편</span>
+        </h2>
+          <article class="paper ai reveal" id="p-2608.06151" style="transition-delay: 0ms;">
+            <div class="meta">
+              cs.HC, cs.AI · 발표 2026-08-06<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2608.06151" target="_blank" rel="noopener">Reducing belief in conspiracy theories as they unfold using large language models</a></h3>
+<p class="title-ko">대규모 언어 모델을 활용하여 전개 중인 음모론에 대한 믿음 줄이기</p>            <div class="authors">Thomas H. Costello, Nathaniel Rabb, Michael Nicholas Stagnaro, Gordon Pennycook, David Rand</div>
+            <div class="stats">
+<span class="chip">인용 2</span><span class="chip">영향력 인용 1</span>            </div>
+            <div class="summary">
+              <ul>
+<li>주요 사건 발생 후 나타나는 음모론은 심각한 사회적 문제로, 이를 해결할 방법이 필요합니다.</li><li>본 연구는 대규모 언어 모델(LLM)과의 대화가 실시간으로 전개되는 음모론에 대한 믿음을 줄일 수 있는지 실험했습니다.</li><li>LLM은 Donald Trump 암살 시도와 Charlie Kirk 암살 사건 직후 음모론적 견해를 가진 참가자들과 대화했습니다.</li><li>LLM 치료 그룹은 대조군(무관한 주제 대화 또는 정적 팩트 시트)보다 음모론 믿음이 유의미하게 감소했습니다.</li><li>LLM 기반 개입은 새로운 음모론 확산을 막고, 대규모로 적용 가능한 오정보 대응책이 될 잠재력이 있습니다.</li>              </ul>
+            </div>
+<div class="tags"><span class="tag">#음모론</span><span class="tag">#대규모 언어 모델</span><span class="tag">#오정보</span><span class="tag">#사회심리학</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2608.06151" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2608.06151v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/64f6dde853400809308d337a329c3a9a94df400d" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper ai reveal" id="p-2608.05987" style="transition-delay: 60ms;">
+            <div class="meta">
+              cs.AI, cs.LG · 발표 2026-08-06<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2608.05987" target="_blank" rel="noopener">AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning</a></h3>
+<p class="title-ko">AgentOPSD: 에이전트 강화 학습을 위한 재귀적 자기 증류</p>            <div class="authors">Zi-Han Wang, Zhengxi Lu, Zhiyuan Yao, Jinyang Wu, Jie Wu, Zhengzhou Cai, Yueqing Sun, Ziang Ye 외 5명</div>
+            <div class="stats">
+<span class="chip">HF upvotes 85</span>            </div>
+            <div class="summary">
+              <ul>
+<li>기존 강화 학습은 장기적인 에이전트 작업에서 핵심 결정에 대한 보상 할당에 어려움이 있습니다.</li><li>이 연구는 에이전트 강화 학습에서 턴(turn) 단위 보상 할당을 위한 AgentOPSD를 제안합니다.</li><li>AgentOPSD는 토큰 수준의 확률 차이를 턴 수준 증거로 모아 베이즈 신념 상태를 재귀적으로 갱신합니다.</li><li>ALFWorld, WebShop 등에서 Qwen2.5 모델로 평가한 결과, ALFWorld에서 89.1% 성공률을 달성했습니다.</li><li>이 방법은 비평가(critic)나 추가 탐색 없이 작동하며, 턴 단위 보상 할당의 효율성을 높입니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This work proposes AgentOPSD, a critic-free, recursive method for turn-level credit assignment in agentic reinforcement learning that aggregates token-level teacher-student log-probability gaps into turn-level evidence and recursively updates a Bayesian belief state in log-odds space.</div><div class="tags"><span class="tag">#강화 학습</span><span class="tag">#자기 증류</span><span class="tag">#보상 할당</span><span class="tag">#에이전트 AI</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2608.05987" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2608.05987v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/d9b248d010fe130806c2c37ef96769ed786ab01b" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+      </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
           AI 활용 기계공학
@@ -523,7 +569,7 @@
     })();
   </script>
   <footer class="site">
-    <p>자동 생성 · 2026-08-08 02:38 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+    <p>자동 생성 · 2026-08-10 00:37 UTC · arXiv + Semantic Scholar + LLM 요약</p>
   </footer>
 </div>
 <script>

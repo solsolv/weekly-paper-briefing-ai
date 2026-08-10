@@ -1,13 +1,98 @@
 {
   "week_id": "2026-08-10",
-  "generated_at": "2026-08-08T02:38:42.557974+00:00",
+  "generated_at": "2026-08-10T00:37:39.920352+00:00",
   "publish_at": "2026-08-10T08:00:00+09:00",
   "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
   "provider": "openai_compat",
   "impact_lookback_days": 365,
   "latest_lookback_days": 14,
   "tracks": {
-    "ai": [],
+    "ai": [
+      {
+        "arxiv_id": "2608.06151",
+        "title": "Reducing belief in conspiracy theories as they unfold using large language models",
+        "authors": [
+          "Thomas H. Costello",
+          "Nathaniel Rabb",
+          "Michael Nicholas Stagnaro",
+          "Gordon Pennycook",
+          "David Rand"
+        ],
+        "summary": "The emergence of conspiracy theories in the wake of major events is a significant societal challenge. Here we test whether conversational dialogues with a large language model (LLM) can reduce belief in immediately unfolding conspiracies. In experiments conducted in the days following the July 2024 assassination attempt on Donald Trump and the September 2025 assassination of Charlie Kirk, U.S. adults (Experiment 1: N = 472; Experiment 2: N = 1035) holding conspiratorial views about the crisis event engaged in a multi-turn conversation with an LLM prompted to reduce their conspiracy belief. Compared to control participants who either discussed an irrelevant topic with an LLM or viewed a static fact sheet, participants in the LLM treatment showed significantly reduced conspiracy beliefs in both experiments. We also found evidence of downstream effects of the LLM treatment, observing reduced belief in different conspiracies one to two months later in the wake of subsequent crisis events. These results shed light on the psychology of emerging conspiracies and highlight the potential for scalable, cognitively-focused interventions to counteract misinformation in the immediate aftermath of high-profile societal events.",
+        "categories": [
+          "cs.HC",
+          "cs.AI"
+        ],
+        "published": "2026-08-06T15:18:50+00:00",
+        "updated": "2026-08-06T15:18:50+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2608.06151v1",
+        "abs_url": "https://arxiv.org/abs/2608.06151",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 2,
+        "influential_citation_count": 1,
+        "s2_url": "https://www.semanticscholar.org/paper/64f6dde853400809308d337a329c3a9a94df400d",
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "대규모 언어 모델을 활용하여 전개 중인 음모론에 대한 믿음 줄이기",
+        "summary_ko": "- 주요 사건 발생 후 나타나는 음모론은 심각한 사회적 문제로, 이를 해결할 방법이 필요합니다.\n- 본 연구는 대규모 언어 모델(LLM)과의 대화가 실시간으로 전개되는 음모론에 대한 믿음을 줄일 수 있는지 실험했습니다.\n- LLM은 Donald Trump 암살 시도와 Charlie Kirk 암살 사건 직후 음모론적 견해를 가진 참가자들과 대화했습니다.\n- LLM 치료 그룹은 대조군(무관한 주제 대화 또는 정적 팩트 시트)보다 음모론 믿음이 유의미하게 감소했습니다.\n- LLM 기반 개입은 새로운 음모론 확산을 막고, 대규모로 적용 가능한 오정보 대응책이 될 잠재력이 있습니다.",
+        "tags": [
+          "음모론",
+          "대규모 언어 모델",
+          "오정보",
+          "사회심리학"
+        ]
+      },
+      {
+        "arxiv_id": "2608.05987",
+        "title": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning",
+        "authors": [
+          "Zi-Han Wang",
+          "Zhengxi Lu",
+          "Zhiyuan Yao",
+          "Jinyang Wu",
+          "Jie Wu",
+          "Zhengzhou Cai",
+          "Yueqing Sun",
+          "Ziang Ye",
+          "Linji Hao",
+          "Qi Gu",
+          "Xunliang Cai",
+          "Yongliang Shen",
+          "Yujiu Yang"
+        ],
+        "summary": "Reinforcement learning (RL) with verifiable rewards constructs trajectory-level advantage estimates, yet it often fails to credit the few pivotal decisions that determine outcomes in long-horizon, multi-turn agentic tasks. Recent work introduces privileged self-distillation for credit assignment, providing denser supervision, but it remains unclear how such local signals should represent sequential credit. We propose AgentOPSD, a critic-free, recursive method for turn-level credit assignment in agentic reinforcement learning. AgentOPSD aggregates token-level teacher-student log-probability gaps into turn-level evidence and recursively updates a Bayesian belief state in log-odds space. This yields a principled reweighting scheme that converts sparse outcome supervision into turn-level credit signals and identifies pivotal turns through the marginal belief revision between consecutive states. The method is fully compatible with standard policy optimization and requires neither an additional critic nor extra rollouts. We evaluate AgentOPSD on ALFWorld, WebShop, and Search-QA using Qwen2.5 models at two scales (3B and 7B). AgentOPSD outperforms GRPO and strong self-distillation baselines, achieving 89.1% success on ALFWorld with Qwen2.5-7B. Ablation studies attribute the gains to turn-level aggregation and history-dependent recursive belief updates.",
+        "categories": [
+          "cs.AI",
+          "cs.LG"
+        ],
+        "published": "2026-08-06T13:00:59+00:00",
+        "updated": "2026-08-06T13:00:59+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2608.05987v1",
+        "abs_url": "https://arxiv.org/abs/2608.05987",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/d9b248d010fe130806c2c37ef96769ed786ab01b",
+        "tldr": "This work proposes AgentOPSD, a critic-free, recursive method for turn-level credit assignment in agentic reinforcement learning that aggregates token-level teacher-student log-probability gaps into turn-level evidence and recursively updates a Bayesian belief state in log-odds space.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 85,
+        "title_ko": "AgentOPSD: 에이전트 강화 학습을 위한 재귀적 자기 증류",
+        "summary_ko": "- 기존 강화 학습은 장기적인 에이전트 작업에서 핵심 결정에 대한 보상 할당에 어려움이 있습니다.\n- 이 연구는 에이전트 강화 학습에서 턴(turn) 단위 보상 할당을 위한 AgentOPSD를 제안합니다.\n- AgentOPSD는 토큰 수준의 확률 차이를 턴 수준 증거로 모아 베이즈 신념 상태를 재귀적으로 갱신합니다.\n- ALFWorld, WebShop 등에서 Qwen2.5 모델로 평가한 결과, ALFWorld에서 89.1% 성공률을 달성했습니다.\n- 이 방법은 비평가(critic)나 추가 탐색 없이 작동하며, 턴 단위 보상 할당의 효율성을 높입니다.",
+        "tags": [
+          "강화 학습",
+          "자기 증류",
+          "보상 할당",
+          "에이전트 AI"
+        ]
+      }
+    ],
     "mech": [
       {
         "arxiv_id": "doi:10.3390/en18205523",
@@ -90,6 +175,90 @@
     ]
   },
   "papers": [
+    {
+      "arxiv_id": "2608.06151",
+      "title": "Reducing belief in conspiracy theories as they unfold using large language models",
+      "authors": [
+        "Thomas H. Costello",
+        "Nathaniel Rabb",
+        "Michael Nicholas Stagnaro",
+        "Gordon Pennycook",
+        "David Rand"
+      ],
+      "summary": "The emergence of conspiracy theories in the wake of major events is a significant societal challenge. Here we test whether conversational dialogues with a large language model (LLM) can reduce belief in immediately unfolding conspiracies. In experiments conducted in the days following the July 2024 assassination attempt on Donald Trump and the September 2025 assassination of Charlie Kirk, U.S. adults (Experiment 1: N = 472; Experiment 2: N = 1035) holding conspiratorial views about the crisis event engaged in a multi-turn conversation with an LLM prompted to reduce their conspiracy belief. Compared to control participants who either discussed an irrelevant topic with an LLM or viewed a static fact sheet, participants in the LLM treatment showed significantly reduced conspiracy beliefs in both experiments. We also found evidence of downstream effects of the LLM treatment, observing reduced belief in different conspiracies one to two months later in the wake of subsequent crisis events. These results shed light on the psychology of emerging conspiracies and highlight the potential for scalable, cognitively-focused interventions to counteract misinformation in the immediate aftermath of high-profile societal events.",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "published": "2026-08-06T15:18:50+00:00",
+      "updated": "2026-08-06T15:18:50+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2608.06151v1",
+      "abs_url": "https://arxiv.org/abs/2608.06151",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 2,
+      "influential_citation_count": 1,
+      "s2_url": "https://www.semanticscholar.org/paper/64f6dde853400809308d337a329c3a9a94df400d",
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "대규모 언어 모델을 활용하여 전개 중인 음모론에 대한 믿음 줄이기",
+      "summary_ko": "- 주요 사건 발생 후 나타나는 음모론은 심각한 사회적 문제로, 이를 해결할 방법이 필요합니다.\n- 본 연구는 대규모 언어 모델(LLM)과의 대화가 실시간으로 전개되는 음모론에 대한 믿음을 줄일 수 있는지 실험했습니다.\n- LLM은 Donald Trump 암살 시도와 Charlie Kirk 암살 사건 직후 음모론적 견해를 가진 참가자들과 대화했습니다.\n- LLM 치료 그룹은 대조군(무관한 주제 대화 또는 정적 팩트 시트)보다 음모론 믿음이 유의미하게 감소했습니다.\n- LLM 기반 개입은 새로운 음모론 확산을 막고, 대규모로 적용 가능한 오정보 대응책이 될 잠재력이 있습니다.",
+      "tags": [
+        "음모론",
+        "대규모 언어 모델",
+        "오정보",
+        "사회심리학"
+      ]
+    },
+    {
+      "arxiv_id": "2608.05987",
+      "title": "AgentOPSD: Recursive Self-Distillation for Agentic Reinforcement Learning",
+      "authors": [
+        "Zi-Han Wang",
+        "Zhengxi Lu",
+        "Zhiyuan Yao",
+        "Jinyang Wu",
+        "Jie Wu",
+        "Zhengzhou Cai",
+        "Yueqing Sun",
+        "Ziang Ye",
+        "Linji Hao",
+        "Qi Gu",
+        "Xunliang Cai",
+        "Yongliang Shen",
+        "Yujiu Yang"
+      ],
+      "summary": "Reinforcement learning (RL) with verifiable rewards constructs trajectory-level advantage estimates, yet it often fails to credit the few pivotal decisions that determine outcomes in long-horizon, multi-turn agentic tasks. Recent work introduces privileged self-distillation for credit assignment, providing denser supervision, but it remains unclear how such local signals should represent sequential credit. We propose AgentOPSD, a critic-free, recursive method for turn-level credit assignment in agentic reinforcement learning. AgentOPSD aggregates token-level teacher-student log-probability gaps into turn-level evidence and recursively updates a Bayesian belief state in log-odds space. This yields a principled reweighting scheme that converts sparse outcome supervision into turn-level credit signals and identifies pivotal turns through the marginal belief revision between consecutive states. The method is fully compatible with standard policy optimization and requires neither an additional critic nor extra rollouts. We evaluate AgentOPSD on ALFWorld, WebShop, and Search-QA using Qwen2.5 models at two scales (3B and 7B). AgentOPSD outperforms GRPO and strong self-distillation baselines, achieving 89.1% success on ALFWorld with Qwen2.5-7B. Ablation studies attribute the gains to turn-level aggregation and history-dependent recursive belief updates.",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-06T13:00:59+00:00",
+      "updated": "2026-08-06T13:00:59+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2608.05987v1",
+      "abs_url": "https://arxiv.org/abs/2608.05987",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/d9b248d010fe130806c2c37ef96769ed786ab01b",
+      "tldr": "This work proposes AgentOPSD, a critic-free, recursive method for turn-level credit assignment in agentic reinforcement learning that aggregates token-level teacher-student log-probability gaps into turn-level evidence and recursively updates a Bayesian belief state in log-odds space.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 85,
+      "title_ko": "AgentOPSD: 에이전트 강화 학습을 위한 재귀적 자기 증류",
+      "summary_ko": "- 기존 강화 학습은 장기적인 에이전트 작업에서 핵심 결정에 대한 보상 할당에 어려움이 있습니다.\n- 이 연구는 에이전트 강화 학습에서 턴(turn) 단위 보상 할당을 위한 AgentOPSD를 제안합니다.\n- AgentOPSD는 토큰 수준의 확률 차이를 턴 수준 증거로 모아 베이즈 신념 상태를 재귀적으로 갱신합니다.\n- ALFWorld, WebShop 등에서 Qwen2.5 모델로 평가한 결과, ALFWorld에서 89.1% 성공률을 달성했습니다.\n- 이 방법은 비평가(critic)나 추가 탐색 없이 작동하며, 턴 단위 보상 할당의 효율성을 높입니다.",
+      "tags": [
+        "강화 학습",
+        "자기 증류",
+        "보상 할당",
+        "에이전트 AI"
+      ]
+    },
     {
       "arxiv_id": "doi:10.3390/en18205523",
       "title": "Physics-Informed Machine Learning for Intelligent Gas Turbine Digital Twins: A Review",
