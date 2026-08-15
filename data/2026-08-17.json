@@ -1,0 +1,196 @@
+{
+  "week_id": "2026-08-17",
+  "generated_at": "2026-08-15T02:24:21.161364+00:00",
+  "publish_at": "2026-08-17T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [],
+    "mech": [
+      {
+        "arxiv_id": "2608.11447",
+        "title": "Predicting Mechanical Properties of Lignin-Containing Polyurethane Rigid Foams from Microstructure Using Convolutional Neural Networks",
+        "authors": [
+          "Ilige S. Hage",
+          "Charbel Y. Seif",
+          "Jose Enrico Q. Quinsaat",
+          "Daniel J. van de Pas",
+          "Richard Vendamme",
+          "Walter Eeversd",
+          "Karolien Vanbroekhovend",
+          "Elias Feghalid"
+        ],
+        "summary": "Bio-based alternatives for conventional rigid foams have proven to be good substituents owing to their enhanced sustainability and competitive performance. However, because their manufacturing processes are complex and destructive testing is often impractical, this study investigates whether microstructural features can be correlated with mechanical properties in lignin-containing rigid polyurethane (PU) foams using machine-learning approaches. Various types and percentages of lignin-based polyols were investigated as a partial polyol replacement. Scanning electron microscopy (SEM) images and corresponding mechanical compression data were used to train a custom state-of-art dual-head convolutional neural network (CNN) targeting the specific prediction of density, specific compression modulus, specific yield strength, and specific compression strength. The CNN was optimized with a weighted multi-output loss function, achieving strong predictive performance R2 values ranging from 0.850 to 0.91 and correlation coefficients above 0.92 while maintaining mean absolute error percentages below 9%. This proves the trained network capability to predict and capture morphological features governing load bearing responses. On the other hand, Grad-CAM visualization revealed that the network focused its predictions on physically meaningful microstructural regions such as cell walls and strut junctions, which confirm that the proposed network can be classified as an interpretable, non-destructive and data-driven framework for predicting and understanding bio-based PU foams mechanical behavior, hence reducing the inconvenience caused by time consuming manufacturing and destructive testing.",
+        "categories": [
+          "cs.CE",
+          "cond-mat.mtrl-sci"
+        ],
+        "published": "2026-08-11T21:25:22+00:00",
+        "updated": "2026-08-11T21:25:22+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2608.11447v1",
+        "abs_url": "https://arxiv.org/abs/2608.11447",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/88df7f04ad3e589b134a8674750270c73dfbcb6d",
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "data-driven",
+          "structural",
+          "mechanical",
+          "relevance:0.80"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "CNN을 이용한 미세구조로부터 리그닌 함유 폴리우레탄 경질 폼의 기계적 특성 예측",
+        "summary_ko": "- 바이오 기반 경질 폼은 지속 가능성과 성능이 우수하지만, 복잡한 제조 과정과 파괴 시험의 어려움이 있습니다.\n- 이 연구는 리그닌 함유 폴리우레탄(PU) 폼의 미세구조와 기계적 특성 간의 상관관계를 머신러닝으로 분석합니다.\n- 주사전자현미경(SEM) 이미지와 압축 데이터를 활용하여 맞춤형 이중 헤드 CNN을 훈련시켰습니다.\n- CNN은 밀도, 압축 탄성 계수, 항복 강도, 압축 강도를 예측하며, R2 값 0.850~0.91, 상관계수 0.92 이상을 달성했습니다.\n- 이 비파괴적이고 데이터 기반 프레임워크는 바이오 기반 PU 폼의 기계적 거동을 예측하고 이해하는 데 기여합니다.",
+        "tags": [
+          "기계적 특성 예측",
+          "컨볼루션 신경망",
+          "리그닌",
+          "폴리우레탄 폼"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.3390/jmse14161495",
+        "title": "Multicrack Fatigue Life Prediction Based on Dynamic Bayesian Networks",
+        "authors": [
+          "Yitao Wang",
+          "Weidong Zhao",
+          "Zichen Xiao",
+          "Yifan Wang"
+        ],
+        "summary": "To address the challenge of fatigue life prediction caused by multiple-crack interactions in ship and offshore structures, this study proposes a dynamic Bayesian network (DBN)-based method for predicting the fatigue life of structures with multiple cracks, which is systematically validated through physical experiments. First, a numerical model of a representative structure containing a central hole and multiple initial cracks was established based on the coupled simulation platform of ABAQUS and Franc3D. The nonlinear interaction behavior among multiple cracks under different geometric configurations was systematically investigated. Subsequently, a neural network surrogate model was developed, in which geometric features and crack lengths were employed as inputs and key fracture mechanics parameters were taken as outputs, enabling efficient prediction of complex stress intensity factor (SIF) fields. On this basis, fatigue crack growth experiments were conducted on DH36 high-strength steel specimens containing multiple cracks, and crack evolution data under realistic cyclic loading conditions were obtained. Finally, by coupling the surrogate model with the Paris law as the state transition equation and incorporating sparse experimental observations as dynamic updating information, a dynamic Bayesian network framework based on the particle filtering algorithm was established. This framework enables posterior probability tracking of multiple-crack fatigue states and rolling prediction of the remaining fatigue life. The results demonstrate that the proposed method can effectively mitigate the error accumulation associated with deterministic simulation models during long-term open-loop prediction while relying only on a limited number of discrete observation anchors. Consequently, the prediction accuracy of the fatigue life of multiple-crack systems is significantly improved. Furthermore, under crack co-propagation conditions, the proposed framework exhibits a strong capability to capture the propagation retardation of secondary cracks induced by shielding effects. The proposed method provides a theoretical foundation and technical support for the dynamic assessment of fatigue damage and the development of digital twins for complex structures containing multiple cracks.",
+        "categories": [],
+        "published": "2026-08-12T00:00:00+00:00",
+        "updated": "2026-08-12T00:00:00+00:00",
+        "pdf_url": "https://doi.org/10.3390/jmse14161495",
+        "abs_url": "https://www.semanticscholar.org/paper/ce4aa05a3223bc1ccfa014d82d43b8a37974bb13",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/ce4aa05a3223bc1ccfa014d82d43b8a37974bb13",
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "surrogate model",
+          "stress",
+          "fatigue",
+          "fracture",
+          "crack",
+          "digital twin",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "동적 베이즈 네트워크 기반 다중 균열 피로 수명 예측",
+        "summary_ko": "- 선박 및 해양 구조물의 다중 균열 상호작용으로 인한 피로 수명 예측의 어려움을 해결합니다.\n- 동적 베이즈 네트워크(DBN)를 활용하여 다중 균열 구조물의 피로 수명을 예측하는 방법을 제안합니다.\n- ABAQUS 및 Franc3D 시뮬레이션과 신경망 대리 모델로 응력 확대 계수(SIF)를 효율적으로 예측합니다.\n- DH36 고강도강 실험을 통해 실제 균열 진화 데이터를 얻고, 제안 방법의 정확도를 검증했습니다.\n- 이 방법은 장기 예측 오류를 줄이고, 다중 균열 시스템의 피로 수명 예측 정확도를 크게 향상합니다.",
+        "tags": [
+          "피로 수명 예측",
+          "동적 베이즈 네트워크",
+          "다중 균열",
+          "파괴 역학"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2608.11447",
+      "title": "Predicting Mechanical Properties of Lignin-Containing Polyurethane Rigid Foams from Microstructure Using Convolutional Neural Networks",
+      "authors": [
+        "Ilige S. Hage",
+        "Charbel Y. Seif",
+        "Jose Enrico Q. Quinsaat",
+        "Daniel J. van de Pas",
+        "Richard Vendamme",
+        "Walter Eeversd",
+        "Karolien Vanbroekhovend",
+        "Elias Feghalid"
+      ],
+      "summary": "Bio-based alternatives for conventional rigid foams have proven to be good substituents owing to their enhanced sustainability and competitive performance. However, because their manufacturing processes are complex and destructive testing is often impractical, this study investigates whether microstructural features can be correlated with mechanical properties in lignin-containing rigid polyurethane (PU) foams using machine-learning approaches. Various types and percentages of lignin-based polyols were investigated as a partial polyol replacement. Scanning electron microscopy (SEM) images and corresponding mechanical compression data were used to train a custom state-of-art dual-head convolutional neural network (CNN) targeting the specific prediction of density, specific compression modulus, specific yield strength, and specific compression strength. The CNN was optimized with a weighted multi-output loss function, achieving strong predictive performance R2 values ranging from 0.850 to 0.91 and correlation coefficients above 0.92 while maintaining mean absolute error percentages below 9%. This proves the trained network capability to predict and capture morphological features governing load bearing responses. On the other hand, Grad-CAM visualization revealed that the network focused its predictions on physically meaningful microstructural regions such as cell walls and strut junctions, which confirm that the proposed network can be classified as an interpretable, non-destructive and data-driven framework for predicting and understanding bio-based PU foams mechanical behavior, hence reducing the inconvenience caused by time consuming manufacturing and destructive testing.",
+      "categories": [
+        "cs.CE",
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-08-11T21:25:22+00:00",
+      "updated": "2026-08-11T21:25:22+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2608.11447v1",
+      "abs_url": "https://arxiv.org/abs/2608.11447",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/88df7f04ad3e589b134a8674750270c73dfbcb6d",
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "data-driven",
+        "structural",
+        "mechanical",
+        "relevance:0.80"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "CNN을 이용한 미세구조로부터 리그닌 함유 폴리우레탄 경질 폼의 기계적 특성 예측",
+      "summary_ko": "- 바이오 기반 경질 폼은 지속 가능성과 성능이 우수하지만, 복잡한 제조 과정과 파괴 시험의 어려움이 있습니다.\n- 이 연구는 리그닌 함유 폴리우레탄(PU) 폼의 미세구조와 기계적 특성 간의 상관관계를 머신러닝으로 분석합니다.\n- 주사전자현미경(SEM) 이미지와 압축 데이터를 활용하여 맞춤형 이중 헤드 CNN을 훈련시켰습니다.\n- CNN은 밀도, 압축 탄성 계수, 항복 강도, 압축 강도를 예측하며, R2 값 0.850~0.91, 상관계수 0.92 이상을 달성했습니다.\n- 이 비파괴적이고 데이터 기반 프레임워크는 바이오 기반 PU 폼의 기계적 거동을 예측하고 이해하는 데 기여합니다.",
+      "tags": [
+        "기계적 특성 예측",
+        "컨볼루션 신경망",
+        "리그닌",
+        "폴리우레탄 폼"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.3390/jmse14161495",
+      "title": "Multicrack Fatigue Life Prediction Based on Dynamic Bayesian Networks",
+      "authors": [
+        "Yitao Wang",
+        "Weidong Zhao",
+        "Zichen Xiao",
+        "Yifan Wang"
+      ],
+      "summary": "To address the challenge of fatigue life prediction caused by multiple-crack interactions in ship and offshore structures, this study proposes a dynamic Bayesian network (DBN)-based method for predicting the fatigue life of structures with multiple cracks, which is systematically validated through physical experiments. First, a numerical model of a representative structure containing a central hole and multiple initial cracks was established based on the coupled simulation platform of ABAQUS and Franc3D. The nonlinear interaction behavior among multiple cracks under different geometric configurations was systematically investigated. Subsequently, a neural network surrogate model was developed, in which geometric features and crack lengths were employed as inputs and key fracture mechanics parameters were taken as outputs, enabling efficient prediction of complex stress intensity factor (SIF) fields. On this basis, fatigue crack growth experiments were conducted on DH36 high-strength steel specimens containing multiple cracks, and crack evolution data under realistic cyclic loading conditions were obtained. Finally, by coupling the surrogate model with the Paris law as the state transition equation and incorporating sparse experimental observations as dynamic updating information, a dynamic Bayesian network framework based on the particle filtering algorithm was established. This framework enables posterior probability tracking of multiple-crack fatigue states and rolling prediction of the remaining fatigue life. The results demonstrate that the proposed method can effectively mitigate the error accumulation associated with deterministic simulation models during long-term open-loop prediction while relying only on a limited number of discrete observation anchors. Consequently, the prediction accuracy of the fatigue life of multiple-crack systems is significantly improved. Furthermore, under crack co-propagation conditions, the proposed framework exhibits a strong capability to capture the propagation retardation of secondary cracks induced by shielding effects. The proposed method provides a theoretical foundation and technical support for the dynamic assessment of fatigue damage and the development of digital twins for complex structures containing multiple cracks.",
+      "categories": [],
+      "published": "2026-08-12T00:00:00+00:00",
+      "updated": "2026-08-12T00:00:00+00:00",
+      "pdf_url": "https://doi.org/10.3390/jmse14161495",
+      "abs_url": "https://www.semanticscholar.org/paper/ce4aa05a3223bc1ccfa014d82d43b8a37974bb13",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/ce4aa05a3223bc1ccfa014d82d43b8a37974bb13",
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "surrogate model",
+        "stress",
+        "fatigue",
+        "fracture",
+        "crack",
+        "digital twin",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "동적 베이즈 네트워크 기반 다중 균열 피로 수명 예측",
+      "summary_ko": "- 선박 및 해양 구조물의 다중 균열 상호작용으로 인한 피로 수명 예측의 어려움을 해결합니다.\n- 동적 베이즈 네트워크(DBN)를 활용하여 다중 균열 구조물의 피로 수명을 예측하는 방법을 제안합니다.\n- ABAQUS 및 Franc3D 시뮬레이션과 신경망 대리 모델로 응력 확대 계수(SIF)를 효율적으로 예측합니다.\n- DH36 고강도강 실험을 통해 실제 균열 진화 데이터를 얻고, 제안 방법의 정확도를 검증했습니다.\n- 이 방법은 장기 예측 오류를 줄이고, 다중 균열 시스템의 피로 수명 예측 정확도를 크게 향상합니다.",
+      "tags": [
+        "피로 수명 예측",
+        "동적 베이즈 네트워크",
+        "다중 균열",
+        "파괴 역학"
+      ]
+    }
+  ]
+}
