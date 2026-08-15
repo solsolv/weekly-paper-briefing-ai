@@ -1,13 +1,92 @@
 {
   "week_id": "2026-08-17",
-  "generated_at": "2026-08-15T02:24:21.161364+00:00",
+  "generated_at": "2026-08-15T04:28:36.601942+00:00",
   "publish_at": "2026-08-17T08:00:00+09:00",
   "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
   "provider": "openai_compat",
   "impact_lookback_days": 365,
   "latest_lookback_days": 14,
   "tracks": {
-    "ai": [],
+    "ai": [
+      {
+        "arxiv_id": "2608.13135",
+        "title": "Predicting Signed Distance Functions for Visual Instance Segmentation",
+        "authors": [
+          "Emil Brissman",
+          "Joakim Johnander",
+          "Michael Felsberg"
+        ],
+        "summary": "Visual instance segmentation is a challenging problem and becomes even more difficult if objects of interest varies unconstrained in shape. Some objects are well described by a rectangle, however, this is hardly always the case. Consider for instance long, slender objects such as ropes. Anchor-based approaches classify predefined bounding boxes as either negative or positive and thus provide a limited set of shapes that can be handled. Defining anchor-boxes that fit well to all possible shapes leads to an infeasible number of prior boxes. We explore a different approach and propose to train a neural network to compute distance maps along different directions. The network is trained at each pixel to predict the distance to the closest object contour in a given direction. By pooling the distance maps we obtain an approximation to the signed distance function (SDF). The SDF may then be thresholded in order to obtain a foreground-background segmentation. We compare this segmentation to foreground segmentations obtained from the state-of-the-art instance segmentation method YOLACT. On the COCO dataset, our segmentation yields a higher performance in terms of foreground intersection over union (IoU). However, while the distance maps contain information on the individual instances, it is not straightforward to map them to the full instance segmentation. We still believe that this idea is a promising research direction for instance segmentation, as it better captures the different shapes found in the real world.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-08-13T12:09:23+00:00",
+        "updated": "2026-08-13T12:09:23+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2608.13135v1",
+        "abs_url": "https://arxiv.org/abs/2608.13135",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 3,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/d42d3bb80c9d579fe4b6d08cad1b36ae591d65b6",
+        "tldr": "This work proposes to train a neural network to compute distance maps along different directions and achieves an approximation to the signed distance function (SDF), which yields a higher performance in terms of foreground intersection over union (IoU) on the COCO dataset.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "시각적 인스턴스 분할을 위한 부호화 거리 함수 예측",
+        "summary_ko": "- 기존 앵커 기반 방식은 다양한 객체 모양에 대응하기 어렵다는 한계가 있습니다.\n- 이 연구는 신경망을 훈련하여 여러 방향의 거리 맵(distance map)을 계산하는 새로운 방법을 제안합니다.\n- 각 픽셀에서 가장 가까운 객체 윤곽선까지의 거리를 예측하여 부호화 거리 함수(SDF)를 근사합니다.\n- COCO 데이터셋에서 YOLACT보다 전경 IoU(Intersection over Union) 측면에서 더 높은 성능을 보였습니다.\n- 이 방법은 실제 세계의 다양한 객체 모양을 더 잘 포착하여 인스턴스 분할의 유망한 방향을 제시합니다.",
+        "tags": [
+          "인스턴스 분할",
+          "부호화 거리 함수",
+          "딥러닝",
+          "컴퓨터 비전"
+        ]
+      },
+      {
+        "arxiv_id": "2608.12307",
+        "title": "AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses",
+        "authors": [
+          "Cheng Qian",
+          "Wenting Zhao",
+          "Liangwei Yang",
+          "Heng Wang",
+          "Jielin Qiu",
+          "Heng Ji",
+          "Silvio Savarese",
+          "Huan Wang",
+          "Shelby Heinecke"
+        ],
+        "summary": "Recent work on distillation transfers the capabilities of large models to smaller ones often by updating the latter's parameters, through teacher forcing, on-policy distillation, and related training-time methods. In this paper, we ask whether such transfer can instead occur at test time. We study strong-to-weak scaffolding: whether a stronger builder model can construct inference-time harnesses that help a weaker target model solve tasks more reliably without any parameter updates. Using four representative Theory-of-Mind benchmarks, each builder model uses 5% of the data as a validation set to iteratively refine its harness over multiple rounds, after which the finalized harness is evaluated on the full test set. Empirically, this form of test-time capability transfer is highly effective, nearly doubling average target-model performance from 0.49 to 0.91. Our analysis shows that the gains come primarily from offloading unstable model reasoning into deterministic code, benchmark-specific routing, and strict answer-format enforcement, rather than from encouraging the target model to reason more extensively or sample more broadly. We further find that builder-model reasoning effort improves harness quality monotonically, platform effects are modest relative to the builder model's own capability, and weaker target models receive the largest gains. These results suggest that inference-time harness design is an important complement to conventional training-time distillation, enabling strong models to transfer cognitive structure to weaker models without retraining.",
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "cs.CL"
+        ],
+        "published": "2026-08-12T17:53:18+00:00",
+        "updated": "2026-08-12T17:53:18+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2608.12307v1",
+        "abs_url": "https://arxiv.org/abs/2608.12307",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": null,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 108,
+        "title_ko": "테스트 시점의 AI4AI: 하네스(Harnesses)를 통한 강한 모델에서 약한 모델로의 능력 전이",
+        "summary_ko": "- 기존 연구는 주로 훈련 시점에 큰 모델의 능력을 작은 모델로 전이시키는 데 집중했습니다.\n- 이 논문은 매개변수 업데이트 없이 테스트 시점에 강한 모델이 약한 모델을 돕는 '하네스'를 제안합니다.\n- 강한 빌더(builder) 모델이 검증 데이터 5%로 하네스를 반복 개선하고, 이를 약한 타겟(target) 모델에 적용합니다.\n- 실험 결과, 타겟 모델의 성능이 평균 0.49에서 0.91로 거의 두 배 향상되었습니다.\n- 이는 불안정한 추론을 확정적 코드로 전환하는 등 인지 구조를 전이하는 새로운 방법입니다.",
+        "tags": [
+          "AI 모델",
+          "능력 전이",
+          "테스트 시점",
+          "하네스"
+        ]
+      }
+    ],
     "mech": [
       {
         "arxiv_id": "2608.11447",
@@ -102,6 +181,84 @@
     ]
   },
   "papers": [
+    {
+      "arxiv_id": "2608.13135",
+      "title": "Predicting Signed Distance Functions for Visual Instance Segmentation",
+      "authors": [
+        "Emil Brissman",
+        "Joakim Johnander",
+        "Michael Felsberg"
+      ],
+      "summary": "Visual instance segmentation is a challenging problem and becomes even more difficult if objects of interest varies unconstrained in shape. Some objects are well described by a rectangle, however, this is hardly always the case. Consider for instance long, slender objects such as ropes. Anchor-based approaches classify predefined bounding boxes as either negative or positive and thus provide a limited set of shapes that can be handled. Defining anchor-boxes that fit well to all possible shapes leads to an infeasible number of prior boxes. We explore a different approach and propose to train a neural network to compute distance maps along different directions. The network is trained at each pixel to predict the distance to the closest object contour in a given direction. By pooling the distance maps we obtain an approximation to the signed distance function (SDF). The SDF may then be thresholded in order to obtain a foreground-background segmentation. We compare this segmentation to foreground segmentations obtained from the state-of-the-art instance segmentation method YOLACT. On the COCO dataset, our segmentation yields a higher performance in terms of foreground intersection over union (IoU). However, while the distance maps contain information on the individual instances, it is not straightforward to map them to the full instance segmentation. We still believe that this idea is a promising research direction for instance segmentation, as it better captures the different shapes found in the real world.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-13T12:09:23+00:00",
+      "updated": "2026-08-13T12:09:23+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2608.13135v1",
+      "abs_url": "https://arxiv.org/abs/2608.13135",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 3,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/d42d3bb80c9d579fe4b6d08cad1b36ae591d65b6",
+      "tldr": "This work proposes to train a neural network to compute distance maps along different directions and achieves an approximation to the signed distance function (SDF), which yields a higher performance in terms of foreground intersection over union (IoU) on the COCO dataset.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "시각적 인스턴스 분할을 위한 부호화 거리 함수 예측",
+      "summary_ko": "- 기존 앵커 기반 방식은 다양한 객체 모양에 대응하기 어렵다는 한계가 있습니다.\n- 이 연구는 신경망을 훈련하여 여러 방향의 거리 맵(distance map)을 계산하는 새로운 방법을 제안합니다.\n- 각 픽셀에서 가장 가까운 객체 윤곽선까지의 거리를 예측하여 부호화 거리 함수(SDF)를 근사합니다.\n- COCO 데이터셋에서 YOLACT보다 전경 IoU(Intersection over Union) 측면에서 더 높은 성능을 보였습니다.\n- 이 방법은 실제 세계의 다양한 객체 모양을 더 잘 포착하여 인스턴스 분할의 유망한 방향을 제시합니다.",
+      "tags": [
+        "인스턴스 분할",
+        "부호화 거리 함수",
+        "딥러닝",
+        "컴퓨터 비전"
+      ]
+    },
+    {
+      "arxiv_id": "2608.12307",
+      "title": "AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses",
+      "authors": [
+        "Cheng Qian",
+        "Wenting Zhao",
+        "Liangwei Yang",
+        "Heng Wang",
+        "Jielin Qiu",
+        "Heng Ji",
+        "Silvio Savarese",
+        "Huan Wang",
+        "Shelby Heinecke"
+      ],
+      "summary": "Recent work on distillation transfers the capabilities of large models to smaller ones often by updating the latter's parameters, through teacher forcing, on-policy distillation, and related training-time methods. In this paper, we ask whether such transfer can instead occur at test time. We study strong-to-weak scaffolding: whether a stronger builder model can construct inference-time harnesses that help a weaker target model solve tasks more reliably without any parameter updates. Using four representative Theory-of-Mind benchmarks, each builder model uses 5% of the data as a validation set to iteratively refine its harness over multiple rounds, after which the finalized harness is evaluated on the full test set. Empirically, this form of test-time capability transfer is highly effective, nearly doubling average target-model performance from 0.49 to 0.91. Our analysis shows that the gains come primarily from offloading unstable model reasoning into deterministic code, benchmark-specific routing, and strict answer-format enforcement, rather than from encouraging the target model to reason more extensively or sample more broadly. We further find that builder-model reasoning effort improves harness quality monotonically, platform effects are modest relative to the builder model's own capability, and weaker target models receive the largest gains. These results suggest that inference-time harness design is an important complement to conventional training-time distillation, enabling strong models to transfer cognitive structure to weaker models without retraining.",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-12T17:53:18+00:00",
+      "updated": "2026-08-12T17:53:18+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2608.12307v1",
+      "abs_url": "https://arxiv.org/abs/2608.12307",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": null,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 108,
+      "title_ko": "테스트 시점의 AI4AI: 하네스(Harnesses)를 통한 강한 모델에서 약한 모델로의 능력 전이",
+      "summary_ko": "- 기존 연구는 주로 훈련 시점에 큰 모델의 능력을 작은 모델로 전이시키는 데 집중했습니다.\n- 이 논문은 매개변수 업데이트 없이 테스트 시점에 강한 모델이 약한 모델을 돕는 '하네스'를 제안합니다.\n- 강한 빌더(builder) 모델이 검증 데이터 5%로 하네스를 반복 개선하고, 이를 약한 타겟(target) 모델에 적용합니다.\n- 실험 결과, 타겟 모델의 성능이 평균 0.49에서 0.91로 거의 두 배 향상되었습니다.\n- 이는 불안정한 추론을 확정적 코드로 전환하는 등 인지 구조를 전이하는 새로운 방법입니다.",
+      "tags": [
+        "AI 모델",
+        "능력 전이",
+        "테스트 시점",
+        "하네스"
+      ]
+    },
     {
       "arxiv_id": "2608.11447",
       "title": "Predicting Mechanical Properties of Lignin-Containing Polyurethane Rigid Foams from Microstructure Using Convolutional Neural Networks",

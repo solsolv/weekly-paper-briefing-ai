@@ -445,8 +445,16 @@
   </div>
   <div data-gate-content>
   <div class="toc reveal">
-    <div class="toc-title">이번 주 2편</div>
+    <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
+        <a href="#p-2608.13135">
+          <span class="badge ai">AI</span>
+          <span>시각적 인스턴스 분할을 위한 부호화 거리 함수 예측</span>
+        </a>
+        <a href="#p-2608.12307">
+          <span class="badge ai">AI</span>
+          <span>테스트 시점의 AI4AI: 하네스(Harnesses)를 통한 강한 모델에서 약한 모델로의 능력 전이</span>
+        </a>
         <a href="#p-2608.11447">
           <span class="badge mech">AI 활용 기계공학</span>
           <span>CNN을 이용한 미세구조로부터 리그닌 함유 폴리우레탄 경질 폼의 기계적 특성 예측</span>
@@ -464,6 +472,44 @@
     <button class="filter-btn" data-track="mech" type="button">AI 활용 기계공학</button>
   </div>
 
+      <section class="track-section" data-track-block="ai">
+        <h2 class="reveal">
+          AI
+          <span class="badge ai">2편</span>
+        </h2>
+          <article class="paper ai reveal" id="p-2608.13135" style="transition-delay: 0ms;">
+            <div class="meta">
+              cs.CV · 발표 2026-08-13<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2608.13135" target="_blank" rel="noopener">Predicting Signed Distance Functions for Visual Instance Segmentation</a></h3>
+<p class="title-ko">시각적 인스턴스 분할을 위한 부호화 거리 함수 예측</p>            <div class="authors">Emil Brissman, Joakim Johnander, Michael Felsberg</div>
+            <div class="stats">
+<span class="chip">인용 3</span>            </div>
+            <div class="summary">
+              <ul>
+<li>기존 앵커 기반 방식은 다양한 객체 모양에 대응하기 어렵다는 한계가 있습니다.</li><li>이 연구는 신경망을 훈련하여 여러 방향의 거리 맵(distance map)을 계산하는 새로운 방법을 제안합니다.</li><li>각 픽셀에서 가장 가까운 객체 윤곽선까지의 거리를 예측하여 부호화 거리 함수(SDF)를 근사합니다.</li><li>COCO 데이터셋에서 YOLACT보다 전경 IoU(Intersection over Union) 측면에서 더 높은 성능을 보였습니다.</li><li>이 방법은 실제 세계의 다양한 객체 모양을 더 잘 포착하여 인스턴스 분할의 유망한 방향을 제시합니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This work proposes to train a neural network to compute distance maps along different directions and achieves an approximation to the signed distance function (SDF), which yields a higher performance in terms of foreground intersection over union (IoU) on the COCO dataset.</div><div class="tags"><span class="tag">#인스턴스 분할</span><span class="tag">#부호화 거리 함수</span><span class="tag">#딥러닝</span><span class="tag">#컴퓨터 비전</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2608.13135" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2608.13135v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/d42d3bb80c9d579fe4b6d08cad1b36ae591d65b6" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper ai reveal" id="p-2608.12307" style="transition-delay: 60ms;">
+            <div class="meta">
+              cs.LG, cs.AI, cs.CL · 발표 2026-08-12<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2608.12307" target="_blank" rel="noopener">AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses</a></h3>
+<p class="title-ko">테스트 시점의 AI4AI: 하네스(Harnesses)를 통한 강한 모델에서 약한 모델로의 능력 전이</p>            <div class="authors">Cheng Qian, Wenting Zhao, Liangwei Yang, Heng Wang, Jielin Qiu, Heng Ji, Silvio Savarese, Huan Wang 외 1명</div>
+            <div class="stats">
+<span class="chip">HF upvotes 108</span>            </div>
+            <div class="summary">
+              <ul>
+<li>기존 연구는 주로 훈련 시점에 큰 모델의 능력을 작은 모델로 전이시키는 데 집중했습니다.</li><li>이 논문은 매개변수 업데이트 없이 테스트 시점에 강한 모델이 약한 모델을 돕는 &#39;하네스&#39;를 제안합니다.</li><li>강한 빌더(builder) 모델이 검증 데이터 5%로 하네스를 반복 개선하고, 이를 약한 타겟(target) 모델에 적용합니다.</li><li>실험 결과, 타겟 모델의 성능이 평균 0.49에서 0.91로 거의 두 배 향상되었습니다.</li><li>이는 불안정한 추론을 확정적 코드로 전환하는 등 인지 구조를 전이하는 새로운 방법입니다.</li>              </ul>
+            </div>
+<div class="tags"><span class="tag">#AI 모델</span><span class="tag">#능력 전이</span><span class="tag">#테스트 시점</span><span class="tag">#하네스</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2608.12307" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2608.12307v1" target="_blank" rel="noopener">PDF</a>
+            </div>
+          </article>
+      </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
           AI 활용 기계공학
@@ -523,7 +569,7 @@
     })();
   </script>
   <footer class="site">
-    <p>자동 생성 · 2026-08-15 02:24 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+    <p>자동 생성 · 2026-08-15 04:28 UTC · arXiv + Semantic Scholar + LLM 요약</p>
   </footer>
 </div>
 <script>
