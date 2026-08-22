@@ -1,0 +1,178 @@
+{
+  "week_id": "2026-08-24",
+  "generated_at": "2026-08-22T02:19:49.305179+00:00",
+  "publish_at": "2026-08-24T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [],
+    "mech": [
+      {
+        "arxiv_id": "2608.17131",
+        "title": "Reduced-Order Physics-Informed Neural Network with Adaptive Basis Refinement for Structural Identification",
+        "authors": [
+          "Rui Zhang",
+          "Konstantinos Vlachas",
+          "Eleni Chatzi"
+        ],
+        "summary": "Physics-informed neural networks (PINNs) provide a flexible framework for solving forward and inverse problems. However, their direct application to structural dynamics remains limited by high system dimensionality and model-form errors arising from incomplete physics. Reduced-order models (ROMs) can alleviate the dimensionality bottleneck, yet existing PINN-ROM couplings typically rely on fixed reduced subspaces, target forward simulations, or assume complete physics, restricting their use for inverse identification under parametric variability or incomplete system knowledge. To address these limitations, this work proposes a Reduced-Order Physics-Informed Neural Network (RO-PINN) framework with adaptive basis refinement for structural identification under known and incomplete physics. Via projection, reduced governing equations are embedded directly into the PINN loss, facilitating learning in a low-dimensional latent space. An adaptive scheme updates the projection basis during training so that the latent space is progressively realigned with evolving structural parameters or learned residual restoring forces. This realignment reduces basis-mismatch errors and limits their influence on the inferred residual force. The method is validated on a four-story steel frame with nonlinear hysteretic braces under sparse and noisy measurements. Results show parameter identification comparable to or more accurate than Bayesian model updating with lower computational cost in the considered cases, recovery of unmodeled nonlinear restoring forces under incomplete physics, and joint identification of residual restoring forces and structural parameters within the same framework. Overall, RO-PINN provides a unified framework for structural identification by integrating reduced-order modeling, adaptive basis refinement, and physics-informed learning within a single formulation.",
+        "categories": [
+          "cs.CE",
+          "physics.comp-ph"
+        ],
+        "published": "2026-08-17T21:06:49+00:00",
+        "updated": "2026-08-17T21:06:49+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2608.17131v1",
+        "abs_url": "https://arxiv.org/abs/2608.17131",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/717835e0782b2c25ba8b80f685a0c6be79573e97",
+        "tldr": "This work proposes a Reduced-Order Physics-Informed Neural Network (RO-PINN) framework with adaptive basis refinement for structural identification under known and incomplete physics, and shows parameter identification comparable to or more accurate than Bayesian model updating with lower computational cost.",
+        "matched_keywords": [
+          "neural network",
+          "physics-informed",
+          "structural",
+          "relevance:0.80"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "적응형 기저 정제를 통한 구조 식별용 차수 축소 물리 정보 신경망",
+        "summary_ko": "- 물리 정보 신경망(PINN)은 구조 동역학에 적용 시 높은 시스템 차원과 불완전한 물리 모델로 인한 한계가 있습니다.\n- 이 연구는 알려진 물리 및 불완전한 물리 조건에서 구조 식별을 위한 적응형 기저 정제(adaptive basis refinement) 기능을 갖춘 차수 축소 물리 정보 신경망(RO-PINN) 프레임워크를 제안합니다.\n- RO-PINN은 투영을 통해 축소된 지배 방정식을 PINN 손실 함수에 직접 통합하고, 훈련 중 투영 기저를 적응적으로 업데이트하여 잠재 공간을 재정렬합니다.\n- 4층 철골 프레임에 대한 검증 결과, 베이즈 모델 업데이트(Bayesian model updating)와 유사하거나 더 정확한 매개변수 식별을 더 낮은 계산 비용으로 달성했습니다.\n- RO-PINN은 차수 축소 모델링, 적응형 기저 정제, 물리 정보 학습을 통합하여 구조 식별을 위한 통일된 프레임워크를 제공합니다.",
+        "tags": [
+          "물리 정보 신경망",
+          "차수 축소 모델",
+          "구조 식별",
+          "적응형 기저"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.1007/s00366-026-02407-0",
+        "title": "A novel surrogate model for optimizing lattice for desired force-displacement response",
+        "authors": [
+          "Akshay Kumar",
+          "S. Sridhara",
+          "Krishnan Suresh"
+        ],
+        "summary": "Optimizing lattice structures for energy absorption and load-bearing applications necessitates accurately capturing their nonlinear mechanical response under large deformation. However, traditional nonlinear finite element analysis (NL-FEA) can often fail, particularly at higher compression, which creates numerical gaps in the design space, hindering gradient-based optimization algorithms, ultimately resulting in suboptimal designs. We propose here a neural network (NN) surrogate model that is trained on data generated using Abaqus, a commercial FEA solver. A unique feature of the model is that it exploits both fully and partially successful NL-FEA simulations. This significantly improves the surrogate model’s accuracy and predictive coverage across the design space. The resulting model enables efficient, gradient-driven optimization of lattice structures to match a desired force-displacement response. By replacing expensive NL-FEA evaluations, the surrogate model substantially reduces computational cost while maintaining a coefficient of determination (\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$R^2$$\\end{document}) of 0.98 in prediction. The effectiveness and versatility of this framework are demonstrated by successfully optimizing \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$3 \\times 3$$\\end{document} lattice structures under 40% compression, with the lattice radii as design variables.",
+        "categories": [],
+        "published": "2026-08-18T00:00:00+00:00",
+        "updated": "2026-08-18T00:00:00+00:00",
+        "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00366-026-02407-0.pdf",
+        "abs_url": "https://www.semanticscholar.org/paper/5d5938f4a64b4bc9d86fc64471caaefbf7cb1e1e",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/5d5938f4a64b4bc9d86fc64471caaefbf7cb1e1e",
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "surrogate model",
+          "finite element",
+          "deform",
+          "mechanical",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "원하는 힘-변위 반응을 위한 격자 최적화용 새로운 대체 모델",
+        "summary_ko": "- 에너지 흡수 및 하중 지지용 격자 구조 최적화는 비선형 유한요소 해석(NL-FEA)의 한계가 있습니다.\n- 본 연구는 상용 FEA 솔버인 Abaqus로 생성된 데이터를 활용하여 신경망(NN) 대체 모델을 제안합니다.\n- 이 모델은 성공 및 부분 성공한 NL-FEA 시뮬레이션 데이터를 모두 활용하여 정확도를 높입니다.\n- 제안된 모델은 값비싼 NL-FEA 평가를 대체하며, 예측에서 0.98의 결정계수(R²)를 유지합니다.\n- 이 프레임워크는 40% 압축 하의 3x3 격자 구조 최적화에 성공하여 효율성과 다양성을 입증했습니다.",
+        "tags": [
+          "격자 구조",
+          "최적화",
+          "신경망",
+          "유한요소 해석"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2608.17131",
+      "title": "Reduced-Order Physics-Informed Neural Network with Adaptive Basis Refinement for Structural Identification",
+      "authors": [
+        "Rui Zhang",
+        "Konstantinos Vlachas",
+        "Eleni Chatzi"
+      ],
+      "summary": "Physics-informed neural networks (PINNs) provide a flexible framework for solving forward and inverse problems. However, their direct application to structural dynamics remains limited by high system dimensionality and model-form errors arising from incomplete physics. Reduced-order models (ROMs) can alleviate the dimensionality bottleneck, yet existing PINN-ROM couplings typically rely on fixed reduced subspaces, target forward simulations, or assume complete physics, restricting their use for inverse identification under parametric variability or incomplete system knowledge. To address these limitations, this work proposes a Reduced-Order Physics-Informed Neural Network (RO-PINN) framework with adaptive basis refinement for structural identification under known and incomplete physics. Via projection, reduced governing equations are embedded directly into the PINN loss, facilitating learning in a low-dimensional latent space. An adaptive scheme updates the projection basis during training so that the latent space is progressively realigned with evolving structural parameters or learned residual restoring forces. This realignment reduces basis-mismatch errors and limits their influence on the inferred residual force. The method is validated on a four-story steel frame with nonlinear hysteretic braces under sparse and noisy measurements. Results show parameter identification comparable to or more accurate than Bayesian model updating with lower computational cost in the considered cases, recovery of unmodeled nonlinear restoring forces under incomplete physics, and joint identification of residual restoring forces and structural parameters within the same framework. Overall, RO-PINN provides a unified framework for structural identification by integrating reduced-order modeling, adaptive basis refinement, and physics-informed learning within a single formulation.",
+      "categories": [
+        "cs.CE",
+        "physics.comp-ph"
+      ],
+      "published": "2026-08-17T21:06:49+00:00",
+      "updated": "2026-08-17T21:06:49+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2608.17131v1",
+      "abs_url": "https://arxiv.org/abs/2608.17131",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/717835e0782b2c25ba8b80f685a0c6be79573e97",
+      "tldr": "This work proposes a Reduced-Order Physics-Informed Neural Network (RO-PINN) framework with adaptive basis refinement for structural identification under known and incomplete physics, and shows parameter identification comparable to or more accurate than Bayesian model updating with lower computational cost.",
+      "matched_keywords": [
+        "neural network",
+        "physics-informed",
+        "structural",
+        "relevance:0.80"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "적응형 기저 정제를 통한 구조 식별용 차수 축소 물리 정보 신경망",
+      "summary_ko": "- 물리 정보 신경망(PINN)은 구조 동역학에 적용 시 높은 시스템 차원과 불완전한 물리 모델로 인한 한계가 있습니다.\n- 이 연구는 알려진 물리 및 불완전한 물리 조건에서 구조 식별을 위한 적응형 기저 정제(adaptive basis refinement) 기능을 갖춘 차수 축소 물리 정보 신경망(RO-PINN) 프레임워크를 제안합니다.\n- RO-PINN은 투영을 통해 축소된 지배 방정식을 PINN 손실 함수에 직접 통합하고, 훈련 중 투영 기저를 적응적으로 업데이트하여 잠재 공간을 재정렬합니다.\n- 4층 철골 프레임에 대한 검증 결과, 베이즈 모델 업데이트(Bayesian model updating)와 유사하거나 더 정확한 매개변수 식별을 더 낮은 계산 비용으로 달성했습니다.\n- RO-PINN은 차수 축소 모델링, 적응형 기저 정제, 물리 정보 학습을 통합하여 구조 식별을 위한 통일된 프레임워크를 제공합니다.",
+      "tags": [
+        "물리 정보 신경망",
+        "차수 축소 모델",
+        "구조 식별",
+        "적응형 기저"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1007/s00366-026-02407-0",
+      "title": "A novel surrogate model for optimizing lattice for desired force-displacement response",
+      "authors": [
+        "Akshay Kumar",
+        "S. Sridhara",
+        "Krishnan Suresh"
+      ],
+      "summary": "Optimizing lattice structures for energy absorption and load-bearing applications necessitates accurately capturing their nonlinear mechanical response under large deformation. However, traditional nonlinear finite element analysis (NL-FEA) can often fail, particularly at higher compression, which creates numerical gaps in the design space, hindering gradient-based optimization algorithms, ultimately resulting in suboptimal designs. We propose here a neural network (NN) surrogate model that is trained on data generated using Abaqus, a commercial FEA solver. A unique feature of the model is that it exploits both fully and partially successful NL-FEA simulations. This significantly improves the surrogate model’s accuracy and predictive coverage across the design space. The resulting model enables efficient, gradient-driven optimization of lattice structures to match a desired force-displacement response. By replacing expensive NL-FEA evaluations, the surrogate model substantially reduces computational cost while maintaining a coefficient of determination (\\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$R^2$$\\end{document}) of 0.98 in prediction. The effectiveness and versatility of this framework are demonstrated by successfully optimizing \\documentclass[12pt]{minimal} \\usepackage{amsmath} \\usepackage{wasysym} \\usepackage{amsfonts} \\usepackage{amssymb} \\usepackage{amsbsy} \\usepackage{mathrsfs} \\usepackage{upgreek} \\setlength{\\oddsidemargin}{-69pt} \\begin{document}$$3 \\times 3$$\\end{document} lattice structures under 40% compression, with the lattice radii as design variables.",
+      "categories": [],
+      "published": "2026-08-18T00:00:00+00:00",
+      "updated": "2026-08-18T00:00:00+00:00",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00366-026-02407-0.pdf",
+      "abs_url": "https://www.semanticscholar.org/paper/5d5938f4a64b4bc9d86fc64471caaefbf7cb1e1e",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/5d5938f4a64b4bc9d86fc64471caaefbf7cb1e1e",
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "surrogate model",
+        "finite element",
+        "deform",
+        "mechanical",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "원하는 힘-변위 반응을 위한 격자 최적화용 새로운 대체 모델",
+      "summary_ko": "- 에너지 흡수 및 하중 지지용 격자 구조 최적화는 비선형 유한요소 해석(NL-FEA)의 한계가 있습니다.\n- 본 연구는 상용 FEA 솔버인 Abaqus로 생성된 데이터를 활용하여 신경망(NN) 대체 모델을 제안합니다.\n- 이 모델은 성공 및 부분 성공한 NL-FEA 시뮬레이션 데이터를 모두 활용하여 정확도를 높입니다.\n- 제안된 모델은 값비싼 NL-FEA 평가를 대체하며, 예측에서 0.98의 결정계수(R²)를 유지합니다.\n- 이 프레임워크는 40% 압축 하의 3x3 격자 구조 최적화에 성공하여 효율성과 다양성을 입증했습니다.",
+      "tags": [
+        "격자 구조",
+        "최적화",
+        "신경망",
+        "유한요소 해석"
+      ]
+    }
+  ]
+}
