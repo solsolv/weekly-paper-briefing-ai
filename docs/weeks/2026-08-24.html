@@ -445,8 +445,16 @@
   </div>
   <div data-gate-content>
   <div class="toc reveal">
-    <div class="toc-title">이번 주 2편</div>
+    <div class="toc-title">이번 주 4편</div>
     <div class="toc-list">
+        <a href="#p-2608.20093">
+          <span class="badge ai">AI</span>
+          <span>HandMvNet: 다중 시점 교차 주의 융합을 이용한 실시간 3D 손 자세 추정</span>
+        </a>
+        <a href="#p-2608.19880">
+          <span class="badge ai">AI</span>
+          <span>EnvHarness: 에이전트 학습을 위한 정적 환경 활성화</span>
+        </a>
         <a href="#p-2608.17131">
           <span class="badge mech">AI 활용 기계공학</span>
           <span>적응형 기저 정제를 통한 구조 식별용 차수 축소 물리 정보 신경망</span>
@@ -464,6 +472,44 @@
     <button class="filter-btn" data-track="mech" type="button">AI 활용 기계공학</button>
   </div>
 
+      <section class="track-section" data-track-block="ai">
+        <h2 class="reveal">
+          AI
+          <span class="badge ai">2편</span>
+        </h2>
+          <article class="paper ai reveal" id="p-2608.20093" style="transition-delay: 0ms;">
+            <div class="meta">
+              cs.CV · 발표 2026-08-20<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2608.20093" target="_blank" rel="noopener">HandMvNet: Real-Time 3D Hand Pose Estimation Using Multi-View Cross-Attention Fusion</a></h3>
+<p class="title-ko">HandMvNet: 다중 시점 교차 주의 융합을 이용한 실시간 3D 손 자세 추정</p>            <div class="authors">Muhammad Asad Ali, Nadia Robertini, Didier Stricker</div>
+            <div class="stats">
+<span class="chip">인용 1</span><span class="chip">영향력 인용 1</span>            </div>
+            <div class="summary">
+              <ul>
+<li>기존 단일 시점(monocular) 방법은 스케일-깊이 모호성으로 3D 손 자세 추정에 한계가 있었습니다.</li><li>HandMvNet은 다중 시점 카메라 이미지에서 3D 손 움직임과 형태를 실시간으로 추정하는 방법입니다.</li><li>이 방법은 다중 시점 주의 융합(multi-view attention-fusion) 메커니즘으로 여러 시점의 특징을 통합합니다.</li><li>HandMvNet은 경쟁력 있는 결과를 제공하며, 추론 시간을 크게 줄여 실시간 응용에 적합합니다.</li><li>카메라 파라미터 없이 3D 기하학을 학습하고, 기존 방법보다 정확하고 일관된 손 자세를 제공합니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> HandMvNet is one of the first real-time method designed to estimate 3D hand motion and shape from multi-view camera images through a multi-view attention-fusion mechanism that effectively integrates features from multiple viewpoints.</div><div class="tags"><span class="tag">#3D 손 자세 추정</span><span class="tag">#다중 시점</span><span class="tag">#실시간</span><span class="tag">#딥러닝</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2608.20093" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2608.20093v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/eb51a22002d37e296073705b5f62ea4b0185da03" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper ai reveal" id="p-2608.19880" style="transition-delay: 60ms;">
+            <div class="meta">
+              cs.AI, cs.CL, cs.LG · 발표 2026-08-20<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2608.19880" target="_blank" rel="noopener">EnvHarness: Awakening Static Worlds for Agent Learning</a></h3>
+<p class="title-ko">EnvHarness: 에이전트 학습을 위한 정적 환경 활성화</p>            <div class="authors">Chengsong Huang, Zifeng Wang, Rujun Han, Jun Yan, Yanfei Chen, Zoey CuiZhu, Ke Jiang, Peng Xia 외 9명</div>
+<div class="affiliations">Washington University in St. Louis · Google DeepMind · UNC-Chapel Hill</div>            <div class="stats">
+<span class="chip">HF upvotes 242</span>            </div>
+            <div class="summary">
+              <ul>
+<li>LLM 에이전트 학습 환경은 정적이며 에이전트의 약점을 반영하지 못하는 한계가 있습니다.</li><li>EnvHarness는 기존 환경을 수정 없이 감싸서 동작을 재구성하는 플러그인 구성 요소 계층입니다.</li><li>EnvRigger는 에이전트의 실행 궤적을 관찰하여 약점을 보완하는 EnvHarness 구성 요소를 합성합니다.</li><li>4개 도메인의 5개 벤치마크에서 EnvHarness는 기존 환경 대비 최대 9.0점 향상을 보였습니다.</li><li>이 방법은 정책과 환경의 지속적이고 목표 지향적인 공동 진화를 가능하게 합니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> Environment Harness is proposed, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic, enabling continuous, targeted co-evolution of the policy and its environment.</div><div class="tags"><span class="tag">#LLM 에이전트</span><span class="tag">#환경 재구성</span><span class="tag">#강화 학습</span><span class="tag">#정책 최적화</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2608.19880" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2608.19880v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/47aa2ac90ad7d8685e5c810b6b24e6949c7bb67c" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+      </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
           AI 활용 기계공학
@@ -523,7 +569,7 @@
     })();
   </script>
   <footer class="site">
-    <p>자동 생성 · 2026-08-22 02:19 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+    <p>자동 생성 · 2026-08-22 08:38 UTC · arXiv + Semantic Scholar + LLM 요약</p>
   </footer>
 </div>
 <script>

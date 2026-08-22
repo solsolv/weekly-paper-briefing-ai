@@ -1,13 +1,104 @@
 {
   "week_id": "2026-08-24",
-  "generated_at": "2026-08-22T02:19:49.305179+00:00",
+  "generated_at": "2026-08-22T08:38:09.686435+00:00",
   "publish_at": "2026-08-24T08:00:00+09:00",
   "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
   "provider": "openai_compat",
   "impact_lookback_days": 365,
   "latest_lookback_days": 14,
   "tracks": {
-    "ai": [],
+    "ai": [
+      {
+        "arxiv_id": "2608.20093",
+        "title": "HandMvNet: Real-Time 3D Hand Pose Estimation Using Multi-View Cross-Attention Fusion",
+        "authors": [
+          "Muhammad Asad Ali",
+          "Nadia Robertini",
+          "Didier Stricker"
+        ],
+        "summary": "In this work, we present HandMvNet, one of the first real-time method designed to estimate 3D hand motion and shape from multi-view camera images. Unlike previous monocular approaches, which suffer from scale-depth ambiguities, our method ensures consistent and accurate absolute hand poses and shapes. This is achieved through a multi-view attention-fusion mechanism that effectively integrates features from multiple viewpoints. In contrast to previous multi-view methods, our approach eliminates the need for camera parameters as input to learn 3D geometry. HandMvNet also achieves a substantial reduction in inference time while delivering competitive results compared to the state-of-the-art methods, making it suitable for real-time applications. Evaluated on publicly available datasets, HandMvNet qualitatively and quantitatively outperforms previous methods under identical settings. Code is available at github.com/pyxploiter/handmvnet.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-08-20T14:24:35+00:00",
+        "updated": "2026-08-20T14:24:35+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2608.20093v1",
+        "abs_url": "https://arxiv.org/abs/2608.20093",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 1,
+        "s2_url": "https://www.semanticscholar.org/paper/eb51a22002d37e296073705b5f62ea4b0185da03",
+        "tldr": "HandMvNet is one of the first real-time method designed to estimate 3D hand motion and shape from multi-view camera images through a multi-view attention-fusion mechanism that effectively integrates features from multiple viewpoints.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "HandMvNet: 다중 시점 교차 주의 융합을 이용한 실시간 3D 손 자세 추정",
+        "summary_ko": "- 기존 단일 시점(monocular) 방법은 스케일-깊이 모호성으로 3D 손 자세 추정에 한계가 있었습니다.\n- HandMvNet은 다중 시점 카메라 이미지에서 3D 손 움직임과 형태를 실시간으로 추정하는 방법입니다.\n- 이 방법은 다중 시점 주의 융합(multi-view attention-fusion) 메커니즘으로 여러 시점의 특징을 통합합니다.\n- HandMvNet은 경쟁력 있는 결과를 제공하며, 추론 시간을 크게 줄여 실시간 응용에 적합합니다.\n- 카메라 파라미터 없이 3D 기하학을 학습하고, 기존 방법보다 정확하고 일관된 손 자세를 제공합니다.",
+        "tags": [
+          "3D 손 자세 추정",
+          "다중 시점",
+          "실시간",
+          "딥러닝"
+        ]
+      },
+      {
+        "arxiv_id": "2608.19880",
+        "title": "EnvHarness: Awakening Static Worlds for Agent Learning",
+        "authors": [
+          "Chengsong Huang",
+          "Zifeng Wang",
+          "Rujun Han",
+          "Jun Yan",
+          "Yanfei Chen",
+          "Zoey CuiZhu",
+          "Ke Jiang",
+          "Peng Xia",
+          "Han Yu",
+          "Yufan Zhuang",
+          "Yifei Ming",
+          "Jiaqi Pan",
+          "Bhavana Dalvi Mishra",
+          "Jiaxin Huang",
+          "Burak Gokturk",
+          "Tomas Pfister",
+          "Chen-Yu Lee"
+        ],
+        "summary": "LLM agents learn by interacting with environments, yet these environments are hand-built and static: blind to an agent's weaknesses, and quickly left behind as it improves. While recent environment generation methods attempt to address this, they require domain-specific pipelines, rely on expensive or unreliable verifiers, and still produce static environments. To alleviate the engineering burden of rebuilding environments from scratch, we propose Environment Harness (EnvHarness), a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic. Operating through standard interfaces, EnvHarness applies across diverse domains while ensuring every reshaped environment retains its original verifier. To automate this process, we introduce EnvRigger, which treats the target policy as a black box, observing its execution trajectories to synthesize EnvHarness components targeting diagnosed flaws, and validating them via fresh rollouts. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment generation pipelines, achieving up to a 9.0-point improvement on held-out instances with 9.8% fewer execution steps. Furthermore, EnvHarness provides a superior optimization signal for reinforcement learning, enabling continuous, targeted co-evolution of the policy and its environment.",
+        "categories": [
+          "cs.AI",
+          "cs.CL",
+          "cs.LG"
+        ],
+        "published": "2026-08-20T10:42:06+00:00",
+        "updated": "2026-08-20T10:42:06+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2608.19880v1",
+        "abs_url": "https://arxiv.org/abs/2608.19880",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/47aa2ac90ad7d8685e5c810b6b24e6949c7bb67c",
+        "tldr": "Environment Harness is proposed, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic, enabling continuous, targeted co-evolution of the policy and its environment.",
+        "matched_keywords": [],
+        "affiliations": [
+          "Washington University in St. Louis",
+          "Google DeepMind",
+          "UNC-Chapel Hill"
+        ],
+        "source": "huggingface",
+        "hf_upvotes": 242,
+        "title_ko": "EnvHarness: 에이전트 학습을 위한 정적 환경 활성화",
+        "summary_ko": "- LLM 에이전트 학습 환경은 정적이며 에이전트의 약점을 반영하지 못하는 한계가 있습니다.\n- EnvHarness는 기존 환경을 수정 없이 감싸서 동작을 재구성하는 플러그인 구성 요소 계층입니다.\n- EnvRigger는 에이전트의 실행 궤적을 관찰하여 약점을 보완하는 EnvHarness 구성 요소를 합성합니다.\n- 4개 도메인의 5개 벤치마크에서 EnvHarness는 기존 환경 대비 최대 9.0점 향상을 보였습니다.\n- 이 방법은 정책과 환경의 지속적이고 목표 지향적인 공동 진화를 가능하게 합니다.",
+        "tags": [
+          "LLM 에이전트",
+          "환경 재구성",
+          "강화 학습",
+          "정책 최적화"
+        ]
+      }
+    ],
     "mech": [
       {
         "arxiv_id": "2608.17131",
@@ -93,6 +184,96 @@
     ]
   },
   "papers": [
+    {
+      "arxiv_id": "2608.20093",
+      "title": "HandMvNet: Real-Time 3D Hand Pose Estimation Using Multi-View Cross-Attention Fusion",
+      "authors": [
+        "Muhammad Asad Ali",
+        "Nadia Robertini",
+        "Didier Stricker"
+      ],
+      "summary": "In this work, we present HandMvNet, one of the first real-time method designed to estimate 3D hand motion and shape from multi-view camera images. Unlike previous monocular approaches, which suffer from scale-depth ambiguities, our method ensures consistent and accurate absolute hand poses and shapes. This is achieved through a multi-view attention-fusion mechanism that effectively integrates features from multiple viewpoints. In contrast to previous multi-view methods, our approach eliminates the need for camera parameters as input to learn 3D geometry. HandMvNet also achieves a substantial reduction in inference time while delivering competitive results compared to the state-of-the-art methods, making it suitable for real-time applications. Evaluated on publicly available datasets, HandMvNet qualitatively and quantitatively outperforms previous methods under identical settings. Code is available at github.com/pyxploiter/handmvnet.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-20T14:24:35+00:00",
+      "updated": "2026-08-20T14:24:35+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2608.20093v1",
+      "abs_url": "https://arxiv.org/abs/2608.20093",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 1,
+      "s2_url": "https://www.semanticscholar.org/paper/eb51a22002d37e296073705b5f62ea4b0185da03",
+      "tldr": "HandMvNet is one of the first real-time method designed to estimate 3D hand motion and shape from multi-view camera images through a multi-view attention-fusion mechanism that effectively integrates features from multiple viewpoints.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "HandMvNet: 다중 시점 교차 주의 융합을 이용한 실시간 3D 손 자세 추정",
+      "summary_ko": "- 기존 단일 시점(monocular) 방법은 스케일-깊이 모호성으로 3D 손 자세 추정에 한계가 있었습니다.\n- HandMvNet은 다중 시점 카메라 이미지에서 3D 손 움직임과 형태를 실시간으로 추정하는 방법입니다.\n- 이 방법은 다중 시점 주의 융합(multi-view attention-fusion) 메커니즘으로 여러 시점의 특징을 통합합니다.\n- HandMvNet은 경쟁력 있는 결과를 제공하며, 추론 시간을 크게 줄여 실시간 응용에 적합합니다.\n- 카메라 파라미터 없이 3D 기하학을 학습하고, 기존 방법보다 정확하고 일관된 손 자세를 제공합니다.",
+      "tags": [
+        "3D 손 자세 추정",
+        "다중 시점",
+        "실시간",
+        "딥러닝"
+      ]
+    },
+    {
+      "arxiv_id": "2608.19880",
+      "title": "EnvHarness: Awakening Static Worlds for Agent Learning",
+      "authors": [
+        "Chengsong Huang",
+        "Zifeng Wang",
+        "Rujun Han",
+        "Jun Yan",
+        "Yanfei Chen",
+        "Zoey CuiZhu",
+        "Ke Jiang",
+        "Peng Xia",
+        "Han Yu",
+        "Yufan Zhuang",
+        "Yifei Ming",
+        "Jiaqi Pan",
+        "Bhavana Dalvi Mishra",
+        "Jiaxin Huang",
+        "Burak Gokturk",
+        "Tomas Pfister",
+        "Chen-Yu Lee"
+      ],
+      "summary": "LLM agents learn by interacting with environments, yet these environments are hand-built and static: blind to an agent's weaknesses, and quickly left behind as it improves. While recent environment generation methods attempt to address this, they require domain-specific pipelines, rely on expensive or unreliable verifiers, and still produce static environments. To alleviate the engineering burden of rebuilding environments from scratch, we propose Environment Harness (EnvHarness), a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic. Operating through standard interfaces, EnvHarness applies across diverse domains while ensuring every reshaped environment retains its original verifier. To automate this process, we introduce EnvRigger, which treats the target policy as a black box, observing its execution trajectories to synthesize EnvHarness components targeting diagnosed flaws, and validating them via fresh rollouts. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment generation pipelines, achieving up to a 9.0-point improvement on held-out instances with 9.8% fewer execution steps. Furthermore, EnvHarness provides a superior optimization signal for reinforcement learning, enabling continuous, targeted co-evolution of the policy and its environment.",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-08-20T10:42:06+00:00",
+      "updated": "2026-08-20T10:42:06+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2608.19880v1",
+      "abs_url": "https://arxiv.org/abs/2608.19880",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/47aa2ac90ad7d8685e5c810b6b24e6949c7bb67c",
+      "tldr": "Environment Harness is proposed, a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic, enabling continuous, targeted co-evolution of the policy and its environment.",
+      "matched_keywords": [],
+      "affiliations": [
+        "Washington University in St. Louis",
+        "Google DeepMind",
+        "UNC-Chapel Hill"
+      ],
+      "source": "huggingface",
+      "hf_upvotes": 242,
+      "title_ko": "EnvHarness: 에이전트 학습을 위한 정적 환경 활성화",
+      "summary_ko": "- LLM 에이전트 학습 환경은 정적이며 에이전트의 약점을 반영하지 못하는 한계가 있습니다.\n- EnvHarness는 기존 환경을 수정 없이 감싸서 동작을 재구성하는 플러그인 구성 요소 계층입니다.\n- EnvRigger는 에이전트의 실행 궤적을 관찰하여 약점을 보완하는 EnvHarness 구성 요소를 합성합니다.\n- 4개 도메인의 5개 벤치마크에서 EnvHarness는 기존 환경 대비 최대 9.0점 향상을 보였습니다.\n- 이 방법은 정책과 환경의 지속적이고 목표 지향적인 공동 진화를 가능하게 합니다.",
+      "tags": [
+        "LLM 에이전트",
+        "환경 재구성",
+        "강화 학습",
+        "정책 최적화"
+      ]
+    },
     {
       "arxiv_id": "2608.17131",
       "title": "Reduced-Order Physics-Informed Neural Network with Adaptive Basis Refinement for Structural Identification",
