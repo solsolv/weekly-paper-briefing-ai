@@ -1,0 +1,337 @@
+{
+  "week_id": "2026-09-07",
+  "generated_at": "2026-09-05T05:03:15.460720+00:00",
+  "publish_at": "2026-09-07T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2609.03816",
+        "title": "When Vision Meets Graphs: A Survey on Graph Reasoning and Learning",
+        "authors": [
+          "Xinjian Zhao",
+          "Wei Pang",
+          "Zhixuan Yu",
+          "Xiangru Jian",
+          "Xiaozhuang Song",
+          "Yaoyao Xu",
+          "Zhongkai Xue",
+          "Dingshuo Chen",
+          "Shu Wu",
+          "Philip Torr",
+          "Tianshu Yu"
+        ],
+        "summary": "Graphs are a fundamental data structure underlying many problems in the natural and social sciences. Over the past decade, Graph Neural Networks (GNNs) have dominated graph machine learning, supported by solid theoretical foundations. Yet scientists often understand graph structure through vision: chemists read molecular diagrams and social scientists inspect network visualizations. Despite decades of work on graph visualization, most graph learning pipelines still treat graphs purely as symbolic structures, rarely leveraging the visual form of graphs. We argue that this gap deserves renewed attention in the era of powerful vision and vision-language models. This survey provides a first systematic overview of the emerging area we term vision meets graphs, which treats visual depictions of graphs as first-class inputs for reasoning and learning. We organize existing work into three threads. Vision for Graph Reasoning studies how models can use visual depictions of graphs to understand structure and carry out multi-step reasoning. Vision for Graph Learning explores how visual features can complement or augment graph encoders beyond known limitations of message passing. Scientific Graphs examines domains where standardized depiction conventions support both reasoning and learning. Our goal is to clarify what current methods can and cannot do, and to outline a path toward foundation models that perceive and reason about graphs as scientists do.",
+        "categories": [
+          "cs.SI",
+          "cs.CV",
+          "cs.LG"
+        ],
+        "published": "2026-09-03T13:19:22+00:00",
+        "updated": "2026-09-03T13:19:22+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2609.03816v1",
+        "abs_url": "https://arxiv.org/abs/2609.03816",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 2,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/b927d8fc38c77e72de8b8ae8ca1b52b62b7c3fa5",
+        "tldr": "This survey provides a first systematic overview of the emerging area of vision meets graphs, which treats visual depictions of graphs as first-class inputs for reasoning and learning, and organize existing work into three threads.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "시각이 그래프를 만날 때: 그래프 추론 및 학습에 대한 조사",
+        "summary_ko": "- 그래프는 자연 및 사회 과학의 많은 문제에 사용되는 기본 데이터 구조입니다.\n- 기존 그래프 학습 파이프라인은 시각적 형태를 활용하지 않고 그래프를 기호 구조로만 다룹니다.\n- 이 논문은 그래프의 시각적 표현을 추론 및 학습을 위한 주요 입력으로 간주하는 새로운 분야를 체계적으로 조망합니다.\n- 연구는 그래프 추론을 위한 시각, 그래프 학습을 위한 시각, 과학 그래프의 세 가지 주제로 분류됩니다.\n- 이 조사는 현재 방법의 한계를 명확히 하고, 과학자처럼 그래프를 인식하고 추론하는 기초 모델 개발 방향을 제시합니다.",
+        "tags": [
+          "그래프 신경망",
+          "그래프 시각화",
+          "시각-언어 모델",
+          "그래프 학습"
+        ]
+      },
+      {
+        "arxiv_id": "2609.04199",
+        "title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
+        "authors": [
+          "Yuntian Deng",
+          "Pengyu Nie",
+          "Stuart Shieber"
+        ],
+        "summary": "Many recurring text functions are easy to describe but difficult to implement with rules, while calling a large remote model for every input introduces repeated cost, latency, and dependency on a provider. We present compile by training, which turns a natural-language specification into a reusable neural function. At compile time, teacher models generate task-specific examples that are used to train a small adapter for a compact interpreter. The resulting function runs without the teachers and can be stored, versioned, and composed like ordinary software. On FuzzyBench-Hard, a subset on which the Program-as-Weights fast compiler produced no exact matches, compile by training reaches 83.6% semantic accuracy. This higher accuracy comes with a higher compile-time cost: roughly a minute rather than seconds for the fast compiler. We deploy the compiler in a public interactive service and demonstrate compiled functions in a multi-site website helper, a language-controlled 3D avatar, and a bidirectional English-Claudish translator.",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "published": "2026-09-03T17:59:49+00:00",
+        "updated": "2026-09-03T17:59:49+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2609.04199v1",
+        "abs_url": "https://arxiv.org/abs/2609.04199",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/3a1a32794ae28b585a5f45332166d4551b8a9f4b",
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 268,
+        "title_ko": "훈련을 통한 컴파일: 자연어 명세를 로컬 신경 함수로 전환",
+        "summary_ko": "- 반복되는 텍스트 함수는 설명은 쉽지만 규칙 구현이 어렵고, 원격 모델 호출은 비용과 지연을 초래합니다.\n- 본 연구는 자연어 명세를 재사용 가능한 신경 함수로 변환하는 '훈련을 통한 컴파일(compile by training)'을 제안합니다.\n- 컴파일 시, 교사 모델이 생성한 예제로 소형 어댑터를 훈련시켜 컴팩트한 인터프리터를 만듭니다.\n- FuzzyBench-Hard에서 83.6%의 의미 정확도를 달성했으며, 컴파일 시간은 약 1분 소요됩니다.\n- 이 함수는 교사 모델 없이 실행되며 일반 소프트웨어처럼 저장, 버전 관리, 조합이 가능합니다.",
+        "tags": [
+          "자연어 처리",
+          "신경망",
+          "컴파일러",
+          "기계 학습"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2609.03645",
+        "title": "Calibration of neural viscoelastic models via full-field data",
+        "authors": [
+          "Brain M. Riemer",
+          "Markus Kästner",
+          "Karl A. Kalina"
+        ],
+        "summary": "We propose an unsupervised learning framework for calibrating a physics-augmented neural network (PANN) for small-strain viscoelasticity via full-field data. It only requires quantities that are directly accessible in real experiments for training, namely global reaction forces and surface displacements. The underlying PANN is embedded in the generalized standard materials theory, in which two scalar-valued potentials render the constitutive model thermodynamically consistent by construction, while invariant-based representations of the free energy and the dual dissipation potential additionally ensure material symmetry. Considering a thin specimen under the plane stress assumption, we formulate a constrained optimization problem based on the equilibrium gap method in combination with quasi-Newton optimizers and automatic differentiation. Thereby, the unknown out-of-plane strain follows from the plane stress condition and the evolution of the internal variables is captured by an implicit time integration scheme. The resulting system of nonlinear equations is solved via a local Newton iteration at quadrature point and time step. To drastically reduce the computational cost of training, the backward adjoint method is employed to compute the gradient of the target loss, instead of backpropagating through all Newton iteration steps. The proposed framework is demonstrated for synthetic data, including noisy displacements and forces, showing excellent agreement across a wide range of deformation rates and load paths.",
+        "categories": [
+          "cs.CE"
+        ],
+        "published": "2026-09-03T10:46:02+00:00",
+        "updated": "2026-09-03T10:46:02+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2609.03645v1",
+        "abs_url": "https://arxiv.org/abs/2609.03645",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/63bb6ca85781dd07313cae94527c57179a01f028",
+        "tldr": "An unsupervised learning framework for calibrating a physics-augmented neural network (PANN) for small-strain viscoelasticity via full-field data and the backward adjoint method is employed to compute the gradient of the target loss, instead of backpropagating through all Newton iteration steps.",
+        "matched_keywords": [
+          "neural network",
+          "elastic",
+          "deform",
+          "stress",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "전역장 데이터를 이용한 신경 점탄성 모델의 캘리브레이션",
+        "summary_ko": "- 이 연구는 전역장(full-field) 데이터를 활용하여 작은 변형률(small-strain) 점탄성(viscoelasticity)을 위한 물리 증강 신경망(PANN)을 캘리브레이션하는 비지도 학습 프레임워크를 제안합니다.\n- 제안된 PANN은 일반화된 표준 재료 이론에 기반하며, 두 개의 스칼라 포텐셜을 통해 구성 모델의 열역학적 일관성과 재료 대칭성을 보장합니다.\n- 평면 응력(plane stress) 가정을 적용한 얇은 시편에 대해 평형 간극(equilibrium gap) 방법과 준-뉴턴(quasi-Newton) 최적화기를 결합한 제약 최적화 문제를 공식화합니다.\n- 훈련 계산 비용을 줄이기 위해 역방향 수반(backward adjoint) 방법을 사용하여 손실 함수의 기울기를 효율적으로 계산합니다.\n- 제안된 프레임워크는 잡음이 있는 변위 및 힘을 포함한 합성 데이터에서 광범위한 변형률 속도와 하중 경로에 걸쳐 우수한 일치도를 보여줍니다.",
+        "tags": [
+          "점탄성",
+          "신경망",
+          "캘리브레이션",
+          "비지도 학습"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.12913/22998624/225411",
+        "title": "Physics-informed surrogate modeling for reliability-based robust design optimization of the external load factor in bolted joints under uncertainty",
+        "authors": [
+          "Van Thuy Tran"
+        ],
+        "summary": "The external load factor (χ) is a key parameter affecting the performance and reliability of bolted joints. This study presents an integrated framework combining experimental measurement, physics-informed surrogate modeling, and reliability-based robust design optimization (RBRDO) to analyze and optimize χ under uncertainty. A struc - tured experimental design is employed to investigate the effects of friction coefficient (μ), surface roughness (Ra), and material hardness (HB). Results indicate significant nonlinear interactions, with material hardness exerting the strongest influence. A physics-informed surrogate model is then developed to provide accurate and physically consistent predictions. The optimization framework incorporates the expected value, variance, and Conditional Value-at-Risk (CVaR) to balance performance, variability, and risk. The optimal design, characterized by higher friction, lower surface roughness, and greater material hardness, reduces the expected external load factor to approximately 0.24 while satisfying the reliability requirement P(0.2 < χ < 0.3) ≈ 0.9993. The proposed framework offers an efficient and robust methodology for mechanical design under uncertainty.",
+        "categories": [],
+        "published": "2026-10-01T00:00:00+00:00",
+        "updated": "2026-10-01T00:00:00+00:00",
+        "pdf_url": "https://www.astrj.com/pdf-225411-143755?filename=Physics-informed-surrogat.pdf",
+        "abs_url": "https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6",
+        "tldr": null,
+        "matched_keywords": [
+          "physics-informed",
+          "surrogate model",
+          "design optimization",
+          "mechanical",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "title_ko": "불확실성 하 볼트 체결부의 외부 하중 계수 신뢰성 기반 강건 설계 최적화를 위한 물리학 정보 기반 대리 모델링",
+        "summary_ko": "- 볼트 체결부 성능에 중요한 외부 하중 계수(χ)를 불확실성 하에 분석하고 최적화합니다.\n- 실험 측정, 물리학 정보 기반 대리 모델링, 신뢰성 기반 강건 설계 최적화(RBRDO)를 통합합니다.\n- 마찰 계수(μ), 표면 거칠기(Ra), 재료 경도(HB)가 χ에 미치는 영향을 실험으로 분석했습니다.\n- 최적 설계는 χ의 기대값을 약 0.24로 줄이고, 신뢰도 P(0.2 < χ < 0.3) ≈ 0.9993을 만족합니다.\n- 이 프레임워크는 불확실성 하 기계 설계를 위한 효율적이고 강건한 방법론을 제공합니다.",
+        "tags": [
+          "볼트 체결부",
+          "신뢰성 기반 설계",
+          "대리 모델링",
+          "강건 최적화"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2609.03816",
+      "title": "When Vision Meets Graphs: A Survey on Graph Reasoning and Learning",
+      "authors": [
+        "Xinjian Zhao",
+        "Wei Pang",
+        "Zhixuan Yu",
+        "Xiangru Jian",
+        "Xiaozhuang Song",
+        "Yaoyao Xu",
+        "Zhongkai Xue",
+        "Dingshuo Chen",
+        "Shu Wu",
+        "Philip Torr",
+        "Tianshu Yu"
+      ],
+      "summary": "Graphs are a fundamental data structure underlying many problems in the natural and social sciences. Over the past decade, Graph Neural Networks (GNNs) have dominated graph machine learning, supported by solid theoretical foundations. Yet scientists often understand graph structure through vision: chemists read molecular diagrams and social scientists inspect network visualizations. Despite decades of work on graph visualization, most graph learning pipelines still treat graphs purely as symbolic structures, rarely leveraging the visual form of graphs. We argue that this gap deserves renewed attention in the era of powerful vision and vision-language models. This survey provides a first systematic overview of the emerging area we term vision meets graphs, which treats visual depictions of graphs as first-class inputs for reasoning and learning. We organize existing work into three threads. Vision for Graph Reasoning studies how models can use visual depictions of graphs to understand structure and carry out multi-step reasoning. Vision for Graph Learning explores how visual features can complement or augment graph encoders beyond known limitations of message passing. Scientific Graphs examines domains where standardized depiction conventions support both reasoning and learning. Our goal is to clarify what current methods can and cannot do, and to outline a path toward foundation models that perceive and reason about graphs as scientists do.",
+      "categories": [
+        "cs.SI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-09-03T13:19:22+00:00",
+      "updated": "2026-09-03T13:19:22+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2609.03816v1",
+      "abs_url": "https://arxiv.org/abs/2609.03816",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 2,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/b927d8fc38c77e72de8b8ae8ca1b52b62b7c3fa5",
+      "tldr": "This survey provides a first systematic overview of the emerging area of vision meets graphs, which treats visual depictions of graphs as first-class inputs for reasoning and learning, and organize existing work into three threads.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "시각이 그래프를 만날 때: 그래프 추론 및 학습에 대한 조사",
+      "summary_ko": "- 그래프는 자연 및 사회 과학의 많은 문제에 사용되는 기본 데이터 구조입니다.\n- 기존 그래프 학습 파이프라인은 시각적 형태를 활용하지 않고 그래프를 기호 구조로만 다룹니다.\n- 이 논문은 그래프의 시각적 표현을 추론 및 학습을 위한 주요 입력으로 간주하는 새로운 분야를 체계적으로 조망합니다.\n- 연구는 그래프 추론을 위한 시각, 그래프 학습을 위한 시각, 과학 그래프의 세 가지 주제로 분류됩니다.\n- 이 조사는 현재 방법의 한계를 명확히 하고, 과학자처럼 그래프를 인식하고 추론하는 기초 모델 개발 방향을 제시합니다.",
+      "tags": [
+        "그래프 신경망",
+        "그래프 시각화",
+        "시각-언어 모델",
+        "그래프 학습"
+      ]
+    },
+    {
+      "arxiv_id": "2609.04199",
+      "title": "Compile by Training: Turning Natural-Language Specifications into Local Neural Functions",
+      "authors": [
+        "Yuntian Deng",
+        "Pengyu Nie",
+        "Stuart Shieber"
+      ],
+      "summary": "Many recurring text functions are easy to describe but difficult to implement with rules, while calling a large remote model for every input introduces repeated cost, latency, and dependency on a provider. We present compile by training, which turns a natural-language specification into a reusable neural function. At compile time, teacher models generate task-specific examples that are used to train a small adapter for a compact interpreter. The resulting function runs without the teachers and can be stored, versioned, and composed like ordinary software. On FuzzyBench-Hard, a subset on which the Program-as-Weights fast compiler produced no exact matches, compile by training reaches 83.6% semantic accuracy. This higher accuracy comes with a higher compile-time cost: roughly a minute rather than seconds for the fast compiler. We deploy the compiler in a public interactive service and demonstrate compiled functions in a multi-site website helper, a language-controlled 3D avatar, and a bidirectional English-Claudish translator.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-09-03T17:59:49+00:00",
+      "updated": "2026-09-03T17:59:49+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2609.04199v1",
+      "abs_url": "https://arxiv.org/abs/2609.04199",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/3a1a32794ae28b585a5f45332166d4551b8a9f4b",
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 268,
+      "title_ko": "훈련을 통한 컴파일: 자연어 명세를 로컬 신경 함수로 전환",
+      "summary_ko": "- 반복되는 텍스트 함수는 설명은 쉽지만 규칙 구현이 어렵고, 원격 모델 호출은 비용과 지연을 초래합니다.\n- 본 연구는 자연어 명세를 재사용 가능한 신경 함수로 변환하는 '훈련을 통한 컴파일(compile by training)'을 제안합니다.\n- 컴파일 시, 교사 모델이 생성한 예제로 소형 어댑터를 훈련시켜 컴팩트한 인터프리터를 만듭니다.\n- FuzzyBench-Hard에서 83.6%의 의미 정확도를 달성했으며, 컴파일 시간은 약 1분 소요됩니다.\n- 이 함수는 교사 모델 없이 실행되며 일반 소프트웨어처럼 저장, 버전 관리, 조합이 가능합니다.",
+      "tags": [
+        "자연어 처리",
+        "신경망",
+        "컴파일러",
+        "기계 학습"
+      ]
+    },
+    {
+      "arxiv_id": "2609.03645",
+      "title": "Calibration of neural viscoelastic models via full-field data",
+      "authors": [
+        "Brain M. Riemer",
+        "Markus Kästner",
+        "Karl A. Kalina"
+      ],
+      "summary": "We propose an unsupervised learning framework for calibrating a physics-augmented neural network (PANN) for small-strain viscoelasticity via full-field data. It only requires quantities that are directly accessible in real experiments for training, namely global reaction forces and surface displacements. The underlying PANN is embedded in the generalized standard materials theory, in which two scalar-valued potentials render the constitutive model thermodynamically consistent by construction, while invariant-based representations of the free energy and the dual dissipation potential additionally ensure material symmetry. Considering a thin specimen under the plane stress assumption, we formulate a constrained optimization problem based on the equilibrium gap method in combination with quasi-Newton optimizers and automatic differentiation. Thereby, the unknown out-of-plane strain follows from the plane stress condition and the evolution of the internal variables is captured by an implicit time integration scheme. The resulting system of nonlinear equations is solved via a local Newton iteration at quadrature point and time step. To drastically reduce the computational cost of training, the backward adjoint method is employed to compute the gradient of the target loss, instead of backpropagating through all Newton iteration steps. The proposed framework is demonstrated for synthetic data, including noisy displacements and forces, showing excellent agreement across a wide range of deformation rates and load paths.",
+      "categories": [
+        "cs.CE"
+      ],
+      "published": "2026-09-03T10:46:02+00:00",
+      "updated": "2026-09-03T10:46:02+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2609.03645v1",
+      "abs_url": "https://arxiv.org/abs/2609.03645",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/63bb6ca85781dd07313cae94527c57179a01f028",
+      "tldr": "An unsupervised learning framework for calibrating a physics-augmented neural network (PANN) for small-strain viscoelasticity via full-field data and the backward adjoint method is employed to compute the gradient of the target loss, instead of backpropagating through all Newton iteration steps.",
+      "matched_keywords": [
+        "neural network",
+        "elastic",
+        "deform",
+        "stress",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "전역장 데이터를 이용한 신경 점탄성 모델의 캘리브레이션",
+      "summary_ko": "- 이 연구는 전역장(full-field) 데이터를 활용하여 작은 변형률(small-strain) 점탄성(viscoelasticity)을 위한 물리 증강 신경망(PANN)을 캘리브레이션하는 비지도 학습 프레임워크를 제안합니다.\n- 제안된 PANN은 일반화된 표준 재료 이론에 기반하며, 두 개의 스칼라 포텐셜을 통해 구성 모델의 열역학적 일관성과 재료 대칭성을 보장합니다.\n- 평면 응력(plane stress) 가정을 적용한 얇은 시편에 대해 평형 간극(equilibrium gap) 방법과 준-뉴턴(quasi-Newton) 최적화기를 결합한 제약 최적화 문제를 공식화합니다.\n- 훈련 계산 비용을 줄이기 위해 역방향 수반(backward adjoint) 방법을 사용하여 손실 함수의 기울기를 효율적으로 계산합니다.\n- 제안된 프레임워크는 잡음이 있는 변위 및 힘을 포함한 합성 데이터에서 광범위한 변형률 속도와 하중 경로에 걸쳐 우수한 일치도를 보여줍니다.",
+      "tags": [
+        "점탄성",
+        "신경망",
+        "캘리브레이션",
+        "비지도 학습"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.12913/22998624/225411",
+      "title": "Physics-informed surrogate modeling for reliability-based robust design optimization of the external load factor in bolted joints under uncertainty",
+      "authors": [
+        "Van Thuy Tran"
+      ],
+      "summary": "The external load factor (χ) is a key parameter affecting the performance and reliability of bolted joints. This study presents an integrated framework combining experimental measurement, physics-informed surrogate modeling, and reliability-based robust design optimization (RBRDO) to analyze and optimize χ under uncertainty. A struc - tured experimental design is employed to investigate the effects of friction coefficient (μ), surface roughness (Ra), and material hardness (HB). Results indicate significant nonlinear interactions, with material hardness exerting the strongest influence. A physics-informed surrogate model is then developed to provide accurate and physically consistent predictions. The optimization framework incorporates the expected value, variance, and Conditional Value-at-Risk (CVaR) to balance performance, variability, and risk. The optimal design, characterized by higher friction, lower surface roughness, and greater material hardness, reduces the expected external load factor to approximately 0.24 while satisfying the reliability requirement P(0.2 < χ < 0.3) ≈ 0.9993. The proposed framework offers an efficient and robust methodology for mechanical design under uncertainty.",
+      "categories": [],
+      "published": "2026-10-01T00:00:00+00:00",
+      "updated": "2026-10-01T00:00:00+00:00",
+      "pdf_url": "https://www.astrj.com/pdf-225411-143755?filename=Physics-informed-surrogat.pdf",
+      "abs_url": "https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6",
+      "tldr": null,
+      "matched_keywords": [
+        "physics-informed",
+        "surrogate model",
+        "design optimization",
+        "mechanical",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "title_ko": "불확실성 하 볼트 체결부의 외부 하중 계수 신뢰성 기반 강건 설계 최적화를 위한 물리학 정보 기반 대리 모델링",
+      "summary_ko": "- 볼트 체결부 성능에 중요한 외부 하중 계수(χ)를 불확실성 하에 분석하고 최적화합니다.\n- 실험 측정, 물리학 정보 기반 대리 모델링, 신뢰성 기반 강건 설계 최적화(RBRDO)를 통합합니다.\n- 마찰 계수(μ), 표면 거칠기(Ra), 재료 경도(HB)가 χ에 미치는 영향을 실험으로 분석했습니다.\n- 최적 설계는 χ의 기대값을 약 0.24로 줄이고, 신뢰도 P(0.2 < χ < 0.3) ≈ 0.9993을 만족합니다.\n- 이 프레임워크는 불확실성 하 기계 설계를 위한 효율적이고 강건한 방법론을 제공합니다.",
+      "tags": [
+        "볼트 체결부",
+        "신뢰성 기반 설계",
+        "대리 모델링",
+        "강건 최적화"
+      ]
+    }
+  ]
+}
