@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-07-20 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
+<title>2026-10-12 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
 <meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -435,33 +435,29 @@
 <div class="wrap">
   <header class="site">
   <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-07-20</span>
+  <span class="eyebrow">2026-10-12</span>
   <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
   <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
   </header>
-  <div id="publish-notice" data-publish-at="2026-07-20T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
-    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-07-20 8:00 (KST)</strong>에 공개됩니다.</p>
+  <div id="publish-notice" data-publish-at="2026-10-12T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
+    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-10-12 8:00 (KST)</strong>에 공개됩니다.</p>
     <div class="back-pill-wrap"><a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a></div>
   </div>
   <div data-gate-content>
   <div class="toc reveal">
-    <div class="toc-title">이번 주 4편</div>
+    <div class="toc-title">이번 주 3편</div>
     <div class="toc-list">
-        <a href="#p-2607.15211">
+        <a href="#p-2610.12336">
           <span class="badge ai">AI</span>
-          <span>MAGiSt3R: 단일 RGB 비디오로부터 다중 에이전트 피드포워드 3D 재구성</span>
+          <span>asdex: JAX에서 자동 희소 미분</span>
         </a>
-        <a href="#p-2607.14952">
+        <a href="#p-2610.12374">
           <span class="badge ai">AI</span>
-          <span>LongStraw: 고정된 GPU 예산으로 2백만 토큰을 넘어서는 장문 맥락 RL</span>
+          <span>에이전트가 진화하는 코드 세계, AgentGarten</span>
         </a>
-        <a href="#p-2606.08796">
+        <a href="#p-2610.09461">
           <span class="badge mech">AI 활용 기계공학</span>
-          <span>불규칙 영역의 고체 역학을 위한 비중첩 Schwarz 하이브리드 유한 요소-신경망 연산자 프레임워크</span>
-        </a>
-        <a href="#p-2607.15049">
-          <span class="badge mech">AI 활용 기계공학</span>
-          <span>신경망 연산자가 구성 모델 발견을 위한 역문제를 해결하다</span>
+          <span>경쟁적인 강도 요구사항 하에 다결정 미세구조 최적화를 위한 딥러닝 기반 프레임워크</span>
         </a>
     </div>
   </div>
@@ -477,75 +473,59 @@
           AI
           <span class="badge ai">2편</span>
         </h2>
-          <article class="paper ai reveal" id="p-2607.15211" style="transition-delay: 0ms;">
+          <article class="paper ai reveal" id="p-2610.12336" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CV · 발표 2026-07-16<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2607.15211" target="_blank" rel="noopener">MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction from Monocular RGB Videos</a></h3>
-<p class="title-ko">MAGiSt3R: 단일 RGB 비디오로부터 다중 에이전트 피드포워드 3D 재구성</p>            <div class="authors">Ziren Gong, Xiaohan Li, Fabio Tosi, Ninghui Xu, Stefano Mattoccia, Jianfei Cai, Matteo Poggi</div>
-<div class="affiliations">University of Bologna</div>            <div class="stats">
+              cs.MS, cs.LG, math.NA · 발표 2026-10-08<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2610.12336" target="_blank" rel="noopener">asdex: Automatic Sparse Differentiation in JAX</a></h3>
+<p class="title-ko">asdex: JAX에서 자동 희소 미분</p>            <div class="authors">Adrian Hill, Guillaume Dalle</div>
+            <div class="stats">
 <span class="chip">인용 1</span>            </div>
             <div class="summary">
               <ul>
-<li>단일 RGB 비디오에서 3D 재구성과 카메라 추적을 수행하는 기존 방식의 한계를 개선합니다.</li><li>MAGiSt3R은 다중 에이전트(multi-agent) 프레임워크로, 피드포워드 모델과 병합 모델을 활용합니다.</li><li>3R 계열 모델이 RGB 비디오를 처리하여 로컬 포인트 맵을 생성하고, MAGMA가 이를 병합합니다.</li><li>누적되는 카메라 드리프트(drift)를 줄이기 위해 포즈 그래프 최적화(pose graph optimization)를 수행합니다.</li><li>합성 및 실제 데이터셋에서 기존 최신 방법보다 뛰어난 정확도를 보이며, 약 10 FPS로 작동합니다.</li>              </ul>
+<li>과학 계산 및 머신러닝에서 야코비안(Jacobian)이나 헤시안(Hessian) 행렬 계산은 필수적입니다.</li><li>기존 자동 미분(AD)은 밀집 행렬을 계산하기 위해 많은 연산이 필요하여 비효율적입니다.</li><li>자동 희소 미분(ASD)은 희소성 패턴을 활용하여 미분 행렬을 효율적으로 계산합니다.</li><li>asdex는 JAX 생태계에서 최초의 독립형 ASD 툴킷을 제공합니다.</li><li>asdex.jacobian과 asdex.hessian은 JAX의 기존 함수를 대체하는 희소 미분 기능을 제공합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> MAGiSt3R is presented, a multi-agent 3D reconstruction framework performing reconstruction and camera tracking for monocular RGB videos at almost 10 FPS, demonstrating its superior reconstruction and camera tracking accuracy compared to state-of-the-art approaches.</div><div class="tags"><span class="tag">#3D 재구성</span><span class="tag">#단일 시점 비디오</span><span class="tag">#다중 에이전트</span><span class="tag">#카메라 추적</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2607.15211" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2607.15211v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/8aab721e4700e863c1ad37d5b52f5ba9268a8242" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="tags"><span class="tag">#자동 미분</span><span class="tag">#희소 행렬</span><span class="tag">#JAX</span><span class="tag">#과학 계산</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2610.12336" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2610.12336v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/ba8981b1bb4090c2acdc3535873eacb27fe97ec2" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
-          <article class="paper ai reveal" id="p-2607.14952" style="transition-delay: 60ms;">
+          <article class="paper ai reveal" id="p-2610.12374" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.LG, cs.DC · 발표 2026-07-16<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2607.14952" target="_blank" rel="noopener">LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget</a></h3>
-<p class="title-ko">LongStraw: 고정된 GPU 예산으로 2백만 토큰을 넘어서는 장문 맥락 RL</p>            <div class="authors">Changhai Zhou, Kieran Liu, Yuhua Zhou, Qian Qiao, Jun Gao, Harry Zhang, Irvine Lu, Nolan Ho 외 12명</div>
-            <div class="stats">
-<span class="chip">HF upvotes 76</span>            </div>
+              cs.CV · 발표 2026-10-08<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2610.12374" target="_blank" rel="noopener">AgentGarten: Code Worlds for Evolving Agents</a></h3>
+<p class="title-ko">에이전트가 진화하는 코드 세계, AgentGarten</p>            <div class="authors">Jiawei Chi, Shangchen Miao, Zhiyuan Shi, Kailu Wu, Hanyang Wang, Weiliang Chen, Qiyu Dai, Jinshan Ren 외 6명</div>
+<div class="affiliations">Tsinghua University</div>            <div class="stats">
+<span class="chip">HF upvotes 134</span>            </div>
             <div class="summary">
               <ul>
-<li>추론 시스템은 백만 토큰에 근접하지만, RL 후처리(post-training)는 256K 토큰 이하에 머무는 격차가 있습니다.</li><li>LongStraw는 고정된 GPU 예산 내에서 백만 토큰 RL 후처리를 위한 아키텍처 인지 실행 스택입니다.</li><li>자동 미분 없이 공유 프롬프트를 평가하고, 모델별 상태만 유지하며, 짧은 응답 분기를 개별적으로 재생합니다.</li><li>8개의 H20 GPU에서 2.1M 위치에서 Qwen 스코어링 및 응답 역전파를 완료했습니다.</li><li>이는 기존 RL 후처리 한계를 극복하며, AI 에이전트의 장문 궤적 처리에 기여합니다.</li>              </ul>
+<li>에이전트 학습을 위한 가상 환경은 사실적 시각과 일관된 규칙을 모두 갖추기 어렵습니다.</li><li>AgentGarten은 시뮬레이터와 게임 엔진을 신경 렌더러와 결합하여 실시간 상호작용 환경을 구축합니다.</li><li>제안된 적대적 강제(Adversarial Forcing) 기법으로 신경 렌더러의 시각적 품질을 향상시킵니다.</li><li>AgentGarten의 에이전트는 기존 강화 학습 대비 4라운드 만에 학습하여 효율성이 크게 향상되었습니다.</li><li>코드로 새로운 세계를 만들고 에이전트와 함께 진화하는 상호작용 학습의 가능성을 제시합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> LongStraw is an architecture-aware execution stack for million-token RL post-training under a fixed GPU budget, instantiated with Group Relative Policy Optimization (GRPO).</div><div class="tags"><span class="tag">#강화 학습</span><span class="tag">#장문 맥락</span><span class="tag">#GPU 최적화</span><span class="tag">#AI 에이전트</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2607.14952" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2607.14952v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/959127446156868c042766cb8469f61229079473" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> AgentGarten is introduced, a framework that couples simulators and game engines with a shared neural renderer to build real-time interactive environments and demonstrates a substantial gain in learning efficiency, with agents learning from just 4 rounds compared with millions for a conventional reinforcement learning counterpart.</div><div class="tags"><span class="tag">#에이전트 학습</span><span class="tag">#가상 환경</span><span class="tag">#신경 렌더러</span><span class="tag">#강화 학습</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2610.12374" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2610.12374v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/9e1d99f684ecf5cb7854c02a28e84628a4b0f34f" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
           AI 활용 기계공학
-          <span class="badge mech">2편</span>
+          <span class="badge mech">1편</span>
         </h2>
-          <article class="paper mech reveal" id="p-2606.08796" style="transition-delay: 0ms;">
+          <article class="paper mech reveal" id="p-2610.09461" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CE · 발표 2026-06-07<span class="slot-badge impact">임팩트</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2606.08796" target="_blank" rel="noopener">A Non-Overlapping Schwarz Hybrid Finite Element-Neural Operator Framework for Solid Mechanics on Irregular Domains</a></h3>
-<p class="title-ko">불규칙 영역의 고체 역학을 위한 비중첩 Schwarz 하이브리드 유한 요소-신경망 연산자 프레임워크</p>            <div class="authors">Wei Wang, Abhinav Gupta, Haihui Ruan, Somdatta Goswami</div>
+               · 발표 2026-10-07<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://www.semanticscholar.org/paper/02dbe08964d1ec6cbaf9a4485ac7e58b66fcefc2" target="_blank" rel="noopener">Deep learning driven framework for optimization of polycrystalline microstructures under competing strength requirements</a></h3>
+<p class="title-ko">경쟁적인 강도 요구사항 하에 다결정 미세구조 최적화를 위한 딥러닝 기반 프레임워크</p>            <div class="authors">Ashwini Gupta, Indrashis Saha, Lori Graham-Brady, T. Zaki</div>
             <div class="stats">
-<span class="chip">인용 2</span><span class="chip">매칭: physics-informed, neural operator, finite element, elastic, stress, mechanical, relevance:0.90</span>            </div>
+<span class="chip">매칭: deep learning, finite element, mechanical, relevance:0.90</span>            </div>
             <div class="summary">
               <ul>
-<li>유한 요소(FE)법은 고체 역학 시뮬레이션의 표준이지만, 복잡한 문제에서 계산 비용이 높습니다.</li><li>이 연구는 기존 FE-신경망 연산자(NO) 프레임워크의 중첩 계산과 불규칙 형상 처리 한계를 개선합니다.</li><li>비중첩 Schwarz 교대 방법과 Point-DeepONet을 사용하여 불규칙 형상에서도 작동하도록 개선했습니다.</li><li>변위 연산자로부터 변형률 및 응력 연산자를 유도하여 매개변수를 줄이고 일관성을 확보했습니다.</li><li>이 프레임워크는 대규모 동적 고체 역학 문제 해결에 기여하는 유연하고 효율적인 하이브리드 솔버입니다.</li>              </ul>
+<li>다결정 미세구조 설계는 고비용 시뮬레이션 때문에 기존 방법으로 최적화하기 어렵습니다.</li><li>이 연구는 딥러닝 기반 프레임워크로 다결정 미세구조를 최적화하는 방법을 제안합니다.</li><li>3D U-Net 대리 모델이 미세구조를 충격 시뮬레이션의 속도 이력으로 직접 매핑합니다.</li><li>제안된 방법은 CPFE 시뮬레이션 대비 약 4배 빠른 최적화 시간을 보이며, 예측 오차는 3% 미만입니다.</li><li>이 프레임워크는 고비용 시뮬레이션이 필요한 다양한 설계 최적화 문제에 적용 가능합니다.</li>              </ul>
             </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> These results establish a non-overlapping FE-NO coupling paradigm that is geometry-flexible, parameter-efficient, and convergence-stable, providing a pathway for hybrid physics-based and operator-learning solvers in large-scale dynamic solid mechanics.</div><div class="tags"><span class="tag">#고체 역학</span><span class="tag">#유한 요소법</span><span class="tag">#신경망 연산자</span><span class="tag">#하이브리드 모델</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2606.08796" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2606.08796v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/a5fe31fbae33254983994ab272c07edfb40db606" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
-          </article>
-          <article class="paper mech reveal" id="p-2607.15049" style="transition-delay: 60ms;">
-            <div class="meta">
-              cs.CE, cond-mat.mtrl-sci · 발표 2026-07-16<span class="slot-badge latest">최신</span>            </div>
-            <h3><a href="https://arxiv.org/abs/2607.15049" target="_blank" rel="noopener">Neural operators solve inverse problems for constitutive model discovery</a></h3>
-<p class="title-ko">신경망 연산자가 구성 모델 발견을 위한 역문제를 해결하다</p>            <div class="authors">Moritz Flaschel, Burigede Liu, Ellen Kuhl</div>
-            <div class="stats">
-<span class="chip">매칭: neural operator, elastic, mechanical, relevance:0.85</span>            </div>
-            <div class="summary">
-              <ul>
-<li>재료의 기계적 반응 특성 분석은 계산 비용이 많이 드는 최적화 문제 해결을 필요로 합니다.</li><li>이 연구는 실험 데이터를 재료의 구성 함수로 직접 매핑하는 PANO와 CANO라는 두 신경망 연산자(neural operator)를 제안합니다.</li><li>제안된 신경망 연산자는 변위장과 반력을 초탄성 변형 에너지 밀도 함수로 매핑하도록 훈련됩니다.</li><li>라플라시안 고유 함수로 변위장을 인코딩하여 이산화 독립적이고 노이즈에 강한 예측을 가능하게 합니다.</li><li>이 프레임워크는 물리적으로 타당한 재료 모델을 출력하며, 거의 즉각적인 재료 특성 분석을 가능하게 합니다.</li>              </ul>
-            </div>
-<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This work proposes two neural operator architectures that directly map experimentally measured data to the constitutive functions governing the mechanical response of the material: Physics-Augmented Neural Operators (PANO) and Constitutive Artificial Neural Operators (CANO).</div><div class="tags"><span class="tag">#신경망 연산자</span><span class="tag">#역문제</span><span class="tag">#재료 모델링</span><span class="tag">#구성 모델</span></div>            <div class="links">
-              <a href="https://arxiv.org/abs/2607.15049" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2607.15049v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/bf02d9ea92ea9da08f787e338b90d9507e9508d9" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<div class="tags"><span class="tag">#딥러닝</span><span class="tag">#미세구조 최적화</span><span class="tag">#재료 과학</span><span class="tag">#U-Net</span></div>            <div class="links">
+              <a href="https://www.semanticscholar.org/paper/02dbe08964d1ec6cbaf9a4485ac7e58b66fcefc2" target="_blank" rel="noopener">arXiv</a>
+              <a href="" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/02dbe08964d1ec6cbaf9a4485ac7e58b66fcefc2" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 
