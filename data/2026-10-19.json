@@ -1,0 +1,369 @@
+{
+  "week_id": "2026-10-19",
+  "generated_at": "2026-10-17T07:33:25.307311+00:00",
+  "publish_at": "2026-10-19T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2610.22323",
+        "title": "Mem4Act: Learning Effective Latent Memory for Long-Horizon Robotic Manipulation",
+        "authors": [
+          "Yun Zhang",
+          "Zhiyu Huang",
+          "Tianhui Cai",
+          "Chen Tang",
+          "Wei Wang",
+          "Jiaqi Ma"
+        ],
+        "summary": "Long-horizon robotic manipulation fundamentally requires memory: agents must retain task-relevant information from past observations and interactions and use it to guide future actions. Existing approaches typically preserve raw historical observations, compressed visual tokens, or language summaries, but these representations either expose the action policy to increasingly long histories or risk discarding task-relevant temporal, semantic, and perceptual information. We introduce Mem4Act, a framework for learning effective latent memory as a fixed-size representation explicitly optimized for long-horizon robotic control. Mem4Act addresses three coupled challenges: how to efficiently cover long histories, what information memory should retain, and how to ensure the policy actually relies on memory. To this end, it organizes history via multi-granularity temporal aggregation, preserves complementary semantic and perceptual information through question-answering supervision and key-frame DINO feature reconstruction, and employs memory-first two-stage training to encourage greater use of memory by the action policy. The resulting memory captures both high-level task state and fine-grained perceptual evidence while providing a bounded interface to the action policy. Across RoboMME, RMBench, and four real-world manipulation tasks, Mem4Act achieves state-of-the-art performance on memory-dependent control, with success rates of 49.88%, 61.0%, and 81.5%, respectively. Extensive ablations further demonstrate the importance of temporal aggregation, complementary memory supervision, and memory-first training.",
+        "categories": [
+          "cs.RO"
+        ],
+        "published": "2026-10-15T17:51:58+00:00",
+        "updated": "2026-10-15T17:51:58+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.22323v1",
+        "abs_url": "https://arxiv.org/abs/2610.22323",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/b8df22d63ce109922152dcaf40e643881ec5d05c",
+        "tldr": "Mem4Act is introduced, a framework for learning effective latent memory as a fixed-size representation explicitly optimized for long-horizon robotic control that organizes history via multi-granularity temporal aggregation, preserves complementary semantic and perceptual information through question-answering supervision and key-frame DINO feature reconstruction, and employs memory-first two-stage training to encourage greater use of memory by the action policy.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "Mem4Act: 장기 로봇 조작을 위한 효과적인 잠재 기억 학습",
+        "summary_ko": "- 장기 로봇 조작은 과거 정보를 기억해야 하지만, 기존 방식은 정보 손실이나 처리 부담이 컸습니다.\n- 이 논문은 고정된 크기의 잠재 기억(latent memory)을 학습하는 Mem4Act 프레임워크를 제안합니다.\n- Mem4Act는 다중 시간 스케일 집계, 질문-답변(QA) 및 DINO 특징 재구성으로 기억을 감독합니다.\n- 또한, 기억 우선 2단계 훈련을 통해 정책이 기억을 더 활용하도록 유도합니다.\n- RoboMME, RMBench, 실제 로봇 조작에서 각각 49.88%, 61.0%, 81.5%의 성공률로 최신 성능을 달성했습니다.",
+        "tags": [
+          "로봇 조작",
+          "장기 기억",
+          "강화 학습",
+          "인공지능"
+        ]
+      },
+      {
+        "arxiv_id": "2610.22200",
+        "title": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use",
+        "authors": [
+          "Hanzhang Zhou",
+          "Long Li",
+          "Quyu Kong",
+          "Lei Wang",
+          "Panrong Tong",
+          "Long Chen",
+          "Tianyu Xia",
+          "Gongjie Zhang",
+          "Xu Zhang",
+          "Chen Liu",
+          "Jianan Zhang",
+          "Chenglin Cai",
+          "Zhengwen Zeng",
+          "Steven Hoi",
+          "Yue Wang"
+        ],
+        "summary": "Computer use has reached a turning point: the focus is expanding from GUI-only interaction to systems that complete tasks on users' computers through visual and programmatic interfaces. We define a generalist computer-use agent (GCUA) as a system in which the model chooses how to observe, act, and organize its work across visual and programmatic interfaces. Yet frontier implementations, such as GPT-6 Astra's computer-use system, remain largely closed, limiting systematic study of their design. We introduce Open Generalist CUA (OpenGCUA), an ongoing project to develop and open the full stack for GCUAs with the community. This report presents the first release of OpenGCUA. Code execution is a key feature of our agent design: it lets intermediate results determine subsequent operations and enables models to apply their existing programming capabilities directly to computer interaction. We also propose harness-to-model decision transfer, moving selected observations and task-state decisions from fixed harness rules to the model. On OSWorld-v2, our full configuration improves task scores across all eight evaluated models, including GPT-6 Astra and Claude Opus 5, raising mean partial score by +19.6 points and reducing reported steps per task by an average of 53.0% relative to batched GUI-only execution. We release our implementation and prompts, evaluation trajectories from all eight models, and preliminary versions of a real-device harness and a cross-device SDK. The harness addresses real-device challenges not fully captured by benchmarks, while the SDK provides a common programming interface across computers, mobiles and browsers. Across four real macOS tasks under our real-device harness, selected Qwen3.8-Max runs use 19.4 times as many reported reasoning tokens as GPT-6 Astra, highlighting substantial differences between models in real-device execution efficiency.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-10-15T16:51:35+00:00",
+        "updated": "2026-10-15T16:51:35+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.22200v1",
+        "abs_url": "https://arxiv.org/abs/2610.22200",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/eb3aed58ed65c8017d7ca5eea00de5be915c0374",
+        "tldr": "This report presents Open Generalist CUA (OpenGCUA), an ongoing project to develop and open the full stack for GCUAs with the community, and presents the first release of OpenGCUA, an ongoing project to develop and open the full stack for GCUAs with the community.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 309,
+        "title_ko": "OpenGCUA: 범용 컴퓨터 사용을 위한 완전 개방형 스택을 향하여",
+        "summary_ko": "- 컴퓨터 사용의 초점이 시각 및 프로그래밍 인터페이스를 통한 작업 완성으로 확장되고 있으나, 기존 시스템은 폐쇄적입니다.\n- 이 논문은 범용 컴퓨터 사용 에이전트(GCUA)를 위한 완전 개방형 스택인 OpenGCUA 프로젝트의 첫 번째 버전을 소개합니다.\n- OpenGCUA는 코드 실행을 핵심 기능으로 활용하여 중간 결과에 따라 작업을 결정하고 모델의 프로그래밍 능력을 직접 적용합니다.\n- OSWorld-v2 벤치마크에서 OpenGCUA는 GPT-6 Astra를 포함한 8개 모델의 평균 부분 점수를 19.6점 향상시켰습니다.\n- 이 프로젝트는 실제 장치 하네스 및 교차 장치 SDK를 제공하여 실제 환경의 복잡성과 효율성 차이를 다룹니다.",
+        "tags": [
+          "범용 컴퓨터 에이전트",
+          "개방형 스택",
+          "코드 실행",
+          "컴퓨터 비전"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2609.27216",
+        "title": "KATOsuper: Surrogate-accelerated neural topology optimization with sensitivity-consistent Fourier neural operators",
+        "authors": [
+          "Shengyu Yan",
+          "Jasmin Jelovica"
+        ],
+        "summary": "Topology optimization (TO) remains computationally intensive due to repeated finite element analysis (FEA) evaluations required at each iteration. While neural network-based surrogates offer potential acceleration, existing approaches often suffer from gradient inconsistency between predicted objectives and sensitivities, leading to optimization instability. This work presents KATOsuper, an objective-agnostic framework that couples neural-reparameterized topology optimization with a Sensitivity-Consistent Fourier Neural Operator (SC-FNO). The framework employs the forward_split architecture, which derives deployed sensitivities via automatic differentiation through the predicted objective field and thereby preserves consistency between the predicted objective and the gradient used for optimization. The case studies include three 2D benchmark problems and three 3D structures considering compliance or stress minimization. A physics-informed multi-channel input encoding with Fourier position embedding enables resolution-invariant learning, supporting zero-shot extrapolation beyond the training resolution, with useful performance at moderate scaling factors and topology-preserving exploration at up to 64x without retraining. The framework extends to 3D through KATO3D, featuring novel KANConv3D blocks with learnable B-spline activations. KATOsuper demonstrates 15--110x deployment-time speedup over MATLAB baselines while maintaining competitive optimality, with the clearest gains observed in complex 3D and stress-optimization cases. The insight that sensitivity direction matters more than magnitude enables robust optimization even with approximate physics evaluation, extensible to other differentiable physics-driven design objectives.",
+        "categories": [
+          "cs.CE",
+          "cs.AI",
+          "cs.LG",
+          "math.NA"
+        ],
+        "published": "2026-09-23T01:29:19+00:00",
+        "updated": "2026-09-23T01:29:19+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2609.27216v1",
+        "abs_url": "https://arxiv.org/abs/2609.27216",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 2,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/1abd0442dc297b3bb62337363005327dfe33d8b1",
+        "tldr": "KATOsuper, an objective-agnostic framework that couples neural-reparameterized topology optimization with a Sensitivity-Consistent Fourier Neural Operator (SC-FNO), demonstrates 15--110x deployment-time speedup over MATLAB baselines while maintaining competitive optimality, with the clearest gains observed in complex 3D and stress-optimization cases.",
+        "matched_keywords": [
+          "neural network",
+          "physics-informed",
+          "neural operator",
+          "finite element",
+          "stress",
+          "topology optimization",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "KATOsuper: 민감도 일관성 푸리에 신경망 연산자를 활용한 대리 모델 가속 신경망 위상 최적화",
+        "summary_ko": "- 위상 최적화(Topology Optimization, TO)는 반복적인 유한요소해석(FEA)으로 인해 계산 비용이 높습니다.\n- KATOsuper는 신경망으로 재매개변수화된 위상 최적화와 민감도 일관성 푸리에 신경망 연산자(SC-FNO)를 결합합니다.\n- 이 프레임워크는 예측된 목적 함수 필드를 통해 민감도를 도출하여 일관성을 유지하는 forward_split 아키텍처를 사용합니다.\n- KATOsuper는 MATLAB 기준선 대비 15~110배 빠른 배포 시간 속도 향상을 보이며, 복잡한 3D 및 응력 최적화에서 가장 큰 이점을 나타냈습니다.\n- 민감도 방향의 중요성에 대한 통찰은 근사 물리 평가에서도 견고한 최적화를 가능하게 합니다.",
+        "tags": [
+          "위상 최적화",
+          "신경망",
+          "대리 모델",
+          "기계공학"
+        ]
+      },
+      {
+        "arxiv_id": "2610.21939",
+        "title": "De-Risking Robotic Welding for In-Space Metal Joining Through Physics-Grounded Digital Twins",
+        "authors": [
+          "Zhou Daniel Hao",
+          "Umer Masood Chaudry",
+          "Robert Shaw",
+          "Andrew Cheney",
+          "Nick Ludford",
+          "Mark Sims",
+          "Hongbiao Dong"
+        ],
+        "summary": "Growing interest in in-space servicing, manufacturing, and assembly has renewed attention on reliable metal joining for modular construction and on-orbit repair. Robotic welding is promising, but reduced-gravity and low-pressure operation remains poorly characterised and flight-like tests are limited. The UK Space Agency-supported ISPARK project is developing a physics-grounded digital twin for structured process de-risking. This paper evaluates a model-based prototype combining a finite-volume thermal weld-pool model, Gaussian-process (GP) and neural-network surrogates, and a simulated six-axis manipulator. The reduced model includes solid-liquid phase change, effective thermocapillary transport, and a local-pressure parameter. Gravity is assessed separately through a hydrostatic-to-capillary pressure ratio and does not enter the thermal energy equation. Across repeated five-fold cross-validation, the GP has lower normalised mean absolute error than the neural network for all eight outputs. In 10 held-out boundary cases, 74 of 80 solver responses fall within nominal 90% GP predictive intervals. A three-output GP query takes 249 microseconds, including scaling and predictive variance. In a simulated UR5 L-shaped-seam study, a proportional controller adjusts the synergic power-source setting as travel speed falls near the corner. Finite-volume re-evaluation finds all 12 closed-loop operating points and 9 of 12 open-loop points within an illustrative 1.0-3.0 mm root-side-width band. These simulation results support using the framework to screen welding conditions and control strategies before experimental tests. Thermal-vacuum, targeted reduced-gravity, and robotic hardware-in-the-loop studies are needed to assess the model and controller.",
+        "categories": [
+          "cs.RO",
+          "physics.app-ph"
+        ],
+        "published": "2026-10-15T14:14:10+00:00",
+        "updated": "2026-10-15T14:14:10+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.21939v1",
+        "abs_url": "https://arxiv.org/abs/2610.21939",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/fabf38483959d9dfb1b8046726d9f7e2e80d9749",
+        "tldr": "A model-based prototype combining a finite-volume thermal weld-pool model, Gaussian-process (GP) and neural-network surrogates, and a simulated six-axis manipulator is evaluated, showing lower normalised mean absolute error than the neural network for all eight outputs.",
+        "matched_keywords": [
+          "neural network",
+          "digital twin",
+          "robot",
+          "manipulator",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "물리 기반 디지털 트윈을 통한 우주 금속 접합용 로봇 용접 위험 감소",
+        "summary_ko": "- 우주 내 서비스, 제조, 조립을 위해 신뢰성 있는 금속 접합 기술이 필요하지만, 로봇 용접은 저중력·저압 환경에서 특성 파악이 어렵습니다.\n- 이 연구는 물리 기반 디지털 트윈(digital twin)을 개발하여 우주 로봇 용접 공정의 위험을 줄이는 방법을 제안합니다.\n- 유한 체적 열 용융지 모델, 가우시안 프로세스(GP), 신경망 대리 모델, 6축 로봇 시뮬레이터를 결합한 프로토타입을 평가했습니다.\n- 가우시안 프로세스 모델은 신경망보다 모든 8개 출력에서 더 낮은 정규화된 평균 절대 오차를 보였습니다.\n- 이 시뮬레이션 결과는 실제 실험 전 용접 조건 및 제어 전략을 선별하는 데 활용될 수 있음을 시사합니다.",
+        "tags": [
+          "로봇 용접",
+          "디지털 트윈",
+          "우주 제조",
+          "가우시안 프로세스"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2610.22323",
+      "title": "Mem4Act: Learning Effective Latent Memory for Long-Horizon Robotic Manipulation",
+      "authors": [
+        "Yun Zhang",
+        "Zhiyu Huang",
+        "Tianhui Cai",
+        "Chen Tang",
+        "Wei Wang",
+        "Jiaqi Ma"
+      ],
+      "summary": "Long-horizon robotic manipulation fundamentally requires memory: agents must retain task-relevant information from past observations and interactions and use it to guide future actions. Existing approaches typically preserve raw historical observations, compressed visual tokens, or language summaries, but these representations either expose the action policy to increasingly long histories or risk discarding task-relevant temporal, semantic, and perceptual information. We introduce Mem4Act, a framework for learning effective latent memory as a fixed-size representation explicitly optimized for long-horizon robotic control. Mem4Act addresses three coupled challenges: how to efficiently cover long histories, what information memory should retain, and how to ensure the policy actually relies on memory. To this end, it organizes history via multi-granularity temporal aggregation, preserves complementary semantic and perceptual information through question-answering supervision and key-frame DINO feature reconstruction, and employs memory-first two-stage training to encourage greater use of memory by the action policy. The resulting memory captures both high-level task state and fine-grained perceptual evidence while providing a bounded interface to the action policy. Across RoboMME, RMBench, and four real-world manipulation tasks, Mem4Act achieves state-of-the-art performance on memory-dependent control, with success rates of 49.88%, 61.0%, and 81.5%, respectively. Extensive ablations further demonstrate the importance of temporal aggregation, complementary memory supervision, and memory-first training.",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-10-15T17:51:58+00:00",
+      "updated": "2026-10-15T17:51:58+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.22323v1",
+      "abs_url": "https://arxiv.org/abs/2610.22323",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/b8df22d63ce109922152dcaf40e643881ec5d05c",
+      "tldr": "Mem4Act is introduced, a framework for learning effective latent memory as a fixed-size representation explicitly optimized for long-horizon robotic control that organizes history via multi-granularity temporal aggregation, preserves complementary semantic and perceptual information through question-answering supervision and key-frame DINO feature reconstruction, and employs memory-first two-stage training to encourage greater use of memory by the action policy.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "Mem4Act: 장기 로봇 조작을 위한 효과적인 잠재 기억 학습",
+      "summary_ko": "- 장기 로봇 조작은 과거 정보를 기억해야 하지만, 기존 방식은 정보 손실이나 처리 부담이 컸습니다.\n- 이 논문은 고정된 크기의 잠재 기억(latent memory)을 학습하는 Mem4Act 프레임워크를 제안합니다.\n- Mem4Act는 다중 시간 스케일 집계, 질문-답변(QA) 및 DINO 특징 재구성으로 기억을 감독합니다.\n- 또한, 기억 우선 2단계 훈련을 통해 정책이 기억을 더 활용하도록 유도합니다.\n- RoboMME, RMBench, 실제 로봇 조작에서 각각 49.88%, 61.0%, 81.5%의 성공률로 최신 성능을 달성했습니다.",
+      "tags": [
+        "로봇 조작",
+        "장기 기억",
+        "강화 학습",
+        "인공지능"
+      ]
+    },
+    {
+      "arxiv_id": "2610.22200",
+      "title": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use",
+      "authors": [
+        "Hanzhang Zhou",
+        "Long Li",
+        "Quyu Kong",
+        "Lei Wang",
+        "Panrong Tong",
+        "Long Chen",
+        "Tianyu Xia",
+        "Gongjie Zhang",
+        "Xu Zhang",
+        "Chen Liu",
+        "Jianan Zhang",
+        "Chenglin Cai",
+        "Zhengwen Zeng",
+        "Steven Hoi",
+        "Yue Wang"
+      ],
+      "summary": "Computer use has reached a turning point: the focus is expanding from GUI-only interaction to systems that complete tasks on users' computers through visual and programmatic interfaces. We define a generalist computer-use agent (GCUA) as a system in which the model chooses how to observe, act, and organize its work across visual and programmatic interfaces. Yet frontier implementations, such as GPT-6 Astra's computer-use system, remain largely closed, limiting systematic study of their design. We introduce Open Generalist CUA (OpenGCUA), an ongoing project to develop and open the full stack for GCUAs with the community. This report presents the first release of OpenGCUA. Code execution is a key feature of our agent design: it lets intermediate results determine subsequent operations and enables models to apply their existing programming capabilities directly to computer interaction. We also propose harness-to-model decision transfer, moving selected observations and task-state decisions from fixed harness rules to the model. On OSWorld-v2, our full configuration improves task scores across all eight evaluated models, including GPT-6 Astra and Claude Opus 5, raising mean partial score by +19.6 points and reducing reported steps per task by an average of 53.0% relative to batched GUI-only execution. We release our implementation and prompts, evaluation trajectories from all eight models, and preliminary versions of a real-device harness and a cross-device SDK. The harness addresses real-device challenges not fully captured by benchmarks, while the SDK provides a common programming interface across computers, mobiles and browsers. Across four real macOS tasks under our real-device harness, selected Qwen3.8-Max runs use 19.4 times as many reported reasoning tokens as GPT-6 Astra, highlighting substantial differences between models in real-device execution efficiency.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-10-15T16:51:35+00:00",
+      "updated": "2026-10-15T16:51:35+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.22200v1",
+      "abs_url": "https://arxiv.org/abs/2610.22200",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/eb3aed58ed65c8017d7ca5eea00de5be915c0374",
+      "tldr": "This report presents Open Generalist CUA (OpenGCUA), an ongoing project to develop and open the full stack for GCUAs with the community, and presents the first release of OpenGCUA, an ongoing project to develop and open the full stack for GCUAs with the community.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 309,
+      "title_ko": "OpenGCUA: 범용 컴퓨터 사용을 위한 완전 개방형 스택을 향하여",
+      "summary_ko": "- 컴퓨터 사용의 초점이 시각 및 프로그래밍 인터페이스를 통한 작업 완성으로 확장되고 있으나, 기존 시스템은 폐쇄적입니다.\n- 이 논문은 범용 컴퓨터 사용 에이전트(GCUA)를 위한 완전 개방형 스택인 OpenGCUA 프로젝트의 첫 번째 버전을 소개합니다.\n- OpenGCUA는 코드 실행을 핵심 기능으로 활용하여 중간 결과에 따라 작업을 결정하고 모델의 프로그래밍 능력을 직접 적용합니다.\n- OSWorld-v2 벤치마크에서 OpenGCUA는 GPT-6 Astra를 포함한 8개 모델의 평균 부분 점수를 19.6점 향상시켰습니다.\n- 이 프로젝트는 실제 장치 하네스 및 교차 장치 SDK를 제공하여 실제 환경의 복잡성과 효율성 차이를 다룹니다.",
+      "tags": [
+        "범용 컴퓨터 에이전트",
+        "개방형 스택",
+        "코드 실행",
+        "컴퓨터 비전"
+      ]
+    },
+    {
+      "arxiv_id": "2609.27216",
+      "title": "KATOsuper: Surrogate-accelerated neural topology optimization with sensitivity-consistent Fourier neural operators",
+      "authors": [
+        "Shengyu Yan",
+        "Jasmin Jelovica"
+      ],
+      "summary": "Topology optimization (TO) remains computationally intensive due to repeated finite element analysis (FEA) evaluations required at each iteration. While neural network-based surrogates offer potential acceleration, existing approaches often suffer from gradient inconsistency between predicted objectives and sensitivities, leading to optimization instability. This work presents KATOsuper, an objective-agnostic framework that couples neural-reparameterized topology optimization with a Sensitivity-Consistent Fourier Neural Operator (SC-FNO). The framework employs the forward_split architecture, which derives deployed sensitivities via automatic differentiation through the predicted objective field and thereby preserves consistency between the predicted objective and the gradient used for optimization. The case studies include three 2D benchmark problems and three 3D structures considering compliance or stress minimization. A physics-informed multi-channel input encoding with Fourier position embedding enables resolution-invariant learning, supporting zero-shot extrapolation beyond the training resolution, with useful performance at moderate scaling factors and topology-preserving exploration at up to 64x without retraining. The framework extends to 3D through KATO3D, featuring novel KANConv3D blocks with learnable B-spline activations. KATOsuper demonstrates 15--110x deployment-time speedup over MATLAB baselines while maintaining competitive optimality, with the clearest gains observed in complex 3D and stress-optimization cases. The insight that sensitivity direction matters more than magnitude enables robust optimization even with approximate physics evaluation, extensible to other differentiable physics-driven design objectives.",
+      "categories": [
+        "cs.CE",
+        "cs.AI",
+        "cs.LG",
+        "math.NA"
+      ],
+      "published": "2026-09-23T01:29:19+00:00",
+      "updated": "2026-09-23T01:29:19+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2609.27216v1",
+      "abs_url": "https://arxiv.org/abs/2609.27216",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 2,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/1abd0442dc297b3bb62337363005327dfe33d8b1",
+      "tldr": "KATOsuper, an objective-agnostic framework that couples neural-reparameterized topology optimization with a Sensitivity-Consistent Fourier Neural Operator (SC-FNO), demonstrates 15--110x deployment-time speedup over MATLAB baselines while maintaining competitive optimality, with the clearest gains observed in complex 3D and stress-optimization cases.",
+      "matched_keywords": [
+        "neural network",
+        "physics-informed",
+        "neural operator",
+        "finite element",
+        "stress",
+        "topology optimization",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "KATOsuper: 민감도 일관성 푸리에 신경망 연산자를 활용한 대리 모델 가속 신경망 위상 최적화",
+      "summary_ko": "- 위상 최적화(Topology Optimization, TO)는 반복적인 유한요소해석(FEA)으로 인해 계산 비용이 높습니다.\n- KATOsuper는 신경망으로 재매개변수화된 위상 최적화와 민감도 일관성 푸리에 신경망 연산자(SC-FNO)를 결합합니다.\n- 이 프레임워크는 예측된 목적 함수 필드를 통해 민감도를 도출하여 일관성을 유지하는 forward_split 아키텍처를 사용합니다.\n- KATOsuper는 MATLAB 기준선 대비 15~110배 빠른 배포 시간 속도 향상을 보이며, 복잡한 3D 및 응력 최적화에서 가장 큰 이점을 나타냈습니다.\n- 민감도 방향의 중요성에 대한 통찰은 근사 물리 평가에서도 견고한 최적화를 가능하게 합니다.",
+      "tags": [
+        "위상 최적화",
+        "신경망",
+        "대리 모델",
+        "기계공학"
+      ]
+    },
+    {
+      "arxiv_id": "2610.21939",
+      "title": "De-Risking Robotic Welding for In-Space Metal Joining Through Physics-Grounded Digital Twins",
+      "authors": [
+        "Zhou Daniel Hao",
+        "Umer Masood Chaudry",
+        "Robert Shaw",
+        "Andrew Cheney",
+        "Nick Ludford",
+        "Mark Sims",
+        "Hongbiao Dong"
+      ],
+      "summary": "Growing interest in in-space servicing, manufacturing, and assembly has renewed attention on reliable metal joining for modular construction and on-orbit repair. Robotic welding is promising, but reduced-gravity and low-pressure operation remains poorly characterised and flight-like tests are limited. The UK Space Agency-supported ISPARK project is developing a physics-grounded digital twin for structured process de-risking. This paper evaluates a model-based prototype combining a finite-volume thermal weld-pool model, Gaussian-process (GP) and neural-network surrogates, and a simulated six-axis manipulator. The reduced model includes solid-liquid phase change, effective thermocapillary transport, and a local-pressure parameter. Gravity is assessed separately through a hydrostatic-to-capillary pressure ratio and does not enter the thermal energy equation. Across repeated five-fold cross-validation, the GP has lower normalised mean absolute error than the neural network for all eight outputs. In 10 held-out boundary cases, 74 of 80 solver responses fall within nominal 90% GP predictive intervals. A three-output GP query takes 249 microseconds, including scaling and predictive variance. In a simulated UR5 L-shaped-seam study, a proportional controller adjusts the synergic power-source setting as travel speed falls near the corner. Finite-volume re-evaluation finds all 12 closed-loop operating points and 9 of 12 open-loop points within an illustrative 1.0-3.0 mm root-side-width band. These simulation results support using the framework to screen welding conditions and control strategies before experimental tests. Thermal-vacuum, targeted reduced-gravity, and robotic hardware-in-the-loop studies are needed to assess the model and controller.",
+      "categories": [
+        "cs.RO",
+        "physics.app-ph"
+      ],
+      "published": "2026-10-15T14:14:10+00:00",
+      "updated": "2026-10-15T14:14:10+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.21939v1",
+      "abs_url": "https://arxiv.org/abs/2610.21939",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/fabf38483959d9dfb1b8046726d9f7e2e80d9749",
+      "tldr": "A model-based prototype combining a finite-volume thermal weld-pool model, Gaussian-process (GP) and neural-network surrogates, and a simulated six-axis manipulator is evaluated, showing lower normalised mean absolute error than the neural network for all eight outputs.",
+      "matched_keywords": [
+        "neural network",
+        "digital twin",
+        "robot",
+        "manipulator",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "물리 기반 디지털 트윈을 통한 우주 금속 접합용 로봇 용접 위험 감소",
+      "summary_ko": "- 우주 내 서비스, 제조, 조립을 위해 신뢰성 있는 금속 접합 기술이 필요하지만, 로봇 용접은 저중력·저압 환경에서 특성 파악이 어렵습니다.\n- 이 연구는 물리 기반 디지털 트윈(digital twin)을 개발하여 우주 로봇 용접 공정의 위험을 줄이는 방법을 제안합니다.\n- 유한 체적 열 용융지 모델, 가우시안 프로세스(GP), 신경망 대리 모델, 6축 로봇 시뮬레이터를 결합한 프로토타입을 평가했습니다.\n- 가우시안 프로세스 모델은 신경망보다 모든 8개 출력에서 더 낮은 정규화된 평균 절대 오차를 보였습니다.\n- 이 시뮬레이션 결과는 실제 실험 전 용접 조건 및 제어 전략을 선별하는 데 활용될 수 있음을 시사합니다.",
+      "tags": [
+        "로봇 용접",
+        "디지털 트윈",
+        "우주 제조",
+        "가우시안 프로세스"
+      ]
+    }
+  ]
+}

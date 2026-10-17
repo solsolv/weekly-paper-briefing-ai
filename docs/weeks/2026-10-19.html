@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-10-19 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
+<meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fbfbfd;
+    --text: #1d1d1f;
+    --text-soft: #6e6e73;
+    --text-muted: #86868b;
+    --line: #d2d2d7;
+    --line-soft: #f5f5f7;
+    --accent: #0071e3;
+    --accent-hover: #0077ed;
+    --ai: #0071e3;
+    --mech: #00875a;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 1px rgba(0,0,0,0.02);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
+    --shadow-lg: 0 20px 48px rgba(0,0,0,0.08), 0 6px 12px rgba(0,0,0,0.05);
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+      "SF Pro Display", "SF Pro Text", "Apple SD Gothic Neo", "Segoe UI",
+      "Noto Sans KR", Roboto, sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv11", "tnum";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.55;
+    letter-spacing: -0.011em;
+    overflow-x: hidden;
+    word-break: keep-all;      /* 한국어 어절 단위 줄바꿈 */
+    overflow-wrap: anywhere;   /* 매우 긴 영문 토큰(URL 등)만 예외적으로 줄바꿈 */
+  }
+  /* ----- 애니메이션 배경 (gradient blobs) ----- */
+  .bg-stage {
+    position: fixed; inset: 0; z-index: -1; overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  }
+  .blob {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); opacity: 0.55;
+    will-change: transform;
+    animation: drift 22s ease-in-out infinite alternate;
+  }
+  .blob.b1 { width: 520px; height: 520px; left: -120px; top: -140px;
+    background: radial-gradient(circle, #cce4ff 0%, transparent 70%); }
+  .blob.b2 { width: 460px; height: 460px; right: -100px; top: 30%;
+    background: radial-gradient(circle, #dff5ea 0%, transparent 70%);
+    animation-duration: 28s; animation-delay: -6s; }
+  .blob.b3 { width: 400px; height: 400px; left: 35%; bottom: -120px;
+    background: radial-gradient(circle, #f2e5ff 0%, transparent 70%);
+    animation-duration: 32s; animation-delay: -12s; }
+  @keyframes drift {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(40px, 30px) scale(1.08); }
+    100% { transform: translate(-30px, 50px) scale(0.96); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .blob { animation: none; }
+  }
+  /* ----- Layout ----- */
+  .wrap { max-width: 980px; margin: 0 auto; padding: 64px 24px 96px; }
+  @media (max-width: 720px) { .wrap { padding: 40px 18px 64px; } }
+
+  /* ----- Header (hero) ----- */
+  header.site { margin-bottom: 56px; }
+  header.site .eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--accent); text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px;
+    background: rgba(0,113,227,0.08);
+    margin-bottom: 16px;
+  }
+  header.site h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+  header.site h1 a { color: inherit; text-decoration: none; }
+  header.site .lede {
+    margin: 0; color: var(--text-soft);
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    max-width: 640px;
+  }
+  header.site .home-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.9rem; color: var(--text-soft); margin-bottom: 12px;
+    text-decoration: none;
+    transition: color 0.2s var(--ease);
+  }
+  header.site .home-link:hover { color: var(--accent); }
+
+  /* ----- Links ----- */
+  a { color: var(--accent); text-decoration: none; transition: color 0.2s var(--ease); }
+  a:hover { color: var(--accent-hover); }
+
+  /* ----- Badges ----- */
+  .badge {
+    display: inline-flex; align-items: center;
+    font-size: 0.72rem; font-weight: 600;
+    padding: 3px 10px; border-radius: 999px;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    transition: all 0.2s var(--ease);
+  }
+  .badge.ai   { background: rgba(0,113,227,0.10); color: var(--ai); }
+  .badge.mech { background: rgba(0,135,90,0.10);  color: var(--mech); }
+
+  /* ----- Week cards (index) ----- */
+  .week-card {
+    display: block; position: relative;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 28px 32px; margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.3s var(--ease);
+    text-decoration: none; color: inherit;
+  }
+  .week-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0,113,227,0.25);
+  }
+  .week-card h2 {
+    margin: 0 0 14px;
+    font-size: 1.35rem; font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  }
+  .week-card .week-date { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+  .week-card ul {
+    margin: 8px 0 0; padding: 0; list-style: none;
+    color: var(--text-soft); font-size: 0.96rem;
+  }
+  .week-card ul li {
+    padding: 4px 0;
+    position: relative;
+    padding-left: 18px;
+  }
+  .week-card ul li::before {
+    content: ""; position: absolute; left: 0; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); opacity: 0.5;
+  }
+
+  /* ----- Paper card (week) ----- */
+  .paper {
+    position: relative;
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 32px 36px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+  .paper:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .paper.ai::before, .paper.mech::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+  .paper.ai::before   { background: linear-gradient(180deg, #0071e3, #5ac8fa); }
+  .paper.mech::before { background: linear-gradient(180deg, #00875a, #30d158); }
+
+  .paper .meta { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 6px; }
+  .paper h3 {
+    margin: 4px 0 6px;
+    font-size: 1.25rem; font-weight: 600;
+    letter-spacing: -0.015em; line-height: 1.4;
+  }
+  .paper h3 a { color: var(--text); }
+  .paper h3 a:hover { color: var(--accent); }
+  .paper .title-ko {
+    font-size: 1.02rem; font-weight: 500;
+    color: var(--text-soft); margin: 0 0 12px;
+    letter-spacing: -0.008em; line-height: 1.5;
+  }
+  .paper .authors { color: var(--text-soft); font-size: 0.88rem; margin-bottom: 4px; }
+  .paper .affiliations {
+    color: var(--text-muted); font-size: 0.8rem;
+    margin: 0 0 14px; line-height: 1.5;
+  }
+  .paper .affiliations::before {
+    content: "🏛"; margin-right: 6px; opacity: 0.7; font-size: 0.85em;
+  }
+  .slot-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.02em;
+    padding: 3px 9px; border-radius: 999px;
+    text-transform: uppercase; margin-left: 8px; vertical-align: middle;
+  }
+  .slot-badge.impact { background: rgba(255,149,0,0.10); color: #b25800; }
+  .slot-badge.latest { background: rgba(88,86,214,0.10); color: #4a40bd; }
+
+  .stats { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 14px; }
+  .stats .chip {
+    background: var(--line-soft);
+    color: var(--text-soft);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 0.78rem; font-weight: 500;
+  }
+
+  .summary { margin: 4px 0 0; }
+  .summary ul {
+    margin: 0; padding: 0; list-style: none;
+  }
+  .summary ul li {
+    position: relative; padding: 10px 0 10px 28px;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 1rem; line-height: 1.6;
+  }
+  .summary ul li:last-child { border-bottom: none; }
+  .summary ul li::before {
+    content: counter(s);
+    counter-increment: s;
+    position: absolute; left: 0; top: 10px;
+    width: 20px; height: 20px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.7rem; font-weight: 600;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .summary ul { counter-reset: s; }
+
+  .tags { margin-top: 16px; }
+  .tag {
+    display: inline-block;
+    font-size: 0.76rem; font-weight: 500;
+    color: var(--accent);
+    background: rgba(0,113,227,0.08);
+    border-radius: 999px;
+    padding: 4px 11px;
+    margin: 0 6px 6px 0;
+    transition: background 0.2s var(--ease);
+  }
+  .tag:hover { background: rgba(0,113,227,0.14); }
+
+  .links {
+    margin-top: 18px;
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .links a {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.88rem; font-weight: 500;
+    color: var(--text-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 6px 14px;
+    transition: all 0.2s var(--ease);
+  }
+  .links a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(0,113,227,0.04);
+  }
+
+  /* ----- Interests panel (index) ----- */
+  .interests {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 22px 26px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .interests-title {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--text-muted); text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .interests-row {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 6px 0;
+  }
+  .interests-row + .interests-row {
+    border-top: 1px solid var(--line-soft);
+    padding-top: 12px; margin-top: 4px;
+  }
+  .interests-row .badge { font-size: 0.74rem; padding: 4px 12px; flex-shrink: 0; }
+  .interests-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .interest-chip {
+    font-size: 0.82rem; color: var(--text-soft);
+    background: var(--line-soft);
+    border-radius: 8px;
+    padding: 4px 11px;
+  }
+
+  /* ----- TOC / Filter ----- */
+  .toc {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 22px 26px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc-title {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--text-muted); text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .toc-list { display: flex; flex-direction: column; gap: 6px; }
+  .toc-list a {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--text); font-size: 0.96rem;
+    padding: 6px 0;
+    border-radius: 8px;
+    transition: color 0.2s var(--ease), padding 0.2s var(--ease);
+  }
+  .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+
+  .filter-bar {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin: 0 0 24px;
+  }
+  .filter-btn {
+    appearance: none; cursor: pointer;
+    font-family: inherit; font-size: 0.88rem; font-weight: 500;
+    color: var(--text-soft);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 16px;
+    transition: all 0.2s var(--ease);
+  }
+  .filter-btn:hover { color: var(--text); border-color: var(--text-muted); }
+  .filter-btn.active {
+    color: #fff; background: var(--text); border-color: var(--text);
+  }
+
+  /* ----- Track section header ----- */
+  .track-section { margin-top: 56px; }
+  .track-section:first-of-type { margin-top: 40px; }
+  .track-section h2 {
+    margin: 0 0 24px;
+    font-size: 1.6rem; font-weight: 600;
+    letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .track-section h2 .badge { font-size: 0.72rem; padding: 4px 12px; }
+
+  /* ----- Back-to-index pill (week 페이지 하단) ----- */
+  .back-pill-wrap {
+    display: flex; justify-content: center;
+    margin: 56px 0 16px;
+  }
+  .back-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.95rem; font-weight: 500;
+    color: var(--text);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 11px 22px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s var(--ease);
+    text-decoration: none;
+  }
+  .back-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .back-pill .arrow { transition: transform 0.25s var(--ease); }
+  .back-pill:hover .arrow { transform: translateX(-3px); }
+
+  /* ----- Footer ----- */
+  footer.site {
+    margin-top: 32px; padding-top: 28px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--text-muted); font-size: 0.82rem;
+    text-align: center;
+  }
+
+  /* ----- Scroll reveal ----- */
+  .reveal {
+    opacity: 0; transform: translateY(18px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ----- Hidden by filter ----- */
+  .filter-hidden { display: none !important; }
+
+  /* ----- 예약 공개 전 숨김 (publish_at 미래) ----- */
+  .pending-hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="bg-stage" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+<div class="wrap">
+  <header class="site">
+  <a class="home-link" href="../index.html">← 전체 목록</a>
+  <span class="eyebrow">2026-10-19</span>
+  <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
+  <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
+  </header>
+  <div id="publish-notice" data-publish-at="2026-10-19T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
+    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-10-19 8:00 (KST)</strong>에 공개됩니다.</p>
+    <div class="back-pill-wrap"><a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a></div>
+  </div>
+  <div data-gate-content>
+  <div class="toc reveal">
+    <div class="toc-title">이번 주 4편</div>
+    <div class="toc-list">
+        <a href="#p-2610.22323">
+          <span class="badge ai">AI</span>
+          <span>Mem4Act: 장기 로봇 조작을 위한 효과적인 잠재 기억 학습</span>
+        </a>
+        <a href="#p-2610.22200">
+          <span class="badge ai">AI</span>
+          <span>OpenGCUA: 범용 컴퓨터 사용을 위한 완전 개방형 스택을 향하여</span>
+        </a>
+        <a href="#p-2609.27216">
+          <span class="badge mech">AI 활용 기계공학</span>
+          <span>KATOsuper: 민감도 일관성 푸리에 신경망 연산자를 활용한 대리 모델 가속 신경망 위상 최적화</span>
+        </a>
+        <a href="#p-2610.21939">
+          <span class="badge mech">AI 활용 기계공학</span>
+          <span>물리 기반 디지털 트윈을 통한 우주 금속 접합용 로봇 용접 위험 감소</span>
+        </a>
+    </div>
+  </div>
+
+  <div class="filter-bar reveal" role="tablist" aria-label="트랙 필터">
+    <button class="filter-btn active" data-track="all" type="button">전체</button>
+    <button class="filter-btn" data-track="ai" type="button">AI</button>
+    <button class="filter-btn" data-track="mech" type="button">AI 활용 기계공학</button>
+  </div>
+
+      <section class="track-section" data-track-block="ai">
+        <h2 class="reveal">
+          AI
+          <span class="badge ai">2편</span>
+        </h2>
+          <article class="paper ai reveal" id="p-2610.22323" style="transition-delay: 0ms;">
+            <div class="meta">
+              cs.RO · 발표 2026-10-15<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2610.22323" target="_blank" rel="noopener">Mem4Act: Learning Effective Latent Memory for Long-Horizon Robotic Manipulation</a></h3>
+<p class="title-ko">Mem4Act: 장기 로봇 조작을 위한 효과적인 잠재 기억 학습</p>            <div class="authors">Yun Zhang, Zhiyu Huang, Tianhui Cai, Chen Tang, Wei Wang, Jiaqi Ma</div>
+            <div class="stats">
+<span class="chip">인용 1</span>            </div>
+            <div class="summary">
+              <ul>
+<li>장기 로봇 조작은 과거 정보를 기억해야 하지만, 기존 방식은 정보 손실이나 처리 부담이 컸습니다.</li><li>이 논문은 고정된 크기의 잠재 기억(latent memory)을 학습하는 Mem4Act 프레임워크를 제안합니다.</li><li>Mem4Act는 다중 시간 스케일 집계, 질문-답변(QA) 및 DINO 특징 재구성으로 기억을 감독합니다.</li><li>또한, 기억 우선 2단계 훈련을 통해 정책이 기억을 더 활용하도록 유도합니다.</li><li>RoboMME, RMBench, 실제 로봇 조작에서 각각 49.88%, 61.0%, 81.5%의 성공률로 최신 성능을 달성했습니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> Mem4Act is introduced, a framework for learning effective latent memory as a fixed-size representation explicitly optimized for long-horizon robotic control that organizes history via multi-granularity temporal aggregation, preserves complementary semantic and perceptual information through question-answering supervision and key-frame DINO feature reconstruction, and employs memory-first two-stage training to encourage greater use of memory by the action policy.</div><div class="tags"><span class="tag">#로봇 조작</span><span class="tag">#장기 기억</span><span class="tag">#강화 학습</span><span class="tag">#인공지능</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2610.22323" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2610.22323v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/b8df22d63ce109922152dcaf40e643881ec5d05c" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper ai reveal" id="p-2610.22200" style="transition-delay: 60ms;">
+            <div class="meta">
+              cs.CV · 발표 2026-10-15<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2610.22200" target="_blank" rel="noopener">OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use</a></h3>
+<p class="title-ko">OpenGCUA: 범용 컴퓨터 사용을 위한 완전 개방형 스택을 향하여</p>            <div class="authors">Hanzhang Zhou, Long Li, Quyu Kong, Lei Wang, Panrong Tong, Long Chen, Tianyu Xia, Gongjie Zhang 외 7명</div>
+            <div class="stats">
+<span class="chip">HF upvotes 309</span>            </div>
+            <div class="summary">
+              <ul>
+<li>컴퓨터 사용의 초점이 시각 및 프로그래밍 인터페이스를 통한 작업 완성으로 확장되고 있으나, 기존 시스템은 폐쇄적입니다.</li><li>이 논문은 범용 컴퓨터 사용 에이전트(GCUA)를 위한 완전 개방형 스택인 OpenGCUA 프로젝트의 첫 번째 버전을 소개합니다.</li><li>OpenGCUA는 코드 실행을 핵심 기능으로 활용하여 중간 결과에 따라 작업을 결정하고 모델의 프로그래밍 능력을 직접 적용합니다.</li><li>OSWorld-v2 벤치마크에서 OpenGCUA는 GPT-6 Astra를 포함한 8개 모델의 평균 부분 점수를 19.6점 향상시켰습니다.</li><li>이 프로젝트는 실제 장치 하네스 및 교차 장치 SDK를 제공하여 실제 환경의 복잡성과 효율성 차이를 다룹니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This report presents Open Generalist CUA (OpenGCUA), an ongoing project to develop and open the full stack for GCUAs with the community, and presents the first release of OpenGCUA, an ongoing project to develop and open the full stack for GCUAs with the community.</div><div class="tags"><span class="tag">#범용 컴퓨터 에이전트</span><span class="tag">#개방형 스택</span><span class="tag">#코드 실행</span><span class="tag">#컴퓨터 비전</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2610.22200" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2610.22200v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/eb3aed58ed65c8017d7ca5eea00de5be915c0374" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+      </section>
+      <section class="track-section" data-track-block="mech">
+        <h2 class="reveal">
+          AI 활용 기계공학
+          <span class="badge mech">2편</span>
+        </h2>
+          <article class="paper mech reveal" id="p-2609.27216" style="transition-delay: 0ms;">
+            <div class="meta">
+              cs.CE, cs.AI, cs.LG, math.NA · 발표 2026-09-23<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2609.27216" target="_blank" rel="noopener">KATOsuper: Surrogate-accelerated neural topology optimization with sensitivity-consistent Fourier neural operators</a></h3>
+<p class="title-ko">KATOsuper: 민감도 일관성 푸리에 신경망 연산자를 활용한 대리 모델 가속 신경망 위상 최적화</p>            <div class="authors">Shengyu Yan, Jasmin Jelovica</div>
+            <div class="stats">
+<span class="chip">인용 2</span><span class="chip">매칭: neural network, physics-informed, neural operator, finite element, stress, topology optimization, relevance:0.90</span>            </div>
+            <div class="summary">
+              <ul>
+<li>위상 최적화(Topology Optimization, TO)는 반복적인 유한요소해석(FEA)으로 인해 계산 비용이 높습니다.</li><li>KATOsuper는 신경망으로 재매개변수화된 위상 최적화와 민감도 일관성 푸리에 신경망 연산자(SC-FNO)를 결합합니다.</li><li>이 프레임워크는 예측된 목적 함수 필드를 통해 민감도를 도출하여 일관성을 유지하는 forward_split 아키텍처를 사용합니다.</li><li>KATOsuper는 MATLAB 기준선 대비 15~110배 빠른 배포 시간 속도 향상을 보이며, 복잡한 3D 및 응력 최적화에서 가장 큰 이점을 나타냈습니다.</li><li>민감도 방향의 중요성에 대한 통찰은 근사 물리 평가에서도 견고한 최적화를 가능하게 합니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> KATOsuper, an objective-agnostic framework that couples neural-reparameterized topology optimization with a Sensitivity-Consistent Fourier Neural Operator (SC-FNO), demonstrates 15--110x deployment-time speedup over MATLAB baselines while maintaining competitive optimality, with the clearest gains observed in complex 3D and stress-optimization cases.</div><div class="tags"><span class="tag">#위상 최적화</span><span class="tag">#신경망</span><span class="tag">#대리 모델</span><span class="tag">#기계공학</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2609.27216" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2609.27216v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/1abd0442dc297b3bb62337363005327dfe33d8b1" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper mech reveal" id="p-2610.21939" style="transition-delay: 60ms;">
+            <div class="meta">
+              cs.RO, physics.app-ph · 발표 2026-10-15<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2610.21939" target="_blank" rel="noopener">De-Risking Robotic Welding for In-Space Metal Joining Through Physics-Grounded Digital Twins</a></h3>
+<p class="title-ko">물리 기반 디지털 트윈을 통한 우주 금속 접합용 로봇 용접 위험 감소</p>            <div class="authors">Zhou Daniel Hao, Umer Masood Chaudry, Robert Shaw, Andrew Cheney, Nick Ludford, Mark Sims, Hongbiao Dong</div>
+            <div class="stats">
+<span class="chip">매칭: neural network, digital twin, robot, manipulator, relevance:0.90</span>            </div>
+            <div class="summary">
+              <ul>
+<li>우주 내 서비스, 제조, 조립을 위해 신뢰성 있는 금속 접합 기술이 필요하지만, 로봇 용접은 저중력·저압 환경에서 특성 파악이 어렵습니다.</li><li>이 연구는 물리 기반 디지털 트윈(digital twin)을 개발하여 우주 로봇 용접 공정의 위험을 줄이는 방법을 제안합니다.</li><li>유한 체적 열 용융지 모델, 가우시안 프로세스(GP), 신경망 대리 모델, 6축 로봇 시뮬레이터를 결합한 프로토타입을 평가했습니다.</li><li>가우시안 프로세스 모델은 신경망보다 모든 8개 출력에서 더 낮은 정규화된 평균 절대 오차를 보였습니다.</li><li>이 시뮬레이션 결과는 실제 실험 전 용접 조건 및 제어 전략을 선별하는 데 활용될 수 있음을 시사합니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> A model-based prototype combining a finite-volume thermal weld-pool model, Gaussian-process (GP) and neural-network surrogates, and a simulated six-axis manipulator is evaluated, showing lower normalised mean absolute error than the neural network for all eight outputs.</div><div class="tags"><span class="tag">#로봇 용접</span><span class="tag">#디지털 트윈</span><span class="tag">#우주 제조</span><span class="tag">#가우시안 프로세스</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2610.21939" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://arxiv.org/pdf/2610.21939v1" target="_blank" rel="noopener">PDF</a>
+<a href="https://www.semanticscholar.org/paper/fabf38483959d9dfb1b8046726d9f7e2e80d9749" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+      </section>
+
+  <div class="back-pill-wrap reveal">
+    <a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a>
+  </div>
+
+  <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.85rem; text-align: center;">
+    선정 기준: 임팩트(최근 365일, 영향력 인용 가중) + 최신(최근 14일) · 요약 엔진: openai_compat
+  </p>
+  </div>  <script>
+    // 직접 URL 접근 방어: 공개 시각 전이면 본문을 가리고 안내만 노출 (브라우저 시계 기준).
+    (function() {
+      var n = document.getElementById('publish-notice');
+      if (!n) return;
+      var t = Date.parse(n.dataset.publishAt);
+      if (isNaN(t) || Date.now() >= t) return;   // 형식 이상 또는 공개 시각 지남 → 정상 노출
+      var c = document.querySelector('[data-gate-content]');
+      if (c) c.style.display = 'none';
+      n.style.display = '';
+    })();
+  </script>
+  <footer class="site">
+    <p>자동 생성 · 2026-10-17 07:33 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+  </footer>
+</div>
+<script>
+  // 예약 공개: data-publish(=월요일 08:00 등) 시각이 미래인 항목은 그 시각까지 숨김.
+  // 브라우저 시계 기준이라 GitHub Actions 스케줄 지연과 무관하게 정시에 노출된다.
+  (function() {
+    var nodes = document.querySelectorAll('[data-publish]');
+    if (!nodes.length) return;
+    var now = Date.now();
+    nodes.forEach(function(el) {
+      var t = Date.parse(el.dataset.publish);
+      if (isNaN(t)) return;                 // 파싱 실패 → 그냥 노출
+      if (now >= t) { el.classList.remove('pending-hidden'); return; }
+      el.classList.add('pending-hidden');   // 아직 공개 전 → 숨김
+      var delay = t - now;
+      if (delay < 2147483647) {             // setTimeout 32-bit 한계 내에서만 예약 노출
+        setTimeout(function() {
+          el.classList.remove('pending-hidden');
+          el.classList.add('visible');      // 스크롤 reveal 트랜지션 즉시 표시
+        }, delay);
+      }
+    });
+  })();
+
+  // 스크롤 reveal
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.05 });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // 트랙 필터
+  (function() {
+    var bar = document.querySelector('.filter-bar');
+    if (!bar) return;
+    bar.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      var target = btn.dataset.track;  // "all" | "ai" | "mech"
+      bar.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
+      document.querySelectorAll('[data-track-block]').forEach(function(block){
+        var t = block.dataset.trackBlock;
+        block.classList.toggle('filter-hidden', !(target === 'all' || t === target));
+      });
+    });
+  })();
+</script>
+</body>
+</html>
