@@ -1,0 +1,345 @@
+{
+  "week_id": "2026-10-26",
+  "generated_at": "2026-10-24T05:31:10.337928+00:00",
+  "publish_at": "2026-10-26T08:00:00+09:00",
+  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2610.31420",
+        "title": "Post-Hoc Feature Selection Layer for Neural Networks Interpretability",
+        "authors": [
+          "João Kenji Suwa",
+          "João Pedro Silveira e Silva",
+          "Bruno Iochins Grisci"
+        ],
+        "summary": "The interpretability of complex neural networks remains a critical challenge, especially for models already deployed in high-stakes domains. To address this, we adapted the Feature Selection Layer (FSL) to optimize feature weights post-training, a variant we term post-hoc FSL. Our approach reframes the FSL as a lightweight, trainable module that integrates with already frozen pre-trained models on tabular datasets to highlight the features the original model considers most important. This post-hoc FSL learns feature relevance by fine-tuning its weights based on the original model's learned outputs. Crucially, this process is non-invasive, operating without altering the original model's architecture or its learned parameters. We conducted our experiments using both statistical and visual metrics, including accuracy, F1 score, recall, precision, weighted t-SNE and silhouette score, and also analyzed the stability of the post-hoc FSL on high-dimensional synthetic and real-world tabular datasets. We compared the post-hoc FSL feature weighting method using these metrics against the original embedded FSL and other post-hoc interpretability methods, such as Integrated Gradients, Noise Tunnel, DeepLIFT, Gradient SHAP, and Feature Ablation. Experimental results demonstrate that the post-hoc FSL feature weighting method successfully identified relevant features across the different datasets, maintaining the predictive power of the original neural network while enhancing its interpretability.",
+        "categories": [
+          "cs.LG",
+          "cs.AI"
+        ],
+        "published": "2026-10-22T15:20:50+00:00",
+        "updated": "2026-10-22T15:20:50+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.31420v1",
+        "abs_url": "https://arxiv.org/abs/2610.31420",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/01dfb8e9d46b5b0ead83334d647a83a185f18d42",
+        "tldr": "Experimental results demonstrate that the post-hoc FSL feature weighting method successfully identified relevant features across the different datasets, maintaining the predictive power of the original neural network while enhancing its interpretability.",
+        "matched_keywords": [],
+        "affiliations": [
+          "Universidade Federal do Rio Grande do Sul"
+        ],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "신경망 해석을 위한 사후(Post-Hoc) 특징 선택 계층",
+        "summary_ko": "- 복잡한 신경망의 해석 가능성은 특히 배포된 모델에서 중요한 과제입니다.\n- 이 연구는 훈련된 모델의 특징 중요도를 파악하기 위해 특징 선택 계층(FSL)을 사후(post-hoc) 방식으로 적용합니다.\n- 이 방법은 기존 모델을 변경하지 않고, 훈련된 모델의 출력에 기반하여 특징 가중치를 학습합니다.\n- 실험 결과, 제안된 사후 FSL은 다양한 데이터셋에서 관련 특징을 성공적으로 식별했습니다.\n- 이는 원본 신경망의 예측 성능을 유지하면서 모델의 해석 가능성을 크게 향상시킵니다.",
+        "tags": [
+          "신경망 해석",
+          "특징 선택",
+          "사후 분석",
+          "기계 학습"
+        ]
+      },
+      {
+        "arxiv_id": "2610.31329",
+        "title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+        "authors": [
+          "Tianming Liang",
+          "Junyi Pan",
+          "Yuxi Li",
+          "Canmiao Fu",
+          "Zhipeng Huang",
+          "Chong Sun",
+          "Chen Li",
+          "Jing Lyu"
+        ],
+        "summary": "Existing vision-language models (VLMs) remain unreliable for fine-grained visual perception. In this report, we present WeVisOne-VL (WeChat Vision All-in-One), a powerful VLM that unifies object-level and pixel-level perception through structured next-token prediction. It supports multiple visual tasks including object detection, referring localization, counting, OCR, segmentation, and matting, enabling localization at any user-specific granularity, from points and boxes to masks and alpha mattes. Architecturally, we integrate a lightweight pixel decoder into the VLM via a special <OBJ> token to generate instance-level pixel outputs. We train the model with a three-stage curriculum SFT followed by mixed-task RL. Across over 30 benchmarks, WeVisOne-VL demonstrates leading performance on both object-level and pixel-level tasks, while maintaining robust rejection for object-absent queries. By releasing WeVisOne-VL to the open-source community, we hope to advance VLMs from broad visual understanding toward truly reliable perception systems for real-world deployment.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-10-22T14:19:50+00:00",
+        "updated": "2026-10-22T14:19:50+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.31329v1",
+        "abs_url": "https://arxiv.org/abs/2610.31329",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": null,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 225,
+        "title_ko": "WeVisOne-VL: 객체에서 픽셀까지 통합된 시각 인지",
+        "summary_ko": "- 기존 시각-언어 모델(VLM)은 미세한 시각 인지 작업에서 신뢰성이 부족했습니다.\n- WeVisOne-VL은 구조화된 다음 토큰 예측을 통해 객체 및 픽셀 수준 인지를 통합합니다.\n- 이 모델은 객체 감지, 참조 위치 파악, 분할 등 다양한 시각 작업을 지원합니다.\n- 특별한 `<OBJ>` 토큰을 통해 경량 픽셀 디코더를 VLM에 통합하여 인스턴스 수준 픽셀 출력을 생성합니다.\n- WeVisOne-VL은 30개 이상의 벤치마크에서 객체 및 픽셀 수준 작업 모두에서 선도적인 성능을 보였습니다.",
+        "tags": [
+          "시각-언어 모델",
+          "객체 인지",
+          "픽셀 인지",
+          "통합 모델"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2609.00359",
+        "title": "Mixture of Polyconvex Neural Potentials for Parametric Hyperelasticity: Towards Foundation Material Models",
+        "authors": [
+          "Steven J. Yang",
+          "Govinda Anantha Padmanabha",
+          "D. Thomas Seidl",
+          "Nikolaos Bouklas"
+        ],
+        "summary": "Hyperelastic constitutive models enable modeling large deformations in elastic solids. In common practice, a strain energy density function is prescribed in advance and model-specific parameters are calibrated from experiments. However, many applications require constitutive models for a family of related materials whose mechanical behavior varies with composition. A fixed constitutive model-form may not capture the full range of behavior across the family, while fitting separate forms does not provide a direct way to predict the response of new compositions. Recent work has developed data-driven constitutive models that learn flexible strain energy functions while incorporating key physical constraints. In this work, we propose using mixtures of convex neural potentials based on input convex neural networks as a modular and data efficient approach to modeling material families. Each potential is convex and monotonic with respect to polyconvex strain invariants, while a conditioning network maps material descriptors to mixture weights. We compare the approach with a monolithic partially input-convex neural network using experimental data from PolyJet 3D-printed materials and a synthetic Gent-type benchmark. Across both benchmarks, the mixture architecture generalized better to material descriptors not seen during training. In the PolyJet experimental benchmark, we showed that the mixture architecture is less sensitive to model hyperparameters, while in the Gent-type benchmark it generalized more reliably with sparse data in the material-descriptor space. These results suggest that representing a material family through a small set of shared convex neural potentials provides a useful structural prior for learning descriptor-dependent constitutive behavior from limited data.",
+        "categories": [
+          "physics.comp-ph",
+          "cond-mat.mtrl-sci"
+        ],
+        "published": "2026-08-31T20:52:21+00:00",
+        "updated": "2026-08-31T20:52:21+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2609.00359v1",
+        "abs_url": "https://arxiv.org/abs/2609.00359",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/caf25902e39af6c0e5e57c2c3e87e5519e7a87c8",
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "data-driven",
+          "structural",
+          "elastic",
+          "deform",
+          "mechanical",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "매개변수적 초탄성(Hyperelasticity)을 위한 다볼록 신경 포텐셜 혼합: 기초 재료 모델을 향하여",
+        "summary_ko": "- 기존 초탄성 모델은 재료별로 미리 정해진 함수를 사용해 다양한 재료군을 포괄하기 어렵습니다.\n- 본 연구는 재료군 모델링을 위해 볼록 신경망(input convex neural networks) 기반의 다볼록 신경 포텐셜 혼합 방식을 제안합니다.\n- 각 포텐셜은 다볼록 변형률 불변량(polyconvex strain invariants)에 대해 볼록하고 단조적이며, 재료 특성(descriptors)이 혼합 가중치로 매핑됩니다.\n- PolyJet 3D 프린팅 재료 및 Gent-type 벤치마크 실험에서 제안 모델이 훈련되지 않은 재료 특성에 더 잘 일반화되었습니다.\n- 이는 제한된 데이터로도 재료 특성에 따른 구성 거동을 학습하는 데 유용한 구조적 사전 지식을 제공합니다.",
+        "tags": [
+          "초탄성",
+          "재료 모델링",
+          "신경망",
+          "기계 학습"
+        ]
+      },
+      {
+        "arxiv_id": "2610.31322",
+        "title": "Hyperreduction accelerates finite element model updating for the discovery of neural materials",
+        "authors": [
+          "Hagen Holthusen",
+          "Matthias Knipper",
+          "Kevin Linka"
+        ],
+        "summary": "Finite element model updating is among the most general approaches to discover constitutive models from structural experiments: since the displacement field is computed rather than measured, it accommodates arbitrary geometries, boundary conditions, and sparse or noisy data. However, every loss evaluation requires a nonlinear finite element solve per load step, and training neural materials requires many such evaluations. Intrusive model order reduction lowers this cost while retaining boundary conditions and variational structure. How can a reduced model remain accurate while the network weights change at every training step? We combine proper orthogonal decomposition and energy-conserving sampling and weighting with adjoint sensitivities of the reduced model, and adapt both the trial space and the sampled elements along the optimization path. The constitutive law is a polyconvex neural network: a logarithmic normalization term, together with a zero-anchored input convex architecture and a growth term, renders the energy polyconvex, coercive, and non-negative by construction, independent of the trained weights. We demonstrate the approach on two experimental datasets and one synthetic three-dimensional example. For a two-phase specimen, training time decreases from nine hours to 41 minutes compared with a full-order identification, without loss of accuracy. In the three-dimensional example, six modes replace 48 672 degrees of freedom, 116 of 15 625 elements suffice to evaluate the internal forces, and training takes 13 minutes. In all cases, the identified material reproduces the measured reaction force and predicts the displacement field from the force alone. Hyperreduction makes the discovery of neural materials from structural data affordable while retaining the advantages of finite element model updating.",
+        "categories": [
+          "cs.CE",
+          "cs.AI"
+        ],
+        "published": "2026-10-22T14:13:27+00:00",
+        "updated": "2026-10-22T14:13:27+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.31322v1",
+        "abs_url": "https://arxiv.org/abs/2610.31322",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/f3198a366a5f53ecfd05165c1be353b776f27d28",
+        "tldr": "Hyperreduction makes the discovery of neural materials from structural data affordable while retaining the advantages of finite element model updating.",
+        "matched_keywords": [
+          "neural network",
+          "structural",
+          "finite element",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "title_ko": "하이퍼리덕션(Hyperreduction)을 통한 신경 재료(Neural Materials) 발견을 위한 유한요소 모델 업데이트 가속화",
+        "summary_ko": "- 유한요소 모델 업데이트는 재료의 구성 모델을 발견하는 일반적인 접근법이나, 계산 비용이 매우 높습니다.\n- 본 연구는 모델 차수 축소(model order reduction) 기법과 하이퍼리덕션(hyperreduction)을 결합하여 이 문제를 해결합니다.\n- 최적화 경로를 따라 시험 공간과 샘플링된 요소를 적응적으로 조정하며, 구성 법칙은 다중 볼록 신경망(polyconvex neural network)으로 모델링됩니다.\n- 2상 시편의 경우, 전체 차수 식별 대비 9시간에서 41분으로 훈련 시간이 단축되었고, 3D 예시에서는 13분 만에 훈련이 완료되었습니다.\n- 이 방법은 유한요소 모델 업데이트의 장점을 유지하면서 구조 데이터로부터 신경 재료를 효율적으로 발견할 수 있게 합니다.",
+        "tags": [
+          "유한요소 모델 업데이트",
+          "신경 재료",
+          "모델 차수 축소",
+          "하이퍼리덕션"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2610.31420",
+      "title": "Post-Hoc Feature Selection Layer for Neural Networks Interpretability",
+      "authors": [
+        "João Kenji Suwa",
+        "João Pedro Silveira e Silva",
+        "Bruno Iochins Grisci"
+      ],
+      "summary": "The interpretability of complex neural networks remains a critical challenge, especially for models already deployed in high-stakes domains. To address this, we adapted the Feature Selection Layer (FSL) to optimize feature weights post-training, a variant we term post-hoc FSL. Our approach reframes the FSL as a lightweight, trainable module that integrates with already frozen pre-trained models on tabular datasets to highlight the features the original model considers most important. This post-hoc FSL learns feature relevance by fine-tuning its weights based on the original model's learned outputs. Crucially, this process is non-invasive, operating without altering the original model's architecture or its learned parameters. We conducted our experiments using both statistical and visual metrics, including accuracy, F1 score, recall, precision, weighted t-SNE and silhouette score, and also analyzed the stability of the post-hoc FSL on high-dimensional synthetic and real-world tabular datasets. We compared the post-hoc FSL feature weighting method using these metrics against the original embedded FSL and other post-hoc interpretability methods, such as Integrated Gradients, Noise Tunnel, DeepLIFT, Gradient SHAP, and Feature Ablation. Experimental results demonstrate that the post-hoc FSL feature weighting method successfully identified relevant features across the different datasets, maintaining the predictive power of the original neural network while enhancing its interpretability.",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-10-22T15:20:50+00:00",
+      "updated": "2026-10-22T15:20:50+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.31420v1",
+      "abs_url": "https://arxiv.org/abs/2610.31420",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/01dfb8e9d46b5b0ead83334d647a83a185f18d42",
+      "tldr": "Experimental results demonstrate that the post-hoc FSL feature weighting method successfully identified relevant features across the different datasets, maintaining the predictive power of the original neural network while enhancing its interpretability.",
+      "matched_keywords": [],
+      "affiliations": [
+        "Universidade Federal do Rio Grande do Sul"
+      ],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "신경망 해석을 위한 사후(Post-Hoc) 특징 선택 계층",
+      "summary_ko": "- 복잡한 신경망의 해석 가능성은 특히 배포된 모델에서 중요한 과제입니다.\n- 이 연구는 훈련된 모델의 특징 중요도를 파악하기 위해 특징 선택 계층(FSL)을 사후(post-hoc) 방식으로 적용합니다.\n- 이 방법은 기존 모델을 변경하지 않고, 훈련된 모델의 출력에 기반하여 특징 가중치를 학습합니다.\n- 실험 결과, 제안된 사후 FSL은 다양한 데이터셋에서 관련 특징을 성공적으로 식별했습니다.\n- 이는 원본 신경망의 예측 성능을 유지하면서 모델의 해석 가능성을 크게 향상시킵니다.",
+      "tags": [
+        "신경망 해석",
+        "특징 선택",
+        "사후 분석",
+        "기계 학습"
+      ]
+    },
+    {
+      "arxiv_id": "2610.31329",
+      "title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+      "authors": [
+        "Tianming Liang",
+        "Junyi Pan",
+        "Yuxi Li",
+        "Canmiao Fu",
+        "Zhipeng Huang",
+        "Chong Sun",
+        "Chen Li",
+        "Jing Lyu"
+      ],
+      "summary": "Existing vision-language models (VLMs) remain unreliable for fine-grained visual perception. In this report, we present WeVisOne-VL (WeChat Vision All-in-One), a powerful VLM that unifies object-level and pixel-level perception through structured next-token prediction. It supports multiple visual tasks including object detection, referring localization, counting, OCR, segmentation, and matting, enabling localization at any user-specific granularity, from points and boxes to masks and alpha mattes. Architecturally, we integrate a lightweight pixel decoder into the VLM via a special <OBJ> token to generate instance-level pixel outputs. We train the model with a three-stage curriculum SFT followed by mixed-task RL. Across over 30 benchmarks, WeVisOne-VL demonstrates leading performance on both object-level and pixel-level tasks, while maintaining robust rejection for object-absent queries. By releasing WeVisOne-VL to the open-source community, we hope to advance VLMs from broad visual understanding toward truly reliable perception systems for real-world deployment.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-10-22T14:19:50+00:00",
+      "updated": "2026-10-22T14:19:50+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.31329v1",
+      "abs_url": "https://arxiv.org/abs/2610.31329",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": null,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 225,
+      "title_ko": "WeVisOne-VL: 객체에서 픽셀까지 통합된 시각 인지",
+      "summary_ko": "- 기존 시각-언어 모델(VLM)은 미세한 시각 인지 작업에서 신뢰성이 부족했습니다.\n- WeVisOne-VL은 구조화된 다음 토큰 예측을 통해 객체 및 픽셀 수준 인지를 통합합니다.\n- 이 모델은 객체 감지, 참조 위치 파악, 분할 등 다양한 시각 작업을 지원합니다.\n- 특별한 `<OBJ>` 토큰을 통해 경량 픽셀 디코더를 VLM에 통합하여 인스턴스 수준 픽셀 출력을 생성합니다.\n- WeVisOne-VL은 30개 이상의 벤치마크에서 객체 및 픽셀 수준 작업 모두에서 선도적인 성능을 보였습니다.",
+      "tags": [
+        "시각-언어 모델",
+        "객체 인지",
+        "픽셀 인지",
+        "통합 모델"
+      ]
+    },
+    {
+      "arxiv_id": "2609.00359",
+      "title": "Mixture of Polyconvex Neural Potentials for Parametric Hyperelasticity: Towards Foundation Material Models",
+      "authors": [
+        "Steven J. Yang",
+        "Govinda Anantha Padmanabha",
+        "D. Thomas Seidl",
+        "Nikolaos Bouklas"
+      ],
+      "summary": "Hyperelastic constitutive models enable modeling large deformations in elastic solids. In common practice, a strain energy density function is prescribed in advance and model-specific parameters are calibrated from experiments. However, many applications require constitutive models for a family of related materials whose mechanical behavior varies with composition. A fixed constitutive model-form may not capture the full range of behavior across the family, while fitting separate forms does not provide a direct way to predict the response of new compositions. Recent work has developed data-driven constitutive models that learn flexible strain energy functions while incorporating key physical constraints. In this work, we propose using mixtures of convex neural potentials based on input convex neural networks as a modular and data efficient approach to modeling material families. Each potential is convex and monotonic with respect to polyconvex strain invariants, while a conditioning network maps material descriptors to mixture weights. We compare the approach with a monolithic partially input-convex neural network using experimental data from PolyJet 3D-printed materials and a synthetic Gent-type benchmark. Across both benchmarks, the mixture architecture generalized better to material descriptors not seen during training. In the PolyJet experimental benchmark, we showed that the mixture architecture is less sensitive to model hyperparameters, while in the Gent-type benchmark it generalized more reliably with sparse data in the material-descriptor space. These results suggest that representing a material family through a small set of shared convex neural potentials provides a useful structural prior for learning descriptor-dependent constitutive behavior from limited data.",
+      "categories": [
+        "physics.comp-ph",
+        "cond-mat.mtrl-sci"
+      ],
+      "published": "2026-08-31T20:52:21+00:00",
+      "updated": "2026-08-31T20:52:21+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2609.00359v1",
+      "abs_url": "https://arxiv.org/abs/2609.00359",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/caf25902e39af6c0e5e57c2c3e87e5519e7a87c8",
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "data-driven",
+        "structural",
+        "elastic",
+        "deform",
+        "mechanical",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "매개변수적 초탄성(Hyperelasticity)을 위한 다볼록 신경 포텐셜 혼합: 기초 재료 모델을 향하여",
+      "summary_ko": "- 기존 초탄성 모델은 재료별로 미리 정해진 함수를 사용해 다양한 재료군을 포괄하기 어렵습니다.\n- 본 연구는 재료군 모델링을 위해 볼록 신경망(input convex neural networks) 기반의 다볼록 신경 포텐셜 혼합 방식을 제안합니다.\n- 각 포텐셜은 다볼록 변형률 불변량(polyconvex strain invariants)에 대해 볼록하고 단조적이며, 재료 특성(descriptors)이 혼합 가중치로 매핑됩니다.\n- PolyJet 3D 프린팅 재료 및 Gent-type 벤치마크 실험에서 제안 모델이 훈련되지 않은 재료 특성에 더 잘 일반화되었습니다.\n- 이는 제한된 데이터로도 재료 특성에 따른 구성 거동을 학습하는 데 유용한 구조적 사전 지식을 제공합니다.",
+      "tags": [
+        "초탄성",
+        "재료 모델링",
+        "신경망",
+        "기계 학습"
+      ]
+    },
+    {
+      "arxiv_id": "2610.31322",
+      "title": "Hyperreduction accelerates finite element model updating for the discovery of neural materials",
+      "authors": [
+        "Hagen Holthusen",
+        "Matthias Knipper",
+        "Kevin Linka"
+      ],
+      "summary": "Finite element model updating is among the most general approaches to discover constitutive models from structural experiments: since the displacement field is computed rather than measured, it accommodates arbitrary geometries, boundary conditions, and sparse or noisy data. However, every loss evaluation requires a nonlinear finite element solve per load step, and training neural materials requires many such evaluations. Intrusive model order reduction lowers this cost while retaining boundary conditions and variational structure. How can a reduced model remain accurate while the network weights change at every training step? We combine proper orthogonal decomposition and energy-conserving sampling and weighting with adjoint sensitivities of the reduced model, and adapt both the trial space and the sampled elements along the optimization path. The constitutive law is a polyconvex neural network: a logarithmic normalization term, together with a zero-anchored input convex architecture and a growth term, renders the energy polyconvex, coercive, and non-negative by construction, independent of the trained weights. We demonstrate the approach on two experimental datasets and one synthetic three-dimensional example. For a two-phase specimen, training time decreases from nine hours to 41 minutes compared with a full-order identification, without loss of accuracy. In the three-dimensional example, six modes replace 48 672 degrees of freedom, 116 of 15 625 elements suffice to evaluate the internal forces, and training takes 13 minutes. In all cases, the identified material reproduces the measured reaction force and predicts the displacement field from the force alone. Hyperreduction makes the discovery of neural materials from structural data affordable while retaining the advantages of finite element model updating.",
+      "categories": [
+        "cs.CE",
+        "cs.AI"
+      ],
+      "published": "2026-10-22T14:13:27+00:00",
+      "updated": "2026-10-22T14:13:27+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.31322v1",
+      "abs_url": "https://arxiv.org/abs/2610.31322",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/f3198a366a5f53ecfd05165c1be353b776f27d28",
+      "tldr": "Hyperreduction makes the discovery of neural materials from structural data affordable while retaining the advantages of finite element model updating.",
+      "matched_keywords": [
+        "neural network",
+        "structural",
+        "finite element",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "title_ko": "하이퍼리덕션(Hyperreduction)을 통한 신경 재료(Neural Materials) 발견을 위한 유한요소 모델 업데이트 가속화",
+      "summary_ko": "- 유한요소 모델 업데이트는 재료의 구성 모델을 발견하는 일반적인 접근법이나, 계산 비용이 매우 높습니다.\n- 본 연구는 모델 차수 축소(model order reduction) 기법과 하이퍼리덕션(hyperreduction)을 결합하여 이 문제를 해결합니다.\n- 최적화 경로를 따라 시험 공간과 샘플링된 요소를 적응적으로 조정하며, 구성 법칙은 다중 볼록 신경망(polyconvex neural network)으로 모델링됩니다.\n- 2상 시편의 경우, 전체 차수 식별 대비 9시간에서 41분으로 훈련 시간이 단축되었고, 3D 예시에서는 13분 만에 훈련이 완료되었습니다.\n- 이 방법은 유한요소 모델 업데이트의 장점을 유지하면서 구조 데이터로부터 신경 재료를 효율적으로 발견할 수 있게 합니다.",
+      "tags": [
+        "유한요소 모델 업데이트",
+        "신경 재료",
+        "모델 차수 축소",
+        "하이퍼리덕션"
+      ]
+    }
+  ]
+}
