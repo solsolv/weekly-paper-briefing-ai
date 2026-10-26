@@ -17,7 +17,11 @@ on:
         type: string
         default: ""
       dry_run:
-        description: "LLM 호출 없이 파이프라인만 점검"
+        description: "LLM 호출 없이 파이프라인만 점검 (메일 발송 안 함)"
+        type: boolean
+        default: false
+      email_only:
+        description: "빌드 없이 검토 메일만 발송 (테스트·재발송용 — week_id 주차의 기존 결과 사용)"
         type: boolean
         default: false
 
@@ -38,6 +42,8 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       # 선택: 인용수 조회 rate limit 완화용 (없어도 동작)
       SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+      # email_only 실행이면 빌드 단계 전부 건너뜀
+      BUILD: ${{ github.event.inputs.email_only != 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -65,50 +71,58 @@ jobs:
           else
             echo "dry=" >> "$GITHUB_OUTPUT"
           fi
-          echo "주차=$WID, dry_run=${{ github.event.inputs.dry_run }}"
+          echo "주차=$WID, dry_run=${{ github.event.inputs.dry_run }}, email_only=${{ github.event.inputs.email_only }}"
 
       # --- 슬롯별 분리 실행 ---------------------------------------------------
       # 각 step은 !cancelled()로 앞 슬롯 실패와 무관하게 시도 → 한 슬롯이 arXiv 오류로 죽어도
       # 나머지 슬롯은 계속 진행되고 조립·커밋된다(작업 손실 방지). 실패 슬롯은 나중에
       # workflow_dispatch에서 slots=<슬롯ID>로 골라 보충하면 직전 커밋에 병합된다.
       # latest 슬롯은 같은 트랙 impact 선정작을 중복 제외(impact step이 앞서 실행됨).
+      # id는 마지막 메일 단계가 슬롯별 성공/실패를 판정하는 데 사용.
       - name: Build briefing AI Impact
-        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'ai-impact')) }}
+        id: s_ai_impact
+        if: ${{ !cancelled() && env.BUILD == 'true' && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'ai-impact')) }}
         run: python -m src.main --slot ai-impact --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
 
       - name: Build briefing AI Latest
-        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'ai-latest')) }}
+        id: s_ai_latest
+        if: ${{ !cancelled() && env.BUILD == 'true' && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'ai-latest')) }}
         run: python -m src.main --slot ai-latest --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
 
       - name: Build briefing Mech Impact
-        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'mech-impact')) }}
+        id: s_mech_impact
+        if: ${{ !cancelled() && env.BUILD == 'true' && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'mech-impact')) }}
         run: python -m src.main --slot mech-impact --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
 
       - name: Build briefing Mech Latest
-        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'mech-latest')) }}
+        id: s_mech_latest
+        if: ${{ !cancelled() && env.BUILD == 'true' && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'mech-latest')) }}
         run: python -m src.main --slot mech-latest --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
 
       # 국내 논문 +1편 (OpenAlex 국내 학술지 + Crossref 한글 원제목). 후보가 없으면 그 주는 섹션 생략.
       - name: Build briefing KR Latest
-        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'kr-latest')) }}
+        id: s_kr_latest
+        if: ${{ !cancelled() && env.BUILD == 'true' && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'kr-latest')) }}
         run: python -m src.main --slot kr-latest --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
 
-      # 링크 미리보기(OG) 이미지는 runner에 기본 설치된 Google Chrome(headless)으로 캡처한다.
+      # 링크 미리보기(OG) 이미지·메일 캡처는 runner에 기본 설치된 Google Chrome(headless)으로 찍는다.
       # 한글·이모지 폰트가 없으면 글자가 네모로 깨지므로 조립 전에 설치(약 30초).
       - name: Install fonts for preview images
         if: ${{ !cancelled() && steps.params.outcome == 'success' }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji
-          google-chrome --version || echo "::warning::Chrome 없음 — OG 이미지 생성 생략됨"
+          google-chrome --version || echo "::warning::Chrome 없음 — OG 이미지·메일 캡처 생략됨"
 
       # --- 조립: staging된 슬롯만 재요약, 나머지는 직전 커밋 결과 유지 ---------
       - name: Assemble & render
-        if: ${{ !cancelled() && steps.params.outcome == 'success' }}
+        id: assemble
+        if: ${{ !cancelled() && steps.params.outcome == 'success' && env.BUILD == 'true' }}
         run: python -m src.main --assemble --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
 
       - name: Commit & push results
-        if: ${{ !cancelled() && steps.params.outcome == 'success' }}
+        id: commit
+        if: ${{ !cancelled() && steps.params.outcome == 'success' && env.BUILD == 'true' }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -119,3 +133,35 @@ jobs:
             git commit -m "chore: weekly briefing ${{ steps.params.outputs.week_id }}"
             git push
           fi
+
+      # --- 검토 메일: 성공 / 보충 완료(일부 슬롯 수동 재실행) / 미완료 ---------
+      # 앞 단계가 실패해도 실행(always). dry-run이면 발송 안 함. Secret이 없으면 경고만 남기고 건너뜀.
+      # 필수 슬롯(ai·mech 4개) 실패 또는 데이터 누락 → 미완료 메일. 국내(kr) 실패는 미완료로 보지 않음.
+      - name: Send review email
+        if: ${{ always() && steps.params.outcome == 'success' && github.event.inputs.dry_run != 'true' }}
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$GMAIL_USER" ] || [ -z "$GMAIL_APP_PASSWORD" ] || [ -z "$MAIL_TO" ]; then
+            echo "::warning::메일 Secret 미설정 — 발송 생략"; exit 0
+          fi
+          FAILED=""
+          add() { if [ "$2" = "failure" ]; then FAILED="${FAILED:+$FAILED,}$1"; fi; }
+          add ai-impact   "${{ steps.s_ai_impact.outcome }}"
+          add ai-latest   "${{ steps.s_ai_latest.outcome }}"
+          add mech-impact "${{ steps.s_mech_impact.outcome }}"
+          add mech-latest "${{ steps.s_mech_latest.outcome }}"
+          add assemble    "${{ steps.assemble.outcome }}"
+          add commit      "${{ steps.commit.outcome }}"
+          # 일부 슬롯만 골라 수동 재실행했고 결과가 완성되면 '보충 완료' 제목
+          REFILL=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.email_only }}" != "true" ] \
+             && [ -n "${{ github.event.inputs.slots }}" ] && [ "${{ github.event.inputs.slots }}" != "all" ]; then
+            REFILL="--refill"
+          fi
+          echo "실패 단계: ${FAILED:-없음} / ${REFILL:-정규}"
+          python -m src.main --send-email --week-id ${{ steps.params.outputs.week_id }} \
+            --failed-slots "$FAILED" --run-url "$RUN_URL" $REFILL

@@ -552,6 +552,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--print-week-id", action="store_true", help="현재 주차 ID만 출력하고 종료")
     parser.add_argument("--backfill-topics", action="store_true", help="과거 주차 논문 관심 주제 일괄 분류 후 재렌더")
     parser.add_argument("--force", action="store_true", help="--backfill-topics와 함께: 이미 분류된 논문도 다시 분류")
+    # 주간 검토 메일 (src/notify.py)
+    parser.add_argument("--send-email", action="store_true", help="주차 검토 메일 발송(성공/보충 완료/미완료 자동 판정)")
+    parser.add_argument("--failed-slots", default="", help="--send-email: 이번 실행에서 실패한 단계(콤마 구분)")
+    parser.add_argument("--refill", action="store_true", help="--send-email: 수동 재실행(일부 슬롯) — 완성 시 '보충 완료' 제목")
+    parser.add_argument("--run-url", default="", help="--send-email: Actions 실행 로그 URL")
+    parser.add_argument("--email-preview", default=None, help="--send-email: 발송 대신 .eml 파일로 저장")
     args = parser.parse_args(argv)
 
     if args.print_week_id:
@@ -561,6 +567,14 @@ def main(argv: list[str] | None = None) -> int:
     if args.render_only:
         render_site(Config.load(args.config))
         return 0
+    if args.send_email:
+        from .notify import run_notify  # noqa: PLC0415
+
+        cfg = Config.load(args.config)
+        week_id = args.week_id or compute_week_id(cfg.get("site.timezone", "Asia/Seoul"))
+        failed = [s.strip() for s in args.failed_slots.split(",") if s.strip()]
+        return run_notify(cfg, week_id, failed=failed, refill=args.refill, run_url=args.run_url,
+                          preview=args.email_preview)
     if args.backfill_topics:
         return run_backfill_topics(args)
     if args.assemble:

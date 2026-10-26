@@ -225,6 +225,23 @@ s2_search:
   sort_latest: "publicationDate:desc"
 
 # -----------------------------------------------------------------------------
+# 주간 검토 메일 (src/notify.py) — 토요일 빌드 끝에 Gmail SMTP로 본인에게 발송.
+#   계정·앱 비밀번호·받는 주소는 GitHub Secret(GMAIL_USER / GMAIL_APP_PASSWORD / MAIL_TO)으로만 관리.
+#   성공 → 인사말 + 주차 페이지 상단 캡처 + 사이트 링크 / 수동 재실행으로 완성 → 같은 본문, '보충 완료' 제목
+#   필수 슬롯(ai·mech 4개) 실패·누락 → 미완료 알림(실패 슬롯 + 재실행 방법). 국내 0편은 정상.
+# -----------------------------------------------------------------------------
+notify:
+  enabled: true
+  from_name: "AI & AI 활용 기계공학 주간 논문 브리핑"
+  briefing_name: "AI & AI 활용 기계공학 논문 브리핑"     # 본문 첫 줄: "<날짜(요일)> 주차 <이 이름>입니다."
+  prefix_success: "[논문 브리핑]"
+  prefix_refill: "[논문 브리핑 보충 완료]"
+  prefix_incomplete: "[논문 브리핑 ⚠️ 미완료]"
+  capture_width: 1000          # 넓은 폭 캡처 (제목 한 줄 표시)
+  capture_max_height: 1400     # 넉넉히 찍은 뒤 아래 흰 여백 자동 자름(Pillow)
+  repo_url: "https://github.com/solsolv/weekly-paper-briefing-ai"
+
+# -----------------------------------------------------------------------------
 # OpenAlex — 기계공학 저널 논문 후보 보강 (키 불필요, CC0 데이터)
 #   arXiv·S2에 없는 저널 논문을 흡수. 결과는 트랙 키워드 필터 + LLM 게이트를 그대로 거친다.
 #   주의: Elsevier·Springer 다수 저널은 OpenAlex에 초록이 없어(has_abstract) 자동 제외된다.
