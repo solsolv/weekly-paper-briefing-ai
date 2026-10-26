@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  /* 링크 미리보기 이미지(1200×630) 공통 — headless 브라우저로 이 페이지를 캡처해 PNG로 저장 */
+  html, body { margin: 0; width: {{ w }}px; height: {{ h }}px; overflow: hidden; }
+  body { font-family: "Pretendard Variable", Pretendard, "Noto Sans CJK KR", "Malgun Gothic", sans-serif; }
+  .c { position: relative; width: {{ w }}px; height: {{ h }}px; box-sizing: border-box; background: #fbfbfd; overflow: hidden; }
+  .blob { position: absolute; border-radius: 50%; }
+  .b1 { width: 620px; height: 620px; background: radial-gradient(circle, rgba(0,113,227,.20), transparent 65%); top: -270px; right: -140px; }
+  .b2 { width: 560px; height: 560px; background: radial-gradient(circle, rgba(0,135,90,.18), transparent 65%); bottom: -300px; left: 260px; }
+  .logo { width: 56px; height: 56px; flex: none; }
+  .logo svg { width: 100%; height: 100%; display: block; }
+  .ai { background: linear-gradient(90deg, #0071e3, #5e5ce6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .me { background: linear-gradient(90deg, #00875a, #30b47a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  {% block style %}{% endblock %}
+</style>
+</head>
+<body><div class="c"><div class="blob b1"></div><div class="blob b2"></div>
+{% block body %}{% endblock %}
+</div></body>
+</html>

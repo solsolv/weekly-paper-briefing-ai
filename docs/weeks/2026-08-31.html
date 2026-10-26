@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-08-31 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
-<meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
+<title>2026-08-31 · AI &amp; AI 활용 기계공학 주간 논문 브리핑</title>
+<meta name="description" content="매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI &amp; AI 활용 기계공학 주간 논문 브리핑">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="2026-08-31 주차 · AI &amp; AI 활용 기계공학 주간 논문 브리핑">
+<meta property="og:description" content="CritICL: 소형 언어 모델의 실패 모드를 활용한 추론 시점의 약-강 일반화 외 3편 — AI 2편 · 기계공학 2편">
+<meta property="og:url" content="https://weekly-paper-briefing-ai.pages.dev/weeks/2026-08-31.html"><meta property="og:image" content="https://weekly-paper-briefing-ai.pages.dev/og/2026-08-31.fd831b2919.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png"><meta name="theme-color" content="#0071e3">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -20,6 +31,7 @@
     --accent-hover: #0077ed;
     --ai: #0071e3;
     --mech: #00875a;
+    --kr: #c2410c;          /* 국내 논문(+1편) */
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 1px rgba(0,0,0,0.02);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
     --shadow-lg: 0 20px 48px rgba(0,0,0,0.08), 0 6px 12px rgba(0,0,0,0.05);
@@ -100,6 +112,24 @@
     font-size: clamp(1rem, 1.5vw, 1.125rem);
     max-width: 640px;
   }
+  /* 2줄 제목의 트랙명은 트랙 배지 색(파랑/초록) 그라데이션 */
+  header.site .hero-ai, header.site .hero-mech {
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  header.site .hero-ai   { background-image: linear-gradient(90deg, var(--ai), #5e5ce6); }
+  header.site .hero-mech { background-image: linear-gradient(90deg, var(--mech), #30b47a); }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 13px; border-radius: 999px;
+    background: #fff; border: 1px solid #e8e8ed;
+    font-size: 0.88rem; font-weight: 500; color: var(--text);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    white-space: nowrap;
+  }
+  .hero-chip b { color: var(--accent); font-weight: 600; }
+  .hero-chip .kr-chip { color: var(--kr); font-weight: 600; }
   header.site .home-link {
     display: inline-flex; align-items: center; gap: 4px;
     font-size: 0.9rem; color: var(--text-soft); margin-bottom: 12px;
@@ -119,10 +149,12 @@
     padding: 3px 10px; border-radius: 999px;
     letter-spacing: 0.01em;
     vertical-align: middle;
+    white-space: nowrap; flex-shrink: 0;
     transition: all 0.2s var(--ease);
   }
   .badge.ai   { background: rgba(0,113,227,0.10); color: var(--ai); }
   .badge.mech { background: rgba(0,135,90,0.10);  color: var(--mech); }
+  .badge.kr   { background: rgba(194,65,12,0.10); color: var(--kr); }
 
   /* ----- Week cards (index) ----- */
   .week-card {
@@ -182,12 +214,22 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
   }
-  .paper.ai::before, .paper.mech::before {
+  .paper.ai::before, .paper.mech::before, .paper.kr::before {
     content: ""; position: absolute; left: 0; top: 0; bottom: 0;
     width: 3px; border-radius: var(--radius-md) 0 0 var(--radius-md);
   }
   .paper.ai::before   { background: linear-gradient(180deg, #0071e3, #5ac8fa); }
   .paper.mech::before { background: linear-gradient(180deg, #00875a, #30d158); }
+  .paper.kr::before   { background: linear-gradient(180deg, #c2410c, #fb923c); }
+  .paper .venue { color: var(--kr); font-weight: 600; }
+  .paper.mech .venue { color: var(--mech); }
+
+  /* ----- 국내 논문 +1편: 기존 4편과 구분되는 보너스 섹션 ----- */
+  .kr-section { margin-top: 40px; padding-top: 28px; border-top: 1px dashed rgba(194,65,12,0.35); }
+  .kr-section h2 .kr-plus { color: var(--kr); margin-right: 4px; }
+  .kr-note { margin: -6px 0 16px; font-size: 0.86rem; color: var(--text-muted); }
+  .toc-plus { margin-left: 6px; color: var(--kr); font-weight: 700; }
+  .toc-kr { margin-top: 8px; padding-top: 10px; border-top: 1px dashed rgba(194,65,12,0.3); }
 
   .paper .meta { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 6px; }
   .paper h3 {
@@ -335,13 +377,20 @@
   }
   .toc-list { display: flex; flex-direction: column; gap: 6px; }
   .toc-list a {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: flex-start; gap: 10px;
     color: var(--text); font-size: 0.96rem;
     padding: 6px 0;
     border-radius: 8px;
     transition: color 0.2s var(--ease), padding 0.2s var(--ease);
   }
   .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+  .toc-list a .badge { min-width: 7.6em; justify-content: center; margin-top: 2px; }
+  .toc-list a > span:last-child { min-width: 0; line-height: 1.5; }
+  /* 휴대폰 폭: 배지를 제목 위로 올려 제목이 전체 폭을 쓰도록 */
+  @media (max-width: 520px) {
+    .toc-list a { flex-direction: column; gap: 4px; padding: 8px 0; }
+    .toc-list a .badge { min-width: 0; margin-top: 0; }
+  }
 
   .filter-bar {
     display: flex; gap: 8px; flex-wrap: wrap;
@@ -406,7 +455,23 @@
     margin-top: 32px; padding-top: 28px;
     border-top: 1px solid var(--line-soft);
     color: var(--text-muted); font-size: 0.82rem;
-    text-align: center;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px 24px; flex-wrap: wrap;
+  }
+  footer.site .dev { display: flex; align-items: center; gap: 12px; }
+  footer.site .dev-avatar {
+    flex: none; display: inline-grid; place-items: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--ai), var(--mech));
+    color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.02em;
+  }
+  footer.site .dev-name { color: var(--text); font-weight: 600; font-size: 0.92rem; }
+  footer.site .dev-contact { margin-top: 2px; }
+  footer.site .dev-contact a { color: var(--text-muted); }
+  footer.site .dev-contact a:hover { color: var(--accent); }
+  footer.site .build-meta { text-align: right; line-height: 1.6; }
+  @media (max-width: 520px) {
+    footer.site .build-meta { text-align: left; }
   }
 
   /* ----- Scroll reveal ----- */
@@ -434,10 +499,15 @@
 </div>
 <div class="wrap">
   <header class="site">
-  <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-08-31</span>
-  <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
-  <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
+<a class="home-link" href="../index.html">← 전체 목록</a>    <span class="eyebrow">2026-08-31</span>
+    <h1><a href="../index.html"><span class="hero-ai">AI</span> &amp; <span class="hero-mech">AI 활용 기계공학</span><br>주간 논문 브리핑</a></h1>
+    <p class="lede">매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다.</p>
+    <div class="hero-chips">
+      <span class="hero-chip">📅 매주 <b>월 08:00</b> 공개</span>
+      <span class="hero-chip">🔥 임팩트 + 🆕 최신</span>
+      <span class="hero-chip">📚 논문 <b>4편</b></span>
+      <span class="hero-chip">📝 한국어 5줄 요약</span>
+    </div>
   </header>
   <div id="publish-notice" data-publish-at="2026-08-31T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
     <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-08-31 8:00 (KST)</strong>에 공개됩니다.</p>
@@ -474,12 +544,12 @@
 
       <section class="track-section" data-track-block="ai">
         <h2 class="reveal">
-          AI
+AI
           <span class="badge ai">2편</span>
         </h2>
           <article class="paper ai reveal" id="p-2608.27455" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CL · 발표 2026-08-27<span class="slot-badge impact">임팩트</span>            </div>
+cs.CL · 발표 2026-08-27<span class="slot-badge impact">임팩트</span>            </div>
             <h3><a href="https://arxiv.org/abs/2608.27455" target="_blank" rel="noopener">CritICL: Inference-Time Weak-to-Strong Generalization from Small Language Model Failure Modes</a></h3>
 <p class="title-ko">CritICL: 소형 언어 모델의 실패 모드를 활용한 추론 시점의 약-강 일반화</p>            <div class="authors">Yufan Wu, Yinghui He, Zhengyi Hu, Lang Wei, Ruichen Li, Qifan Yang, Ting Zhu</div>
             <div class="stats">
@@ -490,12 +560,11 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> Experimental results show that CritICL consistently outperforms standard in-context learning and achieves performance competitive with or superior to test-time scaling methods, while requiring significantly fewer generations and lower token cost.</div><div class="tags"><span class="tag">#LLM</span><span class="tag">#추론 시간 학습</span><span class="tag">#실패 모드</span><span class="tag">#문맥 내 학습</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2608.27455" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2608.27455v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/ec3859e438022aa592845eaa78e59be39ead3231" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2608.27455v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/ec3859e438022aa592845eaa78e59be39ead3231" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
           <article class="paper ai reveal" id="p-2608.26105" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.CV, cs.AI, cs.LG, cs.MM, cs.RO · 발표 2026-08-26<span class="slot-badge latest">최신</span>            </div>
+cs.CV, cs.AI, cs.LG, cs.MM, cs.RO · 발표 2026-08-26<span class="slot-badge latest">최신</span>            </div>
             <h3><a href="https://arxiv.org/abs/2608.26105" target="_blank" rel="noopener">VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning</a></h3>
 <p class="title-ko">VBVR-Pro: 원시 시각 추론을 위한 확장 가능하고 검증 가능한 스위트</p>            <div class="authors">Junxiang Xu, Ruisi Wang, Fanyi Pu, Maijunxian Wang, Ran Ji, Tongxi Zhou, Chenyang Gu, Jing Zuo 외 44명</div>
 <div class="affiliations">Nanyang Technological University · MMLab@NTU, Nanyang Technological University</div>            <div class="stats">
@@ -506,18 +575,17 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This work introduces VBVR-Pro, a closed-loop testbed that makes native visual reasoning through generation trainable, verifiable, optimizable, and experimentally controllable, and identifies recurring failure modes of the prevalent VLM-as-a-judge paradigm.</div><div class="tags"><span class="tag">#시각 추론</span><span class="tag">#생성 모델</span><span class="tag">#강화 학습</span><span class="tag">#벤치마크</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2608.26105" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2608.26105v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/d4a20e11ed5738e193dd53d5f6d78774bfab4e52" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2608.26105v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/d4a20e11ed5738e193dd53d5f6d78774bfab4e52" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
-          AI 활용 기계공학
+AI 활용 기계공학
           <span class="badge mech">2편</span>
         </h2>
           <article class="paper mech reveal" id="p-doi:10.3390/met16020171" style="transition-delay: 0ms;">
             <div class="meta">
-               · 발표 2026-02-01<span class="slot-badge impact">임팩트</span>            </div>
+발표 2026-02-01<span class="slot-badge impact">임팩트</span>            </div>
             <h3><a href="https://www.semanticscholar.org/paper/6efab6ff3d1b7e5e1d7b35498530446235bff840" target="_blank" rel="noopener">Physics-Informed Decision Framework for Reuse of Reclaimed Steel Members Under Uncertainty</a></h3>
 <p class="title-ko">불확실성 하에 재생 강철 부재 재사용을 위한 물리 정보 기반 의사결정 프레임워크</p>            <div class="authors">Sina Sarfarazi, Marcello Fulgione, F. Fabbrocino</div>
             <div class="stats">
@@ -527,13 +595,12 @@
 <li>강철 재사용은 탄소 절감에 기여하나, 불확실성 및 증거 부족으로 널리 채택되지 못합니다.</li><li>본 연구는 재사용 승인을 위한 데이터 기반 및 물리 정보 기반 계산 방법을 제안합니다.</li><li>데이터 기반 모델은 후보 선별 및 증거 수집 우선순위 지정에 활용됩니다.</li><li>물리 정보 기반 접근법은 역학적으로 타당한 예측을 위한 제약 조건을 부과합니다.</li><li>이 프레임워크는 강철 재사용의 실용적이고 투명한 승인 과정을 가능하게 합니다.</li>              </ul>
             </div>
 <div class="tags"><span class="tag">#강철 재사용</span><span class="tag">#의사결정 프레임워크</span><span class="tag">#불확실성 정량화</span><span class="tag">#물리 정보 인공지능</span></div>            <div class="links">
-              <a href="https://www.semanticscholar.org/paper/6efab6ff3d1b7e5e1d7b35498530446235bff840" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://doi.org/10.3390/met16020171" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/6efab6ff3d1b7e5e1d7b35498530446235bff840" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+              <a href="https://www.semanticscholar.org/paper/6efab6ff3d1b7e5e1d7b35498530446235bff840" target="_blank" rel="noopener">원문</a>
+<a href="https://doi.org/10.3390/met16020171" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/6efab6ff3d1b7e5e1d7b35498530446235bff840" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
           <article class="paper mech reveal" id="p-2608.17250" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.CE, cs.AI, cs.LG, stat.ME, stat.ML · 발표 2026-08-18<span class="slot-badge latest">최신</span>            </div>
+cs.CE, cs.AI, cs.LG, stat.ME, stat.ML · 발표 2026-08-18<span class="slot-badge latest">최신</span>            </div>
             <h3><a href="https://arxiv.org/abs/2608.17250" target="_blank" rel="noopener">Adaptive surrogate modeling for high-dimensional spatio-temporal output</a></h3>
 <p class="title-ko">고차원 시공간 출력에 대한 적응형 대리 모델링</p>            <div class="authors">Berkcan Kapusuzoglu, Shunsaku Matsumoto, Yoshitomo Miyagi, Daigo Watanabe, Sankaran Mahadevan</div>
             <div class="stats">
@@ -544,8 +611,7 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> An adaptive surrogate modeling method for problems with very high-dimensional spatio-temporal outputs is developed that combines exploration and exploitation to improve the surrogate model accuracy with the fewest possible runs of the expensive physics-based model.</div><div class="tags"><span class="tag">#대리 모델링</span><span class="tag">#차원 축소</span><span class="tag">#적응형 샘플링</span><span class="tag">#시공간 출력</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2608.17250" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2608.17250v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/0441be888900756d6f5725de9eb44a668ca6a329" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2608.17250v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/0441be888900756d6f5725de9eb44a668ca6a329" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 
@@ -569,9 +635,26 @@
     })();
   </script>
   <footer class="site">
-    <p>자동 생성 · 2026-10-24 05:31 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+    <div class="dev">
+      <span class="dev-avatar" aria-hidden="true">EL</span>
+      <div class="dev-text">
+        <div class="dev-name">Developed by Eunseong Lee</div>
+<div class="dev-contact">문의 · <a class="js-mail" href="#" data-u="eunseong.lee91" data-d="gmail.com">이메일</a></div>      </div>
+    </div>
+    <div class="build-meta">
+      <div>마지막 업데이트 2026-10-26 (월)</div>
+      <div>arXiv · Semantic Scholar · OpenAlex · Crossref · Hugging Face · Gemini 요약</div>
+    </div>
   </footer>
 </div>
+<script>
+  // 문의 메일: 아이디·도메인을 여기서 조립 → HTML 소스에는 완성된 주소가 없어 수집 봇 회피
+  document.querySelectorAll('a.js-mail').forEach(function (a) {
+    var addr = a.dataset.u + '@' + a.dataset.d;
+    a.href = 'mai' + 'lto:' + addr;
+    a.textContent = addr;
+  });
+</script>
 <script>
   // 예약 공개: data-publish(=월요일 08:00 등) 시각이 미래인 항목은 그 시각까지 숨김.
   // 브라우저 시계 기준이라 GitHub Actions 스케줄 지연과 무관하게 정시에 노출된다.

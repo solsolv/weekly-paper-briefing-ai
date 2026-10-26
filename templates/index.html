@@ -1,27 +1,109 @@
 {% extends "base.html" %}
+{# 상단 칩 '+ 국내 N편'은 가장 최근 주차에 국내 논문이 있을 때만 #}
+{% set kr_count = ((weeks[0].tracks.get('kr') or []) | length) if weeks else 0 %}
+{% block head %}
+<style>
+  /* ----- 관심 주제 = 주제 필터 버튼 ----- */
+  button.interest-chip {
+    appearance: none; font-family: inherit; cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+  }
+  button.interest-chip:hover { border-color: var(--line); color: var(--text); }
+  button.interest-chip.on { background: var(--text); color: #fff; }
+  .interests-row.mech button.interest-chip.on { background: var(--mech); }
+  .interests-row.ai button.interest-chip.on { background: var(--ai); }
+  .interest-chip .n { margin-left: 4px; font-size: 0.72rem; opacity: 0.6; }
+  .interests-hint { font-size: 0.78rem; color: var(--text-muted); margin-top: 10px; }
+
+  /* ----- 검색·필터 ----- */
+  .finder {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft); border-radius: var(--radius-md);
+    padding: 20px 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);
+  }
+  .finder-top { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .finder .search {
+    flex: 1 1 300px; display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: #fff;
+  }
+  .finder .search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,113,227,0.12); }
+  .finder .search input { border: 0; outline: 0; font: inherit; font-size: 0.95rem; flex: 1; min-width: 0; background: transparent; color: var(--text); }
+  .seg { display: flex; gap: 6px; flex-wrap: wrap; }
+  .seg button, .tagbtn, .reset-btn {
+    appearance: none; cursor: pointer; font-family: inherit;
+    border: 1px solid var(--line); background: #fff; color: var(--text);
+    border-radius: 999px; padding: 8px 14px; font-size: 0.86rem; white-space: nowrap;
+  }
+  .seg button.on { background: var(--text); color: #fff; border-color: var(--text); }
+  .tags-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; align-items: center; }
+  .tags-row .lbl { font-size: 0.78rem; color: var(--text-muted); margin-right: 2px; }
+  .tagbtn { padding: 4px 11px; font-size: 0.8rem; color: var(--text-soft); }
+  .tagbtn small { color: var(--text-muted); margin-left: 3px; }
+  .tagbtn.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .tagbtn.on small { color: rgba(255,255,255,0.75); }
+  .res-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 18px 0 10px; font-size: 0.86rem; color: var(--text-soft); flex-wrap: wrap; }
+  .res-head b { color: var(--text); }
+  .reset-btn { padding: 5px 12px; font-size: 0.8rem; color: var(--text-soft); }
+  .res { display: flex; flex-direction: column; gap: 8px; }
+  .ri { display: block; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line-soft); background: #fff; color: var(--text); transition: border-color 0.2s var(--ease); }
+  .ri:hover { border-color: rgba(0,113,227,0.35); color: var(--text); }
+  .ri .ri-top { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 0.76rem; color: var(--text-muted); }
+  .ri .ri-tk { font-weight: 600; margin: 5px 0 2px; font-size: 0.95rem; line-height: 1.45; }
+  .ri .ri-te { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+  .ri .ri-tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .ri .ri-tags span { font-size: 0.72rem; color: var(--text-soft); background: var(--line-soft); border-radius: 999px; padding: 2px 8px; }
+  .ri .ri-tags span.tp { background: rgba(0,113,227,0.08); color: var(--ai); }
+  .ri.mech .ri-tags span.tp { background: rgba(0,135,90,0.08); color: var(--mech); }
+  .finder mark { background: #fff3b0; color: inherit; border-radius: 3px; padding: 0 1px; }
+  .res-empty { color: var(--text-muted); font-size: 0.9rem; padding: 8px 2px; }
+  .is-hidden { display: none !important; }
+  .week-card li.kr-li { color: var(--text-soft); }
+  .week-card .kr-tag { color: var(--kr); font-weight: 700; font-size: 0.82em; }
+  .ri.kr .ri-tags span.tp { background: rgba(194,65,12,0.08); color: var(--kr); }
+</style>
+{% endblock %}
 {% block content %}
   {% if site.interests and (site.interests.ai or site.interests.mech) %}
   <section class="interests reveal" aria-label="관심 주제">
     <div class="interests-title">관심 주제</div>
-    {% if site.interests.ai %}
-    <div class="interests-row">
-      <span class="badge ai">AI</span>
+    {% for tr in ['ai', 'mech'] if site.interests[tr] %}
+    <div class="interests-row {{ tr }}">
+      <span class="badge {{ tr }}">{{ track_label[tr] }}</span>
       <div class="interests-chips">
-        {% for t in site.interests.ai %}<span class="interest-chip">{{ t }}</span>{% endfor %}
+        {% for t in site.interests[tr] %}<button type="button" class="interest-chip" data-topic="{{ t }}" data-track="{{ tr }}">{{ t }}<span class="n"></span></button>{% endfor %}
       </div>
     </div>
-    {% endif %}
-    {% if site.interests.mech %}
-    <div class="interests-row">
-      <span class="badge mech">AI 활용 기계공학</span>
-      <div class="interests-chips">
-        {% for t in site.interests.mech %}<span class="interest-chip">{{ t }}</span>{% endfor %}
-      </div>
-    </div>
-    {% endif %}
+    {% endfor %}
+    <div class="interests-hint">주제를 누르면 지난 주차의 해당 논문만 모아 봅니다.</div>
   </section>
   {% endif %}
 
+  {% if weeks %}
+  <section class="finder reveal" aria-label="논문 검색">
+    <div class="finder-top">
+      <label class="search">
+        <span aria-hidden="true">🔍</span>
+        <input id="f-q" type="search" placeholder="제목·요약·저자·태그 검색 (예: 디지털 트윈, 강화 학습)" autocomplete="off" aria-label="논문 검색">
+      </label>
+      <div class="seg" id="f-track" role="group" aria-label="트랙">
+        <button type="button" data-track="all" class="on">전체</button>
+        <button type="button" data-track="ai">AI</button>
+        <button type="button" data-track="mech">AI 활용 기계공학</button>
+        <button type="button" data-track="kr">+ 국내</button>
+      </div>
+    </div>
+    <div class="tags-row" id="f-tags"><span class="lbl">자주 나온 태그</span></div>
+    <div id="f-result" class="is-hidden">
+      <div class="res-head"><span id="f-head"></span><button type="button" class="reset-btn" id="f-reset">✕ 필터 초기화</button></div>
+      <div class="res" id="f-list"></div>
+    </div>
+  </section>
+  <script type="application/json" id="search-data">{{ search_json | safe }}</script>
+  {% endif %}
+
+  <div id="week-list">
   {% if not weeks %}
     <div class="reveal">
       <p style="color: var(--text-soft); font-size: 1.05rem;">아직 생성된 브리핑이 없습니다. 첫 빌드를 기다려 주세요.</p>
@@ -30,17 +112,132 @@
   {% for w in weeks %}
     {% set ai_n = w.tracks.ai | length %}
     {% set mech_n = w.tracks.mech | length %}
+    {% set kr_n = (w.tracks.get('kr') or []) | length %}
     <a class="week-card reveal" href="weeks/{{ w.week_id }}.html"{% if w.publish_at %} data-publish="{{ w.publish_at }}"{% endif %} style="transition-delay: {{ loop.index0 * 60 }}ms;">
       <h2>
         <span class="week-date">{{ w.week_id }}</span>
         <span class="badge ai">AI {{ ai_n }}</span>
         <span class="badge mech">기계공학 {{ mech_n }}</span>
+        {% if kr_n %}<span class="badge kr">+ 국내 {{ kr_n }}</span>{% endif %}
       </h2>
       <ul>
         {% for p in w.papers %}
-          <li>{{ p.title_ko or p.title }}{% if p.citation_count %} <span style="color: var(--text-muted)">· {{ p.citation_count }} cites</span>{% endif %}</li>
+          <li{% if p.track == 'kr' %} class="kr-li"{% endif %}>{% if p.track == 'kr' %}<span class="kr-tag">+ 국내</span> {% endif %}{{ p.title_ko or p.title }}{% if p.citation_count %} <span style="color: var(--text-muted)">· {{ p.citation_count }} cites</span>{% endif %}</li>
         {% endfor %}
       </ul>
     </a>
   {% endfor %}
+  </div>
+
+  {% if weeks %}
+  <script>
+  // 지난 주차 검색·필터: 검색어 + 트랙 + 자주 나온 태그 + 관심 주제. 조건은 주소(?q=&track=&tag=&topic=)에
+  // 담겨 링크로 공유 가능. 공개 시각(publish_at) 전인 주차는 검색 대상에서도 제외.
+  (function () {
+    var el = document.getElementById('search-data');
+    if (!el) return;
+    var now = Date.now();
+    var ALL = JSON.parse(el.textContent).filter(function (p) {
+      var t = Date.parse(p.pub); return !p.pub || isNaN(t) || now >= t;
+    });
+    var LBL = { ai: 'AI', mech: 'AI 활용 기계공학', kr: '+ 국내 논문' }, SL = { impact: '임팩트', latest: '최신' };
+    var $ = function (id) { return document.getElementById(id); };
+    var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var norm = function (s) { return String(s).toLowerCase().replace(/\s+/g, ''); };
+    var hl = function (s, q) {
+      s = esc(s); if (!q) return s;
+      var i = s.toLowerCase().indexOf(q.toLowerCase());
+      return i < 0 ? s : s.slice(0, i) + '<mark>' + s.slice(i, i + q.length) + '</mark>' + s.slice(i + q.length);
+    };
+
+    // 자주 나온 태그(2회 이상, 상위 14개) — 공개된 주차만으로 집계
+    var cnt = {};
+    ALL.forEach(function (p) { p.tg.forEach(function (t) { cnt[t] = (cnt[t] || 0) + 1; }); });
+    Object.keys(cnt).filter(function (t) { return cnt[t] >= 2; })
+      .sort(function (a, b) { return cnt[b] - cnt[a] || a.localeCompare(b); }).slice(0, 14)
+      .forEach(function (t) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'tagbtn'; b.dataset.tag = t;
+        b.innerHTML = esc(t) + '<small>' + cnt[t] + '</small>';
+        $('f-tags').appendChild(b);
+      });
+    // 관심 주제 칩에 편수 표시
+    var tcnt = {};
+    ALL.forEach(function (p) { p.tp.forEach(function (t) { tcnt[t] = (tcnt[t] || 0) + 1; }); });
+    document.querySelectorAll('.interest-chip').forEach(function (b) {
+      var n = tcnt[b.dataset.topic] || 0;
+      b.querySelector('.n').textContent = n ? n : '';
+    });
+
+    var U = new URLSearchParams(location.search);
+    var st = { q: U.get('q') || '', track: U.get('track') || 'all', tag: U.get('tag') || '', topic: U.get('topic') || '' };
+
+    function sync() {
+      var u = new URLSearchParams();
+      if (st.q) u.set('q', st.q);
+      if (st.track !== 'all') u.set('track', st.track);
+      if (st.tag) u.set('tag', st.tag);
+      if (st.topic) u.set('topic', st.topic);
+      var qs = u.toString();
+      try { history.replaceState(null, '', qs ? '?' + qs : location.pathname); } catch (e) { /* file:// 등 */ }
+    }
+
+    function draw() {
+      if ($('f-q').value !== st.q) $('f-q').value = st.q;
+      document.querySelectorAll('#f-track button').forEach(function (b) { b.classList.toggle('on', b.dataset.track === st.track); });
+      document.querySelectorAll('.tagbtn').forEach(function (b) { b.classList.toggle('on', b.dataset.tag === st.tag); });
+      document.querySelectorAll('.interest-chip').forEach(function (b) { b.classList.toggle('on', b.dataset.topic === st.topic); });
+      var active = !!(st.q || st.tag || st.topic || st.track !== 'all');
+      $('f-result').classList.toggle('is-hidden', !active);
+      $('week-list').classList.toggle('is-hidden', active);
+      if (!active) return;
+
+      var q = norm(st.q);
+      var rows = ALL.filter(function (p) {
+        if (st.track !== 'all' && p.tr !== st.track) return false;
+        if (st.tag && p.tg.indexOf(st.tag) < 0) return false;
+        if (st.topic && p.tp.indexOf(st.topic) < 0) return false;
+        // 관심 주제명은 검색 대상에서 제외(주제 필터 전용) — 넣으면 '디지털트윈' 검색이 주제 전체를 끌어옴
+        if (q && norm([p.tk, p.te, p.s, p.au, p.tg.join(' ')].join('|')).indexOf(q) < 0) return false;
+        return true;
+      });
+      var cond = [st.topic && '주제 “' + esc(st.topic) + '”', st.q && '“' + esc(st.q) + '”', st.tag && '#' + esc(st.tag),
+                  st.track !== 'all' && LBL[st.track]].filter(Boolean).join(' · ');
+      $('f-head').innerHTML = cond + ' 결과 <b>' + rows.length + '편</b> <span style="color:var(--text-muted)">(전체 ' + ALL.length + '편 중)</span>';
+      $('f-list').innerHTML = rows.length ? rows.map(function (p) {
+        return '<a class="ri ' + p.tr + '" href="weeks/' + p.w + '.html#p-' + encodeURIComponent(p.id) + '">' +
+          '<div class="ri-top"><span class="badge ' + p.tr + '">' + LBL[p.tr] + '</span>' + p.w + ' 주차' +
+          (p.tr === 'kr' ? (p.v ? ' · ' + esc(p.v) : '') : ' · ' + (SL[p.sl] || '')) + '</div>' +
+          '<div class="ri-tk">' + hl(p.tk || p.te, st.q) + '</div>' +
+          (p.tk ? '<div class="ri-te">' + hl(p.te, st.q) + '</div>' : '') +
+          '<div class="ri-tags">' + p.tp.map(function (t) { return '<span class="tp">' + esc(t) + '</span>'; }).join('') +
+          p.tg.map(function (t) { return '<span>#' + hl(t, st.q) + '</span>'; }).join('') + '</div></a>';
+      }).join('') : '<div class="res-empty">조건에 맞는 논문이 없습니다.</div>';
+    }
+
+    var timer;
+    $('f-q').addEventListener('input', function (e) {
+      st.q = e.target.value; draw();
+      clearTimeout(timer); timer = setTimeout(sync, 400);
+    });
+    $('f-track').addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      st.track = b.dataset.track; draw(); sync();
+    });
+    $('f-tags').addEventListener('click', function (e) {
+      var b = e.target.closest('.tagbtn'); if (!b) return;
+      st.tag = st.tag === b.dataset.tag ? '' : b.dataset.tag; draw(); sync();
+    });
+    document.querySelectorAll('.interest-chip').forEach(function (b) {
+      b.addEventListener('click', function () {
+        st.topic = st.topic === b.dataset.topic ? '' : b.dataset.topic;
+        draw(); sync();
+        if (st.topic) $('f-result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+    $('f-reset').addEventListener('click', function () { st = { q: '', track: 'all', tag: '', topic: '' }; draw(); sync(); });
+    draw();
+  })();
+  </script>
+  {% endif %}
 {% endblock %}

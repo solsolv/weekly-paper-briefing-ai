@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-09-07 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
-<meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
+<title>2026-09-07 · AI &amp; AI 활용 기계공학 주간 논문 브리핑</title>
+<meta name="description" content="매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI &amp; AI 활용 기계공학 주간 논문 브리핑">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="2026-09-07 주차 · AI &amp; AI 활용 기계공학 주간 논문 브리핑">
+<meta property="og:description" content="시각이 그래프를 만날 때: 그래프 추론 및 학습에 대한 조사 외 3편 — AI 2편 · 기계공학 2편">
+<meta property="og:url" content="https://weekly-paper-briefing-ai.pages.dev/weeks/2026-09-07.html"><meta property="og:image" content="https://weekly-paper-briefing-ai.pages.dev/og/2026-09-07.292eaf75c6.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png"><meta name="theme-color" content="#0071e3">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -20,6 +31,7 @@
     --accent-hover: #0077ed;
     --ai: #0071e3;
     --mech: #00875a;
+    --kr: #c2410c;          /* 국내 논문(+1편) */
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 1px rgba(0,0,0,0.02);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
     --shadow-lg: 0 20px 48px rgba(0,0,0,0.08), 0 6px 12px rgba(0,0,0,0.05);
@@ -100,6 +112,24 @@
     font-size: clamp(1rem, 1.5vw, 1.125rem);
     max-width: 640px;
   }
+  /* 2줄 제목의 트랙명은 트랙 배지 색(파랑/초록) 그라데이션 */
+  header.site .hero-ai, header.site .hero-mech {
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  header.site .hero-ai   { background-image: linear-gradient(90deg, var(--ai), #5e5ce6); }
+  header.site .hero-mech { background-image: linear-gradient(90deg, var(--mech), #30b47a); }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 13px; border-radius: 999px;
+    background: #fff; border: 1px solid #e8e8ed;
+    font-size: 0.88rem; font-weight: 500; color: var(--text);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    white-space: nowrap;
+  }
+  .hero-chip b { color: var(--accent); font-weight: 600; }
+  .hero-chip .kr-chip { color: var(--kr); font-weight: 600; }
   header.site .home-link {
     display: inline-flex; align-items: center; gap: 4px;
     font-size: 0.9rem; color: var(--text-soft); margin-bottom: 12px;
@@ -119,10 +149,12 @@
     padding: 3px 10px; border-radius: 999px;
     letter-spacing: 0.01em;
     vertical-align: middle;
+    white-space: nowrap; flex-shrink: 0;
     transition: all 0.2s var(--ease);
   }
   .badge.ai   { background: rgba(0,113,227,0.10); color: var(--ai); }
   .badge.mech { background: rgba(0,135,90,0.10);  color: var(--mech); }
+  .badge.kr   { background: rgba(194,65,12,0.10); color: var(--kr); }
 
   /* ----- Week cards (index) ----- */
   .week-card {
@@ -182,12 +214,22 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
   }
-  .paper.ai::before, .paper.mech::before {
+  .paper.ai::before, .paper.mech::before, .paper.kr::before {
     content: ""; position: absolute; left: 0; top: 0; bottom: 0;
     width: 3px; border-radius: var(--radius-md) 0 0 var(--radius-md);
   }
   .paper.ai::before   { background: linear-gradient(180deg, #0071e3, #5ac8fa); }
   .paper.mech::before { background: linear-gradient(180deg, #00875a, #30d158); }
+  .paper.kr::before   { background: linear-gradient(180deg, #c2410c, #fb923c); }
+  .paper .venue { color: var(--kr); font-weight: 600; }
+  .paper.mech .venue { color: var(--mech); }
+
+  /* ----- 국내 논문 +1편: 기존 4편과 구분되는 보너스 섹션 ----- */
+  .kr-section { margin-top: 40px; padding-top: 28px; border-top: 1px dashed rgba(194,65,12,0.35); }
+  .kr-section h2 .kr-plus { color: var(--kr); margin-right: 4px; }
+  .kr-note { margin: -6px 0 16px; font-size: 0.86rem; color: var(--text-muted); }
+  .toc-plus { margin-left: 6px; color: var(--kr); font-weight: 700; }
+  .toc-kr { margin-top: 8px; padding-top: 10px; border-top: 1px dashed rgba(194,65,12,0.3); }
 
   .paper .meta { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 6px; }
   .paper h3 {
@@ -335,13 +377,20 @@
   }
   .toc-list { display: flex; flex-direction: column; gap: 6px; }
   .toc-list a {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: flex-start; gap: 10px;
     color: var(--text); font-size: 0.96rem;
     padding: 6px 0;
     border-radius: 8px;
     transition: color 0.2s var(--ease), padding 0.2s var(--ease);
   }
   .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+  .toc-list a .badge { min-width: 7.6em; justify-content: center; margin-top: 2px; }
+  .toc-list a > span:last-child { min-width: 0; line-height: 1.5; }
+  /* 휴대폰 폭: 배지를 제목 위로 올려 제목이 전체 폭을 쓰도록 */
+  @media (max-width: 520px) {
+    .toc-list a { flex-direction: column; gap: 4px; padding: 8px 0; }
+    .toc-list a .badge { min-width: 0; margin-top: 0; }
+  }
 
   .filter-bar {
     display: flex; gap: 8px; flex-wrap: wrap;
@@ -406,7 +455,23 @@
     margin-top: 32px; padding-top: 28px;
     border-top: 1px solid var(--line-soft);
     color: var(--text-muted); font-size: 0.82rem;
-    text-align: center;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px 24px; flex-wrap: wrap;
+  }
+  footer.site .dev { display: flex; align-items: center; gap: 12px; }
+  footer.site .dev-avatar {
+    flex: none; display: inline-grid; place-items: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--ai), var(--mech));
+    color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.02em;
+  }
+  footer.site .dev-name { color: var(--text); font-weight: 600; font-size: 0.92rem; }
+  footer.site .dev-contact { margin-top: 2px; }
+  footer.site .dev-contact a { color: var(--text-muted); }
+  footer.site .dev-contact a:hover { color: var(--accent); }
+  footer.site .build-meta { text-align: right; line-height: 1.6; }
+  @media (max-width: 520px) {
+    footer.site .build-meta { text-align: left; }
   }
 
   /* ----- Scroll reveal ----- */
@@ -434,10 +499,15 @@
 </div>
 <div class="wrap">
   <header class="site">
-  <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-09-07</span>
-  <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
-  <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
+<a class="home-link" href="../index.html">← 전체 목록</a>    <span class="eyebrow">2026-09-07</span>
+    <h1><a href="../index.html"><span class="hero-ai">AI</span> &amp; <span class="hero-mech">AI 활용 기계공학</span><br>주간 논문 브리핑</a></h1>
+    <p class="lede">매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다.</p>
+    <div class="hero-chips">
+      <span class="hero-chip">📅 매주 <b>월 08:00</b> 공개</span>
+      <span class="hero-chip">🔥 임팩트 + 🆕 최신</span>
+      <span class="hero-chip">📚 논문 <b>4편</b></span>
+      <span class="hero-chip">📝 한국어 5줄 요약</span>
+    </div>
   </header>
   <div id="publish-notice" data-publish-at="2026-09-07T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
     <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-09-07 8:00 (KST)</strong>에 공개됩니다.</p>
@@ -474,12 +544,12 @@
 
       <section class="track-section" data-track-block="ai">
         <h2 class="reveal">
-          AI
+AI
           <span class="badge ai">2편</span>
         </h2>
           <article class="paper ai reveal" id="p-2609.03816" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.SI, cs.CV, cs.LG · 발표 2026-09-03<span class="slot-badge impact">임팩트</span>            </div>
+cs.SI, cs.CV, cs.LG · 발표 2026-09-03<span class="slot-badge impact">임팩트</span>            </div>
             <h3><a href="https://arxiv.org/abs/2609.03816" target="_blank" rel="noopener">When Vision Meets Graphs: A Survey on Graph Reasoning and Learning</a></h3>
 <p class="title-ko">시각이 그래프를 만날 때: 그래프 추론 및 학습에 대한 조사</p>            <div class="authors">Xinjian Zhao, Wei Pang, Zhixuan Yu, Xiangru Jian, Xiaozhuang Song, Yaoyao Xu, Zhongkai Xue, Dingshuo Chen 외 3명</div>
             <div class="stats">
@@ -490,12 +560,11 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This survey provides a first systematic overview of the emerging area of vision meets graphs, which treats visual depictions of graphs as first-class inputs for reasoning and learning, and organize existing work into three threads.</div><div class="tags"><span class="tag">#그래프 신경망</span><span class="tag">#그래프 시각화</span><span class="tag">#시각-언어 모델</span><span class="tag">#그래프 학습</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2609.03816" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2609.03816v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/b927d8fc38c77e72de8b8ae8ca1b52b62b7c3fa5" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2609.03816v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/b927d8fc38c77e72de8b8ae8ca1b52b62b7c3fa5" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
           <article class="paper ai reveal" id="p-2609.04199" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.CL, cs.AI, cs.LG · 발표 2026-09-03<span class="slot-badge latest">최신</span>            </div>
+cs.CL, cs.AI, cs.LG · 발표 2026-09-03<span class="slot-badge latest">최신</span>            </div>
             <h3><a href="https://arxiv.org/abs/2609.04199" target="_blank" rel="noopener">Compile by Training: Turning Natural-Language Specifications into Local Neural Functions</a></h3>
 <p class="title-ko">훈련을 통한 컴파일: 자연어 명세를 로컬 신경 함수로 전환</p>            <div class="authors">Yuntian Deng, Pengyu Nie, Stuart Shieber</div>
             <div class="stats">
@@ -506,18 +575,17 @@
             </div>
 <div class="tags"><span class="tag">#자연어 처리</span><span class="tag">#신경망</span><span class="tag">#컴파일러</span><span class="tag">#기계 학습</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2609.04199" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2609.04199v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/3a1a32794ae28b585a5f45332166d4551b8a9f4b" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2609.04199v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/3a1a32794ae28b585a5f45332166d4551b8a9f4b" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
-          AI 활용 기계공학
+AI 활용 기계공학
           <span class="badge mech">2편</span>
         </h2>
           <article class="paper mech reveal" id="p-2609.03645" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CE · 발표 2026-09-03<span class="slot-badge impact">임팩트</span>            </div>
+cs.CE · 발표 2026-09-03<span class="slot-badge impact">임팩트</span>            </div>
             <h3><a href="https://arxiv.org/abs/2609.03645" target="_blank" rel="noopener">Calibration of neural viscoelastic models via full-field data</a></h3>
 <p class="title-ko">전역장 데이터를 이용한 신경 점탄성 모델의 캘리브레이션</p>            <div class="authors">Brain M. Riemer, Markus Kästner, Karl A. Kalina</div>
             <div class="stats">
@@ -528,12 +596,11 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> An unsupervised learning framework for calibrating a physics-augmented neural network (PANN) for small-strain viscoelasticity via full-field data and the backward adjoint method is employed to compute the gradient of the target loss, instead of backpropagating through all Newton iteration steps.</div><div class="tags"><span class="tag">#점탄성</span><span class="tag">#신경망</span><span class="tag">#캘리브레이션</span><span class="tag">#비지도 학습</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2609.03645" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2609.03645v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/63bb6ca85781dd07313cae94527c57179a01f028" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2609.03645v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/63bb6ca85781dd07313cae94527c57179a01f028" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
           <article class="paper mech reveal" id="p-doi:10.12913/22998624/225411" style="transition-delay: 60ms;">
             <div class="meta">
-               · 발표 2026-10-01<span class="slot-badge latest">최신</span>            </div>
+발표 2026-10-01<span class="slot-badge latest">최신</span>            </div>
             <h3><a href="https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6" target="_blank" rel="noopener">Physics-informed surrogate modeling for reliability-based robust design optimization of the external load factor in bolted joints under uncertainty</a></h3>
 <p class="title-ko">불확실성 하 볼트 체결부의 외부 하중 계수 신뢰성 기반 강건 설계 최적화를 위한 물리학 정보 기반 대리 모델링</p>            <div class="authors">Van Thuy Tran</div>
             <div class="stats">
@@ -543,9 +610,8 @@
 <li>볼트 체결부 성능에 중요한 외부 하중 계수(χ)를 불확실성 하에 분석하고 최적화합니다.</li><li>실험 측정, 물리학 정보 기반 대리 모델링, 신뢰성 기반 강건 설계 최적화(RBRDO)를 통합합니다.</li><li>마찰 계수(μ), 표면 거칠기(Ra), 재료 경도(HB)가 χ에 미치는 영향을 실험으로 분석했습니다.</li><li>최적 설계는 χ의 기대값을 약 0.24로 줄이고, 신뢰도 P(0.2 &lt; χ &lt; 0.3) ≈ 0.9993을 만족합니다.</li><li>이 프레임워크는 불확실성 하 기계 설계를 위한 효율적이고 강건한 방법론을 제공합니다.</li>              </ul>
             </div>
 <div class="tags"><span class="tag">#볼트 체결부</span><span class="tag">#신뢰성 기반 설계</span><span class="tag">#대리 모델링</span><span class="tag">#강건 최적화</span></div>            <div class="links">
-              <a href="https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://www.astrj.com/pdf-225411-143755?filename=Physics-informed-surrogat.pdf" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+              <a href="https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6" target="_blank" rel="noopener">원문</a>
+<a href="https://www.astrj.com/pdf-225411-143755?filename=Physics-informed-surrogat.pdf" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/971c0d815630947a859ceb682fac7270b2a287b6" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 
@@ -569,9 +635,26 @@
     })();
   </script>
   <footer class="site">
-    <p>자동 생성 · 2026-10-24 05:31 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+    <div class="dev">
+      <span class="dev-avatar" aria-hidden="true">EL</span>
+      <div class="dev-text">
+        <div class="dev-name">Developed by Eunseong Lee</div>
+<div class="dev-contact">문의 · <a class="js-mail" href="#" data-u="eunseong.lee91" data-d="gmail.com">이메일</a></div>      </div>
+    </div>
+    <div class="build-meta">
+      <div>마지막 업데이트 2026-10-26 (월)</div>
+      <div>arXiv · Semantic Scholar · OpenAlex · Crossref · Hugging Face · Gemini 요약</div>
+    </div>
   </footer>
 </div>
+<script>
+  // 문의 메일: 아이디·도메인을 여기서 조립 → HTML 소스에는 완성된 주소가 없어 수집 봇 회피
+  document.querySelectorAll('a.js-mail').forEach(function (a) {
+    var addr = a.dataset.u + '@' + a.dataset.d;
+    a.href = 'mai' + 'lto:' + addr;
+    a.textContent = addr;
+  });
+</script>
 <script>
   // 예약 공개: data-publish(=월요일 08:00 등) 시각이 미래인 항목은 그 시각까지 숨김.
   // 브라우저 시계 기준이라 GitHub Actions 스케줄 지연과 무관하게 정시에 노출된다.

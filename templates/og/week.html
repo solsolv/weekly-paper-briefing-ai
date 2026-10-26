@@ -1,0 +1,39 @@
+{% extends "og/_base.html" %}
+{% block style %}
+  .c { padding: 60px 72px; }
+  .b2 { display: none; }
+  .top { position: relative; display: flex; align-items: center; gap: 14px; }
+  .top .logo { width: 50px; height: 50px; }
+  .eb { font-size: 22px; font-weight: 700; letter-spacing: .02em; color: #0071e3; }
+  .wk { margin-left: auto; padding: 10px 20px; border-radius: 999px; background: rgba(0,113,227,.1); color: #0071e3; font-size: 26px; font-weight: 800; }
+  h1 { position: relative; margin: 28px 0 24px; font-size: 52px; letter-spacing: -.025em; color: #1d1d1f; font-weight: 800; }
+  ul { position: relative; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+  li { display: flex; align-items: center; gap: 16px; background: #fff; border: 1px solid #ececf0; border-radius: 18px; padding: 16px 22px; font-size: 27px; color: #1d1d1f; font-weight: 600; }
+  .bd { flex: none; padding: 6px 14px; border-radius: 999px; font-size: 20px; font-weight: 700; white-space: nowrap; }
+  .bd.ai-b { background: rgba(0,113,227,.1); color: #0071e3; }
+  .bd.mech-b { background: rgba(0,135,90,.1); color: #00875a; }
+  .t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* 국내 +1편이 있으면 5줄이 630px에 들어가도록 간격 축소 */
+  .has-kr h1 { margin: 20px 0 18px; font-size: 46px; }
+  .has-kr ul { gap: 11px; }
+  .has-kr li { padding: 12px 20px; font-size: 25px; }
+  .bd.kr-b { background: rgba(194,65,12,.1); color: #c2410c; }
+  li.kr { border-style: dashed; border-color: rgba(194,65,12,.35); background: #fffaf6; }
+  h1 .plus { color: #c2410c; font-size: .62em; margin-left: 10px; }
+{% endblock %}
+{% block body %}
+{% set main = week.papers | rejectattr('track', 'equalto', 'kr') | list %}
+{% set kr = week.papers | selectattr('track', 'equalto', 'kr') | list %}
+<div class="{{ 'has-kr' if kr }}" style="position:relative">
+<div class="top"><span class="logo">{{ favicon_svg | safe }}</span><span class="eb">AI &amp; AI 활용 기계공학 주간 논문 브리핑</span><span class="wk">{{ week.week_id }} 주차</span></div>
+<h1>이번 주 논문 {{ main | length }}편{% if kr %}<span class="plus">+ 국내 {{ kr | length }}편</span>{% endif %}</h1>
+<ul>
+  {% for p in main %}
+  <li><span class="bd {{ p.track }}-b">{{ track_label.get(p.track, p.track) }}</span><span class="t">{{ p.title_ko or p.title }}</span></li>
+  {% endfor %}
+  {% for p in kr %}
+  <li class="kr"><span class="bd kr-b">+ 국내</span><span class="t">{{ p.title_ko or p.title }}</span></li>
+  {% endfor %}
+</ul>
+</div>
+{% endblock %}

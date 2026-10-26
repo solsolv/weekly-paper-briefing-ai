@@ -1,8 +1,8 @@
 {
   "week_id": "2026-10-26",
-  "generated_at": "2026-10-24T05:31:10.337928+00:00",
+  "generated_at": "2026-10-26T04:02:10.613219+00:00",
   "publish_at": "2026-10-26T08:00:00+09:00",
-  "site_title": "주간 AI ｜ AI 활용 기계공학 논문 브리핑",
+  "site_title": "AI & AI 활용 기계공학 주간 논문 브리핑",
   "provider": "openai_compat",
   "impact_lookback_days": 365,
   "latest_lookback_days": 14,
@@ -44,6 +44,9 @@
           "특징 선택",
           "사후 분석",
           "기계 학습"
+        ],
+        "topics": [
+          "학습이론·최적화·경량화"
         ]
       },
       {
@@ -84,6 +87,9 @@
           "객체 인지",
           "픽셀 인지",
           "통합 모델"
+        ],
+        "topics": [
+          "멀티모달·비전·생성모델"
         ]
       }
     ],
@@ -131,6 +137,9 @@
           "재료 모델링",
           "신경망",
           "기계 학습"
+        ],
+        "topics": [
+          "시뮬레이션·구조해석"
         ]
       },
       {
@@ -172,6 +181,51 @@
           "신경 재료",
           "모델 차수 축소",
           "하이퍼리덕션"
+        ],
+        "topics": [
+          "시뮬레이션·구조해석"
+        ]
+      }
+    ],
+    "kr": [
+      {
+        "arxiv_id": "doi:10.3795/ksme-a.2026.50.9.709",
+        "title": "State-based Selection of Expert Policies in Disaster Environments and Reinforcement Learning of a Unified Student Policy via Distillation",
+        "authors": [
+          "Sung Jae Han",
+          "Jung-Yup Kim"
+        ],
+        "summary": "본 논문은 재난 환경에서 4족 보행 로봇의 보행, 전도복귀 및 낙하착지를 단일 정책으로 통합하기 위한 제어 프레임워크를 제안한다. 기존의 단일 정책 공동 학습 방식은 상이한 목표를 동시에 다루는 과정에서 학습 시간과 난이도가 증가할 수 있으며, finite state machine(FSM) 기반 다중 정책 전환 방식은 모드 선택 및 전환 규칙에 의존한다. 이를 해결하기 위해 보행, 전도복귀, 낙하착지에 특화된 세 교사 정책을 학습하고, 로봇 상태에 따라 적절한 교사 행동을 선택하여 단일 학생 정책으로 증류하는 방법을 연구하였다. Isaac Sim 및 Isaac Lab 환경에서 학습한 정책을 MuJoCo 기반 복합 시나리오에서 sim-to-sim 방식으로 평가한 결과, 제안 방법은 단일 정책 공동 학습 및 FSM 기반 방법과 비교하여 더 높은 평균 성공률을 보였으며, 시나리오 수행 시 명시적 정책 스위칭 없이 세 기술을 단일 정책으로 통합할 수 있음을 검증하였다.",
+        "categories": [],
+        "published": "2026-09-17T00:00:00+00:00",
+        "updated": "2026-09-17T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://doi.org/10.3795/ksme-a.2026.50.9.709",
+        "track": "kr",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "reinforcement learning",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "openalex_kr",
+        "hf_upvotes": null,
+        "venue": "대한기계학회논문집 A",
+        "title_local": "재난 환경에서의 교사 정책의 상태 기반 선택과 증류를 통한 단일 학생 정책 강화 학습",
+        "title_ko": "재난 환경에서의 교사 정책의 상태 기반 선택과 증류를 통한 단일 학생 정책 강화 학습",
+        "summary_ko": "- 재난 환경에서 로봇의 다양한 동작을 통합하는 기존 방식은 학습이 어렵거나 모드 전환에 의존합니다.\n- 본 연구는 보행, 전도복귀, 낙하착지에 특화된 세 가지 '교사 정책'을 먼저 학습합니다.\n- 로봇의 현재 상태에 따라 적절한 교사 정책의 행동을 선택하여 단일 '학생 정책'으로 학습시킵니다.\n- 제안 방법은 MuJoCo 시뮬레이션에서 기존 방식 대비 더 높은 평균 성공률을 달성했습니다.\n- 이로써 로봇이 명시적 전환 없이 다양한 재난 상황에 대응하는 단일 통합 정책을 제공합니다.",
+        "tags": [
+          "강화 학습",
+          "로봇 제어",
+          "정책 증류",
+          "재난 로봇"
+        ],
+        "topics": [
+          "설계최적화·생성형 설계"
         ]
       }
     ]
@@ -213,6 +267,9 @@
         "특징 선택",
         "사후 분석",
         "기계 학습"
+      ],
+      "topics": [
+        "학습이론·최적화·경량화"
       ]
     },
     {
@@ -253,6 +310,9 @@
         "객체 인지",
         "픽셀 인지",
         "통합 모델"
+      ],
+      "topics": [
+        "멀티모달·비전·생성모델"
       ]
     },
     {
@@ -298,6 +358,9 @@
         "재료 모델링",
         "신경망",
         "기계 학습"
+      ],
+      "topics": [
+        "시뮬레이션·구조해석"
       ]
     },
     {
@@ -339,6 +402,49 @@
         "신경 재료",
         "모델 차수 축소",
         "하이퍼리덕션"
+      ],
+      "topics": [
+        "시뮬레이션·구조해석"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.3795/ksme-a.2026.50.9.709",
+      "title": "State-based Selection of Expert Policies in Disaster Environments and Reinforcement Learning of a Unified Student Policy via Distillation",
+      "authors": [
+        "Sung Jae Han",
+        "Jung-Yup Kim"
+      ],
+      "summary": "본 논문은 재난 환경에서 4족 보행 로봇의 보행, 전도복귀 및 낙하착지를 단일 정책으로 통합하기 위한 제어 프레임워크를 제안한다. 기존의 단일 정책 공동 학습 방식은 상이한 목표를 동시에 다루는 과정에서 학습 시간과 난이도가 증가할 수 있으며, finite state machine(FSM) 기반 다중 정책 전환 방식은 모드 선택 및 전환 규칙에 의존한다. 이를 해결하기 위해 보행, 전도복귀, 낙하착지에 특화된 세 교사 정책을 학습하고, 로봇 상태에 따라 적절한 교사 행동을 선택하여 단일 학생 정책으로 증류하는 방법을 연구하였다. Isaac Sim 및 Isaac Lab 환경에서 학습한 정책을 MuJoCo 기반 복합 시나리오에서 sim-to-sim 방식으로 평가한 결과, 제안 방법은 단일 정책 공동 학습 및 FSM 기반 방법과 비교하여 더 높은 평균 성공률을 보였으며, 시나리오 수행 시 명시적 정책 스위칭 없이 세 기술을 단일 정책으로 통합할 수 있음을 검증하였다.",
+      "categories": [],
+      "published": "2026-09-17T00:00:00+00:00",
+      "updated": "2026-09-17T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://doi.org/10.3795/ksme-a.2026.50.9.709",
+      "track": "kr",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "reinforcement learning",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "openalex_kr",
+      "hf_upvotes": null,
+      "venue": "대한기계학회논문집 A",
+      "title_local": "재난 환경에서의 교사 정책의 상태 기반 선택과 증류를 통한 단일 학생 정책 강화 학습",
+      "title_ko": "재난 환경에서의 교사 정책의 상태 기반 선택과 증류를 통한 단일 학생 정책 강화 학습",
+      "summary_ko": "- 재난 환경에서 로봇의 다양한 동작을 통합하는 기존 방식은 학습이 어렵거나 모드 전환에 의존합니다.\n- 본 연구는 보행, 전도복귀, 낙하착지에 특화된 세 가지 '교사 정책'을 먼저 학습합니다.\n- 로봇의 현재 상태에 따라 적절한 교사 정책의 행동을 선택하여 단일 '학생 정책'으로 학습시킵니다.\n- 제안 방법은 MuJoCo 시뮬레이션에서 기존 방식 대비 더 높은 평균 성공률을 달성했습니다.\n- 이로써 로봇이 명시적 전환 없이 다양한 재난 상황에 대응하는 단일 통합 정책을 제공합니다.",
+      "tags": [
+        "강화 학습",
+        "로봇 제어",
+        "정책 증류",
+        "재난 로봇"
+      ],
+      "topics": [
+        "설계최적화·생성형 설계"
       ]
     }
   ]

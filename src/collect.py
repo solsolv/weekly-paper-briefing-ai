@@ -12,6 +12,8 @@ import requests
 from .config import Config, env
 
 ARXIV_API = "https://export.arxiv.org/api/query"
+OPENALEX_API = "https://api.openalex.org/works"
+CROSSREF_API = "https://api.crossref.org/works"
 S2_API = "https://api.semanticscholar.org/graph/v1/paper"
 HF_DAILY_PAPERS = "https://huggingface.co/api/daily_papers"
 USER_AGENT = "ResearchProject/1.0 (https://github.com/solsolv/weekly-paper-briefing-ai)"
@@ -40,8 +42,10 @@ class Paper:
     tldr: str | None = None       # Semantic Scholar TLDR (있으면)
     matched_keywords: list[str] = field(default_factory=list)
     affiliations: list[str] = field(default_factory=list)   # 모든 고유 소속 기관
-    source: str = "arxiv"         # "arxiv" | "huggingface"
+    source: str = "arxiv"         # "arxiv" | "huggingface" | "s2_search" | "openalex" | "openalex_kr"
     hf_upvotes: int | None = None
+    venue: str | None = None        # 게재 학술지명 (OpenAlex 저널 논문)
+    title_local: str | None = None  # 원어(한글) 제목 — 국내 논문은 Crossref에서 보충, 있으면 번역 대신 사용
 
     def to_dict(self) -> dict:
         return {
@@ -64,6 +68,8 @@ class Paper:
             "affiliations": self.affiliations,
             "source": self.source,
             "hf_upvotes": self.hf_upvotes,
+            "venue": self.venue,
+            "title_local": self.title_local,
         }
 
     @classmethod
@@ -98,6 +104,8 @@ class Paper:
             affiliations=list(d.get("affiliations", []) or []),
             source=d.get("source", "arxiv"),
             hf_upvotes=d.get("hf_upvotes"),
+            venue=d.get("venue"),
+            title_local=d.get("title_local"),
         )
 
 
@@ -218,6 +226,9 @@ def _matched_keywords(paper: Paper, keywords: list[str]) -> list[str]:
     return [k for k in keywords if k.lower() in text]
 
 
+match_keywords = _matched_keywords   # 국내 논문 슬롯에서 재사용
+
+
 def _normalize_title_key(title: str) -> str:
     """dedupe용 제목 정규화 — 소문자 + 알파넘만 유지."""
     import re
@@ -335,6 +346,176 @@ def fetch_s2_search(cfg: Config, lookback_days: int, sort: str) -> list[Paper]:
     return out
 
 
+# --------------------------------------------------------------------------
+# OpenAlex (저널 논문 보강 · 국내 학술지) + Crossref (국내 논문 한글 원제목)
+# --------------------------------------------------------------------------
+def _openalex_get(cfg: Config, params: dict) -> list[dict]:
+    """OpenAlex /works 조회. 키 불필요. mailto(선택, 환경변수)를 주면 polite pool 사용."""
+    mailto = env(cfg.get("openalex.mailto_env", "OPENALEX_MAILTO"))
+    if mailto:
+        params = {**params, "mailto": mailto}
+    headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
+    for attempt in range(2):
+        try:
+            resp = requests.get(OPENALEX_API, headers=headers, params=params, timeout=60)
+            if resp.status_code == 429 and attempt == 0:
+                time.sleep(5)
+                continue
+            resp.raise_for_status()
+            return resp.json().get("results") or []
+        except Exception as exc:  # noqa: BLE001
+            if attempt == 1:
+                print(f"  [warn] OpenAlex 조회 실패: {exc}")
+    return []
+
+
+def _openalex_abstract(inv: dict | None) -> str:
+    """OpenAlex abstract_inverted_index({단어: [위치...]}) → 평문."""
+    if not inv:
+        return ""
+    pos = sorted((i, w) for w, ids in inv.items() for i in ids)
+    return " ".join(w for _, w in pos)
+
+
+def _openalex_to_paper(w: dict, source: str) -> Paper | None:
+    title = " ".join((w.get("title") or "").split())
+    abstract = " ".join(_openalex_abstract(w.get("abstract_inverted_index")).split())
+    if not title or not abstract:
+        return None
+    try:
+        pub = datetime.strptime(w.get("publication_date") or "", "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+    doi = (w.get("doi") or "").replace("https://doi.org/", "").lower()
+    ids = w.get("ids") or {}
+    # dedupe key: S2 보강과 같은 "doi:" 규칙 (없으면 OpenAlex ID)
+    pid = f"doi:{doi}" if doi else f"openalex:{(ids.get('openalex') or w.get('id', '')).rsplit('/', 1)[-1]}"
+    loc = w.get("primary_location") or {}
+    src = loc.get("source") or {}
+    best = w.get("best_oa_location") or {}
+    authors, affs = [], []
+    for a in w.get("authorships") or []:
+        name = (a.get("author") or {}).get("display_name")
+        if name:
+            authors.append(name)
+        for inst in a.get("institutions") or []:
+            nm = inst.get("display_name")
+            if nm and nm not in affs:
+                affs.append(nm)
+    return Paper(
+        arxiv_id=pid,
+        title=title,
+        authors=authors,
+        summary=abstract,
+        categories=[],
+        published=pub,
+        updated=pub,
+        pdf_url=best.get("pdf_url") or "",
+        abs_url=f"https://doi.org/{doi}" if doi else (loc.get("landing_page_url") or w.get("id", "")),
+        citation_count=w.get("cited_by_count") or 0,
+        influential_citation_count=0,
+        affiliations=affs,
+        source=source,
+        venue=src.get("display_name"),
+    )
+
+
+_OPENALEX_SELECT = (
+    "id,doi,title,publication_date,cited_by_count,abstract_inverted_index,"
+    "primary_location,best_oa_location,authorships,ids"
+)
+
+
+def _openalex_date_filter(lookback_days: int) -> str:
+    now = datetime.now(timezone.utc)
+    start = (now - timedelta(days=lookback_days)).strftime("%Y-%m-%d")
+    # 미래 날짜로 등록된 호(issue) 논문 제외
+    return f"from_publication_date:{start},to_publication_date:{now:%Y-%m-%d}"
+
+
+def fetch_openalex_search(cfg: Config, lookback_days: int, sort: str) -> list[Paper]:
+    """OpenAlex로 기계공학 저널 논문 후보 보강 (arXiv·S2에 없는 저널 논문 흡수).
+
+    제목·초록 검색어 + 기계공학 세부 분야 + 저널 + 초록 있음으로 거른다. 이후 트랙 키워드 필터와
+    LLM 적합도 게이트가 최종 선별. Elsevier 등 초록이 없는 논문은 요약이 불가해 자동 제외된다.
+    """
+    if not cfg.get("openalex_search.enabled", False):
+        return []
+    query = (cfg.get("openalex_search.query", "") or "").strip()
+    if not query:
+        return []
+    filters = [
+        f"title_and_abstract.search:{query}",
+        _openalex_date_filter(lookback_days),
+        "type:article", "has_abstract:true", "primary_location.source.type:journal",
+    ]
+    subfields = cfg.get("openalex_search.subfield_ids", []) or []
+    if subfields:
+        filters.append("primary_topic.subfield.id:" + "|".join(str(s) for s in subfields))
+    params = {
+        "filter": ",".join(filters),
+        "sort": sort,
+        "per_page": min(int(cfg.get("openalex_search.limit", 100)), 200),
+        "select": _OPENALEX_SELECT,
+    }
+    out = [p for p in (_openalex_to_paper(w, "openalex") for w in _openalex_get(cfg, params)) if p]
+    return out
+
+
+def fetch_domestic_candidates(cfg: Config) -> list[Paper]:
+    """국내 학술지(ISSN 지정) 최근 논문 — 최신순. 초록(영문)이 있는 논문만."""
+    journals = cfg.get("domestic.journals", []) or []
+    issns = [j["issn"] for j in journals if j.get("issn")]
+    if not issns:
+        return []
+    filters = [
+        "primary_location.source.issn:" + "|".join(issns),
+        _openalex_date_filter(int(cfg.get("domestic.lookback_days", 90))),
+        "type:article", "has_abstract:true",
+    ]
+    query = (cfg.get("domestic.query", "") or "").strip()
+    if query:
+        filters.append(f"title_and_abstract.search:{query}")
+    params = {
+        "filter": ",".join(filters),
+        "sort": "publication_date:desc",
+        "per_page": min(int(cfg.get("domestic.limit", 100)), 200),
+        "select": _OPENALEX_SELECT,
+    }
+    name_ko = {j["issn"]: j.get("name") for j in journals if j.get("issn")}
+    out: list[Paper] = []
+    for w in _openalex_get(cfg, params):
+        p = _openalex_to_paper(w, "openalex_kr")
+        if not p:
+            continue
+        src = ((w.get("primary_location") or {}).get("source") or {})
+        for issn in src.get("issn") or []:
+            if name_ko.get(issn):
+                p.venue = name_ko[issn]          # 학술지 한글명으로 표시
+                break
+        out.append(p)
+    return out
+
+
+def fetch_crossref_local_title(doi: str) -> str | None:
+    """Crossref에서 한글 원제목 조회 (국내 학술지는 title/original-title에 한글 제목을 함께 등록)."""
+    import re  # noqa: PLC0415
+
+    if not doi:
+        return None
+    try:
+        resp = requests.get(f"{CROSSREF_API}/{doi}", headers={"User-Agent": USER_AGENT}, timeout=30)
+        resp.raise_for_status()
+        msg = resp.json().get("message") or {}
+    except Exception as exc:  # noqa: BLE001
+        print(f"  [warn] Crossref 조회 실패({doi}): {exc}")
+        return None
+    for t in (msg.get("original-title") or []) + (msg.get("title") or []):
+        if re.search(r"[가-힣]", t or ""):
+            return " ".join(t.split())
+    return None
+
+
 def collect_candidates(
     cfg: Config,
     track: str,
@@ -362,6 +543,17 @@ def collect_candidates(
         if s2_raw:
             print(f"  S2 Search 보강: {len(s2_raw)}편 추가")
         raw = raw + s2_raw
+    # OpenAlex 저널 보강 — S2 정렬 키에 맞춰 임팩트(인용순)/최신(발표일순) 선택
+    oa_tracks = cfg.get("openalex_search.apply_to_tracks", []) or []
+    if s2_sort and track in oa_tracks:
+        oa_sort = cfg.get(
+            "openalex_search.sort_impact" if s2_sort.startswith("citation") else "openalex_search.sort_latest",
+            "cited_by_count:desc" if s2_sort.startswith("citation") else "publication_date:desc",
+        )
+        oa_raw = fetch_openalex_search(cfg, lookback_days, oa_sort)
+        if oa_raw:
+            print(f"  OpenAlex 보강: {len(oa_raw)}편 추가")
+        raw = raw + oa_raw
 
     out: list[Paper] = []
     seen_ids: set[str] = set()
@@ -426,8 +618,8 @@ def enrich_citations(cfg: Config, papers: list[Paper]) -> None:
     fields = "citationCount,influentialCitationCount,url,tldr,title,authors.name,authors.affiliations"
 
     for p in papers:
-        # S2 Search로 가져온 논문은 이미 cc/infl/affiliations 채워짐 — 재조회 불필요
-        if p.source == "s2_search":
+        # S2 Search·OpenAlex로 가져온 논문은 이미 cc/affiliations 채워짐 — 재조회 불필요(arXiv ID도 없음)
+        if p.source in ("s2_search", "openalex", "openalex_kr"):
             if p.citation_count is None:
                 p.citation_count = 0
             continue

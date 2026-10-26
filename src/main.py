@@ -47,12 +47,16 @@ from .collect import (
     collect_candidates,
     enrich_citations,
     fetch_arxiv_by_ids,
+    fetch_crossref_local_title,
+    fetch_domestic_candidates,
     fetch_huggingface_weekly,
+    match_keywords,
 )
 from .config import DATA_DIR, Config
 from .relevance import filter_by_relevance
 from .render import TRACK_LABEL, render_site, save_week_data
 from .select import (
+    drop_excluded,
     impact_score,
     latest_score,
     load_featured_ids,
@@ -67,6 +71,7 @@ SLOT_ORDER: list[tuple[str, str]] = [
     ("ai", "latest"),
     ("mech", "impact"),
     ("mech", "latest"),
+    ("kr", "latest"),      # 국내 논문 +1편 (기존 4편과 별도 표시)
 ]
 SLOT_IDS = [f"{t}-{k}" for t, k in SLOT_ORDER]
 _STAGING_DIRNAME = "_staging"
@@ -180,6 +185,7 @@ def _run_impact_slot(
     impact_s2_sort = cfg.get("s2_search.sort_impact", "citationCount:desc")
     print(f"\n[{TRACK_LABEL[track]}] === 임팩트 슬롯 ({impact_lookback}일 lookback) ===")
     pool = collect_candidates(cfg, track, lookback_days=impact_lookback, s2_sort=impact_s2_sort)
+    pool = drop_excluded(pool, featured)  # 게이트 전에 제외해야 기소개작이 top_k를 차지하지 않음
     pool = trim_candidate_pool(cfg, pool)
     print(f"  후보 {len(pool)}편")
     if not no_citations:
@@ -226,6 +232,7 @@ def _run_latest_slot(
             pool = collect_candidates(cfg, track, lookback_days=latest_lookback, s2_sort=latest_s2_sort)
     else:
         pool = collect_candidates(cfg, track, lookback_days=latest_lookback, s2_sort=latest_s2_sort)
+    pool = drop_excluded(pool, featured, exclude_ids)
     pool = trim_candidate_pool(cfg, pool)
     print(f"  후보 {len(pool)}편")
     if not no_citations:
@@ -244,6 +251,36 @@ def _run_latest_slot(
         print(f"  최신 선정: [pub={pick.published.date()}{upv}] {pick.title[:70]}")
     else:
         print("  최신 선정작 없음")
+    return pick
+
+
+def _run_kr_slot(cfg: Config, provider, featured: set[str]) -> Paper | None:
+    """국내 논문 +1편: OpenAlex(국내 학술지 ISSN) 최신 → ML 키워드 → 기계공학 게이트 → Crossref 한글 원제목."""
+    if not cfg.get("domestic.enabled", False):
+        print("\n[국내 논문] 비활성 (domestic.enabled=false)")
+        return None
+    print(f"\n[국내 논문] === 최신 슬롯 ({cfg.get('domestic.lookback_days', 90)}일 lookback, OpenAlex+Crossref) ===")
+    pool = fetch_domestic_candidates(cfg)
+    pool = drop_excluded(pool, featured)
+    # AI 방법론 여부는 OpenAlex 검색어(domestic.query)로 이미 거름 → 여기선 표시용 매칭만 기록
+    for p in pool:
+        p.matched_keywords = match_keywords(p, cfg.get("arxiv.tracks.mech.keywords", []) or [])
+    print(f"  후보 {len(pool)}편")
+    pool.sort(key=latest_score, reverse=True)
+    if provider is not None:
+        # 기계공학 게이트 기준 재사용. 전원 탈락이면 억지로 채우지 않고 비움.
+        pool = filter_by_relevance(
+            cfg, provider, "mech", pool, empty_behavior="skip",
+            threshold=cfg.get("domestic.gate_threshold"),
+        )
+    pick = select_latest(cfg, pool, featured)
+    if pick is None:
+        print("  국내 논문 선정작 없음 — 이번 주는 섹션 생략")
+        return None
+    doi = pick.arxiv_id[4:] if pick.arxiv_id.startswith("doi:") else ""
+    pick.title_local = fetch_crossref_local_title(doi)
+    pick.track, pick.slot = "kr", "latest"
+    print(f"  국내 선정: [{pick.venue}, {pick.published.date()}] {pick.title_local or pick.title[:70]}")
     return pick
 
 
@@ -271,7 +308,7 @@ def _publish_at(cfg: Config, week_id: str) -> str:
 
 
 def _make_payload(cfg: Config, week_id: str, items: list[dict]) -> dict:
-    tracks = ["ai", "mech"]
+    tracks = ["ai", "mech", "kr"]
     return {
         "week_id": week_id,
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -311,6 +348,9 @@ def run(args: argparse.Namespace) -> int:
         for p in (impact_pick, latest_pick):
             if p is not None:
                 selected.append(p)
+    kr_pick = _run_kr_slot(cfg, provider, featured)
+    if kr_pick is not None:
+        selected.append(kr_pick)
 
     if not selected:
         print("\n선정된 논문이 없습니다. (쿼리/기간 설정을 확인하세요)")
@@ -329,6 +369,7 @@ def run(args: argparse.Namespace) -> int:
         from .summarize import summarize_all  # noqa: PLC0415
 
         items = summarize_all(cfg, provider, selected)
+        _assign_topics_safe(cfg, items, provider)
 
     fp = save_week_data(week_id, _make_payload(cfg, week_id, items))
     print(f"  데이터 저장: {fp}")
@@ -354,7 +395,9 @@ def run_single_slot(args: argparse.Namespace) -> int:
 
     provider = None if args.dry_run else _build_provider_verbose(cfg)
 
-    if kind == "impact":
+    if track == "kr":
+        pick = _run_kr_slot(cfg, provider, featured)
+    elif kind == "impact":
         pick = _run_impact_slot(cfg, provider, track, featured, no_citations=args.no_citations)
     else:  # latest — 같은 트랙 impact 선정작을 staging에서 읽어 중복 제외
         exclude_ids: set[str] = set()
@@ -442,10 +485,55 @@ def run_assemble(args: argparse.Namespace) -> int:
         print("\n선정된 논문이 없습니다.")
         return 1
 
+    # 관심 주제: topics 없는 논문만 분류 (기존 슬롯 유지분도 함께 보충)
+    if not args.dry_run and any(not it.get("topics") for it in items):
+        _assign_topics_safe(cfg, items)
+
     fp = save_week_data(week_id, _make_payload(cfg, week_id, items))
     print(f"  데이터 저장: {fp}  ({len(items)}슬롯)")
     render_site(cfg)
     print("\n완료.")
+    return 0
+
+
+def _assign_topics_safe(cfg: Config, items: list[dict], provider=None) -> None:
+    """관심 주제 분류 — 실패해도 빌드는 계속(주제 없이 저장, 다음 빌드에서 재시도)."""
+    from .topics import assign_topics  # noqa: PLC0415
+
+    try:
+        provider = provider or _build_provider_verbose(cfg)
+        n = assign_topics(cfg, provider, items)
+        print(f"  관심 주제 분류 완료: {n}편")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  [warn] 관심 주제 분류 생략: {exc}")
+
+
+# --- 실행 모드 4: 과거 주차 관심 주제 일괄 보충 ---------------------------------
+def run_backfill_topics(args: argparse.Namespace) -> int:
+    """data/*.json 전체에서 topics가 없는 논문을 일괄 분류해 저장 후 사이트 재생성."""
+    from .topics import assign_topics  # noqa: PLC0415
+
+    cfg = Config.load(args.config)
+    payloads = {fp.stem: json.loads(fp.read_text(encoding="utf-8")) for fp in sorted(DATA_DIR.glob("2*.json"))}
+    items = [it for pl in payloads.values() for it in pl.get("papers", [])]
+    todo = items if args.force else [it for it in items if not it.get("topics")]
+    print(f"== 관심 주제 일괄 분류: 전체 {len(items)}편 중 대상 {len(todo)}편{' (--force 재분류)' if args.force else ''} ==")
+    if not todo or args.dry_run:
+        if todo:
+            print("  (dry-run: LLM 호출 없이 종료)")
+        return 0
+
+    n = assign_topics(cfg, _build_provider_verbose(cfg), items, force=args.force)
+    for week_id, pl in payloads.items():
+        # JSON의 tracks 뷰는 papers와 별개 객체 → 같은 arXiv ID에 topics 복사
+        by_id = {it["arxiv_id"]: it.get("topics") for it in pl.get("papers", [])}
+        for lst in (pl.get("tracks") or {}).values():
+            for it in lst:
+                if by_id.get(it.get("arxiv_id")):
+                    it["topics"] = by_id[it["arxiv_id"]]
+        save_week_data(week_id, pl)
+    print(f"  분류 완료: {n}/{len(todo)}편 → data/ 저장")
+    render_site(cfg)
     return 0
 
 
@@ -462,6 +550,8 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--assemble", action="store_true", help="staging+기존 결과 조립 → 요약 → 저장 → 렌더")
     parser.add_argument("--print-week-id", action="store_true", help="현재 주차 ID만 출력하고 종료")
+    parser.add_argument("--backfill-topics", action="store_true", help="과거 주차 논문 관심 주제 일괄 분류 후 재렌더")
+    parser.add_argument("--force", action="store_true", help="--backfill-topics와 함께: 이미 분류된 논문도 다시 분류")
     args = parser.parse_args(argv)
 
     if args.print_week_id:
@@ -471,6 +561,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.render_only:
         render_site(Config.load(args.config))
         return 0
+    if args.backfill_topics:
+        return run_backfill_topics(args)
     if args.assemble:
         return run_assemble(args)
     if args.slot:

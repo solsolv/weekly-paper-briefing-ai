@@ -9,7 +9,7 @@ on:
   workflow_dispatch:        # 수동 실행 허용
     inputs:
       slots:
-        description: "실행할 슬롯 (all 또는 콤마목록: ai-impact,ai-latest,mech-impact,mech-latest). 특정 슬롯만 재진행할 때 사용."
+        description: "실행할 슬롯 (all 또는 콤마목록: ai-impact,ai-latest,mech-impact,mech-latest,kr-latest). 특정 슬롯만 재진행할 때 사용."
         type: string
         default: "all"
       week_id:
@@ -87,6 +87,20 @@ jobs:
       - name: Build briefing Mech Latest
         if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'mech-latest')) }}
         run: python -m src.main --slot mech-latest --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
+
+      # 국내 논문 +1편 (OpenAlex 국내 학술지 + Crossref 한글 원제목). 후보가 없으면 그 주는 섹션 생략.
+      - name: Build briefing KR Latest
+        if: ${{ !cancelled() && (github.event_name != 'workflow_dispatch' || github.event.inputs.slots == '' || github.event.inputs.slots == 'all' || contains(github.event.inputs.slots, 'kr-latest')) }}
+        run: python -m src.main --slot kr-latest --week-id ${{ steps.params.outputs.week_id }} ${{ steps.params.outputs.dry }}
+
+      # 링크 미리보기(OG) 이미지는 runner에 기본 설치된 Google Chrome(headless)으로 캡처한다.
+      # 한글·이모지 폰트가 없으면 글자가 네모로 깨지므로 조립 전에 설치(약 30초).
+      - name: Install fonts for preview images
+        if: ${{ !cancelled() && steps.params.outcome == 'success' }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji
+          google-chrome --version || echo "::warning::Chrome 없음 — OG 이미지 생성 생략됨"
 
       # --- 조립: staging된 슬롯만 재요약, 나머지는 직전 커밋 결과 유지 ---------
       - name: Assemble & render

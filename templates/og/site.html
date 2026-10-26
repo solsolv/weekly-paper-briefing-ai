@@ -1,0 +1,20 @@
+{% extends "og/_base.html" %}
+{% block style %}
+  .c { padding: 72px 80px; }
+  .top { position: relative; display: flex; align-items: center; gap: 16px; }
+  .eb { font-size: 24px; font-weight: 700; letter-spacing: .06em; color: #0071e3; }
+  h1 { position: relative; margin: 44px 0 22px; font-size: 76px; line-height: 1.15; letter-spacing: -.03em; color: #1d1d1f; font-weight: 800; }
+  p { position: relative; margin: 0; font-size: 30px; color: #6e6e73; }
+  .chips { position: relative; display: flex; gap: 12px; margin-top: 34px; }
+  .chip { padding: 10px 20px; border-radius: 999px; background: #fff; border: 1px solid #e3e3e8; font-size: 24px; font-weight: 600; color: #1d1d1f; }
+{% endblock %}
+{% block body %}
+<div class="top"><span class="logo">{{ favicon_svg | safe }}</span><span class="eb">WEEKLY PAPER BRIEFING</span></div>
+<h1><span class="ai">AI</span> &amp; <span class="me">AI 활용 기계공학</span><br>주간 논문 브리핑</h1>
+<p>매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로</p>
+<div class="chips">
+  <span class="chip">📅 매주 월 {{ '%02d' % publish_hour }}:00</span>
+  <span class="chip">🔥 임팩트 + 🆕 최신</span>
+  <span class="chip">📝 5줄 요약</span>
+</div>
+{% endblock %}

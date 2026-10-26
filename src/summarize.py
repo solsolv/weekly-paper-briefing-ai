@@ -96,7 +96,8 @@ def summarize_all(cfg: Config, provider: LLMProvider, papers: list[Paper]) -> li
             print(f"    [warn] 요약 실패: {exc}")
             title_ko, summary, tags = "", "(요약 생성에 실패했습니다. 원문을 참고하세요.)", []
         item = paper.to_dict()
-        item["title_ko"] = title_ko
+        # 국내 논문은 Crossref의 한글 원제목이 있으면 번역 대신 원제목 사용
+        item["title_ko"] = paper.title_local or title_ko
         item["summary_ko"] = summary
         item["tags"] = tags
         out.append(item)

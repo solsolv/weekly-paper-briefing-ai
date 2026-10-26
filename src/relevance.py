@@ -152,8 +152,13 @@ def filter_by_relevance(
     provider: LLMProvider,
     track: str,
     candidates_sorted: list[Paper],
+    empty_behavior: str | None = None,
+    threshold: float | None = None,
 ) -> list[Paper]:
     """이미 정렬된 후보 풀의 상위 top_k 편을 LLM 게이트로 필터링.
+
+    empty_behavior / threshold: 이 호출에 한해 config 값을 덮어씀(None이면 config 값).
+    국내 논문 슬롯은 "skip"(관련 없는 논문을 억지로 채우지 않음) + 국내 전용 임계값.
 
     - 게이트 비활성 또는 트랙 미적용 → 원본 그대로 반환.
     - 게이트 호출·파싱 실패 → 안전하게 원본 그대로 반환.
@@ -170,10 +175,10 @@ def filter_by_relevance(
         return candidates_sorted
 
     k = int(cfg.get("relevance_gate.top_k", 10))
-    threshold = float(cfg.get("relevance_gate.threshold", 0.5))
+    threshold = float(threshold if threshold is not None else cfg.get("relevance_gate.threshold", 0.5))
     gate_max_tokens = int(cfg.get("relevance_gate.max_output_tokens", 3000))
     description = cfg.get("relevance_gate.description", "") or ""
-    behavior = cfg.get("relevance_gate.empty_pool_behavior", "fallback_top1")
+    behavior = empty_behavior or cfg.get("relevance_gate.empty_pool_behavior", "fallback_top1")
     required_cats = cfg.get("relevance_gate.required_categories", []) or []
 
     if not description.strip():

@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{{ site.title }}{% endblock %}</title>
 <meta name="description" content="{{ site.description }}">
+{# 링크 미리보기(OG) — 메신저·SNS에 주소를 붙이면 제목·설명·이미지 카드로 표시. root는 주차 페이지에서 '../' #}
+{% set root = root | default('') %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="{% block og_title %}{{ site.title }}{% endblock %}">
+<meta property="og:description" content="{% block og_desc %}{{ site.description }}{% endblock %}">
+{% if site.base_url %}<meta property="og:url" content="{{ site.base_url }}/{% block og_path %}{% endblock %}">{% endif %}
+{% if og_image %}
+<meta property="og:image" content="{{ site.base_url }}/{{ og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+{% endif %}
+<link rel="icon" type="image/svg+xml" href="{{ root }}favicon.svg">
+{% if site.touch_icon %}<link rel="apple-touch-icon" href="{{ root }}apple-touch-icon.png">{% endif %}
+<meta name="theme-color" content="#0071e3">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -20,6 +37,7 @@
     --accent-hover: #0077ed;
     --ai: #0071e3;
     --mech: #00875a;
+    --kr: #c2410c;          /* 국내 논문(+1편) */
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 1px rgba(0,0,0,0.02);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
     --shadow-lg: 0 20px 48px rgba(0,0,0,0.08), 0 6px 12px rgba(0,0,0,0.05);
@@ -100,6 +118,24 @@
     font-size: clamp(1rem, 1.5vw, 1.125rem);
     max-width: 640px;
   }
+  /* 2줄 제목의 트랙명은 트랙 배지 색(파랑/초록) 그라데이션 */
+  header.site .hero-ai, header.site .hero-mech {
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  header.site .hero-ai   { background-image: linear-gradient(90deg, var(--ai), #5e5ce6); }
+  header.site .hero-mech { background-image: linear-gradient(90deg, var(--mech), #30b47a); }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 13px; border-radius: 999px;
+    background: #fff; border: 1px solid #e8e8ed;
+    font-size: 0.88rem; font-weight: 500; color: var(--text);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    white-space: nowrap;
+  }
+  .hero-chip b { color: var(--accent); font-weight: 600; }
+  .hero-chip .kr-chip { color: var(--kr); font-weight: 600; }
   header.site .home-link {
     display: inline-flex; align-items: center; gap: 4px;
     font-size: 0.9rem; color: var(--text-soft); margin-bottom: 12px;
@@ -119,10 +155,12 @@
     padding: 3px 10px; border-radius: 999px;
     letter-spacing: 0.01em;
     vertical-align: middle;
+    white-space: nowrap; flex-shrink: 0;
     transition: all 0.2s var(--ease);
   }
   .badge.ai   { background: rgba(0,113,227,0.10); color: var(--ai); }
   .badge.mech { background: rgba(0,135,90,0.10);  color: var(--mech); }
+  .badge.kr   { background: rgba(194,65,12,0.10); color: var(--kr); }
 
   /* ----- Week cards (index) ----- */
   .week-card {
@@ -182,12 +220,22 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
   }
-  .paper.ai::before, .paper.mech::before {
+  .paper.ai::before, .paper.mech::before, .paper.kr::before {
     content: ""; position: absolute; left: 0; top: 0; bottom: 0;
     width: 3px; border-radius: var(--radius-md) 0 0 var(--radius-md);
   }
   .paper.ai::before   { background: linear-gradient(180deg, #0071e3, #5ac8fa); }
   .paper.mech::before { background: linear-gradient(180deg, #00875a, #30d158); }
+  .paper.kr::before   { background: linear-gradient(180deg, #c2410c, #fb923c); }
+  .paper .venue { color: var(--kr); font-weight: 600; }
+  .paper.mech .venue { color: var(--mech); }
+
+  /* ----- 국내 논문 +1편: 기존 4편과 구분되는 보너스 섹션 ----- */
+  .kr-section { margin-top: 40px; padding-top: 28px; border-top: 1px dashed rgba(194,65,12,0.35); }
+  .kr-section h2 .kr-plus { color: var(--kr); margin-right: 4px; }
+  .kr-note { margin: -6px 0 16px; font-size: 0.86rem; color: var(--text-muted); }
+  .toc-plus { margin-left: 6px; color: var(--kr); font-weight: 700; }
+  .toc-kr { margin-top: 8px; padding-top: 10px; border-top: 1px dashed rgba(194,65,12,0.3); }
 
   .paper .meta { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 6px; }
   .paper h3 {
@@ -335,13 +383,20 @@
   }
   .toc-list { display: flex; flex-direction: column; gap: 6px; }
   .toc-list a {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: flex-start; gap: 10px;
     color: var(--text); font-size: 0.96rem;
     padding: 6px 0;
     border-radius: 8px;
     transition: color 0.2s var(--ease), padding 0.2s var(--ease);
   }
   .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+  .toc-list a .badge { min-width: 7.6em; justify-content: center; margin-top: 2px; }
+  .toc-list a > span:last-child { min-width: 0; line-height: 1.5; }
+  /* 휴대폰 폭: 배지를 제목 위로 올려 제목이 전체 폭을 쓰도록 */
+  @media (max-width: 520px) {
+    .toc-list a { flex-direction: column; gap: 4px; padding: 8px 0; }
+    .toc-list a .badge { min-width: 0; margin-top: 0; }
+  }
 
   .filter-bar {
     display: flex; gap: 8px; flex-wrap: wrap;
@@ -406,7 +461,23 @@
     margin-top: 32px; padding-top: 28px;
     border-top: 1px solid var(--line-soft);
     color: var(--text-muted); font-size: 0.82rem;
-    text-align: center;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px 24px; flex-wrap: wrap;
+  }
+  footer.site .dev { display: flex; align-items: center; gap: 12px; }
+  footer.site .dev-avatar {
+    flex: none; display: inline-grid; place-items: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--ai), var(--mech));
+    color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.02em;
+  }
+  footer.site .dev-name { color: var(--text); font-weight: 600; font-size: 0.92rem; }
+  footer.site .dev-contact { margin-top: 2px; }
+  footer.site .dev-contact a { color: var(--text-muted); }
+  footer.site .dev-contact a:hover { color: var(--accent); }
+  footer.site .build-meta { text-align: right; line-height: 1.6; }
+  @media (max-width: 520px) {
+    footer.site .build-meta { text-align: left; }
   }
 
   /* ----- Scroll reveal ----- */
@@ -425,6 +496,7 @@
   /* ----- 예약 공개 전 숨김 (publish_at 미래) ----- */
   .pending-hidden { display: none !important; }
 </style>
+{% block head %}{% endblock %}
 </head>
 <body>
 <div class="bg-stage" aria-hidden="true">
@@ -434,17 +506,43 @@
 </div>
 <div class="wrap">
   <header class="site">
-    {% block header %}
-    <span class="eyebrow">Weekly Briefing</span>
-    <h1><a href="{% block home_href %}index.html{% endblock %}">{{ site.title }}</a></h1>
+    {% block header_pre %}{% endblock %}
+    <span class="eyebrow">{% block eyebrow %}Weekly Paper Briefing{% endblock %}</span>
+    <h1><a href="{% block home_href %}index.html{% endblock %}"><span class="hero-ai">AI</span> &amp; <span class="hero-mech">AI 활용 기계공학</span><br>주간 논문 브리핑</a></h1>
     <p class="lede">{{ site.description }}</p>
-    {% endblock %}
+    <div class="hero-chips">
+      <span class="hero-chip">📅 매주 <b>월 {{ '%02d' % (site.publish_hour or 8) }}:00</b> 공개</span>
+      <span class="hero-chip">🔥 임팩트 + 🆕 최신</span>
+      <span class="hero-chip">📚 논문 <b>4편</b>{% if kr_count %} <span class="kr-chip">+ 국내 {{ kr_count }}편</span>{% endif %}</span>
+      <span class="hero-chip">📝 한국어 5줄 요약</span>
+    </div>
   </header>
   {% block content %}{% endblock %}
   <footer class="site">
-    <p>자동 생성 · {{ now.strftime("%Y-%m-%d %H:%M UTC") }} · arXiv + Semantic Scholar + LLM 요약</p>
+    {% set dev = site.developer %}
+    {% if dev and dev.name %}
+    <div class="dev">
+      <span class="dev-avatar" aria-hidden="true">{{ dev.initials or dev.name[:1] }}</span>
+      <div class="dev-text">
+        <div class="dev-name">Developed by {{ dev.name }}</div>
+        {% if dev.email_user and dev.email_domain %}<div class="dev-contact">문의 · <a class="js-mail" href="#" data-u="{{ dev.email_user }}" data-d="{{ dev.email_domain }}">이메일</a></div>{% endif %}
+      </div>
+    </div>
+    {% endif %}
+    <div class="build-meta">
+      <div>마지막 업데이트 {{ site.updated }}</div>
+      <div>{{ site.data_sources }}</div>
+    </div>
   </footer>
 </div>
+<script>
+  // 문의 메일: 아이디·도메인을 여기서 조립 → HTML 소스에는 완성된 주소가 없어 수집 봇 회피
+  document.querySelectorAll('a.js-mail').forEach(function (a) {
+    var addr = a.dataset.u + '@' + a.dataset.d;
+    a.href = 'mai' + 'lto:' + addr;
+    a.textContent = addr;
+  });
+</script>
 <script>
   // 예약 공개: data-publish(=월요일 08:00 등) 시각이 미래인 항목은 그 시각까지 숨김.
   // 브라우저 시계 기준이라 GitHub Actions 스케줄 지연과 무관하게 정시에 노출된다.

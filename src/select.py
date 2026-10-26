@@ -72,6 +72,25 @@ def select_latest(
     return pool[0] if pool else None
 
 
+def drop_excluded(
+    candidates: list[Paper],
+    featured_ids: set[str],
+    exclude_ids: set[str] | None = None,
+) -> list[Paper]:
+    """과거 소개 논문·중복 제외 대상을 후보 풀에서 미리 제거.
+
+    게이트(top_k 채점)·trim 이전에 적용해야 한다. 나중에 빼면 impact 풀처럼 매주 상위권이
+    비슷한 경우 게이트 통과작이 전부 기소개 논문이 되어 슬롯이 비어 버린다.
+    """
+    skip = featured_ids | (exclude_ids or set())
+    if not skip:
+        return candidates
+    kept = [p for p in candidates if p.arxiv_id not in skip]
+    if len(kept) != len(candidates):
+        print(f"  기소개·중복 제외: {len(candidates) - len(kept)}편 → 후보 {len(kept)}편")
+    return kept
+
+
 def trim_candidate_pool(cfg: Config, candidates: list[Paper]) -> list[Paper]:
     """인용수 조회 비용을 줄이기 위해, 최신순 상위 N개만 후보로 남긴다."""
     limit = int(cfg.get("selection.candidate_pool_per_track", 150))

@@ -3,14 +3,24 @@
 # =============================================================================
 
 site:
-  title: "주간 AI ｜ AI 활용 기계공학 논문 브리핑"
-  description: "매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다"
-  base_url: ""              # GitHub Pages URL (예: "https://username.github.io/repo"). 비워두면 상대경로 사용.
+  title: "AI & AI 활용 기계공학 주간 논문 브리핑"   # <title>·데이터용. 화면 제목(2줄)은 templates/base.html hero
+  description: "매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다."
+  # 링크 미리보기(OG)의 절대 주소 기준. 회사망에서도 열리는 Cloudflare Pages 주소를 대표 주소로 사용.
+  # (GitHub Pages도 같은 docs/를 배포하므로 그대로 동작 — 미리보기 카드의 주소 표기만 이 주소로 나옴)
+  base_url: "https://weekly-paper-briefing-ai.pages.dev"
   timezone: "Asia/Seoul"
   language: "ko"
   # 예약 공개: 주차(월요일)를 이 시각(타임존 기준)에 사이트에 노출. 빌드는 토요일에 미리 끝내고,
   # 노출만 페이지의 클라이언트 JS가 이 시각에 맞춰 처리 → GitHub Actions 스케줄 지연과 무관.
   publish_hour: 8
+  # 최하단 표기: 왼쪽 개발자(이니셜 아바타·이름·문의 메일) / 오른쪽 마지막 업데이트·데이터 출처
+  developer:
+    name: "Eunseong Lee"
+    initials: "EL"
+    # 스팸 수집 방지: 주소를 아이디/도메인으로 나눠 두고 페이지 JS가 조립 (HTML·저장소에 완성 주소 없음)
+    email_user: "eunseong.lee91"
+    email_domain: "gmail.com"
+  data_sources: "arXiv · Semantic Scholar · OpenAlex · Crossref · Hugging Face · Gemini 요약"
 
 # -----------------------------------------------------------------------------
 # 논문 선정
@@ -124,6 +134,17 @@ interests:
     - "설계최적화·생성형 설계"
     - "진단·디지털트윈"
 
+# 관심 주제 분류(사이트의 주제 필터)용 설명 — LLM이 주제 경계를 헷갈리지 않도록 범위를 구체화.
+# 키는 위 interests 항목과 정확히 같아야 함. 없는 주제는 이름만으로 분류.
+interests_hints:
+  "LLM·생성형·에이전트": "대규모 언어 모델, LLM 에이전트·도구 사용, 텍스트 생성·추론, 프롬프트·정렬, LLM 학습·서빙 인프라"
+  "멀티모달·비전·생성모델": "컴퓨터 비전, 시각-언어 모델(VLM), 이미지·비디오·3D 생성 및 재구성, 확산 모델"
+  "학습이론·최적화·경량화": "학습 이론·일반화, 최적화 알고리즘, 모델 경량화·효율화(양자화·LoRA·추론 가속), 해석 가능성, 통계적 기법"
+  "강화학습·로보틱스": "강화 학습 알고리즘, 로봇 조작·이동 정책, 시각-언어-행동(VLA) 모델, 체화 AI"
+  "시뮬레이션·구조해석": "유한요소·수치해석 가속, 대리 모델·신경 연산자·PINN으로 물리 해석 대체, 재료 구성 모델(탄성·소성·점탄성), 구조·진동·파괴·충돌 해석"
+  "설계최적화·생성형 설계": "위상 최적화, 형상·파라미터 설계 최적화, 생성형 설계, 설계 공간 탐색, 로봇·기계 시스템 설계·제어 최적화"
+  "진단·디지털트윈": "고장 진단, 이상 탐지, 상태 감시, 잔존 수명 예측(PHM), 운영 중 시스템의 디지털 트윈, 계측 데이터 기반 파라미터 추정"
+
 # -----------------------------------------------------------------------------
 # LLM 적합도 게이트 — 슬롯별 상위 후보의 abstract를 LLM이 0~1 점수로 평가하고
 # 임계값 이상만 통과시켜 사용자 선호 주제에 맞는 1편을 선정.
@@ -132,7 +153,10 @@ interests:
 relevance_gate:
   enabled: true
   apply_to_tracks: ["mech"]       # 우선 mech 트랙만. 결과 보고 ai로 확장.
-  top_k: 20                       # 정렬된 후보 상위 N편을 LLM 평가 (한 호출 안에서 평가량만 증가, 호출 횟수는 동일)
+  # 정렬된 후보 상위 N편을 LLM 평가 (한 호출 안에서 평가량만 증가, 호출 횟수는 동일).
+  # 20→40: OpenAlex 저널 보강 후 인용 많은 저널 논문이 상위를 차지해도 arXiv·S2 후보가 채점 기회를 갖도록.
+  # 채점 JSON ~40×40토큰 ≈ 1.6k → max_output_tokens(5000) 안.
+  top_k: 40
   threshold: 0.7                  # 점수 ≥ 임계값만 통과 (엄격 게이트, 기존 0.5 → 0.7)
   # 게이트 호출 전용 출력 토큰 상한. top_k편 채점 JSON이 잘리지 않도록 요약용(1200)과 분리.
   # 실제 출력은 ~1000~2000토큰 수준. 무료 등급은 요청 수만 카운트하므로 비용/한도 영향 없고,
@@ -199,6 +223,57 @@ s2_search:
   min_year_offset_days: 365       # lookback 기준일. 호출 측 lookback과 동기화도 가능
   sort_impact: "citationCount:desc"
   sort_latest: "publicationDate:desc"
+
+# -----------------------------------------------------------------------------
+# OpenAlex — 기계공학 저널 논문 후보 보강 (키 불필요, CC0 데이터)
+#   arXiv·S2에 없는 저널 논문을 흡수. 결과는 트랙 키워드 필터 + LLM 게이트를 그대로 거친다.
+#   주의: Elsevier·Springer 다수 저널은 OpenAlex에 초록이 없어(has_abstract) 자동 제외된다.
+# -----------------------------------------------------------------------------
+openalex:
+  mailto_env: "OPENALEX_MAILTO"   # 선택: 환경변수에 연락 메일을 두면 polite pool(우선 처리) 사용
+openalex_search:
+  enabled: true
+  apply_to_tracks: ["mech"]
+  # 제목·초록 검색 (OpenAlex 불리언: AND / OR, 구문은 큰따옴표)
+  query: '("machine learning" OR "deep learning" OR "neural network" OR "physics-informed" OR "neural operator" OR surrogate OR "digital twin")'
+  # OpenAlex 세부 분야(subfield) — 항공·자동차·토목구조·전산역학·제어시스템·산업제조·기계·재료역학·해양
+  subfield_ids: [2202, 2203, 2205, 2206, 2207, 2209, 2210, 2211, 2212]
+  limit: 100
+  sort_impact: "cited_by_count:desc"
+  sort_latest: "publication_date:desc"
+
+# -----------------------------------------------------------------------------
+# 국내 논문 +1편 — 국내 학술지(ISSN 지정)를 OpenAlex로 수집(영문 초록) + Crossref 한글 원제목.
+#   최신순 → AI 방법론 키워드(arxiv.tracks.mech.keywords) → 기계공학 게이트(전원 탈락 시 비움).
+#   기존 4편과 별도 섹션으로 표시. 국내지는 월간·격월간이라 lookback을 넉넉히(90일).
+# -----------------------------------------------------------------------------
+domestic:
+  enabled: true
+  lookback_days: 90
+  limit: 100
+  # 국내 전용 게이트 임계값 — 기계공학 게이트(0.7)를 그대로 쓰면 제조·가공·결함검출 논문(0.4~0.55)이
+  # 대부분 탈락해 후보가 부족 → 0.6으로 완화 (2026-10-26). 결과 보며 조정.
+  gate_threshold: 0.6
+  query: '("machine learning" OR "deep learning" OR "neural network" OR "artificial intelligence" OR "data-driven" OR "reinforcement learning" OR "physics-informed" OR surrogate OR CNN OR LSTM)'
+  journals:
+    - { issn: "1226-4873", name: "대한기계학회논문집 A" }
+    - { issn: "1226-4881", name: "대한기계학회논문집 B" }
+    - { issn: "1225-9071", name: "한국정밀공학회지" }
+    - { issn: "1598-2785", name: "한국소음진동공학회논문집" }
+    # --- 확장 후보 (2026-10-26 OpenAlex 실측: 최근 6개월 편수 / 초록 제공 / AI 관련 제목) ---
+    # 주석을 풀면 바로 추가됨. 초록이 없는 논문은 요약 불가라 자동 제외되므로 초록 비율이 중요.
+    # - { issn: "1229-3059", name: "한국전산구조공학회논문집" }      # 24편 / 초록 24/24 / AI 2  ← 구조해석, 추천
+    # - { issn: "2508-5107", name: "한국생산제조학회지" }            # 38편 / 26/38 / AI 6       ← 제조·가공, 추천
+    # - { issn: "1738-6225", name: "한국철도학회논문집" }            # 54편 / 43/50 / AI 3
+    # - { issn: "1225-1348", name: "한국항공우주학회지" }            # 64편 / 38/50 / AI 2
+    # - { issn: "1225-1143", name: "대한조선학회 논문집" }           # 28편 / 17/28 / AI 4
+    # - { issn: "2287-9706", name: "한국유체기계학회 논문집" }       # 21편 / 20/21 / AI 1  (유체 — 현재 유체 제외 방침)
+    # - { issn: "2508-4003", name: "한국CDE학회 논문집" }            # 18편 / 8/18 / AI 2   (초록 절반 미만)
+    # 비추천(초록 거의 없음): 한국자동차공학회논문집 1225-6382 (2/50), 한국생산제조공학회지 1598-6721 (0/50)
+    # Springer 발행 영문지는 OpenAlex·Crossref에 초록이 거의 없음 → Springer Nature API(무료 키) 필요:
+    #   JMST 대한기계학회 1738-494X (0/50), IJPEM 한국정밀공학회 2234-7593 (9/50)
+    # 그 밖의 국내 출처(조건부): KCI Open API(키·고정 IP·영리목적 불가·재배포 금지 — 2026-10 불채택),
+    #   ScienceON(KISTI, 키 필요), RISS(키·이용조건 확인 필요). DBpia는 공개 API 없음.
 
 # -----------------------------------------------------------------------------
 # Semantic Scholar (인용수 + 저자 소속 기관 조회)

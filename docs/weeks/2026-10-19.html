@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-10-19 · 주간 AI ｜ AI 활용 기계공학 논문 브리핑</title>
-<meta name="description" content="매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다">
+<title>2026-10-19 · AI &amp; AI 활용 기계공학 주간 논문 브리핑</title>
+<meta name="description" content="매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI &amp; AI 활용 기계공학 주간 논문 브리핑">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="2026-10-19 주차 · AI &amp; AI 활용 기계공학 주간 논문 브리핑">
+<meta property="og:description" content="Mem4Act: 장기 로봇 조작을 위한 효과적인 잠재 기억 학습 외 3편 — AI 2편 · 기계공학 2편">
+<meta property="og:url" content="https://weekly-paper-briefing-ai.pages.dev/weeks/2026-10-19.html"><meta property="og:image" content="https://weekly-paper-briefing-ai.pages.dev/og/2026-10-19.dad6f6f1a0.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png"><meta name="theme-color" content="#0071e3">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -20,6 +31,7 @@
     --accent-hover: #0077ed;
     --ai: #0071e3;
     --mech: #00875a;
+    --kr: #c2410c;          /* 국내 논문(+1편) */
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 1px rgba(0,0,0,0.02);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
     --shadow-lg: 0 20px 48px rgba(0,0,0,0.08), 0 6px 12px rgba(0,0,0,0.05);
@@ -100,6 +112,24 @@
     font-size: clamp(1rem, 1.5vw, 1.125rem);
     max-width: 640px;
   }
+  /* 2줄 제목의 트랙명은 트랙 배지 색(파랑/초록) 그라데이션 */
+  header.site .hero-ai, header.site .hero-mech {
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  header.site .hero-ai   { background-image: linear-gradient(90deg, var(--ai), #5e5ce6); }
+  header.site .hero-mech { background-image: linear-gradient(90deg, var(--mech), #30b47a); }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 13px; border-radius: 999px;
+    background: #fff; border: 1px solid #e8e8ed;
+    font-size: 0.88rem; font-weight: 500; color: var(--text);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    white-space: nowrap;
+  }
+  .hero-chip b { color: var(--accent); font-weight: 600; }
+  .hero-chip .kr-chip { color: var(--kr); font-weight: 600; }
   header.site .home-link {
     display: inline-flex; align-items: center; gap: 4px;
     font-size: 0.9rem; color: var(--text-soft); margin-bottom: 12px;
@@ -119,10 +149,12 @@
     padding: 3px 10px; border-radius: 999px;
     letter-spacing: 0.01em;
     vertical-align: middle;
+    white-space: nowrap; flex-shrink: 0;
     transition: all 0.2s var(--ease);
   }
   .badge.ai   { background: rgba(0,113,227,0.10); color: var(--ai); }
   .badge.mech { background: rgba(0,135,90,0.10);  color: var(--mech); }
+  .badge.kr   { background: rgba(194,65,12,0.10); color: var(--kr); }
 
   /* ----- Week cards (index) ----- */
   .week-card {
@@ -182,12 +214,22 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
   }
-  .paper.ai::before, .paper.mech::before {
+  .paper.ai::before, .paper.mech::before, .paper.kr::before {
     content: ""; position: absolute; left: 0; top: 0; bottom: 0;
     width: 3px; border-radius: var(--radius-md) 0 0 var(--radius-md);
   }
   .paper.ai::before   { background: linear-gradient(180deg, #0071e3, #5ac8fa); }
   .paper.mech::before { background: linear-gradient(180deg, #00875a, #30d158); }
+  .paper.kr::before   { background: linear-gradient(180deg, #c2410c, #fb923c); }
+  .paper .venue { color: var(--kr); font-weight: 600; }
+  .paper.mech .venue { color: var(--mech); }
+
+  /* ----- 국내 논문 +1편: 기존 4편과 구분되는 보너스 섹션 ----- */
+  .kr-section { margin-top: 40px; padding-top: 28px; border-top: 1px dashed rgba(194,65,12,0.35); }
+  .kr-section h2 .kr-plus { color: var(--kr); margin-right: 4px; }
+  .kr-note { margin: -6px 0 16px; font-size: 0.86rem; color: var(--text-muted); }
+  .toc-plus { margin-left: 6px; color: var(--kr); font-weight: 700; }
+  .toc-kr { margin-top: 8px; padding-top: 10px; border-top: 1px dashed rgba(194,65,12,0.3); }
 
   .paper .meta { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 6px; }
   .paper h3 {
@@ -335,13 +377,20 @@
   }
   .toc-list { display: flex; flex-direction: column; gap: 6px; }
   .toc-list a {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: flex-start; gap: 10px;
     color: var(--text); font-size: 0.96rem;
     padding: 6px 0;
     border-radius: 8px;
     transition: color 0.2s var(--ease), padding 0.2s var(--ease);
   }
   .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+  .toc-list a .badge { min-width: 7.6em; justify-content: center; margin-top: 2px; }
+  .toc-list a > span:last-child { min-width: 0; line-height: 1.5; }
+  /* 휴대폰 폭: 배지를 제목 위로 올려 제목이 전체 폭을 쓰도록 */
+  @media (max-width: 520px) {
+    .toc-list a { flex-direction: column; gap: 4px; padding: 8px 0; }
+    .toc-list a .badge { min-width: 0; margin-top: 0; }
+  }
 
   .filter-bar {
     display: flex; gap: 8px; flex-wrap: wrap;
@@ -406,7 +455,23 @@
     margin-top: 32px; padding-top: 28px;
     border-top: 1px solid var(--line-soft);
     color: var(--text-muted); font-size: 0.82rem;
-    text-align: center;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px 24px; flex-wrap: wrap;
+  }
+  footer.site .dev { display: flex; align-items: center; gap: 12px; }
+  footer.site .dev-avatar {
+    flex: none; display: inline-grid; place-items: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--ai), var(--mech));
+    color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.02em;
+  }
+  footer.site .dev-name { color: var(--text); font-weight: 600; font-size: 0.92rem; }
+  footer.site .dev-contact { margin-top: 2px; }
+  footer.site .dev-contact a { color: var(--text-muted); }
+  footer.site .dev-contact a:hover { color: var(--accent); }
+  footer.site .build-meta { text-align: right; line-height: 1.6; }
+  @media (max-width: 520px) {
+    footer.site .build-meta { text-align: left; }
   }
 
   /* ----- Scroll reveal ----- */
@@ -434,10 +499,15 @@
 </div>
 <div class="wrap">
   <header class="site">
-  <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">2026-10-19</span>
-  <h1>주간 AI ｜ AI 활용 기계공학 논문 브리핑</h1>
-  <p class="lede">매주 월요일 · 임팩트와 최신 트렌딩에서 트랙별 2편을 한국어로 요약합니다</p>
+<a class="home-link" href="../index.html">← 전체 목록</a>    <span class="eyebrow">2026-10-19</span>
+    <h1><a href="../index.html"><span class="hero-ai">AI</span> &amp; <span class="hero-mech">AI 활용 기계공학</span><br>주간 논문 브리핑</a></h1>
+    <p class="lede">매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다.</p>
+    <div class="hero-chips">
+      <span class="hero-chip">📅 매주 <b>월 08:00</b> 공개</span>
+      <span class="hero-chip">🔥 임팩트 + 🆕 최신</span>
+      <span class="hero-chip">📚 논문 <b>4편</b></span>
+      <span class="hero-chip">📝 한국어 5줄 요약</span>
+    </div>
   </header>
   <div id="publish-notice" data-publish-at="2026-10-19T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
     <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-10-19 8:00 (KST)</strong>에 공개됩니다.</p>
@@ -474,12 +544,12 @@
 
       <section class="track-section" data-track-block="ai">
         <h2 class="reveal">
-          AI
+AI
           <span class="badge ai">2편</span>
         </h2>
           <article class="paper ai reveal" id="p-2610.22323" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.RO · 발표 2026-10-15<span class="slot-badge impact">임팩트</span>            </div>
+cs.RO · 발표 2026-10-15<span class="slot-badge impact">임팩트</span>            </div>
             <h3><a href="https://arxiv.org/abs/2610.22323" target="_blank" rel="noopener">Mem4Act: Learning Effective Latent Memory for Long-Horizon Robotic Manipulation</a></h3>
 <p class="title-ko">Mem4Act: 장기 로봇 조작을 위한 효과적인 잠재 기억 학습</p>            <div class="authors">Yun Zhang, Zhiyu Huang, Tianhui Cai, Chen Tang, Wei Wang, Jiaqi Ma</div>
             <div class="stats">
@@ -490,12 +560,11 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> Mem4Act is introduced, a framework for learning effective latent memory as a fixed-size representation explicitly optimized for long-horizon robotic control that organizes history via multi-granularity temporal aggregation, preserves complementary semantic and perceptual information through question-answering supervision and key-frame DINO feature reconstruction, and employs memory-first two-stage training to encourage greater use of memory by the action policy.</div><div class="tags"><span class="tag">#로봇 조작</span><span class="tag">#장기 기억</span><span class="tag">#강화 학습</span><span class="tag">#인공지능</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2610.22323" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2610.22323v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/b8df22d63ce109922152dcaf40e643881ec5d05c" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2610.22323v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/b8df22d63ce109922152dcaf40e643881ec5d05c" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
           <article class="paper ai reveal" id="p-2610.22200" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.CV · 발표 2026-10-15<span class="slot-badge latest">최신</span>            </div>
+cs.CV · 발표 2026-10-15<span class="slot-badge latest">최신</span>            </div>
             <h3><a href="https://arxiv.org/abs/2610.22200" target="_blank" rel="noopener">OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use</a></h3>
 <p class="title-ko">OpenGCUA: 범용 컴퓨터 사용을 위한 완전 개방형 스택을 향하여</p>            <div class="authors">Hanzhang Zhou, Long Li, Quyu Kong, Lei Wang, Panrong Tong, Long Chen, Tianyu Xia, Gongjie Zhang 외 7명</div>
             <div class="stats">
@@ -506,18 +575,17 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This report presents Open Generalist CUA (OpenGCUA), an ongoing project to develop and open the full stack for GCUAs with the community, and presents the first release of OpenGCUA, an ongoing project to develop and open the full stack for GCUAs with the community.</div><div class="tags"><span class="tag">#범용 컴퓨터 에이전트</span><span class="tag">#개방형 스택</span><span class="tag">#코드 실행</span><span class="tag">#컴퓨터 비전</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2610.22200" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2610.22200v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/eb3aed58ed65c8017d7ca5eea00de5be915c0374" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2610.22200v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/eb3aed58ed65c8017d7ca5eea00de5be915c0374" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
       <section class="track-section" data-track-block="mech">
         <h2 class="reveal">
-          AI 활용 기계공학
+AI 활용 기계공학
           <span class="badge mech">2편</span>
         </h2>
           <article class="paper mech reveal" id="p-2609.27216" style="transition-delay: 0ms;">
             <div class="meta">
-              cs.CE, cs.AI, cs.LG, math.NA · 발표 2026-09-23<span class="slot-badge impact">임팩트</span>            </div>
+cs.CE, cs.AI, cs.LG, math.NA · 발표 2026-09-23<span class="slot-badge impact">임팩트</span>            </div>
             <h3><a href="https://arxiv.org/abs/2609.27216" target="_blank" rel="noopener">KATOsuper: Surrogate-accelerated neural topology optimization with sensitivity-consistent Fourier neural operators</a></h3>
 <p class="title-ko">KATOsuper: 민감도 일관성 푸리에 신경망 연산자를 활용한 대리 모델 가속 신경망 위상 최적화</p>            <div class="authors">Shengyu Yan, Jasmin Jelovica</div>
             <div class="stats">
@@ -528,12 +596,11 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> KATOsuper, an objective-agnostic framework that couples neural-reparameterized topology optimization with a Sensitivity-Consistent Fourier Neural Operator (SC-FNO), demonstrates 15--110x deployment-time speedup over MATLAB baselines while maintaining competitive optimality, with the clearest gains observed in complex 3D and stress-optimization cases.</div><div class="tags"><span class="tag">#위상 최적화</span><span class="tag">#신경망</span><span class="tag">#대리 모델</span><span class="tag">#기계공학</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2609.27216" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2609.27216v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/1abd0442dc297b3bb62337363005327dfe33d8b1" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2609.27216v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/1abd0442dc297b3bb62337363005327dfe33d8b1" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
           <article class="paper mech reveal" id="p-2610.21939" style="transition-delay: 60ms;">
             <div class="meta">
-              cs.RO, physics.app-ph · 발표 2026-10-15<span class="slot-badge latest">최신</span>            </div>
+cs.RO, physics.app-ph · 발표 2026-10-15<span class="slot-badge latest">최신</span>            </div>
             <h3><a href="https://arxiv.org/abs/2610.21939" target="_blank" rel="noopener">De-Risking Robotic Welding for In-Space Metal Joining Through Physics-Grounded Digital Twins</a></h3>
 <p class="title-ko">물리 기반 디지털 트윈을 통한 우주 금속 접합용 로봇 용접 위험 감소</p>            <div class="authors">Zhou Daniel Hao, Umer Masood Chaudry, Robert Shaw, Andrew Cheney, Nick Ludford, Mark Sims, Hongbiao Dong</div>
             <div class="stats">
@@ -544,8 +611,7 @@
             </div>
 <div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> A model-based prototype combining a finite-volume thermal weld-pool model, Gaussian-process (GP) and neural-network surrogates, and a simulated six-axis manipulator is evaluated, showing lower normalised mean absolute error than the neural network for all eight outputs.</div><div class="tags"><span class="tag">#로봇 용접</span><span class="tag">#디지털 트윈</span><span class="tag">#우주 제조</span><span class="tag">#가우시안 프로세스</span></div>            <div class="links">
               <a href="https://arxiv.org/abs/2610.21939" target="_blank" rel="noopener">arXiv</a>
-              <a href="https://arxiv.org/pdf/2610.21939v1" target="_blank" rel="noopener">PDF</a>
-<a href="https://www.semanticscholar.org/paper/fabf38483959d9dfb1b8046726d9f7e2e80d9749" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+<a href="https://arxiv.org/pdf/2610.21939v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/fabf38483959d9dfb1b8046726d9f7e2e80d9749" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
           </article>
       </section>
 
@@ -569,9 +635,26 @@
     })();
   </script>
   <footer class="site">
-    <p>자동 생성 · 2026-10-24 05:31 UTC · arXiv + Semantic Scholar + LLM 요약</p>
+    <div class="dev">
+      <span class="dev-avatar" aria-hidden="true">EL</span>
+      <div class="dev-text">
+        <div class="dev-name">Developed by Eunseong Lee</div>
+<div class="dev-contact">문의 · <a class="js-mail" href="#" data-u="eunseong.lee91" data-d="gmail.com">이메일</a></div>      </div>
+    </div>
+    <div class="build-meta">
+      <div>마지막 업데이트 2026-10-26 (월)</div>
+      <div>arXiv · Semantic Scholar · OpenAlex · Crossref · Hugging Face · Gemini 요약</div>
+    </div>
   </footer>
 </div>
+<script>
+  // 문의 메일: 아이디·도메인을 여기서 조립 → HTML 소스에는 완성된 주소가 없어 수집 봇 회피
+  document.querySelectorAll('a.js-mail').forEach(function (a) {
+    var addr = a.dataset.u + '@' + a.dataset.d;
+    a.href = 'mai' + 'lto:' + addr;
+    a.textContent = addr;
+  });
+</script>
 <script>
   // 예약 공개: data-publish(=월요일 08:00 등) 시각이 미래인 항목은 그 시각까지 숨김.
   // 브라우저 시계 기준이라 GitHub Actions 스케줄 지연과 무관하게 정시에 노출된다.

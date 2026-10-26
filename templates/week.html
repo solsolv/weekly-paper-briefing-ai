@@ -2,12 +2,18 @@
 {% block title %}{{ week.week_id }} · {{ site.title }}{% endblock %}
 {% block home_href %}../index.html{% endblock %}
 {% set slot_label = {'impact': '임팩트', 'latest': '최신'} %}
-{% block header %}
-  <a class="home-link" href="../index.html">← 전체 목록</a>
-  <span class="eyebrow">{{ week.week_id }}</span>
-  <h1>{{ site.title }}</h1>
-  <p class="lede">{{ site.description }}</p>
-{% endblock %}
+{% set root = '../' %}
+{% set ai_n = week.papers | selectattr('track', 'equalto', 'ai') | list | length %}
+{% set mech_n = week.papers | selectattr('track', 'equalto', 'mech') | list | length %}
+{# 국내 논문은 기존 4편과 별도로 '+N편'으로 표시 #}
+{% set main_papers = week.papers | rejectattr('track', 'equalto', 'kr') | list %}
+{% set kr_papers = week.papers | selectattr('track', 'equalto', 'kr') | list %}
+{% set kr_count = kr_papers | length %}
+{% block og_title %}{{ week.week_id }} 주차 · {{ site.title }}{% endblock %}
+{% block og_desc %}{% if main_papers %}{{ main_papers[0].title_ko or main_papers[0].title }}{% if main_papers | length > 1 %} 외 {{ main_papers | length - 1 }}편{% endif %} — AI {{ ai_n }}편 · 기계공학 {{ mech_n }}편{% if kr_papers %} + 국내 {{ kr_papers | length }}편{% endif %}{% else %}{{ site.description }}{% endif %}{% endblock %}
+{% block og_path %}weeks/{{ week.week_id }}.html{% endblock %}
+{% block header_pre %}<a class="home-link" href="../index.html">← 전체 목록</a>{% endblock %}
+{% block eyebrow %}{{ week.week_id }}{% endblock %}
 {% block content %}
   {% if week.publish_at %}
   <div id="publish-notice" data-publish-at="{{ week.publish_at }}" style="display:none; text-align:center; padding:48px 0;">
@@ -17,39 +23,56 @@
   {% endif %}
   <div data-gate-content>
   <div class="toc reveal">
-    <div class="toc-title">이번 주 {{ week.papers | length }}편</div>
+    <div class="toc-title">이번 주 {{ main_papers | length }}편{% if kr_papers %} <span class="toc-plus">+ 국내 {{ kr_papers | length }}편</span>{% endif %}</div>
     <div class="toc-list">
-      {% for p in week.papers %}
+      {% for p in main_papers %}
         <a href="#p-{{ p.arxiv_id }}">
           <span class="badge {{ p.track }}">{{ track_label.get(p.track, p.track) }}</span>
           <span>{{ p.title_ko or p.title }}</span>
         </a>
       {% endfor %}
     </div>
+    {% if kr_papers %}
+    <div class="toc-list toc-kr">
+      {% for p in kr_papers %}
+        <a href="#p-{{ p.arxiv_id }}">
+          <span class="badge kr">+ 국내</span>
+          <span>{{ p.title_ko or p.title }}</span>
+        </a>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
 
   <div class="filter-bar reveal" role="tablist" aria-label="트랙 필터">
     <button class="filter-btn active" data-track="all" type="button">전체</button>
     <button class="filter-btn" data-track="ai" type="button">AI</button>
     <button class="filter-btn" data-track="mech" type="button">AI 활용 기계공학</button>
+    {% if kr_papers %}<button class="filter-btn" data-track="kr" type="button">+ 국내 논문</button>{% endif %}
   </div>
 
-  {% for track in ['ai', 'mech'] %}
-    {% set papers = week.tracks[track] %}
+  {% for track in ['ai', 'mech', 'kr'] %}
+    {% set papers = week.tracks.get(track) or [] %}
     {% if papers %}
-      <section class="track-section" data-track-block="{{ track }}">
+      <section class="track-section{% if track == 'kr' %} kr-section{% endif %}" data-track-block="{{ track }}">
         <h2 class="reveal">
-          {{ track_label.get(track, track) }}
+          {% if track == 'kr' %}<span class="kr-plus">+</span>{% endif %}{{ track_label.get(track, track) }}
           <span class="badge {{ track }}">{{ papers | length }}편</span>
         </h2>
+        {% if track == 'kr' %}<p class="kr-note reveal">이번 주 4편에 더해, 국내 학술지에서 AI를 활용한 기계공학 논문을 골랐습니다.</p>{% endif %}
         {% for p in papers %}
           <article class="paper {{ track }} reveal" id="p-{{ p.arxiv_id }}" style="transition-delay: {{ loop.index0 * 60 }}ms;">
             <div class="meta">
-              {{ p.categories | join(", ") }} · 발표 {{ p.published | fmt_date }}{% if p.updated and p.updated != p.published %} · 갱신 {{ p.updated | fmt_date }}{% endif %}
-              {% if p.slot %}<span class="slot-badge {{ p.slot }}">{{ slot_label.get(p.slot, p.slot) }}</span>{% endif %}
+              {% if p.venue %}<span class="venue">📘 {{ p.venue }}</span> · {% elif p.categories %}{{ p.categories | join(", ") }} · {% endif %}발표 {{ p.published | fmt_date }}{% if p.updated and p.updated != p.published %} · 갱신 {{ p.updated | fmt_date }}{% endif %}
+              {% if p.slot and track != 'kr' %}<span class="slot-badge {{ p.slot }}">{{ slot_label.get(p.slot, p.slot) }}</span>{% endif %}
             </div>
+            {% if p.title_local %}
+            <h3><a href="{{ p.abs_url }}" target="_blank" rel="noopener">{{ p.title_local }}</a></h3>
+            <p class="title-ko">{{ p.title }}</p>
+            {% else %}
             <h3><a href="{{ p.abs_url }}" target="_blank" rel="noopener">{{ p.title }}</a></h3>
             {% if p.title_ko %}<p class="title-ko">{{ p.title_ko }}</p>{% endif %}
+            {% endif %}
             <div class="authors">{{ p.authors[:8] | join(", ") }}{% if p.authors | length > 8 %} 외 {{ (p.authors | length) - 8 }}명{% endif %}</div>
             {% if p.affiliations %}<div class="affiliations">{{ p.affiliations | join(" · ") }}</div>{% endif %}
             <div class="stats">
@@ -69,8 +92,9 @@
             {% if p.tldr %}<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> {{ p.tldr }}</div>{% endif %}
             {% if p.tags %}<div class="tags">{% for tg in p.tags %}<span class="tag">#{{ tg }}</span>{% endfor %}</div>{% endif %}
             <div class="links">
-              <a href="{{ p.abs_url }}" target="_blank" rel="noopener">arXiv</a>
-              <a href="{{ p.pdf_url }}" target="_blank" rel="noopener">PDF</a>
+              {# 출처별 링크 이름: arXiv 논문만 'arXiv', 저널 논문은 '원문(DOI)' #}
+              <a href="{{ p.abs_url }}" target="_blank" rel="noopener">{% if p.source in ['arxiv', 'huggingface'] %}arXiv{% elif p.abs_url and 'doi.org' in p.abs_url %}원문(DOI){% else %}원문{% endif %}</a>
+              {% if p.pdf_url %}<a href="{{ p.pdf_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
               {% if p.s2_url %}<a href="{{ p.s2_url }}" target="_blank" rel="noopener">Semantic Scholar</a>{% endif %}
             </div>
           </article>
