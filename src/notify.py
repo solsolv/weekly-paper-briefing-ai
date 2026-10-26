@@ -134,8 +134,9 @@ def _briefing_body(cfg: Config, week: dict, week_id: str, has_image: bool) -> tu
     def p(ls):
         return "<br>".join(escape(x) for x in ls)
 
-    img = (f'<a href="{site}"><img src="cid:{{CID}}" alt="{escape(week_id)} 주차 논문 목록" '
-           f'style="display:block;width:100%;max-width:640px;margin:16px 0;border:1px solid #e5e7eb"></a>'
+    # 캡처 위·아래로 빈 줄 2칸씩 (사용자 요청 2026-10-26)
+    img = (f'<br><br><br><a href="{site}"><img src="cid:{{CID}}" alt="{escape(week_id)} 주차 논문 목록" '
+           f'style="display:block;width:100%;max-width:640px;margin:0;border:1px solid #e5e7eb"></a><br><br>'
            if has_image else "<br><br>")
     html = (
         f'<div style="font-family:\'Malgun Gothic\',\'Apple SD Gothic Neo\',sans-serif;font-size:14px;'
