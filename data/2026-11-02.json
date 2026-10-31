@@ -1,0 +1,493 @@
+{
+  "week_id": "2026-11-02",
+  "generated_at": "2026-10-31T06:21:18.067658+00:00",
+  "publish_at": "2026-11-02T08:00:00+09:00",
+  "site_title": "AI & AI 활용 기계공학 주간 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2610.40653",
+        "title": "Micro-Edits: Computational Support for Fine-Scale Edits in Film",
+        "authors": [
+          "Nhan Tran",
+          "Hijung Valentina Shin",
+          "Abe Davis",
+          "Mackenzie Leake"
+        ],
+        "summary": "In film editing, every frame matters. While macro, content-level edits shape the high-level narrative of a film, small local edits often control timing and direct visual attention. For example, editors can adjust the precise timing of clips to control the length of a meaningful silence, or cut to shots that highlight a specific character's reactions to important moments. These small, detailed edits are slow and tedious to make in standard editing tools because users have to map high-level narrative goals to low-level frame-by-frame adjustments. At the same time, these fine-scale adjustments, which we call micro-edits, can be nuanced and expressive, with different choices serving different creative goals. In this work, we start by conducting a formative study with professional editors to understand the structure of micro-edits and how they are used. We then derive a mathematical formalization for this structure to develop tools that leverage AI and optimization to make exploring micro-edits simpler and more efficient for users. Finally, we validate our tools in multiple user studies and a wide range of video examples.",
+        "categories": [
+          "cs.HC",
+          "cs.CV"
+        ],
+        "published": "2026-10-29T17:59:49+00:00",
+        "updated": "2026-10-29T17:59:49+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.40653v1",
+        "abs_url": "https://arxiv.org/abs/2610.40653",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 1,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/2e45afb9fbfd7e8c47cacb17f06f8573f0f62c9e",
+        "tldr": "This work starts by conducting a formative study with professional editors to understand the structure of micro-edits and how they are used, and derives a mathematical formalization for this structure to develop tools that leverage AI and optimization to make exploring micro-edits simpler and more efficient for users.",
+        "matched_keywords": [],
+        "affiliations": [
+          "Cornell University",
+          "Adobe Research",
+          "MIT"
+        ],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "마이크로 편집: 영화의 미세 조정 편집을 위한 전산 지원",
+        "summary_ko": "- 영화 편집에서 미세한 타이밍 조정 같은 '마이크로 편집'은 중요하지만, 기존 도구로는 어렵고 시간이 많이 소요됩니다.\n- 본 연구는 전문 편집자들과의 연구를 통해 마이크로 편집의 구조와 활용법을 먼저 이해했습니다.\n- 이를 바탕으로 마이크로 편집 구조를 수학적으로 정형화하고, AI 및 최적화 기술을 활용한 도구를 개발했습니다.\n- 개발된 도구는 사용자가 마이크로 편집을 더 쉽고 효율적으로 탐색할 수 있도록 돕습니다.\n- 다양한 사용자 연구와 비디오 예시를 통해 도구의 유효성을 검증하여 영화 편집의 효율성을 높였습니다.",
+        "tags": [
+          "영화 편집",
+          "AI",
+          "최적화",
+          "사용자 인터페이스"
+        ],
+        "topics": [
+          "멀티모달·비전·생성모델"
+        ]
+      },
+      {
+        "arxiv_id": "2610.39633",
+        "title": "Intrinsic Distribution Matching",
+        "authors": [
+          "Deyuan Liu",
+          "Yansen Han",
+          "Kaiwen Zheng",
+          "Jun Xie",
+          "Jiacheng Liu",
+          "Zhenglin Cheng",
+          "Peng Sun",
+          "Jintao Zhang",
+          "Jianguo Li",
+          "Tao Lin"
+        ],
+        "summary": "One-step and few-step text-to-image generation must accurately render the details specified in the prompt despite limited opportunities for refinement. Distribution matching distillation (DMD) uses score differences to bring the generated distribution closer to a reference distribution. Following prior work, we estimate this difference with internal velocity branches, avoiding a separate fake-score network. We ask whether an explicit moment constraint improves this learned score supervision. A decomposition of the reverse-KL field into a Gaussian moment component and a non-Gaussian residual identifies statistics that can be constrained explicitly. We introduce Intrinsic Distribution Matching (IDM), which retains the full DMD correction and matches feature means and per-coordinate standard deviations using the generator's exponential-moving-average (EMA) copy, requiring no external feature encoder. Experiments use full-parameter and low-rank adaptation (LoRA) tuning on Z-Image-Turbo 6B and Qwen-Image 20B. At two network evaluations, IDM reaches 94.25% and 90.20% on Chinese and English LongText-Bench, the highest scores among the compared methods at this budget. Controlled ablations show gains from the added moment loss, while generator EMA features perform competitively with an external DINOv2 encoder across the five reported metrics. Code is available at https://github.com/inclusionAI/IDM.",
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "published": "2026-10-29T08:57:17+00:00",
+        "updated": "2026-10-29T08:57:17+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.39633v1",
+        "abs_url": "https://arxiv.org/abs/2610.39633",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/b3fa42a19197c385b9be8491b54f4fee0fc48b8f",
+        "tldr": "Intrinsic Distribution Matching is introduced, which retains the full DMD correction and matches feature means and per-coordinate standard deviations using the generator's exponential-moving-average (EMA) copy, requiring no external feature encoder.",
+        "matched_keywords": [],
+        "affiliations": [
+          "Zhejiang University",
+          "Westlake University",
+          "Tsinghua University"
+        ],
+        "source": "huggingface",
+        "hf_upvotes": 239,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "내재적 분포 매칭",
+        "summary_ko": "- 텍스트-이미지 생성 모델은 적은 수정 기회에도 프롬프트의 세부 사항을 정확히 표현해야 합니다.\n- 이 연구는 기존 분포 매칭 증류(DMD)에 명시적인 모멘트 제약(moment constraint)을 추가한 IDM을 제안합니다.\n- IDM은 생성기(generator)의 EMA 복사본을 활용하여 특징(feature)의 평균과 좌표별 표준 편차를 맞춥니다.\n- Z-Image-Turbo 6B 및 Qwen-Image 20B 모델에서 LongText-Bench 벤치마크 최고 점수를 달성했습니다.\n- 외부 특징 인코더 없이도 경쟁력 있는 성능을 보여, 효율적인 텍스트-이미지 생성에 기여합니다.",
+        "tags": [
+          "텍스트-이미지 생성",
+          "분포 매칭",
+          "딥러닝",
+          "이미지 합성"
+        ],
+        "topics": [
+          "멀티모달·비전·생성모델"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "2511.13710",
+        "title": "From Power to Precision: Learning Fine-grained Dexterity for Multi-fingered Robotic Hands",
+        "authors": [
+          "Jianglong Ye",
+          "Lai Wei",
+          "Guangqi Jiang",
+          "Chang-Wei Jing",
+          "Xue-Yan Zou",
+          "Xiao-Long Wang"
+        ],
+        "summary": "Human grasps can be roughly categorized into two types: power grasps and precision grasps. Precision grasping enables tool use and is believed to have influenced human evolution. Today's multi-fingered robotic hands are effective in power grasps, but for tasks requiring precision, parallel grippers are still more widely adopted. This contrast highlights a key limitation in current robotic hand design: the difficulty of achieving both stable power grasps and precise, fine-grained manipulation within a single, versatile system. In this work, we bridge this gap by jointly optimizing the control and hardware design of a multi-fingered dexterous hand, enabling both power and precision manipulation. Rather than redesigning the entire hand, we introduce a lightweight fingertip geometry modification, represent it as a contact plane, and jointly optimize its parameters along with the corresponding control. Our control strategy dynamically switches between power and precision manipulation and simplifies precision control into parallel thumb-index motions, which proves robust for sim-to-real transfer. On the design side, we leverage large-scale simulation to optimize the fingertip geometry using a differentiable neural-physics surrogate model. We validate our approach through extensive experiments in both sim-to-real and real-to-real settings. Our method achieves an 82.5% zero-shot success rate on unseen objects in sim-to-real precision grasping, and a 93.3% success rate in challenging real-world tasks involving bread pinching. These results demonstrate that our co-design framework can significantly enhance the fine-grained manipulation ability of multi-fingered hands without reducing their ability for power grasps. Our project page is at https://jianglongye.com/power-to-precision",
+        "categories": [],
+        "published": "2025-11-17T00:00:00+00:00",
+        "updated": "2025-11-17T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://www.semanticscholar.org/paper/9f8cd6e22367d39adb7aa6fcaec937371ff9abce",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 12,
+        "influential_citation_count": 1,
+        "s2_url": "https://www.semanticscholar.org/paper/9f8cd6e22367d39adb7aa6fcaec937371ff9abce",
+        "tldr": null,
+        "matched_keywords": [
+          "surrogate model",
+          "robot",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "힘 조절부터 정밀 조작까지: 다지 로봇 손의 정교한 조작 능력 학습",
+        "summary_ko": "- 다지 로봇 손은 강력한 움켜쥐기(power grasp)에는 효과적이지만, 정밀한 조작에는 평행 그리퍼가 더 널리 사용됩니다.\n- 본 연구는 다지 로봇 손의 제어와 하드웨어 설계를 공동으로 최적화하여 이 간극을 해소합니다.\n- 손 전체를 재설계하는 대신, 가벼운 손가락 끝 기하학적 변형을 도입하고 제어와 함께 최적화합니다.\n- 시뮬레이션과 실제 환경 실험에서 미확인 물체에 대한 정밀 집기 성공률 82.5%, 빵 집기 성공률 93.3%를 달성했습니다.\n- 이 공동 설계 프레임워크는 강력한 움켜쥐기 능력을 유지하면서 다지 로봇 손의 정밀 조작 능력을 크게 향상시킵니다.",
+        "tags": [
+          "로봇 공학",
+          "다지 로봇 손",
+          "정밀 조작",
+          "공동 설계"
+        ],
+        "topics": [
+          "설계최적화·생성형 설계"
+        ]
+      },
+      {
+        "arxiv_id": "2610.40260",
+        "title": "Unweaving the mechanics of woven fabrics through automated model discovery",
+        "authors": [
+          "Marin Lauber",
+          "Uzair Manack",
+          "Thibault Vervenne",
+          "Rogier P. Krijnen",
+          "Benjamin Alheit",
+          "Nele Famaey",
+          "Mathias Peirlinck"
+        ],
+        "summary": "Woven fabrics have multiple structural, aesthetic, and medical applications that require knowledge of their mechanical properties. While isolated fiber properties are easily determined, bulk properties of woven material, which can be coated or locally reinforced, require knowledge of yarn density, weave style, and other characteristics that are difficult to obtain experimentally. Additionally, fiber rearrangement, twist, yarn contact, and fiber-direction coupling result in non-linear mechanical responses. As a result, there is no universal material model for woven materials, and each fabric requires a specific model and parameter calibration. Recently, methods to simultaneously discover material models and their parameters from experimental or synthetic datasets have been proposed. Here, we use automated model discovery to simultaneously extract the material model and its parameters from biaxial test data of a TPU-coated woven nylon fabric. We show that Constitutive Artificial Neural Networks discover a sparse three-term hyperelastic material law with one isotropic and two anisotropic contributions, reproducing the measured biaxial response with a mean $R^2=0.97$. Across 20 initializations, predictive accuracy remains robust despite variations in the exact sparse representation, consistent with strong correlations between several candidate terms. LARS-LASSO independently recovers the same dominant constitutive contributions at approximately 100-fold lower computational cost. These results are directly applicable to numerical finite-element models of fabric-based structures, including soft robotic devices. More broadly, these results provide a foundation for further model discovery, improved constitutive modeling, and mechanistically informed optimization of woven fabric structures.",
+        "categories": [
+          "cs.CE"
+        ],
+        "published": "2026-10-29T15:24:15+00:00",
+        "updated": "2026-10-29T15:24:15+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2610.40260v1",
+        "abs_url": "https://arxiv.org/abs/2610.40260",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/6718a4740f0cabf7663d95bcc4d1f344fa5c2f3d",
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "structural",
+          "elastic",
+          "robot",
+          "mechanical",
+          "relevance:0.85"
+        ],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "자동화된 모델 발견을 통한 직조 직물의 역학 분석",
+        "summary_ko": "- 직조 직물은 복잡한 비선형 기계적 반응을 보여 보편적인 재료 모델이 없습니다.\n- 이 연구는 자동화된 모델 발견(automated model discovery)을 이용해 직조 직물의 재료 모델을 추출합니다.\n- TPU 코팅 나일론 직물의 이축 시험 데이터로 Constitutive Artificial Neural Networks를 훈련했습니다.\n- 평균 R²=0.97로 측정된 이축 반응을 재현하는 희소한 3항 초탄성 재료 법칙을 발견했습니다.\n- 이 방법은 직물 기반 구조의 유한 요소 모델에 직접 적용 가능하며, 모델 최적화에 기여합니다.",
+        "tags": [
+          "재료 모델링",
+          "자동화된 모델 발견",
+          "직조 직물",
+          "기계공학"
+        ],
+        "topics": [
+          "시뮬레이션·구조해석"
+        ]
+      }
+    ],
+    "kr": [
+      {
+        "arxiv_id": "doi:10.7736/jkspe.026.00036",
+        "title": "Continuously Varying Data Collection for Machine Learning-based Milling Cutting Force Prediction",
+        "authors": [
+          "Sangjin Maeng",
+          "Byung-Min Kim"
+        ],
+        "summary": "Accurate prediction of cutting forces in milling is crucial for intelligent machining. However, traditional methods of collecting discrete data are often time-consuming and can lead to overfitting due to data sparsity. This study introduces a continuously variable data collection strategy designed to efficiently gather training data for machine learning models. By linearly varying the feed rate and radial depth of cut along a single tool path, we obtained continuous data that reflect the variations in machining conditions. Additionally, we applied trigonometric feature transformation to the tool rotation angle to maintain its periodic characteristics. The collected data were used to train Artificial Neural Network (ANN), Support Vector Regression (SVR), and Gaussian Process Regression (GPR) models. The results demonstrate that models trained with continuous data exhibit improved generalization performance under unseen conditions compared to those trained with discrete data. Furthermore, comparable predictive accuracy was achieved using a subset of the continuous dataset. These findings suggest that the proposed approach enhances data efficiency in model training and has the potential to reduce the experimental effort required in developing machining monitoring systems.",
+        "categories": [],
+        "published": "2026-10-01T00:00:00+00:00",
+        "updated": "2026-10-01T00:00:00+00:00",
+        "pdf_url": "https://jkspe.or.kr/upload/pdf/JKSPE-026-00036.pdf",
+        "abs_url": "https://doi.org/10.7736/jkspe.026.00036",
+        "track": "kr",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "machine learning",
+          "neural network",
+          "relevance:0.60"
+        ],
+        "affiliations": [
+          "Hongik University"
+        ],
+        "source": "openalex_kr",
+        "hf_upvotes": null,
+        "venue": "한국정밀공학회지",
+        "title_local": null,
+        "title_ko": "머신러닝 기반 밀링 절삭력 예측을 위한 연속 가변 데이터 수집",
+        "summary_ko": "- 밀링 절삭력 예측은 지능형 가공에 필수적이나, 기존의 이산(discrete) 데이터 수집은 비효율적이고 과적합을 유발할 수 있습니다.\n- 본 연구는 머신러닝 모델 훈련을 위한 효율적인 연속 가변 데이터 수집 전략을 제안합니다.\n- 단일 공구 경로에서 이송 속도와 반경 방향 절삭 깊이를 선형적으로 변화시켜 연속 데이터를 얻고, 공구 회전 각도에는 삼각 함수 특징 변환을 적용했습니다.\n- 연속 데이터로 훈련된 ANN, SVR, GPR 모델은 이산 데이터 모델보다 미지의 조건에서 향상된 일반화 성능을 보였습니다.\n- 제안된 접근 방식은 모델 훈련의 데이터 효율성을 높여 가공 모니터링 시스템 개발에 필요한 실험 노력을 줄일 수 있습니다.",
+        "tags": [
+          "머신러닝",
+          "밀링 절삭력",
+          "데이터 수집",
+          "지능형 가공"
+        ],
+        "topics": [
+          "진단·디지털트윈"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2610.40653",
+      "title": "Micro-Edits: Computational Support for Fine-Scale Edits in Film",
+      "authors": [
+        "Nhan Tran",
+        "Hijung Valentina Shin",
+        "Abe Davis",
+        "Mackenzie Leake"
+      ],
+      "summary": "In film editing, every frame matters. While macro, content-level edits shape the high-level narrative of a film, small local edits often control timing and direct visual attention. For example, editors can adjust the precise timing of clips to control the length of a meaningful silence, or cut to shots that highlight a specific character's reactions to important moments. These small, detailed edits are slow and tedious to make in standard editing tools because users have to map high-level narrative goals to low-level frame-by-frame adjustments. At the same time, these fine-scale adjustments, which we call micro-edits, can be nuanced and expressive, with different choices serving different creative goals. In this work, we start by conducting a formative study with professional editors to understand the structure of micro-edits and how they are used. We then derive a mathematical formalization for this structure to develop tools that leverage AI and optimization to make exploring micro-edits simpler and more efficient for users. Finally, we validate our tools in multiple user studies and a wide range of video examples.",
+      "categories": [
+        "cs.HC",
+        "cs.CV"
+      ],
+      "published": "2026-10-29T17:59:49+00:00",
+      "updated": "2026-10-29T17:59:49+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.40653v1",
+      "abs_url": "https://arxiv.org/abs/2610.40653",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 1,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/2e45afb9fbfd7e8c47cacb17f06f8573f0f62c9e",
+      "tldr": "This work starts by conducting a formative study with professional editors to understand the structure of micro-edits and how they are used, and derives a mathematical formalization for this structure to develop tools that leverage AI and optimization to make exploring micro-edits simpler and more efficient for users.",
+      "matched_keywords": [],
+      "affiliations": [
+        "Cornell University",
+        "Adobe Research",
+        "MIT"
+      ],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "마이크로 편집: 영화의 미세 조정 편집을 위한 전산 지원",
+      "summary_ko": "- 영화 편집에서 미세한 타이밍 조정 같은 '마이크로 편집'은 중요하지만, 기존 도구로는 어렵고 시간이 많이 소요됩니다.\n- 본 연구는 전문 편집자들과의 연구를 통해 마이크로 편집의 구조와 활용법을 먼저 이해했습니다.\n- 이를 바탕으로 마이크로 편집 구조를 수학적으로 정형화하고, AI 및 최적화 기술을 활용한 도구를 개발했습니다.\n- 개발된 도구는 사용자가 마이크로 편집을 더 쉽고 효율적으로 탐색할 수 있도록 돕습니다.\n- 다양한 사용자 연구와 비디오 예시를 통해 도구의 유효성을 검증하여 영화 편집의 효율성을 높였습니다.",
+      "tags": [
+        "영화 편집",
+        "AI",
+        "최적화",
+        "사용자 인터페이스"
+      ],
+      "topics": [
+        "멀티모달·비전·생성모델"
+      ]
+    },
+    {
+      "arxiv_id": "2610.39633",
+      "title": "Intrinsic Distribution Matching",
+      "authors": [
+        "Deyuan Liu",
+        "Yansen Han",
+        "Kaiwen Zheng",
+        "Jun Xie",
+        "Jiacheng Liu",
+        "Zhenglin Cheng",
+        "Peng Sun",
+        "Jintao Zhang",
+        "Jianguo Li",
+        "Tao Lin"
+      ],
+      "summary": "One-step and few-step text-to-image generation must accurately render the details specified in the prompt despite limited opportunities for refinement. Distribution matching distillation (DMD) uses score differences to bring the generated distribution closer to a reference distribution. Following prior work, we estimate this difference with internal velocity branches, avoiding a separate fake-score network. We ask whether an explicit moment constraint improves this learned score supervision. A decomposition of the reverse-KL field into a Gaussian moment component and a non-Gaussian residual identifies statistics that can be constrained explicitly. We introduce Intrinsic Distribution Matching (IDM), which retains the full DMD correction and matches feature means and per-coordinate standard deviations using the generator's exponential-moving-average (EMA) copy, requiring no external feature encoder. Experiments use full-parameter and low-rank adaptation (LoRA) tuning on Z-Image-Turbo 6B and Qwen-Image 20B. At two network evaluations, IDM reaches 94.25% and 90.20% on Chinese and English LongText-Bench, the highest scores among the compared methods at this budget. Controlled ablations show gains from the added moment loss, while generator EMA features perform competitively with an external DINOv2 encoder across the five reported metrics. Code is available at https://github.com/inclusionAI/IDM.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-10-29T08:57:17+00:00",
+      "updated": "2026-10-29T08:57:17+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.39633v1",
+      "abs_url": "https://arxiv.org/abs/2610.39633",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/b3fa42a19197c385b9be8491b54f4fee0fc48b8f",
+      "tldr": "Intrinsic Distribution Matching is introduced, which retains the full DMD correction and matches feature means and per-coordinate standard deviations using the generator's exponential-moving-average (EMA) copy, requiring no external feature encoder.",
+      "matched_keywords": [],
+      "affiliations": [
+        "Zhejiang University",
+        "Westlake University",
+        "Tsinghua University"
+      ],
+      "source": "huggingface",
+      "hf_upvotes": 239,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "내재적 분포 매칭",
+      "summary_ko": "- 텍스트-이미지 생성 모델은 적은 수정 기회에도 프롬프트의 세부 사항을 정확히 표현해야 합니다.\n- 이 연구는 기존 분포 매칭 증류(DMD)에 명시적인 모멘트 제약(moment constraint)을 추가한 IDM을 제안합니다.\n- IDM은 생성기(generator)의 EMA 복사본을 활용하여 특징(feature)의 평균과 좌표별 표준 편차를 맞춥니다.\n- Z-Image-Turbo 6B 및 Qwen-Image 20B 모델에서 LongText-Bench 벤치마크 최고 점수를 달성했습니다.\n- 외부 특징 인코더 없이도 경쟁력 있는 성능을 보여, 효율적인 텍스트-이미지 생성에 기여합니다.",
+      "tags": [
+        "텍스트-이미지 생성",
+        "분포 매칭",
+        "딥러닝",
+        "이미지 합성"
+      ],
+      "topics": [
+        "멀티모달·비전·생성모델"
+      ]
+    },
+    {
+      "arxiv_id": "2511.13710",
+      "title": "From Power to Precision: Learning Fine-grained Dexterity for Multi-fingered Robotic Hands",
+      "authors": [
+        "Jianglong Ye",
+        "Lai Wei",
+        "Guangqi Jiang",
+        "Chang-Wei Jing",
+        "Xue-Yan Zou",
+        "Xiao-Long Wang"
+      ],
+      "summary": "Human grasps can be roughly categorized into two types: power grasps and precision grasps. Precision grasping enables tool use and is believed to have influenced human evolution. Today's multi-fingered robotic hands are effective in power grasps, but for tasks requiring precision, parallel grippers are still more widely adopted. This contrast highlights a key limitation in current robotic hand design: the difficulty of achieving both stable power grasps and precise, fine-grained manipulation within a single, versatile system. In this work, we bridge this gap by jointly optimizing the control and hardware design of a multi-fingered dexterous hand, enabling both power and precision manipulation. Rather than redesigning the entire hand, we introduce a lightweight fingertip geometry modification, represent it as a contact plane, and jointly optimize its parameters along with the corresponding control. Our control strategy dynamically switches between power and precision manipulation and simplifies precision control into parallel thumb-index motions, which proves robust for sim-to-real transfer. On the design side, we leverage large-scale simulation to optimize the fingertip geometry using a differentiable neural-physics surrogate model. We validate our approach through extensive experiments in both sim-to-real and real-to-real settings. Our method achieves an 82.5% zero-shot success rate on unseen objects in sim-to-real precision grasping, and a 93.3% success rate in challenging real-world tasks involving bread pinching. These results demonstrate that our co-design framework can significantly enhance the fine-grained manipulation ability of multi-fingered hands without reducing their ability for power grasps. Our project page is at https://jianglongye.com/power-to-precision",
+      "categories": [],
+      "published": "2025-11-17T00:00:00+00:00",
+      "updated": "2025-11-17T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://www.semanticscholar.org/paper/9f8cd6e22367d39adb7aa6fcaec937371ff9abce",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 12,
+      "influential_citation_count": 1,
+      "s2_url": "https://www.semanticscholar.org/paper/9f8cd6e22367d39adb7aa6fcaec937371ff9abce",
+      "tldr": null,
+      "matched_keywords": [
+        "surrogate model",
+        "robot",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "힘 조절부터 정밀 조작까지: 다지 로봇 손의 정교한 조작 능력 학습",
+      "summary_ko": "- 다지 로봇 손은 강력한 움켜쥐기(power grasp)에는 효과적이지만, 정밀한 조작에는 평행 그리퍼가 더 널리 사용됩니다.\n- 본 연구는 다지 로봇 손의 제어와 하드웨어 설계를 공동으로 최적화하여 이 간극을 해소합니다.\n- 손 전체를 재설계하는 대신, 가벼운 손가락 끝 기하학적 변형을 도입하고 제어와 함께 최적화합니다.\n- 시뮬레이션과 실제 환경 실험에서 미확인 물체에 대한 정밀 집기 성공률 82.5%, 빵 집기 성공률 93.3%를 달성했습니다.\n- 이 공동 설계 프레임워크는 강력한 움켜쥐기 능력을 유지하면서 다지 로봇 손의 정밀 조작 능력을 크게 향상시킵니다.",
+      "tags": [
+        "로봇 공학",
+        "다지 로봇 손",
+        "정밀 조작",
+        "공동 설계"
+      ],
+      "topics": [
+        "설계최적화·생성형 설계"
+      ]
+    },
+    {
+      "arxiv_id": "2610.40260",
+      "title": "Unweaving the mechanics of woven fabrics through automated model discovery",
+      "authors": [
+        "Marin Lauber",
+        "Uzair Manack",
+        "Thibault Vervenne",
+        "Rogier P. Krijnen",
+        "Benjamin Alheit",
+        "Nele Famaey",
+        "Mathias Peirlinck"
+      ],
+      "summary": "Woven fabrics have multiple structural, aesthetic, and medical applications that require knowledge of their mechanical properties. While isolated fiber properties are easily determined, bulk properties of woven material, which can be coated or locally reinforced, require knowledge of yarn density, weave style, and other characteristics that are difficult to obtain experimentally. Additionally, fiber rearrangement, twist, yarn contact, and fiber-direction coupling result in non-linear mechanical responses. As a result, there is no universal material model for woven materials, and each fabric requires a specific model and parameter calibration. Recently, methods to simultaneously discover material models and their parameters from experimental or synthetic datasets have been proposed. Here, we use automated model discovery to simultaneously extract the material model and its parameters from biaxial test data of a TPU-coated woven nylon fabric. We show that Constitutive Artificial Neural Networks discover a sparse three-term hyperelastic material law with one isotropic and two anisotropic contributions, reproducing the measured biaxial response with a mean $R^2=0.97$. Across 20 initializations, predictive accuracy remains robust despite variations in the exact sparse representation, consistent with strong correlations between several candidate terms. LARS-LASSO independently recovers the same dominant constitutive contributions at approximately 100-fold lower computational cost. These results are directly applicable to numerical finite-element models of fabric-based structures, including soft robotic devices. More broadly, these results provide a foundation for further model discovery, improved constitutive modeling, and mechanistically informed optimization of woven fabric structures.",
+      "categories": [
+        "cs.CE"
+      ],
+      "published": "2026-10-29T15:24:15+00:00",
+      "updated": "2026-10-29T15:24:15+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2610.40260v1",
+      "abs_url": "https://arxiv.org/abs/2610.40260",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/6718a4740f0cabf7663d95bcc4d1f344fa5c2f3d",
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "structural",
+        "elastic",
+        "robot",
+        "mechanical",
+        "relevance:0.85"
+      ],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "자동화된 모델 발견을 통한 직조 직물의 역학 분석",
+      "summary_ko": "- 직조 직물은 복잡한 비선형 기계적 반응을 보여 보편적인 재료 모델이 없습니다.\n- 이 연구는 자동화된 모델 발견(automated model discovery)을 이용해 직조 직물의 재료 모델을 추출합니다.\n- TPU 코팅 나일론 직물의 이축 시험 데이터로 Constitutive Artificial Neural Networks를 훈련했습니다.\n- 평균 R²=0.97로 측정된 이축 반응을 재현하는 희소한 3항 초탄성 재료 법칙을 발견했습니다.\n- 이 방법은 직물 기반 구조의 유한 요소 모델에 직접 적용 가능하며, 모델 최적화에 기여합니다.",
+      "tags": [
+        "재료 모델링",
+        "자동화된 모델 발견",
+        "직조 직물",
+        "기계공학"
+      ],
+      "topics": [
+        "시뮬레이션·구조해석"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.7736/jkspe.026.00036",
+      "title": "Continuously Varying Data Collection for Machine Learning-based Milling Cutting Force Prediction",
+      "authors": [
+        "Sangjin Maeng",
+        "Byung-Min Kim"
+      ],
+      "summary": "Accurate prediction of cutting forces in milling is crucial for intelligent machining. However, traditional methods of collecting discrete data are often time-consuming and can lead to overfitting due to data sparsity. This study introduces a continuously variable data collection strategy designed to efficiently gather training data for machine learning models. By linearly varying the feed rate and radial depth of cut along a single tool path, we obtained continuous data that reflect the variations in machining conditions. Additionally, we applied trigonometric feature transformation to the tool rotation angle to maintain its periodic characteristics. The collected data were used to train Artificial Neural Network (ANN), Support Vector Regression (SVR), and Gaussian Process Regression (GPR) models. The results demonstrate that models trained with continuous data exhibit improved generalization performance under unseen conditions compared to those trained with discrete data. Furthermore, comparable predictive accuracy was achieved using a subset of the continuous dataset. These findings suggest that the proposed approach enhances data efficiency in model training and has the potential to reduce the experimental effort required in developing machining monitoring systems.",
+      "categories": [],
+      "published": "2026-10-01T00:00:00+00:00",
+      "updated": "2026-10-01T00:00:00+00:00",
+      "pdf_url": "https://jkspe.or.kr/upload/pdf/JKSPE-026-00036.pdf",
+      "abs_url": "https://doi.org/10.7736/jkspe.026.00036",
+      "track": "kr",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "machine learning",
+        "neural network",
+        "relevance:0.60"
+      ],
+      "affiliations": [
+        "Hongik University"
+      ],
+      "source": "openalex_kr",
+      "hf_upvotes": null,
+      "venue": "한국정밀공학회지",
+      "title_local": null,
+      "title_ko": "머신러닝 기반 밀링 절삭력 예측을 위한 연속 가변 데이터 수집",
+      "summary_ko": "- 밀링 절삭력 예측은 지능형 가공에 필수적이나, 기존의 이산(discrete) 데이터 수집은 비효율적이고 과적합을 유발할 수 있습니다.\n- 본 연구는 머신러닝 모델 훈련을 위한 효율적인 연속 가변 데이터 수집 전략을 제안합니다.\n- 단일 공구 경로에서 이송 속도와 반경 방향 절삭 깊이를 선형적으로 변화시켜 연속 데이터를 얻고, 공구 회전 각도에는 삼각 함수 특징 변환을 적용했습니다.\n- 연속 데이터로 훈련된 ANN, SVR, GPR 모델은 이산 데이터 모델보다 미지의 조건에서 향상된 일반화 성능을 보였습니다.\n- 제안된 접근 방식은 모델 훈련의 데이터 효율성을 높여 가공 모니터링 시스템 개발에 필요한 실험 노력을 줄일 수 있습니다.",
+      "tags": [
+        "머신러닝",
+        "밀링 절삭력",
+        "데이터 수집",
+        "지능형 가공"
+      ],
+      "topics": [
+        "진단·디지털트윈"
+      ]
+    }
+  ]
+}

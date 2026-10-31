@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-11-02 · AI &amp; AI 활용 기계공학 주간 논문 브리핑</title>
+<meta name="description" content="매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI &amp; AI 활용 기계공학 주간 논문 브리핑">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="2026-11-02 주차 · AI &amp; AI 활용 기계공학 주간 논문 브리핑">
+<meta property="og:description" content="마이크로 편집: 영화의 미세 조정 편집을 위한 전산 지원 외 3편 — AI 2편 · 기계공학 2편 + 국내 1편">
+<meta property="og:url" content="https://weekly-paper-briefing-ai.pages.dev/weeks/2026-11-02.html"><meta property="og:image" content="https://weekly-paper-briefing-ai.pages.dev/og/2026-11-02.4ceb6e5aab.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png"><meta name="theme-color" content="#0071e3">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fbfbfd;
+    --text: #1d1d1f;
+    --text-soft: #6e6e73;
+    --text-muted: #86868b;
+    --line: #d2d2d7;
+    --line-soft: #f5f5f7;
+    --accent: #0071e3;
+    --accent-hover: #0077ed;
+    --ai: #0071e3;
+    --mech: #00875a;
+    --kr: #c2410c;          /* 국내 논문(+1편) */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 1px 1px rgba(0,0,0,0.02);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
+    --shadow-lg: 0 20px 48px rgba(0,0,0,0.08), 0 6px 12px rgba(0,0,0,0.05);
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+      "SF Pro Display", "SF Pro Text", "Apple SD Gothic Neo", "Segoe UI",
+      "Noto Sans KR", Roboto, sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv11", "tnum";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.55;
+    letter-spacing: -0.011em;
+    overflow-x: hidden;
+    word-break: keep-all;      /* 한국어 어절 단위 줄바꿈 */
+    overflow-wrap: anywhere;   /* 매우 긴 영문 토큰(URL 등)만 예외적으로 줄바꿈 */
+  }
+  /* ----- 애니메이션 배경 (gradient blobs) ----- */
+  .bg-stage {
+    position: fixed; inset: 0; z-index: -1; overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+  }
+  .blob {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); opacity: 0.55;
+    will-change: transform;
+    animation: drift 22s ease-in-out infinite alternate;
+  }
+  .blob.b1 { width: 520px; height: 520px; left: -120px; top: -140px;
+    background: radial-gradient(circle, #cce4ff 0%, transparent 70%); }
+  .blob.b2 { width: 460px; height: 460px; right: -100px; top: 30%;
+    background: radial-gradient(circle, #dff5ea 0%, transparent 70%);
+    animation-duration: 28s; animation-delay: -6s; }
+  .blob.b3 { width: 400px; height: 400px; left: 35%; bottom: -120px;
+    background: radial-gradient(circle, #f2e5ff 0%, transparent 70%);
+    animation-duration: 32s; animation-delay: -12s; }
+  @keyframes drift {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(40px, 30px) scale(1.08); }
+    100% { transform: translate(-30px, 50px) scale(0.96); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .blob { animation: none; }
+  }
+  /* ----- Layout ----- */
+  .wrap { max-width: 980px; margin: 0 auto; padding: 64px 24px 96px; }
+  @media (max-width: 720px) { .wrap { padding: 40px 18px 64px; } }
+
+  /* ----- Header (hero) ----- */
+  header.site { margin-bottom: 56px; }
+  header.site .eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--accent); text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px;
+    background: rgba(0,113,227,0.08);
+    margin-bottom: 16px;
+  }
+  header.site h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+  header.site h1 a { color: inherit; text-decoration: none; }
+  header.site .lede {
+    margin: 0; color: var(--text-soft);
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    max-width: 640px;
+  }
+  /* 2줄 제목의 트랙명은 트랙 배지 색(파랑/초록) 그라데이션 */
+  header.site .hero-ai, header.site .hero-mech {
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+  header.site .hero-ai   { background-image: linear-gradient(90deg, var(--ai), #5e5ce6); }
+  header.site .hero-mech { background-image: linear-gradient(90deg, var(--mech), #30b47a); }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 13px; border-radius: 999px;
+    background: #fff; border: 1px solid #e8e8ed;
+    font-size: 0.88rem; font-weight: 500; color: var(--text);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    white-space: nowrap;
+  }
+  .hero-chip b { color: var(--accent); font-weight: 600; }
+  .hero-chip .kr-chip { color: var(--kr); font-weight: 600; }
+  header.site .home-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.9rem; color: var(--text-soft); margin-bottom: 12px;
+    text-decoration: none;
+    transition: color 0.2s var(--ease);
+  }
+  header.site .home-link:hover { color: var(--accent); }
+
+  /* ----- Links ----- */
+  a { color: var(--accent); text-decoration: none; transition: color 0.2s var(--ease); }
+  a:hover { color: var(--accent-hover); }
+
+  /* ----- Badges ----- */
+  .badge {
+    display: inline-flex; align-items: center;
+    font-size: 0.72rem; font-weight: 600;
+    padding: 3px 10px; border-radius: 999px;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    white-space: nowrap; flex-shrink: 0;
+    transition: all 0.2s var(--ease);
+  }
+  .badge.ai   { background: rgba(0,113,227,0.10); color: var(--ai); }
+  .badge.mech { background: rgba(0,135,90,0.10);  color: var(--mech); }
+  .badge.kr   { background: rgba(194,65,12,0.10); color: var(--kr); }
+
+  /* ----- Week cards (index) ----- */
+  .week-card {
+    display: block; position: relative;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 28px 32px; margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.3s var(--ease);
+    text-decoration: none; color: inherit;
+  }
+  .week-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0,113,227,0.25);
+  }
+  .week-card h2 {
+    margin: 0 0 14px;
+    font-size: 1.35rem; font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  }
+  .week-card .week-date { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+  .week-card ul {
+    margin: 8px 0 0; padding: 0; list-style: none;
+    color: var(--text-soft); font-size: 0.96rem;
+  }
+  .week-card ul li {
+    padding: 4px 0;
+    position: relative;
+    padding-left: 18px;
+  }
+  .week-card ul li::before {
+    content: ""; position: absolute; left: 0; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); opacity: 0.5;
+  }
+
+  /* ----- Paper card (week) ----- */
+  .paper {
+    position: relative;
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 32px 36px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+  .paper:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .paper.ai::before, .paper.mech::before, .paper.kr::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+  .paper.ai::before   { background: linear-gradient(180deg, #0071e3, #5ac8fa); }
+  .paper.mech::before { background: linear-gradient(180deg, #00875a, #30d158); }
+  .paper.kr::before   { background: linear-gradient(180deg, #c2410c, #fb923c); }
+  .paper .venue { color: var(--kr); font-weight: 600; }
+  .paper.mech .venue { color: var(--mech); }
+
+  /* ----- 국내 논문 +1편: 기존 4편과 구분되는 보너스 섹션 ----- */
+  .kr-section { margin-top: 40px; padding-top: 28px; border-top: 1px dashed rgba(194,65,12,0.35); }
+  .kr-section h2 .kr-plus { color: var(--kr); margin-right: 4px; }
+  .kr-note { margin: -6px 0 16px; font-size: 0.86rem; color: var(--text-muted); }
+  .toc-plus { margin-left: 6px; color: var(--kr); font-weight: 700; }
+  .toc-kr { margin-top: 8px; padding-top: 10px; border-top: 1px dashed rgba(194,65,12,0.3); }
+
+  .paper .meta { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 6px; }
+  .paper h3 {
+    margin: 4px 0 6px;
+    font-size: 1.25rem; font-weight: 600;
+    letter-spacing: -0.015em; line-height: 1.4;
+  }
+  .paper h3 a { color: var(--text); }
+  .paper h3 a:hover { color: var(--accent); }
+  .paper .title-ko {
+    font-size: 1.02rem; font-weight: 500;
+    color: var(--text-soft); margin: 0 0 12px;
+    letter-spacing: -0.008em; line-height: 1.5;
+  }
+  .paper .authors { color: var(--text-soft); font-size: 0.88rem; margin-bottom: 4px; }
+  .paper .affiliations {
+    color: var(--text-muted); font-size: 0.8rem;
+    margin: 0 0 14px; line-height: 1.5;
+  }
+  .paper .affiliations::before {
+    content: "🏛"; margin-right: 6px; opacity: 0.7; font-size: 0.85em;
+  }
+  .slot-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.02em;
+    padding: 3px 9px; border-radius: 999px;
+    text-transform: uppercase; margin-left: 8px; vertical-align: middle;
+  }
+  .slot-badge.impact { background: rgba(255,149,0,0.10); color: #b25800; }
+  .slot-badge.latest { background: rgba(88,86,214,0.10); color: #4a40bd; }
+
+  .stats { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 14px; }
+  .stats .chip {
+    background: var(--line-soft);
+    color: var(--text-soft);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 0.78rem; font-weight: 500;
+  }
+
+  .summary { margin: 4px 0 0; }
+  .summary ul {
+    margin: 0; padding: 0; list-style: none;
+  }
+  .summary ul li {
+    position: relative; padding: 10px 0 10px 28px;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 1rem; line-height: 1.6;
+  }
+  .summary ul li:last-child { border-bottom: none; }
+  .summary ul li::before {
+    content: counter(s);
+    counter-increment: s;
+    position: absolute; left: 0; top: 10px;
+    width: 20px; height: 20px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.7rem; font-weight: 600;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .summary ul { counter-reset: s; }
+
+  .tags { margin-top: 16px; }
+  .tag {
+    display: inline-block;
+    font-size: 0.76rem; font-weight: 500;
+    color: var(--accent);
+    background: rgba(0,113,227,0.08);
+    border-radius: 999px;
+    padding: 4px 11px;
+    margin: 0 6px 6px 0;
+    transition: background 0.2s var(--ease);
+  }
+  .tag:hover { background: rgba(0,113,227,0.14); }
+
+  .links {
+    margin-top: 18px;
+    display: flex; gap: 10px; flex-wrap: wrap;
+  }
+  .links a {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.88rem; font-weight: 500;
+    color: var(--text-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 6px 14px;
+    transition: all 0.2s var(--ease);
+  }
+  .links a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(0,113,227,0.04);
+  }
+
+  /* ----- Interests panel (index) ----- */
+  .interests {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 22px 26px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .interests-title {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--text-muted); text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .interests-row {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 6px 0;
+  }
+  .interests-row + .interests-row {
+    border-top: 1px solid var(--line-soft);
+    padding-top: 12px; margin-top: 4px;
+  }
+  .interests-row .badge { font-size: 0.74rem; padding: 4px 12px; flex-shrink: 0; }
+  .interests-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .interest-chip {
+    font-size: 0.82rem; color: var(--text-soft);
+    background: var(--line-soft);
+    border-radius: 8px;
+    padding: 4px 11px;
+  }
+
+  /* ----- TOC / Filter ----- */
+  .toc {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 22px 26px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc-title {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--text-muted); text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .toc-list { display: flex; flex-direction: column; gap: 6px; }
+  .toc-list a {
+    display: flex; align-items: flex-start; gap: 10px;
+    color: var(--text); font-size: 0.96rem;
+    padding: 6px 0;
+    border-radius: 8px;
+    transition: color 0.2s var(--ease), padding 0.2s var(--ease);
+  }
+  .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+  .toc-list a .badge { min-width: 7.6em; justify-content: center; margin-top: 2px; }
+  .toc-list a > span:last-child { min-width: 0; line-height: 1.5; }
+  /* 휴대폰 폭: 배지를 제목 위로 올려 제목이 전체 폭을 쓰도록 */
+  @media (max-width: 520px) {
+    .toc-list a { flex-direction: column; gap: 4px; padding: 8px 0; }
+    .toc-list a .badge { min-width: 0; margin-top: 0; }
+  }
+
+  .filter-bar {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin: 0 0 24px;
+  }
+  .filter-btn {
+    appearance: none; cursor: pointer;
+    font-family: inherit; font-size: 0.88rem; font-weight: 500;
+    color: var(--text-soft);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 16px;
+    transition: all 0.2s var(--ease);
+  }
+  .filter-btn:hover { color: var(--text); border-color: var(--text-muted); }
+  .filter-btn.active {
+    color: #fff; background: var(--text); border-color: var(--text);
+  }
+
+  /* ----- Track section header ----- */
+  .track-section { margin-top: 56px; }
+  .track-section:first-of-type { margin-top: 40px; }
+  .track-section h2 {
+    margin: 0 0 24px;
+    font-size: 1.6rem; font-weight: 600;
+    letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .track-section h2 .badge { font-size: 0.72rem; padding: 4px 12px; }
+
+  /* ----- Back-to-index pill (week 페이지 하단) ----- */
+  .back-pill-wrap {
+    display: flex; justify-content: center;
+    margin: 56px 0 16px;
+  }
+  .back-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.95rem; font-weight: 500;
+    color: var(--text);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 11px 22px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s var(--ease);
+    text-decoration: none;
+  }
+  .back-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .back-pill .arrow { transition: transform 0.25s var(--ease); }
+  .back-pill:hover .arrow { transform: translateX(-3px); }
+
+  /* ----- Footer ----- */
+  footer.site {
+    margin-top: 32px; padding-top: 28px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--text-muted); font-size: 0.82rem;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px 24px; flex-wrap: wrap;
+  }
+  footer.site .dev { display: flex; align-items: center; gap: 12px; }
+  footer.site .dev-avatar {
+    flex: none; display: inline-grid; place-items: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--ai), var(--mech));
+    color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.02em;
+  }
+  footer.site .dev-name { color: var(--text); font-weight: 600; font-size: 0.92rem; }
+  footer.site .dev-contact { margin-top: 2px; }
+  footer.site .dev-contact a { color: var(--text-muted); }
+  footer.site .dev-contact a:hover { color: var(--accent); }
+  footer.site .build-meta { text-align: right; line-height: 1.6; }
+  @media (max-width: 520px) {
+    footer.site .build-meta { text-align: left; }
+  }
+
+  /* ----- Scroll reveal ----- */
+  .reveal {
+    opacity: 0; transform: translateY(18px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ----- Hidden by filter ----- */
+  .filter-hidden { display: none !important; }
+
+  /* ----- 예약 공개 전 숨김 (publish_at 미래) ----- */
+  .pending-hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="bg-stage" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+<div class="wrap">
+  <header class="site">
+<a class="home-link" href="../index.html">← 전체 목록</a>    <span class="eyebrow">2026-11-02</span>
+    <h1><a href="../index.html"><span class="hero-ai">AI</span> &amp; <span class="hero-mech">AI 활용 기계공학</span><br>주간 논문 브리핑</a></h1>
+    <p class="lede">매주 월요일 아침, 꼭 읽어볼 만한 논문 4편을 한국어로 정리해 드립니다.</p>
+    <div class="hero-chips">
+      <span class="hero-chip">📅 매주 <b>월 08:00</b> 공개</span>
+      <span class="hero-chip">🔥 임팩트 + 🆕 최신</span>
+      <span class="hero-chip">📚 논문 <b>4편</b> <span class="kr-chip">+ 국내 1편</span></span>
+      <span class="hero-chip">📝 한국어 5줄 요약</span>
+    </div>
+  </header>
+  <div id="publish-notice" data-publish-at="2026-11-02T08:00:00+09:00" style="display:none; text-align:center; padding:48px 0;">
+    <p style="font-size:1.1rem; color:var(--text-soft);">이 주차 브리핑은 <strong>2026-11-02 8:00 (KST)</strong>에 공개됩니다.</p>
+    <div class="back-pill-wrap"><a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a></div>
+  </div>
+  <div data-gate-content>
+  <div class="toc reveal">
+    <div class="toc-title">이번 주 4편 <span class="toc-plus">+ 국내 1편</span></div>
+    <div class="toc-list">
+        <a href="#p-2610.40653">
+          <span class="badge ai">AI</span>
+          <span>마이크로 편집: 영화의 미세 조정 편집을 위한 전산 지원</span>
+        </a>
+        <a href="#p-2610.39633">
+          <span class="badge ai">AI</span>
+          <span>내재적 분포 매칭</span>
+        </a>
+        <a href="#p-2511.13710">
+          <span class="badge mech">AI 활용 기계공학</span>
+          <span>힘 조절부터 정밀 조작까지: 다지 로봇 손의 정교한 조작 능력 학습</span>
+        </a>
+        <a href="#p-2610.40260">
+          <span class="badge mech">AI 활용 기계공학</span>
+          <span>자동화된 모델 발견을 통한 직조 직물의 역학 분석</span>
+        </a>
+    </div>
+    <div class="toc-list toc-kr">
+        <a href="#p-doi:10.7736/jkspe.026.00036">
+          <span class="badge kr">+ 국내</span>
+          <span>머신러닝 기반 밀링 절삭력 예측을 위한 연속 가변 데이터 수집</span>
+        </a>
+    </div>
+  </div>
+
+  <div class="filter-bar reveal" role="tablist" aria-label="트랙 필터">
+    <button class="filter-btn active" data-track="all" type="button">전체</button>
+    <button class="filter-btn" data-track="ai" type="button">AI</button>
+    <button class="filter-btn" data-track="mech" type="button">AI 활용 기계공학</button>
+<button class="filter-btn" data-track="kr" type="button">+ 국내 논문</button>  </div>
+
+      <section class="track-section" data-track-block="ai">
+        <h2 class="reveal">
+AI
+          <span class="badge ai">2편</span>
+        </h2>
+          <article class="paper ai reveal" id="p-2610.40653" style="transition-delay: 0ms;">
+            <div class="meta">
+cs.HC, cs.CV · 발표 2026-10-29<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2610.40653" target="_blank" rel="noopener">Micro-Edits: Computational Support for Fine-Scale Edits in Film</a></h3>
+<p class="title-ko">마이크로 편집: 영화의 미세 조정 편집을 위한 전산 지원</p>            <div class="authors">Nhan Tran, Hijung Valentina Shin, Abe Davis, Mackenzie Leake</div>
+<div class="affiliations">Cornell University · Adobe Research · MIT</div>            <div class="stats">
+<span class="chip">인용 1</span>            </div>
+            <div class="summary">
+              <ul>
+<li>영화 편집에서 미세한 타이밍 조정 같은 &#39;마이크로 편집&#39;은 중요하지만, 기존 도구로는 어렵고 시간이 많이 소요됩니다.</li><li>본 연구는 전문 편집자들과의 연구를 통해 마이크로 편집의 구조와 활용법을 먼저 이해했습니다.</li><li>이를 바탕으로 마이크로 편집 구조를 수학적으로 정형화하고, AI 및 최적화 기술을 활용한 도구를 개발했습니다.</li><li>개발된 도구는 사용자가 마이크로 편집을 더 쉽고 효율적으로 탐색할 수 있도록 돕습니다.</li><li>다양한 사용자 연구와 비디오 예시를 통해 도구의 유효성을 검증하여 영화 편집의 효율성을 높였습니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> This work starts by conducting a formative study with professional editors to understand the structure of micro-edits and how they are used, and derives a mathematical formalization for this structure to develop tools that leverage AI and optimization to make exploring micro-edits simpler and more efficient for users.</div><div class="tags"><span class="tag">#영화 편집</span><span class="tag">#AI</span><span class="tag">#최적화</span><span class="tag">#사용자 인터페이스</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2610.40653" target="_blank" rel="noopener">arXiv</a>
+<a href="https://arxiv.org/pdf/2610.40653v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/2e45afb9fbfd7e8c47cacb17f06f8573f0f62c9e" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper ai reveal" id="p-2610.39633" style="transition-delay: 60ms;">
+            <div class="meta">
+cs.CV, cs.AI · 발표 2026-10-29<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2610.39633" target="_blank" rel="noopener">Intrinsic Distribution Matching</a></h3>
+<p class="title-ko">내재적 분포 매칭</p>            <div class="authors">Deyuan Liu, Yansen Han, Kaiwen Zheng, Jun Xie, Jiacheng Liu, Zhenglin Cheng, Peng Sun, Jintao Zhang 외 2명</div>
+<div class="affiliations">Zhejiang University · Westlake University · Tsinghua University</div>            <div class="stats">
+<span class="chip">HF upvotes 239</span>            </div>
+            <div class="summary">
+              <ul>
+<li>텍스트-이미지 생성 모델은 적은 수정 기회에도 프롬프트의 세부 사항을 정확히 표현해야 합니다.</li><li>이 연구는 기존 분포 매칭 증류(DMD)에 명시적인 모멘트 제약(moment constraint)을 추가한 IDM을 제안합니다.</li><li>IDM은 생성기(generator)의 EMA 복사본을 활용하여 특징(feature)의 평균과 좌표별 표준 편차를 맞춥니다.</li><li>Z-Image-Turbo 6B 및 Qwen-Image 20B 모델에서 LongText-Bench 벤치마크 최고 점수를 달성했습니다.</li><li>외부 특징 인코더 없이도 경쟁력 있는 성능을 보여, 효율적인 텍스트-이미지 생성에 기여합니다.</li>              </ul>
+            </div>
+<div class="meta" style="margin-top: 12px"><em>TLDR (Semantic Scholar):</em> Intrinsic Distribution Matching is introduced, which retains the full DMD correction and matches feature means and per-coordinate standard deviations using the generator&#39;s exponential-moving-average (EMA) copy, requiring no external feature encoder.</div><div class="tags"><span class="tag">#텍스트-이미지 생성</span><span class="tag">#분포 매칭</span><span class="tag">#딥러닝</span><span class="tag">#이미지 합성</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2610.39633" target="_blank" rel="noopener">arXiv</a>
+<a href="https://arxiv.org/pdf/2610.39633v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/b3fa42a19197c385b9be8491b54f4fee0fc48b8f" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+      </section>
+      <section class="track-section" data-track-block="mech">
+        <h2 class="reveal">
+AI 활용 기계공학
+          <span class="badge mech">2편</span>
+        </h2>
+          <article class="paper mech reveal" id="p-2511.13710" style="transition-delay: 0ms;">
+            <div class="meta">
+발표 2025-11-17<span class="slot-badge impact">임팩트</span>            </div>
+            <h3><a href="https://www.semanticscholar.org/paper/9f8cd6e22367d39adb7aa6fcaec937371ff9abce" target="_blank" rel="noopener">From Power to Precision: Learning Fine-grained Dexterity for Multi-fingered Robotic Hands</a></h3>
+<p class="title-ko">힘 조절부터 정밀 조작까지: 다지 로봇 손의 정교한 조작 능력 학습</p>            <div class="authors">Jianglong Ye, Lai Wei, Guangqi Jiang, Chang-Wei Jing, Xue-Yan Zou, Xiao-Long Wang</div>
+            <div class="stats">
+<span class="chip">인용 12</span><span class="chip">영향력 인용 1</span><span class="chip">매칭: surrogate model, robot, relevance:0.90</span>            </div>
+            <div class="summary">
+              <ul>
+<li>다지 로봇 손은 강력한 움켜쥐기(power grasp)에는 효과적이지만, 정밀한 조작에는 평행 그리퍼가 더 널리 사용됩니다.</li><li>본 연구는 다지 로봇 손의 제어와 하드웨어 설계를 공동으로 최적화하여 이 간극을 해소합니다.</li><li>손 전체를 재설계하는 대신, 가벼운 손가락 끝 기하학적 변형을 도입하고 제어와 함께 최적화합니다.</li><li>시뮬레이션과 실제 환경 실험에서 미확인 물체에 대한 정밀 집기 성공률 82.5%, 빵 집기 성공률 93.3%를 달성했습니다.</li><li>이 공동 설계 프레임워크는 강력한 움켜쥐기 능력을 유지하면서 다지 로봇 손의 정밀 조작 능력을 크게 향상시킵니다.</li>              </ul>
+            </div>
+<div class="tags"><span class="tag">#로봇 공학</span><span class="tag">#다지 로봇 손</span><span class="tag">#정밀 조작</span><span class="tag">#공동 설계</span></div>            <div class="links">
+              <a href="https://www.semanticscholar.org/paper/9f8cd6e22367d39adb7aa6fcaec937371ff9abce" target="_blank" rel="noopener">원문</a>
+<a href="https://www.semanticscholar.org/paper/9f8cd6e22367d39adb7aa6fcaec937371ff9abce" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+          <article class="paper mech reveal" id="p-2610.40260" style="transition-delay: 60ms;">
+            <div class="meta">
+cs.CE · 발표 2026-10-29<span class="slot-badge latest">최신</span>            </div>
+            <h3><a href="https://arxiv.org/abs/2610.40260" target="_blank" rel="noopener">Unweaving the mechanics of woven fabrics through automated model discovery</a></h3>
+<p class="title-ko">자동화된 모델 발견을 통한 직조 직물의 역학 분석</p>            <div class="authors">Marin Lauber, Uzair Manack, Thibault Vervenne, Rogier P. Krijnen, Benjamin Alheit, Nele Famaey, Mathias Peirlinck</div>
+            <div class="stats">
+<span class="chip">매칭: neural network, structural, elastic, robot, mechanical, relevance:0.85</span>            </div>
+            <div class="summary">
+              <ul>
+<li>직조 직물은 복잡한 비선형 기계적 반응을 보여 보편적인 재료 모델이 없습니다.</li><li>이 연구는 자동화된 모델 발견(automated model discovery)을 이용해 직조 직물의 재료 모델을 추출합니다.</li><li>TPU 코팅 나일론 직물의 이축 시험 데이터로 Constitutive Artificial Neural Networks를 훈련했습니다.</li><li>평균 R²=0.97로 측정된 이축 반응을 재현하는 희소한 3항 초탄성 재료 법칙을 발견했습니다.</li><li>이 방법은 직물 기반 구조의 유한 요소 모델에 직접 적용 가능하며, 모델 최적화에 기여합니다.</li>              </ul>
+            </div>
+<div class="tags"><span class="tag">#재료 모델링</span><span class="tag">#자동화된 모델 발견</span><span class="tag">#직조 직물</span><span class="tag">#기계공학</span></div>            <div class="links">
+              <a href="https://arxiv.org/abs/2610.40260" target="_blank" rel="noopener">arXiv</a>
+<a href="https://arxiv.org/pdf/2610.40260v1" target="_blank" rel="noopener">PDF</a><a href="https://www.semanticscholar.org/paper/6718a4740f0cabf7663d95bcc4d1f344fa5c2f3d" target="_blank" rel="noopener">Semantic Scholar</a>            </div>
+          </article>
+      </section>
+      <section class="track-section kr-section" data-track-block="kr">
+        <h2 class="reveal">
+<span class="kr-plus">+</span>국내 논문
+          <span class="badge kr">1편</span>
+        </h2>
+<p class="kr-note reveal">이번 주 4편에 더해, 국내 학술지에서 AI를 활용한 기계공학 논문을 골랐습니다.</p>          <article class="paper kr reveal" id="p-doi:10.7736/jkspe.026.00036" style="transition-delay: 0ms;">
+            <div class="meta">
+<span class="venue">📘 한국정밀공학회지</span> · 발표 2026-10-01            </div>
+            <h3><a href="https://doi.org/10.7736/jkspe.026.00036" target="_blank" rel="noopener">Continuously Varying Data Collection for Machine Learning-based Milling Cutting Force Prediction</a></h3>
+<p class="title-ko">머신러닝 기반 밀링 절삭력 예측을 위한 연속 가변 데이터 수집</p>            <div class="authors">Sangjin Maeng, Byung-Min Kim</div>
+<div class="affiliations">Hongik University</div>            <div class="stats">
+<span class="chip">매칭: machine learning, neural network, relevance:0.60</span>            </div>
+            <div class="summary">
+              <ul>
+<li>밀링 절삭력 예측은 지능형 가공에 필수적이나, 기존의 이산(discrete) 데이터 수집은 비효율적이고 과적합을 유발할 수 있습니다.</li><li>본 연구는 머신러닝 모델 훈련을 위한 효율적인 연속 가변 데이터 수집 전략을 제안합니다.</li><li>단일 공구 경로에서 이송 속도와 반경 방향 절삭 깊이를 선형적으로 변화시켜 연속 데이터를 얻고, 공구 회전 각도에는 삼각 함수 특징 변환을 적용했습니다.</li><li>연속 데이터로 훈련된 ANN, SVR, GPR 모델은 이산 데이터 모델보다 미지의 조건에서 향상된 일반화 성능을 보였습니다.</li><li>제안된 접근 방식은 모델 훈련의 데이터 효율성을 높여 가공 모니터링 시스템 개발에 필요한 실험 노력을 줄일 수 있습니다.</li>              </ul>
+            </div>
+<div class="tags"><span class="tag">#머신러닝</span><span class="tag">#밀링 절삭력</span><span class="tag">#데이터 수집</span><span class="tag">#지능형 가공</span></div>            <div class="links">
+              <a href="https://doi.org/10.7736/jkspe.026.00036" target="_blank" rel="noopener">원문(DOI)</a>
+<a href="https://jkspe.or.kr/upload/pdf/JKSPE-026-00036.pdf" target="_blank" rel="noopener">PDF</a>            </div>
+          </article>
+      </section>
+
+  <div class="back-pill-wrap reveal">
+    <a class="back-pill" href="../index.html"><span class="arrow">←</span>전체 주차 목록으로</a>
+  </div>
+
+  <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.85rem; text-align: center;">
+    선정 기준: 임팩트(최근 365일, 영향력 인용 가중) + 최신(최근 14일) · 요약 엔진: openai_compat
+  </p>
+  </div>  <script>
+    // 직접 URL 접근 방어: 공개 시각 전이면 본문을 가리고 안내만 노출 (브라우저 시계 기준).
+    (function() {
+      var n = document.getElementById('publish-notice');
+      if (!n) return;
+      var t = Date.parse(n.dataset.publishAt);
+      if (isNaN(t) || Date.now() >= t) return;   // 형식 이상 또는 공개 시각 지남 → 정상 노출
+      var c = document.querySelector('[data-gate-content]');
+      if (c) c.style.display = 'none';
+      n.style.display = '';
+    })();
+  </script>
+  <footer class="site">
+    <div class="dev">
+      <span class="dev-avatar" aria-hidden="true">EL</span>
+      <div class="dev-text">
+        <div class="dev-name">Developed by Eunseong Lee</div>
+<div class="dev-contact">문의 · <a class="js-mail" href="#" data-u="eunseong.lee91" data-d="gmail.com">이메일</a></div>      </div>
+    </div>
+    <div class="build-meta">
+      <div>마지막 업데이트 2026-10-31 (토)</div>
+      <div>arXiv · Semantic Scholar · OpenAlex · Crossref · Hugging Face · Gemini 요약</div>
+    </div>
+  </footer>
+</div>
+<script>
+  // 문의 메일: 아이디·도메인을 여기서 조립 → HTML 소스에는 완성된 주소가 없어 수집 봇 회피
+  document.querySelectorAll('a.js-mail').forEach(function (a) {
+    var addr = a.dataset.u + '@' + a.dataset.d;
+    a.href = 'mai' + 'lto:' + addr;
+    a.textContent = addr;
+  });
+</script>
+<script>
+  // 예약 공개: data-publish(=월요일 08:00 등) 시각이 미래인 항목은 그 시각까지 숨김.
+  // 브라우저 시계 기준이라 GitHub Actions 스케줄 지연과 무관하게 정시에 노출된다.
+  (function() {
+    var nodes = document.querySelectorAll('[data-publish]');
+    if (!nodes.length) return;
+    var now = Date.now();
+    nodes.forEach(function(el) {
+      var t = Date.parse(el.dataset.publish);
+      if (isNaN(t)) return;                 // 파싱 실패 → 그냥 노출
+      if (now >= t) { el.classList.remove('pending-hidden'); return; }
+      el.classList.add('pending-hidden');   // 아직 공개 전 → 숨김
+      var delay = t - now;
+      if (delay < 2147483647) {             // setTimeout 32-bit 한계 내에서만 예약 노출
+        setTimeout(function() {
+          el.classList.remove('pending-hidden');
+          el.classList.add('visible');      // 스크롤 reveal 트랜지션 즉시 표시
+        }, delay);
+      }
+    });
+  })();
+
+  // 스크롤 reveal
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.05 });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // 트랙 필터
+  (function() {
+    var bar = document.querySelector('.filter-bar');
+    if (!bar) return;
+    bar.addEventListener('click', function(e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      var target = btn.dataset.track;  // "all" | "ai" | "mech"
+      bar.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
+      document.querySelectorAll('[data-track-block]').forEach(function(block){
+        var t = block.dataset.trackBlock;
+        block.classList.toggle('filter-hidden', !(target === 'all' || t === target));
+      });
+    });
+  })();
+</script>
+</body>
+</html>
