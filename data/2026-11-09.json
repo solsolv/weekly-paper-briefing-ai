@@ -1,0 +1,495 @@
+{
+  "week_id": "2026-11-09",
+  "generated_at": "2026-11-07T06:41:17.092867+00:00",
+  "publish_at": "2026-11-09T08:00:00+09:00",
+  "site_title": "AI & AI 활용 기계공학 주간 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2611.08138",
+        "title": "Describe Your Facial Expressions by Linking Image Encoders and Large Language Models",
+        "authors": [
+          "Yujian Yuan",
+          "Jiabei Zeng",
+          "Shiguang Shan"
+        ],
+        "summary": "This paper presents a novel task of describing human facial expressions of a facial image in natural language, which captures the nuances of facial actions and emotional states beyond traditional emotion categories or facial action units (AUs). To achieve the facial expression captioning model, we propose a three-stage training framework that trains a vision-to-language model using synthesized image-text pairs and the BLIP-2 pre-training techniques. To overcome the challenge of missing training image-text pairs for facial expression captioning, we propose a strategy that involves synthesizing and combining captions using GPT-3.5 and existing annotations on either emotion categories or AUs. Experiments demonstrate the effectiveness of our method in generating captions that describe details of facial actions and emotions, as well as the inferential relationship between them, even when those emotions are not present in the training data. It is also demonstrated that the vision-to-language task enhances the performance of the intermediate visual features on both AU detection and emotion classification tasks.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-11-05T15:02:05+00:00",
+        "updated": "2026-11-05T15:02:05+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2611.08138v1",
+        "abs_url": "https://arxiv.org/abs/2611.08138",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 8,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/80980c20161b10ea4ed6e94f3bbeebb447adeb5b",
+        "tldr": "A three-stage training framework that trains a vision-to-language model using synthesized image-text pairs and the BLIP-2 pre-training techniques to overcome the challenge of missing training image-text pairs for facial expression captioning is proposed.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "이미지 인코더와 대규모 언어 모델 연결을 통한 얼굴 표정 묘사",
+        "summary_ko": "- 이 논문은 얼굴 이미지의 표정을 자연어로 묘사하는 새로운 과제를 제시합니다.\n- 훈련 데이터 부족을 해결하기 위해 GPT-3.5와 기존 주석을 활용하여 캡션을 합성합니다.\n- BLIP-2 사전 학습 기술을 사용하여 시각-언어 모델을 3단계로 훈련하는 프레임워크를 제안합니다.\n- 이 방법은 얼굴 동작과 감정의 세부 사항을 효과적으로 묘사하는 캡션을 생성합니다.\n- 또한, 이 시각-언어 과제는 AU 감지 및 감정 분류 성능을 향상합니다.",
+        "tags": [
+          "얼굴 표정",
+          "시각-언어 모델",
+          "캡션 생성",
+          "딥러닝"
+        ],
+        "topics": [
+          "멀티모달·비전·생성모델"
+        ]
+      },
+      {
+        "arxiv_id": "2611.08449",
+        "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+        "authors": [
+          "Yu-Cheng Chou",
+          "Shihao Wang",
+          "Jin Huang",
+          "Chi-Pin Huang",
+          "Chiao-An Yang",
+          "Xianzhe Fan",
+          "Jing Wang",
+          "Zhiqi Li",
+          "Yuanguo Kuang",
+          "Ruijie Zheng",
+          "Johan Bjorck",
+          "Sifei Liu",
+          "Hang Su",
+          "Abhishek Badki",
+          "Lei Zhang",
+          "Alan Yuille",
+          "Linxi \"Jim'' Fan",
+          "Jan Kautz",
+          "Zhiding Yu"
+        ],
+        "summary": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
+        "categories": [
+          "cs.RO",
+          "cs.CV"
+        ],
+        "published": "2026-11-05T18:44:43+00:00",
+        "updated": "2026-11-05T18:44:43+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2611.08449v1",
+        "abs_url": "https://arxiv.org/abs/2611.08449",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/0087267ec97a4c9599089519f3cd5cfceaa82bd6",
+        "tldr": "VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding, which trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement, and consistently reduces prediction errors relative to autoregressive decoding.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 96,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "VFlash: 플래시 프리미티브 디코딩을 통한 빠르고 정확한 시각 계획",
+        "summary_ko": "- 로봇 공학 등 물리적 AI는 시각적 계획을 사용하지만, 기존 방식은 예측 비용이 높습니다.\n- VFlash는 플래시 프리미티브 디코딩으로 시각적 프리미티브를 빠르게 예측합니다.\n- 경량 드래프터를 사용하여 프리미티브 전체를 한 번에 생성하며, 구조에 맞춰 조절됩니다.\n- VFlash는 2D 및 3D 로봇 궤적 예측에서 기존 방식보다 오류를 줄였습니다.\n- 3D 점 움직임 예측에서 약 25배 빠르며, 작업 성공률도 70.2%로 향상되었습니다.",
+        "tags": [
+          "시각 계획",
+          "로봇 공학",
+          "AI",
+          "프리미티브 디코딩"
+        ],
+        "topics": [
+          "강화학습·로보틱스"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "doi:10.1109/jsen.2025.3650493",
+        "title": "An Improved Variational Autoencoder and Graph Attention Network Method for Wear Prediction of Aerospace Self-Lubricating Bearing Using Acoustic Emission Signal",
+        "authors": [
+          "Danyue Shen",
+          "Shichang Du",
+          "Shuo Wang",
+          "Liang Yan",
+          "Shanshan Li",
+          "Xianmin Chen"
+        ],
+        "summary": "Aerospace self-lubricating bearings are critical components in aircraft transmission systems, where wear-induced degradation under high-load and dynamic conditions poses significant challenges to operational safety and system longevity. In recent years, deep learning methods have shown promise in wear prediction by leveraging abundant monitoring data from sensor networks. However, these methods often struggle to detect early-stage degradation and rely on labor-intensive feature engineering, limiting their effectiveness in handling noisy, high-dimensional data. To overcome these issues, this article proposes an improved variational autoencoder and graph attention network method for wear prediction based on acoustic emission (AE) signals. Firstly, a clustering-guided contrastive variational autoencoder (CGC-VAE) model is proposed to process noisy, high-dimensional AE signals. The CGC-VAE employs K-means clustering to segment wear stages, combined with gaussian mixture model (GMM) regularization and contrastive learning, to extract low-dimensional, discriminative latent features. Subsequently, a temporal graph attention network (T-GAT) is proposed to construct a dynamic graph based on temporal proximity and feature similarity, which can effectively model the spatiotemporal relationships of latent features. It employs graph attention mechanism and LSTM layer for accurate wear prediction. Finally, experimental validation on aerospace self-lubricating bearing datasets, covering full lifecycle and partial wear scenarios, demonstrates the superior accuracy and adaptability of the proposed method.",
+        "categories": [],
+        "published": "2026-01-12T00:00:00+00:00",
+        "updated": "2026-01-12T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://doi.org/10.1109/jsen.2025.3650493",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 102,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "deep learning",
+          "aerospace",
+          "relevance:0.85"
+        ],
+        "affiliations": [
+          "Shanghai Jiao Tong University",
+          "Aircraft Strength Research Institute (China)"
+        ],
+        "source": "openalex",
+        "hf_upvotes": null,
+        "venue": "IEEE Sensors Journal",
+        "title_local": null,
+        "title_ko": "음향 방출 신호를 활용한 항공 자가 윤활 베어링 마모 예측을 위한 개선된 변분 오토인코더 및 그래프 어텐션 네트워크 방법",
+        "summary_ko": "- 항공 자가 윤활 베어링의 마모는 항공기 안전에 중요하며, 기존 딥러닝은 초기 마모 감지 및 특징 추출에 한계가 있습니다.\n- 이 논문은 음향 방출(AE) 신호를 이용한 마모 예측을 위해 개선된 변분 오토인코더와 그래프 어텐션 네트워크를 제안합니다.\n- 제안된 CGC-VAE는 K-평균 군집화와 가우시안 혼합 모델(GMM) 정규화, 대조 학습으로 저차원 특징을 추출합니다.\n- 이후 T-GAT는 시간적 근접성과 특징 유사성을 기반으로 동적 그래프를 구성하여 시공간 관계를 모델링하고 마모를 예측합니다.\n- 전체 수명 주기 및 부분 마모 시나리오 데이터셋 검증을 통해 제안된 방법의 우수한 정확도와 적응성을 입증했습니다.",
+        "tags": [
+          "마모 예측",
+          "음향 방출 신호",
+          "변분 오토인코더",
+          "그래프 어텐션 네트워크"
+        ],
+        "topics": [
+          "진단·디지털트윈"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.1016/j.nxmate.2026.103972",
+        "title": "Finite element simulation of high-entropy alloys: Process-structure-property modelling across manufacturing and mechanical performance",
+        "authors": [
+          "Smith Adamu Salifu",
+          "Thato Tshephe",
+          "Peter Apata Olubambi"
+        ],
+        "summary": "High-entropy alloys (HEAs) combine strength, ductility, and thermal stability rarely achieved simultaneously by conventional alloys, but their compositional complexity and multiphase microstructures make experimental characterisation alone insufficient for understanding and optimising their behaviour. This review synthesises how finite element simulation has been used across the HEA development lifecycle, with emphasis on two areas where the field has matured fastest: manufacturing-process modelling (casting, spark plasma sintering, and additive manufacturing) and mechanical-performance prediction (elasticity, plasticity, fracture, fatigue, and creep). For each process and failure mode, the review extracts the quantitative trends reported in the literature, including stress, strain, and temperature magnitudes, reported model-experiment agreement and quantitative prediction errors where available, and processing-parameter sensitivities, rather than only describing model architectures. Crystal plasticity finite element modelling (CPFEM) is identified as the connective methodology linking manufacturing-induced microstructure to mechanical response, and the integration of machine learning (ML) with FEA, ranging from data-driven constitutive modelling to surrogate-based screening, is critically assessed, while physics-informed and inverse-design approaches are identified as emerging directions whose HEA-specific validation remains limited. The review argues that the principal barrier to predictive, integrated computational materials engineering (ICME) for HEAs is not a shortage of modelling techniques but the scarcity of validated thermomechanical property databases and in-situ experimental validation, and it concludes with a focused set of priorities for closing this gap.",
+        "categories": [],
+        "published": "2026-11-05T00:00:00+00:00",
+        "updated": "2026-11-05T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://doi.org/10.1016/j.nxmate.2026.103972",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "machine learning",
+          "physics-informed",
+          "data-driven",
+          "finite element",
+          "elastic",
+          "stress",
+          "fatigue",
+          "fracture",
+          "mechanical",
+          "relevance:0.85"
+        ],
+        "affiliations": [
+          "University of Johannesburg"
+        ],
+        "source": "openalex",
+        "hf_upvotes": null,
+        "venue": "Next Materials",
+        "title_local": null,
+        "title_ko": "고엔트로피 합금의 유한요소 시뮬레이션: 제조 및 기계적 성능 전반의 공정-구조-특성 모델링",
+        "summary_ko": "- 고엔트로피 합금(HEA)은 복잡한 조성과 다상 미세구조로 인해 실험만으로는 특성 이해 및 최적화에 한계가 있습니다.\n- 이 리뷰는 HEA 개발 주기 전반에 걸쳐 유한요소 시뮬레이션(FES)이 어떻게 활용되었는지 종합적으로 분석합니다.\n- 특히 제조 공정 모델링(주조, 스파크 플라즈마 소결, 적층 제조)과 기계적 성능 예측(탄성, 소성, 파괴, 피로, 크리프)에 중점을 둡니다.\n- 결정 소성 유한요소 모델링(CPFEM)이 제조 유도 미세구조와 기계적 반응을 연결하는 핵심 방법론으로 제시됩니다.\n- HEA의 예측 가능한 통합 전산 재료 공학(ICME)을 위한 주요 장벽은 모델링 기법 부족이 아닌 검증된 열역학적 물성 데이터베이스 부족임을 강조합니다.",
+        "tags": [
+          "고엔트로피 합금",
+          "유한요소 시뮬레이션",
+          "재료 모델링",
+          "기계공학"
+        ],
+        "topics": [
+          "시뮬레이션·구조해석"
+        ]
+      }
+    ],
+    "kr": [
+      {
+        "arxiv_id": "doi:10.7736/jkspe.026.00083",
+        "title": "FE-ANN Surrogate Modeling of Springback and Cross-sectional Deformation in Tubular Stabilizer-bar Bending",
+        "authors": [
+          "Namsu Park"
+        ],
+        "summary": "To support die-motion design for double-sided symmetric forming of tubular stabilizer bars, this study developed an integrated finite-element (FE)–artificial neural network (ANN) framework for predicting springback and cross-sectional deformation. An R45 Abaqus model was calibrated against tensile responses from three circumferential positions. Free-end simulations established a neutral material inflow of 7.32 mm per 10° of bending. In the fixed-end database analyses, the bending die and support block were translated together by the prescribed axial displacement. Twelve commanded angles and five die-feed offsets generated a 60-case database. After min-max normalization, the 48 development cases underwent five-fold cross-validation, and the 12 holdout cases were reserved for one-time final evaluation. Across the four responses, mean cross-validation R² values ranged from 0.849 to 0.967, and holdout R² values from 0.913 to 0.976. The 2-20-20-4 ANN was then retrained using all 60 cases. R45 fixed-end FE results under the neutral die-feed condition yielded a springback RMSE of 0.275° and a MAPE of 6.29%. Over 10–120°, the maximum relative deviations were 3.52% (minimum outer diameter), 3.65% (minimum wall thickness), and 3.10% (maximum wall thickness). The final surrogate model supports rapid response estimation and angle compensation for new input combinations within the FE design space.",
+        "categories": [],
+        "published": "2026-11-01T00:00:00+00:00",
+        "updated": "2026-11-01T00:00:00+00:00",
+        "pdf_url": "https://jkspe.or.kr/upload/pdf/JKSPE-026-00083.pdf",
+        "abs_url": "https://doi.org/10.7736/jkspe.026.00083",
+        "track": "kr",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "surrogate model",
+          "relevance:0.90"
+        ],
+        "affiliations": [
+          "University of Ulsan"
+        ],
+        "source": "openalex_kr",
+        "hf_upvotes": null,
+        "venue": "한국정밀공학회지",
+        "title_local": null,
+        "title_ko": "튜브형 스태빌라이저 바 굽힘 시 스프링백 및 단면 변형의 FE-ANN 대체 모델링",
+        "summary_ko": "- 이 연구는 튜브형 스태빌라이저 바의 양면 대칭 성형을 위한 금형 설계 지원을 목표로 합니다.\n- 스프링백과 단면 변형을 예측하기 위해 유한요소(FE) 분석과 인공신경망(ANN)을 통합한 프레임워크를 개발했습니다.\n- 굽힘 각도와 금형 이송 오프셋을 조절하여 60가지 FE 시뮬레이션 데이터베이스를 구축하고, 이를 ANN 학습에 활용했습니다.\n- 개발된 ANN 모델은 스프링백 예측에서 R² 값 0.913~0.976, RMSE 0.275°의 높은 정확도를 보였습니다.\n- 이 대체 모델은 새로운 입력 조합에 대한 빠른 응답 예측과 각도 보상을 가능하게 하여 금형 설계 효율성을 높입니다.",
+        "tags": [
+          "유한요소 해석",
+          "인공신경망",
+          "스프링백",
+          "스태빌라이저 바"
+        ],
+        "topics": [
+          "시뮬레이션·구조해석"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2611.08138",
+      "title": "Describe Your Facial Expressions by Linking Image Encoders and Large Language Models",
+      "authors": [
+        "Yujian Yuan",
+        "Jiabei Zeng",
+        "Shiguang Shan"
+      ],
+      "summary": "This paper presents a novel task of describing human facial expressions of a facial image in natural language, which captures the nuances of facial actions and emotional states beyond traditional emotion categories or facial action units (AUs). To achieve the facial expression captioning model, we propose a three-stage training framework that trains a vision-to-language model using synthesized image-text pairs and the BLIP-2 pre-training techniques. To overcome the challenge of missing training image-text pairs for facial expression captioning, we propose a strategy that involves synthesizing and combining captions using GPT-3.5 and existing annotations on either emotion categories or AUs. Experiments demonstrate the effectiveness of our method in generating captions that describe details of facial actions and emotions, as well as the inferential relationship between them, even when those emotions are not present in the training data. It is also demonstrated that the vision-to-language task enhances the performance of the intermediate visual features on both AU detection and emotion classification tasks.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-11-05T15:02:05+00:00",
+      "updated": "2026-11-05T15:02:05+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2611.08138v1",
+      "abs_url": "https://arxiv.org/abs/2611.08138",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 8,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/80980c20161b10ea4ed6e94f3bbeebb447adeb5b",
+      "tldr": "A three-stage training framework that trains a vision-to-language model using synthesized image-text pairs and the BLIP-2 pre-training techniques to overcome the challenge of missing training image-text pairs for facial expression captioning is proposed.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "이미지 인코더와 대규모 언어 모델 연결을 통한 얼굴 표정 묘사",
+      "summary_ko": "- 이 논문은 얼굴 이미지의 표정을 자연어로 묘사하는 새로운 과제를 제시합니다.\n- 훈련 데이터 부족을 해결하기 위해 GPT-3.5와 기존 주석을 활용하여 캡션을 합성합니다.\n- BLIP-2 사전 학습 기술을 사용하여 시각-언어 모델을 3단계로 훈련하는 프레임워크를 제안합니다.\n- 이 방법은 얼굴 동작과 감정의 세부 사항을 효과적으로 묘사하는 캡션을 생성합니다.\n- 또한, 이 시각-언어 과제는 AU 감지 및 감정 분류 성능을 향상합니다.",
+      "tags": [
+        "얼굴 표정",
+        "시각-언어 모델",
+        "캡션 생성",
+        "딥러닝"
+      ],
+      "topics": [
+        "멀티모달·비전·생성모델"
+      ]
+    },
+    {
+      "arxiv_id": "2611.08449",
+      "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+      "authors": [
+        "Yu-Cheng Chou",
+        "Shihao Wang",
+        "Jin Huang",
+        "Chi-Pin Huang",
+        "Chiao-An Yang",
+        "Xianzhe Fan",
+        "Jing Wang",
+        "Zhiqi Li",
+        "Yuanguo Kuang",
+        "Ruijie Zheng",
+        "Johan Bjorck",
+        "Sifei Liu",
+        "Hang Su",
+        "Abhishek Badki",
+        "Lei Zhang",
+        "Alan Yuille",
+        "Linxi \"Jim'' Fan",
+        "Jan Kautz",
+        "Zhiding Yu"
+      ],
+      "summary": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-11-05T18:44:43+00:00",
+      "updated": "2026-11-05T18:44:43+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2611.08449v1",
+      "abs_url": "https://arxiv.org/abs/2611.08449",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/0087267ec97a4c9599089519f3cd5cfceaa82bd6",
+      "tldr": "VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding, which trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement, and consistently reduces prediction errors relative to autoregressive decoding.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 96,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "VFlash: 플래시 프리미티브 디코딩을 통한 빠르고 정확한 시각 계획",
+      "summary_ko": "- 로봇 공학 등 물리적 AI는 시각적 계획을 사용하지만, 기존 방식은 예측 비용이 높습니다.\n- VFlash는 플래시 프리미티브 디코딩으로 시각적 프리미티브를 빠르게 예측합니다.\n- 경량 드래프터를 사용하여 프리미티브 전체를 한 번에 생성하며, 구조에 맞춰 조절됩니다.\n- VFlash는 2D 및 3D 로봇 궤적 예측에서 기존 방식보다 오류를 줄였습니다.\n- 3D 점 움직임 예측에서 약 25배 빠르며, 작업 성공률도 70.2%로 향상되었습니다.",
+      "tags": [
+        "시각 계획",
+        "로봇 공학",
+        "AI",
+        "프리미티브 디코딩"
+      ],
+      "topics": [
+        "강화학습·로보틱스"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1109/jsen.2025.3650493",
+      "title": "An Improved Variational Autoencoder and Graph Attention Network Method for Wear Prediction of Aerospace Self-Lubricating Bearing Using Acoustic Emission Signal",
+      "authors": [
+        "Danyue Shen",
+        "Shichang Du",
+        "Shuo Wang",
+        "Liang Yan",
+        "Shanshan Li",
+        "Xianmin Chen"
+      ],
+      "summary": "Aerospace self-lubricating bearings are critical components in aircraft transmission systems, where wear-induced degradation under high-load and dynamic conditions poses significant challenges to operational safety and system longevity. In recent years, deep learning methods have shown promise in wear prediction by leveraging abundant monitoring data from sensor networks. However, these methods often struggle to detect early-stage degradation and rely on labor-intensive feature engineering, limiting their effectiveness in handling noisy, high-dimensional data. To overcome these issues, this article proposes an improved variational autoencoder and graph attention network method for wear prediction based on acoustic emission (AE) signals. Firstly, a clustering-guided contrastive variational autoencoder (CGC-VAE) model is proposed to process noisy, high-dimensional AE signals. The CGC-VAE employs K-means clustering to segment wear stages, combined with gaussian mixture model (GMM) regularization and contrastive learning, to extract low-dimensional, discriminative latent features. Subsequently, a temporal graph attention network (T-GAT) is proposed to construct a dynamic graph based on temporal proximity and feature similarity, which can effectively model the spatiotemporal relationships of latent features. It employs graph attention mechanism and LSTM layer for accurate wear prediction. Finally, experimental validation on aerospace self-lubricating bearing datasets, covering full lifecycle and partial wear scenarios, demonstrates the superior accuracy and adaptability of the proposed method.",
+      "categories": [],
+      "published": "2026-01-12T00:00:00+00:00",
+      "updated": "2026-01-12T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://doi.org/10.1109/jsen.2025.3650493",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 102,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "deep learning",
+        "aerospace",
+        "relevance:0.85"
+      ],
+      "affiliations": [
+        "Shanghai Jiao Tong University",
+        "Aircraft Strength Research Institute (China)"
+      ],
+      "source": "openalex",
+      "hf_upvotes": null,
+      "venue": "IEEE Sensors Journal",
+      "title_local": null,
+      "title_ko": "음향 방출 신호를 활용한 항공 자가 윤활 베어링 마모 예측을 위한 개선된 변분 오토인코더 및 그래프 어텐션 네트워크 방법",
+      "summary_ko": "- 항공 자가 윤활 베어링의 마모는 항공기 안전에 중요하며, 기존 딥러닝은 초기 마모 감지 및 특징 추출에 한계가 있습니다.\n- 이 논문은 음향 방출(AE) 신호를 이용한 마모 예측을 위해 개선된 변분 오토인코더와 그래프 어텐션 네트워크를 제안합니다.\n- 제안된 CGC-VAE는 K-평균 군집화와 가우시안 혼합 모델(GMM) 정규화, 대조 학습으로 저차원 특징을 추출합니다.\n- 이후 T-GAT는 시간적 근접성과 특징 유사성을 기반으로 동적 그래프를 구성하여 시공간 관계를 모델링하고 마모를 예측합니다.\n- 전체 수명 주기 및 부분 마모 시나리오 데이터셋 검증을 통해 제안된 방법의 우수한 정확도와 적응성을 입증했습니다.",
+      "tags": [
+        "마모 예측",
+        "음향 방출 신호",
+        "변분 오토인코더",
+        "그래프 어텐션 네트워크"
+      ],
+      "topics": [
+        "진단·디지털트윈"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1016/j.nxmate.2026.103972",
+      "title": "Finite element simulation of high-entropy alloys: Process-structure-property modelling across manufacturing and mechanical performance",
+      "authors": [
+        "Smith Adamu Salifu",
+        "Thato Tshephe",
+        "Peter Apata Olubambi"
+      ],
+      "summary": "High-entropy alloys (HEAs) combine strength, ductility, and thermal stability rarely achieved simultaneously by conventional alloys, but their compositional complexity and multiphase microstructures make experimental characterisation alone insufficient for understanding and optimising their behaviour. This review synthesises how finite element simulation has been used across the HEA development lifecycle, with emphasis on two areas where the field has matured fastest: manufacturing-process modelling (casting, spark plasma sintering, and additive manufacturing) and mechanical-performance prediction (elasticity, plasticity, fracture, fatigue, and creep). For each process and failure mode, the review extracts the quantitative trends reported in the literature, including stress, strain, and temperature magnitudes, reported model-experiment agreement and quantitative prediction errors where available, and processing-parameter sensitivities, rather than only describing model architectures. Crystal plasticity finite element modelling (CPFEM) is identified as the connective methodology linking manufacturing-induced microstructure to mechanical response, and the integration of machine learning (ML) with FEA, ranging from data-driven constitutive modelling to surrogate-based screening, is critically assessed, while physics-informed and inverse-design approaches are identified as emerging directions whose HEA-specific validation remains limited. The review argues that the principal barrier to predictive, integrated computational materials engineering (ICME) for HEAs is not a shortage of modelling techniques but the scarcity of validated thermomechanical property databases and in-situ experimental validation, and it concludes with a focused set of priorities for closing this gap.",
+      "categories": [],
+      "published": "2026-11-05T00:00:00+00:00",
+      "updated": "2026-11-05T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://doi.org/10.1016/j.nxmate.2026.103972",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "machine learning",
+        "physics-informed",
+        "data-driven",
+        "finite element",
+        "elastic",
+        "stress",
+        "fatigue",
+        "fracture",
+        "mechanical",
+        "relevance:0.85"
+      ],
+      "affiliations": [
+        "University of Johannesburg"
+      ],
+      "source": "openalex",
+      "hf_upvotes": null,
+      "venue": "Next Materials",
+      "title_local": null,
+      "title_ko": "고엔트로피 합금의 유한요소 시뮬레이션: 제조 및 기계적 성능 전반의 공정-구조-특성 모델링",
+      "summary_ko": "- 고엔트로피 합금(HEA)은 복잡한 조성과 다상 미세구조로 인해 실험만으로는 특성 이해 및 최적화에 한계가 있습니다.\n- 이 리뷰는 HEA 개발 주기 전반에 걸쳐 유한요소 시뮬레이션(FES)이 어떻게 활용되었는지 종합적으로 분석합니다.\n- 특히 제조 공정 모델링(주조, 스파크 플라즈마 소결, 적층 제조)과 기계적 성능 예측(탄성, 소성, 파괴, 피로, 크리프)에 중점을 둡니다.\n- 결정 소성 유한요소 모델링(CPFEM)이 제조 유도 미세구조와 기계적 반응을 연결하는 핵심 방법론으로 제시됩니다.\n- HEA의 예측 가능한 통합 전산 재료 공학(ICME)을 위한 주요 장벽은 모델링 기법 부족이 아닌 검증된 열역학적 물성 데이터베이스 부족임을 강조합니다.",
+      "tags": [
+        "고엔트로피 합금",
+        "유한요소 시뮬레이션",
+        "재료 모델링",
+        "기계공학"
+      ],
+      "topics": [
+        "시뮬레이션·구조해석"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.7736/jkspe.026.00083",
+      "title": "FE-ANN Surrogate Modeling of Springback and Cross-sectional Deformation in Tubular Stabilizer-bar Bending",
+      "authors": [
+        "Namsu Park"
+      ],
+      "summary": "To support die-motion design for double-sided symmetric forming of tubular stabilizer bars, this study developed an integrated finite-element (FE)–artificial neural network (ANN) framework for predicting springback and cross-sectional deformation. An R45 Abaqus model was calibrated against tensile responses from three circumferential positions. Free-end simulations established a neutral material inflow of 7.32 mm per 10° of bending. In the fixed-end database analyses, the bending die and support block were translated together by the prescribed axial displacement. Twelve commanded angles and five die-feed offsets generated a 60-case database. After min-max normalization, the 48 development cases underwent five-fold cross-validation, and the 12 holdout cases were reserved for one-time final evaluation. Across the four responses, mean cross-validation R² values ranged from 0.849 to 0.967, and holdout R² values from 0.913 to 0.976. The 2-20-20-4 ANN was then retrained using all 60 cases. R45 fixed-end FE results under the neutral die-feed condition yielded a springback RMSE of 0.275° and a MAPE of 6.29%. Over 10–120°, the maximum relative deviations were 3.52% (minimum outer diameter), 3.65% (minimum wall thickness), and 3.10% (maximum wall thickness). The final surrogate model supports rapid response estimation and angle compensation for new input combinations within the FE design space.",
+      "categories": [],
+      "published": "2026-11-01T00:00:00+00:00",
+      "updated": "2026-11-01T00:00:00+00:00",
+      "pdf_url": "https://jkspe.or.kr/upload/pdf/JKSPE-026-00083.pdf",
+      "abs_url": "https://doi.org/10.7736/jkspe.026.00083",
+      "track": "kr",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "surrogate model",
+        "relevance:0.90"
+      ],
+      "affiliations": [
+        "University of Ulsan"
+      ],
+      "source": "openalex_kr",
+      "hf_upvotes": null,
+      "venue": "한국정밀공학회지",
+      "title_local": null,
+      "title_ko": "튜브형 스태빌라이저 바 굽힘 시 스프링백 및 단면 변형의 FE-ANN 대체 모델링",
+      "summary_ko": "- 이 연구는 튜브형 스태빌라이저 바의 양면 대칭 성형을 위한 금형 설계 지원을 목표로 합니다.\n- 스프링백과 단면 변형을 예측하기 위해 유한요소(FE) 분석과 인공신경망(ANN)을 통합한 프레임워크를 개발했습니다.\n- 굽힘 각도와 금형 이송 오프셋을 조절하여 60가지 FE 시뮬레이션 데이터베이스를 구축하고, 이를 ANN 학습에 활용했습니다.\n- 개발된 ANN 모델은 스프링백 예측에서 R² 값 0.913~0.976, RMSE 0.275°의 높은 정확도를 보였습니다.\n- 이 대체 모델은 새로운 입력 조합에 대한 빠른 응답 예측과 각도 보상을 가능하게 하여 금형 설계 효율성을 높입니다.",
+      "tags": [
+        "유한요소 해석",
+        "인공신경망",
+        "스프링백",
+        "스태빌라이저 바"
+      ],
+      "topics": [
+        "시뮬레이션·구조해석"
+      ]
+    }
+  ]
+}
