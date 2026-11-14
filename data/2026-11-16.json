@@ -1,0 +1,517 @@
+{
+  "week_id": "2026-11-16",
+  "generated_at": "2026-11-14T07:15:49.681682+00:00",
+  "publish_at": "2026-11-16T08:00:00+09:00",
+  "site_title": "AI & AI 활용 기계공학 주간 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2611.17213",
+        "title": "Collaborative Task Allocation for Heterogeneous Multi-Robot Systems Through Iterative Clustering",
+        "authors": [
+          "David R. Martin",
+          "Brooks A. Butler",
+          "Scott Nivison",
+          "Magnus Egerstedt",
+          "Mohammad Abdullah Al Faruque",
+          "Pramod Khargonekar"
+        ],
+        "summary": "Multi-robot systems face the challenge of efficiently allocating teams of heterogeneous robots to tasks. The task allocation problem is complicated by collaborative interactions between robots where teams of robots develop emergent capabilities that enable them to complete tasks that would be inefficient or impossible for individual robots. To address these challenges, we present an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems. This approach partitions the computationally intractable global optimization problem into smaller, tractable subproblems by iteratively forming clusters of robots and tasks, then optimizing assignments within each cluster. By ensuring robots remain clustered with their currently assigned tasks, we guarantee monotonic improvement in overall utility with each iteration. We analyze the convergence of the algorithm and characterize how cluster size constraints determine which suboptimal assignments could trap the algorithm. In simulation, iterative clustering consistently outperforms simulated annealing, and a group-based auction in both computation time and solution quality, and outperforms a hedonic game approach in solution quality.",
+        "categories": [
+          "cs.RO"
+        ],
+        "published": "2026-11-12T18:10:27+00:00",
+        "updated": "2026-11-12T18:10:27+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2611.17213v1",
+        "abs_url": "https://arxiv.org/abs/2611.17213",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 10,
+        "influential_citation_count": 1,
+        "s2_url": "https://www.semanticscholar.org/paper/3e4a9c698fe8ee3321b3ff7767cca3a3b3a5bff2",
+        "tldr": "This work presents an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems, and analyzes the convergence of the algorithm and characterize how cluster size constraints determine which suboptimal assignments could trap the algorithm.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "이종 다중 로봇 시스템을 위한 반복 클러스터링 기반 협업 태스크 할당",
+        "summary_ko": "- 이종 로봇으로 구성된 다중 로봇 시스템에서 협업 태스크 할당은 복잡한 문제입니다.\n- 본 연구는 이 문제를 해결하기 위해 반복 클러스터링(iterative clustering) 알고리즘을 제안합니다.\n- 이 방법은 전체 최적화 문제를 작은 하위 문제로 나누어 로봇과 태스크를 반복적으로 클러스터링합니다.\n- 시뮬레이션 결과, 제안된 방법은 기존 방식들보다 계산 시간과 해의 품질 면에서 우수했습니다.\n- 이 연구는 다중 로봇 시스템의 효율적인 태스크 할당을 위한 새로운 접근법을 제시합니다.",
+        "tags": [
+          "다중 로봇 시스템",
+          "태스크 할당",
+          "반복 클러스터링",
+          "협업 로봇"
+        ],
+        "topics": [
+          "강화학습·로보틱스"
+        ]
+      },
+      {
+        "arxiv_id": "2611.15777",
+        "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+        "authors": [
+          "Lichen Li",
+          "Ziping Dong",
+          "Sicheng Feng",
+          "Qi Li",
+          "Xinchao Wang"
+        ],
+        "summary": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks. Existing evaluations often provide limited insight into the breadth of model capabilities and the reliability of their decisions. We introduce SO-Arena, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families. For the capability spectrum, SO-Arena offers evidence-grounded evaluation through reliable sources and manual verification of reference labels against model-visible inputs; fine-grained capability assessment through domain-specific difficulty criteria; and realistic interactive evaluation, where models iteratively execute actions in sandboxes. Reasoning-intensive tasks further enable system one-two comparison. Beyond accuracy, SO-Arena assesses decision reliability through two complementary measures: decision stability under controlled option-set changes and missing-answer recognition when no valid option is available. Evaluations across 21 models reveal that the benefits of scaling and additional reasoning vary substantially across domains. More importantly, strong overall performance does not necessarily imply reliable decision-making: the best-performing System One model ranks only seventh in reliability. Together, these findings highlight the need to characterize capability spectrum and decision reliability as complementary dimensions, providing a systematic view of the strengths and limitations of System One models.",
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "published": "2026-11-11T17:53:45+00:00",
+        "updated": "2026-11-11T17:53:45+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2611.15777v1",
+        "abs_url": "https://arxiv.org/abs/2611.15777",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/545b0172865ccb1ea70b297ed93978543a907dc6",
+        "tldr": "SO-Arena is introduced, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families, providing a systematic view of the strengths and limitations of System One models.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 82,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "SO-Arena: 시스템 원(System One) 모델의 역량 스펙트럼 및 신뢰성 벤치마킹",
+        "summary_ko": "- 시스템 원 모델은 빠른 의사결정을 약속하지만, 기존 평가는 역량 범위와 결정 신뢰성 파악에 한계가 있습니다.\n- 본 논문은 11개 도메인과 5개 역량군에 걸쳐 모델의 역량 스펙트럼과 결정 신뢰성을 평가하는 SO-Arena 벤치마크를 제안합니다.\n- SO-Arena는 신뢰할 수 있는 출처와 수동 검증을 통한 증거 기반 평가, 세분화된 난이도 기준, 그리고 상호작용적 실행 환경을 제공합니다.\n- 21개 모델 평가 결과, 스케일링과 추가 추론의 이점은 도메인별로 크게 다르며, 최고 성능 모델이 신뢰성에서는 7위에 그쳤습니다.\n- SO-Arena는 역량 스펙트럼과 결정 신뢰성을 상호 보완적인 차원으로 평가하여 시스템 원 모델의 강점과 한계를 체계적으로 보여줍니다.",
+        "tags": [
+          "시스템 원 모델",
+          "벤치마크",
+          "역량 스펙트럼",
+          "결정 신뢰성"
+        ],
+        "topics": [
+          "LLM·생성형·에이전트"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "doi:10.1109/tmech.2025.3579247",
+        "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+        "authors": [
+          "Zhaoyuan Gu",
+          "Junheng Li",
+          "Wenlan Shen",
+          "Wenhao Yu",
+          "Zhaoming Xie",
+          "Stephen McCrory",
+          "Xianyi Cheng",
+          "Abdulaziz Shamsah",
+          "Robert J. Griffin",
+          "C. Karen Liu",
+          "Abderrahmane Kheddar",
+          "Xue Bin Peng",
+          "Yuke Zhu",
+          "Guanya Shi",
+          "Quan Nguyen",
+          "Gordon Cheng",
+          "Huijun Gao",
+          "Ye Zhao"
+        ],
+        "summary": "Humanoid robots hold great potential to perform various human-level skills, involving unified locomotion and manipulation in real-world settings. Driven by advances in machine learning and the strength of existing model-based approaches, these capabilities have progressed rapidly, but often separately. This survey offers a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, with a focus on control, planning, and learning methods. We first review the model-based methods that have been the backbone of humanoid robotics for the past three decades. We discuss contact planning, motion planning, and whole-body control, highlighting the tradeoffs between model fidelity and computational efficiency. Then, the focus is shifted to examine emerging learning-based methods, with an emphasis on reinforcement and imitation learning that enhance the robustness and versatility of loco-manipulation skills. Furthermore, we assess the potential of integrating foundation models with humanoid embodiments to enable the development of generalist humanoid agents. This survey also highlights the emerging role of tactile sensing, particularly whole-body tactile feedback, as a crucial modality for handling contact-rich interactions. Finally, we compare the strengths and limitations of model-based and learning-based paradigms from multiple perspectives, such as robustness, computational efficiency, versatility, and generalizability, and suggest potential solutions to existing challenges.",
+        "categories": [],
+        "published": "2026-03-26T00:00:00+00:00",
+        "updated": "2026-03-26T00:00:00+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2501.02116",
+        "abs_url": "https://doi.org/10.1109/tmech.2025.3579247",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 138,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "machine learning",
+          "robot",
+          "relevance:0.85"
+        ],
+        "affiliations": [
+          "Georgia Institute of Technology",
+          "University of Southern California",
+          "Technical University of Munich",
+          "Google (United States)",
+          "Robotics and AI Institute",
+          "Florida Institute for Human and Machine Cognition",
+          "Duke University",
+          "Kuwait University",
+          "Stanford University",
+          "National Institute of Advanced Industrial Science and Technology",
+          "Simon Fraser University",
+          "The University of Texas at Austin",
+          "Carnegie Mellon University",
+          "Harbin Institute of Technology"
+        ],
+        "source": "openalex",
+        "hf_upvotes": null,
+        "venue": "IEEE/ASME Transactions on Mechatronics",
+        "title_local": null,
+        "title_ko": "휴머노이드 로봇의 이동 및 조작: 제어, 계획, 학습 분야의 최신 발전과 과제",
+        "summary_ko": "- 휴머노이드 로봇은 실제 환경에서 이동과 조작을 통합하여 인간 수준의 다양한 기술을 수행할 잠재력이 큽니다.\n- 이 연구는 휴머노이드 로봇의 이동 및 조작에 대한 제어, 계획, 학습 방법을 포괄적으로 검토합니다.\n- 기존 모델 기반 접근법과 최근 부상하는 강화 학습, 모방 학습 등 학습 기반 방법을 상세히 다룹니다.\n- 특히, 전신 촉각 피드백(whole-body tactile feedback)의 중요성과 파운데이션 모델(foundation models)의 통합 가능성을 평가합니다.\n- 모델 기반 및 학습 기반 패러다임의 장단점을 비교하고, 기존 과제 해결을 위한 잠재적 해법을 제시합니다.",
+        "tags": [
+          "휴머노이드 로봇",
+          "이동 및 조작",
+          "제어 및 학습",
+          "모델 기반 학습"
+        ],
+        "topics": [
+          "설계최적화·생성형 설계"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.1109/LRA.2026.3748677",
+        "title": "Adhesion-Aware Grasp-Wrench Planning for Robotic Part Removal",
+        "authors": [
+          "Bu-Ka Lan",
+          "Ronnie F. P. Stone",
+          "Xing-Nan Zhou",
+          "Ze-Hao Wang",
+          "Zheng-Hui Sha",
+          "Jun-Ming Wang"
+        ],
+        "summary": "This letter presents an adhesion-aware framework of joint grasp- and wrench-planning for robotic part removal using a parallel-jaw gripper. We model the effectiveness of part detachment using the peak von Mises stress at the adhered boundary and formulate planning as a constrained optimization that promotes interface separation while limiting stress elsewhere in the object to reduce structural failure risk. To enable efficient evaluation of robotic grasp–wrench candidates, we use a graph neural network surrogate trained on finite-element method (FEM) simulations to predict wrench-induced stress fields. On seen objects, the surrogate is faster and more accurate than coarse-mesh FEM; on unseen objects within known geometric categories, it preserves useful stress-concentration patterns. In physical experiments, the proposed planner achieved a 66.6% removal success rate, comparable to a mechanics-based maximum-leverage heuristic (63.3%) and substantially higher than a random upward-lift baseline (2.2%). On a fracture-prone specimen, the structural-safety constraint preserved the part in all trials while enabling successful detachment in 9 of 10 cases, whereas removing the constraint caused fractures in all trials.",
+        "categories": [],
+        "published": "2026-12-01T00:00:00+00:00",
+        "updated": "2026-12-01T00:00:00+00:00",
+        "pdf_url": "https://doi.org/10.1109/lra.2026.3748677",
+        "abs_url": "https://www.semanticscholar.org/paper/da968d2fd4d8ccf639109751af747ad191379d62",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/da968d2fd4d8ccf639109751af747ad191379d62",
+        "tldr": null,
+        "matched_keywords": [
+          "neural network",
+          "structural",
+          "stress",
+          "fracture",
+          "robot",
+          "relevance:0.90"
+        ],
+        "affiliations": [],
+        "source": "s2_search",
+        "hf_upvotes": null,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "로봇 부품 제거를 위한 접착 인지형 파지-렌치 계획",
+        "summary_ko": "- 로봇이 부품을 제거할 때 접착된 경계면 분리를 촉진하고 구조적 손상을 줄이는 것이 중요합니다.\n- 이 연구는 접착 인지형 파지(grasp) 및 렌치(wrench) 계획 프레임워크를 제안합니다.\n- 유한요소법(FEM) 시뮬레이션으로 학습된 그래프 신경망(GNN)을 사용하여 응력장을 예측합니다.\n- 실제 실험에서 제안된 플래너는 66.6%의 제거 성공률을 보였고, 취약 부품의 경우 구조 안전 제약으로 90% 성공률을 달성했습니다.\n- 이 방법은 로봇 부품 제거 시 접착 분리 효율성과 구조적 안전성을 동시에 고려하는 데 기여합니다.",
+        "tags": [
+          "로봇 공학",
+          "파지 계획",
+          "렌치 계획",
+          "기계 학습"
+        ],
+        "topics": [
+          "시뮬레이션·구조해석",
+          "설계최적화·생성형 설계"
+        ]
+      }
+    ],
+    "kr": [
+      {
+        "arxiv_id": "doi:10.5050/ksnve.2026.36.5.510",
+        "title": "Data-driven Mode Selection for Mode Expansion-based Reconstruction of Radiated Noise from an Induction Motor",
+        "authors": [
+          "Wangki Seo",
+          "Changju Hwang",
+          "Kyungjun Song"
+        ],
+        "summary": "Accuracy in mode expansion-based reconstruction of radiated noise depends on which modes form the reduced basis. Previous work ranked modes by the spatial distribution of each mode shape in the structural model, thus fixing their number arbitrarily. Such a ranking scores each mode in isolation; consequently, it can admit modes duplicating what the basis already spans. This adds little to the fit to the measured accelerations and inflates the modal weights. This study treats mode selection as a combinatorial search. The radiated pressure of each mode is computed once by finite element analysis, so as to evaluate any combination by superposition alone. Next, a subset that reduces the one-third octave band-level error is sought in post-processing through sequential forward, backward, and floating searches, which approximate the optimal combination. The procedure was verified on an induction motor from surface acceleration and sound pressure at seven positions, two of which were withheld from selection. The proposed approach lowered both the band- and overall-level errors relative to the ranking-based selection and was much less sensitive to the number of modes. A similar improvement appeared in sound power and at the cover acceleration confirmation points-neither used in selection-indicating that the improvement is not confined to the fitted positions. However, the housing vibration remained overestimated by all methods.",
+        "categories": [],
+        "published": "2026-10-20T00:00:00+00:00",
+        "updated": "2026-10-20T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://doi.org/10.5050/ksnve.2026.36.5.510",
+        "track": "kr",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "data-driven",
+          "relevance:0.80"
+        ],
+        "affiliations": [],
+        "source": "openalex_kr",
+        "hf_upvotes": null,
+        "venue": "한국소음진동공학회논문집",
+        "title_local": "유도전동기 방사소음 재구성을 위한 모드확장법의 데이터 기반 모드선정",
+        "title_ko": "유도전동기 방사소음 재구성을 위한 모드확장법의 데이터 기반 모드선정",
+        "summary_ko": "- 모드 확장 기반 소음 재구성 시, 어떤 모드를 사용할지 결정하는 것이 정확도에 중요합니다.\n- 기존 방식은 각 모드를 개별적으로 평가하여 중복된 모드를 포함하는 한계가 있었습니다.\n- 본 연구는 모드 선택을 조합 탐색 문제로 다루어 최적의 모드 조합을 찾습니다.\n- 유도 전동기 표면 가속도와 음압 데이터를 활용해 제안 방법을 검증했습니다.\n- 제안 방법은 기존 방식 대비 소음 오차를 줄였고, 모드 개수에 덜 민감했습니다.",
+        "tags": [
+          "모드 선택",
+          "소음 재구성",
+          "유도 전동기",
+          "데이터 기반"
+        ],
+        "topics": [
+          "진단·디지털트윈"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2611.17213",
+      "title": "Collaborative Task Allocation for Heterogeneous Multi-Robot Systems Through Iterative Clustering",
+      "authors": [
+        "David R. Martin",
+        "Brooks A. Butler",
+        "Scott Nivison",
+        "Magnus Egerstedt",
+        "Mohammad Abdullah Al Faruque",
+        "Pramod Khargonekar"
+      ],
+      "summary": "Multi-robot systems face the challenge of efficiently allocating teams of heterogeneous robots to tasks. The task allocation problem is complicated by collaborative interactions between robots where teams of robots develop emergent capabilities that enable them to complete tasks that would be inefficient or impossible for individual robots. To address these challenges, we present an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems. This approach partitions the computationally intractable global optimization problem into smaller, tractable subproblems by iteratively forming clusters of robots and tasks, then optimizing assignments within each cluster. By ensuring robots remain clustered with their currently assigned tasks, we guarantee monotonic improvement in overall utility with each iteration. We analyze the convergence of the algorithm and characterize how cluster size constraints determine which suboptimal assignments could trap the algorithm. In simulation, iterative clustering consistently outperforms simulated annealing, and a group-based auction in both computation time and solution quality, and outperforms a hedonic game approach in solution quality.",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-11-12T18:10:27+00:00",
+      "updated": "2026-11-12T18:10:27+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2611.17213v1",
+      "abs_url": "https://arxiv.org/abs/2611.17213",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 10,
+      "influential_citation_count": 1,
+      "s2_url": "https://www.semanticscholar.org/paper/3e4a9c698fe8ee3321b3ff7767cca3a3b3a5bff2",
+      "tldr": "This work presents an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems, and analyzes the convergence of the algorithm and characterize how cluster size constraints determine which suboptimal assignments could trap the algorithm.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "이종 다중 로봇 시스템을 위한 반복 클러스터링 기반 협업 태스크 할당",
+      "summary_ko": "- 이종 로봇으로 구성된 다중 로봇 시스템에서 협업 태스크 할당은 복잡한 문제입니다.\n- 본 연구는 이 문제를 해결하기 위해 반복 클러스터링(iterative clustering) 알고리즘을 제안합니다.\n- 이 방법은 전체 최적화 문제를 작은 하위 문제로 나누어 로봇과 태스크를 반복적으로 클러스터링합니다.\n- 시뮬레이션 결과, 제안된 방법은 기존 방식들보다 계산 시간과 해의 품질 면에서 우수했습니다.\n- 이 연구는 다중 로봇 시스템의 효율적인 태스크 할당을 위한 새로운 접근법을 제시합니다.",
+      "tags": [
+        "다중 로봇 시스템",
+        "태스크 할당",
+        "반복 클러스터링",
+        "협업 로봇"
+      ],
+      "topics": [
+        "강화학습·로보틱스"
+      ]
+    },
+    {
+      "arxiv_id": "2611.15777",
+      "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+      "authors": [
+        "Lichen Li",
+        "Ziping Dong",
+        "Sicheng Feng",
+        "Qi Li",
+        "Xinchao Wang"
+      ],
+      "summary": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks. Existing evaluations often provide limited insight into the breadth of model capabilities and the reliability of their decisions. We introduce SO-Arena, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families. For the capability spectrum, SO-Arena offers evidence-grounded evaluation through reliable sources and manual verification of reference labels against model-visible inputs; fine-grained capability assessment through domain-specific difficulty criteria; and realistic interactive evaluation, where models iteratively execute actions in sandboxes. Reasoning-intensive tasks further enable system one-two comparison. Beyond accuracy, SO-Arena assesses decision reliability through two complementary measures: decision stability under controlled option-set changes and missing-answer recognition when no valid option is available. Evaluations across 21 models reveal that the benefits of scaling and additional reasoning vary substantially across domains. More importantly, strong overall performance does not necessarily imply reliable decision-making: the best-performing System One model ranks only seventh in reliability. Together, these findings highlight the need to characterize capability spectrum and decision reliability as complementary dimensions, providing a systematic view of the strengths and limitations of System One models.",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-11-11T17:53:45+00:00",
+      "updated": "2026-11-11T17:53:45+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2611.15777v1",
+      "abs_url": "https://arxiv.org/abs/2611.15777",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/545b0172865ccb1ea70b297ed93978543a907dc6",
+      "tldr": "SO-Arena is introduced, a benchmark characterizing the capability spectrum and decision reliability of System One models across 11 domains and five capability families, providing a systematic view of the strengths and limitations of System One models.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 82,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "SO-Arena: 시스템 원(System One) 모델의 역량 스펙트럼 및 신뢰성 벤치마킹",
+      "summary_ko": "- 시스템 원 모델은 빠른 의사결정을 약속하지만, 기존 평가는 역량 범위와 결정 신뢰성 파악에 한계가 있습니다.\n- 본 논문은 11개 도메인과 5개 역량군에 걸쳐 모델의 역량 스펙트럼과 결정 신뢰성을 평가하는 SO-Arena 벤치마크를 제안합니다.\n- SO-Arena는 신뢰할 수 있는 출처와 수동 검증을 통한 증거 기반 평가, 세분화된 난이도 기준, 그리고 상호작용적 실행 환경을 제공합니다.\n- 21개 모델 평가 결과, 스케일링과 추가 추론의 이점은 도메인별로 크게 다르며, 최고 성능 모델이 신뢰성에서는 7위에 그쳤습니다.\n- SO-Arena는 역량 스펙트럼과 결정 신뢰성을 상호 보완적인 차원으로 평가하여 시스템 원 모델의 강점과 한계를 체계적으로 보여줍니다.",
+      "tags": [
+        "시스템 원 모델",
+        "벤치마크",
+        "역량 스펙트럼",
+        "결정 신뢰성"
+      ],
+      "topics": [
+        "LLM·생성형·에이전트"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1109/tmech.2025.3579247",
+      "title": "Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning",
+      "authors": [
+        "Zhaoyuan Gu",
+        "Junheng Li",
+        "Wenlan Shen",
+        "Wenhao Yu",
+        "Zhaoming Xie",
+        "Stephen McCrory",
+        "Xianyi Cheng",
+        "Abdulaziz Shamsah",
+        "Robert J. Griffin",
+        "C. Karen Liu",
+        "Abderrahmane Kheddar",
+        "Xue Bin Peng",
+        "Yuke Zhu",
+        "Guanya Shi",
+        "Quan Nguyen",
+        "Gordon Cheng",
+        "Huijun Gao",
+        "Ye Zhao"
+      ],
+      "summary": "Humanoid robots hold great potential to perform various human-level skills, involving unified locomotion and manipulation in real-world settings. Driven by advances in machine learning and the strength of existing model-based approaches, these capabilities have progressed rapidly, but often separately. This survey offers a comprehensive overview of the state-of-the-art in humanoid locomotion and manipulation, with a focus on control, planning, and learning methods. We first review the model-based methods that have been the backbone of humanoid robotics for the past three decades. We discuss contact planning, motion planning, and whole-body control, highlighting the tradeoffs between model fidelity and computational efficiency. Then, the focus is shifted to examine emerging learning-based methods, with an emphasis on reinforcement and imitation learning that enhance the robustness and versatility of loco-manipulation skills. Furthermore, we assess the potential of integrating foundation models with humanoid embodiments to enable the development of generalist humanoid agents. This survey also highlights the emerging role of tactile sensing, particularly whole-body tactile feedback, as a crucial modality for handling contact-rich interactions. Finally, we compare the strengths and limitations of model-based and learning-based paradigms from multiple perspectives, such as robustness, computational efficiency, versatility, and generalizability, and suggest potential solutions to existing challenges.",
+      "categories": [],
+      "published": "2026-03-26T00:00:00+00:00",
+      "updated": "2026-03-26T00:00:00+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2501.02116",
+      "abs_url": "https://doi.org/10.1109/tmech.2025.3579247",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 138,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "machine learning",
+        "robot",
+        "relevance:0.85"
+      ],
+      "affiliations": [
+        "Georgia Institute of Technology",
+        "University of Southern California",
+        "Technical University of Munich",
+        "Google (United States)",
+        "Robotics and AI Institute",
+        "Florida Institute for Human and Machine Cognition",
+        "Duke University",
+        "Kuwait University",
+        "Stanford University",
+        "National Institute of Advanced Industrial Science and Technology",
+        "Simon Fraser University",
+        "The University of Texas at Austin",
+        "Carnegie Mellon University",
+        "Harbin Institute of Technology"
+      ],
+      "source": "openalex",
+      "hf_upvotes": null,
+      "venue": "IEEE/ASME Transactions on Mechatronics",
+      "title_local": null,
+      "title_ko": "휴머노이드 로봇의 이동 및 조작: 제어, 계획, 학습 분야의 최신 발전과 과제",
+      "summary_ko": "- 휴머노이드 로봇은 실제 환경에서 이동과 조작을 통합하여 인간 수준의 다양한 기술을 수행할 잠재력이 큽니다.\n- 이 연구는 휴머노이드 로봇의 이동 및 조작에 대한 제어, 계획, 학습 방법을 포괄적으로 검토합니다.\n- 기존 모델 기반 접근법과 최근 부상하는 강화 학습, 모방 학습 등 학습 기반 방법을 상세히 다룹니다.\n- 특히, 전신 촉각 피드백(whole-body tactile feedback)의 중요성과 파운데이션 모델(foundation models)의 통합 가능성을 평가합니다.\n- 모델 기반 및 학습 기반 패러다임의 장단점을 비교하고, 기존 과제 해결을 위한 잠재적 해법을 제시합니다.",
+      "tags": [
+        "휴머노이드 로봇",
+        "이동 및 조작",
+        "제어 및 학습",
+        "모델 기반 학습"
+      ],
+      "topics": [
+        "설계최적화·생성형 설계"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1109/LRA.2026.3748677",
+      "title": "Adhesion-Aware Grasp-Wrench Planning for Robotic Part Removal",
+      "authors": [
+        "Bu-Ka Lan",
+        "Ronnie F. P. Stone",
+        "Xing-Nan Zhou",
+        "Ze-Hao Wang",
+        "Zheng-Hui Sha",
+        "Jun-Ming Wang"
+      ],
+      "summary": "This letter presents an adhesion-aware framework of joint grasp- and wrench-planning for robotic part removal using a parallel-jaw gripper. We model the effectiveness of part detachment using the peak von Mises stress at the adhered boundary and formulate planning as a constrained optimization that promotes interface separation while limiting stress elsewhere in the object to reduce structural failure risk. To enable efficient evaluation of robotic grasp–wrench candidates, we use a graph neural network surrogate trained on finite-element method (FEM) simulations to predict wrench-induced stress fields. On seen objects, the surrogate is faster and more accurate than coarse-mesh FEM; on unseen objects within known geometric categories, it preserves useful stress-concentration patterns. In physical experiments, the proposed planner achieved a 66.6% removal success rate, comparable to a mechanics-based maximum-leverage heuristic (63.3%) and substantially higher than a random upward-lift baseline (2.2%). On a fracture-prone specimen, the structural-safety constraint preserved the part in all trials while enabling successful detachment in 9 of 10 cases, whereas removing the constraint caused fractures in all trials.",
+      "categories": [],
+      "published": "2026-12-01T00:00:00+00:00",
+      "updated": "2026-12-01T00:00:00+00:00",
+      "pdf_url": "https://doi.org/10.1109/lra.2026.3748677",
+      "abs_url": "https://www.semanticscholar.org/paper/da968d2fd4d8ccf639109751af747ad191379d62",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/da968d2fd4d8ccf639109751af747ad191379d62",
+      "tldr": null,
+      "matched_keywords": [
+        "neural network",
+        "structural",
+        "stress",
+        "fracture",
+        "robot",
+        "relevance:0.90"
+      ],
+      "affiliations": [],
+      "source": "s2_search",
+      "hf_upvotes": null,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "로봇 부품 제거를 위한 접착 인지형 파지-렌치 계획",
+      "summary_ko": "- 로봇이 부품을 제거할 때 접착된 경계면 분리를 촉진하고 구조적 손상을 줄이는 것이 중요합니다.\n- 이 연구는 접착 인지형 파지(grasp) 및 렌치(wrench) 계획 프레임워크를 제안합니다.\n- 유한요소법(FEM) 시뮬레이션으로 학습된 그래프 신경망(GNN)을 사용하여 응력장을 예측합니다.\n- 실제 실험에서 제안된 플래너는 66.6%의 제거 성공률을 보였고, 취약 부품의 경우 구조 안전 제약으로 90% 성공률을 달성했습니다.\n- 이 방법은 로봇 부품 제거 시 접착 분리 효율성과 구조적 안전성을 동시에 고려하는 데 기여합니다.",
+      "tags": [
+        "로봇 공학",
+        "파지 계획",
+        "렌치 계획",
+        "기계 학습"
+      ],
+      "topics": [
+        "시뮬레이션·구조해석",
+        "설계최적화·생성형 설계"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.5050/ksnve.2026.36.5.510",
+      "title": "Data-driven Mode Selection for Mode Expansion-based Reconstruction of Radiated Noise from an Induction Motor",
+      "authors": [
+        "Wangki Seo",
+        "Changju Hwang",
+        "Kyungjun Song"
+      ],
+      "summary": "Accuracy in mode expansion-based reconstruction of radiated noise depends on which modes form the reduced basis. Previous work ranked modes by the spatial distribution of each mode shape in the structural model, thus fixing their number arbitrarily. Such a ranking scores each mode in isolation; consequently, it can admit modes duplicating what the basis already spans. This adds little to the fit to the measured accelerations and inflates the modal weights. This study treats mode selection as a combinatorial search. The radiated pressure of each mode is computed once by finite element analysis, so as to evaluate any combination by superposition alone. Next, a subset that reduces the one-third octave band-level error is sought in post-processing through sequential forward, backward, and floating searches, which approximate the optimal combination. The procedure was verified on an induction motor from surface acceleration and sound pressure at seven positions, two of which were withheld from selection. The proposed approach lowered both the band- and overall-level errors relative to the ranking-based selection and was much less sensitive to the number of modes. A similar improvement appeared in sound power and at the cover acceleration confirmation points-neither used in selection-indicating that the improvement is not confined to the fitted positions. However, the housing vibration remained overestimated by all methods.",
+      "categories": [],
+      "published": "2026-10-20T00:00:00+00:00",
+      "updated": "2026-10-20T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://doi.org/10.5050/ksnve.2026.36.5.510",
+      "track": "kr",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "data-driven",
+        "relevance:0.80"
+      ],
+      "affiliations": [],
+      "source": "openalex_kr",
+      "hf_upvotes": null,
+      "venue": "한국소음진동공학회논문집",
+      "title_local": "유도전동기 방사소음 재구성을 위한 모드확장법의 데이터 기반 모드선정",
+      "title_ko": "유도전동기 방사소음 재구성을 위한 모드확장법의 데이터 기반 모드선정",
+      "summary_ko": "- 모드 확장 기반 소음 재구성 시, 어떤 모드를 사용할지 결정하는 것이 정확도에 중요합니다.\n- 기존 방식은 각 모드를 개별적으로 평가하여 중복된 모드를 포함하는 한계가 있었습니다.\n- 본 연구는 모드 선택을 조합 탐색 문제로 다루어 최적의 모드 조합을 찾습니다.\n- 유도 전동기 표면 가속도와 음압 데이터를 활용해 제안 방법을 검증했습니다.\n- 제안 방법은 기존 방식 대비 소음 오차를 줄였고, 모드 개수에 덜 민감했습니다.",
+      "tags": [
+        "모드 선택",
+        "소음 재구성",
+        "유도 전동기",
+        "데이터 기반"
+      ],
+      "topics": [
+        "진단·디지털트윈"
+      ]
+    }
+  ]
+}
