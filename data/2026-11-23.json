@@ -1,0 +1,402 @@
+{
+  "week_id": "2026-11-23",
+  "generated_at": "2026-11-21T07:59:03.293207+00:00",
+  "publish_at": "2026-11-23T08:00:00+09:00",
+  "site_title": "AI & AI 활용 기계공학 주간 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2611.26367",
+        "title": "Contactless Estimation of Respiratory Frequency Using 3D-CNN on Thermal Images",
+        "authors": [
+          "Federica Gioia",
+          "Filippo Pura",
+          "Alberto Greco",
+          "Dario Piga",
+          "Arcangelo Merla",
+          "Marco Forgione"
+        ],
+        "summary": "Monitoring physiological parameters such as respiratory rate ($f_R$) is essential for diagnosing and managing various pathological conditions. Thermal imaging offers a promising contactless alternative to traditional methods, which often rely on partially invasive sensors or obtrusive wearable systems. However, existing approaches for $f_R$ estimation from thermal signals typically require extensive pre-processing and manual or semi-automatic region-of-interest (ROI) tracking, limiting their practical applicability. This study proposes a deep learning-based method for estimating $f_R$ directly from thermal videos, eliminating the need for complex pre-processing and ROI tracking. A 3D Convolutional Neural Network (3D-CNN) is developed to operate on raw thermal video data. To address challenges related to small datasets, the model is trained using data augmentation and transfer learning from synthetic datasets. Experimental results demonstrate that the proposed approach achieves a validation $R^2$ score of approximately 0.61 on both pre-processed and raw thermal videos. By simplifying the workflow, this method holds promise for enhancing the feasibility of thermal imaging in real-world applications, such as remote healthcare and driver monitoring in automotive applications.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-11-19T16:33:11+00:00",
+        "updated": "2026-11-19T16:33:11+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2611.26367v1",
+        "abs_url": "https://arxiv.org/abs/2611.26367",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 4,
+        "influential_citation_count": 1,
+        "s2_url": "https://www.semanticscholar.org/paper/0fa63359e2d6431251b752623175faa6b242de80",
+        "tldr": "A deep learning-based method for estimating respiratory rate directly from thermal videos, eliminating the need for complex pre-processing and ROI tracking and holding promise for enhancing the feasibility of thermal imaging in real-world applications, such as remote healthcare and driver monitoring in automotive applications.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "열화상 이미지를 이용한 3D-CNN 기반 호흡 빈도 비접촉 추정",
+        "summary_ko": "- 호흡 빈도($f_R$) 측정은 중요하지만, 기존 방식은 침습적이거나 번거로운 센서를 사용합니다.\n- 이 연구는 열화상 비디오에서 직접 호흡 빈도를 추정하는 딥러닝 기반 방법을 제안합니다.\n- 복잡한 전처리나 관심 영역(ROI) 추적 없이 원본 열화상 비디오에 3D 컨볼루션 신경망(3D-CNN)을 적용합니다.\n- 데이터 증강과 전이 학습을 통해 모델을 훈련했으며, 검증 $R^2$ 점수는 약 0.61을 달성했습니다.\n- 이 방법은 원격 의료 및 운전자 모니터링 등 실제 응용 분야에서 열화상 기술의 활용 가능성을 높입니다.",
+        "tags": [
+          "호흡 빈도 추정",
+          "열화상",
+          "3D-CNN",
+          "비접촉 모니터링"
+        ],
+        "topics": [
+          "멀티모달·비전·생성모델"
+        ]
+      },
+      {
+        "arxiv_id": "2611.24738",
+        "title": "Jeveration: System One Models Now Generate",
+        "authors": [
+          "Yuhe Liu",
+          "Qi Li",
+          "Shihua Zhang",
+          "Xinchao Wang"
+        ],
+        "summary": "System One models such as Jev return decisions through fast, parallel prediction. In this paper, we introduce Jeveration, showing that the same decision paradigm can also generate high-quality images in a single forward pass. Jeveration builds on a frozen vision-language model, repurposing its visual-semantic knowledge for holistic image generation. The key challenge is to maintain global consistency. A single prompt admits many valid images, yet parallel predictions must converge on a coherent whole. We therefore condition all positions on a shared random state to coordinate parallel predictions, so that each draw yields a different but coherent image. Since the model tends to ignore this state under direct image supervision, we first learn a distribution over discrete image codes to guide single-pass generation. Beyond text-to-image generation, we further unify image-to-image generation and dense prediction within the same architecture, so that one checkpoint supports all three tasks, each in one forward pass. Experiments show that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
+        "categories": [
+          "cs.CV"
+        ],
+        "published": "2026-11-18T16:56:59+00:00",
+        "updated": "2026-11-18T16:56:59+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2611.24738v1",
+        "abs_url": "https://arxiv.org/abs/2611.24738",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": null,
+        "influential_citation_count": null,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "huggingface",
+        "hf_upvotes": 148,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "Jeveration: 시스템 원 모델이 이제 생성한다",
+        "summary_ko": "- Jev와 같은 시스템 원(System One) 모델은 빠른 예측으로 의사결정을 내리지만, 본 논문은 이를 이미지 생성에 활용합니다.\n- Jeveration은 고정된 시각-언어 모델의 시각-의미론적 지식을 재활용하여 고품질 이미지를 생성합니다.\n- 전역적 일관성을 위해 모든 위치를 공유된 무작위 상태에 조건화하여 병렬 예측을 조정합니다.\n- 512x512 이미지를 78ms 만에 생성하며, 기존 통합 모델보다 최대 122배 빠릅니다.\n- 텍스트-이미지, 이미지-이미지 생성 및 밀집 예측을 단일 아키텍처로 통합하여 효율성을 높였습니다.",
+        "tags": [
+          "이미지 생성",
+          "시스템 원 모델",
+          "시각-언어 모델",
+          "병렬 예측"
+        ],
+        "topics": [
+          "멀티모달·비전·생성모델"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "doi:10.1109/tase.2025.3646183",
+        "title": "Dexterous Manipulation Through Imitation Learning: A Survey",
+        "authors": [
+          "Shan An",
+          "Ziyu Meng",
+          "Chao Tang",
+          "Yuning Zhou",
+          "Tengyu Liu",
+          "Fangqiang Ding",
+          "Shufang Zhang",
+          "Yao Mu",
+          "R. Song",
+          "Wei Zhang",
+          "Zeng Guang Hou",
+          "Haitao Zhang"
+        ],
+        "summary": "Dexterous manipulation, which refers to the ability of a robotic hand or multi-fingered end-effector to skillfully control, reorient, and manipulate objects through precise, coordinated finger movements and adaptive force modulation, enables complex interactions similar to human hand dexterity. With recent advances in robotics and machine learning, there is a growing demand for these systems to operate in complex and unstructured environments. Traditional model-based approaches struggle to generalize across tasks and object variations due to the high dimensionality and complex contact dynamics of dexterous manipulation. Although model-free methods such as reinforcement learning (RL) show promise, they require extensive training, large-scale interaction data, and carefully designed rewards for stability and effectiveness. Imitation learning (IL) offers an alternative by allowing robots to acquire dexterous manipulation skills directly from expert demonstrations, capturing fine-grained coordination and contact dynamics while bypassing the need for explicit modeling and large-scale trial-and-error. This survey provides an overview of dexterous manipulation methods based on imitation learning, details recent advances, and addresses key challenges in the field. Additionally, it explores potential research directions to enhance IL-driven dexterous manipulation. Our goal is to offer researchers and practitioners a comprehensive introduction to this rapidly evolving domain.",
+        "categories": [],
+        "published": "2025-12-19T00:00:00+00:00",
+        "updated": "2025-12-19T00:00:00+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2504.03515",
+        "abs_url": "https://doi.org/10.1109/tase.2025.3646183",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 71,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "machine learning",
+          "reinforcement learning",
+          "robot",
+          "relevance:0.90"
+        ],
+        "affiliations": [
+          "Tianjin University",
+          "Shandong University",
+          "KTH Royal Institute of Technology",
+          "ETH Zurich",
+          "Beijing Institute for General Artificial Intelligence",
+          "Massachusetts Institute of Technology",
+          "Shanghai Jiao Tong University",
+          "Chinese Academy of Sciences",
+          "Institute of Automation",
+          "Southern University of Science and Technology"
+        ],
+        "source": "openalex",
+        "hf_upvotes": null,
+        "venue": "IEEE Transactions on Automation Science and Engineering",
+        "title_local": null,
+        "title_ko": "모방 학습을 통한 능숙한 조작: 서베이",
+        "summary_ko": "- 로봇 손의 능숙한 조작은 복잡한 환경에서 인간과 유사한 상호작용을 가능하게 합니다.\n- 기존 모델 기반 방식은 일반화가 어렵고, 강화 학습(RL)은 많은 훈련 데이터가 필요합니다.\n- 모방 학습(IL)은 전문가 시연을 통해 로봇이 능숙한 조작 기술을 직접 습득하게 합니다.\n- 이 서베이는 모방 학습 기반 능숙한 조작 방법의 최신 발전과 주요 과제를 다룹니다.\n- 연구자들에게 이 분야에 대한 포괄적인 소개와 잠재적 연구 방향을 제시합니다.",
+        "tags": [
+          "로봇 조작",
+          "모방 학습",
+          "능숙한 조작",
+          "로봇 공학"
+        ],
+        "topics": [
+          "설계최적화·생성형 설계"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.20965/jaciii.2026.p1677",
+        "title": "Boosting Cross-Domain Remaining Useful Life Prediction for Unknown Target Domain Based on Feature Decoupling",
+        "authors": [
+          "南汉宸",
+          "Chenhan Yuan"
+        ],
+        "summary": "Remaining useful life (RUL) prediction is an important technology used to ensure safe operation of industrial equipment, which reduces maintenance costs. However, methods based on deep learning often struggle to maintain accuracy under unknown working conditions owing to the scarcity of target domain data and significant domain shifts between source and target domains. This paper proposes a novel cross-domain RUL prediction for unknown target domains based on feature decoupling, which decouples features into domain-dependent and domain-independent features. The generalizability of the model to the unknown target domain is enhanced by domain-independent features, and the performance of cross-domain RUL prediction is improved. Extensive experiments are carried out on IEEE PHM 2012 and XJTU-SY bearing datasets, and the results show that the proposed method outperformed other methods by a large margin.",
+        "categories": [],
+        "published": "2026-11-20T00:00:00+00:00",
+        "updated": "2026-11-20T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://doi.org/10.20965/jaciii.2026.p1677",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "deep learning",
+          "PHM",
+          "remaining useful life",
+          "relevance:0.85"
+        ],
+        "affiliations": [
+          "China Coal Technology and Engineering Group Corp (China)",
+          "CCTEG Xi'an Research Institute (China)"
+        ],
+        "source": "openalex",
+        "hf_upvotes": null,
+        "venue": "Journal of Advanced Computational Intelligence and Intelligent Informatics",
+        "title_local": null,
+        "title_ko": "미지(未知)의 목표 도메인을 위한 특징 분리 기반 교차 도메인 잔여 수명 예측 성능 향상",
+        "summary_ko": "- 산업 장비의 안전 운용을 위한 잔여 수명(RUL) 예측은 중요하나, 딥러닝은 미지 작업 조건에서 정확도 유지가 어렵습니다.\n- 이는 목표 도메인 데이터 부족과 원본-목표 도메인 간의 큰 차이(domain shift) 때문입니다.\n- 본 논문은 특징을 도메인 의존적(domain-dependent) 및 도메인 독립적(domain-independent) 특징으로 분리하는 새로운 교차 도메인 RUL 예측 방법을 제안합니다.\n- 도메인 독립적 특징을 활용하여 미지 목표 도메인에 대한 모델의 일반화 능력을 높이고 예측 성능을 향상시킵니다.\n- IEEE PHM 2012 및 XJTU-SY 베어링 데이터셋 실험에서 제안된 방법이 다른 방법들보다 훨씬 우수한 성능을 보였습니다.",
+        "tags": [
+          "잔여 수명 예측",
+          "교차 도메인",
+          "특징 분리",
+          "딥러닝"
+        ],
+        "topics": [
+          "진단·디지털트윈"
+        ]
+      }
+    ],
+    "kr": []
+  },
+  "papers": [
+    {
+      "arxiv_id": "2611.26367",
+      "title": "Contactless Estimation of Respiratory Frequency Using 3D-CNN on Thermal Images",
+      "authors": [
+        "Federica Gioia",
+        "Filippo Pura",
+        "Alberto Greco",
+        "Dario Piga",
+        "Arcangelo Merla",
+        "Marco Forgione"
+      ],
+      "summary": "Monitoring physiological parameters such as respiratory rate ($f_R$) is essential for diagnosing and managing various pathological conditions. Thermal imaging offers a promising contactless alternative to traditional methods, which often rely on partially invasive sensors or obtrusive wearable systems. However, existing approaches for $f_R$ estimation from thermal signals typically require extensive pre-processing and manual or semi-automatic region-of-interest (ROI) tracking, limiting their practical applicability. This study proposes a deep learning-based method for estimating $f_R$ directly from thermal videos, eliminating the need for complex pre-processing and ROI tracking. A 3D Convolutional Neural Network (3D-CNN) is developed to operate on raw thermal video data. To address challenges related to small datasets, the model is trained using data augmentation and transfer learning from synthetic datasets. Experimental results demonstrate that the proposed approach achieves a validation $R^2$ score of approximately 0.61 on both pre-processed and raw thermal videos. By simplifying the workflow, this method holds promise for enhancing the feasibility of thermal imaging in real-world applications, such as remote healthcare and driver monitoring in automotive applications.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-11-19T16:33:11+00:00",
+      "updated": "2026-11-19T16:33:11+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2611.26367v1",
+      "abs_url": "https://arxiv.org/abs/2611.26367",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 4,
+      "influential_citation_count": 1,
+      "s2_url": "https://www.semanticscholar.org/paper/0fa63359e2d6431251b752623175faa6b242de80",
+      "tldr": "A deep learning-based method for estimating respiratory rate directly from thermal videos, eliminating the need for complex pre-processing and ROI tracking and holding promise for enhancing the feasibility of thermal imaging in real-world applications, such as remote healthcare and driver monitoring in automotive applications.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "열화상 이미지를 이용한 3D-CNN 기반 호흡 빈도 비접촉 추정",
+      "summary_ko": "- 호흡 빈도($f_R$) 측정은 중요하지만, 기존 방식은 침습적이거나 번거로운 센서를 사용합니다.\n- 이 연구는 열화상 비디오에서 직접 호흡 빈도를 추정하는 딥러닝 기반 방법을 제안합니다.\n- 복잡한 전처리나 관심 영역(ROI) 추적 없이 원본 열화상 비디오에 3D 컨볼루션 신경망(3D-CNN)을 적용합니다.\n- 데이터 증강과 전이 학습을 통해 모델을 훈련했으며, 검증 $R^2$ 점수는 약 0.61을 달성했습니다.\n- 이 방법은 원격 의료 및 운전자 모니터링 등 실제 응용 분야에서 열화상 기술의 활용 가능성을 높입니다.",
+      "tags": [
+        "호흡 빈도 추정",
+        "열화상",
+        "3D-CNN",
+        "비접촉 모니터링"
+      ],
+      "topics": [
+        "멀티모달·비전·생성모델"
+      ]
+    },
+    {
+      "arxiv_id": "2611.24738",
+      "title": "Jeveration: System One Models Now Generate",
+      "authors": [
+        "Yuhe Liu",
+        "Qi Li",
+        "Shihua Zhang",
+        "Xinchao Wang"
+      ],
+      "summary": "System One models such as Jev return decisions through fast, parallel prediction. In this paper, we introduce Jeveration, showing that the same decision paradigm can also generate high-quality images in a single forward pass. Jeveration builds on a frozen vision-language model, repurposing its visual-semantic knowledge for holistic image generation. The key challenge is to maintain global consistency. A single prompt admits many valid images, yet parallel predictions must converge on a coherent whole. We therefore condition all positions on a shared random state to coordinate parallel predictions, so that each draw yields a different but coherent image. Since the model tends to ignore this state under direct image supervision, we first learn a distribution over discrete image codes to guide single-pass generation. Beyond text-to-image generation, we further unify image-to-image generation and dense prediction within the same architecture, so that one checkpoint supports all three tasks, each in one forward pass. Experiments show that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-11-18T16:56:59+00:00",
+      "updated": "2026-11-18T16:56:59+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2611.24738v1",
+      "abs_url": "https://arxiv.org/abs/2611.24738",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": null,
+      "influential_citation_count": null,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "huggingface",
+      "hf_upvotes": 148,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "Jeveration: 시스템 원 모델이 이제 생성한다",
+      "summary_ko": "- Jev와 같은 시스템 원(System One) 모델은 빠른 예측으로 의사결정을 내리지만, 본 논문은 이를 이미지 생성에 활용합니다.\n- Jeveration은 고정된 시각-언어 모델의 시각-의미론적 지식을 재활용하여 고품질 이미지를 생성합니다.\n- 전역적 일관성을 위해 모든 위치를 공유된 무작위 상태에 조건화하여 병렬 예측을 조정합니다.\n- 512x512 이미지를 78ms 만에 생성하며, 기존 통합 모델보다 최대 122배 빠릅니다.\n- 텍스트-이미지, 이미지-이미지 생성 및 밀집 예측을 단일 아키텍처로 통합하여 효율성을 높였습니다.",
+      "tags": [
+        "이미지 생성",
+        "시스템 원 모델",
+        "시각-언어 모델",
+        "병렬 예측"
+      ],
+      "topics": [
+        "멀티모달·비전·생성모델"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1109/tase.2025.3646183",
+      "title": "Dexterous Manipulation Through Imitation Learning: A Survey",
+      "authors": [
+        "Shan An",
+        "Ziyu Meng",
+        "Chao Tang",
+        "Yuning Zhou",
+        "Tengyu Liu",
+        "Fangqiang Ding",
+        "Shufang Zhang",
+        "Yao Mu",
+        "R. Song",
+        "Wei Zhang",
+        "Zeng Guang Hou",
+        "Haitao Zhang"
+      ],
+      "summary": "Dexterous manipulation, which refers to the ability of a robotic hand or multi-fingered end-effector to skillfully control, reorient, and manipulate objects through precise, coordinated finger movements and adaptive force modulation, enables complex interactions similar to human hand dexterity. With recent advances in robotics and machine learning, there is a growing demand for these systems to operate in complex and unstructured environments. Traditional model-based approaches struggle to generalize across tasks and object variations due to the high dimensionality and complex contact dynamics of dexterous manipulation. Although model-free methods such as reinforcement learning (RL) show promise, they require extensive training, large-scale interaction data, and carefully designed rewards for stability and effectiveness. Imitation learning (IL) offers an alternative by allowing robots to acquire dexterous manipulation skills directly from expert demonstrations, capturing fine-grained coordination and contact dynamics while bypassing the need for explicit modeling and large-scale trial-and-error. This survey provides an overview of dexterous manipulation methods based on imitation learning, details recent advances, and addresses key challenges in the field. Additionally, it explores potential research directions to enhance IL-driven dexterous manipulation. Our goal is to offer researchers and practitioners a comprehensive introduction to this rapidly evolving domain.",
+      "categories": [],
+      "published": "2025-12-19T00:00:00+00:00",
+      "updated": "2025-12-19T00:00:00+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2504.03515",
+      "abs_url": "https://doi.org/10.1109/tase.2025.3646183",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 71,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "machine learning",
+        "reinforcement learning",
+        "robot",
+        "relevance:0.90"
+      ],
+      "affiliations": [
+        "Tianjin University",
+        "Shandong University",
+        "KTH Royal Institute of Technology",
+        "ETH Zurich",
+        "Beijing Institute for General Artificial Intelligence",
+        "Massachusetts Institute of Technology",
+        "Shanghai Jiao Tong University",
+        "Chinese Academy of Sciences",
+        "Institute of Automation",
+        "Southern University of Science and Technology"
+      ],
+      "source": "openalex",
+      "hf_upvotes": null,
+      "venue": "IEEE Transactions on Automation Science and Engineering",
+      "title_local": null,
+      "title_ko": "모방 학습을 통한 능숙한 조작: 서베이",
+      "summary_ko": "- 로봇 손의 능숙한 조작은 복잡한 환경에서 인간과 유사한 상호작용을 가능하게 합니다.\n- 기존 모델 기반 방식은 일반화가 어렵고, 강화 학습(RL)은 많은 훈련 데이터가 필요합니다.\n- 모방 학습(IL)은 전문가 시연을 통해 로봇이 능숙한 조작 기술을 직접 습득하게 합니다.\n- 이 서베이는 모방 학습 기반 능숙한 조작 방법의 최신 발전과 주요 과제를 다룹니다.\n- 연구자들에게 이 분야에 대한 포괄적인 소개와 잠재적 연구 방향을 제시합니다.",
+      "tags": [
+        "로봇 조작",
+        "모방 학습",
+        "능숙한 조작",
+        "로봇 공학"
+      ],
+      "topics": [
+        "설계최적화·생성형 설계"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.20965/jaciii.2026.p1677",
+      "title": "Boosting Cross-Domain Remaining Useful Life Prediction for Unknown Target Domain Based on Feature Decoupling",
+      "authors": [
+        "南汉宸",
+        "Chenhan Yuan"
+      ],
+      "summary": "Remaining useful life (RUL) prediction is an important technology used to ensure safe operation of industrial equipment, which reduces maintenance costs. However, methods based on deep learning often struggle to maintain accuracy under unknown working conditions owing to the scarcity of target domain data and significant domain shifts between source and target domains. This paper proposes a novel cross-domain RUL prediction for unknown target domains based on feature decoupling, which decouples features into domain-dependent and domain-independent features. The generalizability of the model to the unknown target domain is enhanced by domain-independent features, and the performance of cross-domain RUL prediction is improved. Extensive experiments are carried out on IEEE PHM 2012 and XJTU-SY bearing datasets, and the results show that the proposed method outperformed other methods by a large margin.",
+      "categories": [],
+      "published": "2026-11-20T00:00:00+00:00",
+      "updated": "2026-11-20T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://doi.org/10.20965/jaciii.2026.p1677",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "deep learning",
+        "PHM",
+        "remaining useful life",
+        "relevance:0.85"
+      ],
+      "affiliations": [
+        "China Coal Technology and Engineering Group Corp (China)",
+        "CCTEG Xi'an Research Institute (China)"
+      ],
+      "source": "openalex",
+      "hf_upvotes": null,
+      "venue": "Journal of Advanced Computational Intelligence and Intelligent Informatics",
+      "title_local": null,
+      "title_ko": "미지(未知)의 목표 도메인을 위한 특징 분리 기반 교차 도메인 잔여 수명 예측 성능 향상",
+      "summary_ko": "- 산업 장비의 안전 운용을 위한 잔여 수명(RUL) 예측은 중요하나, 딥러닝은 미지 작업 조건에서 정확도 유지가 어렵습니다.\n- 이는 목표 도메인 데이터 부족과 원본-목표 도메인 간의 큰 차이(domain shift) 때문입니다.\n- 본 논문은 특징을 도메인 의존적(domain-dependent) 및 도메인 독립적(domain-independent) 특징으로 분리하는 새로운 교차 도메인 RUL 예측 방법을 제안합니다.\n- 도메인 독립적 특징을 활용하여 미지 목표 도메인에 대한 모델의 일반화 능력을 높이고 예측 성능을 향상시킵니다.\n- IEEE PHM 2012 및 XJTU-SY 베어링 데이터셋 실험에서 제안된 방법이 다른 방법들보다 훨씬 우수한 성능을 보였습니다.",
+      "tags": [
+        "잔여 수명 예측",
+        "교차 도메인",
+        "특징 분리",
+        "딥러닝"
+      ],
+      "topics": [
+        "진단·디지털트윈"
+      ]
+    }
+  ]
+}
