@@ -53,7 +53,7 @@ from .collect import (
     match_keywords,
 )
 from .config import DATA_DIR, Config
-from .relevance import filter_by_relevance
+from .relevance import GateUnavailable, filter_by_relevance
 from .render import TRACK_LABEL, render_site, save_week_data
 from .select import (
     drop_excluded,
@@ -335,20 +335,28 @@ def run(args: argparse.Namespace) -> int:
 
     provider = None if args.dry_run else _build_provider_verbose(cfg)
 
+    def held(fn, *a, **kw):
+        """게이트 실패로 보류된 슬롯은 None(비움) — 관심 밖 논문을 채우지 않는다."""
+        try:
+            return fn(*a, **kw)
+        except GateUnavailable as exc:
+            print(f"  [error] 슬롯 보류: {exc}")
+            return None
+
     selected: list[Paper] = []
     for idx, track in enumerate(["ai", "mech"]):
         if idx > 0:
             time.sleep(15)  # arXiv rate limit 회피용 트랙 간 대기
-        impact_pick = _run_impact_slot(cfg, provider, track, featured, no_citations=args.no_citations)
+        impact_pick = held(_run_impact_slot, cfg, provider, track, featured, no_citations=args.no_citations)
         time.sleep(15)
         exclude_ids = {impact_pick.arxiv_id} if impact_pick else set()
-        latest_pick = _run_latest_slot(
-            cfg, provider, track, featured, no_citations=args.no_citations, exclude_ids=exclude_ids
+        latest_pick = held(
+            _run_latest_slot, cfg, provider, track, featured, no_citations=args.no_citations, exclude_ids=exclude_ids
         )
         for p in (impact_pick, latest_pick):
             if p is not None:
                 selected.append(p)
-    kr_pick = _run_kr_slot(cfg, provider, featured)
+    kr_pick = held(_run_kr_slot, cfg, provider, featured)
     if kr_pick is not None:
         selected.append(kr_pick)
 
@@ -395,21 +403,27 @@ def run_single_slot(args: argparse.Namespace) -> int:
 
     provider = None if args.dry_run else _build_provider_verbose(cfg)
 
-    if track == "kr":
-        pick = _run_kr_slot(cfg, provider, featured)
-    elif kind == "impact":
-        pick = _run_impact_slot(cfg, provider, track, featured, no_citations=args.no_citations)
-    else:  # latest — 같은 트랙 impact 선정작을 staging에서 읽어 중복 제외
-        exclude_ids: set[str] = set()
-        imp = _read_staging(week_id, f"{track}-impact")
-        if imp and imp.get("paper"):
-            exclude_ids = {imp["paper"]["arxiv_id"]}
-            print(f"  중복 제외: {track}-impact 선정작 1편")
-        elif imp is None:
-            print(f"  [info] {track}-impact staging 없음 — 중복 제외 생략")
-        pick = _run_latest_slot(
-            cfg, provider, track, featured, no_citations=args.no_citations, exclude_ids=exclude_ids
-        )
+    try:
+        if track == "kr":
+            pick = _run_kr_slot(cfg, provider, featured)
+        elif kind == "impact":
+            pick = _run_impact_slot(cfg, provider, track, featured, no_citations=args.no_citations)
+        else:  # latest — 같은 트랙 impact 선정작을 staging에서 읽어 중복 제외
+            exclude_ids: set[str] = set()
+            imp = _read_staging(week_id, f"{track}-impact")
+            if imp and imp.get("paper"):
+                exclude_ids = {imp["paper"]["arxiv_id"]}
+                print(f"  중복 제외: {track}-impact 선정작 1편")
+            elif imp is None:
+                print(f"  [info] {track}-impact staging 없음 — 중복 제외 생략")
+            pick = _run_latest_slot(
+                cfg, provider, track, featured, no_citations=args.no_citations, exclude_ids=exclude_ids
+            )
+    except GateUnavailable as exc:
+        # 보류: staging을 쓰지 않음 → 조립 시 이 슬롯은 비거나(새 주차) 직전 결과 유지(보충 실행).
+        # 비정상 종료로 Actions step을 실패 처리 → 검토 메일이 '미완료'로 발송된다.
+        print(f"  [error] {args.slot} 보류: {exc}")
+        return 3
 
     fp = _write_staging(week_id, args.slot, track, pick)
     print(f"  staging 저장: {fp}")

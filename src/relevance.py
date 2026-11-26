@@ -3,13 +3,15 @@
 키워드 필터를 통과한 정렬된 후보(상위 K편)를 LLM에 한 번 보내 0~1 점수를 받고,
 임계값 이상만 다음 단계(`select_impact` / `select_latest`)로 넘긴다.
 
-게이트 응답이 파싱되지 않거나 모두 임계값 미만이면 `empty_pool_behavior`에 따라
-fallback 처리한다.
+모두 임계값 미만이면 `empty_pool_behavior`에 따라 fallback 처리한다.
+게이트 호출·파싱이 재시도 후에도 실패하면 `GateUnavailable`을 던져 슬롯을 '보류'한다
+(채점 없이 아무 논문이나 통과시키지 않음 → 슬롯이 비고 미완료 메일로 알림).
 """
 from __future__ import annotations
 
 import json
 import re
+import time
 
 from .collect import Paper
 from .config import Config
@@ -26,6 +28,10 @@ _JSON_RE = re.compile(r"\{[\s\S]*\}")
 _ENTRY_RE = re.compile(r'"idx"\s*:\s*(\d+)\s*,\s*"score"\s*:\s*([-+]?\d*\.?\d+)')
 # 말미 콤마(trailing comma) 보정용
 _TRAILING_COMMA_RE = re.compile(r",(\s*[}\]])")
+
+
+class GateUnavailable(RuntimeError):
+    """게이트 호출·파싱이 재시도 후에도 실패 — 호출 측은 슬롯을 비우고(보류) 실패로 알린다."""
 
 
 def _extract_scores(raw: str) -> tuple[list[dict], str]:
@@ -161,7 +167,7 @@ def filter_by_relevance(
     국내 논문 슬롯은 "skip"(관련 없는 논문을 억지로 채우지 않음) + 국내 전용 임계값.
 
     - 게이트 비활성 또는 트랙 미적용 → 원본 그대로 반환.
-    - 게이트 호출·파싱 실패 → 안전하게 원본 그대로 반환.
+    - 게이트 호출·파싱 실패 → `retry_waits_sec`만큼 대기 후 재시도, 끝내 실패하면 GateUnavailable.
     - 모두 임계값 미만 → `empty_pool_behavior` 설정에 따라:
         "fallback_top1": 원본 상위 1편만 반환
         "skip":          빈 리스트 반환
@@ -204,10 +210,19 @@ def filter_by_relevance(
 
     head = candidates_sorted[:k]
     print(f"  LLM 적합도 게이트 평가 ({len(head)}편, threshold={threshold})...")
+    # 일시 과부하(503)·응답 잘림 대비: 실패 시 대기 후 재시도 (라이브러리 기본 재시도와 별도)
+    waits = [int(w) for w in (cfg.get("relevance_gate.retry_waits_sec", [30, 60]) or [])]
     scores = score_candidates(provider, description, head, max_tokens=gate_max_tokens)
+    for n, wait in enumerate(waits, 1):
+        if scores:
+            break
+        print(f"    [info] 게이트 점수 없음 — {wait}초 후 재시도 ({n}/{len(waits)})")
+        time.sleep(wait)
+        scores = score_candidates(provider, description, head, max_tokens=gate_max_tokens)
     if not scores:
-        print("    [warn] 점수 없음 — 게이트 우회, 원본 풀 유지")
-        return candidates_sorted
+        # 예전엔 '게이트 우회, 원본 풀 유지' → 관심 밖 논문이 조용히 선정됐음. 이제는 보류.
+        print("    [error] 게이트 재시도 모두 실패 — 슬롯 보류(비움)")
+        raise GateUnavailable(f"{track} 게이트 채점 실패 ({1 + len(waits)}회 시도)")
 
     passed: list[Paper] = []
     for i, p in enumerate(head):
