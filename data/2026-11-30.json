@@ -1,0 +1,477 @@
+{
+  "week_id": "2026-11-30",
+  "generated_at": "2026-11-28T08:41:27.443064+00:00",
+  "publish_at": "2026-11-30T08:00:00+09:00",
+  "site_title": "AI & AI 활용 기계공학 주간 논문 브리핑",
+  "provider": "openai_compat",
+  "impact_lookback_days": 365,
+  "latest_lookback_days": 14,
+  "tracks": {
+    "ai": [
+      {
+        "arxiv_id": "2611.34641",
+        "title": "Distractor-Robust Reinforcement Learning via Variational Bisimulation",
+        "authors": [
+          "Benjamin Freed",
+          "Vivaan Singh",
+          "Dean Zadok",
+          "Roberto Calandra",
+          "Jeff Schneider",
+          "Howie Choset"
+        ],
+        "summary": "Model-based reinforcement learning (MBRL) promises data efficiency and generalization, but typical reconstruction-based objectives encourage models to waste representational capacity on task-irrelevant distractors. We introduce VIBES (Variational Inference for Bisimulation-based Encoded States), a new objective that replaces pixel reconstruction with an adversarial term, which enforces that latent states suffice to predict both rewards and the next latent state. We show that this objective measures how far the encoder is from reward and dynamics sufficiency, and that whenever exact sufficiency is attainable, its global optima induce bisimulation relations on histories. Combined with a fixed-capacity latent bottleneck, this encourages latent states to retain task-relevant information while discarding irrelevant variation. Our method serves as a drop-in replacement for Dreamer's model-learning component, achieves state-of-the-art performance on the Distracting Control Suite, and extends to visually complex manipulation in Realistic ManiSkill. Unlike prior approaches, it does not rely on image-specific augmentations and applies equally well to high-dimensional vector-state tasks, demonstrated on a 100-link swimmer robot. Finally, latent-space analyses (UMAP embeddings and nearest-neighbor probes) confirm that the learned representations are sensitive to task-relevant structure while invariant to distractors.",
+        "categories": [
+          "cs.LG"
+        ],
+        "published": "2026-11-25T16:21:31+00:00",
+        "updated": "2026-11-25T16:21:31+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2611.34641v1",
+        "abs_url": "https://arxiv.org/abs/2611.34641",
+        "track": "ai",
+        "slot": "impact",
+        "citation_count": 2,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/ade80071a233bb9be192bf56a86f6aeb86feedf7",
+        "tldr": "VIBES (Variational Inference for Bisimulation-based Encoded States), a new objective that replaces pixel reconstruction with an adversarial term, which enforces that latent states suffice to predict both rewards and the next latent state, is introduced.",
+        "matched_keywords": [],
+        "affiliations": [],
+        "source": "arxiv",
+        "hf_upvotes": null,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "교란 요인에 강건한 강화 학습을 위한 변분 비시뮬레이션",
+        "summary_ko": "- 모델 기반 강화 학습(MBRL)은 데이터 효율적이지만, 기존 방식은 불필요한 교란 요인에 표현 능력을 낭비합니다.\n- VIBES는 픽셀 재구성을 적대적 항으로 대체하여, 잠재 상태가 보상과 다음 잠재 상태를 예측하도록 합니다.\n- 이 목적 함수는 인코더가 보상 및 동역학 예측에 충분한지 측정하며, 비시뮬레이션 관계를 유도합니다.\n- Dreamer의 모델 학습 구성 요소를 대체하여 Distracting Control Suite에서 최고 성능을 달성했습니다.\n- 이미지 증강 없이 고차원 벡터 상태 작업에도 적용 가능하며, 학습된 표현은 교란 요인에 불변합니다.",
+        "tags": [
+          "강화 학습",
+          "표현 학습",
+          "비시뮬레이션",
+          "교란 요인 강건성"
+        ],
+        "topics": [
+          "강화학습·로보틱스"
+        ]
+      },
+      {
+        "arxiv_id": "2611.34923",
+        "title": "Mixture-of-Loops Transformer",
+        "authors": [
+          "Lianghui Zhu",
+          "Shijie Wang",
+          "Xinggang Wang",
+          "Jinze Bai",
+          "Bo Wang",
+          "Xiang Bai"
+        ],
+        "summary": "Looped Transformers boost expressivity by reusing shared layers across loops, yet at the cost of efficiency. Pushing their expressivity-efficiency frontier requires rethinking the core mechanism connecting adjacent loops: What should be passed as a Transformer loops? We introduce Mixture-of-Loops Transformer (MoLT), whose Mixture-of-Loops Attention (MoLA) uses keys and values (KV) as memory for selective reuse across depths and loops. Under loop residual, MoLT-R retains the residual stream and reads local KV across loops for expressivity. Under loop KV, MoLT-KV instead restarts from embeddings and reads current-loop local KV with preceding-loop memory KV at earlier positions for efficiency. MoLT-KV eliminates same-position cross-loop dependence and, paired with loop forcing for parallel training, unlocks single-traversal Mixture-of-Loops (MoL) decoding beyond the training loop horizon. To balance efficiency and quality, we introduce U-shaped MoLT (U-MoLT), which separates memory construction from prediction readout and skips unused decoder traversals without changing predictions. In 400B-token pretraining, U-MoLT outperforms OLMo3 across 700M/1.5B dense and 3B MoE models, achieving 1.7x validation cross-entropy (CE) token efficiency at 700M while improving 3B MoE 10-domain perplexity by 0.75 and 10-task accuracy by 2.1 percentage points. In 100B-token continued pretraining of Qwen3.5-0.8B-Base, our U-MoLT adaptation lowers CE on all 11 domains over the matched baseline with 1.4x mean token efficiency. At inference, U-MoLT with MoL-Hybrid-2 matches non-looped OLMo3 latency at 996.6 vs. 1,000.6 ms on S-size (~113M) models. Code is available at https://github.com/hustvl/MoLT",
+        "categories": [
+          "cs.LG",
+          "cs.CL"
+        ],
+        "published": "2026-11-25T18:58:53+00:00",
+        "updated": "2026-11-25T18:58:53+00:00",
+        "pdf_url": "https://arxiv.org/pdf/2611.34923v1",
+        "abs_url": "https://arxiv.org/abs/2611.34923",
+        "track": "ai",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": "https://www.semanticscholar.org/paper/d3ccbd69cf0f1aea6e4d96fa55acc466d5015bf8",
+        "tldr": "U-shaped MoLT (U-MoLT), whose Mixture-of-Loops Attention (MoLA) uses keys and values (KV) as memory for selective reuse across depths and loops, is introduced, which separates memory construction from prediction readout and skips unused decoder traversals without changing predictions.",
+        "matched_keywords": [],
+        "affiliations": [
+          "Alibaba DAMO Academy"
+        ],
+        "source": "huggingface",
+        "hf_upvotes": 76,
+        "venue": null,
+        "title_local": null,
+        "title_ko": "Mixture-of-Loops 트랜스포머",
+        "summary_ko": "- 기존 루프형 트랜스포머는 표현력은 높지만 효율성이 떨어지는 한계가 있습니다.\n- 이 논문은 키-값(KV)을 메모리로 활용하는 MoLA를 가진 MoLT를 제안합니다.\n- MoLT는 효율성을 위해 루프 KV 방식을 도입하고 병렬 훈련을 지원합니다.\n- U-MoLT는 400B 토큰 사전 학습에서 OLMo3 대비 1.7배 토큰 효율을 달성했습니다.\n- 이 모델은 효율성과 성능을 동시에 개선하여 대규모 언어 모델에 기여합니다.",
+        "tags": [
+          "트랜스포머",
+          "언어 모델",
+          "효율성",
+          "딥러닝"
+        ],
+        "topics": [
+          "LLM·생성형·에이전트"
+        ]
+      }
+    ],
+    "mech": [
+      {
+        "arxiv_id": "doi:10.1177/14759217261440798",
+        "title": "Digital twin-assisted graph contrastive domain adaptation for small-sample bearing fault diagnosis",
+        "authors": [
+          "Chunyang Dai",
+          "Deqiang He",
+          "Zhenzhen Jin",
+          "Xingwu Zhang",
+          "Gang Chen",
+          "Jinxin Wu",
+          "Jiayang Zhao",
+          "Yan Xu"
+        ],
+        "summary": "Rolling bearing fault diagnosis is crucial for ensuring the safe and reliable operation of mechanical equipment. However, the scarcity of labeled fault data often prevents data-driven diagnostic models from being sufficiently trained, thereby limiting their effectiveness and generalizability in practical applications. To address this issue, this study introduces a digital twin-assisted graph contrastive domain adaptation (GCDA) network for bearing fault diagnosis under small-sample conditions. Specifically, a lumped-parameter dynamic model of the bearing is established in the digital space, covering representative fault modes associated with raceways and rolling elements. Nevertheless, the significant distribution discrepancy between the dynamic responses and measured signals leads to performance degradation if applied directly. To mitigate this issue, a cross-domain distribution coupling strategy is proposed at the data level. By leveraging modal decomposition and energy matching, the simulated dynamic responses are fused with the background components of measured signals, thereby generating twin samples that simultaneously retain physical mechanisms and realistic distribution characteristics. At the model level, a GCDA network is further developed to achieve domain-invariant feature extraction and discriminative representation learning. Finally, validation on both a self-collected laboratory dataset and the publicly available XJTU-SY dataset demonstrates that the proposed method outperforms several state-of-the-art approaches across multiple evaluation metrics.",
+        "categories": [],
+        "published": "2026-04-21T00:00:00+00:00",
+        "updated": "2026-04-21T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://doi.org/10.1177/14759217261440798",
+        "track": "mech",
+        "slot": "impact",
+        "citation_count": 75,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "data-driven",
+          "diagnostic",
+          "digital twin",
+          "mechanical",
+          "relevance:0.85"
+        ],
+        "affiliations": [
+          "Guangxi University",
+          "Guangxi Key Lab of Manufacturing System and Advanced Manufacturing Technology",
+          "Xi'an Jiaotong University",
+          "University of Electronic Science and Technology of China"
+        ],
+        "source": "openalex",
+        "hf_upvotes": null,
+        "venue": "Structural Health Monitoring",
+        "title_local": null,
+        "title_ko": "디지털 트윈 기반 그래프 대조 도메인 적응을 이용한 소량 샘플 베어링 고장 진단",
+        "summary_ko": "- 베어링 고장 진단은 중요하지만, 레이블된 고장 데이터 부족으로 기존 모델의 성능과 일반화가 제한됩니다.\n- 본 연구는 소량 샘플 조건에서 베어링 고장 진단을 위한 디지털 트윈 기반 그래프 대조 도메인 적응(GCDA) 네트워크를 제안합니다.\n- 디지털 트윈으로 생성된 동적 응답과 실제 측정 신호 간의 분포 차이를 줄이기 위해 교차 도메인 분포 결합 전략을 사용합니다.\n- 모달 분해 및 에너지 매칭을 통해 시뮬레이션 데이터와 실제 신호의 배경 성분을 융합하여 트윈 샘플을 생성합니다.\n- 제안된 방법은 자체 수집 및 XJTU-SY 공개 데이터셋에서 여러 최신 기법보다 우수한 성능을 보였습니다.",
+        "tags": [
+          "베어링 고장 진단",
+          "디지털 트윈",
+          "도메인 적응",
+          "소량 샘플 학습"
+        ],
+        "topics": [
+          "진단·디지털트윈"
+        ]
+      },
+      {
+        "arxiv_id": "doi:10.1680/jstbu.26.00161",
+        "title": "Multi-task deep learning for crack detection, segmentation and quantification in tunnels",
+        "authors": [
+          "Ronglin Liu",
+          "Jumin Zhao"
+        ],
+        "summary": "Crack detection and quantification in tunnel chutes is vital for ensuring infrastructure safety and preventing failures. Traditional methods, reliant on manual checks and basic image processing, are inefficient and inaccurate because they overlook tunnel-specific conditions. This paper introduces a multi-task deep learning model aimed at automating structural health monitoring in this context. The proposed solution integrates the U-shaped convolutional neural network for crack segmentation, version five of the you only look once algorithm for detection and a quantification model to measure crack length, area, density and severity. Utilising the publicly available ‘a crack dataset’ from Kaggle for training and testing, the model incorporates preprocessing techniques such as resizing, noise reduction and contrast enhancement to improve crack detection, segmentation and quantification performance. The framework demonstrates high performance with precision (0.900), recall (0.930), F1 score (0.915), dice (0.900) and intersection over union (0.850), demonstrating effectiveness on the evaluated data set. External data sets were used to assess the generalisation capability of the proposed framework. Although the evaluated data sets provide evidence of the framework’s potential for structural crack inspection, dedicated validation using tunnel chute-specific imagery from real operational conditions remains necessary. The proposed unified framework integrates crack detection, segmentation and quantitative assessment within a single pipeline, supporting structural health monitoring applications, including tunnel chute inspection.",
+        "categories": [],
+        "published": "2026-11-27T00:00:00+00:00",
+        "updated": "2026-11-27T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://doi.org/10.1680/jstbu.26.00161",
+        "track": "mech",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "deep learning",
+          "neural network",
+          "structural",
+          "crack",
+          "relevance:0.85"
+        ],
+        "affiliations": [
+          "Taiyuan University of Technology"
+        ],
+        "source": "openalex",
+        "hf_upvotes": null,
+        "venue": "Proceedings of the Institution of Civil Engineers - Structures and Buildings",
+        "title_local": null,
+        "title_ko": "터널 균열 감지, 분할 및 정량화를 위한 다중 작업 딥러닝",
+        "summary_ko": "- 터널 슈트의 균열은 인프라 안전에 필수적이지만, 기존 수동 검사는 비효율적이고 부정확합니다.\n- 이 논문은 균열 감지, 분할, 정량화를 통합한 다중 작업 딥러닝 모델을 제안합니다.\n- U-Net, YOLOv5, 그리고 정량화 모델을 결합하여 균열 길이, 면적, 밀도, 심각도를 측정합니다.\n- Kaggle 데이터셋으로 훈련하여 정밀도 0.900, 재현율 0.930, F1 점수 0.915 등의 높은 성능을 보였습니다.\n- 이 통합 프레임워크는 터널 슈트 검사를 포함한 구조물 건전성 모니터링에 기여할 수 있습니다.",
+        "tags": [
+          "딥러닝",
+          "균열 감지",
+          "구조물 건전성 모니터링",
+          "터널 검사"
+        ],
+        "topics": [
+          "진단·디지털트윈"
+        ]
+      }
+    ],
+    "kr": [
+      {
+        "arxiv_id": "doi:10.3795/ksme-a.2026.50.11.947",
+        "title": "Bolt Clamping Force Prediction Using an MS Similarity Map-based Regression CNN and an Integrated MATLAB Diagnostic Platform",
+        "authors": [
+          "Ho-Hyeong Lee",
+          "Jihyung Han"
+        ],
+        "summary": "본 논문에서는 양단지지 볼트 체결 보 구조물의 볼트 체결력을 예측하는 MS 유사성 지도 기반 합성곱 신경망 방법과, 데이터 구성부터 신경망 학습 및 체결 상태 진단까지의 전 과정을 통합한 플랫폼을 제안한다. 다양한 체결력 조건에서 구조물의 동특성을 반영하기 위하여 비선형 마찰 접촉을 고려한 프리스트레스 주파수응답해석을 수행하였으며, 계산 효율성을 확보하기 위하여 크리로프 부공간 기반의 모델차수축소법으로 137,913 자유도의 초기모델을 30 자유도의 축소모델로 대체하여 대규모 MS 유사성 지도 빅데이터를 생성하였다. 생성된 8 × 2,000 크기의 MS 유사성 지도를 입력으로 하는 8개 합성곱 계층의 회귀 CNN을 학습한 결과, 5,000개의 시험 데이터에 대하여 볼트별 평균 MAE는 338.4 N, 평균 결정계수는 0.9563으로 나타났으며, 볼트 위치별 예측 정확도 차이를 모드 형상에 따른 동특성 민감도와 MS 유사성 지도 입력 특징의 식별 가능성 관점에서 정성적으로 고찰하였다. 또한 합성곱 계층 수에 대한 소거 연구에서는 8개 합성곱 계층 구성이 가장 우수한 검증 성능을 나타냈으며, 5개의 독립적인 단일 출력 CNN과의 비교에서는 다중 출력 CNN이 유사한 수준의 시험 예측 성능을 확보함을 확인하였다. 나아가 App Designer 기반의 MATLAB 플랫폼을 개발하여 학습 데이터 관리, 하이퍼파라미터 설정, 신경망 학습, 볼트별 예측 성능 평가 및 5단계 체결 상태 진단을 단일 환경에서 수행할 수 있도록 하였다. 제안된 방법과 플랫폼은 해석 기반 예측 방법을 실험 기반 볼트 풀림 진단 및 유지보수 지원 시스템으로 확장하기 위한 기반으로 활용될 수 있다.",
+        "categories": [],
+        "published": "2026-11-23T00:00:00+00:00",
+        "updated": "2026-11-23T00:00:00+00:00",
+        "pdf_url": "",
+        "abs_url": "https://doi.org/10.3795/ksme-a.2026.50.11.947",
+        "track": "kr",
+        "slot": "latest",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "s2_url": null,
+        "tldr": null,
+        "matched_keywords": [
+          "relevance:0.85"
+        ],
+        "affiliations": [
+          "Gyeongkuk National University"
+        ],
+        "source": "openalex_kr",
+        "hf_upvotes": null,
+        "venue": "대한기계학회논문집 A",
+        "title_local": "MS 유사성 지도 기반 회귀 CNN을 이용한 볼트 체결력 예측 및 MATLAB 통합 진단 플랫폼",
+        "title_ko": "MS 유사성 지도 기반 회귀 CNN을 이용한 볼트 체결력 예측 및 MATLAB 통합 진단 플랫폼",
+        "summary_ko": "- 본 연구는 양단지지 볼트 체결 보 구조물의 볼트 체결력 예측과 체결 상태 진단을 위한 통합 플랫폼을 제안합니다.\n- 비선형 마찰 접촉을 고려한 프리스트레스 주파수응답해석과 모델 차수 축소법으로 대규모 MS 유사성 지도 빅데이터를 생성했습니다.\n- 8x2,000 크기의 MS 유사성 지도를 입력으로 하는 8개 합성곱 계층의 회귀 CNN(Convolutional Neural Network)을 학습시켰습니다.\n- 5,000개 시험 데이터에서 볼트별 평균 MAE 338.4 N, 평균 결정계수 0.9563의 예측 정확도를 보였습니다.\n- 제안된 방법과 MATLAB 플랫폼은 해석 기반 예측을 실험 기반 볼트 풀림 진단 및 유지보수 시스템으로 확장하는 데 기여합니다.",
+        "tags": [
+          "볼트 체결력 예측",
+          "합성곱 신경망",
+          "모델 차수 축소",
+          "MATLAB 플랫폼"
+        ],
+        "topics": [
+          "진단·디지털트윈"
+        ]
+      }
+    ]
+  },
+  "papers": [
+    {
+      "arxiv_id": "2611.34641",
+      "title": "Distractor-Robust Reinforcement Learning via Variational Bisimulation",
+      "authors": [
+        "Benjamin Freed",
+        "Vivaan Singh",
+        "Dean Zadok",
+        "Roberto Calandra",
+        "Jeff Schneider",
+        "Howie Choset"
+      ],
+      "summary": "Model-based reinforcement learning (MBRL) promises data efficiency and generalization, but typical reconstruction-based objectives encourage models to waste representational capacity on task-irrelevant distractors. We introduce VIBES (Variational Inference for Bisimulation-based Encoded States), a new objective that replaces pixel reconstruction with an adversarial term, which enforces that latent states suffice to predict both rewards and the next latent state. We show that this objective measures how far the encoder is from reward and dynamics sufficiency, and that whenever exact sufficiency is attainable, its global optima induce bisimulation relations on histories. Combined with a fixed-capacity latent bottleneck, this encourages latent states to retain task-relevant information while discarding irrelevant variation. Our method serves as a drop-in replacement for Dreamer's model-learning component, achieves state-of-the-art performance on the Distracting Control Suite, and extends to visually complex manipulation in Realistic ManiSkill. Unlike prior approaches, it does not rely on image-specific augmentations and applies equally well to high-dimensional vector-state tasks, demonstrated on a 100-link swimmer robot. Finally, latent-space analyses (UMAP embeddings and nearest-neighbor probes) confirm that the learned representations are sensitive to task-relevant structure while invariant to distractors.",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-11-25T16:21:31+00:00",
+      "updated": "2026-11-25T16:21:31+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2611.34641v1",
+      "abs_url": "https://arxiv.org/abs/2611.34641",
+      "track": "ai",
+      "slot": "impact",
+      "citation_count": 2,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/ade80071a233bb9be192bf56a86f6aeb86feedf7",
+      "tldr": "VIBES (Variational Inference for Bisimulation-based Encoded States), a new objective that replaces pixel reconstruction with an adversarial term, which enforces that latent states suffice to predict both rewards and the next latent state, is introduced.",
+      "matched_keywords": [],
+      "affiliations": [],
+      "source": "arxiv",
+      "hf_upvotes": null,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "교란 요인에 강건한 강화 학습을 위한 변분 비시뮬레이션",
+      "summary_ko": "- 모델 기반 강화 학습(MBRL)은 데이터 효율적이지만, 기존 방식은 불필요한 교란 요인에 표현 능력을 낭비합니다.\n- VIBES는 픽셀 재구성을 적대적 항으로 대체하여, 잠재 상태가 보상과 다음 잠재 상태를 예측하도록 합니다.\n- 이 목적 함수는 인코더가 보상 및 동역학 예측에 충분한지 측정하며, 비시뮬레이션 관계를 유도합니다.\n- Dreamer의 모델 학습 구성 요소를 대체하여 Distracting Control Suite에서 최고 성능을 달성했습니다.\n- 이미지 증강 없이 고차원 벡터 상태 작업에도 적용 가능하며, 학습된 표현은 교란 요인에 불변합니다.",
+      "tags": [
+        "강화 학습",
+        "표현 학습",
+        "비시뮬레이션",
+        "교란 요인 강건성"
+      ],
+      "topics": [
+        "강화학습·로보틱스"
+      ]
+    },
+    {
+      "arxiv_id": "2611.34923",
+      "title": "Mixture-of-Loops Transformer",
+      "authors": [
+        "Lianghui Zhu",
+        "Shijie Wang",
+        "Xinggang Wang",
+        "Jinze Bai",
+        "Bo Wang",
+        "Xiang Bai"
+      ],
+      "summary": "Looped Transformers boost expressivity by reusing shared layers across loops, yet at the cost of efficiency. Pushing their expressivity-efficiency frontier requires rethinking the core mechanism connecting adjacent loops: What should be passed as a Transformer loops? We introduce Mixture-of-Loops Transformer (MoLT), whose Mixture-of-Loops Attention (MoLA) uses keys and values (KV) as memory for selective reuse across depths and loops. Under loop residual, MoLT-R retains the residual stream and reads local KV across loops for expressivity. Under loop KV, MoLT-KV instead restarts from embeddings and reads current-loop local KV with preceding-loop memory KV at earlier positions for efficiency. MoLT-KV eliminates same-position cross-loop dependence and, paired with loop forcing for parallel training, unlocks single-traversal Mixture-of-Loops (MoL) decoding beyond the training loop horizon. To balance efficiency and quality, we introduce U-shaped MoLT (U-MoLT), which separates memory construction from prediction readout and skips unused decoder traversals without changing predictions. In 400B-token pretraining, U-MoLT outperforms OLMo3 across 700M/1.5B dense and 3B MoE models, achieving 1.7x validation cross-entropy (CE) token efficiency at 700M while improving 3B MoE 10-domain perplexity by 0.75 and 10-task accuracy by 2.1 percentage points. In 100B-token continued pretraining of Qwen3.5-0.8B-Base, our U-MoLT adaptation lowers CE on all 11 domains over the matched baseline with 1.4x mean token efficiency. At inference, U-MoLT with MoL-Hybrid-2 matches non-looped OLMo3 latency at 996.6 vs. 1,000.6 ms on S-size (~113M) models. Code is available at https://github.com/hustvl/MoLT",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-11-25T18:58:53+00:00",
+      "updated": "2026-11-25T18:58:53+00:00",
+      "pdf_url": "https://arxiv.org/pdf/2611.34923v1",
+      "abs_url": "https://arxiv.org/abs/2611.34923",
+      "track": "ai",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": "https://www.semanticscholar.org/paper/d3ccbd69cf0f1aea6e4d96fa55acc466d5015bf8",
+      "tldr": "U-shaped MoLT (U-MoLT), whose Mixture-of-Loops Attention (MoLA) uses keys and values (KV) as memory for selective reuse across depths and loops, is introduced, which separates memory construction from prediction readout and skips unused decoder traversals without changing predictions.",
+      "matched_keywords": [],
+      "affiliations": [
+        "Alibaba DAMO Academy"
+      ],
+      "source": "huggingface",
+      "hf_upvotes": 76,
+      "venue": null,
+      "title_local": null,
+      "title_ko": "Mixture-of-Loops 트랜스포머",
+      "summary_ko": "- 기존 루프형 트랜스포머는 표현력은 높지만 효율성이 떨어지는 한계가 있습니다.\n- 이 논문은 키-값(KV)을 메모리로 활용하는 MoLA를 가진 MoLT를 제안합니다.\n- MoLT는 효율성을 위해 루프 KV 방식을 도입하고 병렬 훈련을 지원합니다.\n- U-MoLT는 400B 토큰 사전 학습에서 OLMo3 대비 1.7배 토큰 효율을 달성했습니다.\n- 이 모델은 효율성과 성능을 동시에 개선하여 대규모 언어 모델에 기여합니다.",
+      "tags": [
+        "트랜스포머",
+        "언어 모델",
+        "효율성",
+        "딥러닝"
+      ],
+      "topics": [
+        "LLM·생성형·에이전트"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1177/14759217261440798",
+      "title": "Digital twin-assisted graph contrastive domain adaptation for small-sample bearing fault diagnosis",
+      "authors": [
+        "Chunyang Dai",
+        "Deqiang He",
+        "Zhenzhen Jin",
+        "Xingwu Zhang",
+        "Gang Chen",
+        "Jinxin Wu",
+        "Jiayang Zhao",
+        "Yan Xu"
+      ],
+      "summary": "Rolling bearing fault diagnosis is crucial for ensuring the safe and reliable operation of mechanical equipment. However, the scarcity of labeled fault data often prevents data-driven diagnostic models from being sufficiently trained, thereby limiting their effectiveness and generalizability in practical applications. To address this issue, this study introduces a digital twin-assisted graph contrastive domain adaptation (GCDA) network for bearing fault diagnosis under small-sample conditions. Specifically, a lumped-parameter dynamic model of the bearing is established in the digital space, covering representative fault modes associated with raceways and rolling elements. Nevertheless, the significant distribution discrepancy between the dynamic responses and measured signals leads to performance degradation if applied directly. To mitigate this issue, a cross-domain distribution coupling strategy is proposed at the data level. By leveraging modal decomposition and energy matching, the simulated dynamic responses are fused with the background components of measured signals, thereby generating twin samples that simultaneously retain physical mechanisms and realistic distribution characteristics. At the model level, a GCDA network is further developed to achieve domain-invariant feature extraction and discriminative representation learning. Finally, validation on both a self-collected laboratory dataset and the publicly available XJTU-SY dataset demonstrates that the proposed method outperforms several state-of-the-art approaches across multiple evaluation metrics.",
+      "categories": [],
+      "published": "2026-04-21T00:00:00+00:00",
+      "updated": "2026-04-21T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://doi.org/10.1177/14759217261440798",
+      "track": "mech",
+      "slot": "impact",
+      "citation_count": 75,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "data-driven",
+        "diagnostic",
+        "digital twin",
+        "mechanical",
+        "relevance:0.85"
+      ],
+      "affiliations": [
+        "Guangxi University",
+        "Guangxi Key Lab of Manufacturing System and Advanced Manufacturing Technology",
+        "Xi'an Jiaotong University",
+        "University of Electronic Science and Technology of China"
+      ],
+      "source": "openalex",
+      "hf_upvotes": null,
+      "venue": "Structural Health Monitoring",
+      "title_local": null,
+      "title_ko": "디지털 트윈 기반 그래프 대조 도메인 적응을 이용한 소량 샘플 베어링 고장 진단",
+      "summary_ko": "- 베어링 고장 진단은 중요하지만, 레이블된 고장 데이터 부족으로 기존 모델의 성능과 일반화가 제한됩니다.\n- 본 연구는 소량 샘플 조건에서 베어링 고장 진단을 위한 디지털 트윈 기반 그래프 대조 도메인 적응(GCDA) 네트워크를 제안합니다.\n- 디지털 트윈으로 생성된 동적 응답과 실제 측정 신호 간의 분포 차이를 줄이기 위해 교차 도메인 분포 결합 전략을 사용합니다.\n- 모달 분해 및 에너지 매칭을 통해 시뮬레이션 데이터와 실제 신호의 배경 성분을 융합하여 트윈 샘플을 생성합니다.\n- 제안된 방법은 자체 수집 및 XJTU-SY 공개 데이터셋에서 여러 최신 기법보다 우수한 성능을 보였습니다.",
+      "tags": [
+        "베어링 고장 진단",
+        "디지털 트윈",
+        "도메인 적응",
+        "소량 샘플 학습"
+      ],
+      "topics": [
+        "진단·디지털트윈"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.1680/jstbu.26.00161",
+      "title": "Multi-task deep learning for crack detection, segmentation and quantification in tunnels",
+      "authors": [
+        "Ronglin Liu",
+        "Jumin Zhao"
+      ],
+      "summary": "Crack detection and quantification in tunnel chutes is vital for ensuring infrastructure safety and preventing failures. Traditional methods, reliant on manual checks and basic image processing, are inefficient and inaccurate because they overlook tunnel-specific conditions. This paper introduces a multi-task deep learning model aimed at automating structural health monitoring in this context. The proposed solution integrates the U-shaped convolutional neural network for crack segmentation, version five of the you only look once algorithm for detection and a quantification model to measure crack length, area, density and severity. Utilising the publicly available ‘a crack dataset’ from Kaggle for training and testing, the model incorporates preprocessing techniques such as resizing, noise reduction and contrast enhancement to improve crack detection, segmentation and quantification performance. The framework demonstrates high performance with precision (0.900), recall (0.930), F1 score (0.915), dice (0.900) and intersection over union (0.850), demonstrating effectiveness on the evaluated data set. External data sets were used to assess the generalisation capability of the proposed framework. Although the evaluated data sets provide evidence of the framework’s potential for structural crack inspection, dedicated validation using tunnel chute-specific imagery from real operational conditions remains necessary. The proposed unified framework integrates crack detection, segmentation and quantitative assessment within a single pipeline, supporting structural health monitoring applications, including tunnel chute inspection.",
+      "categories": [],
+      "published": "2026-11-27T00:00:00+00:00",
+      "updated": "2026-11-27T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://doi.org/10.1680/jstbu.26.00161",
+      "track": "mech",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "deep learning",
+        "neural network",
+        "structural",
+        "crack",
+        "relevance:0.85"
+      ],
+      "affiliations": [
+        "Taiyuan University of Technology"
+      ],
+      "source": "openalex",
+      "hf_upvotes": null,
+      "venue": "Proceedings of the Institution of Civil Engineers - Structures and Buildings",
+      "title_local": null,
+      "title_ko": "터널 균열 감지, 분할 및 정량화를 위한 다중 작업 딥러닝",
+      "summary_ko": "- 터널 슈트의 균열은 인프라 안전에 필수적이지만, 기존 수동 검사는 비효율적이고 부정확합니다.\n- 이 논문은 균열 감지, 분할, 정량화를 통합한 다중 작업 딥러닝 모델을 제안합니다.\n- U-Net, YOLOv5, 그리고 정량화 모델을 결합하여 균열 길이, 면적, 밀도, 심각도를 측정합니다.\n- Kaggle 데이터셋으로 훈련하여 정밀도 0.900, 재현율 0.930, F1 점수 0.915 등의 높은 성능을 보였습니다.\n- 이 통합 프레임워크는 터널 슈트 검사를 포함한 구조물 건전성 모니터링에 기여할 수 있습니다.",
+      "tags": [
+        "딥러닝",
+        "균열 감지",
+        "구조물 건전성 모니터링",
+        "터널 검사"
+      ],
+      "topics": [
+        "진단·디지털트윈"
+      ]
+    },
+    {
+      "arxiv_id": "doi:10.3795/ksme-a.2026.50.11.947",
+      "title": "Bolt Clamping Force Prediction Using an MS Similarity Map-based Regression CNN and an Integrated MATLAB Diagnostic Platform",
+      "authors": [
+        "Ho-Hyeong Lee",
+        "Jihyung Han"
+      ],
+      "summary": "본 논문에서는 양단지지 볼트 체결 보 구조물의 볼트 체결력을 예측하는 MS 유사성 지도 기반 합성곱 신경망 방법과, 데이터 구성부터 신경망 학습 및 체결 상태 진단까지의 전 과정을 통합한 플랫폼을 제안한다. 다양한 체결력 조건에서 구조물의 동특성을 반영하기 위하여 비선형 마찰 접촉을 고려한 프리스트레스 주파수응답해석을 수행하였으며, 계산 효율성을 확보하기 위하여 크리로프 부공간 기반의 모델차수축소법으로 137,913 자유도의 초기모델을 30 자유도의 축소모델로 대체하여 대규모 MS 유사성 지도 빅데이터를 생성하였다. 생성된 8 × 2,000 크기의 MS 유사성 지도를 입력으로 하는 8개 합성곱 계층의 회귀 CNN을 학습한 결과, 5,000개의 시험 데이터에 대하여 볼트별 평균 MAE는 338.4 N, 평균 결정계수는 0.9563으로 나타났으며, 볼트 위치별 예측 정확도 차이를 모드 형상에 따른 동특성 민감도와 MS 유사성 지도 입력 특징의 식별 가능성 관점에서 정성적으로 고찰하였다. 또한 합성곱 계층 수에 대한 소거 연구에서는 8개 합성곱 계층 구성이 가장 우수한 검증 성능을 나타냈으며, 5개의 독립적인 단일 출력 CNN과의 비교에서는 다중 출력 CNN이 유사한 수준의 시험 예측 성능을 확보함을 확인하였다. 나아가 App Designer 기반의 MATLAB 플랫폼을 개발하여 학습 데이터 관리, 하이퍼파라미터 설정, 신경망 학습, 볼트별 예측 성능 평가 및 5단계 체결 상태 진단을 단일 환경에서 수행할 수 있도록 하였다. 제안된 방법과 플랫폼은 해석 기반 예측 방법을 실험 기반 볼트 풀림 진단 및 유지보수 지원 시스템으로 확장하기 위한 기반으로 활용될 수 있다.",
+      "categories": [],
+      "published": "2026-11-23T00:00:00+00:00",
+      "updated": "2026-11-23T00:00:00+00:00",
+      "pdf_url": "",
+      "abs_url": "https://doi.org/10.3795/ksme-a.2026.50.11.947",
+      "track": "kr",
+      "slot": "latest",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "s2_url": null,
+      "tldr": null,
+      "matched_keywords": [
+        "relevance:0.85"
+      ],
+      "affiliations": [
+        "Gyeongkuk National University"
+      ],
+      "source": "openalex_kr",
+      "hf_upvotes": null,
+      "venue": "대한기계학회논문집 A",
+      "title_local": "MS 유사성 지도 기반 회귀 CNN을 이용한 볼트 체결력 예측 및 MATLAB 통합 진단 플랫폼",
+      "title_ko": "MS 유사성 지도 기반 회귀 CNN을 이용한 볼트 체결력 예측 및 MATLAB 통합 진단 플랫폼",
+      "summary_ko": "- 본 연구는 양단지지 볼트 체결 보 구조물의 볼트 체결력 예측과 체결 상태 진단을 위한 통합 플랫폼을 제안합니다.\n- 비선형 마찰 접촉을 고려한 프리스트레스 주파수응답해석과 모델 차수 축소법으로 대규모 MS 유사성 지도 빅데이터를 생성했습니다.\n- 8x2,000 크기의 MS 유사성 지도를 입력으로 하는 8개 합성곱 계층의 회귀 CNN(Convolutional Neural Network)을 학습시켰습니다.\n- 5,000개 시험 데이터에서 볼트별 평균 MAE 338.4 N, 평균 결정계수 0.9563의 예측 정확도를 보였습니다.\n- 제안된 방법과 MATLAB 플랫폼은 해석 기반 예측을 실험 기반 볼트 풀림 진단 및 유지보수 시스템으로 확장하는 데 기여합니다.",
+      "tags": [
+        "볼트 체결력 예측",
+        "합성곱 신경망",
+        "모델 차수 축소",
+        "MATLAB 플랫폼"
+      ],
+      "topics": [
+        "진단·디지털트윈"
+      ]
+    }
+  ]
+}
